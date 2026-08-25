@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr13-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "32" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "15:30-16:4"
+    },
+    "nt": {
+      "book": "哥林多後書",
+      "chapter": "5:1-10"
+    }
+  }
+}

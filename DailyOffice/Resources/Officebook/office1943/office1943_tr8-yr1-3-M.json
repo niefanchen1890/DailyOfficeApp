@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr8-yr1-3-M",
+  "label": "禮拜三",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "81-96" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "12:19-25"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "16:1-18"
+    }
+  }
+}

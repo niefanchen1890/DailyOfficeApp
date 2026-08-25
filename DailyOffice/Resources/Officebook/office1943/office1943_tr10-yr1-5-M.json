@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr10-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "51" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "23:7-18"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "20:41-21:4"
+    }
+  }
+}

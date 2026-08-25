@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr13-yr1-1-M",
+  "label": "禮拜一",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "7" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "12:1-10,13-15"
+    },
+    "nt": {
+      "book": "哥林多後書",
+      "chapter": "1:1-24"
+    }
+  }
+}

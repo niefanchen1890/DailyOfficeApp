@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr4-yr1-1-M",
+  "label": "禮拜一",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "49-64" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "士師記",
+      "chapter": "13:2-14,24"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "8:16-25"
+    }
+  }
+}

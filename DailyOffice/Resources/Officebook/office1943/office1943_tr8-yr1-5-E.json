@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr8-yr1-5-E",
+  "label": "禮拜五",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "138" },
+      { "number": "146" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以斯帖記",
+      "chapter": "3:1-12"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "28:1-15"
+    }
+  }
+}

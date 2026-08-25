@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr15-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "49" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "5:1-10"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "12:13-21"
+    }
+  }
+}

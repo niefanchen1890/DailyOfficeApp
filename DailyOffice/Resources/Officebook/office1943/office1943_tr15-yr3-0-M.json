@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr15-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "1" },
+      { "number": "15" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "出埃及記",
+      "chapter": "2:1-22"
+    },
+    "nt": {
+      "book": "雅各書",
+      "chapter": "4:1-27"
+    }
+  }
+}

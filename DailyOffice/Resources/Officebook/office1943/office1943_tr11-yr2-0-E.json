@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr11-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "100" },
+      { "number": "101" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "傳道書",
+      "chapter": "5:1-7"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "18:9-14"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr3-yr1-1-E",
+  "label": "禮拜一",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "84" },
+      { "number": "85" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "尼希米記",
+      "chapter": "5:1-13"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "13:44-14:7"
+    }
+  }
+}

@@ -1,0 +1,1436 @@
+import SwiftUI
+
+struct LectionaryView: View {
+    @AppStorage("lectionaryYear") private var selectedYear = "1928"
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            // 頂部切換按鈕
+            Picker("經課表版本", selection: $selectedYear) {
+                Text("美國1928年版").tag("1928")
+                Text("加拿大1962年版").tag("1962")
+                Text("美国1943年版").tag("1943")
+            }
+            .pickerStyle(.segmented)
+            .padding()
+            .background(Color(.systemBackground))
+            
+            Divider()
+            
+            // 依年份切換視圖
+            if selectedYear == "1943" {
+                Lectionary1943View()
+            } else {
+                // 原有 1928 / 1962 的 List 保持不變
+                List {
+                    ForEach(LiturgicalSeason.allCases.filter {
+                        $0 != .holyWeek && $0 != .ascension && $0 != .pentecost
+                    }, id: \.self) { season in
+                        DisclosureGroup {
+                            switch season {
+                            case .advent:      AdventSeasonView(year: selectedYear)
+                            case .christmas:   ChristmasSeasonView(year: selectedYear)
+                            case .epiphany:    EpiphanySeasonView(year: selectedYear)
+                            case .prelenten:   PreLentenSeasonView(year: selectedYear)
+                            case .lent:        LentenSeasonView(year: selectedYear)
+                            case .easter:      EasterSeasonView(year: selectedYear)
+                            case .trinity:     TrinitySeasonView(year: selectedYear)
+                            case .holyDays:    HolyDaysView(year: selectedYear)
+                            default:           RegularSeasonView(season: season, year: selectedYear)
+                            }
+                        } label: {
+                            Text(season.title)
+                                .font(.headline)
+                                .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                                .padding(.vertical, 6)
+                        }
+                    }
+                }
+                .listStyle(.insetGrouped)
+            }
+        }
+        .navigationTitle("經課表")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+// MARK: - 3. 降臨期專屬視圖 (自動從 SQLite 讀取並轉為表格)
+struct AdventSeasonView: View {
+    let year: String
+    
+    @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(1...4, id: \.self) { week in
+            DisclosureGroup("降臨期第\(week.chineseString)主日") {
+                if let daysGrouped = weeksData[week], !daysGrouped.isEmpty {
+                    LectionaryTableView(weeklyData: daysGrouped)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear { loadData(for: week) }
+                }
+            }
+        }
+        .onChange(of: year) { weeksData.removeAll() }
+    }
+    
+    private func loadData(for week: Int) {
+        guard weeksData[week] == nil else { return }
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "ad", week: week)
+            let groupedData = groupDataForTable(rawData)
+            DispatchQueue.main.async {
+                self.weeksData[week] = groupedData
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay]) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        for i in 0...6 {
+            let name = i == 0 ? "日" : i.chineseString
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct DayLectionaryGroup: Identifiable {
+    var id: Int { dayIndex }
+    let dayIndex: Int
+    let dayName: String
+    var customName: String? = nil
+    var specialNote: String? = nil
+    
+    var displayName: String {
+        customName ?? dayName
+    }
+    
+    var morning1: LectionaryDay?
+    var morning2: LectionaryDay?
+    var evening1: LectionaryDay?
+    var evening2: LectionaryDay?
+    
+    var morning1_yr2: LectionaryDay?
+    var morning2_yr2: LectionaryDay?
+    var evening1_yr2: LectionaryDay?
+    var evening2_yr2: LectionaryDay?
+    
+    var hasYear2: Bool {
+        morning1_yr2 != nil || morning2_yr2 != nil || evening1_yr2 != nil || evening2_yr2 != nil
+    }
+}
+
+struct LectionaryTableView: View {
+    let weeklyData: [DayLectionaryGroup]
+    var isHolyDayMode: Bool = false
+    @State private var selectedLesson: LectionaryDay?
+    
+    let separatorColor = Color(UIColor.separator)
+    let headerBackground = Color(UIColor.secondarySystemBackground)
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                if !isHolyDayMode {
+                    Text("日")
+                        .frame(width: 35)
+                    verticalDivider
+                }
+                
+                Text(isHolyDayMode ? "時辰" : "年份/禱")
+                    .frame(width: isHolyDayMode ? 55 : 50)
+                
+                verticalDivider
+                
+                Text("第一經課")
+                    .frame(maxWidth: .infinity)
+                
+                verticalDivider
+                
+                Text("第二經課")
+                    .frame(maxWidth: .infinity)
+            }
+            .font(.caption2.bold())
+            .foregroundColor(.secondary)
+            .frame(height: 32)
+            .background(headerBackground)
+            
+            ForEach(weeklyData) { dayGroup in
+                Divider()
+                
+                HStack(spacing: 0) {
+                    if !isHolyDayMode {
+                        let name = dayGroup.displayName
+                        let isLongName = name.count >= 4
+                        let displayString = isLongName
+                            ? name.map { String($0) }.joined(separator: "\n")
+                            : name
+                        
+                        Text(displayString)
+                            .font(.system(size: isLongName ? 12 : 14, weight: .bold))
+                            .multilineTextAlignment(.center)
+                            .lineSpacing(1)
+                            .frame(width: 35)
+                            .foregroundColor(dayGroup.dayIndex == 0 ? .red : .primary)
+                        
+                        verticalDivider
+                    }
+                    
+                    VStack(spacing: 0) {
+                        if isHolyDayMode {
+                            if dayGroup.displayName == "前夕" {
+                                simpleRow(
+                                    time: "前晚",
+                                    l1: dayGroup.evening1,
+                                    l2: dayGroup.evening2,
+                                    labelWidth: 55
+                                )
+                            } else {
+                                simpleRow(
+                                    time: "早禱",
+                                    l1: dayGroup.morning1,
+                                    l2: dayGroup.morning2,
+                                    labelWidth: 55
+                                )
+                                
+                                Divider()
+                                
+                                simpleRow(
+                                    time: "晚禱",
+                                    l1: dayGroup.evening1,
+                                    l2: dayGroup.evening2,
+                                    labelWidth: 55
+                                )
+                            }
+                        } else {
+                            if let note = dayGroup.specialNote {
+                                HStack(spacing: 0) {
+                                    Text(note)
+                                        .font(.system(size: 12, weight: .medium))
+                                        .foregroundColor(.secondary)
+                                        .multilineTextAlignment(.center)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                        .padding(.horizontal, 8)
+                                }
+                                .frame(minHeight: 100)
+                                .background(Color(UIColor.systemBackground))
+                            } else if dayGroup.hasYear2 {
+                                yearSection(
+                                    label: "第一年",
+                                    m: dayGroup.morning1,
+                                    e: dayGroup.evening1,
+                                    m2: dayGroup.morning2,
+                                    e2: dayGroup.evening2
+                                )
+                                
+                                Divider()
+                                
+                                yearSection(
+                                    label: "第二年",
+                                    m: dayGroup.morning1_yr2,
+                                    e: dayGroup.evening1_yr2,
+                                    m2: dayGroup.morning2_yr2,
+                                    e2: dayGroup.evening2_yr2
+                                )
+                            } else {
+                                simpleRow(
+                                    time: "早",
+                                    l1: dayGroup.morning1,
+                                    l2: dayGroup.morning2
+                                )
+                                
+                                Divider()
+                                
+                                simpleRow(
+                                    time: "晚",
+                                    l1: dayGroup.evening1,
+                                    l2: dayGroup.evening2
+                                )
+                            }
+                        }
+                    }
+                }
+                .background(Color(UIColor.systemBackground))
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(separatorColor, lineWidth: 0.5)
+        )
+        .padding(.horizontal, 1)
+        .navigationDestination(item: $selectedLesson) { day in
+            ScriptureDetailView(day: day)
+        }
+    }
+    
+    private func simpleRow(
+        time: String,
+        l1: LectionaryDay?,
+        l2: LectionaryDay?,
+        labelWidth: CGFloat = 22
+    ) -> some View {
+        HStack(spacing: 0) {
+            Text(time)
+                .font(.caption2)
+                .foregroundColor(.secondary)
+                .frame(width: labelWidth)
+            
+            verticalDivider
+            
+            lessonCell(l1)
+            
+            verticalDivider
+            
+            lessonCell(l2)
+        }
+        .frame(height: 50)
+    }
+    
+    private func yearSection(
+        label: String,
+        m: LectionaryDay?,
+        e: LectionaryDay?,
+        m2: LectionaryDay?,
+        e2: LectionaryDay?
+    ) -> some View {
+        HStack(spacing: 0) {
+            Text(label)
+                .font(.system(size: 9))
+                .foregroundColor(.secondary)
+                .frame(width: 28)
+                .padding(.horizontal, 2)
+            
+            verticalDivider
+            
+            VStack(spacing: 0) {
+                simpleRow(time: "早", l1: m, l2: m2)
+                
+                Divider()
+                
+                simpleRow(time: "晚", l1: e, l2: e2)
+            }
+        }
+    }
+    
+    private var verticalDivider: some View {
+        Rectangle()
+            .fill(separatorColor)
+            .frame(width: 0.5)
+    }
+    
+    @ViewBuilder
+    private func lessonCell(_ day: LectionaryDay?) -> some View {
+        if let day = day {
+            Button {
+                selectedLesson = day
+            } label: {
+                VStack(spacing: 2) {
+                    Text(day.book)
+                        .font(.system(size: 13, weight: .semibold))
+                    
+                    Text(day.chapter)
+                        .font(.system(size: 11))
+                        .minimumScaleFactor(0.7)
+                }
+                .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                .padding(.horizontal, 4)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.clear)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else {
+            Text("-")
+                .font(.caption2)
+                .foregroundColor(.gray.opacity(0.3))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+}
+
+struct ChristmasSeasonView: View {
+    let year: String
+    private let sectionTitles = ["聖誕日", "聖誕後第一主日", "聖誕後第二主日"]
+    @State private var christmasDataGroups: [String: [DayLectionaryGroup]] = [:]
+
+    var body: some View {
+        ForEach(sectionTitles, id: \.self) { title in
+            DisclosureGroup(title) {
+                if let data = christmasDataGroups[title], !data.isEmpty {
+                    LectionaryTableView(weeklyData: data)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear {
+                            loadDataForSection(title)
+                        }
+                }
+            }
+        }
+        .onChange(of: year) {
+            christmasDataGroups.removeAll()
+        }
+    }
+
+    private func loadDataForSection(_ title: String) {
+        guard christmasDataGroups[title] == nil else { return }
+        
+        let keys: [(label: String, key: String)]
+        switch title {
+        case "聖誕日":
+            keys = [
+                ("聖誕前夕", "1225-eve"),
+                ("聖誕日", "1225"),
+                ("聖司提反日", "1226"),
+                ("聖約翰日", "1227"),
+                ("嬰孩被殺日", "1228")
+            ]
+        case "聖誕後第一主日":
+            keys = [
+                ("聖誕後一主日", "christmas1"),
+                ("十二月廿九日", "1229"),
+                ("十二月三十日", "1230"),
+                ("十二月卅一日", "1231")
+            ]
+        case "聖誕後第二主日":
+            keys = [
+                ("救主受割禮日", "0101"),
+                ("聖誕後二主日", "christmas2"),
+                ("一月二日", "0102"),
+                ("一月三日", "0103"),
+                ("一月四日", "0104"),
+                ("一月五日", "0105")
+            ]
+        default:
+            keys = []
+        }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            var tempGroups: [DayLectionaryGroup] = []
+            
+            for (index, def) in keys.enumerated() {
+                if year == "1928" && def.key == "1225-eve" { continue }
+                
+                let rawData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(year: year, keyPrefix: def.key)
+                var group = DayLectionaryGroup(dayIndex: index, dayName: def.label)
+                
+                for day in rawData {
+                    if def.key == "1225" && day.dayKey.contains("-eve-") { continue }
+                    
+                    let parts = day.dayKey.components(separatedBy: "-")
+                    guard parts.count >= 3 else { continue }
+                    
+                    let isYear2 = day.dayKey.contains("-yr2-")
+                    let time = day.dayKey.contains("-eve-") ? "E" : parts[parts.count - 2]
+                    let testament = parts[parts.count - 1]
+                    
+                    if isYear2 {
+                        if time == "M" && testament == "OT" { group.morning1_yr2 = day }
+                        if time == "M" && testament == "NT" { group.morning2_yr2 = day }
+                        if time == "E" && testament == "OT" { group.evening1_yr2 = day }
+                        if time == "E" && testament == "NT" { group.evening2_yr2 = day }
+                    } else {
+                        if time == "M" && testament == "OT" { group.morning1 = day }
+                        if time == "M" && testament == "NT" { group.morning2 = day }
+                        if time == "E" && testament == "OT" { group.evening1 = day }
+                        if time == "E" && testament == "NT" { group.evening2 = day }
+                    }
+                }
+                tempGroups.append(group)
+            }
+
+            DispatchQueue.main.async {
+                self.christmasDataGroups[title] = tempGroups
+            }
+        }
+    }
+}
+
+struct EpiphanySeasonView: View {
+    let year: String
+    @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(0...6, id: \.self) { week in
+            DisclosureGroup(getWeekTitle(week)) {
+                if let data = weeksData[week], !data.isEmpty {
+                    LectionaryTableView(weeklyData: data)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear { loadData(for: week) }
+                }
+            }
+        }
+        .onChange(of: year) { weeksData.removeAll() }
+    }
+    
+    private func getWeekTitle(_ week: Int) -> String {
+        if week == 0 {
+            return "顯現日"
+        } else {
+            return "顯現後第\(week.chineseString)主日"
+        }
+    }
+    
+    private func loadData(for week: Int) {
+        guard weeksData[week] == nil else { return }
+        
+        if week == 0 {
+            loadEpiphanyDay()
+            return
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(
+                year: year,
+                season: "epiphany",
+                week: week
+            )
+            
+            let groupedData = self.groupDataForTable(rawData)
+            
+            DispatchQueue.main.async {
+                self.weeksData[week] = groupedData
+            }
+        }
+    }
+    
+    private func loadEpiphanyDay() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            var tempGroups: [DayLectionaryGroup] = []
+            
+            let epiphanyDayData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(year: self.year, keyPrefix: "0106")
+            var dayGroup = DayLectionaryGroup(dayIndex: 0, dayName: "顯現日")
+            
+            for day in epiphanyDayData {
+                let parts = day.dayKey.components(separatedBy: "-")
+                guard parts.count >= 3 else { continue }
+                
+                let isYear2 = day.dayKey.contains("-yr2-")
+                let time = parts[parts.count - 2]
+                let testament = parts[parts.count - 1]
+                
+                if isYear2 {
+                    if time == "M" && testament == "OT" { dayGroup.morning1_yr2 = day }
+                    if time == "M" && testament == "NT" { dayGroup.morning2_yr2 = day }
+                    if time == "E" && testament == "OT" { dayGroup.evening1_yr2 = day }
+                    if time == "E" && testament == "NT" { dayGroup.evening2_yr2 = day }
+                } else {
+                    if time == "M" && testament == "OT" { dayGroup.morning1 = day }
+                    if time == "M" && testament == "NT" { dayGroup.morning2 = day }
+                    if time == "E" && testament == "OT" { dayGroup.evening1 = day }
+                    if time == "E" && testament == "NT" { dayGroup.evening2 = day }
+                }
+            }
+            tempGroups.append(dayGroup)
+            
+            let weekDaysData = LectionaryDatabaseManager.shared.fetchLectionary(
+                year: self.year,
+                season: "epiphany",
+                week: 0
+            )
+            
+            let groupedWeekDays = self.groupDataForTable(weekDaysData)
+            
+            for i in 1...6 {
+                if let weekdayGroup = groupedWeekDays.first(where: { $0.dayIndex == i }) {
+                    tempGroups.append(weekdayGroup)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.weeksData[0] = tempGroups
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay]) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        for i in 0...6 {
+            let name = i == 0 ? "日" : i.chineseString
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct PreLentenSeasonView: View {
+    let year: String
+    private let seasons = [
+        (title: "七旬主日", key: "septuagesima"),
+        (title: "六旬主日", key: "sexagesima"),
+        (title: "五旬主日", key: "quinquagesima")
+    ]
+    
+    @State private var seasonData: [String: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(seasons, id: \.key) { item in
+            DisclosureGroup(item.title) {
+                if let days = seasonData[item.key], !days.isEmpty {
+                    LectionaryTableView(weeklyData: days)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear { loadData(for: item.key) }
+                }
+            }
+        }
+        .onChange(of: year) { seasonData.removeAll() }
+    }
+    
+    private func loadData(for seasonKey: String) {
+        guard seasonData[seasonKey] == nil else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(
+                year: year,
+                season: seasonKey,
+                week: 0
+            )
+            
+            var groupedData = self.groupDataForTable(rawData)
+            
+            if seasonKey == "quinquagesima" {
+                groupedData = groupedData.filter { $0.dayIndex <= 2 }
+            }
+            
+            DispatchQueue.main.async {
+                self.seasonData[seasonKey] = groupedData
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay]) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        for i in 0...6 {
+            let name = i == 0 ? "日" : i.chineseString
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct LentenSeasonView: View {
+    let year: String
+    @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(0...6, id: \.self) { week in
+            DisclosureGroup(getWeekTitle(week)) {
+                if let data = weeksData[week], !data.isEmpty {
+                    LectionaryTableView(weeklyData: data)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear { loadData(for: week) }
+                }
+            }
+        }
+        .onChange(of: year) { weeksData.removeAll() }
+    }
+    
+    private func getWeekTitle(_ week: Int) -> String {
+        switch week {
+        case 0: return "大齋首日"
+        case 1: return "大齋第一主日"
+        case 2: return "大齋第二主日"
+        case 3: return "大齋第三主日"
+        case 4: return "大齋第四主日"
+        case 5: return "苦難主日"
+        case 6: return "棕樹主日"
+        default: return ""
+        }
+    }
+    
+    private func loadData(for week: Int) {
+        guard weeksData[week] == nil else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData: [LectionaryDay]
+            var isAshWeek = false
+            
+            if week == 0 {
+                rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "quinquagesima", week: 0)
+                isAshWeek = true
+            } else {
+                rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "lent", week: week)
+            }
+            
+            var groupedData = self.groupDataForTable(rawData, isAshWeek: isAshWeek)
+            
+            if week == 0 {
+                groupedData = groupedData.filter { $0.dayIndex >= 3 }
+            }
+            
+            DispatchQueue.main.async {
+                self.weeksData[week] = groupedData
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay], isAshWeek: Bool = false) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        
+        for i in 0...6 {
+            var name = i == 0 ? "日" : i.chineseString
+            if isAshWeek && i == 3 {
+                name = "大齋首日"
+            }
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct EasterSeasonView: View {
+    let year: String
+    @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(0...7, id: \.self) { week in
+            DisclosureGroup(getWeekTitle(week)) {
+                if let data = weeksData[week], !data.isEmpty {
+                    LectionaryTableView(weeklyData: data)
+                        .padding(.vertical, 8)
+                } else if weeksData[week] != nil {
+                    Text("此周經課數據尚未收錄")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear { loadData(for: week) }
+                }
+            }
+        }
+        .onChange(of: year) { weeksData.removeAll() }
+    }
+    
+    private func getWeekTitle(_ week: Int) -> String {
+        switch week {
+        case 0: return "救主復活日"
+        case 1: return "復活後第一主日"
+        case 2: return "復活後第二主日"
+        case 3: return "復活後第三主日"
+        case 4: return "復活後第四主日"
+        case 5: return "復活後第五主日（特禱主日）"
+        case 6: return "升天後主日"
+        case 7: return "聖靈降臨主日"
+        default: return ""
+        }
+    }
+    
+    private func loadData(for week: Int) {
+        guard weeksData[week] == nil else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dbWeek = week + 1
+            
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(
+                year: year,
+                season: "easter",
+                week: dbWeek
+            )
+            
+            print("📖 EasterSeasonView week=\(week) -> db=easter\(dbWeek), 返回 \(rawData.count) 條")
+            
+            let groupedData = self.groupDataForTable(rawData, week: week)
+    
+            DispatchQueue.main.async {
+                self.weeksData[week] = groupedData
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay], week: Int) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        
+        for i in 0...6 {
+            var name = i == 0 ? "日" : i.chineseString
+            if week == 5 {
+                switch i {
+                case 1: name = "特禱一"
+                case 2: name = "特禱二"
+                case 3: name = "特禱三"
+                case 4: name = "升天日"
+                default: break
+                }
+            }
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct AscensionSeasonView: View {
+    let year: String
+    @State private var ascensionDayData: [DayLectionaryGroup] = []
+    @State private var ascensionSundayData: [DayLectionaryGroup] = []
+    
+    var body: some View {
+        Group {
+            DisclosureGroup("救主升天日") {
+                if !ascensionDayData.isEmpty {
+                    LectionaryTableView(weeklyData: ascensionDayData)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView().onAppear { loadAscensionDayData() }
+                }
+            }
+            
+            DisclosureGroup("升天後主日") {
+                if !ascensionSundayData.isEmpty {
+                    LectionaryTableView(weeklyData: ascensionSundayData)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView().onAppear { loadAscensionSundayData() }
+                }
+            }
+        }
+        .onChange(of: year) {
+            ascensionDayData.removeAll()
+            ascensionSundayData.removeAll()
+        }
+    }
+    
+    private func loadAscensionDayData() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "easter", week: 5)
+            let dictionary = self.buildGroupDictionary(from: rawData, prefix: "ascDay")
+            
+            var groups: [DayLectionaryGroup] = []
+            for i in 4...6 {
+                if var group = dictionary[i] {
+                    if i == 4 { group.customName = "升天日" }
+                    groups.append(group)
+                }
+            }
+            DispatchQueue.main.async { self.ascensionDayData = groups }
+        }
+    }
+    
+    private func loadAscensionSundayData() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "easter", week: 6)
+            let dictionary = self.buildGroupDictionary(from: rawData, prefix: "ascSun")
+            
+            let groups = (0...6).compactMap { dictionary[$0] }
+            DispatchQueue.main.async { self.ascensionSundayData = groups }
+        }
+    }
+    
+    private func buildGroupDictionary(from rawDays: [LectionaryDay], prefix: String) -> [Int: DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        for i in 0...6 {
+            let name = i == 0 ? "日" : i.chineseString
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict
+    }
+}
+
+struct PentecostSeasonView: View {
+    let year: String
+    @State private var pentecostData: [DayLectionaryGroup] = []
+    
+    var body: some View {
+        DisclosureGroup("聖靈降臨主日 (Whitsunday)") {
+            if !pentecostData.isEmpty {
+                LectionaryTableView(weeklyData: pentecostData)
+                    .padding(.vertical, 8)
+            } else {
+                ProgressView("載入中...")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding()
+                    .onAppear { loadData() }
+            }
+        }
+        .onChange(of: year) { pentecostData.removeAll() }
+    }
+    
+    private func loadData() {
+        guard pentecostData.isEmpty else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "pentecost", week: 0)
+            let groupedData = self.groupDataForTable(rawData)
+            
+            DispatchQueue.main.async {
+                self.pentecostData = groupedData
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay]) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        for i in 0...6 {
+            let name = i == 0 ? "日" : i.chineseString
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct TrinitySeasonView: View {
+    let year: String
+    @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(0...27, id: \.self) { week in
+            DisclosureGroup(getTrinityWeekTitle(week)) {
+                if let data = weeksData[week] {
+                    LectionaryTableView(weeklyData: data)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入中...")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                        .onAppear { loadData(for: week) }
+                }
+            }
+        }
+        .onChange(of: year) { _, _ in
+            weeksData.removeAll()
+        }
+    }
+    
+    private func getTrinityWeekTitle(_ week: Int) -> String {
+        switch week {
+        case 0: return "三一主日"
+        case 27: return "降臨前主日"
+        default: return "三一後第\(week.chineseString)主日"
+        }
+    }
+    
+    private func loadData(for week: Int) {
+        guard weeksData[week] == nil else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let dbPrefix = week == 0 ? "tr" : "tr\(week)"
+            
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(
+                year: year,
+                keyPrefix: dbPrefix
+            )
+            
+            var groupedData = self.groupDataForTable(rawData)
+            
+            if year == "1928" && (week == 25 || week == 26) {
+                if let sundayIndex = groupedData.firstIndex(where: { $0.dayIndex == 0 }) {
+                    groupedData[sundayIndex].specialNote = "讀顯現節後本年未曾用之主日讀經課。"
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.weeksData[week] = groupedData
+            }
+        }
+    }
+    
+    private func groupDataForTable(_ rawDays: [LectionaryDay]) -> [DayLectionaryGroup] {
+        var dict: [Int: DayLectionaryGroup] = [:]
+        
+        for i in 0...6 {
+            let name = i == 0 ? "日" : i.chineseString
+            dict[i] = DayLectionaryGroup(dayIndex: i, dayName: name)
+        }
+        
+        for day in rawDays {
+            let parts = day.dayKey.components(separatedBy: "-")
+            guard parts.count >= 4, let dayIndex = Int(parts[1]) else { continue }
+            guard dayIndex >= 0 && dayIndex <= 6 else { continue }
+            
+            let isYear2 = day.dayKey.contains("-yr2-")
+            let time = parts[parts.count - 2]
+            let testament = parts[parts.count - 1]
+            
+            if isYear2 {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1_yr2 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2_yr2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1_yr2 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2_yr2 = day }
+            } else {
+                if time == "M" && testament == "OT" { dict[dayIndex]?.morning1 = day }
+                if time == "M" && testament == "NT" { dict[dayIndex]?.morning2 = day }
+                if time == "E" && testament == "OT" { dict[dayIndex]?.evening1 = day }
+                if time == "E" && testament == "NT" { dict[dayIndex]?.evening2 = day }
+            }
+        }
+        return dict.values.sorted(by: { $0.dayIndex < $1.dayIndex })
+    }
+}
+
+struct HolyDaysView: View {
+    let year: String
+    private let holyDayList = [
+        ("1130", "聖安得烈日"), ("1221", "聖多馬日"),
+        ("0125", "聖保羅受感化日"), ("0202", "獻聖嬰日"), ("0224", "聖馬提亞日"),
+        ("0325", "童女馬利亞聞報日"), ("0425", "聖馬可日"), ("0501", "聖腓力聖雅各日"),
+        ("0611", "聖巴拿巴日"), ("0624", "施洗聖約翰日"), ("0629", "聖彼得日"),
+        ("0725", "聖雅各日"), ("0806", "易容顯光日"),
+        ("0824", "聖巴多羅買日"), ("0921", "聖馬太日"), ("0929", "聖米迦勒日"),
+        ("1018", "聖路加日"), ("1028", "聖西門聖猶大日"), ("1101", "諸聖日")
+    ]
+    
+    @State private var holyDayData: [String: [DayLectionaryGroup]] = [:]
+    
+    var body: some View {
+        ForEach(holyDayList, id: \.0) { dateKey, title in
+            DisclosureGroup(title) {
+                if let groups = holyDayData[dateKey] {
+                    LectionaryTableView(weeklyData: groups, isHolyDayMode: true)
+                        .padding(.vertical, 8)
+                } else {
+                    ProgressView("載入聖日經課...")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .onAppear { loadHolyDay(dateKey: dateKey, title: title) }
+                }
+            }
+        }
+        .onChange(of: year) { holyDayData.removeAll() }
+    }
+    
+    private func loadHolyDay(dateKey: String, title: String) {
+        guard holyDayData[dateKey] == nil else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rawData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(year: year, keyPrefix: dateKey)
+            
+            var eveGroup = DayLectionaryGroup(dayIndex: 0, dayName: "前夕", customName: "前夕")
+            var dayGroup = DayLectionaryGroup(dayIndex: 1, dayName: "當日", customName: title)
+            
+            for day in rawData {
+                let isEve = day.dayKey.contains("-eve-")
+                let parts = day.dayKey.components(separatedBy: "-")
+                guard parts.count >= 2 else { continue }
+                
+                let time = parts[parts.count - 2]
+                let testament = parts[parts.count - 1]
+                
+                if isEve {
+                    if time == "E" && testament == "OT" { eveGroup.evening1 = day }
+                    if time == "E" && testament == "NT" { eveGroup.evening2 = day }
+                } else {
+                    if time == "M" && testament == "OT" { dayGroup.morning1 = day }
+                    if time == "M" && testament == "NT" { dayGroup.morning2 = day }
+                    if time == "E" && testament == "OT" { dayGroup.evening1 = day }
+                    if time == "E" && testament == "NT" { dayGroup.evening2 = day }
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.holyDayData[dateKey] = [eveGroup, dayGroup]
+            }
+        }
+    }
+}
+
+struct RegularSeasonView: View {
+    let season: LiturgicalSeason
+    let year: String
+    var body: some View { Text("\(season.title) 經課準備中...").foregroundColor(.gray).font(.footnote) }
+}
+
+// MARK: - 1943 年資料模型
+struct Office1943Entry: Codable, Identifiable {
+    var id: String { rawId }
+    let rawId: String
+    let label: String
+    let office: String
+    let psalms: Office1943Psalms
+    let lessons: Office1943Lessons
+    
+    enum CodingKeys: String, CodingKey {
+        case rawId = "id"
+        case label, office, psalms, lessons
+    }
+}
+
+struct Office1943Psalms: Codable {
+    let antiphon: String
+    let items: [Office1943PsalmItem]
+}
+
+struct Office1943PsalmItem: Codable {
+    let number: String
+    let verses: String?
+}
+
+struct Office1943Lessons: Codable {
+    let ot: Office1943Lesson
+    let nt: Office1943Lesson
+}
+
+struct Office1943Lesson: Codable {
+    let book: String
+    let chapter: String
+}
+
+// MARK: - 1943 年經課表總覽（已移除跳轉功能）
+struct Lectionary1943View: View {
+    private let seasons: [(key: String, title: String)] = {
+        var result: [(String, String)] = []
+        result.append(("tr", "三一主日"))
+        for i in 1...26 {
+            result.append(("tr\(i)", "三一後第\(i.chineseString)主日"))
+        }
+        result.append(("tr27", "降臨前主日"))
+        return result
+    }()
+    
+    var body: some View {
+        List {
+            ForEach(seasons, id: \.key) { season in
+                DisclosureGroup(season.title) {
+                    Trinity1943WeekView(seasonKey: season.key)
+                        .padding(.vertical, 4)
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
+    }
+}
+
+// MARK: - 1943 單週視圖（主日動態組數 + 周間一組）
+struct Trinity1943WeekView: View {
+    let seasonKey: String
+    @State private var sundayEntries: [(yr: Int, m: Office1943Entry, e: Office1943Entry)] = []
+    @State private var weekdayEntries: [(idx: Int, m: Office1943Entry, e: Office1943Entry)] = []
+    @State private var hasLoaded = false
+    
+    private let weekdays = ["禮拜一","禮拜二","禮拜三","禮拜四","禮拜五","禮拜六"]
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            // 主日：動態組數（自動偵測 yr1, yr2, yr3）
+            ForEach(sundayEntries, id: \.yr) { group in
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("第\(group.yr.chineseString)組")
+                        .font(.subheadline.bold())
+                        .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                    
+                    VStack(spacing: 8) {
+                        Office1943Card(entry: group.m)
+                        Office1943Card(entry: group.e)
+                    }
+                }
+            }
+            
+            if !sundayEntries.isEmpty && !weekdayEntries.isEmpty {
+                Divider().padding(.vertical, 4)
+            }
+            
+            // 禮拜一 ~ 禮拜六（僅 yr1）
+            ForEach(weekdayEntries, id: \.idx) { day in
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(weekdays[day.idx - 1])
+                        .font(.subheadline.bold())
+                        .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                    
+                    VStack(spacing: 8) {
+                        Office1943Card(entry: day.m)
+                        Office1943Card(entry: day.e)
+                    }
+                }
+            }
+        }
+        .onAppear {
+            if !hasLoaded {
+                loadWeekData()
+                hasLoaded = true
+            }
+        }
+    }
+    
+    private func loadWeekData() {
+        var sundays: [(Int, Office1943Entry, Office1943Entry)] = []
+        for yr in 1...3 {
+            if let m = loadEntry(week: 0, office: "M", yr: yr),
+               let e = loadEntry(week: 0, office: "E", yr: yr) {
+                sundays.append((yr, m, e))
+            }
+        }
+        sundayEntries = sundays
+        
+        var weekdays: [(Int, Office1943Entry, Office1943Entry)] = []
+        for idx in 1...6 {
+            if let m = loadEntry(week: idx, office: "M", yr: 1),
+               let e = loadEntry(week: idx, office: "E", yr: 1) {
+                weekdays.append((idx, m, e))
+            }
+        }
+        weekdayEntries = weekdays
+    }
+    
+    private func loadEntry(week: Int, office: String, yr: Int) -> Office1943Entry? {
+        let yearGroup = (week == 0) ? "yr\(yr)" : "yr1"
+        let filename = "office1943_\(seasonKey)-\(yearGroup)-\(week)-\(office.uppercased())"
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "json"),
+              let data = try? Data(contentsOf: url) else { return nil }
+        return try? JSONDecoder().decode(Office1943Entry.self, from: data)
+    }
+}
+
+// MARK: - 1943 單日卡片（純顯示，無跳轉）
+struct Office1943Card: View {
+    let entry: Office1943Entry
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 8) {
+                Label(
+                    entry.office == "morning" ? "早禱" : "晚禱",
+                    systemImage: entry.office == "morning" ? "sunrise.fill" : "moon.fill"
+                )
+                .font(.caption.bold())
+                .foregroundColor(entry.office == "morning" ? .orange : .indigo)
+                
+                Spacer()
+            }
+            
+            Divider()
+            
+            HStack(alignment: .top, spacing: 0) {
+                psalmColumn
+                    .frame(maxWidth: .infinity)
+                
+                Divider()
+                    .frame(height: 70)
+                    .padding(.horizontal, 8)
+                
+                lessonColumn(title: "第一經課", lesson: entry.lessons.ot)
+                    .frame(maxWidth: .infinity)
+                
+                Divider()
+                    .frame(height: 70)
+                    .padding(.horizontal, 8)
+                
+                lessonColumn(title: "第二經課", lesson: entry.lessons.nt)
+                    .frame(maxWidth: .infinity)
+            }
+        }
+        .padding(10)
+        .background(Color(UIColor.secondarySystemBackground))
+        .cornerRadius(10)
+    }
+    
+    private var psalmColumn: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("詩篇")
+                .font(.caption2.bold())
+                .foregroundColor(.secondary)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                ForEach(Array(entry.psalms.items.enumerated()), id: \.offset) { _, item in
+                    let chapterText = item.verses.map { "\(item.number)(\($0))" } ?? item.number
+                    Text(chapterText)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    private func lessonColumn(title: String, lesson: Office1943Lesson) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption2.bold())
+                .foregroundColor(.secondary)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text(lesson.book)
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                    .lineLimit(1)
+                
+                Text(lesson.chapter)
+                    .font(.system(size: 11))
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+#Preview("白天模式") {
+    NavigationStack {
+        LectionaryView()
+    }
+    .preferredColorScheme(.light)
+}
+
+#Preview("黑夜模式") {
+    NavigationStack {
+        LectionaryView()
+    }
+    .preferredColorScheme(.dark)
+}

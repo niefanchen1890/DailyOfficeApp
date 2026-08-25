@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "90" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以西結書",
+      "chapter": "33:1-9"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "24:37-51"
+    }
+  }
+}

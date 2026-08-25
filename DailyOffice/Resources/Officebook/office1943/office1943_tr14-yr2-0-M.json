@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "65" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "歷代志上",
+      "chapter": "29:10-17"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "17:5-10"
+    }
+  }
+}

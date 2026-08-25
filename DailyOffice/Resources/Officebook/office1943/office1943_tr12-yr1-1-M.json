@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr12-yr1-1-M",
+  "label": "禮拜一",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "107", "verses": "1-16" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "6:12-15,17-19"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "23:13-25"
+    }
+  }
+}

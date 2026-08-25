@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr16-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "97" },
+      { "number": "98" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約伯記",
+      "chapter": "2:1-13"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "11:20-30"
+    }
+  }
+}

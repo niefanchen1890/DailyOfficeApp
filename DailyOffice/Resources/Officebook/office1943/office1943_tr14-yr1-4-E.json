@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr1-4-E",
+  "label": "禮拜四",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "66" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "28:13-26"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "5:38-48"
+    }
+  }
+}

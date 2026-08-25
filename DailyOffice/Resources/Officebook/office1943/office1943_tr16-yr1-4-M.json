@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr16-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "126" },
+      { "number": "128" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "8:54-63"
+    },
+    "nt": {
+      "book": "帖撒羅尼迦前書",
+      "chapter": "4:1-12"
+    }
+  }
+}

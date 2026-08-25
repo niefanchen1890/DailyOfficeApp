@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr3-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "94" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "士師記",
+      "chapter": "7:1-8"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "7:18-35"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr12-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "137", "verses": "1-6" },
+      { "number": "138" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "9:1-9,13"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "23:50-24:12"
+    }
+  }
+}

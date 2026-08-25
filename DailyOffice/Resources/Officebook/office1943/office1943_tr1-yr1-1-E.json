@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr1-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "得勝的，我必將那隱藏的嗎哪和一個新的名字賜給他。哈利路亞。",
+    "items": [
+        { "number": "31" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以斯拉記",
+      "chapter": "5:1-2、5:6-17"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "9:1-19"
+    }
+  }
+}

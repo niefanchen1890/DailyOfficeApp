@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "92" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "4:1、5、7-12"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "22:31-46"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr8-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "118" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "但以理書",
+      "chapter": "6:9-15"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "26:24-27:8"
+    }
+  }
+}

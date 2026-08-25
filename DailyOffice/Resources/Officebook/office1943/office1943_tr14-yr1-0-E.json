@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "50" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米書",
+      "chapter": "7:1-11"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "13:18-30"
+    }
+  }
+}

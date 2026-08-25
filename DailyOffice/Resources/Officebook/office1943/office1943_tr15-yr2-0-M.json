@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr15-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "103" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "申命記",
+      "chapter": "7:6-13"
+    },
+    "nt": {
+      "book": "加拉太書",
+      "chapter": "2:15-20"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr4-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "148" },
+      { "number": "150" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "瑪喀比傳上",
+      "chapter": "2:49-52,61-70"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "17:16-34"
+    }
+  }
+}

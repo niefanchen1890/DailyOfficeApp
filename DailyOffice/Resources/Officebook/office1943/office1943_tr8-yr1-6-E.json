@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr8-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "147" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以斯帖記",
+      "chapter": "4:1,5-17"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "28:16-31"
+    }
+  }
+}

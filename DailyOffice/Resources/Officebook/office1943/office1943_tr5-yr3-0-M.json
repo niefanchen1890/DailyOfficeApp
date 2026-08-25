@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr5-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "1" },
+      { "number": "121" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "17:1-8"
+    },
+    "nt": {
+      "book": "希伯來書",
+      "chapter": "11:1-16"
+    }
+  }
+}

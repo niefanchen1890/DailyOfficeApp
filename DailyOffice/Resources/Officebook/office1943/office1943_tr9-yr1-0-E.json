@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr9-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "9-24" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "箴言",
+      "chapter": "4:1-4,20-27"
+    },
+    "nt": {
+      "book": "希伯來書",
+      "chapter": "12:1-13"
+    }
+  }
+}

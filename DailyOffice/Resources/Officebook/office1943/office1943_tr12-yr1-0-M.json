@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr12-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "139" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "15:11-20"
+    },
+    "nt": {
+      "book": "腓立比書",
+      "chapter": "2:12-18"
+    }
+  }
+}

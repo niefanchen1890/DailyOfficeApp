@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr16-yr1-3-E",
+  "label": "禮拜三",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "129-144" },
+      { "number": "117" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "44:1-15"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "10:16-31"
+    }
+  }
+}

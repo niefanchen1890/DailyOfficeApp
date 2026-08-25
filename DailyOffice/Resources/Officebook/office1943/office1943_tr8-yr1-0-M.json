@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr8-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "33-48" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "1:18-27"
+    },
+    "nt": {
+      "book": "約翰福音",
+      "chapter": "7:14-24"
+    }
+  }
+}

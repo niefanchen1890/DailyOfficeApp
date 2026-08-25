@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr9-yr3-0-E",
+  "label": "第三組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "93" },
+      { "number": "96" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "31:1-13"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "13:1-3,14-31,38,44-49"
+    }
+  }
+}

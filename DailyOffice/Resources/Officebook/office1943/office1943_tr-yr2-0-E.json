@@ -1,0 +1,22 @@
+{
+  "id": "tr-yr2-0-M",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "願萬有同聲讚頌、※光榮父、他所生的子、和聖靈，直到永遠。",
+    "items": [
+      { "number": "148" },
+      { "number": "150" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約伯記",
+      "chapter": "38:1-11、38:16-18、42:1-6"
+    },
+    "nt": {
+      "book": "約翰福音",
+      "chapter": "1:29-34"
+    }
+  }
+}

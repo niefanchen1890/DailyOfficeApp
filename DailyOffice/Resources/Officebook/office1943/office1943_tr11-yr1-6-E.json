@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr11-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "112" },
+      { "number": "113" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "馬可福音",
+      "chapter": "3:2-6,10-13,18-19"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "11:22-36"
+    }
+  }
+}

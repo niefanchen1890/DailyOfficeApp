@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr12-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "116" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "西番雅書",
+      "chapter": "3:1-8"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "13:1-14"
+    }
+  }
+}

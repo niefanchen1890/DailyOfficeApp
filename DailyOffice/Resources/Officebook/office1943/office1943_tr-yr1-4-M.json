@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr-4-M",
+  "label": "平日",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "智慧建造了她的房屋：她調和美酒，又擺設筵席，哈利路亞。",
+    "items": [
+      { "number": "9" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "民數記",
+      "chapter": "20:1-13"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "1:57-66"
+    }
+  }
+}

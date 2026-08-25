@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr15-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "72" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "36:1-17"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "7:13-29"
+    }
+  }
+}

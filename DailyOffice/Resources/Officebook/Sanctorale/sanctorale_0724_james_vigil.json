@@ -1,0 +1,13 @@
+{
+  "identifier": "sanctorale_0724_james_vigil",
+  "name": "使徒聖雅各望日",
+  "rank": "vigil",
+  "rank_display": "（望日）",
+  "type": "sanctorale",
+  "morning": {
+    "collect": {
+      "title": "使徒聖雅各望日",
+      "text": "全能的上帝，求主恩准：使我們今日所開始敬賀主的使徒聖雅各的慶節，給我們增加虔敬的熱忱和得救的恩寵。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+    }
+  }
+}

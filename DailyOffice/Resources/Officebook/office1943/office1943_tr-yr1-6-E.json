@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr-yr1-6-E",
+  "label": "平日",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "主基督是照着麥基洗德的體系永遠為祭司，祂奉献了饼和酒。",
+    "items": [
+      { "number": "27" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒迦利亞書",
+      "chapter": "2:1-13"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "8:26-40"
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr2-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "50" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以斯拉記",
+      "chapter": "8:15,21-23,31-36"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "11:19-30"
+    }
+  }
+}

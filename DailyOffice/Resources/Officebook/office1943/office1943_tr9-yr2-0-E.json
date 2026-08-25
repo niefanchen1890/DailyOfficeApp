@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr9-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "51" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米哀歌",
+      "chapter": "3:40-58"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "15:11-32"
+    }
+  }
+}

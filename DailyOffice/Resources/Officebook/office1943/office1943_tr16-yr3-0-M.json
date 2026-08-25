@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "145" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "出埃及記",
+      "chapter": "3:1-15"
+    },
+    "nt": {
+      "book": "彼得前書",
+      "chapter": "5:1-11"
+    }
+  }
+}

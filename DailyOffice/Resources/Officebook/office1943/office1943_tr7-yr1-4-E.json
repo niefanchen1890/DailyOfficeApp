@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr7-yr1-4-E",
+  "label": "禮拜四",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "89", "verses": "1-19" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "但以理書",
+      "chapter": "5:1-9"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "24:10-23"
+    }
+  }
+}

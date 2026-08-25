@@ -1,0 +1,20 @@
+{
+  "id": "office1943_tr1-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "items": [
+      { "number": "90" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "3:1-24"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "5:1-21"
+    }
+  }
+}

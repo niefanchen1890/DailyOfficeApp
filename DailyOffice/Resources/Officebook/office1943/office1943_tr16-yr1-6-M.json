@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr16-yr1-6-M",
+  "label": "禮拜六",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "143" },
+      { "number": "149" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "11:26-31,34-37"
+    },
+    "nt": {
+      "book": "帖撒羅尼迦前書",
+      "chapter": "5:1-11"
+    }
+  }
+}

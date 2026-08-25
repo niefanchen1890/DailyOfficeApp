@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr14-yr3-0-E",
+  "label": "第三組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "42" },
+      { "number": "43" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "3:4-15"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "17:16-34"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr8-yr1-3-E",
+  "label": "禮拜三",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "97-112" },
+      { "number": "117" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "但以理書",
+      "chapter": "6:16-23,25-27"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "27:9-26"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr10-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "42" },
+      { "number": "43" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米哀歌",
+      "chapter": "1:1-12"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "19:41-48"
+    }
+  }
+}

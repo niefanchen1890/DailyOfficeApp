@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr9-yr1-6-M",
+  "label": "禮拜六",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "18", "verses": "1-20" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "17:41-51"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "19:11-28"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr1-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "得勝的，我必將那隱藏的嗎哪和一個新的名字賜給他。哈利路亞。",
+    "items": [
+        { "number": "119", "verses": "33-48" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米書",
+      "chapter": "23:23-32"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "7:13-14、7:21-29"
+    }
+  }
+}

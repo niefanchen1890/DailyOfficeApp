@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr6-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "94", "verses": "1-22" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "4:1-16"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "5:20-26"
+    }
+  }
+}

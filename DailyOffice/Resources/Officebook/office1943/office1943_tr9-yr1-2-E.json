@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr9-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "16" },
+      { "number": "20" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以斯帖記",
+      "chapter": "6:1-14"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "2:1-16"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "56" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "18:19-33"
+    },
+    "nt": {
+      "book": "哥林多後書",
+      "chapter": "8:1-15"
+    }
+  }
+}

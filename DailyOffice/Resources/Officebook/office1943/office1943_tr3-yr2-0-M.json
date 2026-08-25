@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr3-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "25" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "箴言",
+      "chapter": "16:18-24,32"
+    },
+    "nt": {
+      "book": "腓立比書",
+      "chapter": "1:27-2:4"
+    }
+  }
+}

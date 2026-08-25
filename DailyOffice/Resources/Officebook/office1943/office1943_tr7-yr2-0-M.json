@@ -1,0 +1,23 @@
+{
+  "id": "office1943_tr7-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "133" },
+      { "number": "134" },
+      { "number": "138" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "6:5-17"
+    },
+    "nt": {
+      "book": "約翰福音",
+      "chapter": "15:12-27"
+    }
+  }
+}

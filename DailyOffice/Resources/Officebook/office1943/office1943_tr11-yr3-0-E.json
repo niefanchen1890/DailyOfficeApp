@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr11-yr3-0-E",
+  "label": "第三組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "30" },
+      { "number": "121" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "7:18-29"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "15:1-21"
+    }
+  }
+}

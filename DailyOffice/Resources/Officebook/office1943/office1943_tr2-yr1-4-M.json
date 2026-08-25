@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr2-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "63" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約書亞記",
+      "chapter": "6:1-7,11,14-20"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "6:1-11"
+    }
+  }
+}

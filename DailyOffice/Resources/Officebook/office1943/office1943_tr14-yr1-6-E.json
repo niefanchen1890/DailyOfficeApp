@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr14-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "67" },
+      { "number": "93" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "34:1-8"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "6:19-34"
+    }
+  }
+}

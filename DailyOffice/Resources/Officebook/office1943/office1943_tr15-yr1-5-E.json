@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr15-yr1-5-E",
+  "label": "禮拜五",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "89", "verses": "1-19" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "42:15-21"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "8:28-9:8"
+    }
+  }
+}

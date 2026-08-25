@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr-3-M",
+  "label": "平日",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "萬有都是本於他，※倚靠他，並在他裏面；願榮耀歸與他，直到永遠。",
+    "items": [
+      { "number": "7" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "民數記",
+      "chapter": "17:1-11"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "1:39-56"
+    }
+  }
+}

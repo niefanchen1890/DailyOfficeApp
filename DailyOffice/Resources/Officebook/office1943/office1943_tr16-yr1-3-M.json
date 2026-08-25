@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr1-3-M",
+  "label": "禮拜三",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "113-128" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "8:22-30"
+    },
+    "nt": {
+      "book": "帖撒羅尼迦前書",
+      "chapter": "2:17-3:13"
+    }
+  }
+}

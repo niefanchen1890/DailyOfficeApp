@@ -1,0 +1,21 @@
+{
+  "id": "tr-yr1-0-M",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "items": [
+      { "number": "98" },
+      { "number": "100" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "43:1-12、27-33"
+    },
+    "nt": {
+      "book": "以弗所書",
+      "chapter": "4:1-16"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr1-yr3-6-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "基督為我們傾倒生命，用自己的血洗淨了我們的罪。",
+    "items": [
+        { "number": "46" },
+        { "number": "47" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒迦利亞書",
+      "chapter": "8:14-23"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "10:34-48"
+    }
+  }
+}

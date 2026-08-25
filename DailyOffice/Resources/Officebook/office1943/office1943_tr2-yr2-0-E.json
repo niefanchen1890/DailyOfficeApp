@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr2-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "138" },
+      { "number": "146" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀下",
+      "chapter": "4:8-17"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "14:12-24"
+    }
+  }
+}

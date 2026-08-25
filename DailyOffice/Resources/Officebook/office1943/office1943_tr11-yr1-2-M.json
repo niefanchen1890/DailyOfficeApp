@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr1-2-M",
+  "label": "禮拜二",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "73" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "1:1-16"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "22:1-13"
+    }
+  }
+}

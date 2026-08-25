@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr16-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "111" },
+      { "number": "113" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "43:20-33"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "9:36-10:15"
+    }
+  }
+}

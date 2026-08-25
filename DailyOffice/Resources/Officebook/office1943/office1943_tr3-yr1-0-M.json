@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr3-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "145" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米書",
+      "chapter": "31:1-14"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "9:9-13"
+    }
+  }
+}

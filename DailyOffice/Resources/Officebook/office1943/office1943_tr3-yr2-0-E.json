@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr3-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "103" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以西結書",
+      "chapter": "34:20-24"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "15:1-10"
+    }
+  }
+}

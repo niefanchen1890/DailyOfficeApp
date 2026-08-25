@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr3-0-E",
+  "label": "第三組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "66" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "12:1-20"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "19:21-41"
+    }
+  }
+}

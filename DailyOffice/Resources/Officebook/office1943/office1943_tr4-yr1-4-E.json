@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr4-yr1-4-E",
+  "label": "禮拜四",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "144" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "瑪喀比傳上",
+      "chapter": "2:15-30"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "16:25-40"
+    }
+  }
+}

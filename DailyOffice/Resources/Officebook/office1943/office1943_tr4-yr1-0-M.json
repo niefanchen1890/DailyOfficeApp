@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr4-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "91" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米哀歌",
+      "chapter": "3:22-33"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "10:24-39"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+patristic_advent_1.json      // 將臨第一主日
+patristic_advent_2.json      // 將臨第二主日
+patristic_advent_3.json      // 將臨第三主日
+patristic_advent_4.json      // 將臨第四主日
+
+patristic_christmas_0.json   // 聖誕日
+patristic_christmas_1.json   // 聖誕後第一主日
+patristic_christmas_2.json   // 聖誕後第二主日
+patristic_christmas_3.json   // 救主受割禮日
+
+patristic_epiphany_0.json    // 顯現日
+patristic_epiphany_1.json    // 顯現後第一主日
+patristic_epiphany_2.json
+patristic_epiphany_3.json
+patristic_epiphany_4.json
+patristic_epiphany_5.json
+patristic_epiphany_6.json
+
+patristic_prelenten_1.json   // 七旬主日
+patristic_prelenten_2.json   // 六旬主日
+patristic_prelenten_3.json   // 五旬主日
+
+patristic_lent_0.json        // 大齋首日（含大齋第一主日）
+patristic_lent_1.json        // 大齋第一主日（與大齋首日同週，可與 lent_0 擇一使用）
+patristic_lent_2.json        // 大齋第二主日
+patristic_lent_3.json        // 大齋第三主日
+patristic_lent_4.json        // 大齋第四主日
+patristic_lent_5.json        // 苦難主日
+patristic_lent_6.json        // 棕樹主日
+
+patristic_easter_0.json      // 救主復活日
+patristic_easter_1.json      // 復活後第一主日
+patristic_easter_2.json
+patristic_easter_3.json
+patristic_easter_4.json
+patristic_easter_5.json      // 升天相關主日
+patristic_easter_6.json      // 升天后主日
+patristic_easter_7.json      // 聖靈降臨主日
+
+patristic_trinity_0.json     // 三一主日
+patristic_trinity_1.json     // 三一後第一主日
+…
+patristic_trinity_26.json    // 三一後第二十六主日
+patristic_trinity_27.json    // 降臨前主日
+
+patristic_holyweek_1.json    // 聖週
+
+
+八、使用說明
+檔案不存在時：載入器返回 nil，patristicReadingSection 自動隱藏，不影響晚禱流程。
+大齋首日與大齋第一主日：在 LiturgyCoreService 中同屬 lent week 1，可共用 patristic_lent_0.json 或分開建檔（載入器以 title 優先映射到 lent_0）。
+擴展到早禱：直接將 PatristicReadingLoader 與 PatristicReadingData 複製到早禱專案，在 MorningPrayerViewModel 同樣呼叫即可。
+聖日覆蓋：若某固定聖日（如「聖巴拿巴日」）需要專用誦讀，可在 PatristicReadingLoader 中加入 title 優先匹配邏輯，先檢查 liturgy.mainTitle 是否為特定聖日，再回退到節期通用檔案。

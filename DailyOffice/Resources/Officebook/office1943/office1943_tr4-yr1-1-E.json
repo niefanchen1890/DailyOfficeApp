@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr4-yr1-1-E",
+  "label": "禮拜一",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "119", "verses": "65-80" },
+      { "number": "117" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "瑪喀比傳上",
+      "chapter": "1:41-53"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "15:36-16:5"
+    }
+  }
+}

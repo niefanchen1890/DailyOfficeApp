@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr9-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "115" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以西結書",
+      "chapter": "14:1-11"
+    },
+    "nt": {
+      "book": "帖撒羅尼迦前書",
+      "chapter": "4:1-12"
+    }
+  }
+}

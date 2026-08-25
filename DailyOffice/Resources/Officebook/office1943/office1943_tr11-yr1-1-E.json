@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr1-1-E",
+  "label": "禮拜一",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "77" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "那鴻書",
+      "chapter": "1:3-8,15"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "8:18-27"
+    }
+  }
+}

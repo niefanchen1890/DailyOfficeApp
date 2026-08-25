@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "92" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "申命記",
+      "chapter": "8:1-14,17-20"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "17:11-19"
+    }
+  }
+}

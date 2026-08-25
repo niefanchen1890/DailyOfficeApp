@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr10-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "37", "verses": "26-40" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "彌迦書",
+      "chapter": "4:9-5:1"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "5:1-21"
+    }
+  }
+}

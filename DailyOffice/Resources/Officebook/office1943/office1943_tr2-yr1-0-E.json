@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr2-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "112" },
+      { "number": "113" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "20:1-7,12-42"
+    },
+    "nt": {
+      "book": "彼得前書",
+      "chapter": "1:17-25"
+    }
+  }
+}

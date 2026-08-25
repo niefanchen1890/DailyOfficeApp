@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr2-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "66" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "尼希米記",
+      "chapter": "4:6-23"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "13:26-43"
+    }
+  }
+}
