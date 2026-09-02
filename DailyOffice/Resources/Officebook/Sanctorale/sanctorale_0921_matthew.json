@@ -1,137 +1,421 @@
 {
   "identifier": "sanctorale_0921_matthew",
-  "name": "傳福音使徒聖馬太日",
+  "name": {
+    "zh-hant": "傳福音使徒聖馬太日",
+    "zh-hans": "传福音使徒圣马太日",
+    "en": ""
+  },
   "rank": "doubleSecondClass",
-  "rank_display": "（二等複式）",
+  "rank_display": {
+    "zh-hant": "（二等複式）",
+    "zh-hans": "（二等复式）",
+    "en": ""
+  },
   "type": "sanctorale",
   "vigil": {
     "bible_sentences": [
       {
-        "text": "在鑒察的時候，他們顯為光明，來往飛騰，如麥稭被焚的星火。他們要審判邦國，治理眾民；他們的主將作王直到永遠。",
-        "reference": "（所羅門智訓 3:8）"
+        "text": {
+          "zh-hant": "在鑒察的時候，他們顯為光明，來往飛騰，如麥稭被焚的星火。他們要審判邦國，治理眾民；他們的主將作王直到永遠。",
+          "zh-hans": "在鉴察的时候，他们显为光明，来往飞腾，如麦秸被焚的星火。他们要审判邦国，治理众民；他们的主将作王直到永远。",
+          "en": "AND in the time of their visitation they shall shine, and run to and fro like sparks among the stubble. They shall judge the nations, and have do- minion over the people, and their Lord shall reign for ever. "
+        },
+        "reference": {
+          "zh-hant": "（所羅門智訓 3:8）",
+          "zh-hans": "（所罗门智训 3:8）",
+          "en": "(Wisdom iii. 7.)"
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "你們要彼此相愛，※像我愛你們一樣，這是我的命令。",
-        "人為朋友捨命，※人的愛心沒有比這個更大的了。",
-        "主說：※你們若遵行我所命令的，就是我的朋友。",
-        "締造和平的人有福了，※清心的人有福了，因為他們必得見上帝。",
-        "你們憑着堅忍，※就必保全性命。"
+        {
+          "zh-hant": "你們要彼此相愛，※像我愛你們一樣，這是我的命令。",
+          "zh-hans": "你们要彼此相爱，※像我爱你们一样，这是我的命令。",
+          "en": "This is my commandment, that ye love one another, as I have loved you."
+        },
+        {
+          "zh-hant": "人為朋友捨命，※人的愛心沒有比這個更大的了。",
+          "zh-hans": "人为朋友舍命，※人的爱心没有比这个更大的了。",
+          "en": "Greater love hath no man than this, that a man lay down his life for his friends."
+        },
+        {
+          "zh-hant": "主說：※你們若遵行我所命令的，就是我的朋友。",
+          "zh-hans": "主说：※你们若遵行我所命令的，就是我的朋友。",
+          "en": "Ye are my friends, if ye do whatsoever I command you, saith the Lord."
+        },
+        {
+          "zh-hant": "締造和平的人有福了，※清心的人有福了，因為他們必得見上帝。",
+          "zh-hans": "缔造和平的人有福了，※清心的人有福了，因为他们必得见上帝。",
+          "en": "Blessed are the peace-makers, blessed are the pure in heart: for they shall see God."
+        },
+        {
+          "zh-hant": "你們憑着堅忍，※就必保全性命。",
+          "zh-hans": "你们凭着坚忍，※就必保全性命。",
+          "en": "In your patience ye shall possess your souls."
+        }
       ]
     },
     "office_hymn": {
-      "title": "萬世之君我主耶穌",
+      "title": {
+        "zh-hant": "萬世之君我主耶穌",
+        "zh-hans": "万世之君我主耶稣",
+        "en": ""
+      },
       "verses": [
-          "一、萬世之君慈悲耶穌，\n因主摯愛聖者功勳；\n我等重罪俯伏主前，\n藉其榮福代求蒙赦。",
-          "二、聖徒馬太雙重尊榮，\n懇向耶穌迫切代求；\n浮生風暴求主引領，\n免遭永死無盡沉淪。",
-          "三、慈悲救主保守善工，\n聖容光輝作為印記。\n莫讓邪靈詭計撕裂，\n主的聖死所贖之人。",
-          "四、求主憐憫被囚之僕，\n赦免罪人釋放囚徒，\n以主寶血重價贖回，\n在天與主同享喜樂。",
-          "五、永享榮耀尊貴權柄，\n耶穌基督萬世之主，\n聖父聖靈為一上帝，\n治理萬世永世無盡。阿們。"
+        {
+          "zh-hant": "一、萬世之君慈悲耶穌，\n因主摯愛聖者功勳；\n我等重罪俯伏主前，\n藉其榮福代求蒙赦。",
+          "zh-hans": "一、万世之君慈悲耶稣，\n因主挚爱圣者功勋；\n我等重罪俯伏主前，\n藉其荣福代求蒙赦。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、聖徒馬太雙重尊榮，\n懇向耶穌迫切代求；\n浮生風暴求主引領，\n免遭永死無盡沉淪。",
+          "zh-hans": "二、圣徒马太双重尊荣，\n恳向耶稣迫切代求；\n浮生风暴求主引领，\n免遭永死无尽沉沦。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、慈悲救主保守善工，\n聖容光輝作為印記。\n莫讓邪靈詭計撕裂，\n主的聖死所贖之人。",
+          "zh-hans": "三、慈悲救主保守善工，\n圣容光辉作为印记。\n莫让邪灵诡计撕裂，\n主的圣死所赎之人。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、求主憐憫被囚之僕，\n赦免罪人釋放囚徒，\n以主寶血重價贖回，\n在天與主同享喜樂。",
+          "zh-hans": "四、求主怜悯被囚之仆，\n赦免罪人释放囚徒，\n以主宝血重价赎回，\n在天与主同享喜乐。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、永享榮耀尊貴權柄，\n耶穌基督萬世之主，\n聖父聖靈為一上帝，\n治理萬世永世無盡。阿們。",
+          "zh-hans": "五、永享荣耀尊贵权柄，\n耶稣基督万世之主，\n圣父圣灵为一上帝，\n治理万世永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "他們的聲音傳遍天下。",
-        "people": "他們的言語傳到地極。"
+        "leader": {
+          "zh-hant": "他們的聲音傳遍天下。",
+          "zh-hans": "他们的声音传遍天下。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "他們的言語傳到地極。",
+          "zh-hans": "他们的言语传到地极。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "耶穌從那裏往前走，※看見一個人名叫馬太，在稅關坐着，就對他說：「來跟從我！」他就起來跟從耶穌。"
+      "normal": {
+        "zh-hant": "耶穌從那裏往前走，※看見一個人名叫馬太，在稅關坐着，就對他說：「來跟從我！」他就起來跟從耶穌。",
+        "zh-hans": "耶稣从那里往前走，※看见一个人名叫马太，在税关坐着，就对他说：「来跟从我！」他就起来跟从耶稣。",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "For the Legend"
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "傳福音餓使徒聖馬太，又名利未，原是一名稅吏，也就是負責徵收稅款的官員。基督親自在稅關的座位上呼召他；他立刻跟隨了主，隨後又為主和祂的門徒設宴。根據愛任紐、亞歷山大的革利免、俄利根、特土良及其他早期作家的見證，早期教會的傳統認為，馬太曾有一段時間在希伯來人中宣講福音；在前往其他宣教工場以前，他已用他們自己的語言，為他們寫成一部福音書。耶柔米聲稱自己擁有並使用這部希伯來文福音書的抄本，以校正他從希臘文譯成拉丁文的譯本。基督教世界許多地方都喜歡尊稱這位使徒為其教會的創建者；不過，通常的傳統說法是，他前往裏海以南的地區——在此處這地區被稱為「埃提阿伯」——在那裡宣講福音，並以許多奇妙的作為證實福音。其中最偉大的一件事蹟，傳說如下：他使國王的女兒伊菲革尼亞復活，因此王室全家歸信基督。國王去世後，其繼任者希爾塔庫斯要求迎娶伊菲革尼亞；但她因馬太的教導，已許願將自己奉獻給上帝，便依照所許的願拒絕了希爾塔庫斯。因此，馬太在舉行聖奧秘時，奉王命被處死；如此，他以殉道完成了自己的使徒職分。薩萊諾當地流傳一項傳統，稱他的遺體已被遷葬至該處；在教宗格里高利七世的時代，安放於一所奉獻於聖使徒馬太的教堂之中。直到今日，仍有大批信徒虔誠地敬禮他的聖髑。",
+          "zh-hans": "传福音的使徒圣马太，又名利未，原是一名税吏，也就是负责征收税款的官员。基督亲自在税关的座位上呼召他；他立刻跟随了主，随后又为主和祂的门徒设宴。根据爱任纽、亚历山大的革利免、俄利根、特土良及其他早期作家的见证，早期教会的传统认为，马太曾有一段时间在希伯来人中宣讲福音；在前往其他宣教工场以前，他已用他们自己的语言，为他们写成一部福音书。耶柔米声称自己拥有并使用这部希伯来文福音书的抄本，以校正他从希腊文译成拉丁文的译本。基督教世界许多地方都喜欢尊称这位使徒为其教会的创建者；不过，通常的传统说法是，他前往里海以南的地区——在此处这地区被称为「埃提阿伯」——在那里宣讲福音，并以许多奇妙的作为证实福音。其中最伟大的一件事迹，传说如下：他使国王的女儿伊菲革尼亚复活，因此王室全家归信基督。国王去世后，其继任者希尔塔库斯要求迎娶伊菲革尼亚；但她因马太的教导，已许愿将自己奉献给上帝，便依照所许的愿拒绝了希尔塔库斯。因此，马太在举行圣奥秘时，奉王命被处死；如此，他以殉道完成了自己的使徒职分。萨莱诺当地流传一项传统，称他的遗体已被迁葬至该处；在教宗格里高利七世的时代，安放于一所奉献于圣使徒马太的教堂之中。直到今日，仍有大批信徒虔诚地敬礼他的圣髑。",
+          "en": "THE Apostle and Evangelist Matthew, also called Levi, was a publican, that is, a public official for collecting taxes, who was called by Christ himself from the very seat of custom. Whom he forthwith followed, and thereupon gave a feast for the Master and his disciples. The early Christian tradition, on the testimony of Irenæus, Clement of Alexandria, Origen, Tertullian, and other early writers, is that Matthew for some time preached the Gospel amongst the Hebrews, and that before he went to other fields of labour, he wrote for them a Gospel in their own language. Jerome claimed to own and use a copy of this Hebrew Gospel, wherewith to correct his translations from the Greek into Latin. Although many parts of Christendom have delighted to claim this Apostle as the founder of their Churches, the usual tradition is that he went into the regions south of the Caspian Sea, which same are in this instance called Ethiopia, where he preached the Gospel and confirmed the same by many wondrous deeds. The greatest of these is told on this wise: that he raised to life the king’s daughter, Iphigenia, whereby the royal family was converted to Christ; that after the king died Hirtacus his successor demanded Iphigenia to wife; and that she, who through Matthew’s teaching had vowed herself to God, rejected Hirtacus in pursuance of her vow; for which reason Matthew was by royal order put to death whilst celebrating the holy Mysteries, whereby he fulfilled his apostleship in martyrdom. There is a tradition at Salerno that his body was translated thither, and that, in the time of Gregory VII, it was laid in a Church dedicated under the invocation of the Apostle Matthew, where it is to this day devoutly honoured by great numbers of the faithful."
+        }
+      ]
     },
     "collect": {
-      "title": "傳福音使徒聖馬太日",
-      "text": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。"
+      "title": {
+        "zh-hant": "傳福音使徒聖馬太日",
+        "zh-hans": "传福音使徒圣马太日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。",
+        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。 阿们。",
+        "en": ""
+      }
     }
   },
   "morning": {
     "bible_sentences": [
       {
-        "text": "他們都專注於使徒的教導和彼此的團契，擘餅和祈禱。",
-        "reference": "（使徒行傳 2:42）"
+        "text": {
+          "zh-hant": "他們都專注於使徒的教導和彼此的團契，擘餅和祈禱。",
+          "zh-hans": "他们都专注于使徒的教导和彼此的团契，擘饼和祈祷。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（使徒行傳 2:42）",
+          "zh-hans": "（使徒行传 2:42）",
+          "en": ""
+        }
       }
     ],
     "invitatory": {
-      "text": "主是使徒們的君王，※我們當來俯伏敬拜。"
+      "text": {
+        "zh-hant": "主是使徒們的君王，※我們當來俯伏敬拜。",
+        "zh-hans": "主是使徒们的君王，※我们当来俯伏敬拜。",
+        "en": ""
+      }
     },
     "invitatory_hymn": {
-      "title": "使徒心中充滿悲傷",
+      "title": {
+        "zh-hant": "使徒心中充滿悲傷",
+        "zh-hans": "使徒心中充满悲伤",
+        "en": ""
+      },
       "verses": [
-          "一、基督君王永恆恩賜，\n我們頌唱使徒榮耀；\n獻上讚美詩歌時刻，\n感恩之心驅散憂愁。",
-          "二、教會以此君王為榮，\n得勝元帥戰士統領；\n天庭勇士光耀四方，\n普世明燈照亮萬邦。",
-          "三、聖徒信心如此渴慕，\n堅毅盼望永不衰退，\n基督之愛無懼無羞，\n戰勝世間諸般權勢。",
-          "四、聖父榮光藉此彰顯，\n聖子旨意於此成全；\n聖靈喜悅充滿其中，\n天軍天使同聲歡欣。",
-          "五、救主垂聽愛的祈求，\n使我與此榮耀天軍，\n藉主無盡恩典眷顧，\n同享天國永恆福樂。阿們。"
+        {
+          "zh-hant": "一、基督君王永恆恩賜，\n我們頌唱使徒榮耀；\n獻上讚美詩歌時刻，\n感恩之心驅散憂愁。",
+          "zh-hans": "一、基督君王永恒恩赐，\n我们颂唱使徒荣耀；\n献上赞美诗歌时刻，\n感恩之心驱散忧愁。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、教會以此君王為榮，\n得勝元帥戰士統領；\n天庭勇士光耀四方，\n普世明燈照亮萬邦。",
+          "zh-hans": "二、教会以此君王为荣，\n得胜元帅战士统领；\n天庭勇士光耀四方，\n普世明灯照亮万邦。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、聖徒信心如此渴慕，\n堅毅盼望永不衰退，\n基督之愛無懼無羞，\n戰勝世間諸般權勢。",
+          "zh-hans": "三、圣徒信心如此渴慕，\n坚毅盼望永不衰退，\n基督之爱无惧无羞，\n战胜世间诸般权势。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、聖父榮光藉此彰顯，\n聖子旨意於此成全；\n聖靈喜悅充滿其中，\n天軍天使同聲歡欣。",
+          "zh-hans": "四、圣父荣光藉此彰显，\n圣子旨意于此成全；\n圣灵喜悦充满其中，\n天军天使同声欢欣。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、救主垂聽愛的祈求，\n使我與此榮耀天軍，\n藉主無盡恩典眷顧，\n同享天國永恆福樂。阿們。",
+          "zh-hans": "五、救主垂听爱的祈求，\n使我与此荣耀天军，\n藉主无尽恩典眷顾，\n同享天国永恒福乐。阿们。",
+          "en": ""
+        }
       ],
       "versicle": null
     },
     "psalm_antiphons": {
       "antiphons": [
-          "你們要彼此相愛，※像我愛你們一樣，這是我的命令。",
-          "人為朋友捨命，※人的愛心沒有比這個更大的了。",
-          "主說：※你們若遵行我所命令的，就是我的朋友。",
-          "締造和平的人有福了，※清心的人有福了，因為他們必得見上帝。",
-          "你們憑着堅忍，※就必保全性命。"
+        {
+          "zh-hant": "你們要彼此相愛，※像我愛你們一樣，這是我的命令。",
+          "zh-hans": "你们要彼此相爱，※像我爱你们一样，这是我的命令。",
+          "en": "This is my commandment, that ye love one another, as I have loved you."
+        },
+        {
+          "zh-hant": "人為朋友捨命，※人的愛心沒有比這個更大的了。",
+          "zh-hans": "人为朋友舍命，※人的爱心没有比这个更大的了。",
+          "en": "Greater love hath no man than this, that a man lay down his life for his friends."
+        },
+        {
+          "zh-hant": "主說：※你們若遵行我所命令的，就是我的朋友。",
+          "zh-hans": "主说：※你们若遵行我所命令的，就是我的朋友。",
+          "en": "Ye are my friends, if ye do whatsoever I command you, saith the Lord."
+        },
+        {
+          "zh-hant": "締造和平的人有福了，※清心的人有福了，因為他們必得見上帝。",
+          "zh-hans": "缔造和平的人有福了，※清心的人有福了，因为他们必得见上帝。",
+          "en": "Blessed are the peace-makers, blessed are the pure in heart: for they shall see God."
+        },
+        {
+          "zh-hant": "你們憑着堅忍，※就必保全性命。",
+          "zh-hans": "你们凭着坚忍，※就必保全性命。",
+          "en": "In your patience ye shall possess your souls."
+        }
       ]
     },
     "office_hymn": {
-      "title": "Jesu, Corona Virginum",
+      "title": {
+        "zh-hant": "Jesu, Corona Virginum",
+        "zh-hans": "Jesu, Corona Virginum",
+        "en": ""
+      },
       "verses": [
-          "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
-          "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
-          "三、天國門戶聽憑爾命，\n為眾敞開或作關閉；\n願藉爾等神聖權柄，\n解脫我眾諸般罪愆。",
-          "四、昔日所授神聖權能，\n疾病康健皆聽差遣；\n懇求再次醫治我靈，\n恢復聖潔剛強健壯。",
-          "五、基督威嚴審判之主，\n末日時辰降臨之際；\n因其慈悲恩典眷顧，\n賜我永享天國福樂。",
-          "六、讚美皆歸上帝聖父，\n永恆聖子同受頌揚；\n榮耀尊貴理當歸於，\n至聖聖靈保惠聖師。阿們"
+        {
+          "zh-hant": "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
+          "zh-hans": "一、诸天高唱欢欣赞歌，\n大地喜乐同声应和；\n使徒功德崇高圣位，\n佳节良期我众颂扬。",
+          "en": "LET heaven's exultant praises ring,\nAnd earth with joy responsive sing:\nThe Apostle's deeds and high estate\nThis festaltide we celebrate."
+        },
+        {
+          "zh-hant": "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
+          "zh-hans": "二、威严荣耀宝座之上，\n将要审判生者死者；\n普世明灯照耀万方，\n俯听我等虔诚祈祷。",
+          "en": "O ye who, throned in glory dread,\nShall judge the living and the dead:\nTrue lights, the world illumining,\nRegard the suppliant prayer we bring."
+        },
+        {
+          "zh-hant": "三、天國門戶聽憑爾命，\n為眾敞開或作關閉；\n願藉爾等神聖權柄，\n解脫我眾諸般罪愆。",
+          "zh-hans": "三、天国门户听凭尔命，\n为众敞开或作关闭；\n愿借尔等神圣权柄，\n解脱我众诸般罪愆。",
+          "en": "The gates of heaven, at your command,\nTo all or closed or open stand:\nMay we, at your august decree,\nBe loosed from our iniquity."
+        },
+        {
+          "zh-hant": "四、昔日所授神聖權能，\n疾病康健皆聽差遣；\n懇求再次醫治我靈，\n恢復聖潔剛強健壯。",
+          "zh-hans": "四、昔日所授神圣权能，\n疾病康健皆听差遣；\n恳求再次医治我灵，\n恢复圣洁刚强健壮。",
+          "en": "The power of old to you conveyed,\nSickness and health alike obeyed:\nMay ye our ailing souls once more\nTo strength and holiness restore."
+        },
+        {
+          "zh-hant": "五、基督威嚴審判之主，\n末日時辰降臨之際；\n因其慈悲恩典眷顧，\n賜我永享天國福樂。",
+          "zh-hans": "五、基督威严审判之主，\n末日时辰降临之际；\n因其慈悲恩典眷顾，\n赐我永享天国福乐。",
+          "en": "That Christ, the avenging Judge of doom,\nWhen he at time's last end shall come,\nMay grant us, for his mercy's sake,\nOf joys eternal to partake."
+        },
+        {
+          "zh-hant": "六、讚美皆歸上帝聖父，\n永恆聖子同受頌揚；\n榮耀尊貴理當歸於，\n至聖聖靈保惠聖師。阿們。",
+          "zh-hans": "六、赞美皆归上帝圣父，\n永恒圣子同受颂扬；\n荣耀尊贵理当归于，\n至圣圣灵保惠圣师。阿们。",
+          "en": "All laud to God the Father be,\nAll praise, eternal Son to thee:\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+        }
       ],
       "versicle": {
-        "leader": "他們傳揚上帝所做的事，",
-        "people": "並曉得祂的作為。"
+        "leader": {
+          "zh-hant": "他們傳揚上帝所做的事，",
+          "zh-hans": "他们传扬上帝所做的事，",
+          "en": "They declared the works of God. "
+        },
+        "people": {
+          "zh-hant": "並曉得祂的作為。",
+          "zh-hans": "并晓得祂的作为。",
+          "en": "And wisely considered of his doings."
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "使徒及傳福音者聖馬太※並不傳揚自己，乃是傳揚基督榮耀的福音；基督本是上帝的像，他的光已照耀我們。"
+      "normal": {
+        "zh-hant": "使徒及傳福音者聖馬太※並不傳揚自己，乃是傳揚基督榮耀的福音；基督本是上帝的像，他的光已照耀我們。",
+        "zh-hans": "使徒及传福音者圣马太※并不传扬自己，乃是传扬基督荣耀的福音；基督本是上帝的像，他的光已照耀我们。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "傳福音使徒聖馬太日",
-      "text": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。"
+      "title": {
+        "zh-hant": "傳福音使徒聖馬太日",
+        "zh-hans": "传福音使徒圣马太日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。",
+        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。 阿们。",
+        "en": ""
+      }
     }
   },
   "evening": {
     "bible_sentences": [
       {
-        "text": "在那些日子，耶穌出去，上山祈禱，整夜向上帝禱告。到了天亮，他叫門徒來，就從他們中間挑選十二個人，稱他們為使徒。",
-        "reference": "（路加福音 6:12-13）"
+        "text": {
+          "zh-hant": "在那些日子，耶穌出去，上山祈禱，整夜向上帝禱告。到了天亮，他叫門徒來，就從他們中間挑選十二個人，稱他們為使徒。",
+          "zh-hans": "在那些日子，耶稣出去，上山祈祷，整夜向上帝祷告。到了天亮，他叫门徒来，就从他们中间挑选十二个人，称他们为使徒。",
+          "en": "AND it came to pass in those days, that Jesus went out into a mountain to pray, and continued all night in prayer to God. And when it was day, he called unto him his disciples: and of them he chose twelve, whom also he named Apostles."
+        },
+        "reference": {
+          "zh-hant": "（路加福音 6:12-13）",
+          "zh-hans": "（路加福音 6:12-13）",
+          "en": "(Luke vi.12.)"
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-          "主起了誓，※絕不改變。你是永遠為祭司。",
-          "主※叫他們與王子同坐。",
-          "主已解开※捆我的绳索，我要献感谢祭与主。",
-          "他們※哭泣去撒谷种。",
-          "主阿，※我極其尊敬主的朋友，他們的王權極為堅固。"
+        {
+          "zh-hant": "主起了誓，※絕不改變。你是永遠為祭司。",
+          "zh-hans": "主起了誓，※绝不改变。你是永远为祭司。",
+          "en": "The Lord sware and will not repent: Thou art a priest for ever."
+        },
+        {
+          "zh-hant": "主※叫他們與王子同坐。",
+          "zh-hans": "主※叫他们与王子同坐。",
+          "en": "The Lord shall set him with the princes of his people."
+        },
+        {
+          "zh-hant": "主已解开※捆我的绳索，我要献感谢祭与主。",
+          "zh-hans": "主已解开※捆我的绳索，我要献感谢祭与主。",
+          "en": "Thou, O Lord, hast broken my bonds in sunder: unto thee will I offer the sacrifice of praise."
+        },
+        {
+          "zh-hant": "他們※哭泣去撒谷种。",
+          "zh-hans": "他们※哭泣去撒谷种。",
+          "en": "They went on their way weeping and bearing forth good seed."
+        },
+        {
+          "zh-hant": "主阿，※我極其尊敬主的朋友，他們的王權極為堅固。",
+          "zh-hans": "主阿，※我极其尊敬主的朋友，他们的王权极为坚固。",
+          "en": "Their governance is exceeding stedfast, and thy friends are held in highest honour, O God. "
+        }
       ]
     },
     "office_hymn": {
-      "title": "Jesu, Corona Virginum",
+      "title": {
+        "zh-hant": "Jesu, Corona Virginum",
+        "zh-hans": "Jesu, Corona Virginum",
+        "en": ""
+      },
       "verses": [
-          "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
-          "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
-          "三、天國門戶聽憑爾命，\n為眾敞開或作關閉；\n願藉爾等神聖權柄，\n解脫我眾諸般罪愆。",
-          "四、昔日所授神聖權能，\n疾病康健皆聽差遣；\n懇求再次醫治我靈，\n恢復聖潔剛強健壯。",
-          "五、基督威嚴審判之主，\n末日時辰降臨之際；\n因其慈悲恩典眷顧，\n賜我永享天國福樂。",
-          "六、讚美皆歸上帝聖父，\n永恆聖子同受頌揚；\n榮耀尊貴理當歸於，\n至聖聖靈保惠聖師。阿們。"
+        {
+          "zh-hant": "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
+          "zh-hans": "一、诸天高唱欢欣赞歌，\n大地喜乐同声应和；\n使徒功德崇高圣位，\n佳节良期我众颂扬。",
+          "en": "LET heaven's exultant praises ring,\nAnd earth with joy responsive sing:\nThe Apostle's deeds and high estate\nThis festaltide we celebrate."
+        },
+        {
+          "zh-hant": "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
+          "zh-hans": "二、威严荣耀宝座之上，\n将要审判生者死者；\n普世明灯照耀万方，\n俯听我等虔诚祈祷。",
+          "en": "O ye who, throned in glory dread,\nShall judge the living and the dead:\nTrue lights, the world illumining,\nRegard the suppliant prayer we bring."
+        },
+        {
+          "zh-hant": "三、天國門戶聽憑爾命，\n為眾敞開或作關閉；\n願藉爾等神聖權柄，\n解脫我眾諸般罪愆。",
+          "zh-hans": "三、天国门户听凭尔命，\n为众敞开或作关闭；\n愿借尔等神圣权柄，\n解脱我众诸般罪愆。",
+          "en": "The gates of heaven, at your command,\nTo all or closed or open stand:\nMay we, at your august decree,\nBe loosed from our iniquity."
+        },
+        {
+          "zh-hant": "四、昔日所授神聖權能，\n疾病康健皆聽差遣；\n懇求再次醫治我靈，\n恢復聖潔剛強健壯。",
+          "zh-hans": "四、昔日所授神圣权能，\n疾病康健皆听差遣；\n恳求再次医治我灵，\n恢复圣洁刚强健壮。",
+          "en": "The power of old to you conveyed,\nSickness and health alike obeyed:\nMay ye our ailing souls once more\nTo strength and holiness restore."
+        },
+        {
+          "zh-hant": "五、基督威嚴審判之主，\n末日時辰降臨之際；\n因其慈悲恩典眷顧，\n賜我永享天國福樂。",
+          "zh-hans": "五、基督威严审判之主，\n末日时辰降临之际；\n因其慈悲恩典眷顾，\n赐我永享天国福乐。",
+          "en": "That Christ, the avenging Judge of doom,\nWhen he at time's last end shall come,\nMay grant us, for his mercy's sake,\nOf joys eternal to partake."
+        },
+        {
+          "zh-hant": "六、讚美皆歸上帝聖父，\n永恆聖子同受頌揚；\n榮耀尊貴理當歸於，\n至聖聖靈保惠聖師。阿們。",
+          "zh-hans": "六、赞美皆归上帝圣父，\n永恒圣子同受颂扬；\n荣耀尊贵理当归于，\n至圣圣灵保惠圣师。阿们。",
+          "en": "All laud to God the Father be,\nAll praise, eternal Son to thee:\nAll glory, as is ever meet,\nTo God the Holy Paraclete. Amen."
+        }
       ],
       "versicle": {
-        "leader": "他們傳揚上帝所做的事，",
-        "people": "並曉得祂的作為。"
+        "leader": {
+          "zh-hant": "他們傳揚上帝所做的事，",
+          "zh-hans": "他们传扬上帝所做的事，",
+          "en": "They declared the works of God. "
+        },
+        "people": {
+          "zh-hant": "並曉得祂的作為。",
+          "zh-hans": "并晓得祂的作为。",
+          "en": "And wisely considered of his doings."
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "眾傳福音者殷勤探究※古人的智慧；並藉眾先知的話語，證實其所記述之事的真實。"
+      "normal": {
+        "zh-hant": "眾傳福音者殷勤探究※古人的智慧；並藉眾先知的話語，證實其所記述之事的真實。",
+        "zh-hans": "众传福音者殷勤探究※古人的智慧；并藉众先知的话语，证实其所记述之事的真实。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "傳福音使徒聖馬太日",
-      "text": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。"
+      "title": {
+        "zh-hant": "傳福音使徒聖馬太日",
+        "zh-hans": "传福音使徒圣马太日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。",
+        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。 阿们。",
+        "en": ""
+      }
     }
   }
 }

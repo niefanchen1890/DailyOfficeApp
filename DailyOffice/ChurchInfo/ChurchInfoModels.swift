@@ -108,7 +108,7 @@ struct WPPost: Codable, Identifiable {
     var formattedDate: String {
         guard let d = parsedDate else { return "" }
         let f = DateFormatter()
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         f.dateStyle = .long
         return f.string(from: d)
     }

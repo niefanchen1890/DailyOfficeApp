@@ -101,14 +101,14 @@ struct MartyrologyMonthDaysView: View {
     private func formattedWeekday(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "EEEE"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
     private func formattedDateDetail(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "M月d日"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
 }
@@ -167,14 +167,14 @@ struct MartyrologyDayDetailView: View {
     private func formattedFullDate(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
     private func formattedNavigationTitle(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "M月d日"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
 }

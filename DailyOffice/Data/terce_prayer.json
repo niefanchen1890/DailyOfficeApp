@@ -1,0 +1,164 @@
+{
+  "openingResponses": [
+    {
+      "leader": { "zh-hant": "上帝阿，快來拯救我們。", "zh-hans": "上帝阿，快来拯救我们。", "en": "O God, make speed to save us." },
+      "people": { "zh-hant": "主阿，趕緊幫助我們。", "zh-hans": "主阿，赶紧帮助我们。", "en": "O Lord, make haste to help us." }
+    },
+    {
+      "leader": { "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；", "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；", "en": "Glory be to the Father, and to the Son, and to the Holy Ghost;" },
+      "people": { "zh-hant": "起初怎樣，現在以及永遠也是怎樣，世世無盡。阿們。", "zh-hans": "起初怎样，现在以及永远也是怎样，世世无尽。阿们。", "en": "As it was in the beginning, is now, and ever shall be, world without end. Amen." }
+    },
+    {
+      "leader": { "zh-hant": "你們應當讚美主。", "zh-hans": "你们应当赞美主。", "en": "Praise ye the Lord." },
+      "people": { "zh-hant": "主的名應當讚美。", "zh-hans": "主的名应当赞美。", "en": "The Lord's Name be praised." }
+    }
+  ],
+  "hymn": {
+    "title": { "zh-hant": "聖詩", "zh-hans": "圣诗", "en": "Hymn" },
+    "rubric": null,
+    "paragraphs": [
+      { "zh-hant": "一、懇求聖靈自天來至，\n聖靈與父與子為一。\n施恩據守我等靈魂，\n以全聖德充滿吾心。", "zh-hans": "一、恳求圣灵自天来至，\n圣灵与父与子为一。\n施恩据守我等灵魂，\n以全圣德充满吾心。", "en": "COME, Holy Ghost, with God the Son,\nAnd God the Father, ever One;\nShed forth thy grace within our breast,\nAnd dwell with us, a ready guest." },
+      { "zh-hant": "二、所思所想所言所行，\n願全盡力榮耀主名。\n願愛如火滿照我心，\n推廣其熱激發他人。", "zh-hans": "二、所思所想所言所行，\n愿全尽力荣耀主名。\n愿爱如火满照我心，\n推广其热激发他人。", "en": "By every power, by heart and tongue,\nBy act and deed, thy praise be sung;\nInflame with perfect love each sense,\nThat others' souls may kindle thence." },
+      { "zh-hant": "三、至聖上帝三位一體，\n聖父聖靈與子合一。\n上帝至上永遠為君，\n我等所禱懇求應允。阿們。", "zh-hans": "三、至圣上帝三位一体，\n圣父圣灵与子合一。\n上帝至上永远为君，\n我等所祷恳求应允。阿们。", "en": "O Father, that we ask be done,\nThrough Jesus Christ, thine only Son,\nWho, with the Holy Ghost and thee,\nDoth live and reign eternally. Amen." }
+    ],
+    "responses": []
+  },
+  "pentecostHymn": {
+    "title": { "zh-hant": "聖詩", "zh-hans": "圣诗", "en": "Hymn" },
+    "rubric": null,
+    "paragraphs": [
+      { "zh-hant": "一、懇求造主聖靈降臨，\n俯允安居我眾靈魂；\n沛降聖寵屬天扶佑，\n充滿祢所受造之心。", "zh-hans": "一、恳求造主圣灵降临，\n俯允安居我众灵魂；\n沛降圣宠属天扶佑，\n充满祢所受造之心。", "en": "COME, Holy Ghost, Creator blest,\nVouchsafe within our souls to rest;\nCome with thy grace and heavenly aid,\nAnd fill the hearts which thou hast made." },
+      { "zh-hant": "二、吾等尊呼保惠聖靈，\n至高上帝特殊洪恩；\n祢乃活泉神火聖愛，\n亦為自天屬靈恩膏。", "zh-hans": "二、吾等尊呼保惠圣灵，\n至高上帝特殊洪恩；\n祢乃活泉神火圣爱，\n亦为自天属灵恩膏。", "en": "To thee, the Comforter, we cry,\nTo thee, the Gift of God most high,\nThe Fount of life, the Fire of love,\nThe soul's Anointing from above." },
+      { "zh-hant": "三、奧妙七恩皆祢所賜，\n上帝之手威嚴指頭；\n祢乃聖父信實應許，\n賜我唇舌宣講之能。", "zh-hans": "三、奥妙七恩皆祢所赐，\n上帝之手威严指头；\n祢乃圣父信实应许，\n赐我唇舌宣讲之能。", "en": "The sevenfold gifts of grace are thine,\nO Finger of the Hand Divine;\nTrue Promise of the Father thou,\nWho dost the tongue with speech endow." },
+      { "zh-hant": "四、懇求真光點燃感官，\n更以聖愛激發我心；\n我等凡軀積弱不堪，\n求以不朽大能堅固。", "zh-hans": "四、恳求真光点燃感官，\n更以圣爱激发我心；\n我等凡躯积弱不堪，\n求以不朽大能坚固。", "en": "Thy light to every sense impart,\nAnd shed thy love in every heart;\nThine own unfailing might supply\nTo strengthen our infirmity." },
+      { "zh-hant": "五、驅逐屬靈仇敵遠遁，\n惠賜常存安穩太平；\n賴祢前引作我嚮導，\n免受一切凶險災禍。", "zh-hans": "五、驱逐属灵仇敌远遁，\n惠赐常存安稳太平；\n赖祢前引作我向导，\n免受一切凶险灾祸。", "en": "Drive far away our ghostly foe,\nAnd thine abiding peace bestow;\nIf thou be our preventing Guide,\nNo evil can our steps betide." },
+      { "zh-hant": "六、藉祢使我認識聖父，\n藉祢使我深知聖子；\n祢乃父子共發之靈，\n世世代代咸同信認。", "zh-hans": "六、藉祢使我认识圣父，\n藉祢使我深知圣子；\n祢乃父子共发之灵，\n世世代代咸同信认。", "en": "Make thou to us the Father known,\nTeach us the eternal Son to own\nAnd thee, whose name we ever bless,\nOf both the Spirit, to confess." },
+      { "zh-hant": "七、讚美歸於上帝聖父，\n亦歸聖子以及聖靈；\n懇求基督我等之主，\n傾注聖靈無盡恩賜。阿們。", "zh-hans": "七、赞美归于上帝圣父，\n亦归圣子以及圣灵；\n恳求基督我等之主，\n倾注圣灵无尽恩赐。阿们。", "en": "Praise we the Father and the Son,\nAnd Holy Spirit with them One:\nAnd may the Son on us bestow\nThe gifts that from the Spirit flow. Amen." }
+    ],
+    "responses": []
+  },
+  "seasonalHymnEndings": {
+    "christmas_to_purification": { "zh-hant": "童女所生救主耶穌，常受一切讚美榮光。\n榮耀亦歸聖父聖靈，同受尊崇萬世無疆。阿們。", "zh-hans": "童女所生救主耶稣，常受一切赞美荣光。\n荣耀亦归圣父圣灵，同受尊崇万世无疆。阿们。", "en": "All honour, laud, and glory be,\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "epiphany_octave": { "zh-hant": "一切榮耀歸於恩主，\n為祢今日榮耀顯現；\n歸於聖父及與聖靈，稱頌讚美永世無盡。阿們。", "zh-hans": "一切荣耀归于恩主，\n为祢今日荣耀显现；\n归于圣父及与圣灵，称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay\nFor thine Epiphany to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "eastertide": { "zh-hant": "吾等獻上一切榮耀，\n歸於死而復生之主；\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "吾等献上一切荣耀，\n归于死而复生之主；\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "To thee who, dead, again dost live,\nAll glory, Lord, thy people give;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "ascensiontide": { "zh-hant": "我眾今獻所有榮耀，\n歸於超越眾星之主，\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "我众今献所有荣耀，\n归于超越众星之主，\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nAscending o'er the stars to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "sacred_heart": { "zh-hant": "我將榮耀全歸與主，\n主從聖心傾流恩典；\n如今與父永遠同在，\n偕同聖靈永世無盡。阿們。", "zh-hans": "我将荣耀全归与主，\n主从圣心倾流恩典；\n如今与父永远同在，\n偕同圣灵永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nWho from thy Heart dost grace convey;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "transfiguration": { "zh-hant": "榮耀全歸我主基督，\n今日山上顯現光輝；\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "荣耀全归我主基督，\n今日山上显现光辉；\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nTransfigured on the mount to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "christ_the_king": { "zh-hant": "我獻榮耀歸於耶穌，\n掌管普世國度之主；\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "我献荣耀归于耶稣，\n掌管普世国度之主；\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nThe King of all the earth to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "bvm": { "zh-hant": "童女所生救主耶穌，\n常受一切讚美榮光。\n榮耀亦歸聖父聖靈，\n同受尊崇萬世無疆。阿們。", "zh-hans": "童女所生救主耶稣，\n常受一切赞美荣光。\n荣耀亦归圣父圣灵，\n同受尊崇万世无疆。阿们。", "en": "All honour, laud, and glory be,\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." }
+  },
+  "bvmFeastAntiphon": { "zh-hant": "真福童貞女聖馬利亞：※你既獲母親的尊榮，又未損貞女的純潔。", "zh-hans": "真福童贞女圣玛利亚：※你既获母亲的尊荣，又未损贞女的纯洁。", "en": "O Holy Mary, be thou an help to the helpless..." },
+  "psalmAntiphons": [
+    {
+      "season": { "zh-hant": "全年通用", "zh-hans": "全年通用", "en": "Ordinary Time" },
+      "text": { "zh-hant": "我呼求，＊", "zh-hans": "我呼求，＊", "en": "I cried unto the Lord, *" },
+      "fullText": { "zh-hant": "我呼求，主垂聽我。", "zh-hans": "我呼求，主垂听我。", "en": "I cried unto the Lord, and he heard me." }
+    },
+    {
+      "season": { "zh-hant": "降臨期", "zh-hans": "降临期", "en": "Advent" },
+      "text": { "zh-hant": "看哪，主帶著能力和榮耀，＊", "zh-hans": "看哪，主带着能力和荣耀，＊", "en": "Behold, the Lord shall come with glory and power, *" },
+      "fullText": { "zh-hant": "看哪，主帶著能力和榮耀，駕著天上的雲來臨。哈利路亞。", "zh-hans": "看哪，主带着能力和荣耀，驾着天上的云来临。哈利路亚。", "en": "Behold, the Lord shall come with glory and power, to visit his people in peace. Alleluia." }
+    },
+    {
+      "season": { "zh-hant": "聖誕期", "zh-hans": "圣诞期", "en": "Christmas" },
+      "text": { "zh-hant": "孕婦生了名叫「永恆」的君王，＊", "zh-hans": "孕妇生了名叫「永恒」的君王，＊", "en": "A woman with child hath brought forth the King whose name is eternal, *" },
+      "fullText": { "zh-hant": "孕婦生了名叫「永恆」的君王，她兼有童貞女的榮譽，又獲得做母親的喜樂；前不見古人，後不見來者，哈利路亞。", "zh-hans": "孕妇生了名叫「永恒」的君王，她兼有童贞女的荣誉，又获得做母亲的喜乐；前不见古人，后不见来者，哈利路亚。", "en": "A woman with child hath brought forth the King whose name is eternal, having both a mother's joy and a virgin's honour; such an one hath not been seen before, nor shall be again. Alleluia." }
+    },
+    {
+      "season": { "zh-hant": "大齋期", "zh-hans": "大斋期", "en": "Lent" },
+      "text": { "zh-hant": "懺悔之日臨近我們，＊", "zh-hans": "忏悔之日临近我们，＊", "en": "Let us amend for the better in those things wherein we have sinned through ignorance; *" },
+      "fullText": { "zh-hant": "懺悔之日臨近我們，為補贖我們的罪，拯救我們的靈魂。", "zh-hans": "忏悔之日临近我们，为补赎我们的罪，拯救我们的灵魂。", "en": "Let us amend for the better in those things wherein we have sinned through ignorance; lest suddenly overtaken by the day of death, we seek space for repentance, and be not able to find it." }
+    },
+    {
+      "season": { "zh-hant": "復活期", "zh-hans": "复活期", "en": "Eastertide" },
+      "text": { "zh-hant": "哈利路亞，哈利路亞，＊", "zh-hans": "哈利路亚，哈利路亚，＊", "en": "Alleluia, alleluia, *" },
+      "fullText": { "zh-hant": "哈利路亞，哈利路亞，哈利路亞，哈利路亞。", "zh-hans": "哈利路亚，哈利路亚，哈利路亚，哈利路亚。", "en": "Alleluia, alleluia, alleluia, alleluia." }
+    }
+  ],
+  "readings": [
+    {
+      "season": { "zh-hant": "全年平日", "zh-hans": "全年平日", "en": "Ordinary Time" },
+      "content": { "zh-hant": "主啊，求你醫治我，我就痊癒，拯救我，我便得救；因你是我所讚美的。", "zh-hans": "主啊，求你医治我，我就痊愈，拯救我，我便得救；因你是我所赞美的。", "en": "Heal me, O Lord, and I shall be healed; save me, and I shall be saved: for thou art my praise." },
+      "reference": { "zh-hant": "耶利米書 17:14", "zh-hans": "耶利米书 17:14", "en": "Jeremiah 17:14" }
+    },
+    {
+      "season": { "zh-hant": "主日與瞻禮日", "zh-hans": "主日与瞻礼日", "en": "Sundays and Feasts" },
+      "content": { "zh-hant": "深哉，上帝的豐富、智慧和知識！他的判斷何其難測！他的蹤跡何其難尋！", "zh-hans": "深哉，上帝的丰富、智慧和知识！他的判断何其难测！他的踪迹何其难寻！", "en": "O the depth of the riches both of the wisdom and knowledge of God! how unsearchable are his judgments, and his ways past finding out!" },
+      "reference": { "zh-hant": "羅馬書 11:33", "zh-hans": "罗马书 11:33", "en": "Romans 11:33" }
+    },
+    {
+      "season": { "zh-hant": "復活節期", "zh-hans": "复活节期", "en": "Eastertide" },
+      "content": { "zh-hant": "因為凡從上帝生的就勝過世界；使我們勝過世界的就是我們的信心。", "zh-hans": "因为凡从上帝生的就胜过世界；使我们胜过世界的就是我们的信心。", "en": "For whatsoever is born of God overcometh the world: and this is the victory that overcometh the world, even our faith." },
+      "reference": { "zh-hant": "約翰一書 5:4", "zh-hans": "约翰一书 5:4", "en": "1 John 5:4" }
+    }
+  ],
+  "shortResponsesOrdinary": {
+    "title": { "zh-hant": "全年平日", "zh-hans": "全年平日", "en": "Ordinary Time" },
+    "responses": [
+      { "leader": { "zh-hant": "我雖得罪祢，仍求祢醫救我命。", "zh-hans": "我虽得罪祢，仍求祢医救我命。", "en": "V. Heal my soul, for I have sinned against thee." }, "people": { "zh-hant": "我雖得罪祢，仍求祢醫救我命。", "zh-hans": "我虽得罪祢，仍求祢医救我命。", "en": "R. Heal my soul, for I have sinned against thee." } },
+      { "leader": { "zh-hant": "我說，主阿，求祢憐憫我，", "zh-hans": "我说，主阿，求祢怜悯我，", "en": "V. I said, Lord, be merciful unto me." }, "people": { "zh-hant": "我雖得罪祢。", "zh-hans": "我虽得罪祢。", "en": "R. For I have sinned against thee." } },
+      { "leader": { "zh-hant": "但願榮耀，歸於聖父、聖子、聖靈；", "zh-hans": "但愿荣耀，归于圣父、圣子、圣灵；", "en": "V. Glory be to the Father, and to the Son, and to the Holy Ghost." }, "people": { "zh-hant": "我雖得罪祢，仍求祢醫救我命。", "zh-hans": "我虽得罪祢，仍求祢医救我命。", "en": "R. Heal my soul, for I have sinned against thee." } },
+      { "leader": { "zh-hant": "祢從前幫助我，", "zh-hans": "祢从前帮助我，", "en": "V. Thou hast been my succour." }, "people": { "zh-hant": "莫丟棄我，求救我的上帝莫撇開我。", "zh-hans": "莫丢弃我，求救我的上帝莫撇开我。", "en": "R. Leave me not, neither forsake me, O God of my salvation." } }
+    ]
+  },
+  "shortResponsesFeastEaster": {
+    "title": { "zh-hant": "主日、瞻禮日、復活期", "zh-hans": "主日、瞻礼日、复活期", "en": "Feasts and Eastertide" },
+    "responses": [
+      { "leader": { "zh-hant": "上帝阿，叫我心向祢的法度。哈利路亞，哈利路亞。", "zh-hans": "上帝阿，叫我心向祢的法度。哈利路亚，哈利路亚。", "en": "V. Incline my heart unto thy testimonies, O God. Alleluia, alleluia." }, "people": { "zh-hant": "上帝阿，叫我心向祢的法度。哈利路亞，哈利路亞。", "zh-hans": "上帝阿，叫我心向祢的法度。哈利路亚，哈利路亚。", "en": "R. Incline my heart unto thy testimonies, O God. Alleluia, alleluia." } },
+      { "leader": { "zh-hant": "叫我的眼睛不看虛假，哈利路亞，哈利路亞。", "zh-hans": "叫我的眼睛不看虚假，哈利路亚，哈利路亚。", "en": "V. O turn away mine eyes, lest they behold vanity. Alleluia, alleluia." }, "people": { "zh-hant": "叫我心向祢的法度。哈利路亞，哈利路亞。", "zh-hans": "叫我心向祢的法度。哈利路亚，哈利路亚。", "en": "R. Incline my heart unto thy testimonies, O God. Alleluia, alleluia." } },
+      { "leader": { "zh-hant": "但願榮耀，歸於聖父、聖子、聖靈；", "zh-hans": "但愿荣耀，归于圣父、圣子、圣灵；", "en": "V. Glory be to the Father, and to the Son, and to the Holy Ghost." }, "people": { "zh-hant": "上帝阿，叫我心向祢的法度。哈利路亞，哈利路亞。", "zh-hans": "上帝阿，叫我心向祢的法度。哈利路亚，哈利路亚。", "en": "R. Incline my heart unto thy testimonies, O God. Alleluia, alleluia." } },
+      { "leader": { "zh-hant": "祢從前幫助我，哈利路亞。", "zh-hans": "祢从前帮助我，哈利路亚。", "en": "V. Thou hast been my succour. Alleluia." }, "people": { "zh-hant": "莫丟棄我，求救我的上帝莫撇開我。哈利路亞。", "zh-hans": "莫丢弃我，求救我的上帝莫撇开我。哈利路亚。", "en": "R. Leave me not, neither forsake me, O God of my salvation. Alleluia." } }
+    ]
+  },
+  "shortResponsesFeastOrdinary": {
+    "title": { "zh-hant": "主日、瞻禮日、復活期", "zh-hans": "主日、瞻礼日、复活期", "en": "Feasts and Eastertide" },
+    "responses": [
+      { "leader": { "zh-hant": "上帝阿，叫我心向祢的法度。", "zh-hans": "上帝阿，叫我心向祢的法度。", "en": "V. Incline my heart unto thy testimonies, O God." }, "people": { "zh-hant": "上帝阿，叫我心向祢的法度。", "zh-hans": "上帝阿，叫我心向祢的法度。", "en": "R. Incline my heart unto thy testimonies, O God." } },
+      { "leader": { "zh-hant": "叫我的眼睛不看虛假。", "zh-hans": "叫我的眼睛不看虚假。", "en": "V. O turn away mine eyes, lest they behold vanity." }, "people": { "zh-hant": "叫我心向祢的法度。", "zh-hans": "叫我心向祢的法度。", "en": "R. Incline my heart unto thy testimonies, O God." } },
+      { "leader": { "zh-hant": "但願榮耀，歸於聖父、聖子、聖靈；", "zh-hans": "但愿荣耀，归于圣父、圣子、圣灵；", "en": "V. Glory be to the Father, and to the Son, and to the Holy Ghost." }, "people": { "zh-hant": "上帝阿，叫我心向祢的法度。", "zh-hans": "上帝阿，叫我心向祢的法度。", "en": "R. Incline my heart unto thy testimonies, O God." } },
+      { "leader": { "zh-hant": "祢從前幫助我。", "zh-hans": "祢从前帮助我。", "en": "V. Thou hast been my succour." }, "people": { "zh-hant": "莫丟棄我，求救我的上帝莫撇開我。", "zh-hans": "莫丢弃我，求救我的上帝莫撇开我。", "en": "R. Leave me not, neither forsake me, O God of my salvation." } }
+    ]
+  },
+  "prayersSection": {
+    "title": { "zh-hant": "祈禱", "zh-hans": "祈祷", "en": "Prayers" },
+    "rubric": { "zh-hant": "¶ 眾跪，在復活節期外所有的平日誦唸以下祈禱。在主日、瞻禮日以及八日慶期中省略。若省略，則直接唸祝文。", "zh-hans": "¶ 众跪，在复活节期外所有的平日诵念以下祈祷。在主日、瞻礼日以及八日庆期中省略。若省略，则直接念祝文。", "en": "¶ The Prayers following are said kneeling, on all ferias outside of Eastertide. On Sundays, Feasts, and Octaves, they are omitted, and the Collect is said directly." },
+    "paragraphs": [
+      { "zh-hant": "求主憐憫；\n求基督憐憫；\n求主憐憫。", "zh-hans": "求主怜悯；\n求基督怜悯；\n求主怜悯。", "en": "Lord, have mercy upon us.\nChrist, have mercy upon us.\nLord, have mercy upon us." },
+      { "zh-hant": "我們在天上的父，願人都尊父的名為聖。願父的國降臨。願父的旨意行在地上，如同行在天上。日用的糧食，求父今天賜給我們。又求饒恕我們的罪，如同我們饒恕得罪我們的人。", "zh-hans": "我们在天上的父，愿人都尊父的名为圣。愿父的国降临。愿父的旨意行在地上，如同行在天上。日用的粮食，求父今天赐给我们。又求饶恕我们的罪，如同我们饶恕得罪我们的人。", "en": "OUR Father, who art in heaven..." }
+    ],
+    "responses": []
+  },
+  "prayersResponses": [
+    { "leader": { "zh-hant": "保佑我們不遇試探，", "zh-hans": "保佑我们不遇试探，", "en": "V. And lead us not into temptation," }, "people": { "zh-hant": "拯救我們脫離兇惡。", "zh-hans": "拯救我们脱离凶恶。", "en": "R. But deliver from evil." } },
+    { "leader": { "zh-hant": "求祢叫我存活，我必讚美主，", "zh-hans": "求祢叫我存活，我必赞美主，", "en": "V. O let my soul live, and it shall praise thee," }, "people": { "zh-hant": "求祢照祢的公義拯救我。", "zh-hans": "求祢照祢的公义拯救我。", "en": "R. And thy judgments shall help me." } },
+    { "leader": { "zh-hant": "我迷失道途，如同亡羊，", "zh-hans": "我迷失道途，如同亡羊，", "en": "V. I have gone astray like a sheep that is lost," }, "people": { "zh-hant": "求祢尋回僕人，因為我不忘記祢的命令。", "zh-hans": "求祢寻回仆人，因为我不忘记祢的命令。", "en": "R. O seek thy servant, for I do not forget thy commandments." } }
+  ],
+  "collectOpening": [
+    {
+      "leader": { "zh-hant": "願主與你們同在。", "zh-hans": "愿主与你们同在。", "en": "V. The Lord be with you." },
+      "people": { "zh-hant": "願主與你的心靈同在。", "zh-hans": "愿主与你的心灵同在。", "en": "R. And with thy spirit." }
+    }
+  ],
+  "dailyCollectText": {
+    "zh-hant": "上帝阿，求祢助我今日虔誠的事奉祢，扶持我們在世界的勞碌；使我們明智去工作，暗中行施捨；使我們飲食有胃口，就坐有謹慎，睡眠有節制，合宜的讓朋友歡欣，愉快的睡覺，安穩的入眠；以我們的主耶穌基督為樂。阿們。",
+    "zh-hans": "上帝阿，求祢助我今日虔诚的事奉祢，扶持我们在世界的劳碌；使我们明智去工作，暗中行施舍；使我们饮食有胃口，就坐有谨慎，睡眠有节制，合宜的让朋友欢欣，愉快的睡觉，安稳的入眠；以我们的主耶稣基督为乐。阿们。",
+    "en": "O Lord God, who hast brought us to the beginning of this day; Defend us in the same with thy mighty power..."
+  },
+  "collectEndingResponses": [
+    { "leader": { "zh-hant": "願主與你們同在。", "zh-hans": "愿主与你们同在。", "en": "V. The Lord be with you." }, "people": { "zh-hant": "願主與你的心靈同在。", "zh-hans": "愿主与你的心灵同在。", "en": "R. And with thy spirit." } },
+    { "leader": { "zh-hant": "我們要讚美主。", "zh-hans": "我们要赞美主。", "en": "V. Let us bless the Lord." }, "people": { "zh-hant": "感謝上帝。", "zh-hans": "感谢上帝。", "en": "R. Thanks be to God." } },
+    { "leader": { "zh-hant": "願一切離世信徒的靈魂，都靠著上帝的慈悲，得享安息。", "zh-hans": "愿一切离世信徒的灵魂，都靠着上帝的慈悲，得享安息。", "en": "V. May the souls of the faithful, through the mercy of God, rest in peace." }, "people": { "zh-hant": "阿們。", "zh-hans": "阿们。", "en": "R. Amen." } }
+  ],
+  "closingText": {
+    "title": null,
+    "rubric": null,
+    "paragraphs": [
+      {
+        "zh-hant": "他愛我們，用自己的血使我們從罪中得釋放，又使我們成為國度，作他父上帝的祭司。願榮耀、權能歸給他，直到永永遠遠。阿們！（啟示錄 1:4-6）",
+        "zh-hans": "他爱我们，用自己的血使我们从罪中得释放，又使我们成为国度，作他父上帝的祭司。愿荣耀、权能归给他，直到永永远远。阿们！（启示录 1:4-6）",
+        "en": "Unto him that loved us, and washed us from our sins in his own blood... (Rev 1:4-6)"
+      }
+    ],
+    "responses": []
+  }
+}

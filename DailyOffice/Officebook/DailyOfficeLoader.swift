@@ -8,10 +8,12 @@ struct BiographyJSON: Codable {
     let rubric: String?
     let paragraphs: [Paragraph]
 
-    // 段落類型：正文 或 來源標注（紅色居中，非誦念正文）
+    // 段落類型擴充
     enum Paragraph {
-        case text(String)
-        case source(String)
+        case text(String)      // 一般正文
+        case source(String)    // 來源標注（紅色居中斜體）
+        case subtitle(String)  // 小標題（紅色粗體）
+        case centered(String)  // 居中正文（排版同正文，但置中）
     }
 }
 
@@ -21,33 +23,46 @@ extension BiographyJSON.Paragraph: Codable {
     }
 
     init(from decoder: Decoder) throws {
-        // 1. 先嘗試純字串（舊格式 → 一律視為正文）
+        // 1. 純字串默認為正文
         if let container = try? decoder.singleValueContainer(),
            let str = try? container.decode(String.self) {
             self = .text(str)
             return
         }
+        
         // 2. 物件格式：{ "type": "...", "text": "..." }
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let type = try container.decodeIfPresent(String.self, forKey: .type) ?? "text"
         let text = try container.decode(String.self, forKey: .text)
-        self = (type == "source") ? .source(text) : .text(text)
+        
+        switch type {
+        case "source":   self = .source(text)
+        case "subtitle": self = .subtitle(text)
+        case "centered": self = .centered(text)
+        default:         self = .text(text)
+        }
     }
 
     func encode(to encoder: Encoder) throws {
         switch self {
         case .text(let str):
-            // 正文仍編碼回純字串，保持 JSON 簡潔
             var container = encoder.singleValueContainer()
             try container.encode(str)
         case .source(let str):
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode("source", forKey: .type)
             try container.encode(str, forKey: .text)
+        case .subtitle(let str):
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode("subtitle", forKey: .type)
+            try container.encode(str, forKey: .text)
+        case .centered(let str):
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode("centered", forKey: .type)
+            try container.encode(str, forKey: .text)
         }
     }
 }
-
 
 // MARK: - 每日專日禮儀文件模型
 struct DailyOfficeFile: Codable {
@@ -71,9 +86,9 @@ struct DailyOfficeFile: Codable {
         let nuncDimittisAntiphon: AntiphonJSON?
         let collect: CollectJSON?
         let commemorations: [CommemorationJSON]?
-        let lessons: LessonsContainer?      // ✅ 已存在
-        let psalms: PsalmLectionaryContainer? // ✅ 專用詩篇：1943 / 1928 / 1962
-        let lectionarySets: LectionarySetContainer? // ✅ 經課與詩篇配套組：1943 主日 / 平日
+        let lessons: LessonsContainer?
+        let psalms: PsalmLectionaryContainer?
+        let lectionarySets: LectionarySetContainer?
         let biography: BiographyJSON?
         
         // MARK: - 原有嵌套類型（保持不變）
@@ -123,7 +138,7 @@ struct DailyOfficeFile: Codable {
             let text: String
         }
         
-        // MARK: - 🌟 新增：內嵌經課模型（放在 CodingKeys 之前）
+        // MARK: - 內嵌經課模型
         struct LessonsContainer: Codable {
             let year1943: LessonsGroup?
             let year1928: LessonsGroup?
@@ -148,7 +163,7 @@ struct DailyOfficeFile: Codable {
             let chapter: String
         }
         
-        // MARK: - 🌟 新增：專用詩篇模型
+        // MARK: - 專用詩篇模型
         struct PsalmLectionaryContainer: Codable {
             let year1943: PsalmLectionaryGroup?
             let year1928: PsalmLectionaryGroup?
@@ -164,7 +179,6 @@ struct DailyOfficeFile: Codable {
         }
         
         struct PsalmLectionaryGroup: Codable {
-            // 1943 / 1928 / 1962 均共用當日詩篇對經邏輯；1943 只取當日第一個對經，並按1943方式首尾使用
             let antiphon: String?
             let antiphons: [String]?
             let items: [PsalmReference]
@@ -175,7 +189,7 @@ struct DailyOfficeFile: Codable {
             let verses: String?
         }
         
-        // MARK: - 🌟 新增：經課與詩篇配套組模型
+        // MARK: - 經課與詩篇配套組模型
         struct LectionarySetContainer: Codable {
             let year1943: [LectionarySet]?
             
@@ -191,7 +205,6 @@ struct DailyOfficeFile: Codable {
             let psalms: PsalmLectionaryGroup?
         }
         
-        // MARK: - CodingKeys（🌟 必須加入 lessons / psalms / lectionary_sets）
         enum CodingKeys: String, CodingKey {
             case bibleSentences = "bible_sentences"
             case invitatory
@@ -213,12 +226,21 @@ struct DailyOfficeFile: Codable {
     }
 }
 
-// MARK: - 每日禮儀加載器
-struct DailyOfficeLoader {
-    static let shared = DailyOfficeLoader()
+// MARK: - 每日禮儀加載器 (🌟 已經改為 class)
+class DailyOfficeLoader {
+    static let shared = DailyOfficeLoader() // 🌟 變回 let
     
-    // 🌟 從 commemoration_map.json 加載的中文聖日映射表
+    var currentLanguage: AppLanguage {
+        MorningPrayerDataLoader.shared.currentLanguage
+    }
+    
     private let commemorationMap: [String: String]
+    private let nameToIdentifier: [String: String]
+    
+    // ═════ 三級緩存 ═════
+    private var sanctoraleCache: [String: DailyOfficeFile?] = [:]
+    private var officeFileCache: [String: DailyOfficeFile?] = [:]
+    private var commemorationCache: [String: DailyOfficeFile?] = [:]
     
     init() {
         var map: [String: String] = [:]
@@ -230,14 +252,28 @@ struct DailyOfficeLoader {
             print("⚠️ 無法加載 commemoration_map.json")
         }
         self.commemorationMap = map
+        
+        var nameMap: [String: String] = [:]
+        for (key, identifier) in map {
+            guard key.count > 4 else { continue }
+            let name = String(key.dropFirst(4))
+            nameMap[name] = identifier
+        }
+        self.nameToIdentifier = nameMap
     }
     
-    // MARK: - 檢查紀念是否為 liturgicalFileMap 映射借用
+    /// 切換語言或日期時清空緩存
+    func clearCache() {
+        sanctoraleCache.removeAll()
+        officeFileCache.removeAll()
+        commemorationCache.removeAll()
+    }
+    
     func isMappedCommemoration(_ name: String) -> Bool {
         return liturgicalFileMap[name] != nil
     }
     
-    // MARK: - 對外接口：聖經選句
+    // MARK: - 對外接口
     func bibleSentences(for date: Date, liturgy: DailyLiturgy) -> [BibleSentenceJSON]? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy),
            let sentences = office.morning?.bibleSentences,
@@ -247,7 +283,6 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 對外接口：聖經選句（支援早晚禱）
     func bibleSentences(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> [BibleSentenceJSON]? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
@@ -263,17 +298,13 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 對外接口：邀請選句
     func invitatoryText(for date: Date, liturgy: DailyLiturgy) -> String? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy),
            let invitatory = office.morning?.invitatory {
-            
-            // 🌟 多組輪換：按年份取模
             if let texts = invitatory.texts, !texts.isEmpty {
                 let year = Calendar.current.component(.year, from: date)
                 return texts[year % texts.count]
             }
-            // 向後兼容：單一版本
             if let text = invitatory.text, !text.isEmpty {
                 return text
             }
@@ -281,7 +312,6 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 對外接口：邀請聖詩
     func invitatoryHymn(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile.OfficePeriod.HymnJSON? {
         guard let office = loadOfficeFile(for: date, liturgy: liturgy),
               let basePeriod = office.morning else { return nil }
@@ -289,16 +319,12 @@ struct DailyOfficeLoader {
         let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         let daysToEaster = info.daysFromEaster
         
-        // 🌟 升天期（升天日至聖靈降臨日前一天）
         if daysToEaster >= 39 && daysToEaster < 49 {
             return basePeriod.ascensionInvitatoryHymn ?? basePeriod.invitatoryHymn
         }
-        
-        // 其餘時間（含復活期）使用 invitatory_hymn
         return basePeriod.invitatoryHymn
     }
     
-    // MARK: - 對外接口：詩篇對經陣列（支援早晚禱）
     func psalmAntiphons(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> [String]? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
@@ -307,11 +333,9 @@ struct DailyOfficeLoader {
             } else {
                 period = office.morning
             }
-            // 🌟 優先讀取新格式 antiphons 陣列
             if let antiphons = period?.psalmAntiphons?.antiphons, !antiphons.isEmpty {
                 return antiphons
             }
-            // 🌟 向後兼容：舊格式 common 視為單一陣列
             if let common = period?.psalmAntiphons?.common, !common.isEmpty {
                 return [common]
             }
@@ -319,12 +343,10 @@ struct DailyOfficeLoader {
         return nil
     }
 
-    // 保留舊方法名作為別名（避免其他程式碼報錯）
     func psalmAntiphon(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> String? {
         return psalmAntiphons(for: date, liturgy: liturgy, isEvening: isEvening)?.first
     }
     
-    // MARK: - 對外接口：日課聖詩
     func officeHymn(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> DailyOfficeFile.OfficePeriod.HymnJSON? {
         guard let office = loadOfficeFile(for: date, liturgy: liturgy) else { return nil }
         
@@ -337,11 +359,9 @@ struct DailyOfficeLoader {
         let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         let daysToEaster = info.daysFromEaster
         
-        // 🌟 復活期（復活主日至升天日前一天）
         if daysToEaster >= 0 && daysToEaster < 39 {
             return basePeriod.easterOfficeHymn ?? basePeriod.officeHymn
         }
-        // 🌟 升天期（升天日至聖靈降臨日前一天）
         if daysToEaster >= 39 && daysToEaster < 49 {
             return basePeriod.ascensionOfficeHymn ?? basePeriod.officeHymn
         }
@@ -349,7 +369,6 @@ struct DailyOfficeLoader {
         return basePeriod.officeHymn
     }
     
-    // MARK: - 對外接口：尊主頌對經
     func benedictusAntiphon(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> String? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
@@ -359,12 +378,10 @@ struct DailyOfficeLoader {
                 period = office.morning
             }
             if let antiphon = period?.benedictusAntiphon {
-                // 🌟 多組輪換
                 if let normals = antiphon.normals, !normals.isEmpty {
                     let year = Calendar.current.component(.year, from: date)
                     return normals[year % normals.count]
                 }
-                // 向後兼容
                 if let normal = antiphon.normal, !normal.isEmpty {
                     return normal
                 }
@@ -373,7 +390,6 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 對外接口：祝文
     func collect(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile.OfficePeriod.CollectJSON? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy),
            let collect = office.morning?.collect {
@@ -382,7 +398,6 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 對外接口：聖人小傳
     func biography(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> BiographyJSON? {
         guard let file = loadOfficeFile(for: date, liturgy: liturgy) else { return nil }
         
@@ -396,7 +411,6 @@ struct DailyOfficeLoader {
         return period?.biography
     }
     
-    // MARK: - 對外接口：尊主頌對經後註解
     func benedictusAntiphonNote(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> String? {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
@@ -412,38 +426,53 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 主入口：加載完整專日文件
+    private func loadSanctoraleViaMap(name: String) -> DailyOfficeFile? {
+        guard let identifier = nameToIdentifier[name] else { return nil }
+        return loadLocalizedJSON(name: identifier)
+    }
+    
+    // MARK: - 主入口：加載完整專日文件（🌟 已加快取）
     func loadOfficeFile(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile? {
+        let cacheKey = "\(date.timeIntervalSince1970)-\(liturgy.mainTitle)-\(currentLanguage.rawValue)"
+        
+        if let cached = officeFileCache[cacheKey] {
+            return cached
+        }
+        
+        let result = performLoadOfficeFile(for: date, liturgy: liturgy)
+        officeFileCache[cacheKey] = result
+        return result
+    }
+    
+    private func performLoadOfficeFile(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile? {
+        if let file = loadSanctoraleViaMap(name: liturgy.mainTitle) {
+            return file
+        }
+        
         let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         let daysToEaster = info.daysFromEaster
         
-        // 如果 liturgy.mainTitle 是聖日名稱，優先查 Sanctorale
         if let feastFile = loadSanctorale(date: date, daysToEaster: daysToEaster, expectedName: liturgy.mainTitle) {
             return feastFile
         }
         
-        // 遷移聖日回退查找（當聖日被遷移到其他日期時，去原始日期查找 JSON）
         if let transferredFile = loadTransferredSanctorale(for: date, expectedName: liturgy.mainTitle) {
             return transferredFile
         }
         
-        // 2. 再查節期特定日（Temporal Fixed）
         if let fixedFile = loadTemporalFixed(daysToEaster: daysToEaster, weekday: info.weekday, title: liturgy.mainTitle) {
             return fixedFile
         }
         
-        // 3. 最後查常規週間日
         return loadTemporalWeekly(season: info.season, weekNumber: info.weekNumber, weekday: info.weekday)
     }
     
-    // MARK: - 遷移聖日回退查找（硬編碼已知遷移規則）
     private func loadTransferredSanctorale(for date: Date, expectedName: String) -> DailyOfficeFile? {
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         let year = calendar.component(.year, from: date)
         
-        // 規則：6月11日的使徒聖巴拿巴日遷移到6月12日（當三一主日為6月11日時）
         if month == 6 && day == 12 && expectedName.contains("聖巴拿巴") {
             let originalDate = calendar.date(from: DateComponents(year: year, month: 6, day: 11))!
             print("🔄 [遷移回退] 6月12日查找 '\(expectedName)' 失敗，回退到原始日期 6月11日查找")
@@ -453,15 +482,26 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 聖日加載（月日精確匹配 + 復活期雙版本匹配 + 名稱精確匹配）
+    // MARK: - 聖日加載（🌟 已加快取）
     private func loadSanctorale(date: Date, daysToEaster: Int? = nil, expectedName: String? = nil) -> DailyOfficeFile? {
+        let cacheKey = "\(date.timeIntervalSince1970)-\(expectedName ?? "nil")-\(currentLanguage.rawValue)"
+        
+        if let cached = sanctoraleCache[cacheKey] {
+            return cached
+        }
+        
+        let result = performLoadSanctorale(date: date, daysToEaster: daysToEaster, expectedName: expectedName)
+        sanctoraleCache[cacheKey] = result
+        return result
+    }
+    
+    private func performLoadSanctorale(date: Date, daysToEaster: Int?, expectedName: String?) -> DailyOfficeFile? {
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         let mmdd = String(format: "%02d%02d", month, day)
         print("      [loadSanctorale] 日期=\(mmdd), expectedName=\(expectedName ?? "nil")")
         
-        // 1. 精確匹配 sanctorale_MMDD.json
         if let file = loadJSON(name: "sanctorale_\(mmdd)") {
             if let expected = expectedName {
                 print("      → 找到 sanctorale_\(mmdd).json, name='\(file.name)'")
@@ -477,7 +517,6 @@ struct DailyOfficeLoader {
             }
         }
         
-        // 2. 掃描所有 sanctorale_MMDD_*.json
         guard let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) else {
             print("      → ❌ Bundle 中無任何 json")
             return nil
@@ -489,12 +528,11 @@ struct DailyOfficeLoader {
         }
         print("      → 掃描到 \(candidates.count) 個候選: \(candidates.map { $0.lastPathComponent })")
         
-        // 3. 若指定了預期名稱，在所有候選中精確匹配 name
         if let expected = expectedName {
             for url in candidates {
                 print("      → 嘗試解析: \(url.lastPathComponent)")
-                if let data = try? Data(contentsOf: url),
-                   let file = try? JSONDecoder().decode(DailyOfficeFile.self, from: data) {
+                let candidateName = url.deletingPathExtension().lastPathComponent
+                if let file = loadLocalizedJSON(name: candidateName) {
                     print("      → 解析成功: name='\(file.name)'")
                     if file.name == expected {
                         print("      → ✅ 名稱吻合，返回")
@@ -510,7 +548,6 @@ struct DailyOfficeLoader {
             return nil
         }
         
-        // 4. 無預期名稱時：按原邏輯
         let isEasterSeason = (daysToEaster != nil) && (daysToEaster! >= 0) && (daysToEaster! < 49)
         print("      → 無 expectedName, isEasterSeason=\(isEasterSeason)")
         
@@ -519,9 +556,8 @@ struct DailyOfficeLoader {
                 $0.deletingPathExtension().lastPathComponent.hasSuffix("_easter")
             }) {
                 print("      → 嘗試復活期版本: \(easterURL.lastPathComponent)")
-                if let data = try? Data(contentsOf: easterURL) {
-                    return try? JSONDecoder().decode(DailyOfficeFile.self, from: data)
-                }
+                let name = easterURL.deletingPathExtension().lastPathComponent
+                return loadLocalizedJSON(name: name)
             }
         }
         
@@ -529,25 +565,20 @@ struct DailyOfficeLoader {
             !$0.deletingPathExtension().lastPathComponent.hasSuffix("_easter")
         }) {
             print("      → 嘗試普通版本: \(normalURL.lastPathComponent)")
-            if let data = try? Data(contentsOf: normalURL) {
-                return try? JSONDecoder().decode(DailyOfficeFile.self, from: data)
-            }
+            let name = normalURL.deletingPathExtension().lastPathComponent
+            return loadLocalizedJSON(name: name)
         }
         
         if isEasterSeason, let anyURL = candidates.first {
             print("      → 復活期兜底: \(anyURL.lastPathComponent)")
-            if let data = try? Data(contentsOf: anyURL) {
-                return try? JSONDecoder().decode(DailyOfficeFile.self, from: data)
-            }
+            let name = anyURL.deletingPathExtension().lastPathComponent
+            return loadLocalizedJSON(name: name)
         }
         
         print("      → ❌ loadSanctorale 全部失敗")
         return nil
     }
     
-    
-    // MARK: - 望日全局名稱匹配（按 file.name 在所有 sanctorale 中搜索）
-    // 用途：望日遷移後，按名稱找到原始日期的 sanctorale 文件以獲取 collect
     private func loadSanctoraleByName(expectedName: String) -> DailyOfficeFile? {
         guard let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) else {
             return nil
@@ -561,8 +592,8 @@ struct DailyOfficeLoader {
         print("      [loadSanctoraleByName] 掃描 \(candidates.count) 個 sanctorale 檔案，查找 name='\(expectedName)'")
         
         for url in candidates {
-            if let data = try? Data(contentsOf: url),
-               let file = try? JSONDecoder().decode(DailyOfficeFile.self, from: data) {
+            let name = url.deletingPathExtension().lastPathComponent
+            if let file = loadLocalizedJSON(name: name) {
                 if file.name == expectedName {
                     print("      → ✅ 匹配成功: \(url.lastPathComponent), name='\(file.name)'")
                     return file
@@ -574,7 +605,6 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 節期特定日（硬編碼映射 + 中文標題回退映射）
     private func loadTemporalFixed(daysToEaster: Int, weekday: Int, title: String) -> DailyOfficeFile? {
         let key: String?
         
@@ -598,7 +628,6 @@ struct DailyOfficeLoader {
         case 47:  key = "temporal_ascension_friday_after"
         case 48:  key = "temporal_pentecost_vigil"
         case 49:  key = "temporal_pentecost_sunday"
-        // 🌟 修正：聖靈降臨八日慶期統一加上 _1
         case 50:  key = "temporal_pentecost_monday"
         case 51:  key = "temporal_pentecost_tuesday"
         case 52 where weekday == 4: key = "temporal_pentecost_1_wednesday"
@@ -618,7 +647,6 @@ struct DailyOfficeLoader {
         return loadJSON(name: name)
     }
     
-    // 🌟 合併後的統一映射表（補齊升天八日慶期 + 聖靈降臨八日慶期）
     private let liturgicalFileMap: [String: String] = [
         "升天望日": "temporal_ascension_vigil",
         "救主升天日": "temporal_ascension_day",
@@ -653,10 +681,12 @@ struct DailyOfficeLoader {
         "耶穌聖心節八日慶期": "temporal_sacred_heart",
         "使徒聖彼得與聖保羅望日": "sanctorale_0628_peter_and_paul_vigil",
         "施洗聖約翰誕辰日八日慶期第五日": "sanctorale_0628_john_baptist_octave_5",
+        "秋季齋期禮拜三": "temporal_autumn_ember_wednesday",
+        "秋季齋期禮拜五": "temporal_autumn_ember_friday",
+        "秋季齋期禮拜六": "temporal_autumn_ember_saturday"
         
     ]
     
-    // MARK: - 常規週間日
     private func loadTemporalWeekly(season: LiturgicalSeason, weekNumber: Int, weekday: Int) -> DailyOfficeFile? {
         let seasonCode: String
         switch season {
@@ -687,17 +717,19 @@ struct DailyOfficeLoader {
         return loadJSON(name: name)
     }
     
-    // MARK: - 紀念加載 (透過中文名稱映射 + 復活期雙版本 + temporal 回退)
     func loadCommemoration(name: String, date: Date) -> DailyOfficeFile? {
         print("🎯 loadCommemoration 被調用: name='\(name)'")
         
-        // 🌟 名稱歸一化：去掉「紀念」前綴，因為 JSON 和映射表都不帶此前綴
         let normalizedName = name.hasPrefix("紀念")
             ? String(name.dropFirst(2)).trimmingCharacters(in: .whitespaces)
             : name
         print("   → 歸一化名稱: '\(normalizedName)'")
         
-        // 1. 優先檢查統一映射表
+        if let file = loadSanctoraleViaMap(name: normalizedName) {
+            print("   → ✅ [步驟0] 透過 nameToIdentifier 直接加載成功: '\(file.name)'")
+            return file
+        }
+        
         if let fileName = liturgicalFileMap[normalizedName] {
             print("   → 命中 liturgicalFileMap: key='\(normalizedName)' → fileName='\(fileName)'")
             if let file = loadJSON(name: fileName) {
@@ -710,7 +742,6 @@ struct DailyOfficeLoader {
             print("   → [步驟1] liturgicalFileMap 無此鍵: '\(normalizedName)'")
         }
         
-        // 2. 查詢 commemoration_map.json
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
@@ -721,7 +752,6 @@ struct DailyOfficeLoader {
         if let baseName = commemorationMap[key] {
             print("   → 命中 commemoration_map: baseName='\(baseName)'")
             let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
-            // let daysToEaster = info.daysFromEaster
             let season = info.season
             let isEasterSeason = (season == .easter || season == .ascension || season == .pentecost)
             
@@ -745,7 +775,6 @@ struct DailyOfficeLoader {
             print("   → [步驟2] commemoration_map 無此鍵")
         }
         
-        // 3. 回退：按日期模糊匹配 sanctorale
         print("   → [步驟3] 按日期匹配 sanctorale: date=\(month)/\(day), expectedName='\(normalizedName)'")
         let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         if let sanctorale = loadSanctorale(date: date, daysToEaster: info.daysFromEaster, expectedName: normalizedName) {
@@ -755,11 +784,6 @@ struct DailyOfficeLoader {
             print("   → ❌ [步驟3] sanctorale 無匹配")
         }
         
-        // ═══════════════════════════════════════════════════════
-        // 🌟 步驟3.5：望日全局名稱回退（處理遷移後的望日）
-        // 目的：找到原始日期的 sanctorale 文件，僅用於獲取 collect
-        // 注意：對經與啟應由 MorningPrayerViewModel 的 isVigilCommemoration 覆蓋為 temporal
-        // ═══════════════════════════════════════════════════════
         if normalizedName.contains("望日") {
             print("   → [步驟3.5] 望日全局掃描: name='\(normalizedName)'")
             if let vigilFile = loadSanctoraleByName(expectedName: normalizedName) {
@@ -770,7 +794,6 @@ struct DailyOfficeLoader {
             }
         }
         
-        // 4. 最後回退：回退到 temporal 週間日
         print("   → [步驟4] 回退到 temporal: season=\(info.season), week=\(info.weekNumber), wd=\(info.weekday)")
         if let temporal = loadTemporalWeekly(season: info.season, weekNumber: info.weekNumber, weekday: info.weekday) {
             print("   → ⚠️ [步驟4] 回退到 temporal: '\(temporal.name)'")
@@ -787,31 +810,14 @@ struct DailyOfficeLoader {
         return nil
     }
     
-    // MARK: - 底層 JSON 讀取（藍組扁平 Bundle）
     private func loadJSON(name: String) -> DailyOfficeFile? {
-        let testURL = Bundle.main.url(forResource: name, withExtension: "json")
-        print("🔍 查找: \(name).json → \(testURL == nil ? "❌ nil" : "✅ \(testURL!.lastPathComponent)")")
-        
-        guard let url = Bundle.main.url(forResource: name, withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            print("   → ❌ 檔案不存在或讀取失敗")
-            return nil
-        }
-        do {
-            let decoded = try JSONDecoder().decode(DailyOfficeFile.self, from: data)
-            print("   → ✅ 解析成功: name='\(decoded.name)'")
-            return decoded
-        } catch {
-            print("❌ 解析 \(name).json 失敗: \(error)")
-            return nil
-        }
+        loadLocalizedJSON(name: name)
     }
 }
 
 // MARK: - 內嵌經課讀取擴展
 extension DailyOfficeLoader {
     
-    // 🌟 新增：查詢當前 JSON 有哪些可用經課版本
     func availableLectionaryOptions(
         for date: Date,
         liturgy: DailyLiturgy,
@@ -835,7 +841,6 @@ extension DailyOfficeLoader {
         if lessons?.year1962 != nil { options.append("1962") }
         if lessons?.special != nil   { options.append("special") }
         
-        // 🌟 關鍵規則：若 JSON 僅有 special，則同時提供 1928 與 1962（回退到經課表資料庫）
         if options.count == 1 && options.first == "special" {
             options = ["1928", "1962", "special"]
         }
@@ -1008,10 +1013,32 @@ extension DailyOfficeLoader {
         
         return base
     }
+    // MARK: - 多語言 JSON 解析（核心）
+    private func loadLocalizedJSON(name: String) -> DailyOfficeFile? {
+        print("🔍 查找: \(name).json | language=\(currentLanguage.rawValue)")
+        
+        guard let url = Bundle.main.url(forResource: name, withExtension: "json"),
+              let data = try? Data(contentsOf: url) else {
+            print("   → ❌ 檔案不存在")
+            return nil
+        }
+        
+        guard let localizedData = LocalizedJSONResolver.resolve(data: data, language: currentLanguage) else {
+            print("   → ❌ 多語言解析失敗")
+            return nil
+        }
+        
+        do {
+            let decoded = try JSONDecoder().decode(DailyOfficeFile.self, from: localizedData)
+            print("   → ✅ 解析成功: name='\(decoded.name)'")
+            return decoded
+        } catch {
+            print("❌ 解析 \(name).json 失敗: \(error)")
+            return nil
+        }
+    }
 }
 
-
-// 放在 DailyOfficeLoader.swift 或獨立的 Helpers.swift 中
 func displayNameForLectionaryOption(_ option: String) -> String {
     switch option {
     case "1943":    return "1943年經課"
@@ -1022,23 +1049,8 @@ func displayNameForLectionaryOption(_ option: String) -> String {
     }
 }
 
-
-
 // MARK: - 🌟 前夕（vigil）經課讀取擴展
-//
-// 用途：當今日聖日在晚禱被降級為紀念、晚禱轉為明日聖日的前夕晚禱時，
-// 1928 / 1962 經課需改讀「被慶祝聖日」（明日）JSON 的
-// vigil（前夕）經課；無 vigil 則回退 evening。
-//
-// 此擴展可直接附加在 DailyOfficeLoader.swift 末尾，
-// 或作為獨立檔案加入專案（需加入 App target）。
 extension DailyOfficeLoader {
-    
-    /// 讀取指定日期 JSON 的前夕晚禱經課（vigil ?? evening）。
-    /// - Parameters:
-    ///   - date: 被慶祝聖日的日期（即明日）
-    ///   - liturgy: 被慶祝聖日的禮儀資訊（resolve(for: 明日) 的結果）
-    ///   - year: 經課版本（"1928" / "1962" / "1943" / "special"）
     func vigilLessons(
         for date: Date,
         liturgy: DailyLiturgy,

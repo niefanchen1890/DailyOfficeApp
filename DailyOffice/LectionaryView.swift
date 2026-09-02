@@ -1,15 +1,18 @@
 import SwiftUI
 
+// MARK: - 主視圖
 struct LectionaryView: View {
     @AppStorage("lectionaryYear") private var selectedYear = "1928"
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     var body: some View {
         VStack(spacing: 0) {
             // 頂部切換按鈕
-            Picker("經課表版本", selection: $selectedYear) {
-                Text("美國1928年版").tag("1928")
-                Text("加拿大1962年版").tag("1962")
-                Text("美国1943年版").tag("1943")
+            Picker("經課表版本".adaptChinese(isSimplified: isSimp), selection: $selectedYear) {
+                Text("美國1928年版".adaptChinese(isSimplified: isSimp)).tag("1928")
+                Text("加拿大1962年版".adaptChinese(isSimplified: isSimp)).tag("1962")
+                Text("美國1943年版".adaptChinese(isSimplified: isSimp)).tag("1943")
             }
             .pickerStyle(.segmented)
             .padding()
@@ -21,7 +24,6 @@ struct LectionaryView: View {
             if selectedYear == "1943" {
                 Lectionary1943View()
             } else {
-                // 原有 1928 / 1962 的 List 保持不變
                 List {
                     ForEach(LiturgicalSeason.allCases.filter {
                         $0 != .holyWeek && $0 != .ascension && $0 != .pentecost
@@ -39,7 +41,7 @@ struct LectionaryView: View {
                             default:           RegularSeasonView(season: season, year: selectedYear)
                             }
                         } label: {
-                            Text(season.title)
+                            Text(season.title.adaptChinese(isSimplified: isSimp))
                                 .font(.headline)
                                 .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                                 .padding(.vertical, 6)
@@ -49,25 +51,27 @@ struct LectionaryView: View {
                 .listStyle(.insetGrouped)
             }
         }
-        .navigationTitle("經課表")
+        .navigationTitle("經課表".adaptChinese(isSimplified: isSimp))
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-// MARK: - 3. 降臨期專屬視圖 (自動從 SQLite 讀取並轉為表格)
+// MARK: - 3. 降臨期專屬視圖
 struct AdventSeasonView: View {
     let year: String
-    
     @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
+    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     var body: some View {
         ForEach(1...4, id: \.self) { week in
-            DisclosureGroup("降臨期第\(week.chineseString)主日") {
+            DisclosureGroup("降臨期第\(week.chineseString)主日".adaptChinese(isSimplified: isSimp)) {
                 if let daysGrouped = weeksData[week], !daysGrouped.isEmpty {
                     LectionaryTableView(weeklyData: daysGrouped)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear { loadData(for: week) }
@@ -145,10 +149,14 @@ struct DayLectionaryGroup: Identifiable {
     }
 }
 
+// MARK: - 經課表格
 struct LectionaryTableView: View {
     let weeklyData: [DayLectionaryGroup]
     var isHolyDayMode: Bool = false
     @State private var selectedLesson: LectionaryDay?
+    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     let separatorColor = Color(UIColor.separator)
     let headerBackground = Color(UIColor.secondarySystemBackground)
@@ -157,22 +165,22 @@ struct LectionaryTableView: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 if !isHolyDayMode {
-                    Text("日")
+                    Text("日".adaptChinese(isSimplified: isSimp))
                         .frame(width: 35)
                     verticalDivider
                 }
                 
-                Text(isHolyDayMode ? "時辰" : "年份/禱")
+                Text((isHolyDayMode ? "時辰" : "年份/禱").adaptChinese(isSimplified: isSimp))
                     .frame(width: isHolyDayMode ? 55 : 50)
                 
                 verticalDivider
                 
-                Text("第一經課")
+                Text("第一經課".adaptChinese(isSimplified: isSimp))
                     .frame(maxWidth: .infinity)
                 
                 verticalDivider
                 
-                Text("第二經課")
+                Text("第二經課".adaptChinese(isSimplified: isSimp))
                     .frame(maxWidth: .infinity)
             }
             .font(.caption2.bold())
@@ -191,7 +199,7 @@ struct LectionaryTableView: View {
                             ? name.map { String($0) }.joined(separator: "\n")
                             : name
                         
-                        Text(displayString)
+                        Text(displayString.adaptChinese(isSimplified: isSimp))
                             .font(.system(size: isLongName ? 12 : 14, weight: .bold))
                             .multilineTextAlignment(.center)
                             .lineSpacing(1)
@@ -205,14 +213,14 @@ struct LectionaryTableView: View {
                         if isHolyDayMode {
                             if dayGroup.displayName == "前夕" {
                                 simpleRow(
-                                    time: "前晚",
+                                    time: "前晚".adaptChinese(isSimplified: isSimp),
                                     l1: dayGroup.evening1,
                                     l2: dayGroup.evening2,
                                     labelWidth: 55
                                 )
                             } else {
                                 simpleRow(
-                                    time: "早禱",
+                                    time: "早禱".adaptChinese(isSimplified: isSimp),
                                     l1: dayGroup.morning1,
                                     l2: dayGroup.morning2,
                                     labelWidth: 55
@@ -221,7 +229,7 @@ struct LectionaryTableView: View {
                                 Divider()
                                 
                                 simpleRow(
-                                    time: "晚禱",
+                                    time: "晚禱".adaptChinese(isSimplified: isSimp),
                                     l1: dayGroup.evening1,
                                     l2: dayGroup.evening2,
                                     labelWidth: 55
@@ -230,7 +238,7 @@ struct LectionaryTableView: View {
                         } else {
                             if let note = dayGroup.specialNote {
                                 HStack(spacing: 0) {
-                                    Text(note)
+                                    Text(note.adaptChinese(isSimplified: isSimp))
                                         .font(.system(size: 12, weight: .medium))
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.center)
@@ -241,7 +249,7 @@ struct LectionaryTableView: View {
                                 .background(Color(UIColor.systemBackground))
                             } else if dayGroup.hasYear2 {
                                 yearSection(
-                                    label: "第一年",
+                                    label: "第一年".adaptChinese(isSimplified: isSimp),
                                     m: dayGroup.morning1,
                                     e: dayGroup.evening1,
                                     m2: dayGroup.morning2,
@@ -251,7 +259,7 @@ struct LectionaryTableView: View {
                                 Divider()
                                 
                                 yearSection(
-                                    label: "第二年",
+                                    label: "第二年".adaptChinese(isSimplified: isSimp),
                                     m: dayGroup.morning1_yr2,
                                     e: dayGroup.evening1_yr2,
                                     m2: dayGroup.morning2_yr2,
@@ -259,7 +267,7 @@ struct LectionaryTableView: View {
                                 )
                             } else {
                                 simpleRow(
-                                    time: "早",
+                                    time: "早".adaptChinese(isSimplified: isSimp),
                                     l1: dayGroup.morning1,
                                     l2: dayGroup.morning2
                                 )
@@ -267,7 +275,7 @@ struct LectionaryTableView: View {
                                 Divider()
                                 
                                 simpleRow(
-                                    time: "晚",
+                                    time: "晚".adaptChinese(isSimplified: isSimp),
                                     l1: dayGroup.evening1,
                                     l2: dayGroup.evening2
                                 )
@@ -329,11 +337,11 @@ struct LectionaryTableView: View {
             verticalDivider
             
             VStack(spacing: 0) {
-                simpleRow(time: "早", l1: m, l2: m2)
+                simpleRow(time: "早".adaptChinese(isSimplified: isSimp), l1: m, l2: m2)
                 
                 Divider()
                 
-                simpleRow(time: "晚", l1: e, l2: e2)
+                simpleRow(time: "晚".adaptChinese(isSimplified: isSimp), l1: e, l2: e2)
             }
         }
     }
@@ -351,10 +359,10 @@ struct LectionaryTableView: View {
                 selectedLesson = day
             } label: {
                 VStack(spacing: 2) {
-                    Text(day.book)
+                    Text(day.book.adaptChinese(isSimplified: isSimp))
                         .font(.system(size: 13, weight: .semibold))
                     
-                    Text(day.chapter)
+                    Text(day.chapter.adaptChinese(isSimplified: isSimp))
                         .font(.system(size: 11))
                         .minimumScaleFactor(0.7)
                 }
@@ -375,19 +383,23 @@ struct LectionaryTableView: View {
     }
 }
 
+// MARK: - 其他節期視圖
 struct ChristmasSeasonView: View {
     let year: String
     private let sectionTitles = ["聖誕日", "聖誕後第一主日", "聖誕後第二主日"]
     @State private var christmasDataGroups: [String: [DayLectionaryGroup]] = [:]
+    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
 
     var body: some View {
         ForEach(sectionTitles, id: \.self) { title in
-            DisclosureGroup(title) {
+            DisclosureGroup(title.adaptChinese(isSimplified: isSimp)) {
                 if let data = christmasDataGroups[title], !data.isEmpty {
                     LectionaryTableView(weeklyData: data)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear {
@@ -403,32 +415,24 @@ struct ChristmasSeasonView: View {
 
     private func loadDataForSection(_ title: String) {
         guard christmasDataGroups[title] == nil else { return }
-        
+        // 內容載入邏輯不變 ...
         let keys: [(label: String, key: String)]
         switch title {
         case "聖誕日":
             keys = [
-                ("聖誕前夕", "1225-eve"),
-                ("聖誕日", "1225"),
-                ("聖司提反日", "1226"),
-                ("聖約翰日", "1227"),
-                ("嬰孩被殺日", "1228")
+                ("聖誕前夕", "1225-eve"), ("聖誕日", "1225"), ("聖司提反日", "1226"),
+                ("聖約翰日", "1227"), ("嬰孩被殺日", "1228")
             ]
         case "聖誕後第一主日":
             keys = [
-                ("聖誕後一主日", "christmas1"),
-                ("十二月廿九日", "1229"),
-                ("十二月三十日", "1230"),
-                ("十二月卅一日", "1231")
+                ("聖誕後一主日", "christmas1"), ("十二月廿九日", "1229"),
+                ("十二月三十日", "1230"), ("十二月卅一日", "1231")
             ]
         case "聖誕後第二主日":
             keys = [
-                ("救主受割禮日", "0101"),
-                ("聖誕後二主日", "christmas2"),
-                ("一月二日", "0102"),
-                ("一月三日", "0103"),
-                ("一月四日", "0104"),
-                ("一月五日", "0105")
+                ("救主受割禮日", "0101"), ("聖誕後二主日", "christmas2"),
+                ("一月二日", "0102"), ("一月三日", "0103"),
+                ("一月四日", "0104"), ("一月五日", "0105")
             ]
         default:
             keys = []
@@ -479,14 +483,17 @@ struct EpiphanySeasonView: View {
     let year: String
     @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         ForEach(0...6, id: \.self) { week in
-            DisclosureGroup(getWeekTitle(week)) {
+            DisclosureGroup(getWeekTitle(week).adaptChinese(isSimplified: isSimp)) {
                 if let data = weeksData[week], !data.isEmpty {
                     LectionaryTableView(weeklyData: data)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear { loadData(for: week) }
@@ -617,14 +624,17 @@ struct PreLentenSeasonView: View {
     
     @State private var seasonData: [String: [DayLectionaryGroup]] = [:]
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         ForEach(seasons, id: \.key) { item in
-            DisclosureGroup(item.title) {
+            DisclosureGroup(item.title.adaptChinese(isSimplified: isSimp)) {
                 if let days = seasonData[item.key], !days.isEmpty {
                     LectionaryTableView(weeklyData: days)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear { loadData(for: item.key) }
@@ -691,14 +701,17 @@ struct LentenSeasonView: View {
     let year: String
     @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         ForEach(0...6, id: \.self) { week in
-            DisclosureGroup(getWeekTitle(week)) {
+            DisclosureGroup(getWeekTitle(week).adaptChinese(isSimplified: isSimp)) {
                 if let data = weeksData[week], !data.isEmpty {
                     LectionaryTableView(weeklyData: data)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear { loadData(for: week) }
@@ -786,20 +799,23 @@ struct EasterSeasonView: View {
     let year: String
     @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         ForEach(0...7, id: \.self) { week in
-            DisclosureGroup(getWeekTitle(week)) {
+            DisclosureGroup(getWeekTitle(week).adaptChinese(isSimplified: isSimp)) {
                 if let data = weeksData[week], !data.isEmpty {
                     LectionaryTableView(weeklyData: data)
                         .padding(.vertical, 8)
                 } else if weeksData[week] != nil {
-                    Text("此周經課數據尚未收錄")
+                    Text("此周經課數據尚未收錄".adaptChinese(isSimplified: isSimp))
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear { loadData(for: week) }
@@ -834,8 +850,6 @@ struct EasterSeasonView: View {
                 season: "easter",
                 week: dbWeek
             )
-            
-            print("📖 EasterSeasonView week=\(week) -> db=easter\(dbWeek), 返回 \(rawData.count) 條")
             
             let groupedData = self.groupDataForTable(rawData, week: week)
     
@@ -891,23 +905,26 @@ struct AscensionSeasonView: View {
     @State private var ascensionDayData: [DayLectionaryGroup] = []
     @State private var ascensionSundayData: [DayLectionaryGroup] = []
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         Group {
-            DisclosureGroup("救主升天日") {
+            DisclosureGroup("救主升天日".adaptChinese(isSimplified: isSimp)) {
                 if !ascensionDayData.isEmpty {
                     LectionaryTableView(weeklyData: ascensionDayData)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView().onAppear { loadAscensionDayData() }
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp)).onAppear { loadAscensionDayData() }
                 }
             }
             
-            DisclosureGroup("升天後主日") {
+            DisclosureGroup("升天後主日".adaptChinese(isSimplified: isSimp)) {
                 if !ascensionSundayData.isEmpty {
                     LectionaryTableView(weeklyData: ascensionSundayData)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView().onAppear { loadAscensionSundayData() }
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp)).onAppear { loadAscensionSundayData() }
                 }
             }
         }
@@ -978,13 +995,16 @@ struct PentecostSeasonView: View {
     let year: String
     @State private var pentecostData: [DayLectionaryGroup] = []
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
-        DisclosureGroup("聖靈降臨主日 (Whitsunday)") {
+        DisclosureGroup("聖靈降臨主日 (Whitsunday)".adaptChinese(isSimplified: isSimp)) {
             if !pentecostData.isEmpty {
                 LectionaryTableView(weeklyData: pentecostData)
                     .padding(.vertical, 8)
             } else {
-                ProgressView("載入中...")
+                ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding()
                     .onAppear { loadData() }
@@ -1041,14 +1061,17 @@ struct TrinitySeasonView: View {
     let year: String
     @State private var weeksData: [Int: [DayLectionaryGroup]] = [:]
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         ForEach(0...27, id: \.self) { week in
-            DisclosureGroup(getTrinityWeekTitle(week)) {
+            DisclosureGroup(getTrinityWeekTitle(week).adaptChinese(isSimplified: isSimp)) {
                 if let data = weeksData[week] {
                     LectionaryTableView(weeklyData: data)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入中...")
+                    ProgressView("載入中...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                         .onAppear { loadData(for: week) }
@@ -1140,14 +1163,17 @@ struct HolyDaysView: View {
     
     @State private var holyDayData: [String: [DayLectionaryGroup]] = [:]
     
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
     var body: some View {
         ForEach(holyDayList, id: \.0) { dateKey, title in
-            DisclosureGroup(title) {
+            DisclosureGroup(title.adaptChinese(isSimplified: isSimp)) {
                 if let groups = holyDayData[dateKey] {
                     LectionaryTableView(weeklyData: groups, isHolyDayMode: true)
                         .padding(.vertical, 8)
                 } else {
-                    ProgressView("載入聖日經課...")
+                    ProgressView("載入聖日經課...".adaptChinese(isSimplified: isSimp))
                         .frame(maxWidth: .infinity)
                         .padding()
                         .onAppear { loadHolyDay(dateKey: dateKey, title: title) }
@@ -1195,7 +1221,15 @@ struct HolyDaysView: View {
 struct RegularSeasonView: View {
     let season: LiturgicalSeason
     let year: String
-    var body: some View { Text("\(season.title) 經課準備中...").foregroundColor(.gray).font(.footnote) }
+    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
+    var body: some View {
+        Text("\(season.title) 經課準備中...".adaptChinese(isSimplified: isSimp))
+            .foregroundColor(.gray)
+            .font(.footnote)
+    }
 }
 
 // MARK: - 1943 年資料模型
@@ -1233,8 +1267,13 @@ struct Office1943Lesson: Codable {
     let chapter: String
 }
 
-// MARK: - 1943 年經課表總覽（已移除跳轉功能）
+// MARK: - 1943 年經課表總覽
 struct Lectionary1943View: View {
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    
+    @State private var selectedLesson: LectionaryDay?
+    
     private let seasons: [(key: String, title: String)] = {
         var result: [(String, String)] = []
         result.append(("tr", "三一主日"))
@@ -1248,37 +1287,59 @@ struct Lectionary1943View: View {
     var body: some View {
         List {
             ForEach(seasons, id: \.key) { season in
-                DisclosureGroup(season.title) {
-                    Trinity1943WeekView(seasonKey: season.key)
-                        .padding(.vertical, 4)
+                DisclosureGroup(season.title.adaptChinese(isSimplified: isSimp)) {
+                    Trinity1943WeekView(seasonKey: season.key) { lesson in
+                        // 修正：依照錯誤提示的參數順序重新排列
+                        selectedLesson = LectionaryDay(
+                            season: season.key,
+                            weekIndex: 0,
+                            dayKey: "1943-\(season.key)",
+                            book: lesson.book,
+                            chapter: lesson.chapter
+                        )
+                    }
+                    .padding(.vertical, 4)
                 }
             }
         }
         .listStyle(.insetGrouped)
+        .navigationDestination(item: $selectedLesson) { day in
+            ScriptureDetailView(day: day)
+        }
     }
 }
 
-// MARK: - 1943 單週視圖（主日動態組數 + 周間一組）
+
+
+
+// MARK: - 1943 單週視圖
 struct Trinity1943WeekView: View {
     let seasonKey: String
+    
+    // 新增：點擊經課時的回調
+    var onLessonTapped: (Office1943Lesson) -> Void
+    
     @State private var sundayEntries: [(yr: Int, m: Office1943Entry, e: Office1943Entry)] = []
     @State private var weekdayEntries: [(idx: Int, m: Office1943Entry, e: Office1943Entry)] = []
     @State private var hasLoaded = false
+    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     private let weekdays = ["禮拜一","禮拜二","禮拜三","禮拜四","禮拜五","禮拜六"]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            // 主日：動態組數（自動偵測 yr1, yr2, yr3）
+            // 主日：動態組數
             ForEach(sundayEntries, id: \.yr) { group in
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("第\(group.yr.chineseString)組")
+                    Text("第\(group.yr.chineseString)組".adaptChinese(isSimplified: isSimp))
                         .font(.subheadline.bold())
                         .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                     
                     VStack(spacing: 8) {
-                        Office1943Card(entry: group.m)
-                        Office1943Card(entry: group.e)
+                        Office1943Card(entry: group.m, onLessonTapped: onLessonTapped)
+                        Office1943Card(entry: group.e, onLessonTapped: onLessonTapped)
                     }
                 }
             }
@@ -1287,16 +1348,16 @@ struct Trinity1943WeekView: View {
                 Divider().padding(.vertical, 4)
             }
             
-            // 禮拜一 ~ 禮拜六（僅 yr1）
+            // 禮拜一 ~ 禮拜六
             ForEach(weekdayEntries, id: \.idx) { day in
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(weekdays[day.idx - 1])
+                    Text(weekdays[day.idx - 1].adaptChinese(isSimplified: isSimp))
                         .font(.subheadline.bold())
                         .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                     
                     VStack(spacing: 8) {
-                        Office1943Card(entry: day.m)
-                        Office1943Card(entry: day.e)
+                        Office1943Card(entry: day.m, onLessonTapped: onLessonTapped)
+                        Office1943Card(entry: day.e, onLessonTapped: onLessonTapped)
                     }
                 }
             }
@@ -1309,6 +1370,7 @@ struct Trinity1943WeekView: View {
         }
     }
     
+    // (loadWeekData 與 loadEntry 的函數內容保持不變，照舊即可)
     private func loadWeekData() {
         var sundays: [(Int, Office1943Entry, Office1943Entry)] = []
         for yr in 1...3 {
@@ -1338,15 +1400,20 @@ struct Trinity1943WeekView: View {
     }
 }
 
-// MARK: - 1943 單日卡片（純顯示，無跳轉）
+// MARK: - 1943 單日卡片
 struct Office1943Card: View {
     let entry: Office1943Entry
+    // 新增：接收傳遞下來的閉包
+    let onLessonTapped: (Office1943Lesson) -> Void
+    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .top, spacing: 8) {
                 Label(
-                    entry.office == "morning" ? "早禱" : "晚禱",
+                    (entry.office == "morning" ? "早禱" : "晚禱").adaptChinese(isSimplified: isSimp),
                     systemImage: entry.office == "morning" ? "sunrise.fill" : "moon.fill"
                 )
                 .font(.caption.bold())
@@ -1365,14 +1432,14 @@ struct Office1943Card: View {
                     .frame(height: 70)
                     .padding(.horizontal, 8)
                 
-                lessonColumn(title: "第一經課", lesson: entry.lessons.ot)
+                lessonColumn(title: "第一經課".adaptChinese(isSimplified: isSimp), lesson: entry.lessons.ot)
                     .frame(maxWidth: .infinity)
                 
                 Divider()
                     .frame(height: 70)
                     .padding(.horizontal, 8)
                 
-                lessonColumn(title: "第二經課", lesson: entry.lessons.nt)
+                lessonColumn(title: "第二經課".adaptChinese(isSimplified: isSimp), lesson: entry.lessons.nt)
                     .frame(maxWidth: .infinity)
             }
         }
@@ -1381,16 +1448,17 @@ struct Office1943Card: View {
         .cornerRadius(10)
     }
     
+    // psalmColumn 保持不變
     private var psalmColumn: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("詩篇")
+            Text("詩篇".adaptChinese(isSimplified: isSimp))
                 .font(.caption2.bold())
                 .foregroundColor(.secondary)
             
             VStack(alignment: .leading, spacing: 2) {
                 ForEach(Array(entry.psalms.items.enumerated()), id: \.offset) { _, item in
                     let chapterText = item.verses.map { "\(item.number)(\($0))" } ?? item.number
-                    Text(chapterText)
+                    Text(chapterText.adaptChinese(isSimplified: isSimp))
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                 }
@@ -1399,23 +1467,32 @@ struct Office1943Card: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    // 修改：加上按鈕與點擊事件
     private func lessonColumn(title: String, lesson: Office1943Lesson) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
                 .font(.caption2.bold())
                 .foregroundColor(.secondary)
             
-            VStack(alignment: .leading, spacing: 2) {
-                Text(lesson.book)
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
-                    .lineLimit(1)
-                
-                Text(lesson.chapter)
-                    .font(.system(size: 11))
-                    .foregroundColor(.secondary)
-                    .lineLimit(2)
+            // 加入按鈕
+            Button {
+                onLessonTapped(lesson)
+            } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(lesson.book.adaptChinese(isSimplified: isSimp))
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                        .lineLimit(1)
+                    
+                    Text(lesson.chapter.adaptChinese(isSimplified: isSimp))
+                        .font(.system(size: 11))
+                        .foregroundColor(.secondary)
+                        .lineLimit(2)
+                }
+                // 使用 Rectangle 放大點擊範圍
+                .contentShape(Rectangle())
             }
+            .buttonStyle(.plain)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

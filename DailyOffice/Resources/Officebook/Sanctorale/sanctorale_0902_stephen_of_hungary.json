@@ -1,141 +1,443 @@
 {
   "identifier": "sanctorale_0902_stephen_of_hungary",
-  "name": "匈牙利的聖王聖司提反",
+  "name": {
+    "zh-hant": "匈牙利的聖王聖司提反",
+    "zh-hans": "匈牙利的圣王圣司提反",
+    "en": ""
+  },
   "rank": "semiDouble",
-  "rank_display": "（半複式）",
+  "rank_display": {
+    "zh-hant": "（半複式）",
+    "zh-hans": "（半复式）",
+    "en": ""
+  },
   "type": "sanctorale",
   "vigil": {
     "bible_sentences": [
       {
-        "text": "有福之人清早起來專心致志，歸向那位創造他的主；他在至高者之前祈求，並張開他的嘴巴禱告，為自己的罪過而祈求。",
-        "reference": "（便西拉智訓 39:5）"
+        "text": {
+          "zh-hant": "有福之人清早起來專心致志，歸向那位創造他的主；他在至高者之前祈求，並張開他的嘴巴禱告，為自己的罪過而祈求。",
+          "zh-hans": "有福之人清早起来专心致志，归向那位创造他的主；他在至高者之前祈求，并张开他的嘴巴祷告，为自己的罪过而祈求。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 39:5）",
+          "zh-hans": "（便西拉智训 39:5）",
+          "en": ""
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "主啊，※你交給我五千。請看，我又賺了五千。",
-        "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-        "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-        "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-        "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！"
+        {
+          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
+          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
+          "en": ""
+        },
+        {
+          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
+          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
+          "en": ""
+        },
+        {
+          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
+          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
+          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
+          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "Christe, pastorum Caput atque Princeps",
+      "title": {
+        "zh-hant": "Christe, pastorum Caput atque Princeps",
+        "zh-hans": "Christe, pastorum Caput atque Princeps",
+        "en": ""
+      },
       "verses": [
-          "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
-          "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
-          "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
-          "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
-          "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。"
+        {
+          "zh-hant": "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
+          "zh-hans": "一、昔有宣信士，曾蒙上帝嘉纳，\n四方众士民，虔敬肃然称颂；\n今朝受封赏，荣登天府高衙，\n永享主荣华.",
+          "en": "THIS the Confessor of the Lord, whose triumph\nNow all the faithful celebrate, with gladness\nErst on this feast-day merited to enter\nInto his glory."
+        },
+        {
+          "zh-hant": "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
+          "zh-hans": "二、敬畏而警醒，忠贞清正端庄，\n圣洁且谦卑，世人共称其德；\n虽殁其尘躯，灵召永恒之生，\n蒙入主天庭.",
+          "en": "Saintly and prudent, modest in behavior,\nPeaceful and sober, chaste was he, and lowly,\nWhile that life's vigour, coursing through his members,\nQuickened his being."
+        },
+        {
+          "zh-hant": "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
+          "zh-hans": "三、圣泽长流溢，溥济疲惫乏困，\n贤能有慈怀，仁德沛然昭显；\n凡负轭抱疾，无论何等重担，\n悉获主康安.",
+          "en": "Sick ones of old time, to his tomb resorting,\nSorely by ailments manifold afflicted,\nOft-times have welcomed health and strength returning,\nAt his petition."
+        },
+        {
+          "zh-hant": "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
+          "zh-hans": "四、我众合赞颂，归与上帝尊荣，\n欣然高举歌，敬献圣名钦崇；\n愿今生来世，同作天上良朋，\n共沐主宏恩.",
+          "en": "Whence we in chorus gladly do him honor,\nChanting his praises with devout affection,\nThat in his merits we may have a portion,\nNow and forever."
+        },
+        {
+          "zh-hant": "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。",
+          "zh-hans": "五、尊荣并权能，救恩荣耀齐弘，\n全归至高君，永在至尊天宫；\n恒常且无限，掌管万有无穷，\n三一真上主.阿们.",
+          "en": "His be the glory, power, and salvation:\nWho over all things reigneth in the highest,\nEarth's mighty fabric ruling and directing,\nOnely and Trinal. Amen."
+        }
       ],
       "versicle": {
-        "leader": "主愛了他，並裝扮了他。",
-        "people": "給他穿上榮耀的外衣。"
+        "leader": {
+          "zh-hant": "主愛了他，並裝扮了他。",
+          "zh-hans": "主爱了他，并装扮了他。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "給他穿上榮耀的外衣。",
+          "zh-hans": "给他穿上荣耀的外衣。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "我要把他好比一個聰明人，※把房子蓋在磐石上。"
+      "normal": {
+        "zh-hant": "我要把他好比一個聰明人，※把房子蓋在磐石上。",
+        "zh-hans": "我要把他好比一个聪明人，※把房子盖在磐石上。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "匈牙利的聖王聖司提反",
-      "text": "全能的上帝，主的精修者聖司提反在世為王之時，為拓展主的教會而不辭勞苦；求主允准，使我們於現今獲得他在天國之中的代禱。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "匈牙利的聖王聖司提反",
+        "zh-hans": "匈牙利的圣王圣司提反",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，主的精修者聖司提反在世為王之時，為拓展主的教會而不辭勞苦；求主允准，使我們於現今獲得他在天國之中的代禱。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，主的精修者圣司提反在世为王之时，为拓展主的教会而不辞劳苦；求主允准，使我们于现今获得他在天国之中的代祷。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "morning": {
     "bible_sentences": [
       {
-        "text": "他們在上帝寶座前，晝夜在他殿中事奉他；那坐在寶座上的要用帳幕覆庇他們。",
-        "reference": "（啟示錄 7:15）"
+        "text": {
+          "zh-hant": "他們在上帝寶座前，晝夜在他殿中事奉他；那坐在寶座上的要用帳幕覆庇他們。",
+          "zh-hans": "他们在上帝宝座前，昼夜在他殿中事奉他；那坐在宝座上的要用帐幕覆庇他们。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 7:15）",
+          "zh-hans": "（启示录 7:15）",
+          "en": ""
+        }
       }
     ],
     "invitatory": {
       "texts": [
-        "義人栽種在主的殿前，發旺在我們上帝院裏，※讓我們在他的聖日歡欣慶賀。",
-        "主是精修者的君王，※我們當來俯伏敬拜。"
+        {
+          "zh-hant": "義人栽種在主的殿前，發旺在我們上帝院裏，※讓我們在他的聖日歡欣慶賀。",
+          "zh-hans": "义人栽种在主的殿前，发旺在我们上帝院里，※让我们在他的圣日欢欣庆贺。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主是精修者的君王，※我們當來俯伏敬拜。",
+          "zh-hans": "主是精修者的君王，※我们当来俯伏敬拜。",
+          "en": ""
+        }
       ]
     },
     "invitatory_hymn": {
-      "title": "Iste Confessor",
+      "title": {
+        "zh-hant": "Iste Confessor",
+        "zh-hans": "Iste Confessor",
+        "en": ""
+      },
       "verses": [
-          "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
-          "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
-          "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
-          "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
-          "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。"
+        {
+          "zh-hant": "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
+          "zh-hans": "一、昔有宣信士，曾蒙上帝嘉纳，\n四方众士民，虔敬肃然称颂；\n今朝受封赏，荣登天府高衙，\n永享主荣华.",
+          "en": "THIS the Confessor of the Lord, whose triumph\nNow all the faithful celebrate, with gladness\nErst on this feast-day merited to enter\nInto his glory."
+        },
+        {
+          "zh-hant": "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
+          "zh-hans": "二、敬畏而警醒，忠贞清正端庄，\n圣洁且谦卑，世人共称其德；\n虽殁其尘躯，灵召永恒之生，\n蒙入主天庭.",
+          "en": "Saintly and prudent, modest in behavior,\nPeaceful and sober, chaste was he, and lowly,\nWhile that life's vigour, coursing through his members,\nQuickened his being."
+        },
+        {
+          "zh-hant": "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
+          "zh-hans": "三、圣泽长流溢，溥济疲惫乏困，\n贤能有慈怀，仁德沛然昭显；\n凡负轭抱疾，无论何等重担，\n悉获主康安.",
+          "en": "Sick ones of old time, to his tomb resorting,\nSorely by ailments manifold afflicted,\nOft-times have welcomed health and strength returning,\nAt his petition."
+        },
+        {
+          "zh-hant": "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
+          "zh-hans": "四、我众合赞颂，归与上帝尊荣，\n欣然高举歌，敬献圣名钦崇；\n愿今生来世，同作天上良朋，\n共沐主宏恩.",
+          "en": "Whence we in chorus gladly do him honor,\nChanting his praises with devout affection,\nThat in his merits we may have a portion,\nNow and forever."
+        },
+        {
+          "zh-hant": "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。",
+          "zh-hans": "五、尊荣并权能，救恩荣耀齐弘，\n全归至高君，永在至尊天宫；\n恒常且无限，掌管万有无穷，\n三一真上主.阿们.",
+          "en": "His be the glory, power, and salvation:\nWho over all things reigneth in the highest,\nEarth's mighty fabric ruling and directing,\nOnely and Trinal. Amen."
+        }
       ],
       "versicle": null
     },
     "psalm_antiphons": {
       "antiphons": [
-        "主啊，※你交給我五千。請看，我又賺了五千。",
-        "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-        "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-        "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-        "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！"
+        {
+          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
+          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
+          "en": ""
+        },
+        {
+          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
+          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
+          "en": ""
+        },
+        {
+          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
+          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
+          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
+          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "Iesu, corona celsior",
+      "title": {
+        "zh-hant": "Iesu, corona celsior",
+        "zh-hans": "Iesu, corona celsior",
+        "en": ""
+      },
       "verses": [
-          "一、耶穌基督天府冠冕，\n永恆至高真理上主；\n嘉納主之精修聖者，\n偕同諸聖永享榮華。",
-          "二、俯聽我眾卑微懇求，\n藉其代禱蒙主庇護；\n滌除我等諸般罪愆，\n悉數斬斷罪惡桎梏。",
-          "三、歲月周環時光流轉，\n榮耀佳節今朝重臨；\n主之忠僕脫離塵軀，\n榮登高天覲見主面。",
-          "四、視此塵世虛妄歡樂，\n浮華名利皆如塵土；\n鄙棄諸般世俗污穢，\n終獲天府凱旋奇樂。",
-          "五、恆常宣認主為君王，\n仰賴基督宏恩大德；\n狂傲仇敵踐踏足下，\n奮勇擊退眾魔魑魅。",
-          "六、信德昭彰美名遠播，\n堅定恆常宣信其主；\n嚴守齋戒克己修身，\n終獲高天靈糧滋養。",
-          "七、洪恩廣被慈悲上主，\n俯首叩拜至尊天顏；\n念此忠僕宣信之功，\n懇求塗抹我眾罪債。",
-          "八、榮耀全歸上帝聖父，\n並其獨生至聖聖言；\n偕同至聖唯一聖靈，\n掌管萬有永世無窮。阿們。"
+        {
+          "zh-hant": "一、耶穌基督天府冠冕，\n永恆至高真理上主；\n嘉納主之精修聖者，\n偕同諸聖永享榮華。",
+          "zh-hans": "一、耶稣基督天府冠冕，\n永恒至高真理上主；\n嘉纳主之精修圣者，\n偕同诸圣永享荣华。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、俯聽我眾卑微懇求，\n藉其代禱蒙主庇護；\n滌除我等諸般罪愆，\n悉數斬斷罪惡桎梏。",
+          "zh-hans": "二、俯听我众卑微恳求，\n借其代祷蒙主庇护；\n涤除我等诸般罪愆，\n悉数斩断罪恶桎梏。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、歲月周環時光流轉，\n榮耀佳節今朝重臨；\n主之忠僕脫離塵軀，\n榮登高天覲見主面。",
+          "zh-hans": "三、岁月周环时光流转，\n荣耀佳节今朝重临；\n主之忠仆脱离尘躯，\n荣登高天觐见主面。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、視此塵世虛妄歡樂，\n浮華名利皆如塵土；\n鄙棄諸般世俗污穢，\n終獲天府凱旋奇樂。",
+          "zh-hans": "四、视此尘世虚妄欢乐，\n浮华名利皆如尘土；\n鄙弃诸般世俗污秽，\n终获天府凯旋奇乐。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、恆常宣認主為君王，\n仰賴基督宏恩大德；\n狂傲仇敵踐踏足下，\n奮勇擊退眾魔魑魅。",
+          "zh-hans": "五、恒常宣认主为君王，\n仰赖基督宏恩大德；\n狂傲仇敌践踏足下，\n奋勇击退众魔魑魅。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、信德昭彰美名遠播，\n堅定恆常宣信其主；\n嚴守齋戒克己修身，\n終獲高天靈糧滋養。",
+          "zh-hans": "六、信德昭彰美名远播，\n坚定恒常宣信其主；\n严守斋戒克己修身，\n终获高天灵粮滋养。",
+          "en": ""
+        },
+        {
+          "zh-hant": "七、洪恩廣被慈悲上主，\n俯首叩拜至尊天顏；\n念此忠僕宣信之功，\n懇求塗抹我眾罪債。",
+          "zh-hans": "七、洪恩广被慈悲上主，\n俯首叩拜至尊天颜；\n念此忠仆宣信之功，\n恳求涂抹我众罪债。",
+          "en": ""
+        },
+        {
+          "zh-hant": "八、榮耀全歸上帝聖父，\n並其獨生至聖聖言；\n偕同至聖唯一聖靈，\n掌管萬有永世無窮。阿們。",
+          "zh-hans": "八、荣耀全归上帝圣父，\n并其独生至圣圣言；\n偕同至圣唯一圣灵，\n掌管万有永世无穷。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "主引導義人走入正路，",
-        "people": "將上帝的國指示給他。"
+        "leader": {
+          "zh-hant": "主引導義人走入正路，",
+          "zh-hans": "主引导义人走入正路，",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "將上帝的國指示給他。",
+          "zh-hans": "将上帝的国指示给他。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "好，你這又善良又忠心的僕人，※你在少許的事上忠心，我要派你管理許多的事，進來享受你主人的快樂吧！"
+      "normal": {
+        "zh-hant": "好，你這又善良又忠心的僕人，※你在少許的事上忠心，我要派你管理許多的事，進來享受你主人的快樂吧！",
+        "zh-hans": "好，你这又善良又忠心的仆人，※你在少许的事上忠心，我要派你管理许多的事，进来享受你主人的快乐吧！",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": ""
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "司提反，匈牙利人的國王，生於九七五年；那時，這個剽悍的民族才開始稍微認識基督信仰。他的父親蓋薩公爵原是異教徒；但他的母親、波蘭的阿德萊德，生長於基督信仰之中。在她的影響下，蓋薩終於領受洗禮；司提反約十歲時，也與父親一同受洗。這少年尚未深陷於異教的習俗，遂成為一位虔誠而深明教理的基督徒。二十歲時，他迎娶了吉塞拉——聖亨利皇帝的姊妹；兩年後，他繼承父親，作了匈牙利人的公爵。當時他的人民與鄰邦和平相處；司提反便把握這機會，使他們脫離野蠻的風俗。因此，他延請教師和領袖前來，引導人民歸向上帝。",
+          "zh-hans": "司提反，匈牙利人的国王，生于九七五年；那时，这个剽悍的民族才开始稍微认识基督信仰。他的父亲盖萨公爵原是异教徒；但他的母亲、波兰的阿德莱德，生长于基督信仰之中。在她的影响下，盖萨终于领受洗礼；司提反约十岁时，也与父亲一同受洗。这少年尚未深陷于异教的习俗，遂成为一位虔诚而深明教理的基督徒。二十岁时，他迎娶了吉塞拉——圣亨利皇帝的姊妹；两年后，他继承父亲，作了匈牙利人的公爵。当时他的人民与邻邦和平相处；司提反便把握这机会，使他们脱离野蛮的风俗。因此，他延请教师和领袖前来，引导人民归向上帝。",
+          "en": "STEPHEN, King of the Hungarians, was born in 975, at a time when those fierce folk were beginning to learn somewhat of Christianity. His father, the Duke Geza, was a pagan, but his mother, Adelaide of Poland, was born and brought up in the Faith. Through her influence Geza was finally baptized, along with his son Stephen, when the latter was about ten years old. The lad was therefore not yet fixed in pagan ways, and became a devout and knowledgeable Christian. At the age of twenty he married Gisela, sister to Saint Henry the Emperor, and two years later succeeded his father as Duke of the Hungarians. At that time his people were at peace with their neighbours, and Stephen seized upon the opportunity to raise them out of their barbarous ways. Wherefore he brought in teachers and leaders to bring them to God."
+        },
+        {
+          "zh-hant": "他隨即堅決致力於根除民間的一切偶像崇拜，並抑制各樣惡習。他又建立了一套完整的政府與司法行政制度，制定成文法典。因此，他既是匈牙利教會的創建者，也是匈牙利國家的奠基者；故此，人常稱他為「匈牙利人的使徒」。他從教宗領受「匈牙利國王」的稱號，也獲賜那頂著名的王冠；後世的繼承者向來都用這王冠加冕。他興建許多教堂、修道院和學校。為鼓勵人民前往基督教虔敬與文化的重要中心朝聖，據說他甚至在遙遠的羅馬、耶路撒冷和君士坦丁堡設立旅舍，以供他們使用。他設立了格蘭總主教區及另外十個教區。他愛護貧窮卑微的人；為確知他們得到應有的公義，他常常化裝混在民眾中間。有一次，他竟被自己原本要去救濟的人毆打並搶劫；當時他對榮福聖母說：「看哪，這些屬於你聖子的人，竟如此報答我！」",
+          "zh-hans": "他随即坚决致力于根除民间的一切偶像崇拜，并抑制各样恶习。他又建立了一套完整的政府与司法行政制度，制定成文法典。因此，他既是匈牙利教会的创建者，也是匈牙利国家的奠基者；故此，人常称他为「匈牙利人的使徒」。他从教宗领受「匈牙利国王」的称号，也获赐那顶著名的王冠；后世的继承者向来都用这王冠加冕。他兴建许多教堂、修道院和学校。为鼓励人民前往基督教虔敬与文化的重要中心朝圣，据说他甚至在遥远的罗马、耶路撒冷和君士坦丁堡设立旅舍，以供他们使用。他设立了格兰总主教区及另外十个教区。他爱护贫穷卑微的人；为确知他们得到应有的公义，他常常化装混在民众中间。有一次，他竟被自己原本要去救济的人殴打并抢劫；当时他对荣福圣母说：「看哪，这些属于你圣子的人，竟如此报答我！」",
+          "en": "He then set himself sternly to extirpate all idolatry amongst them, and to repress various vices. He organized also a complete system for the administration of government and justice, and set up a code of written laws. Thus was he founder alike of the Church and the State of Hungary; wherefore he is often called the Apostle of the Hungarians. He received from the Pope the title of King of Hungary, and also the famous crown wherewith his successors were wont to be crowned. He built many churches, monasteries, and schools. And to encourage his people in making pilgrimages to the great centres of Christian devotion and culture, it is believed that he established hospices for their benefit, as far away as Rome, Jerusalem, and Constantinople. It was he that set up the Archbishoprick of Gran and ten other Sees. He loved the poor and lowly, and to assure himself that they were receiving due justice, he often went amongst them in disguise. And thus once he was beaten and robbed by the very ones to whose succour he had come: at which time he said to our blessed Mother: “See how I am rewarded by these folk who belong to thy Son!”"
+        },
+        {
+          "zh-hant": "然而，和平只能偶爾維持；民間常有叛亂，也多有戰事。他晚年的哀傷，既因愛子埃默里克去世，也因家族中有人為繼承王位而陰謀紛爭。這些朝臣曾企圖謀殺他，他卻赦免他們；因為他不但有王者的胸襟，也有基督般的心腸。他愛上帝，也敬愛童貞聖母；他為尊崇聖母建造了一座極宏偉的教堂，並立她為匈牙利的主保。作為報答，這位聖母在一○三八年、他六十三歲時、聖母升天節那日，接他進入天鄉。匈牙利人效法這位聖王，稱該節日為「大聖母日」。不過，自一六八六年以來，他的慶日一直定在九月二日；因為據信，就在這一天，藉著他的代求，匈牙利國王兼神聖羅馬帝國皇帝利奧波德一世的軍隊大勝土耳其人，收復了布達城；聖司提反的聖髑先前已長久安奉於上述的聖母堂之中。",
+          "zh-hans": "然而，和平只能偶尔维持；民间常有叛乱，也多有战事。他晚年的哀伤，既因爱子埃默里克去世，也因家族中有人为继承王位而阴谋纷争。这些朝臣曾企图谋杀他，他却赦免他们；因为他不但有王者的胸襟，也有基督般的心肠。他爱上帝，也敬爱童贞圣母；他为尊崇圣母建造了一座极宏伟的教堂，并立她为匈牙利的主保。作为报答，这位圣母在一○三八年、他六十三岁时、圣母升天节那日，接他进入天乡。匈牙利人效法这位圣王，称该节日为「大圣母日」。不过，自一六八六年以来，他的庆日一直定在九月二日；因为据信，就在这一天，藉着他的代求，匈牙利国王兼神圣罗马帝国皇帝利奥波德一世的军队大胜土耳其人，收复了布达城；圣司提反的圣髑先前已长久安奉于上述的圣母堂之中。",
+          "en": "But peace could be general only at intervals: there were rebellions against him, and much fighting. And his last years were saddened by the death of his good son Emeric, and by the intrigues of some of his family as to succession to his throne. These courtiers attempted to murder him, and he pardoned them, for he was not only kingly but Christly. He loved God, and the Virgin Mother, and built in her honour a very great church, and made her the Patroness of Hungary. In return, the same Virgin received him into heaven, in 1038, at the age of sixty-three, on the Feast of her Assumption, which the Hungarians, after the holy King’s example, call the Great Lady’s Day. But ever since 1686, his feast hath been kept on September the second. For on this day, through his intercession, as it is believed, a great victory was gained over the Turks by the army of Leopold I, King of Hungary and Emperor of the Holy Roman Empire, and the City of Buda was then regained, where holy Stephen’s relics had long been enshrined in the aforesaid Church of Our Lady."
+        }
+      ]
     },
     "collect": {
-      "title": "匈牙利的聖王聖司提反",
-      "text": "全能的上帝，主的精修者聖司提反在世為王之時，為拓展主的教會而不辭勞苦；求主允准，使我們於現今獲得他在天國之中的代禱。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "匈牙利的聖王聖司提反",
+        "zh-hans": "匈牙利的圣王圣司提反",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，主的精修者聖司提反在世為王之時，為拓展主的教會而不辭勞苦；求主允准，使我們於現今獲得他在天國之中的代禱。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，主的精修者圣司提反在世为王之时，为拓展主的教会而不辞劳苦；求主允准，使我们于现今获得他在天国之中的代祷。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "evening": {
     "bible_sentences": [
       {
-        "text": "寶座中的羔羊必牧養他們，領他們到生命水的泉源；上帝必擦去他們一切的眼淚。",
-        "reference": "（啟示錄 7:17）"
+        "text": {
+          "zh-hant": "寶座中的羔羊必牧養他們，領他們到生命水的泉源；上帝必擦去他們一切的眼淚。",
+          "zh-hans": "宝座中的羔羊必牧养他们，领他们到生命水的泉源；上帝必擦去他们一切的眼泪。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 7:17）",
+          "zh-hans": "（启示录 7:17）",
+          "en": ""
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "主啊，※你交給我五千。請看，我又賺了五千。",
-        "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-        "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-        "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-        "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！"
+        {
+          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
+          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
+          "en": ""
+        },
+        {
+          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
+          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
+          "en": ""
+        },
+        {
+          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
+          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
+          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
+          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "Jesu, sacerdotum decus",
+      "title": {
+        "zh-hant": "Jesu, sacerdotum decus",
+        "zh-hans": "Jesu, sacerdotum decus",
+        "en": ""
+      },
       "verses": [
-          "一、求救世主耶穌垂聽，\n聖人榮冕即將臨近。\n現以溫柔愛心接納，\n我們獻上祈禱讚美。",
-          "二、這位謙卑精修聖人，\n今日獲得榮耀美名。\n忠信子民每年歡欣，\n莊嚴慶賀聖人節日。",
-          "三、他已拋棄世界虛榮，\n視為虛空轉瞬即逝。\n現已列入天使歌團，\n進入無窮喜樂之中。",
-          "四、懇求仁慈上帝賜恩，\n求使我們隨他芳蹤。\n藉著聖人祈禱之能，\n脫離一切罪惡污穢。",
-          "五、仁君基督永享尊荣，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。"
+        {
+          "zh-hant": "一、求救世主耶穌垂聽，\n聖人榮冕即將臨近。\n現以溫柔愛心接納，\n我們獻上祈禱讚美。",
+          "zh-hans": "一、求救世主耶稣垂听，\n圣人荣冕即将临近。\n现以温柔爱心接纳，\n我们献上祈祷赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、這位謙卑精修聖人，\n今日獲得榮耀美名。\n忠信子民每年歡欣，\n莊嚴慶賀聖人節日。",
+          "zh-hans": "二、这位谦卑精修圣人，\n今日获得荣耀美名。\n忠信子民每年欢欣，\n庄严庆贺圣人节日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、他已拋棄世界虛榮，\n視為虛空轉瞬即逝。\n現已列入天使歌團，\n進入無窮喜樂之中。",
+          "zh-hans": "三、他已抛弃世界虚荣，\n视为虚空转瞬即逝。\n现已列入天使歌团，\n进入无穷喜乐之中。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、懇求仁慈上帝賜恩，\n求使我們隨他芳蹤。\n藉著聖人祈禱之能，\n脫離一切罪惡污穢。",
+          "zh-hans": "四、恳求仁慈上帝赐恩，\n求使我们随他芳踪。\n藉着圣人祈祷之能，\n脱离一切罪恶污秽。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、仁君基督永享尊荣，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一上帝永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "義人的口談論智慧；",
-        "people": "他的舌頭講說公平。"
+        "leader": {
+          "zh-hant": "義人的口談論智慧；",
+          "zh-hans": "义人的口谈论智慧；",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "他的舌頭講說公平。",
+          "zh-hans": "他的舌头讲说公平。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "這是一位在上帝之前行大事之人，※他的教導充滿全地；願他為眾人的罪過代求。"
+      "normal": {
+        "zh-hant": "這是一位在上帝之前行大事之人，※他的教導充滿全地；願他為眾人的罪過代求。",
+        "zh-hans": "这是一位在上帝之前行大事之人，※他的教导充满全地；愿他为众人的罪过代求。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "匈牙利的聖王聖司提反",
-      "text": "全能的上帝，主的精修者聖司提反在世為王之時，為拓展主的教會而不辭勞苦；求主允准，使我們於現今獲得他在天國之中的代禱。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "匈牙利的聖王聖司提反",
+        "zh-hans": "匈牙利的圣王圣司提反",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，主的精修者聖司提反在世為王之時，為拓展主的教會而不辭勞苦；求主允准，使我們於現今獲得他在天國之中的代禱。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，主的精修者圣司提反在世为王之时，为拓展主的教会而不辞劳苦；求主允准，使我们于现今获得他在天国之中的代祷。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   }
 }

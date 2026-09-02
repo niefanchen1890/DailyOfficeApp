@@ -177,7 +177,7 @@ struct LiturgyDashboardView: View {
             }
             DatePicker("選擇日期", selection: $viewModel.selectedDate, displayedComponents: .date)
                 .datePickerStyle(.graphical)
-                .environment(\.locale, Locale(identifier: "zh_Hant_TW"))
+                .environment(\.locale, Locale(identifier: "zh_Hant"))
                 .onChange(of: viewModel.selectedDate) { oldDate, newDate in
                     viewModel.updateLiturgy()
                     loadMartyrology(for: newDate)
@@ -701,12 +701,12 @@ struct LiturgyDashboardView: View {
     }
 
     func formatYearMonth(_ date: Date) -> String {
-        let f = DateFormatter(); f.dateFormat = "yyyy年 MMMM"; f.locale = Locale(identifier: "zh_Hant_TW")
+        let f = DateFormatter(); f.dateFormat = "yyyy年 MMMM"; f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
     func formatFullDate(_ date: Date) -> String {
-        let f = DateFormatter(); f.dateFormat = "yyyy年MM月dd日 EEEE"; f.locale = Locale(identifier: "zh_Hant_TW")
+        let f = DateFormatter(); f.dateFormat = "yyyy年MM月dd日 EEEE"; f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
 

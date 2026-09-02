@@ -1,139 +1,425 @@
 {
   "identifier": "sanctorale_0928_wenceslaus",
-  "name": "殉道者聖瓦茨拉夫",
+  "name": {
+    "zh-hant": "殉道者聖瓦茨拉夫",
+    "zh-hans": "殉道者圣瓦茨拉夫",
+    "en": ""
+  },
   "rank": "semiDouble",
-  "rank_display": "（半複式）",
+  "rank_display": {
+    "zh-hant": "（半複式）",
+    "zh-hans": "（半复式）",
+    "en": ""
+  },
   "type": "sanctorale",
   "vigil": {
     "bible_sentences": [
       {
-        "text": "你們要為我的名被眾人憎恨。但堅忍到底的終必得救。",
-        "reference": "（馬太福音 10:22）"
+        "text": {
+          "zh-hant": "你們要為我的名被眾人憎恨。但堅忍到底的終必得救。",
+          "zh-hans": "你们要为我的名被众人憎恨。但坚忍到底的终必得救.",
+          "en": "AND ye shall be hated of all men for my name's sake: but he that endureth to the end shall be saved."
+        },
+        "reference": {
+          "zh-hant": "（馬太福音 10:22）",
+          "zh-hans": "（马太福音 10:22）",
+          "en": "(Matt.x.22.)"
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "凡在人面前認我的，※我在我天上的父面前也必認他。",
-        "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
-        "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
-        "主說：※若有人服事我，我父必尊重他。",
-        "聖父阿，※我在哪裏，服事我的人也要在哪裏。"
+        {
+          "zh-hant": "凡在人面前認我的，※我在我天上的父面前也必認他。",
+          "zh-hans": "凡在人面前认我的，※我在我天上的父面前也必认他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
+          "zh-hans": "我就是世界的光。※跟从我的，必不在黑暗里走，却要得着生命的光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "若有人服事我，※就当跟从我；我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：※若有人服事我，我父必尊重他。",
+          "zh-hans": "主说：※若有人服事我，我父必尊重他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖父阿，※我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "圣父阿，※我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "上帝義子勇毅無雙",
+      "title": {
+        "zh-hant": "Deus tuorum militum",
+        "zh-hans": "Deus tuorum militum",
+        "en": "Deus tuorum militum"
+      },
       "verses": [
-        "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
-        "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
-        "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
-        "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。"
+        {
+          "zh-hant": "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
+          "zh-hans": "一、上帝义子勇毅无双，\n基督引尔得胜疆场；\n仇敌溃败如烟消散，\n凯旋荣光永耀天乡.",
+          "en": "MARTYR of God! the only Son \nTo victory hath led thee on;\nThine every foe now prostrate lies, \nAnd heaven accords the victor's prize."
+        },
+        {
+          "zh-hant": "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
+          "zh-hans": "二、伏求圣徒代祷恳切，\n涤我众罪污痕尽灭；\n护避诸恶蛊惑沾染，\n卸却尘劳疲困重轭.",
+          "en": "O may thy prayer. for us obtain \nThe cleansing of each guilty stain;\nShield us from sin's contagious blight: \nPut life's long weariness to flight."
+        },
+        {
+          "zh-hant": "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
+          "zh-hans": "三、昔日枷锁尽化埃尘，\n圣躯终脱桎梏苦困；\n求以圣子救赎宏恩，\n解我尘世万般束缚.",
+          "en": "Now riven are the bonds in twain, \nWhich did thy saintly limbs enchain;\nFrom us the bonds of earth remove, \nThrough God the Son's redeeming love."
+        },
+        {
+          "zh-hant": "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。",
+          "zh-hans": "四、赞美圣父创造之恩，\n赞美圣子救世之恩;\n赞美圣灵保惠之恩，\n虔诚拜祷永世无尽.阿们.",
+          "en": "All laud to God the Father be; \nAll praise, eternal Son, to thee;\nAll glory, as is ever meet, \nTo God the Holy Paraclete. Amen."
+        }
       ],
       "versicle": {
-        "leader": "主加增他尊贵荣耀。",
-        "people": "把主所创造的归他管理，"
+        "leader": {
+          "zh-hant": "主加增他尊贵荣耀。",
+          "zh-hans": "主加增他尊贵荣耀。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "把主所创造的归他管理，",
+          "zh-hans": "把主所创造的归他管理，",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "這真是一位殉道者，※他為基督的名傾流了鮮血；他不畏懼審判者的威嚇，不追求世俗的尊貴榮耀，喜樂地進入天國。"
+      "normal": {
+        "zh-hant": "這真是一位殉道者，※他為基督的名傾流了鮮血；他不畏懼審判者的威嚇，不追求世俗的尊貴榮耀，喜樂地進入天國。",
+        "zh-hans": "这真是一位殉道者，※他为基督的名倾流了鲜血；他不畏惧审判者的威吓，不追求世俗的尊贵荣耀，喜乐地进入天国。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "殉道者聖瓦茨拉夫",
-      "text": "上帝使主的真福聖瓦茨拉夫獲得了殉道的勝利，將他由地上的王國高舉到主天上的王國。求主因他的代禱，保護我們免於一切災禍；並賜我們能與他同享天福。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "殉道者聖瓦茨拉夫",
+        "zh-hans": "殉道者圣瓦茨拉夫",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝使主的真福聖瓦茨拉夫獲得了殉道的勝利，將他由地上的王國高舉到主天上的王國。求主因他的代禱，保護我們免於一切災禍；並賜我們能與他同享天福。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝使主的真福圣瓦茨拉夫获得了殉道的胜利，将他由地上的王国高举到主天上的王国。求主因他的代祷，保护我们免于一切灾祸；并赐我们能与他同享天福。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "morning": {
     "bible_sentences": [
       {
-        "text": "我的靈魂甚至臨近死亡，人從各方圍攻我，卻無人幫助；我仰望有人扶持，卻沒有一人。 主啊，我就想起你的憐憫。",
-        "reference": "（便西拉智訓 51:6-8）"
+        "text": {
+          "zh-hant": "我的靈魂甚至臨近死亡，人從各方圍攻我，卻無人幫助；我仰望有人扶持，卻沒有一人。 主啊，我就想起你的憐憫。",
+          "zh-hans": "我的灵魂甚至临近死亡，人从各方围攻我，却无人帮助；我仰望有人扶持，却没有一人。 主啊，我就想起你的怜悯。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 51:6-8）",
+          "zh-hans": "（便西拉智训 51:6-8）",
+          "en": ""
+        }
       }
     ],
     "invitatory": {
-      "text": "主是殉道者的君王，※我們當來俯伏敬拜。"
+      "text": {
+        "zh-hant": "主是殉道者的君王，※我們當來俯伏敬拜。",
+        "zh-hans": "主是殉道者的君王，※我们当来俯伏敬拜。",
+        "en": ""
+      }
     },
     "invitatory_hymn": {
-      "title": "上帝義子勇毅無雙",
+      "title": {
+        "zh-hant": "Deus tuorum militum",
+        "zh-hans": "Deus tuorum militum",
+        "en": "Deus tuorum militum"
+      },
       "verses": [
-          "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
-          "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
-          "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
-          "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。"
+        {
+          "zh-hant": "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
+          "zh-hans": "一、上帝义子勇毅无双，\n基督引尔得胜疆场；\n仇敌溃败如烟消散，\n凯旋荣光永耀天乡.",
+          "en": "MARTYR of God! the only Son \nTo victory hath led thee on;\nThine every foe now prostrate lies, \nAnd heaven accords the victor's prize."
+        },
+        {
+          "zh-hant": "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
+          "zh-hans": "二、伏求圣徒代祷恳切，\n涤我众罪污痕尽灭；\n护避诸恶蛊惑沾染，\n卸却尘劳疲困重轭.",
+          "en": "O may thy prayer. for us obtain \nThe cleansing of each guilty stain;\nShield us from sin's contagious blight: \nPut life's long weariness to flight."
+        },
+        {
+          "zh-hant": "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
+          "zh-hans": "三、昔日枷锁尽化埃尘，\n圣躯终脱桎梏苦困；\n求以圣子救赎宏恩，\n解我尘世万般束缚.",
+          "en": "Now riven are the bonds in twain, \nWhich did thy saintly limbs enchain;\nFrom us the bonds of earth remove, \nThrough God the Son's redeeming love."
+        },
+        {
+          "zh-hant": "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。",
+          "zh-hans": "四、赞美圣父创造之恩，\n赞美圣子救世之恩;\n赞美圣灵保惠之恩，\n虔诚拜祷永世无尽.阿们.",
+          "en": "All laud to God the Father be; \nAll praise, eternal Son, to thee;\nAll glory, as is ever meet, \nTo God the Holy Paraclete. Amen."
+        }
       ],
       "versicle": null
     },
     "psalm_antiphons": {
       "antiphons": [
-          "凡在人面前認我的，※我在我天上的父面前也必認他。",
-          "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
-          "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
-          "主說：※若有人服事我，我父必尊重他。",
-          "聖父阿，※我在哪裏，服事我的人也要在哪裏。"
+        {
+          "zh-hant": "凡在人面前認我的，※我在我天上的父面前也必認他。",
+          "zh-hans": "凡在人面前认我的，※我在我天上的父面前也必认他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
+          "zh-hans": "我就是世界的光。※跟从我的，必不在黑暗里走，却要得着生命的光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "若有人服事我，※就当跟从我；我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：※若有人服事我，我父必尊重他。",
+          "zh-hans": "主说：※若有人服事我，我父必尊重他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖父阿，※我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "圣父阿，※我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "主之諸聖共沐主恩",
+      "title": {
+        "zh-hant": "主之諸聖共沐主恩",
+        "zh-hans": "主之诸圣共沐主恩",
+        "en": ""
+      },
       "verses": [
-          "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
-          "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
-          "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
-          "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
-          "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。"
+        {
+          "zh-hant": "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
+          "zh-hans": "一、主之诸圣共沐主恩，\n冠冕永赏凯旋功勋；\n我众讴歌圣徒得胜，\n求赦罪愆赐予新生。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
+          "zh-hans": "二、弃绝俗世虚华宴乐，\n挣脱罪恶诱惑网罗；\n瞬逝浮华皆作云烟，\n终抵天乡圣殿永年。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
+          "zh-hans": "三、为尔穿越万般艰险，\n百战之中勇毅无双；\n甘为圣名倾流热血，\n永享欢庆万世无疆。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
+          "zh-hans": "四、仁爱救主伏求垂怜，\n自主宝座施恩广远；\n在此圣者凯旋之日，\n洗净我众一切罪污。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一体上帝永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "義人必如百合花開放，",
-        "people": "永遠繁榮在主面前。"
+        "leader": {
+          "zh-hant": "義人必如百合花開放，",
+          "zh-hans": "义人必如百合花开放.",
+          "en": "The righteous shall blossom as the lily. "
+        },
+        "people": {
+          "zh-hant": "永遠繁榮在主面前。",
+          "zh-hans": "永远繁荣在主面前.",
+          "en": "He shall flourish for ever before the Lord."
+        }
       }
     },
     "benedictus_antiphon": {
-        "normals": [
-          "一粒麥子不落在地裏死了，※仍舊是一粒。",
-          "主說：若有人要跟從我，※就當捨己，背起自己的十字架來跟從我。"
-        ]
+      "normals": [
+        {
+          "zh-hant": "一粒麥子不落在地裏死了，※仍舊是一粒。",
+          "zh-hans": "一粒麦子不落在地里死了，※仍旧是一粒。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：若有人要跟從我，※就當捨己，背起自己的十字架來跟從我。",
+          "zh-hans": "主说：若有人要跟从我，※就当舍己，背起自己的十字架来跟从我。",
+          "en": ""
+        }
+      ]
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖瓦茨拉夫殉道者",
+        "zh-hans": "圣瓦茨拉夫殉道者",
+        "en": "St. Wenceslas, Martyr"
+      },
+      "source": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "For the Legend"
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "波希米亞公爵瓦茨拉夫，蒙上帝召叫，承擔護衛基督信仰的艱鉅使命；當時他的臣民才剛開始學習信仰，魔鬼對信仰的仇恨也剛顯露出來。他的父親是基督徒——弗拉季斯拉斯一世公爵；母親名為德拉霍米拉，卻只是名義上的基督徒。然而，他的祖母聖盧德米拉是一位極其聖潔的養育者，在敬虔中培育他。因此，他在各樣美德上都十分出眾；即使身處極大的邪惡之中，仍一生謹守貞潔，毫無玷污。父親去世後，他的母親藉著殘殺盧德米拉，奪取最高權力，並竭盡所能消滅基督信仰。但一些貴族厭倦了她的暴政與惡劣統治，便擺脫她的軛，在布拉格城擁立瓦茨拉夫為統治者。",
+          "zh-hans": "波希米亚公爵瓦茨拉夫，蒙上帝召叫，承担护卫基督信仰的艰巨使命；当时他的臣民才刚开始学习信仰，魔鬼对信仰的仇恨也刚显露出来。他的父亲是基督徒——弗拉季斯拉斯一世公爵；母亲名为德拉霍米拉，却只是名义上的基督徒。然而，他的祖母圣卢德米拉是一位极其圣洁的养育者，在敬虔中培育他。因此，他在各样美德上都十分出众；即使身处极大的邪恶之中，仍一生谨守贞洁，毫无玷污。父亲去世后，他的母亲藉着残杀卢德米拉，夺取最高权力，并竭尽所能消灭基督信仰。但一些贵族厌倦了她的暴政与恶劣统治，便摆脱她的轭，在布拉格城拥立瓦茨拉夫为统治者。",
+          "en": "WENCESLAS, Duke of Bohemia, was called of God to the hard task of defending Christianity when his subjects were just beginning to learn the Faith, and the devil’s hatred thereof was first being manifested. He was the son of a Christian father, Duke Wratislas I, and a mother, named Drahomira, who was Christian only in name. But he had in his paternal grandmother a most holy foster-mother, namely Saint Ludmilla, who trained him up in godliness. Therefore, he became a man eminent in all graces, and one who carefully kept chastity unsullied throughout the whole course of his life, and in the midst of great wickedness. After his father’s death, his mother seized the supreme power through the foul murder of Ludmilla, and did all that she could to extirpate Christianity. But some of the nobles, wearied with her tyranny and wicked government, cast off her yoke, and hailed Wenceslas, in the city of Prague, as their ruler."
+        },
+        {
+          "zh-hant": "他立刻宣告：自己要以公義、卻也以憐憫施政；而他確實如此行。對孤兒、寡婦和貧困者，他極其仁慈，甚至有時在冬天親自肩負柴薪，送給有需要的人。他常常協助安葬窮人，釋放俘虜；又屢次在深夜前往監獄，以金錢和勸慰安慰被囚的人。對這樣一位心腸柔和的君主來說，即使罪犯確有罪過，必須判處其死刑也是極大的悲痛。他對教會及其聖職人員懷有極深敬意；他喜歡親手播種、收割穀物、壓榨葡萄，好供應舉行神聖祭獻所需之物。",
+          "zh-hans": "他立刻宣告：自己要以公义、却也以怜悯施政；而他确实如此行。对孤儿、寡妇和贫困者，他极其仁慈，甚至有时在冬天亲自肩负柴薪，送给有需要的人。他常常协助安葬穷人，释放俘虏；又屡次在深夜前往监狱，以金钱和劝慰安慰被囚的人。对这样一位心肠柔和的君主来说，即使罪犯确有罪过，必须判处其死刑也是极大的悲痛。他对教会及其圣职人员怀有极深敬意；他喜欢亲手播种、收割谷物、压榨葡萄，好供应举行神圣祭献所需之物。",
+          "en": "At once he issued a proclamation that he would rule justly, but with mercy, and he did. To the orphaned, the widowed, and the destitute he was very charitable, so that sometimes in the winter he carried firewood to the needy on his own shoulders. He helped oftentimes to bury the poor; he set captives free; and at the dead of night he went many times to the prisons to comfort with money and advice them that were detained therein. To a prince of so tender an heart it was a great grief to be behoven to condemn any to death, however guilty. For the Church and her clergy he had a most earnest respect, and it was his pleasure to sow and reap the corn, and press the grapes, with his own hands, wherewith to provide for the holy sacrifice."
+        },
+        {
+          "zh-hant": "當古林納的塔迪斯拉斯親王入侵波希米亞時，瓦茨拉夫為避免眾多人流血，便親自出去與他單獨決鬥。敵人面對他的勇氣與良善，肅然起敬，便與他締結友好盟約。瓦茨拉夫前往德意志時，皇帝因見他顯然的聖德，便從寶座起來，擁抱他，賜予他王室的徽飾，並贈送聖殉道者維特的聖髑給他。然而，他那不敬虔的弟弟博萊斯拉斯，在母親的唆使下，到一所教堂尋找正在祈禱的他，意圖殺害他。這不近人情的兄弟博萊斯拉斯，聯同幾名同謀，以劍刺傷了他；隨後，博萊斯拉斯親手用長矛刺透他的身體，將他殺死。他於九三五年九月二十八日、午夜過後不久受難。人民立刻尊他為殉道者，因他為護衛信仰、抵抗異教徒的反對而獻出了生命；約自九八五年起，人們已在波希米亞慶祝他的瞻禮。他被視為捷克民族的主保聖人。",
+          "zh-hans": "当古林纳的塔迪斯拉斯亲王入侵波希米亚时，瓦茨拉夫为避免众人流血，便亲自出去与他单独决斗。敌人面对他的勇气与良善，肃然起敬，便与他缔结友好盟约. 瓦茨拉夫前往德意志时，皇帝因见他显然的圣德，便从宝座起来，拥抱他，赐予他王室的徽饰，并赠送圣殉道者维特的圣髑给他。然而，他那不敬虔的弟弟博莱斯拉斯，在母亲的唆使下，到一所教堂寻找正在祈祷的他，意图杀害他。这不近人情的兄弟博莱斯拉斯，联同几名同谋，以剑刺伤了他；随后，博莱斯拉斯亲手用长矛刺透他的身体，将他杀死。他于九三五年九月二十八日、午夜过后不久受难。人民立刻尊他为殉道者，因他为护卫信仰、抵抗异教徒的反对而献出了生命；约自九八五年起，人们已在波希米亚庆祝他的瞻礼。他被视为捷克民族的主保圣人。",
+          "en": "When Tadislass, Prince of Gurinna, invaded Bohemia, Wenceslas, to save the bloodshed of many, went out to meet him in single combat. Faced with such courage and goodness, his enemy bowed in reverence before him, and made with him a league of friendship. When he went to Germany, the Emperor was so impressed with his evident holiness that he arose from his throne, embraced him in his arms, decorated him with the insignia of royalty, and gifted him with relics of the holy Martyr Vitus. Nevertheless, his godless brother, at the exhortation of their mother, sought him out in a church, where he was praying, thinking to kill him. There this unnatural brother, Boleslas, together with some accomplices in crime, wounded him with their swords. And then Boleslas despatched him with his own hand, running him through the body with a lance. He suffered a little after midnight on September 28th, 935. At once he was acclaimed by the people as a Martyr who had given his life to uphold the Faith against pagan opposition; and since about the year 985 his feast hath been observed in Bohemia. He is considered the national patron of the Czechs."
+        }
+      ]
     },
     "collect": {
-      "title": "殉道者聖瓦茨拉夫",
-      "text": "上帝使主的真福聖瓦茨拉夫獲得了殉道的勝利，將他由地上的王國高舉到主天上的王國。求主因他的代禱，保護我們免於一切災禍；並賜我們能與他同享天福。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "殉道者聖瓦茨拉夫",
+        "zh-hans": "殉道者圣瓦茨拉夫",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝使主的真福聖瓦茨拉夫獲得了殉道的勝利，將他由地上的王國高舉到主天上的王國。求主因他的代禱，保護我們免於一切災禍；並賜我們能與他同享天福。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝使主的真福圣瓦茨拉夫获得了殉道的胜利，将他由地上的王国高举到主天上的王国。求主因他的代祷，保护我们免于一切灾祸；并赐我们能与他同享天福。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "evening": {
     "bible_sentences": [
       {
-        "text": "忍受試煉的人有福了，因為他經過考驗以後必得生命的冠冕，這是主應許給愛他之人的。",
-        "reference": "（雅各書 1:12）"
+        "text": {
+          "zh-hant": "忍受試煉的人有福了，因為他經過考驗以後必得生命的冠冕，這是主應許給愛他之人的。",
+          "zh-hans": "忍受试炼的人有福了，因为他经过考验以后必得生命的冠冕，这是主应许给爱他之人的。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（雅各書 1:12）",
+          "zh-hans": "（雅各书 1:12）",
+          "en": ""
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-          "凡在人面前認我的，※我在我天上的父面前也必認他。",
-          "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
-          "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
-          "主說：※若有人服事我，我父必尊重他。",
-          "聖父阿，※我在哪裏，服事我的人也要在哪裏。"
+        {
+          "zh-hant": "凡在人面前認我的，※我在我天上的父面前也必認他。",
+          "zh-hans": "凡在人面前认我的，※我在我天上的父面前也必认他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
+          "zh-hans": "我就是世界的光。※跟从我的，必不在黑暗里走，却要得着生命的光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "若有人服事我，※就当跟从我；我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：※若有人服事我，我父必尊重他。",
+          "zh-hans": "主说：※若有人服事我，我父必尊重他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖父阿，※我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "圣父阿，※我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "主之諸聖共沐主恩",
+      "title": {
+        "zh-hant": "主之諸聖共沐主恩",
+        "zh-hans": "主之诸圣共沐主恩",
+        "en": ""
+      },
       "verses": [
-          "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
-          "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
-          "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
-          "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
-          "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。"
+        {
+          "zh-hant": "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
+          "zh-hans": "一、主之诸圣共沐主恩，\n冠冕永赏凯旋功勋；\n我众讴歌圣徒得胜，\n求赦罪愆赐予新生。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
+          "zh-hans": "二、弃绝俗世虚华宴乐，\n挣脱罪恶诱惑网罗；\n瞬逝浮华皆作云烟，\n终抵天乡圣殿永年。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
+          "zh-hans": "三、为尔穿越万般艰险，\n百战之中勇毅无双；\n甘为圣名倾流热血，\n永享欢庆万世无疆。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
+          "zh-hans": "四、仁爱救主伏求垂怜，\n自主宝座施恩广远；\n在此圣者凯旋之日，\n洗净我众一切罪污。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一体上帝永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "主迎接他，赐他厚福，",
-        "people": "将精金的冠冕，戴在他的头上。"
+        "leader": {
+          "zh-hant": "主迎接他，赐他厚福，",
+          "zh-hans": "主迎接他，赐他厚福，",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "將精金的冠冕，戴在他的头上。",
+          "zh-hans": "将精金的冠冕，戴在他的头上。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-        "normals": [
-          "他將世上的一切都視為無物，※以言以行，為自己在天上積蓄財寶。",
-          "此人徹悟公義，洞悉奇偉奧秘；※他祈求至高者，終列諸聖之中。"
-        ]
+      "normals": [
+        {
+          "zh-hant": "他將世上的一切都視為無物，※以言以行，為自己在天上積蓄財寶。",
+          "zh-hans": "他将世上的一切都视为无物，※以言以行，为自己在天上积蓄财宝。",
+          "en": ""
+        },
+        {
+          "zh-hant": "此人徹悟公義，洞悉奇偉奧秘；※他祈求至高者，終列諸聖之中。",
+          "zh-hans": "此人彻悟公义，洞悉奇伟奥秘；※他祈求至高者，终列诸圣之中。",
+          "en": ""
+        }
+      ]
     },
     "collect": {
-      "title": "殉道者聖瓦茨拉夫",
-      "text": "上帝使主的真福聖瓦茨拉夫獲得了殉道的勝利，將他由地上的王國高舉到主天上的王國。求主因他的代禱，保護我們免於一切災禍；並賜我們能與他同享天福。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "殉道者聖瓦茨拉夫",
+        "zh-hans": "殉道者圣瓦茨拉夫",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝使主的真福聖瓦茨拉夫獲得了殉道的勝利，將他由地上的王國高舉到主天上的王國。求主因他的代禱，保護我們免於一切災禍；並賜我們能與他同享天福。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝使主的真福圣瓦茨拉夫获得了殉道的胜利，将他由地上的王国高举到主天上的王国。求主因他的代祷，保护我们免于一切灾祸；并赐我们能与他同享天福。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   }
 }

@@ -1,141 +1,443 @@
 {
   "identifier": "sanctorale_0918_edward_bouverie_pusey",
-  "name": "真福愛德華·布維萊·普西",
+  "name": {
+    "zh-hant": "真福愛德華·布維萊·普西",
+    "zh-hans": "真福爱德华·布维莱·普西",
+    "en": ""
+  },
   "rank": "simple",
-  "rank_display": "（簡式）",
+  "rank_display": {
+    "zh-hant": "（簡式）",
+    "zh-hans": "（简式）",
+    "en": ""
+  },
   "type": "sanctorale",
   "vigil": {
     "bible_sentences": [
       {
-        "text": "有福之人清早起來專心致志，歸向那位創造他的主；他在至高者之前祈求，並張開他的嘴巴禱告，為自己的罪過而祈求。",
-        "reference": "（便西拉智訓 39:5）"
+        "text": {
+          "zh-hant": "有福之人清早起來專心致志，歸向那位創造他的主；他在至高者之前祈求，並張開他的嘴巴禱告，為自己的罪過而祈求。",
+          "zh-hans": "有福之人清早起来专心致志，归向那位创造他的主；他在至高者之前祈求，并张开他的嘴巴祷告，为自己的罪过而祈求。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 39:5）",
+          "zh-hans": "（便西拉智训 39:5）",
+          "en": ""
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "主啊，※你交給我五千。請看，我又賺了五千。",
-        "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-        "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-        "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-        "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！"
+        {
+          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
+          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
+          "en": ""
+        },
+        {
+          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
+          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
+          "en": ""
+        },
+        {
+          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
+          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
+          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
+          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "Christe, pastorum Caput atque Princeps",
+      "title": {
+        "zh-hant": "Christe, pastorum Caput atque Princeps",
+        "zh-hans": "Christe, pastorum Caput atque Princeps",
+        "en": ""
+      },
       "verses": [
-          "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
-          "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
-          "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
-          "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
-          "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。"
+        {
+          "zh-hant": "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
+          "zh-hans": "一、昔有宣信士，曾蒙上帝嘉纳，\n四方众士民，虔敬肃然称颂；\n今朝受封赏，荣登天府高衙，\n永享主荣华.",
+          "en": "THIS the Confessor of the Lord, whose triumph\nNow all the faithful celebrate, with gladness\nErst on this feast-day merited to enter\nInto his glory."
+        },
+        {
+          "zh-hant": "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
+          "zh-hans": "二、敬畏而警醒，忠贞清正端庄，\n圣洁且谦卑，世人共称其德；\n虽殁其尘躯，灵召永恒之生，\n蒙入主天庭.",
+          "en": "Saintly and prudent, modest in behavior,\nPeaceful and sober, chaste was he, and lowly,\nWhile that life's vigour, coursing through his members,\nQuickened his being."
+        },
+        {
+          "zh-hant": "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
+          "zh-hans": "三、圣泽长流溢，溥济疲惫乏困，\n贤能有慈怀，仁德沛然昭显；\n凡负轭抱疾，无论何等重担，\n悉获主康安.",
+          "en": "Sick ones of old time, to his tomb resorting,\nSorely by ailments manifold afflicted,\nOft-times have welcomed health and strength returning,\nAt his petition."
+        },
+        {
+          "zh-hant": "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
+          "zh-hans": "四、我众合赞颂，归与上帝尊荣，\n欣然高举歌，敬献圣名钦崇；\n愿今生来世，同作天上良朋，\n共沐主宏恩.",
+          "en": "Whence we in chorus gladly do him honor,\nChanting his praises with devout affection,\nThat in his merits we may have a portion,\nNow and forever."
+        },
+        {
+          "zh-hant": "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。",
+          "zh-hans": "五、尊荣并权能，救恩荣耀齐弘，\n全归至高君，永在至尊天宫；\n恒常且无限，掌管万有无穷，\n三一真上主.阿们.",
+          "en": "His be the glory, power, and salvation:\nWho over all things reigneth in the highest,\nEarth's mighty fabric ruling and directing,\nOnely and Trinal. Amen."
+        }
       ],
       "versicle": {
-        "leader": "主愛了他，並裝扮了他。",
-        "people": "給他穿上榮耀的外衣。"
+        "leader": {
+          "zh-hant": "主愛了他，並裝扮了他。",
+          "zh-hans": "主爱了他，并装扮了他。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "給他穿上榮耀的外衣。",
+          "zh-hans": "给他穿上荣耀的外衣。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "我要把他好比一個聰明人，※把房子蓋在磐石上。"
+      "normal": {
+        "zh-hant": "我要把他好比一個聰明人，※把房子蓋在磐石上。",
+        "zh-hans": "我要把他好比一个聪明人，※把房子盖在磐石上。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "真福愛德華·布維萊·普西",
-      "text": "上帝在動亂的時期興起了主的僕人愛德華，使他能夠啓迪他的眾弟兄，使他們堅立於大公信仰中：我們敬禮他的聖潔與勇氣，求主仁慈地賜予我們，可以像他一樣，堅守同樣的信仰。這都是靠我主耶穌基督。主耶穌和聖父，聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "真福愛德華·布維萊·普西",
+        "zh-hans": "真福爱德华·布维莱·普西",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝在動亂的時期興起了主的僕人愛德華，使他能夠啓迪他的眾弟兄，使他們堅立於大公信仰中：我們敬禮他的聖潔與勇氣，求主仁慈地賜予我們，可以像他一樣，堅守同樣的信仰。這都是靠我主耶穌基督。主耶穌和聖父，聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝在动乱的时期兴起了主的仆人爱德华，使他能够启迪他的众弟兄，使他们坚立于大公信仰中：我们敬礼他的圣洁与勇气，求主仁慈地赐予我们，可以像他一样，坚守同样的信仰。这都是靠我主耶稣基督。主耶稣和圣父，圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "morning": {
     "bible_sentences": [
       {
-        "text": "他們在上帝寶座前，晝夜在他殿中事奉他；那坐在寶座上的要用帳幕覆庇他們。",
-        "reference": "（啟示錄 7:15）"
+        "text": {
+          "zh-hant": "他們在上帝寶座前，晝夜在他殿中事奉他；那坐在寶座上的要用帳幕覆庇他們。",
+          "zh-hans": "他们在上帝宝座前，昼夜在他殿中事奉他；那坐在宝座上的要用帐幕覆庇他们。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 7:15）",
+          "zh-hans": "（启示录 7:15）",
+          "en": ""
+        }
       }
     ],
     "invitatory": {
       "texts": [
-        "義人栽種在主的殿前，發旺在我們上帝院裏，※讓我們在他的聖日歡欣慶賀。",
-        "主是精修者的君王，※我們當來俯伏敬拜。"
+        {
+          "zh-hant": "義人栽種在主的殿前，發旺在我們上帝院裏，※讓我們在他的聖日歡欣慶賀。",
+          "zh-hans": "义人栽种在主的殿前，发旺在我们上帝院里，※让我们在他的圣日欢欣庆贺。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主是精修者的君王，※我們當來俯伏敬拜。",
+          "zh-hans": "主是精修者的君王，※我们当来俯伏敬拜。",
+          "en": ""
+        }
       ]
     },
     "invitatory_hymn": {
-      "title": "Iste Confessor",
+      "title": {
+        "zh-hant": "Iste Confessor",
+        "zh-hans": "Iste Confessor",
+        "en": ""
+      },
       "verses": [
-          "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
-          "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
-          "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
-          "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
-          "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。"
+        {
+          "zh-hant": "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
+          "zh-hans": "一、昔有宣信士，曾蒙上帝嘉纳，\n四方众士民，虔敬肃然称颂；\n今朝受封赏，荣登天府高衙，\n永享主荣华.",
+          "en": "THIS the Confessor of the Lord, whose triumph\nNow all the faithful celebrate, with gladness\nErst on this feast-day merited to enter\nInto his glory."
+        },
+        {
+          "zh-hant": "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
+          "zh-hans": "二、敬畏而警醒，忠贞清正端庄，\n圣洁且谦卑，世人共称其德；\n虽殁其尘躯，灵召永恒之生，\n蒙入主天庭.",
+          "en": "Saintly and prudent, modest in behavior,\nPeaceful and sober, chaste was he, and lowly,\nWhile that life's vigour, coursing through his members,\nQuickened his being."
+        },
+        {
+          "zh-hant": "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
+          "zh-hans": "三、圣泽长流溢，溥济疲惫乏困，\n贤能有慈怀，仁德沛然昭显；\n凡负轭抱疾，无论何等重担，\n悉获主康安.",
+          "en": "Sick ones of old time, to his tomb resorting,\nSorely by ailments manifold afflicted,\nOft-times have welcomed health and strength returning,\nAt his petition."
+        },
+        {
+          "zh-hant": "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
+          "zh-hans": "四、我众合赞颂，归与上帝尊荣，\n欣然高举歌，敬献圣名钦崇；\n愿今生来世，同作天上良朋，\n共沐主宏恩.",
+          "en": "Whence we in chorus gladly do him honor,\nChanting his praises with devout affection,\nThat in his merits we may have a portion,\nNow and forever."
+        },
+        {
+          "zh-hant": "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。",
+          "zh-hans": "五、尊荣并权能，救恩荣耀齐弘，\n全归至高君，永在至尊天宫；\n恒常且无限，掌管万有无穷，\n三一真上主.阿们.",
+          "en": "His be the glory, power, and salvation:\nWho over all things reigneth in the highest,\nEarth's mighty fabric ruling and directing,\nOnely and Trinal. Amen."
+        }
       ],
       "versicle": null
     },
     "psalm_antiphons": {
       "antiphons": [
-        "主啊，※你交給我五千。請看，我又賺了五千。",
-        "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-        "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-        "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-        "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！"
+        {
+          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
+          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
+          "en": ""
+        },
+        {
+          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
+          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
+          "en": ""
+        },
+        {
+          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
+          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
+          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
+          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "Iesu, corona celsior",
+      "title": {
+        "zh-hant": "Iesu, corona celsior",
+        "zh-hans": "Iesu, corona celsior",
+        "en": ""
+      },
       "verses": [
-          "一、耶穌基督天府冠冕，\n永恆至高真理上主；\n嘉納主之精修聖者，\n偕同諸聖永享榮華。",
-          "二、俯聽我眾卑微懇求，\n藉其代禱蒙主庇護；\n滌除我等諸般罪愆，\n悉數斬斷罪惡桎梏。",
-          "三、歲月周環時光流轉，\n榮耀佳節今朝重臨；\n主之忠僕脫離塵軀，\n榮登高天覲見主面。",
-          "四、視此塵世虛妄歡樂，\n浮華名利皆如塵土；\n鄙棄諸般世俗污穢，\n終獲天府凱旋奇樂。",
-          "五、恆常宣認主為君王，\n仰賴基督宏恩大德；\n狂傲仇敵踐踏足下，\n奮勇擊退眾魔魑魅。",
-          "六、信德昭彰美名遠播，\n堅定恆常宣信其主；\n嚴守齋戒克己修身，\n終獲高天靈糧滋養。",
-          "七、洪恩廣被慈悲上主，\n俯首叩拜至尊天顏；\n念此忠僕宣信之功，\n懇求塗抹我眾罪債。",
-          "八、榮耀全歸上帝聖父，\n並其獨生至聖聖言；\n偕同至聖唯一聖靈，\n掌管萬有永世無窮。阿們。"
+        {
+          "zh-hant": "一、耶穌基督天府冠冕，\n永恆至高真理上主；\n嘉納主之精修聖者，\n偕同諸聖永享榮華。",
+          "zh-hans": "一、耶稣基督天府冠冕，\n永恒至高真理上主；\n嘉纳主之精修圣者，\n偕同诸圣永享荣华。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、俯聽我眾卑微懇求，\n藉其代禱蒙主庇護；\n滌除我等諸般罪愆，\n悉數斬斷罪惡桎梏。",
+          "zh-hans": "二、俯听我众卑微恳求，\n借其代祷蒙主庇护；\n涤除我等诸般罪愆，\n悉数斩断罪恶桎梏。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、歲月周環時光流轉，\n榮耀佳節今朝重臨；\n主之忠僕脫離塵軀，\n榮登高天覲見主面。",
+          "zh-hans": "三、岁月周环时光流转，\n荣耀佳节今朝重临；\n主之忠仆脱离尘躯，\n荣登高天觐见主面。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、視此塵世虛妄歡樂，\n浮華名利皆如塵土；\n鄙棄諸般世俗污穢，\n終獲天府凱旋奇樂。",
+          "zh-hans": "四、视此尘世虚妄欢乐，\n浮华名利皆如尘土；\n鄙弃诸般世俗污秽，\n终获天府凯旋奇乐。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、恆常宣認主為君王，\n仰賴基督宏恩大德；\n狂傲仇敵踐踏足下，\n奮勇擊退眾魔魑魅。",
+          "zh-hans": "五、恒常宣认主为君王，\n仰赖基督宏恩大德；\n狂傲仇敌践踏足下，\n奋勇击退众魔魑魅。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、信德昭彰美名遠播，\n堅定恆常宣信其主；\n嚴守齋戒克己修身，\n終獲高天靈糧滋養。",
+          "zh-hans": "六、信德昭彰美名远播，\n坚定恒常宣信其主；\n严守斋戒克己修身，\n终获高天灵粮滋养。",
+          "en": ""
+        },
+        {
+          "zh-hant": "七、洪恩廣被慈悲上主，\n俯首叩拜至尊天顏；\n念此忠僕宣信之功，\n懇求塗抹我眾罪債。",
+          "zh-hans": "七、洪恩广被慈悲上主，\n俯首叩拜至尊天颜；\n念此忠仆宣信之功，\n恳求涂抹我众罪债。",
+          "en": ""
+        },
+        {
+          "zh-hant": "八、榮耀全歸上帝聖父，\n並其獨生至聖聖言；\n偕同至聖唯一聖靈，\n掌管萬有永世無窮。阿們。",
+          "zh-hans": "八、荣耀全归上帝圣父，\n并其独生至圣圣言；\n偕同至圣唯一圣灵，\n掌管万有永世无穷。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "主引導義人走入正路，",
-        "people": "將上帝的國指示給他。"
+        "leader": {
+          "zh-hant": "主引導義人走入正路，",
+          "zh-hans": "主引导义人走入正路，",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "將上帝的國指示給他。",
+          "zh-hans": "将上帝的国指示给他。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "好，你這又善良又忠心的僕人，※你在少許的事上忠心，我要派你管理許多的事，進來享受你主人的快樂吧！"
+      "normal": {
+        "zh-hant": "好，你這又善良又忠心的僕人，※你在少許的事上忠心，我要派你管理許多的事，進來享受你主人的快樂吧！",
+        "zh-hans": "好，你这又善良又忠心的仆人，※你在少许的事上忠心，我要派你管理许多的事，进来享受你主人的快乐吧！",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "Legend"
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "愛德華·布維萊·普西生於一八〇〇年，早年就讀伊頓公學與牛津大學，青年時即受任為牛津大學希伯來文欽定教授及基督堂座堂法政牧師，任職五十三年之久。他精通希伯來文與德文，曾親赴德國研究新興的聖經批判學，以深厚的學術維護聖經啟示與教會信仰。愛妻早逝後，他度著嚴謹克己的生活，將自己的財富、地位與才學，奉獻於基督及其教會。",
+          "zh-hans": "爱德华·布维莱·普西生于一八〇〇年，早年就读伊顿公学与牛津大学，青年时即受任为牛津大学希伯来文钦定教授及基督堂座堂法政牧师，任职五十三年之久。他精通希伯来文与德文，曾亲赴德国研究新兴的圣经批判学，以深厚的学术维护圣经启示与教会信仰。爱妻早逝后，他度着严谨克己的生活，将自己的财富、地位与才学，奉献于基督及其教会。",
+          "en": "Edward Bouverie Pusey was born in 1800 and educated at Eton and Oxford. While still a young man, he became Regius Professor of Hebrew and a canon of Christ Church, serving for fifty-three years. Fluent in Hebrew and German, he studied the new biblical criticism in Germany and answered it with profound scholarship and steadfast faith. After the early death of his beloved wife, he embraced a life of austerity, devoting his learning, wealth, and influence to Christ and his Church."
+        },
+        {
+          "zh-hant": "普西是牛津運動的主要領袖之一。他為《時代論叢》撰寫論禁食的第十八號小冊，又倡導研讀教父著作，闡明英格蘭教會承繼大公與使徒信仰。他扶助修會生活的復興，指導並支持許多在貧民中服務的牧者，也致力恢復告解與和好的聖事職分，成為眾人的靈性導師。紐曼歸入羅馬、基布爾退居堂區之後，普西仍忠守英格蘭教會，堅信本教會確為至一、至聖、大公、使徒教會的一員。",
+          "zh-hans": "普西是牛津运动的主要领袖之一。他为《时代论丛》撰写论禁食的第十八号小册，又倡导研读教父著作，阐明英格兰教会承继大公与使徒信仰。他扶助修会生活的复兴，指导并支持许多在贫民中服务的牧者，也致力恢复告解与和好的圣事职分，成为众人的灵性导师。纽曼归入罗马、基布尔退居堂区之后，普西仍忠守英格兰教会，坚信本教会确为至一、至圣、大公、使徒教会的一员。",
+          "en": "Pusey became one of the principal leaders of the Oxford Movement. He contributed the eighteenth Tract for the Times, renewed the study of the Fathers, and defended the catholic and apostolic inheritance of the Church of England. He encouraged the revival of religious communities, supported priests serving among the poor, and helped restore the ministry of confession and reconciliation. After Newman entered the Roman Church and Keble withdrew to parish life, Pusey remained steadfast, upholding the Church of England as a true part of the One, Holy, Catholic, and Apostolic Church."
+        },
+        {
+          "zh-hant": "一八四三年，普西宣講〈至聖聖體：悔罪者的安慰〉，教導基督在聖體聖事中的真實臨在，並宣認教會藉此紀念主在十字架上一次而永遠的犧牲。他因此被牛津大學禁止講道兩年；然而這篇「被定罪的講章」反而廣為流傳，使聖體信仰更深入人心。他的教導促進了對聖體的敬禮、莊嚴的崇拜與主日常行聖餐。普西於一八八二年安息；他以謙卑、忍耐與忠貞，終身持守所領受的大公信仰，為教會的更新留下深遠恩澤。",
+          "zh-hans": "一八四三年，普西宣讲〈至圣圣体：悔罪者的安慰〉，教导基督在圣体圣事中的真实临在，并宣认教会借此纪念主在十字架上一次而永远的牺牲。他因此被牛津大学禁止讲道两年；然而这篇「被定罪的讲章」反而广为流传，使圣体信仰更深入人心。他的教导促进了对圣体的敬礼、庄严的崇拜与主日常行圣餐。普西于一八八二年安息；他以谦卑、忍耐与忠贞，终身持守所领受的大公信仰，为教会的更新留下深远恩泽。",
+          "en": "In 1843 Pusey preached The Holy Eucharist, a Comfort to the Penitent, teaching Christ’s Real Presence in the Sacrament and the Church’s pleading of his once-for-all sacrifice upon the Cross. For this he was forbidden to preach at Oxford for two years; yet the “condemned sermon” was widely read and strengthened Eucharistic faith throughout the Church. His teaching encouraged deeper devotion, more reverent worship, and more frequent Communion. Pusey died in 1882, having borne faithful witness through humility, patience, and perseverance, and leaving an enduring legacy of renewal within the Church."
+        }
+      ]
     },
     "collect": {
-      "title": "真福愛德華·布維萊·普西",
-      "text": "上帝在動亂的時期興起了主的僕人愛德華，使他能夠啓迪他的眾弟兄，使他們堅立於大公信仰中：我們敬禮他的聖潔與勇氣，求主仁慈地賜予我們，可以像他一樣，堅守同樣的信仰。這都是靠我主耶穌基督。主耶穌和聖父，聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "真福愛德華·布維萊·普西",
+        "zh-hans": "真福爱德华·布维莱·普西",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝在動亂的時期興起了主的僕人愛德華，使他能夠啓迪他的眾弟兄，使他們堅立於大公信仰中：我們敬禮他的聖潔與勇氣，求主仁慈地賜予我們，可以像他一樣，堅守同樣的信仰。這都是靠我主耶穌基督。主耶穌和聖父，聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝在动乱的时期兴起了主的仆人爱德华，使他能够启迪他的众弟兄，使他们坚立于大公信仰中：我们敬礼他的圣洁与勇气，求主仁慈地赐予我们，可以像他一样，坚守同样的信仰。这都是靠我主耶稣基督。主耶稣和圣父，圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "evening": {
     "bible_sentences": [
       {
-        "text": "寶座中的羔羊必牧養他們，領他們到生命水的泉源；上帝必擦去他們一切的眼淚。",
-        "reference": "（啟示錄 7:17）"
+        "text": {
+          "zh-hant": "寶座中的羔羊必牧養他們，領他們到生命水的泉源；上帝必擦去他們一切的眼淚。",
+          "zh-hans": "宝座中的羔羊必牧养他们，领他们到生命水的泉源；上帝必擦去他们一切的眼泪。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 7:17）",
+          "zh-hans": "（启示录 7:17）",
+          "en": ""
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "主啊，※你交給我五千。請看，我又賺了五千。",
-        "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-        "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-        "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-        "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！"
+        {
+          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
+          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
+          "en": ""
+        },
+        {
+          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
+          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
+          "en": ""
+        },
+        {
+          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
+          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
+          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
+          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "Jesu, sacerdotum decus",
+      "title": {
+        "zh-hant": "Jesu, sacerdotum decus",
+        "zh-hans": "Jesu, sacerdotum decus",
+        "en": ""
+      },
       "verses": [
-          "一、求救世主耶穌垂聽，\n聖人榮冕即將臨近。\n現以溫柔愛心接納，\n我們獻上祈禱讚美。",
-          "二、這位謙卑精修聖人，\n今日獲得榮耀美名。\n忠信子民每年歡欣，\n莊嚴慶賀聖人節日。",
-          "三、他已拋棄世界虛榮，\n視為虛空轉瞬即逝。\n現已列入天使歌團，\n進入無窮喜樂之中。",
-          "四、懇求仁慈上帝賜恩，\n求使我們隨他芳蹤。\n藉著聖人祈禱之能，\n脫離一切罪惡污穢。",
-          "五、仁君基督永享尊荣，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。"
+        {
+          "zh-hant": "一、求救世主耶穌垂聽，\n聖人榮冕即將臨近。\n現以溫柔愛心接納，\n我們獻上祈禱讚美。",
+          "zh-hans": "一、求救世主耶稣垂听，\n圣人荣冕即将临近。\n现以温柔爱心接纳，\n我们献上祈祷赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、這位謙卑精修聖人，\n今日獲得榮耀美名。\n忠信子民每年歡欣，\n莊嚴慶賀聖人節日。",
+          "zh-hans": "二、这位谦卑精修圣人，\n今日获得荣耀美名。\n忠信子民每年欢欣，\n庄严庆贺圣人节日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、他已拋棄世界虛榮，\n視為虛空轉瞬即逝。\n現已列入天使歌團，\n進入無窮喜樂之中。",
+          "zh-hans": "三、他已抛弃世界虚荣，\n视为虚空转瞬即逝。\n现已列入天使歌团，\n进入无穷喜乐之中。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、懇求仁慈上帝賜恩，\n求使我們隨他芳蹤。\n藉著聖人祈禱之能，\n脫離一切罪惡污穢。",
+          "zh-hans": "四、恳求仁慈上帝赐恩，\n求使我们随他芳踪。\n藉着圣人祈祷之能，\n脱离一切罪恶污秽。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、仁君基督永享尊荣，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一上帝永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "義人的口談論智慧；",
-        "people": "他的舌頭講說公平。"
+        "leader": {
+          "zh-hant": "義人的口談論智慧；",
+          "zh-hans": "义人的口谈论智慧；",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "他的舌頭講說公平。",
+          "zh-hans": "他的舌头讲说公平。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "這是一位在上帝之前行大事之人，※他的教導充滿全地；願他為眾人的罪過代求。"
+      "normal": {
+        "zh-hant": "這是一位在上帝之前行大事之人，※他的教導充滿全地；願他為眾人的罪過代求。",
+        "zh-hans": "这是一位在上帝之前行大事之人，※他的教导充满全地；愿他为众人的罪过代求。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "真福愛德華·布維萊·普西",
-      "text": "上帝在動亂的時期興起了主的僕人愛德華，使他能夠啓迪他的眾弟兄，使他們堅立於大公信仰中：我們敬禮他的聖潔與勇氣，求主仁慈地賜予我們，可以像他一樣，堅守同樣的信仰。這都是靠我主耶穌基督。主耶穌和聖父，聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "真福愛德華·布維萊·普西",
+        "zh-hans": "真福爱德华·布维莱·普西",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝在動亂的時期興起了主的僕人愛德華，使他能夠啓迪他的眾弟兄，使他們堅立於大公信仰中：我們敬禮他的聖潔與勇氣，求主仁慈地賜予我們，可以像他一樣，堅守同樣的信仰。這都是靠我主耶穌基督。主耶穌和聖父，聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝在动乱的时期兴起了主的仆人爱德华，使他能够启迪他的众弟兄，使他们坚立于大公信仰中：我们敬礼他的圣洁与勇气，求主仁慈地赐予我们，可以像他一样，坚守同样的信仰。这都是靠我主耶稣基督。主耶稣和圣父，圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   }
 }

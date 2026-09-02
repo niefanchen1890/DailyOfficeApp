@@ -219,11 +219,22 @@ class LiturgyCoreService {
             let tomorrowFeasts = sanctorale.getFeasts(for: tomorrowDate)
             
             for tf in tomorrowFeasts where tf.rank == .vigil {
-                if !commemorations.contains(tf.name) {
-                    commemorations.append(tf.name)
+                // 🌟 修正：只前移望日主體，分離括號內的普通紀念，讓其留在原來的禮拜日
+                var cleanName = tf.name
+                let bracketPairs = [(" (", ")"), ("（", "）")]
+                for (open, close) in bracketPairs {
+                    if let openRange = cleanName.range(of: open) {
+                        cleanName = String(cleanName[..<openRange.lowerBound]).trimmingCharacters(in: .whitespaces)
+                        break
+                    }
+                }
+                
+                if !commemorations.contains(cleanName) {
+                    commemorations.append(cleanName)
                 }
             }
-            // 🌟 新增：處理明天 Feast 名稱括號內的望日紀念
+            
+            // 🌟 處理明天 Feast 名稱括號內的望日紀念
             // 望日只有早禱，遇到主日提前至禮拜六早禱紀念
             for tf in tomorrowFeasts {
                 let bracketPairs = [(" (", ")"), ("（", "）")]
@@ -249,6 +260,7 @@ class LiturgyCoreService {
         if weekday == 1 {
             for f in allFeasts where f.rank == .vigil {
                 // 若今天主標題就是這個望日，回退到 temporal
+                // （此處的 allFeasts 已經是在 resolveDay 中去除了括號的 cleanFeasts）
                 if currentTitle == f.name {
                     currentTitle = temporal.title
                     currentRank = temporal.rank
@@ -1566,7 +1578,7 @@ class LiturgyCoreService {
         }
         return d
     }
-
+    
     private func daysBetween(_ start: Date, and end: Date) -> Int {
         let d1 = calendar.startOfDay(for: start), d2 = calendar.startOfDay(for: end)
         return calendar.dateComponents([.day], from: d1, to: d2).day ?? 0
@@ -1596,6 +1608,7 @@ class LiturgyCoreService {
     }
     
     // MARK: - 邀請聖詩查詢（hymns.json）
+    // MARK: - 邀請聖詩查詢（已併入 MorningPrayerDataLoader）
     func invitatoryHymn(for date: Date) -> InvitatoryHymnData {
         let weekday = calendar.component(.weekday, from: date)
         let year = calendar.component(.year, from: date)
@@ -1607,25 +1620,21 @@ class LiturgyCoreService {
         let jan13 = calendar.date(from: DateComponents(year: year, month: 1, day: 13))!
         let sep28 = calendar.date(from: DateComponents(year: year, month: 9, day: 28))!
         
-        // 🌟 1. 聖日檢查（以後擴展：聖日聖詩直接覆蓋平日）
-        // if let feast = sanctorale.getFeast(for: date), let feastHymn = ... {
-        //     return feastHymn
-        // }
-        
-        // 2. 主日
+        let type: InvitatoryHymnType
         if weekday == 1 {
             if (date >= jan13 && date < ashWednesday) || (date >= sep28 && date < adventStart) {
-                return InvitatoryHymnLoader.shared.hymn(.sundayWinter)
+                type = .sundayWinter
+            } else if date >= trinitySunday && date < sep28 {
+                type = .sundaySummer
+            } else {
+                type = .sundayWinter
             }
-            if date >= trinitySunday && date < sep28 {
-                return InvitatoryHymnLoader.shared.hymn(.sundaySummer)
-            }
-            return InvitatoryHymnLoader.shared.hymn(.sundayWinter)
+        } else {
+            type = .weekday(weekday - 1)
         }
         
-        // 3. 平日（禮拜一到六）
-        let index = weekday - 1
-        return InvitatoryHymnLoader.shared.hymn(.weekday(index))
+        // ✅ 統一由 MorningPrayerDataLoader 載入（支援繁簡雙語）
+        return MorningPrayerDataLoader.shared.invitatoryHymn(for: type)
     }
 
     func firstCanticleType(for date: Date) -> CanticleType {
@@ -1634,16 +1643,18 @@ class LiturgyCoreService {
         let temporal = getTemporalDay(for: date)
         let feast = sanctorale.getFeast(for: date)
         
+        let liturgy = resolve(for: date)
+        // 🌟 修正：只有當「主節期」是秋季齋期時才強制三童歌；若是「紀念」則不強制
+        if liturgy.mainTitle.contains("秋季齋期") {
+            return .benedicite
+        }
+        
         // 1. 慶節（聖日勝出）→ 讚美頌
         if let f = feast, f.name != temporal.title, f.rank > temporal.rank {
             return .teDeum
         }
         
         // 1b. 三一期內的「節期慶節」→ 讚美頌
-        //     基督聖體節、耶穌聖心節及其八日慶期等屬節期（temporal）慶節，
-        //     不在固定聖日表中，故第 1 步（只查 sanctorale）無法捕捉。
-        //     凡三一期內的平日（非主日）若 rank 高於平日等級（簡單平日 / 大平日 /
-        //     特權平日）即視為慶節，誦唸讚美頌。
         if info.season == .trinity && weekday != 1 {
             let feriaRanks: [LiturgicalRank] = [.feria, .greaterFeria, .privilegedFeria]
             if !feriaRanks.contains(temporal.rank) {

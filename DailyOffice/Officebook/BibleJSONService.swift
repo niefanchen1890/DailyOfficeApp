@@ -3,102 +3,200 @@ import Foundation
 final class BibleJSONService {
     static let shared = BibleJSONService()
     
+    // 🌟 快取加入了語言區分
     private let cache = NSCache<NSString, ChapterJSON>()
     
-    // MARK: - 書卷名稱映射（與 BibleView.swift 保持一致）
-    private let bookMapping: [String: String] = [
-        // 正典
-        "創世記": "GEN", "出埃及記": "EXO", "利未記": "LEV", "民數記": "NUM", "申命記": "DEU",
-        "約書亞記": "JOS", "士師記": "JDG", "路得記": "RUT", "撒母耳記上": "1SA", "撒母耳記下": "2SA",
-        "列王紀上": "1KI", "列王紀下": "2KI", "歷代志上": "1CH", "歷代志下": "2CH", "以斯拉記": "EZR",
-        "尼希米記": "NEH", "以斯帖記": "EST", "約伯記": "JOB", "詩篇": "PSA", "箴言": "PRO",
-        "傳道書": "ECC", "雅歌": "SNG", "以賽亞書": "ISA", "耶利米書": "JER", "耶利米哀歌": "LAM",
-        "以西結書": "EZK", "但以理書": "DAN", "何西阿書": "HOS", "約珥書": "JOL", "阿摩司書": "AMO",
-        "俄巴底亞書": "OBA", "約拿書": "JON", "彌迦書": "MIC", "那鴻書": "NAM", "哈巴谷書": "HAB",
-        "西番雅書": "ZEP", "哈該書": "HAG", "撒迦利亞書": "ZEC", "瑪拉基書": "MAL",
-        "馬太福音": "MAT", "馬可福音": "MRK", "路加福音": "LUK", "約翰福音": "JHN", "使徒行傳": "ACT",
-        "羅馬書": "ROM", "哥林多前書": "1CO", "哥林多後書": "2CO", "加拉太書": "GAL", "以弗所書": "EPH",
-        "腓立比書": "PHP", "歌羅西書": "COL", "帖撒羅尼迦前書": "1TH", "帖撒羅尼迦後書": "2TH",
-        "提摩太前書": "1TI", "提摩太後書": "2TI", "提多書": "TIT", "腓利門書": "PHM", "希伯來書": "HEB",
-        "雅各書": "JAS", "彼得前書": "1PE", "彼得後書": "2PE", "約翰一書": "1JN", "約翰二書": "2JN",
-        "約翰三書": "3JN", "猶大書": "JUD", "啟示錄": "REV",
-        // 次經
-        "瑪喀比傳上": "1_Maccabees", "瑪喀比傳下": "2_Maccabees", "多比傳": "Tobit",
-        "猶滴傳": "Judith", "便西拉智訓": "Sirach", "所羅門智訓": "Wisdom",
-        "以斯拉續篇上": "1_Esdras", "以斯拉續篇下": "2_Esdras", "巴錄書": "Baruch",
-        "耶利米書信": "Letter_Jeremiah", "瑪拿西禱言": "Pr_Manasseh", "三童歌": "Song_Three",
-        "蘇撒拿傳": "Susanna", "比勒與大龍": "Bel_Dragon", "以斯帖補編": "Esther_Add"
-    ]
+    // MARK: - 書卷名稱映射（支援繁簡體輸入，並自動過濾重複鍵值）
+    private let bookMapping: [String: String] = {
+        var map: [String: String] = [:]
+        
+        // 繁體映射
+        let traditional: [String: String] = [
+            "創世記": "GEN", "出埃及記": "EXO", "利未記": "LEV", "民數記": "NUM", "申命記": "DEU",
+            "約書亞記": "JOS", "士師記": "JDG", "路得記": "RUT", "撒母耳記上": "1SA", "撒母耳記下": "2SA",
+            "列王紀上": "1KI", "列王紀下": "2KI", "歷代志上": "1CH", "歷代志下": "2CH", "以斯拉記": "EZR",
+            "尼希米記": "NEH", "以斯帖記": "EST", "約伯記": "JOB", "詩篇": "PSA", "箴言": "PRO",
+            "傳道書": "ECC", "雅歌": "SNG", "以賽亞書": "ISA", "耶利米書": "JER", "耶利米哀歌": "LAM",
+            "以西結書": "EZK", "但以理書": "DAN", "何西阿書": "HOS", "約珥書": "JOL", "阿摩司書": "AMO",
+            "俄巴底亞書": "OBA", "約拿書": "JON", "彌迦書": "MIC", "那鴻書": "NAM", "哈巴谷書": "HAB",
+            "西番雅書": "ZEP", "哈該書": "HAG", "撒迦利亞書": "ZEC", "瑪拉基書": "MAL",
+            "馬太福音": "MAT", "馬可福音": "MRK", "路加福音": "LUK", "約翰福音": "JHN", "使徒行傳": "ACT",
+            "羅馬書": "ROM", "哥林多前書": "1CO", "哥林多後書": "2CO", "加拉太書": "GAL", "以弗所書": "EPH",
+            "腓立比書": "PHP", "歌羅西書": "COL", "帖撒羅尼迦前書": "1TH", "帖撒羅尼迦後書": "2TH",
+            "提摩太前書": "1TI", "提摩太後書": "2TI", "提多書": "TIT", "腓利門書": "PHM", "希伯來書": "HEB",
+            "雅各書": "JAS", "彼得前書": "1PE", "彼得後書": "2PE", "約翰一書": "1JN", "約翰二書": "2JN",
+            "約翰三書": "3JN", "猶大書": "JUD", "啟示錄": "REV",
+            "瑪喀比傳上": "1_Maccabees", "瑪喀比傳下": "2_Maccabees", "多比傳": "Tobit",
+            "猶滴傳": "Judith", "便西拉智訓": "Sirach", "所羅門智訓": "Wisdom",
+            "以斯拉續篇上": "1_Esdras", "以斯拉續篇下": "2_Esdras", "巴錄書": "Baruch",
+            "耶利米書信": "Letter_Jeremiah", "瑪拿西禱言": "Pr_Manasseh", "三童歌": "Song_Three",
+            "蘇撒拿傳": "Susanna", "比勒與大龍": "Bel_Dragon", "以斯帖補編": "Esther_Add"
+        ]
+        
+        // 簡體映射
+        let simplified: [String: String] = [
+            "创世记": "GEN", "出埃及记": "EXO", "利未记": "LEV", "民数记": "NUM", "申命记": "DEU",
+            "约书亚记": "JOS", "士师记": "JDG", "路得记": "RUT", "撒母耳记上": "1SA", "撒母耳记下": "2SA",
+            "列王纪上": "1KI", "列王纪下": "2KI", "历代志上": "1CH", "历代志下": "2CH", "以斯拉记": "EZR",
+            "尼希米记": "NEH", "以斯帖记": "EST", "约伯记": "JOB", "诗篇": "PSA", "箴言": "PRO",
+            "传道书": "ECC", "雅歌": "SNG", "以赛亚书": "ISA", "耶利米书": "JER", "耶利米哀歌": "LAM",
+            "以西结书": "EZK", "但以理书": "DAN", "何西阿书": "HOS", "约珥书": "JOL", "阿摩司书": "AMO",
+            "俄巴底亚书": "OBA", "约拿书": "JON", "弥迦书": "MIC", "那鸿书": "NAM", "哈巴谷书": "HAB",
+            "西番雅书": "ZEP", "哈该书": "HAG", "撒迦利亚书": "ZEC", "玛拉基书": "MAL",
+            "马太福音": "MAT", "马可福音": "MRK", "路加福音": "LUK", "约翰福音": "JHN", "使徒行传": "ACT",
+            "罗马书": "ROM", "哥林多前书": "1CO", "哥林多后书": "2CO", "加拉太书": "GAL", "以弗所书": "EPH",
+            "腓立比书": "PHP", "歌罗西书": "COL", "帖撒罗尼迦前书": "1TH", "帖撒罗尼迦后书": "2TH",
+            "提摩太前书": "1TI", "提摩太后书": "2TI", "提多书": "TIT", "腓利门书": "PHM", "希伯来书": "HEB",
+            "雅各书": "JAS", "彼得前书": "1PE", "彼得后书": "2PE", "约翰一书": "1JN", "约翰二书": "2JN",
+            "约翰三书": "3JN", "犹大书": "JUD", "启示录": "REV",
+            "玛喀比传上": "1_Maccabees", "玛喀比传下": "2_Maccabees", "多比传": "Tobit",
+            "犹滴传": "Judith", "便西拉智训": "Sirach", "所罗门智训": "Wisdom",
+            "以斯拉续篇上": "1_Esdras", "以斯拉续篇下": "2_Esdras", "巴录书": "Baruch",
+            "耶利米书信": "Letter_Jeremiah", "玛拿西祷言": "Pr_Manasseh", "三童歌": "Song_Three",
+            "苏撒拿传": "Susanna", "比勒与大龙": "Bel_Dragon", "以斯帖补编": "Esther_Add"
+        ]
+        
+        // 依序寫入字典，如果簡體有與繁體重複的書名（如箴言），將會自動覆蓋而不會報錯
+        for (key, value) in traditional { map[key] = value }
+        for (key, value) in simplified { map[key] = value }
+        
+        return map
+    }()
     
     // MARK: - 對外接口
     
-    /// 讀取指定經課引用的經文，整合為一段純文本（含節號）
-    func fetchScripture(book: String, chapter: String) -> String? {
-        // 🌟 統一連字符：防止中文輸入法自動替換的全角破折號導致解析失敗
-        let normalizedChapter = chapter
-            .replacingOccurrences(of: "\u{2013}", with: "-")  // EN DASH (–)
-            .replacingOccurrences(of: "\u{2014}", with: "-")  // EM DASH (—)
-            .replacingOccurrences(of: "\u{2010}", with: "-")  // HYPHEN (‐)
-            .replacingOccurrences(of: "\u{2212}", with: "-")  // MINUS SIGN (−)
-        
-        guard let bookCode = bookMapping[book] else {
-            print("❌ [BibleJSON] 未找到書卷映射: '\(book)'")
-            return nil
+    func fetchFullChapter(version: String, book: String, chapter: Int) -> [(heading: String?, content: String)] {
+        // 先將中文書卷名轉換為代碼 (如 "GEN")
+        guard let bookCode = bookMapping[book] ?? bookMapping.first(where: { $0.value == book })?.value else {
+            print("❌ [BibleJSON] BibleView 未找到書卷映射: '\(book)'")
+            return []
         }
         
-        let segments = parseSegments(normalizedChapter)   // ← 改為 normalizedChapter
-        guard !segments.isEmpty else {
-            print("❌ [BibleJSON] 無法解析章節範圍: '\(chapter)'")  // 日誌仍顯示原始值
-            return nil
-        }
+        let prefix = version == "SSEB" ? "sseb_" : ""
+        // 🌟 永遠讀取繁體原檔，不加 _zh-Hans
+        let resourceName = "\(prefix)\(bookCode)_\(chapter)"
         
-        var allTexts: [String] = []
-        
-        for segment in segments {
-            guard let chapterData = loadChapterJSON(bookCode: bookCode, chapter: segment.chapter) else {
-                print("❌ [BibleJSON] \(book) \(chapter)：第\(segment.chapter)章檔案缺失或解析失敗，經文不完整")
-                continue
-            }
-            let verses = extractVerses(from: chapterData, range: segment.verseRange)
-            if !verses.isEmpty {
-                allTexts.append(verses.joined(separator: " "))
-            }
-        }
-        
-        guard !allTexts.isEmpty else {
-            print("❌ [BibleJSON] 所有章節均無法讀取: \(book) \(chapter)")
-            return nil
-        }
-        let result = allTexts.joined(separator: " ")
-        print("✅ [BibleJSON] 成功讀取 \(book) \(chapter) (\(result.count) 字)")
-        return result
-    }
-    
-    // MARK: - 私有：JSON 加載
-    
-    private func loadChapterJSON(bookCode: String, chapter: Int) -> ChapterJSON? {
-        let cacheKey = "\(bookCode)_\(chapter)" as NSString
-        if let cached = cache.object(forKey: cacheKey) {
-            return cached
-        }
-        
-        let resourceName = "\(bookCode)_\(chapter)"
         guard let url = Bundle.main.url(forResource: resourceName, withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            print("❌ [BibleJSON] 找不到檔案: \(resourceName).json")
-            return nil
+              let data = try? Data(contentsOf: url),
+              let chapterData = try? JSONDecoder().decode(ChapterJSON.self, from: data) else {
+            print("❌ [BibleJSON] BibleView 找不到檔案: \(resourceName).json")
+            return []
         }
         
-        do {
-            let decoded = try JSONDecoder().decode(ChapterJSON.self, from: data)
-            cache.setObject(decoded, forKey: cacheKey)
-            return decoded
-        } catch {
-            print("❌ [BibleJSON] 解析失敗 \(resourceName).json: \(error)")
-            return nil
+        let allVerseKeys = chapterData.verses.keys.compactMap { Int($0) }.sorted()
+        guard !allVerseKeys.isEmpty else { return [] }
+        
+        var paragraphs: [(heading: String?, content: String)] = []
+        var currentHeading: String? = nil
+        var currentContent = ""
+        
+        let starts = chapterData.paragraph_starts ?? []
+        
+        for verseNum in allVerseKeys {
+            let verseStr = String(verseNum)
+            let isParagraphStart = starts.contains(verseNum) || verseNum == allVerseKeys.first
+            let hasHeading = chapterData.headings?[verseStr] != nil
+            
+            // 如果遇到新段落或新標題，就將前面的內容打包存入
+            if isParagraphStart || hasHeading {
+                if !currentContent.isEmpty {
+                    paragraphs.append((heading: currentHeading, content: currentContent))
+                    currentContent = ""
+                    currentHeading = nil
+                }
+            }
+            
+            if let heading = chapterData.headings?[verseStr] {
+                currentHeading = heading
+            }
+            
+            if let text = chapterData.verses[verseStr] {
+                if !currentContent.isEmpty { currentContent += " " }
+                currentContent += "\(verseNum) \(text)"
+            }
         }
+        
+        if !currentContent.isEmpty {
+            paragraphs.append((heading: currentHeading, content: currentContent))
+        }
+        
+        return paragraphs
     }
     
+    
+    // MARK: - 清理快取 (語言切換時必須呼叫)
+        func clearCache() {
+            cache.removeAllObjects()
+        }
+        
+        // MARK: - 給早晚禱經課使用的陣列讀取 (支援繁簡與版本)
+        func fetchVersesList(version: String, book: String, reference: String) -> [String] {
+            let normalizedChapter = reference
+                .replacingOccurrences(of: "\u{2013}", with: "-")
+                .replacingOccurrences(of: "\u{2014}", with: "-")
+                .replacingOccurrences(of: "\u{2010}", with: "-")
+                .replacingOccurrences(of: "\u{2212}", with: "-")
+            
+            guard let bookCode = bookMapping[book] ?? bookMapping.first(where: { $0.value == book })?.value else {
+                return []
+            }
+            
+            let segments = parseSegments(normalizedChapter)
+            var allTexts: [String] = []
+            
+            for segment in segments {
+                guard let chapterData = loadChapterJSON(version: version, bookCode: bookCode, chapter: segment.chapter) else {
+                    continue
+                }
+                let verses = extractVerses(from: chapterData, range: segment.verseRange)
+                allTexts.append(contentsOf: verses)
+            }
+            return allTexts
+        }
+        
+        /// 讀取指定經課引用的經文，整合為一段純文本（含節號）
+        func fetchScripture(book: String, chapter: String) -> String? {
+            let version = UserDefaults.standard.string(forKey: "bibleVersion") ?? "CUV"
+            let verses = fetchVersesList(version: version, book: book, reference: chapter)
+            return verses.isEmpty ? nil : verses.joined(separator: " ")
+        }
+
+        // MARK: - 私有：JSON 加載 (🌟 必須接收 version 參數，以正確載入 APO1933 或 SSEB)
+        private func loadChapterJSON(version: String, bookCode: String, chapter: Int) -> ChapterJSON? {
+            let lang = MorningPrayerDataLoader.shared.currentLanguage
+            
+            let cacheKey = "\(version)_\(bookCode)_\(chapter)_\(lang.rawValue)" as NSString
+            if let cached = cache.object(forKey: cacheKey) { return cached }
+            
+            let prefix = version == "SSEB" ? "sseb_" : ""
+            var resourceName = "\(prefix)\(bookCode)_\(chapter)"
+            
+            // 🌟 簡體中文後綴
+            if lang == .simplified {
+                resourceName += "_zh-Hans"
+            }
+            
+            var url = Bundle.main.url(forResource: resourceName, withExtension: "json")
+            if url == nil {
+                let fallbackName = "\(prefix)\(bookCode)_\(chapter)"
+                url = Bundle.main.url(forResource: fallbackName, withExtension: "json")
+            }
+            
+            guard let finalURL = url, let data = try? Data(contentsOf: finalURL) else {
+                print("❌ [BibleJSON] 找不到檔案: \(resourceName).json")
+                return nil
+            }
+            
+            do {
+                let decoded = try JSONDecoder().decode(ChapterJSON.self, from: data)
+                cache.setObject(decoded, forKey: cacheKey)
+                return decoded
+            } catch {
+                print("❌ [BibleJSON] 解析失敗 \(resourceName).json: \(error)")
+                return nil
+            }
+        }
+
     // MARK: - 私有：經文提取（節號加回每節開頭）
     
     private func extractVerses(from chapterData: ChapterJSON, range: VerseRange?) -> [String] {
@@ -124,24 +222,13 @@ final class BibleJSONService {
     
     // MARK: - 私有：章節範圍解析
     
-    /// 支援格式：
-    /// - "14"           → 第14章全部
-    /// - "14:25-35"     → 第14章 25-35節
-    /// - "14:25"        → 第14章 25節至章末（經課慣例：單節無連字符表示讀到章末）
-    /// - "1:1-6, 9-13"  → 第1章 1-6節、9-13節
-    /// - "10:28-11:2"   → 第10章28節至第11章2節（跨章節）
-    /// - "5:20-7:1"     → 第5章20節至第7章1節，中間第6章整章包含在內
-    /// - "38:1-11、38:16-18、42:1-6" → 多段跨章
     private func parseSegments(_ chapterString: String) -> [ChapterSegment] {
-        // 把括號轉為「、」分段，例如 "7:1-17 (18-end)" → "7:1-17 、18-end"
         let normalizedInput = chapterString
-            .replacingOccurrences(of: "，", with: "、")  // 統一全形逗號為頓號
+            .replacingOccurrences(of: "，", with: "、")
             .replacingOccurrences(of: "(", with: "、")
             .replacingOccurrences(of: ")", with: "")
         let majorParts = normalizedInput.components(separatedBy: "、")
         
-        // 只有整個引用本身是單一範圍時，才沿用「單節讀到章末」的經課慣例。
-        // 多段引用（如 "4:1、5、7-12"）中的單節必須只代表該節，避免重複輸出。
         let referencePartCount = majorParts.reduce(0) { count, part in
             let normalized = part
                 .trimmingCharacters(in: .whitespaces)
@@ -181,7 +268,6 @@ final class BibleJSONService {
                     let vTrimmed = vRange.trimmingCharacters(in: .whitespaces)
                     guard !vTrimmed.isEmpty else { continue }
                     
-                    // 優先嘗試跨章節解析（如 28-11:2）
                     if let cross = parseCrossChapterRange(vTrimmed, startChapter: ch) {
                         segments.append(contentsOf: cross)
                     } else if let vr = parseVerseRange(
@@ -198,10 +284,8 @@ final class BibleJSONService {
                           normalized,
                           expandSingleVerseToChapterEnd: expandSingleVerseToChapterEnd
                       ) {
-                // 無冒號，繼承上一段的章號（如 "16-18"）
                 segments.append(ChapterSegment(chapter: ch, verseRange: vr))
             } else if let ch = Int(normalized) {
-                // 純數字，視為整章
                 currentChapter = ch
                 segments.append(ChapterSegment(chapter: ch, verseRange: nil))
             }
@@ -210,9 +294,6 @@ final class BibleJSONService {
         return segments
     }
     
-    /// 解析跨章節範圍，如 "28-11:2" 或 "28—11:2"
-    /// 返回 ChapterSegment 陣列：前半（到章末）+ 中間所有完整章 + 後半（從頭開始）
-    /// 例如 5:20-7:1 → [5章20節-章末, 第6章整章, 7章1節]
     private func parseCrossChapterRange(_ text: String, startChapter: Int) -> [ChapterSegment]? {
         let separators = ["-", "—", "–"]
         for sep in separators {
@@ -229,7 +310,6 @@ final class BibleJSONService {
             guard endSubParts.count == 2,
                   let endChapter = Int(endSubParts[0].trimmingCharacters(in: .whitespaces)) else { continue }
             
-            // 新增：支援 "end" 作為結束節
             let endVerseStr = endSubParts[1].trimmingCharacters(in: .whitespaces)
             let endVerse: Int
             if endVerseStr.lowercased() == "end" {
@@ -239,13 +319,11 @@ final class BibleJSONService {
                 endVerse = ev
             }
             
-            // 防禦：結束章必須大於起始章，否則不是有效的跨章範圍
             guard endChapter > startChapter else { continue }
 
             var crossSegments: [ChapterSegment] = [
                 ChapterSegment(chapter: startChapter, verseRange: VerseRange(start: startVerse, end: 999))
             ]
-            // 補上中間所有完整章節（例如 5:20-7:1 中的第6章）
             if endChapter - startChapter > 1 {
                 for midChapter in (startChapter + 1)...(endChapter - 1) {
                     crossSegments.append(ChapterSegment(chapter: midChapter, verseRange: nil))
@@ -270,14 +348,12 @@ final class BibleJSONService {
         if parts.count > 1 {
             let endStr = parts[1].trimmingCharacters(in: .whitespaces)
             if endStr.isEmpty || endStr.lowercased() == "end" {
-                end = 999   // 由 extractVerses 自動截斷到實際最大節數
+                end = 999
             } else {
                 guard let e = Int(endStr) else { return nil }
                 end = e
             }
         } else {
-            // 單一引用（如 "1:10"）沿用經課慣例讀到章末；
-            // 多段引用（如 "4:1、5、7-12"）中的單節只讀該節。
             end = expandSingleVerseToChapterEnd ? 999 : start
         }
         
@@ -285,7 +361,7 @@ final class BibleJSONService {
     }
 }
 
-// MARK: - 內部模型（class 以滿足 NSCache 要求）
+// MARK: - 內部模型
 
 private final class ChapterJSON: Codable {
     let verses: [String: String]
@@ -299,7 +375,6 @@ private final class ChapterJSON: Codable {
     required init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         verses = try c.decode([String: String].self, forKey: .verses)
-        // 型別不符時靜默視為 nil，不讓它拖垮整個 decode
         headings = try? c.decodeIfPresent([String: String].self, forKey: .headings) ?? nil
         paragraph_starts = try? c.decodeIfPresent([Int].self, forKey: .paragraph_starts) ?? nil
     }
@@ -312,5 +387,5 @@ private struct VerseRange {
 
 private struct ChapterSegment {
     let chapter: Int
-    let verseRange: VerseRange?  // nil 表示整章
+    let verseRange: VerseRange?
 }

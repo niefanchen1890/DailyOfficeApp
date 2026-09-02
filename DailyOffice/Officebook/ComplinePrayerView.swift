@@ -1,8 +1,255 @@
 import SwiftUI
 import Combine
 
+// MARK: - 祝文選擇
+enum ComplineCollectOption: String, CaseIterable, Hashable {
+    case protection = "求護祝文"
+    case ambrose = "聖安波羅修祝文"
+    case hope = "希望祝文"
+    
+    func localizedTitle(isSimplified: Bool) -> String {
+        switch self {
+        case .protection: return isSimplified ? "求护祝文" : "求護祝文"
+        case .ambrose: return isSimplified ? "圣安波罗修祝文" : "聖安波羅修祝文"
+        case .hope: return isSimplified ? "希望祝文" : "希望祝文"
+        }
+    }
+}
+
+// MARK: - 聖詩類型
+enum ComplineHymnType: String, CaseIterable, Hashable {
+    case weekday = "平日"
+    case feast = "慶節"
+    case lent = "大齋期"
+    case easter = "復活期"
+    
+    func localizedTitle(isSimplified: Bool) -> String {
+        switch self {
+        case .weekday: return isSimplified ? "平日" : "平日"
+        case .feast: return isSimplified ? "庆节" : "慶節"
+        case .lent: return isSimplified ? "大斋期" : "大齋期"
+        case .easter: return isSimplified ? "复活期" : "復活期"
+        }
+    }
+}
+
+// MARK: - 簡短啟應選擇
+enum ComplineShortResponseOption: String, CaseIterable, Hashable {
+    case ordinary = "復活節期外"
+    case easter = "復活期"
+    
+    func localizedTitle(isSimplified: Bool) -> String {
+        switch self {
+        case .ordinary: return isSimplified ? "复活节期外" : "復活節期外"
+        case .easter: return isSimplified ? "复活期" : "復活期"
+        }
+    }
+}
+
+// MARK: - 祈禱顯示選擇
+enum ComplinePrayerOption: String, CaseIterable, Hashable {
+    case show = "顯示"
+    case omit = "省略"
+    
+    func localizedTitle(isSimplified: Bool) -> String {
+        switch self {
+        case .show: return isSimplified ? "显示" : "顯示"
+        case .omit: return isSimplified ? "省略" : "省略"
+        }
+    }
+}
+
+// MARK: - 視圖模型
+class ComplinePrayerViewModel: ObservableObject {
+    @Published var selectedDate: Date = Date()
+    @Published var selectedCollect: ComplineCollectOption = .protection
+    @Published var selectedShortResponseOption: ComplineShortResponseOption = .ordinary
+    @Published var selectedHymnType: ComplineHymnType = .weekday
+    @Published var selectedPrayerOption: ComplinePrayerOption = .show
+
+    @AppStorage("appLanguage") var appLanguageCode: String = AppLanguage.traditional.rawValue
+    var isSimplified: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+
+    private let eveningVM = EveningPrayerViewModel()
+    
+    var nuncDimittisCanticle: CanticleData {
+        eveningVM.secondCanticle
+    }
+    
+    var nuncDimittisAntiphon: String {
+        eveningVM.secondCanticleAntiphon ?? ComplinePrayerData.defaultNuncDimittisAntiphon
+    }
+
+    init() {
+        eveningVM.selectedSecondCanticle = .nuncDimittis
+        eveningVM.selectedDate = selectedDate
+        loadData()
+    }
+    
+    var liturgy: DailyLiturgy {
+        LiturgyCoreService.shared.resolve(for: selectedDate, isEvening: true)
+    }
+    
+    var commonName: String? {
+        let map: [String: String] = [
+            "復活後第五主日": isSimplified ? "特祷主日" : "特禱主日",
+            "復活後第一主日": isSimplified ? "卸白衣主日" : "卸白衣主日"
+        ]
+        return map[liturgy.mainTitle]
+    }
+
+    var isEasterSeason: Bool {
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        return [.easter, .ascension, .pentecost].contains(info.season)
+    }
+
+    var isHolyWeek: Bool {
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        return info.season == .holyWeek
+    }
+
+    var shouldShowPrayers: Bool {
+        let rank = liturgy.rank
+        let sundayRanks: [LiturgicalRank] = [.sundayFirstClassGreat, .sundayFirstClass, .sundaySecondClass, .ordinarySunday]
+        if sundayRanks.contains(rank) { return false }
+
+        let feastRanks: [LiturgicalRank] = [.doubleFirstClass, .doubleSecondClass, .greaterDouble, .double, .semiDouble]
+        if feastRanks.contains(rank) { return false }
+
+        let octaveRanks: [LiturgicalRank] = [
+            .privilegedOctaveFirstClass, .privilegedOctaveSecondClass,
+            .privilegedOctaveSecondClassGreat, .privilegedOctaveThirdClass,
+            .privilegedOctaveThirdClassGreat, .ordinaryOctavegreaterDouble,
+            .ordinaryOctavesemiDouble
+        ]
+        if octaveRanks.contains(rank) { return false }
+
+        return true
+    }
+
+    var currentPsalmAntiphon: ComplinePrayerData.PsalmAntiphonUI? {
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        let seasonMap: [LiturgicalSeason: String] = [
+            .advent: "降臨期", .christmas: "聖誕期", .epiphany: "全年通用",
+            .lent: "大齋期", .holyWeek: "大齋期", .easter: "復活期",
+            .ascension: "復活期", .pentecost: "復活期", .trinity: "全年通用"
+        ]
+
+        let key = seasonMap[info.season] ?? "全年通用"
+        let localizedKey = isSimplified ? key.replacingOccurrences(of: "期", with: "期").replacingOccurrences(of: "聖", with: "圣").replacingOccurrences(of: "復", with: "复").replacingOccurrences(of: "齋", with: "斋").replacingOccurrences(of: "臨", with: "临") : key
+        
+        return ComplinePrayerData.psalmAntiphons.first { $0.season == localizedKey }
+            ?? ComplinePrayerData.psalmAntiphons.first { $0.season == (isSimplified ? "全年通用" : "全年通用") }
+    }
+
+    var currentShortResponsorySet: ComplinePrayerData.ShortResponsorySetUI {
+        switch selectedShortResponseOption {
+        case .ordinary: return ComplinePrayerData.shortResponsesOrdinary
+        case .easter: return ComplinePrayerData.shortResponsesEaster
+        }
+    }
+    
+    var currentPostHymnResponses: [Responsory] {
+        isEasterSeason ? ComplinePrayerData.postHymnResponsesEaster : ComplinePrayerData.postHymnResponsesOrdinary
+    }
+    
+    var currentHymn: PrayerSection {
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        
+        if (49...51).contains(info.daysFromEaster) {
+            return ComplinePrayerData.almaChorusHymn
+        }
+        
+        switch selectedHymnType {
+        case .easter:
+            let season = info.season
+            if season == .ascension { return applySeasonalEnding(ComplinePrayerData.ascensionHymn) }
+            else if season == .pentecost { return applySeasonalEnding(ComplinePrayerData.pentecostHymn) }
+            else { return applySeasonalEnding(ComplinePrayerData.easterHymn) }
+        case .lent: return applySeasonalEnding(ComplinePrayerData.lentHymn)
+        case .feast: return applySeasonalEnding(ComplinePrayerData.feastHymn)
+        case .weekday: return applySeasonalEnding(ComplinePrayerData.weekdayHymn)
+        }
+    }
+
+    private func applySeasonalEnding(_ base: PrayerSection) -> PrayerSection {
+        let verses = PrimePrayerData.SeasonalHymnEnding.assemble(
+            baseVerses: base.paragraphs,
+            for: selectedDate,
+            liturgy: liturgy,
+            isSimplified: isSimplified
+        )
+        return PrayerSection(
+            title: base.title,
+            rubric: base.rubric,
+            paragraphs: verses,
+            responses: base.responses
+        )
+    }
+
+    var commemorationAntiphon: String? {
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        if info.season == .easter || info.season == .ascension || info.season == .pentecost {
+            return isSimplified ? "这是如何充满荣耀的王国！所有圣者在那里与基督一起欢乐。哈利路亚。" : "這是如何充滿榮耀的王國！所有聖者在那裡與基督一起歡樂。哈利路亞。"
+        }
+        return isSimplified ? "这是如何充满荣耀的王国！所有圣者在那里与基督一起欢乐。" : "這是如何充滿榮耀的王國！所有聖者在那裡與基督一起歡樂。"
+    }
+
+    var currentCollect: ComplinePrayerData.CollectOption {
+        switch selectedCollect {
+        case .protection: return ComplinePrayerData.collectOptions[0]
+        case .ambrose:    return ComplinePrayerData.collectOptions[1]
+        case .hope:       return ComplinePrayerData.collectOptions[2]
+        }
+    }
+
+    func loadData() {
+        eveningVM.selectedDate = selectedDate // Sync eveningVM
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        let season = info.season
+        let rank = liturgy.rank
+
+        if [.easter, .ascension, .pentecost].contains(season) {
+            selectedHymnType = .easter
+        } else if [.lent, .holyWeek].contains(season) {
+            selectedHymnType = .lent
+        } else {
+            let isFeast: [LiturgicalRank] = [.sundayFirstClassGreat, .sundayFirstClass, .sundaySecondClass, .ordinarySunday, .doubleFirstClass, .doubleSecondClass, .greaterDouble, .double, .semiDouble]
+            let isOctave: [LiturgicalRank] = [
+                .privilegedOctaveFirstClass, .privilegedOctaveSecondClass,
+                .privilegedOctaveSecondClassGreat, .privilegedOctaveThirdClass,
+                .privilegedOctaveThirdClassGreat, .ordinaryOctavegreaterDouble,
+                .ordinaryOctavesemiDouble
+            ]
+            if isFeast.contains(rank) || isOctave.contains(rank) {
+                selectedHymnType = .feast
+            } else {
+                selectedHymnType = .weekday
+            }
+        }
+
+        if season == .easter || season == .ascension {
+            selectedCollect = .hope
+        } else {
+            selectedCollect = .protection
+        }
+        selectedShortResponseOption = isEasterSeason ? .easter : .ordinary
+        selectedPrayerOption = shouldShowPrayers ? .show : .omit
+    }
+
+    func jumpToYesterday() {
+        if let d = Calendar.current.date(byAdding: .day, value: -1, to: selectedDate) { selectedDate = d; loadData() }
+    }
+    func jumpToToday() { selectedDate = Date(); loadData() }
+    func jumpToTomorrow() {
+        if let d = Calendar.current.date(byAdding: .day, value: 1, to: selectedDate) { selectedDate = d; loadData() }
+    }
+}
+
+// MARK: - 視圖
 struct ComplinePrayerView: View {
     @StateObject private var viewModel: ComplinePrayerViewModel
+    @Environment(\.colorScheme) var colorScheme
     let date: Date
     
     init(date: Date = Date()) {
@@ -35,38 +282,26 @@ struct ComplinePrayerView: View {
                 .padding(.vertical, 16)
                 .padding(.bottom, 60)
             }
-            .onAppear {
-                viewModel.loadData()
-            }
-            .background(Color(UIColor.systemGroupedBackground))
-
+            .onAppear { viewModel.loadData() }
+            .background(colorScheme == .dark ? Color.black : LiturgyColors.parchment)
             dateQuickNavButtons
         }
-        .navigationTitle("寢前禱")
+        .navigationTitle(viewModel.isSimplified ? "寝前祷" : "寢前禱")
         .navigationBarTitleDisplayMode(.inline)
     }
 
     // MARK: - 日期導航
     private var dateQuickNavButtons: some View {
-        HStack(spacing: 0) {
-            Button(action: { viewModel.jumpToYesterday() }) {
-                Text("昨日").font(.system(size: 15, weight: .medium))
-            }
-            .padding(.horizontal, 12).padding(.vertical, 8)
-
+        let isSimp = viewModel.isSimplified
+        return HStack(spacing: 0) {
+            Button(action: { viewModel.jumpToYesterday() }) { Text(isSimp ? "昨日" : "昨日").font(.system(size: 15, weight: .medium)) }
+                .padding(.horizontal, 12).padding(.vertical, 8)
             Divider().frame(height: 20).background(Color.white.opacity(0.3))
-
-            Button(action: { viewModel.jumpToToday() }) {
-                Text("今日").font(.system(size: 15, weight: .bold))
-            }
-            .padding(.horizontal, 12).padding(.vertical, 8)
-
+            Button(action: { viewModel.jumpToToday() }) { Text(isSimp ? "今日" : "今日").font(.system(size: 15, weight: .bold)) }
+                .padding(.horizontal, 12).padding(.vertical, 8)
             Divider().frame(height: 20).background(Color.white.opacity(0.3))
-
-            Button(action: { viewModel.jumpToTomorrow() }) {
-                Text("明日").font(.system(size: 15, weight: .medium))
-            }
-            .padding(.horizontal, 12).padding(.vertical, 8)
+            Button(action: { viewModel.jumpToTomorrow() }) { Text(isSimp ? "明日" : "明日").font(.system(size: 15, weight: .medium)) }
+                .padding(.horizontal, 12).padding(.vertical, 8)
         }
         .background(Capsule().fill(LiturgyColors.crimson).shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2))
         .foregroundColor(.white)
@@ -77,62 +312,37 @@ struct ComplinePrayerView: View {
     // MARK: - 標頭
     private var header: some View {
         let liturgy = viewModel.liturgy
+        let isSimp = viewModel.isSimplified
 
         return VStack(spacing: 0) {
             Text(formattedFullDateWithWeekday(viewModel.selectedDate))
-                .font(.system(size: 15, weight: .medium, design: .default))
-                .foregroundColor(.secondary)
-                .padding(.top, 12)
-
+                .font(.system(size: 15, weight: .medium, design: .default)).foregroundColor(.secondary).padding(.top, 12)
             Text(liturgy.mainTitle)
-                .font(.system(size: 34, weight: .bold))
-                .foregroundColor(.primary)
-                .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(.top, 12)
+                .font(.system(size: 34, weight: .bold)).foregroundColor(.primary).multilineTextAlignment(.center).padding(.top, 12)
 
             if let common = viewModel.commonName {
-                Text(common)
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(LiturgyColors.crimson)
-                    .padding(.top, 6)
+                Text(common).font(.system(size: 18, weight: .semibold)).foregroundColor(LiturgyColors.crimson).padding(.top, 6)
             }
-
             if !liturgy.rankName.isEmpty {
-                Text("（\(liturgy.rankName)）")
-                    .font(.system(size: 17, weight: .regular))
-                    .foregroundColor(LiturgyColors.crimson)
-                    .padding(.top, 4)
+                Text("（\(liturgy.rankName)）").font(.system(size: 17, weight: .regular)).foregroundColor(LiturgyColors.crimson).padding(.top, 4)
             }
 
-            Divider()
-                .background(Color.secondary.opacity(0.25))
-                .padding(.horizontal, 60)
-                .padding(.vertical, 20)
-
-            Text("寢  前  禱")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundColor(.primary)
-                .tracking(12)
-                .padding(.bottom, 4)
+            Divider().background(Color.secondary.opacity(0.25)).padding(.horizontal, 60).padding(.vertical, 20)
+            Text(isSimp ? "寝  前  祷" : "寢  前  禱")
+                .font(.system(size: 20, weight: .bold)).foregroundColor(.primary).tracking(12).padding(.bottom, 4)
 
             if !liturgy.commemorations.isEmpty {
-                Text("紀念：\(liturgy.commemorations.joined(separator: "、"))")
-                    .font(.system(size: 14, weight: .regular))
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 8)
-                    .padding(.bottom, 8)
+                Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、"))
+                    .font(.system(size: 14, weight: .regular)).foregroundColor(.secondary).multilineTextAlignment(.center).padding(.top, 8).padding(.bottom, 8)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .center)
-        .padding(.horizontal, 16)
+        .frame(maxWidth: .infinity, alignment: .center).padding(.horizontal, 16)
     }
 
     private func formattedFullDateWithWeekday(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: viewModel.isSimplified ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
 
@@ -149,34 +359,27 @@ struct ComplinePrayerView: View {
 
     // MARK: - 簡短讀經
     private var shortReadingSection: some View {
-        LiturgyCard {
+        let isSimp = viewModel.isSimplified
+        return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: ComplinePrayerData.shortReading.title ?? "簡短讀經")
+                SectionTitle(text: ComplinePrayerData.shortReading.title ?? (isSimp ? "简短读经" : "簡短讀經"))
                 BodyText(ComplinePrayerData.shortReading.paragraphs[0])
 
-                // ⬇️ 新增：經題（紅色）
-                Text("（彼得前書 5:8）")
+                Text(isSimp ? "（彼得前书 5:8）" : "（彼得前書 5:8）")
                     .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(.red)
-                    .padding(.top, 2)
-                    .padding(.leading, 4)
+                    .foregroundColor(.red).padding(.top, 2).padding(.leading, 4)
 
                 Divider().padding(.vertical, 4)
-
-                ResponsoryRow(response: Responsory(
-                    leader: "",
-                    people: "應：感謝上帝。"
-                ))
+                ResponsoryRow(response: Responsory(leader: "", people: isSimp ? "应：感谢上帝。" : "應：感謝上帝。"))
 
                 ForEach(ComplinePrayerData.readingResponses, id: \.self) { r in
                     ResponsoryRow(response: r)
                 }
 
                 Divider().padding(.vertical, 4)
-
-                // 主禱文前啟應
-                RubricBlock(text: "¶ 我們在天上的父，默念主禱文，然後出聲啟應：")
-                BodyText("我們在天上的父，願人都尊父的名為聖。願父的國降臨。願父的旨意行在地上，如同行在天上。日用的糧食，求父今天賜給我們。又求饒恕我們的罪，如同我們饒恕得罪我們的人。")
+                RubricBlock(text: isSimp ? "¶ 我们在天上的父，默念主祷文，然后出声启应：" : "¶ 我們在天上的父，默念主禱文，然後出聲啟應：")
+                BodyText(isSimp ? "我们在天上的父，愿人都尊父的名为圣。愿父的国降临。愿父的旨意行在地上，如同行在天上。日用的粮食，求父今天赐给我们。又求饶恕我们的罪，如同我们饶恕得罪我们的人。" : "我們在天上的父，願人都尊父的名為聖。願父的國降臨。願父的旨意行在地上，如同行在天上。日用的糧食，求父今天賜給我們。又求饒恕我們的罪，如同我們饒恕得罪我們的人。")
+                
                 ForEach(ComplinePrayerData.lordPrayerResponses, id: \.self) { r in
                     ResponsoryRow(response: r)
                 }
@@ -184,21 +387,19 @@ struct ComplinePrayerView: View {
         }
     }
 
-    // 主禱文前啟應（已併入簡短讀經區塊）
     private var lordPrayerResponsesSection: some View { EmptyView() }
 
     // MARK: - 詩篇
     private var psalmsSection: some View {
-        LiturgyCard {
+        let isSimp = viewModel.isSimplified
+        return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "詩篇")
-                RubricBlock(text: "¶ 然後，唸以下詩篇，並按著節期唸對應的對經。")
+                SectionTitle(text: isSimp ? "诗篇" : "詩篇")
+                RubricBlock(text: isSimp ? "¶ 然后，念以下诗篇，并按着节期念对应的对经。" : "¶ 然後，唸以下詩篇，並按著節期唸對應的對經。")
 
-                // 季節對經（前）
                 if let antiphon = viewModel.currentPsalmAntiphon {
                     RubricBlock(text: "¶ \(antiphon.season)：")
-                    MorningPrayerView.AntiphonRow(text: antiphon.before)
-                        .padding(.bottom, 4)
+                    MorningPrayerView.AntiphonRow(text: antiphon.before).padding(.bottom, 4)
                 }
 
                 let keys = ComplinePrayerData.psalmKeys
@@ -208,13 +409,10 @@ struct ComplinePrayerView: View {
                         let displayTitle = ComplinePrayerData.psalmDisplayTitle(for: key)
                         let latinSubtitle = ComplinePrayerData.psalmLatinSubtitle(for: key)
                         complinePsalmView(title: displayTitle, latin: latinSubtitle, content: psalm)
-                        if index < keys.count - 1 {
-                            Divider().padding(.vertical, 8)
-                        }
+                        if index < keys.count - 1 { Divider().padding(.vertical, 8) }
                     }
                 }
 
-                // 季節對經（後）
                 if let antiphon = viewModel.currentPsalmAntiphon {
                     Divider().padding(.vertical, 4)
                     MorningPrayerView.AntiphonRow(text: antiphon.after)
@@ -223,29 +421,19 @@ struct ComplinePrayerView: View {
         }
     }
 
-    // MARK: - 單篇詩篇渲染（寢前禱風格）
     private func complinePsalmView(title: String, latin: String, content: PsalmContent) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
-                Text(title)
-                    .foregroundColor(LiturgyColors.crimson)
-                if !latin.isEmpty {
-                    Text(latin)
-                        .italic()
-                        .foregroundColor(.primary)
-                }
+                Text(title).foregroundColor(LiturgyColors.crimson)
+                if !latin.isEmpty { Text(latin).italic().foregroundColor(.primary) }
             }
-            .font(.system(size: 17, weight: .semibold))
-            .padding(.bottom, 4)
+            .font(.system(size: 17, weight: .semibold)).padding(.bottom, 4)
 
-            ForEach(content.verses, id: \.self) { verse in
-                psalmVerseRow(verse)
-            }
+            ForEach(content.verses, id: \.self) { verse in psalmVerseRow(verse) }
 
-            // ⬇️ 新增：每篇詩篇後加榮耀頌
             VStack(alignment: .leading, spacing: 4) {
-                BodyText("但願榮耀歸於聖父、聖子、聖靈；")
-                BodyText("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
+                BodyText(viewModel.isSimplified ? "但愿荣耀归于圣父、圣子、圣灵；" : "但願榮耀歸於聖父、聖子、聖靈；")
+                BodyText(viewModel.isSimplified ? "※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。" : "※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
             }
             .padding(.top, 8)
         }
@@ -256,21 +444,11 @@ struct ComplinePrayerView: View {
         let trimmed = verse.trimmingCharacters(in: .whitespaces)
         var number = ""
         for char in trimmed { if char.isNumber { number.append(char) } else { break } }
-        let text = number.isEmpty
-            ? trimmed
-            : String(trimmed.dropFirst(number.count)).trimmingCharacters(in: .whitespaces)
+        let text = number.isEmpty ? trimmed : String(trimmed.dropFirst(number.count)).trimmingCharacters(in: .whitespaces)
 
         return HStack(alignment: .firstTextBaseline, spacing: 6) {
-            if !number.isEmpty {
-                Text(number)
-                    .font(.system(size: 17, weight: .regular))
-                    .foregroundColor(.red)
-            }
-            Text(text)
-                .font(.system(size: 17, weight: .regular))
-                .foregroundColor(.primary)
-                .lineSpacing(6)
-                .fixedSize(horizontal: false, vertical: true)
+            if !number.isEmpty { Text(number).font(.system(size: 17, weight: .regular)).foregroundColor(.red) }
+            Text(text).font(.system(size: 17, weight: .regular)).foregroundColor(.primary).lineSpacing(6).fixedSize(horizontal: false, vertical: true)
         }
     }
 
@@ -278,10 +456,9 @@ struct ComplinePrayerView: View {
     private var lessonSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "經課")
+                SectionTitle(text: ComplinePrayerData.lesson.title ?? (viewModel.isSimplified ? "经课" : "經課"))
                 
-                // 拆分經文與經題（經題標紅）
-                let fullText = ComplinePrayerData.lesson.paragraphs[0]
+                let fullText = ComplinePrayerData.lesson.paragraphs.first ?? ""
                 if let openRange = fullText.range(of: "（", options: .backwards),
                    let closeRange = fullText.range(of: "）", options: .backwards),
                    openRange.lowerBound < closeRange.lowerBound {
@@ -290,54 +467,37 @@ struct ComplinePrayerView: View {
                     let reference = String(fullText[openRange.lowerBound...])
                     
                     BodyText(scripture)
-                    
-                    Text(reference)
-                        .font(.system(size: 13, weight: .medium))
-                        .foregroundColor(.red)
-                        .padding(.top, 2)
-                        .padding(.leading, 4)
+                    Text(reference).font(.system(size: 13, weight: .medium)).foregroundColor(.red).padding(.top, 2).padding(.leading, 4)
                 } else {
                     BodyText(fullText)
                 }
 
-                // 🌟 禮規說明（非啟，紅色斜體）
-                if let rubric = ComplinePrayerData.lesson.rubric {
-                    RubricBlock(text: rubric)
-                }
+                if let rubric = ComplinePrayerData.lesson.rubric { RubricBlock(text: rubric) }
 
-                // 只保留應：感謝上帝（啟行為空，自動隱藏）
-                ResponsoryRow(response: Responsory(
-                    leader: "",
-                    people: "感謝上帝。"
-                ))
+                ResponsoryRow(response: Responsory(leader: "", people: viewModel.isSimplified ? "应：感谢上帝。" : "應：感謝上帝。"))
             }
         }
     }
 
     // MARK: - 簡短啟應
     private var shortResponsesSection: some View {
+        let isSimp = viewModel.isSimplified
         let set = viewModel.currentShortResponsorySet
 
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "簡短啟應")
-                RubricBlock(text: "¶ 按著季節選擇以下的簡短啟應。")
+                SectionTitle(text: isSimp ? "简短启应" : "簡短啟應")
+                RubricBlock(text: isSimp ? "¶ 按着季节选择以下的简短启应。" : "¶ 按著季節選擇以下的簡短啟應。")
 
-                // 節期選擇器（與六時禱一致）
-                Picker("啟應選擇", selection: $viewModel.selectedShortResponseOption) {
+                Picker(isSimp ? "启应选择" : "啟應選擇", selection: $viewModel.selectedShortResponseOption) {
                     ForEach(ComplineShortResponseOption.allCases, id: \.self) { option in
-                        Text(option.rawValue).tag(option)
+                        Text(option.localizedTitle(isSimplified: isSimp)).tag(option)
                     }
                 }
-                .pickerStyle(.segmented)
-                .padding(.vertical, 6)
+                .pickerStyle(.segmented).padding(.vertical, 6)
 
-                // 苦難期提示
-                if viewModel.isHolyWeek {
-                    RubricBlock(text: "¶ 苦難期不誦唸榮耀頌。")
-                }
+                if viewModel.isHolyWeek { RubricBlock(text: isSimp ? "¶ 苦难期不诵念荣耀颂。" : "¶ 苦難期不誦唸榮耀頌。") }
 
-                // 顯示當前組別標題與啟應
                 RubricBlock(text: "¶ \(set.title)")
                 ForEach(set.responses, id: \.self) { r in
                     ResponsoryRow(response: r)
@@ -346,30 +506,25 @@ struct ComplinePrayerView: View {
         }
     }
 
-    // MARK: - 聖詩（帶節期選擇器，與簡短啟應同風格）
+    // MARK: - 聖詩
     private var hymnSection: some View {
+        let isSimp = viewModel.isSimplified
         let hymnData = viewModel.currentHymn
 
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "聖詩")
+                SectionTitle(text: isSimp ? "圣诗" : "聖詩")
 
-                // 節期選擇器（與簡短啟應一致）
-                Picker("聖詩選擇", selection: $viewModel.selectedHymnType) {
+                Picker(isSimp ? "圣诗选择" : "聖詩選擇", selection: $viewModel.selectedHymnType) {
                     ForEach(ComplineHymnType.allCases, id: \.self) { type in
-                        Text(type.rawValue).tag(type)
+                        Text(type.localizedTitle(isSimplified: isSimp)).tag(type)
                     }
                 }
-                .pickerStyle(.segmented)
-                .padding(.vertical, 6)
+                .pickerStyle(.segmented).padding(.vertical, 6)
 
-                if let rubric = hymnData.rubric {
-                    RubricBlock(text: rubric)
-                }
+                if let rubric = hymnData.rubric { RubricBlock(text: rubric) }
 
-                ForEach(hymnData.paragraphs, id: \.self) { verse in
-                    hymnVerseRow(verse)
-                }
+                ForEach(hymnData.paragraphs, id: \.self) { verse in hymnVerseRow(verse) }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -381,36 +536,20 @@ struct ComplinePrayerView: View {
         let lines = bodyText.components(separatedBy: "\n").filter { !$0.isEmpty }
 
         return HStack(alignment: .top, spacing: 0) {
-            Text(prefix)
-                .font(.system(size: 17, weight: .medium))
-                .foregroundColor(.red)
-                .frame(width: 40, alignment: .leading)
+            Text(prefix).font(.system(size: 17, weight: .medium)).foregroundColor(.red).frame(width: 40, alignment: .leading)
             VStack(alignment: .leading, spacing: 2) {
                 ForEach(lines.indices, id: \.self) { i in
-                    Text(lines[i])
-                        .font(.system(size: 17, weight: .regular))
-                        .foregroundColor(.primary)
-                        .fixedSize(horizontal: false, vertical: true)
+                    Text(lines[i]).font(.system(size: 17, weight: .regular)).foregroundColor(.primary).fixedSize(horizontal: false, vertical: true)
                 }
             }
         }
-        .padding(.vertical, 2)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 2).frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func extractChineseNumberPrefix(_ text: String) -> String {
         let chineseDigits = "一二三四五六七八九十"
         var prefix = ""
-        for char in text {
-            if chineseDigits.contains(char) {
-                prefix.append(char)
-            } else if char == "、" && !prefix.isEmpty {
-                prefix.append(char)
-                return prefix
-            } else {
-                break
-            }
-        }
+        for char in text { if chineseDigits.contains(char) { prefix.append(char) } else if char == "、" && !prefix.isEmpty { prefix.append(char); return prefix } else { break } }
         return prefix
     }
 
@@ -425,148 +564,88 @@ struct ComplinePrayerView: View {
         }
     }
 
-    // MARK: - 頌歌（西面頌）—— 直接引用晚禱數據
+    // MARK: - 頌歌（西面頌）
     private var nuncDimittisSection: some View {
         let canticle = viewModel.nuncDimittisCanticle
         let antiphon = viewModel.nuncDimittisAntiphon
+        let isSimp = viewModel.isSimplified
 
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                // 標題區
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(canticle.title)
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(LiturgyColors.crimson)
-                    if let subtitle = canticle.subtitle {
-                        Text(subtitle)
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundColor(.primary)
-                    }
+                    Text(canticle.title).font(.system(size: 20, weight: .bold)).foregroundColor(LiturgyColors.crimson)
+                    if let subtitle = canticle.subtitle { Text(subtitle).font(.system(size: 14, weight: .medium)).foregroundColor(.primary) }
                 }
 
-                RubricBlock(text: "¶ 然後唸此頌歌，並相應的對經。")
+                RubricBlock(text: isSimp ? "¶ 然后念此颂歌，并相应的对经。" : "¶ 然後唸此頌歌，並相應的對經。")
 
-                // 對經（前）
-                MorningPrayerView.AntiphonRow(text: antiphon)
-                    .padding(.bottom, 4)
+                MorningPrayerView.AntiphonRow(text: antiphon).padding(.bottom, 4)
 
-                // 頌歌內容
                 if canticle.style == "responsive", let verses = canticle.verses {
-                    ForEach(verses) { verse in
-                        canticleVerseRow(verse)
-                    }
+                    ForEach(verses) { verse in canticleVerseRow(verse) }
                 } else if let paragraphs = canticle.paragraphs {
-                    ForEach(paragraphs.indices, id: \.self) { i in
-                        BodyText(paragraphs[i])
-                    }
+                    ForEach(paragraphs.indices, id: \.self) { i in BodyText(paragraphs[i]) }
                 }
 
-                // 榮耀頌
                 if let doxology = canticle.doxology {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(doxology)
-                            .font(.system(size: 17))
-                            .foregroundColor(.primary)
-                    }
-                    .padding(.top, 8)
+                    VStack(alignment: .leading, spacing: 2) { Text(doxology).font(.system(size: 17)).foregroundColor(.primary) }.padding(.top, 8)
                 }
 
-                // 對經（後）
-                MorningPrayerView.AntiphonRow(text: antiphon)
-                    .padding(.top, 8)
+                MorningPrayerView.AntiphonRow(text: antiphon).padding(.top, 8)
             }
         }
     }
 
     private func canticleVerseRow(_ verse: CanticleVerse) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(verse.call)
-                .font(.system(size: 17, weight: .regular))
-                .foregroundColor(.primary)
-            Text(verse.response)
-                .font(.system(size: 17))
-                .foregroundColor(.primary)
-                .lineSpacing(4)
+            Text(verse.call).font(.system(size: 17, weight: .regular)).foregroundColor(.primary)
+            Text(verse.response).font(.system(size: 17)).foregroundColor(.primary).lineSpacing(4)
         }
         .padding(.vertical, 2)
     }
 
     // MARK: - 祈禱
     private var prayersSection: some View {
-        LiturgyCard {
+        let isSimp = viewModel.isSimplified
+        return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "祈禱")
+                SectionTitle(text: isSimp ? "祈祷" : "祈禱")
 
-                // 顯示／省略選擇器
-                Picker("祈禱選擇", selection: $viewModel.selectedPrayerOption) {
+                Picker(isSimp ? "祈祷选择" : "祈禱選擇", selection: $viewModel.selectedPrayerOption) {
                     ForEach(ComplinePrayerOption.allCases, id: \.self) { option in
-                        Text(option.rawValue).tag(option)
+                        Text(option.localizedTitle(isSimplified: isSimp)).tag(option)
                     }
                 }
-                .pickerStyle(.segmented)
-                .padding(.vertical, 6)
+                .pickerStyle(.segmented).padding(.vertical, 6)
 
-                // 內容或省略提示
                 if viewModel.selectedPrayerOption == .show {
-                    if let rubric = ComplinePrayerData.prayersSection.rubric {
-                        RubricBlock(text: rubric)
-                    }
+                    if let rubric = ComplinePrayerData.prayersSection.rubric { RubricBlock(text: rubric) }
 
-                    // 求主憐憫
-                    Text("求主憐憫；\n求基督憐憫；\n求主憐憫。")
-                        .font(.system(size: 17, weight: .regular))
-                        .foregroundColor(.primary)
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.vertical, 4)
+                    Text(ComplinePrayerData.prayersSection.paragraphs[0])
+                        .font(.system(size: 17, weight: .regular)).foregroundColor(.primary).multilineTextAlignment(.center).frame(maxWidth: .infinity, alignment: .center).padding(.vertical, 4)
 
-                    // 主禱文默念提示
-                    RubricBlock(text: "¶ 默念主禱文，然後出聲啟應：")
+                    RubricBlock(text: isSimp ? "¶ 默念主祷文，然后出声启应：" : "¶ 默念主禱文，然後出聲啟應：")
                     BodyText(ComplinePrayerData.prayersSection.paragraphs[1])
 
                     Divider().padding(.vertical, 6)
 
-                    // 啟應（前兩組）
-                    ForEach(0..<2, id: \.self) { i in
-                        ResponsoryRow(response: ComplinePrayerData.prayersResponses[i])
-                    }
+                    ForEach(0..<2, id: \.self) { i in ResponsoryRow(response: ComplinePrayerData.prayersResponses[i]) }
 
-                    // 使徒信經提示
-                    RubricBlock(text: "¶ 默唸「使徒信經」，然後出聲啟應：")
-
-                    // 啟應（續：自「我信身體復活」起）
+                    RubricBlock(text: isSimp ? "¶ 默念「使徒信经」，然后出声启应：" : "¶ 默唸「使徒信經」，然後出聲啟應：")
                     let remainingResponses = Array(ComplinePrayerData.prayersResponses.dropFirst(2))
-                    ForEach(remainingResponses, id: \.self) { r in
-                        ResponsoryRow(response: r)
-                    }
+                    ForEach(remainingResponses, id: \.self) { r in ResponsoryRow(response: r) }
 
-                    // 認罪文
-                    if let rubric = ComplinePrayerData.confession.rubric {
-                        RubricBlock(text: rubric)
-                    }
-                    ForEach(ComplinePrayerData.confession.paragraphs, id: \.self) { p in
-                        BodyText(p)
-                    }
+                    if let rubric = ComplinePrayerData.confession.rubric { RubricBlock(text: rubric) }
+                    ForEach(ComplinePrayerData.confession.paragraphs, id: \.self) { p in BodyText(p) }
                     RubricBlock(text: ComplinePrayerData.confessionNote)
 
-                    // 赦罪文（會長）
-                    if let rubric = ComplinePrayerData.absolutionClergy.rubric {
-                        RubricBlock(text: rubric)
-                    }
-                    ForEach(ComplinePrayerData.absolutionClergy.paragraphs, id: \.self) { p in
-                        BodyText(p)
-                    }
-                    ForEach(ComplinePrayerData.postAbsolutionResponses, id: \.self) { r in
-                        ResponsoryRow(response: r)
-                    }
+                    if let rubric = ComplinePrayerData.absolutionClergy.rubric { RubricBlock(text: rubric) }
+                    ForEach(ComplinePrayerData.absolutionClergy.paragraphs, id: \.self) { p in BodyText(p) }
+                    ForEach(ComplinePrayerData.postAbsolutionResponses, id: \.self) { r in ResponsoryRow(response: r) }
 
                 } else {
-                    Text("（本日為主日、慶節或八日慶期，省略此「祈禱」，直接誦唸祝文。）")
-                        .font(.system(size: 15, weight: .regular))
-                        .italic()
-                        .foregroundColor(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.vertical, 12)
+                    Text(isSimp ? "（本日为主日、庆节或八日庆期，省略此「祈祷」，直接诵念祝文。）" : "（本日為主日、慶節或八日慶期，省略此「祈禱」，直接誦唸祝文。）")
+                        .font(.system(size: 15, weight: .regular)).italic().foregroundColor(.secondary).frame(maxWidth: .infinity, alignment: .center).padding(.vertical, 12)
                 }
             }
         }
@@ -574,45 +653,29 @@ struct ComplinePrayerView: View {
 
     // MARK: - 祝文
     private var collectsSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        let isSimp = viewModel.isSimplified
+        return VStack(alignment: .leading, spacing: 12) {
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    SectionTitle(text: "祝文")
-                    RubricBlock(text: "¶ 祈禱後，或省略祈禱，則簡短啟應後，直接唸下文。")
+                    SectionTitle(text: isSimp ? "祝文" : "祝文")
+                    RubricBlock(text: isSimp ? "¶ 祈祷后，或省略祈祷，则简短启应后，直接念下文。" : "¶ 祈禱後，或省略祈禱，則簡短啟應後，直接唸下文。")
 
-                    // ✅ 祝文前啟應（3句）
-                    ForEach(ComplinePrayerData.preCollectResponses, id: \.self) { r in
-                        ResponsoryRow(response: r)
-                    }
+                    ForEach(ComplinePrayerData.preCollectResponses, id: \.self) { r in ResponsoryRow(response: r) }
 
-                    Text("我們要禱告。")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundColor(.primary)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.vertical, 4)
+                    Text(isSimp ? "我们要祷告。" : "我們要禱告。").font(.system(size: 17, weight: .medium)).foregroundColor(.primary).frame(maxWidth: .infinity, alignment: .center).padding(.vertical, 4)
 
-                    // 祝文選擇器
-                    Picker("祝文選擇", selection: $viewModel.selectedCollect) {
+                    Picker(isSimp ? "祝文选择" : "祝文選擇", selection: $viewModel.selectedCollect) {
                         ForEach(ComplineCollectOption.allCases, id: \.self) { option in
-                            Text(option.rawValue).tag(option)
+                            Text(option.localizedTitle(isSimplified: isSimp)).tag(option)
                         }
                     }
-                    .pickerStyle(.segmented)
-                    .padding(.vertical, 6)
+                    .pickerStyle(.segmented).padding(.vertical, 6)
 
-                    // 當前祝文
                     let collect = viewModel.currentCollect
-                    Text(collect.title)
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundColor(LiturgyColors.crimson)
-                        .padding(.top, 2)
-
+                    Text(collect.title).font(.system(size: 17, weight: .semibold)).foregroundColor(LiturgyColors.crimson).padding(.top, 2)
                     BodyText(collect.text)
 
-                    // ✅ 祝文後啟應（2句）
-                    ForEach(ComplinePrayerData.postCollectResponses, id: \.self) { r in
-                        ResponsoryRow(response: r)
-                    }
+                    ForEach(ComplinePrayerData.postCollectResponses, id: \.self) { r in ResponsoryRow(response: r) }
                 }
             }
         }
@@ -622,277 +685,29 @@ struct ComplinePrayerView: View {
     private var commemorationSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: ComplinePrayerData.commemorationSection.title ?? "紀念聖母與諸聖")
+                SectionTitle(text: ComplinePrayerData.commemorationSection.title ?? (viewModel.isSimplified ? "纪念圣母与诸圣" : "紀念聖母與諸聖"))
 
-                if let rubric = ComplinePrayerData.commemorationSection.rubric {
-                    RubricBlock(text: rubric)
-                }
+                if let rubric = ComplinePrayerData.commemorationSection.rubric { RubricBlock(text: rubric) }
 
-                // 對經
                 if let antiphon = viewModel.commemorationAntiphon {
-                    MorningPrayerView.AntiphonRow(text: antiphon)
-                        .padding(.bottom, 4)
+                    MorningPrayerView.AntiphonRow(text: antiphon).padding(.bottom, 4)
                 }
 
-                // 祝文前啟應
-                ForEach(ComplinePrayerData.commemorationResponsesBefore, id: \.self) { r in
-                    ResponsoryRow(response: r)
-                }
+                ForEach(ComplinePrayerData.commemorationResponsesBefore, id: \.self) { r in ResponsoryRow(response: r) }
 
                 Divider().padding(.vertical, 4)
-
-                // 祝文正文
                 BodyText(ComplinePrayerData.commemorationSection.paragraphs[0])
-
-                // 祝文後啟應
-                ForEach(ComplinePrayerData.commemorationResponsesAfter, id: \.self) { r in
-                    ResponsoryRow(response: r)
-                }
+                ForEach(ComplinePrayerData.commemorationResponsesAfter, id: \.self) { r in ResponsoryRow(response: r) }
             }
         }
     }
+
     // MARK: - 結尾
     private var endingSection: some View {
         VStack(spacing: 0) {
-            Text("❦ 寢前禱至此結束。")
-                .font(.system(size: 15, weight: .medium))
-                .foregroundColor(.red)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.vertical, 20)
-
+            Text(viewModel.isSimplified ? "❦ 寝前祷至此结束。" : "❦ 寢前禱至此結束。")
+                .font(.system(size: 15, weight: .medium)).foregroundColor(.red).frame(maxWidth: .infinity, alignment: .center).padding(.vertical, 20)
             Spacer().frame(height: 32)
-        }
-    }
-}
-
-// MARK: - 視圖模型
-class ComplinePrayerViewModel: ObservableObject {
-    @Published var selectedDate: Date = Date()
-    @Published var selectedCollect: ComplineCollectOption = .protection
-    @Published var selectedShortResponseOption: ComplineShortResponseOption = .ordinary
-    @Published var selectedHymnType: ComplineHymnType = .weekday   // ⬅️ 新增：聖詩手動選項
-    @Published var selectedPrayerOption: ComplinePrayerOption = .show
-
-    private let eveningVM = EveningPrayerViewModel()
-    /// 西面頌數據（直接引用晚禱 VM，固定為 Nunc Dimittis）
-    var nuncDimittisCanticle: CanticleData {
-        eveningVM.secondCanticle
-    }
-    
-    /// 西面頌對經（直接引用晚禱 VM 的 JSON → 節期回退 → 默認對經 邏輯）
-    var nuncDimittisAntiphon: String {
-        eveningVM.secondCanticleAntiphon ?? ComplinePrayerData.defaultNuncDimittisAntiphon
-    }
-
-    init() {
-        eveningVM.selectedSecondCanticle = .nuncDimittis
-        eveningVM.selectedDate = selectedDate
-        loadData()
-        
-    }
-    
-    var liturgy: DailyLiturgy {
-        LiturgyCoreService.shared.resolve(for: selectedDate, isEvening: true)
-    }
-    
-    var commonName: String? {
-        let map: [String: String] = [
-            "復活後第五主日": "特禱主日",
-            "復活後第一主日": "卸白衣主日"
-        ]
-        return map[liturgy.mainTitle]
-    }
-
-    /// 是否為復活期（含升天期、聖靈降臨期）
-    var isEasterSeason: Bool {
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        return [.easter, .ascension, .pentecost].contains(info.season)
-    }
-
-    /// 是否為苦難期
-    var isHolyWeek: Bool {
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        return info.season == .holyWeek
-    }
-
-    /// 是否應顯示祈禱（平日顯示，主日/慶節/八日慶期省略）
-    var shouldShowPrayers: Bool {
-        let rank = liturgy.rank
-        let sundayRanks: [LiturgicalRank] = [.sundayFirstClassGreat, .sundayFirstClass, .sundaySecondClass, .ordinarySunday]
-        if sundayRanks.contains(rank) { return false }
-
-        let feastRanks: [LiturgicalRank] = [.doubleFirstClass, .doubleSecondClass, .greaterDouble, .double, .semiDouble]
-        if feastRanks.contains(rank) { return false }
-
-        let octaveRanks: [LiturgicalRank] = [
-            .privilegedOctaveFirstClass, .privilegedOctaveSecondClass,
-            .privilegedOctaveSecondClassGreat, .privilegedOctaveThirdClass,
-            .privilegedOctaveThirdClassGreat, .ordinaryOctavegreaterDouble,
-            .ordinaryOctavesemiDouble
-        ]
-        if octaveRanks.contains(rank) { return false }
-
-        return true
-    }
-
-    /// 當季節對經（詩篇）
-    var currentPsalmAntiphon: ComplinePrayerData.PsalmAntiphon? {
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        let season = info.season
-
-        let seasonMap: [LiturgicalSeason: String] = [
-            .advent: "降臨期",
-            .christmas: "聖誕期",
-            .epiphany: "全年通用",
-            .lent: "大齋期",
-            .holyWeek: "大齋期",
-            .easter: "復活期",
-            .ascension: "復活期",
-            .pentecost: "復活期",
-            .trinity: "全年通用"
-        ]
-
-        let key = seasonMap[season] ?? "全年通用"
-        return ComplinePrayerData.psalmAntiphons.first { $0.season == key }
-            ?? ComplinePrayerData.psalmAntiphons.first { $0.season == "全年通用" }
-    }
-
-    /// 當日簡短啟應
-    var currentShortResponsorySet: ComplinePrayerData.ShortResponsorySet {
-        switch selectedShortResponseOption {
-        case .ordinary:
-            return ComplinePrayerData.shortResponsesOrdinary
-        case .easter:
-            return ComplinePrayerData.shortResponsesEaster
-        }
-    }
-    
-    /// 當日聖詩後啟應
-    var currentPostHymnResponses: [Responsory] {
-        isEasterSeason ? ComplinePrayerData.postHymnResponsesEaster : ComplinePrayerData.postHymnResponsesOrdinary
-    }
-    
-    /// 當日聖詩（根據選擇器或節期預設）
-    var currentHymn: PrayerSection {
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        
-        // 🌟 聖靈降臨日（49）至聖靈降臨後二日（51）強制使用 Alma Chorus
-        if (49...51).contains(info.daysFromEaster) {
-            return ComplinePrayerData.almaChorusHymn
-        }
-        
-        switch selectedHymnType {
-        case .easter:
-            let season = info.season
-            if season == .ascension {
-                return ComplinePrayerData.ascensionHymn
-            } else if season == .pentecost {
-                return ComplinePrayerData.pentecostHymn
-            } else {
-                return ComplinePrayerData.easterHymn
-            }
-
-        case .lent:
-            return applySeasonalEnding(ComplinePrayerData.lentHymn)
-        case .feast:
-            return applySeasonalEnding(ComplinePrayerData.feastHymn)
-        case .weekday:
-            return applySeasonalEnding(ComplinePrayerData.weekdayHymn)
-        }
-    }
-
-    /// 套用節期結尾替換（與一時禱共用 PrimePrayerData.SeasonalHymnEnding）
-    private func applySeasonalEnding(_ base: PrayerSection) -> PrayerSection {
-        let verses = PrimePrayerData.SeasonalHymnEnding.assemble(
-            baseVerses: base.paragraphs,
-            for: selectedDate,
-            liturgy: liturgy
-        )
-        return PrayerSection(
-            title: base.title,
-            rubric: base.rubric,
-            paragraphs: verses,
-            responses: base.responses
-        )
-    }
-
-    /// 紀念聖母對經
-    var commemorationAntiphon: String? {
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        if info.season == .easter || info.season == .ascension || info.season == .pentecost {
-            return "這是如何充滿榮耀的王國！所有聖者在那裡與基督一起歡樂。哈利路亞。"
-        }
-        return "這是如何充滿榮耀的王國！所有聖者在那裡與基督一起歡樂。"
-    }
-
-    /// 當前祝文
-    var currentCollect: ComplinePrayerData.CollectOption {
-        switch selectedCollect {
-        case .protection: return ComplinePrayerData.collectOptions[0]
-        case .ambrose:    return ComplinePrayerData.collectOptions[1]
-        case .hope:       return ComplinePrayerData.collectOptions[2]
-        }
-    }
-
-    func loadData() {
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        let season = info.season
-        let rank = liturgy.rank
-
-        // ⬇️ 預設聖詩選項（按當前節期）
-        if [.easter, .ascension, .pentecost].contains(season) {
-            selectedHymnType = .easter
-        } else if [.lent, .holyWeek].contains(season) {
-            selectedHymnType = .lent
-        } else {
-            let isFeast: [LiturgicalRank] = [.sundayFirstClassGreat, .sundayFirstClass, .sundaySecondClass, .ordinarySunday, .doubleFirstClass, .doubleSecondClass, .greaterDouble, .double, .semiDouble]
-            let isOctave: [LiturgicalRank] = [
-                .privilegedOctaveFirstClass, .privilegedOctaveSecondClass,
-                .privilegedOctaveSecondClassGreat, .privilegedOctaveThirdClass,
-                .privilegedOctaveThirdClassGreat, .ordinaryOctavegreaterDouble,
-                .ordinaryOctavesemiDouble
-            ]
-            if isFeast.contains(rank) || isOctave.contains(rank) {
-                selectedHymnType = .feast
-            } else {
-                selectedHymnType = .weekday
-            }
-        }
-
-        // 原有祝文與簡短啟應預設
-        if season == .easter || season == .ascension {
-            selectedCollect = .hope
-        } else {
-            selectedCollect = .protection
-        }
-        selectedShortResponseOption = isEasterSeason ? .easter : .ordinary
-        // 祈禱預設：平日顯示，主日／慶節／八日慶期省略
-        selectedPrayerOption = shouldShowPrayers ? .show : .omit
-    }
-
-    func jumpToYesterday() {
-        if let d = Calendar.current.date(byAdding: .day, value: -1, to: selectedDate) {
-            selectedDate = d
-            loadData()
-        }
-    }
-    func jumpToToday() {
-        selectedDate = Date()
-        loadData()
-    }
-    func jumpToTomorrow() {
-        if let d = Calendar.current.date(byAdding: .day, value: 1, to: selectedDate) {
-            selectedDate = d
-            loadData()
-        }
-    }
-}
-
-// MARK: - 預覽
-struct ComplinePrayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            ComplinePrayerView()
         }
     }
 }

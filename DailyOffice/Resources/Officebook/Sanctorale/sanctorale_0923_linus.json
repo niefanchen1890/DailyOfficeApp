@@ -1,139 +1,420 @@
 {
   "identifier": "sanctorale_0923_linus",
-  "name": "殉道者聖利奴主教",
+  "name": {
+    "zh-hant": "殉道者聖利奴主教",
+    "zh-hans": "殉道者圣利奴主教",
+    "en": ""
+  },
   "rank": "semiDouble",
-  "rank_display": "（半複式）",
+  "rank_display": {
+    "zh-hant": "（半複式）",
+    "zh-hans": "（半复式）",
+    "en": ""
+  },
   "type": "sanctorale",
   "vigil": {
     "bible_sentences": [
       {
-        "text": "你們要為我的名被眾人憎恨。但堅忍到底的終必得救。",
-        "reference": "（馬太福音 10:22）"
+        "text": {
+          "zh-hant": "你們要為我的名被眾人憎恨。但堅忍到底的終必得救。",
+          "zh-hans": "你们要为我的名被众人憎恨。但坚忍到底的终必得救.",
+          "en": "AND ye shall be hated of all men for my name's sake: but he that endureth to the end shall be saved."
+        },
+        "reference": {
+          "zh-hant": "（馬太福音 10:22）",
+          "zh-hans": "（马太福音 10:22）",
+          "en": "(Matt.x.22.)"
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-        "凡在人面前認我的，※我在我天上的父面前也必認他。",
-        "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
-        "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
-        "主說：※若有人服事我，我父必尊重他。",
-        "聖父阿，※我在哪裏，服事我的人也要在哪裏。"
+        {
+          "zh-hant": "凡在人面前認我的，※我在我天上的父面前也必認他。",
+          "zh-hans": "凡在人面前认我的，※我在我天上的父面前也必认他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
+          "zh-hans": "我就是世界的光。※跟从我的，必不在黑暗里走，却要得着生命的光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "若有人服事我，※就当跟从我；我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：※若有人服事我，我父必尊重他。",
+          "zh-hans": "主说：※若有人服事我，我父必尊重他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖父阿，※我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "圣父阿，※我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "上帝義子勇毅無雙",
+      "title": {
+        "zh-hant": "Deus tuorum militum",
+        "zh-hans": "Deus tuorum militum",
+        "en": "Deus tuorum militum"
+      },
       "verses": [
-        "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
-        "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
-        "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
-        "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。"
+        {
+          "zh-hant": "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
+          "zh-hans": "一、上帝义子勇毅无双，\n基督引尔得胜疆场；\n仇敌溃败如烟消散，\n凯旋荣光永耀天乡.",
+          "en": "MARTYR of God! the only Son \nTo victory hath led thee on;\nThine every foe now prostrate lies, \nAnd heaven accords the victor's prize."
+        },
+        {
+          "zh-hant": "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
+          "zh-hans": "二、伏求圣徒代祷恳切，\n涤我众罪污痕尽灭；\n护避诸恶蛊惑沾染，\n卸却尘劳疲困重轭.",
+          "en": "O may thy prayer. for us obtain \nThe cleansing of each guilty stain;\nShield us from sin's contagious blight: \nPut life's long weariness to flight."
+        },
+        {
+          "zh-hant": "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
+          "zh-hans": "三、昔日枷锁尽化埃尘，\n圣躯终脱桎梏苦困；\n求以圣子救赎宏恩，\n解我尘世万般束缚.",
+          "en": "Now riven are the bonds in twain, \nWhich did thy saintly limbs enchain;\nFrom us the bonds of earth remove, \nThrough God the Son's redeeming love."
+        },
+        {
+          "zh-hant": "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。",
+          "zh-hans": "四、赞美圣父创造之恩，\n赞美圣子救世之恩;\n赞美圣灵保惠之恩，\n虔诚拜祷永世无尽.阿们.",
+          "en": "All laud to God the Father be; \nAll praise, eternal Son, to thee;\nAll glory, as is ever meet, \nTo God the Holy Paraclete. Amen."
+        }
       ],
       "versicle": {
-        "leader": "主加增他尊贵荣耀。",
-        "people": "把主所创造的归他管理，"
+        "leader": {
+          "zh-hant": "主加增他尊贵荣耀。",
+          "zh-hans": "主加增他尊贵荣耀。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "把主所创造的归他管理，",
+          "zh-hans": "把主所创造的归他管理，",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-      "normal": "這真是一位殉道者，※他為基督的名傾流了鮮血；他不畏懼審判者的威嚇，不追求世俗的尊貴榮耀，喜樂地進入天國。"
+      "normal": {
+        "zh-hant": "這真是一位殉道者，※他為基督的名傾流了鮮血；他不畏懼審判者的威嚇，不追求世俗的尊貴榮耀，喜樂地進入天國。",
+        "zh-hans": "这真是一位殉道者，※他为基督的名倾流了鲜血；他不畏惧审判者的威吓，不追求世俗的尊贵荣耀，喜乐地进入天国。",
+        "en": ""
+      }
     },
     "collect": {
-      "title": "殉道者聖利奴主教",
-      "text": "上帝啊，我們歡喜快樂地紀念殉道者聖利奴主教的天國誕辰，懇求主大發慈悲，叫我們也同樣因主的保守而歡喜快樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "殉道者聖利奴主教",
+        "zh-hans": "殉道者圣利奴主教",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝啊，我們歡喜快樂地紀念殉道者聖利奴主教的天國誕辰，懇求主大發慈悲，叫我們也同樣因主的保守而歡喜快樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝啊，我们欢喜快乐地纪念殉道者圣利奴主教的天国诞辰，恳求主大发慈悲，叫我们也同样因主的保守而欢喜快乐。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "morning": {
     "bible_sentences": [
       {
-        "text": "我的靈魂甚至臨近死亡，人從各方圍攻我，卻無人幫助；我仰望有人扶持，卻沒有一人。 主啊，我就想起你的憐憫。",
-        "reference": "（便西拉智訓 51:6-8）"
+        "text": {
+          "zh-hant": "我的靈魂甚至臨近死亡，人從各方圍攻我，卻無人幫助；我仰望有人扶持，卻沒有一人。 主啊，我就想起你的憐憫。",
+          "zh-hans": "我的灵魂甚至临近死亡，人从各方围攻我，却无人帮助；我仰望有人扶持，却没有一人。 主啊，我就想起你的怜悯。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 51:6-8）",
+          "zh-hans": "（便西拉智训 51:6-8）",
+          "en": ""
+        }
       }
     ],
     "invitatory": {
-      "text": "主是殉道者的君王，※我們當來俯伏敬拜。"
+      "text": {
+        "zh-hant": "主是殉道者的君王，※我們當來俯伏敬拜。",
+        "zh-hans": "主是殉道者的君王，※我们当来俯伏敬拜。",
+        "en": ""
+      }
     },
     "invitatory_hymn": {
-      "title": "上帝義子勇毅無雙",
+      "title": {
+        "zh-hant": "Deus tuorum militum",
+        "zh-hans": "Deus tuorum militum",
+        "en": "Deus tuorum militum"
+      },
       "verses": [
-          "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
-          "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
-          "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
-          "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。"
+        {
+          "zh-hant": "一、上帝義子勇毅無雙，\n基督引爾得勝疆場；\n仇敵潰敗如煙消散，\n凱旋榮光永耀天鄉。",
+          "zh-hans": "一、上帝义子勇毅无双，\n基督引尔得胜疆场；\n仇敌溃败如烟消散，\n凯旋荣光永耀天乡.",
+          "en": "MARTYR of God! the only Son \nTo victory hath led thee on;\nThine every foe now prostrate lies, \nAnd heaven accords the victor's prize."
+        },
+        {
+          "zh-hant": "二、伏求聖徒代禱懇切，\n滌我眾罪污痕盡滅；\n護避諸惡蠱惑沾染，\n卸卻塵勞疲困重軛。",
+          "zh-hans": "二、伏求圣徒代祷恳切，\n涤我众罪污痕尽灭；\n护避诸恶蛊惑沾染，\n卸却尘劳疲困重轭.",
+          "en": "O may thy prayer. for us obtain \nThe cleansing of each guilty stain;\nShield us from sin's contagious blight: \nPut life's long weariness to flight."
+        },
+        {
+          "zh-hant": "三、昔日枷鎖盡化埃塵，\n聖軀終脫桎梏苦困；\n求以聖子救贖宏恩，\n解我塵世萬般束縛。",
+          "zh-hans": "三、昔日枷锁尽化埃尘，\n圣躯终脱桎梏苦困；\n求以圣子救赎宏恩，\n解我尘世万般束缚.",
+          "en": "Now riven are the bonds in twain, \nWhich did thy saintly limbs enchain;\nFrom us the bonds of earth remove, \nThrough God the Son's redeeming love."
+        },
+        {
+          "zh-hant": "四、讚美聖父創造之恩，\n讚美聖子救世之恩；\n讚美聖靈保惠之恩，\n虔誠拜禱永世無盡。阿們。",
+          "zh-hans": "四、赞美圣父创造之恩，\n赞美圣子救世之恩;\n赞美圣灵保惠之恩，\n虔诚拜祷永世无尽.阿们.",
+          "en": "All laud to God the Father be; \nAll praise, eternal Son, to thee;\nAll glory, as is ever meet, \nTo God the Holy Paraclete. Amen."
+        }
       ],
       "versicle": null
     },
     "psalm_antiphons": {
       "antiphons": [
-          "凡在人面前認我的，※我在我天上的父面前也必認他。",
-          "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
-          "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
-          "主說：※若有人服事我，我父必尊重他。",
-          "聖父阿，※我在哪裏，服事我的人也要在哪裏。"
+        {
+          "zh-hant": "凡在人面前認我的，※我在我天上的父面前也必認他。",
+          "zh-hans": "凡在人面前认我的，※我在我天上的父面前也必认他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
+          "zh-hans": "我就是世界的光。※跟从我的，必不在黑暗里走，却要得着生命的光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "若有人服事我，※就当跟从我；我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：※若有人服事我，我父必尊重他。",
+          "zh-hans": "主说：※若有人服事我，我父必尊重他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖父阿，※我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "圣父阿，※我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "主之諸聖共沐主恩",
+      "title": {
+        "zh-hant": "主之諸聖共沐主恩",
+        "zh-hans": "主之诸圣共沐主恩",
+        "en": ""
+      },
       "verses": [
-          "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
-          "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
-          "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
-          "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
-          "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。"
+        {
+          "zh-hant": "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
+          "zh-hans": "一、主之诸圣共沐主恩，\n冠冕永赏凯旋功勋；\n我众讴歌圣徒得胜，\n求赦罪愆赐予新生。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
+          "zh-hans": "二、弃绝俗世虚华宴乐，\n挣脱罪恶诱惑网罗；\n瞬逝浮华皆作云烟，\n终抵天乡圣殿永年。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
+          "zh-hans": "三、为尔穿越万般艰险，\n百战之中勇毅无双；\n甘为圣名倾流热血，\n永享欢庆万世无疆。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
+          "zh-hans": "四、仁爱救主伏求垂怜，\n自主宝座施恩广远；\n在此圣者凯旋之日，\n洗净我众一切罪污。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一体上帝永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "義人必如百合花開放，",
-        "people": "永遠繁榮在主面前。"
+        "leader": {
+          "zh-hant": "義人必如百合花開放，",
+          "zh-hans": "义人必如百合花开放.",
+          "en": "The righteous shall blossom as the lily. "
+        },
+        "people": {
+          "zh-hant": "永遠繁榮在主面前。",
+          "zh-hans": "永远繁荣在主面前.",
+          "en": "He shall flourish for ever before the Lord."
+        }
       }
     },
     "benedictus_antiphon": {
-        "normals": [
-          "一粒麥子不落在地裏死了，※仍舊是一粒。",
-          "主說：若有人要跟從我，※就當捨己，背起自己的十字架來跟從我。"
-        ]
+      "normals": [
+        {
+          "zh-hant": "一粒麥子不落在地裏死了，※仍舊是一粒。",
+          "zh-hans": "一粒麦子不落在地里死了，※仍旧是一粒。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：若有人要跟從我，※就當捨己，背起自己的十字架來跟從我。",
+          "zh-hans": "主说：若有人要跟从我，※就当舍己，背起自己的十字架来跟从我。",
+          "en": ""
+        }
+      ]
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "For the Legend"
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "據聖愛任紐、聖希坡呂托及其他人的見證，利奴是聖使徒彼得在羅馬主教座的直接繼任者。依照愛任紐的說法，真福保羅在《提摩太後書》中提到他，說：「友布羅、布田、利奴和眾弟兄，都問你安。」成於第六世紀的《教宗名錄》記載，利奴是義大利人，出身於托斯卡尼地區；他在主教座上任職十一年三個月又十二日；他生活於尼祿皇帝在位期間；他曾舉行兩次按立，按立了十五位主教和十八位司祭；他於十二月二十三日安葬在梵蒂岡、真福彼得的遺體旁。該書又稱他以殉道獲得冠冕；在《格里高利感恩經》中，他也列於殉道者之中。然而，就現有的認識而言，他在羅馬任職期間似乎沒有發生迫害基督徒的事，因此人們認為，「殉道者」這稱號是為表明他作為精修聖人服事基督時所忍受的巨大勞苦與苦難。據信他約於七十八年歸向上帝。",
+          "zh-hans": "据圣爱任纽、圣希坡吕托及其他人的见证，利奴是圣使徒彼得在罗马主教座的直接继任者。依照爱任纽的说法，真福保罗在《提摩太后书》中提到他，说：「友布罗、布田、利奴和众弟兄，都问你安。」成于第六世纪的《教宗名录》记载，利奴是意大利人，出身于托斯卡尼地区；他在主教座上任职十一年三个月又十二日；他生活于尼禄皇帝在位期间；他曾举行两次按立，按立了十五位主教和十八位司祭；他于十二月二十三日安葬在梵蒂冈、真福彼得的遗体旁。该书又称他以殉道获得冠冕；在《格里高利感恩经》中，他也列于殉道者之中。然而，就现有的认识而言，他在罗马任职期间似乎没有发生迫害基督徒的事，因此人们认为，「殉道者」这称号是为表明他作为精修圣人服事基督时所忍受的巨大劳苦与苦难。据信他约于七十八年归向上帝。",
+          "en": "LINUS was the immediate successor of the Apostle Peter in the Roman See, according to the testimony of Saints Irenæus and Hippolytus, and others. And according to Irenæus, blessed Paul maketh mention of him in his second Epistle to Timothy, where he saith: Eubulus greeteth thee, and Pudens, and Linus. The Pontifical Book, dating from the sixth century, saith that he was an Italian by nation, of the Tuscan region; that he sat in the episcopal chair eleven years, three months, and twelve days; that he lived in the time of Nero; that he held two ordinations, wherein he made fifteen bishops and eighteen presbyters; and that he was buried beside the body of blessed Peter at the Vatican on December 23rd. This same book saith that he was crowned by martyrdom. And in the Gregorian Canon he is mentioned amongst the Martyrs. But because, so far as is known, no persecution of Christians took place in Rome during his period, it is supposed that he was given the title of Martyr to describe the great sufferings and labours wherewith he served Christ as a Confessor. He is believed to have gone to God about the year 78."
+        },
+        {
+          "zh-hant": "德克拉自教會最早期起便備受稱頌；在東方禮儀中，她被尊稱為「女性首位殉道者」與「與使徒同等者」。然而，關於她並沒有可靠的歷史記錄，只有民間流傳的傳統。拉丁禮儀中的《臨終者交託禮》提到她所忍受的三樣極其殘酷的苦難；這些話也指向很早便流傳的一位名叫德克拉的童貞女的故事。首先，她在自己的家中因信仰而遭受嚴酷迫害。她從聖使徒保羅領受信仰後，拒絕了一門為她安排的婚事；因此，她受到父母和朋友嚴重的虐待，只得為保全性命而秘密逃離。其次，她被投入火中。她的求婚者因她是基督徒而將她逮捕，並判她焚燒之刑；但旋風挾著雲雨而起，撲滅了火，使她逃脫。第三次，當她再度被判死刑時，她被投入競技場的野獸中；野獸卻沒有傷害她，因此她得到釋放。之後，她前往聖使徒保羅那裡，有一段時間協助他的使徒工作。其後，她退居洞穴，作隱修女，並在九十歲時平安離世。這段關於德克拉的記述，無疑是為表明早期基督徒當如何為基督甘心忍受苦難。因此，德克拉之名歷世歷代已成為弱者藉著上帝能力而得勝的象徵。",
+          "zh-hans": "德克拉自教会最早期起便备受称颂；在东方礼仪中，她被尊称为「女性首位殉道者」与「与使徒同等者」。然而，关于她并没有可靠的历史记录，只有民间流传的传统。拉丁礼仪中的《临终者交托礼》提到她所忍受的三样极其残酷的苦难；这些话也指向很早便流传的一位名叫德克拉的童贞女的故事。首先，她在自己的家中因信仰而遭受严酷迫害。她从圣使徒保罗领受信仰后，拒绝了一门为她安排的婚事；因此，她受到父母和朋友严重的虐待，只得为保全性命而秘密逃离。其次，她被投入火中。她的求婚者因她是基督徒而将她逮捕，并判她焚烧之刑；但旋风挟着云雨而起，扑灭了火，使她逃脱。第三次，当她再度被判死刑时，她被投入竞技场的野兽中；野兽却没有伤害她，因此她得到释放。之后，她前往圣使徒保罗那里，有一段时间协助他的使徒工作。其后，她退居洞穴，作隐修女，并在九十岁时平安离世。这段关于德克拉的记述，无疑是为表明早期基督徒当如何为基督甘心忍受苦难。因此，德克拉之名历世历代已成为弱者借着上帝能力而得胜的象征。",
+          "en": "THECLA hath been acclaimed since the earliest days of the Church, and in the Eastern Liturgy is entitled: Protomartyr of Women and Equal of the Apostles. However, no trustworthy historical records are to be found of her, but only a popular tradition. The Order for the Commendation of a Dying Person, to be found in the Latin Ritual, speaketh of three most cruel torments which she endured, and in these words pointeth to the stories which were very early written concerning a maiden named Thecla. First, she was grievously tormented by persecutions in her own home. For, after she had accepted the Faith from the holy Apostle Paul, she refused the proposal of marriage which she had received, and thereupon was so mistreated by her parents and friends that she was obliged for safety to flee away secretly. Secondly, she was cast into a fire. For her suitor had her arrested as a Christian, and condemned to be burnt. But a whirlwind of clouds and rain arose, and put out the fire, and enabled her to escape. Thirdly, when she was for the second time condemned to death, she was thrown to the wild beasts in the arena. But the beasts did not harm her, and so she was set free. Whereupon she went to the Apostle Paul, and for a while assisted him in his apostolic labours. Thereafter she retired to a cave, and lived as an anchoress, and died in peace at the age of ninety. This account of Thecla was doubtless written to show what things Christians of the early days were expected to endure cheerfully for Christ. And therefore the name of Thecla hath been for many ages a symbol of the triumph of the weak through divine strength."
+        }
+      ]
     },
     "collect": {
-      "title": "殉道者聖利奴主教",
-      "text": "上帝啊，我們歡喜快樂地紀念殉道者聖利奴主教的天國誕辰，懇求主大發慈悲，叫我們也同樣因主的保守而歡喜快樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "殉道者聖利奴主教",
+        "zh-hans": "殉道者圣利奴主教",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝啊，我們歡喜快樂地紀念殉道者聖利奴主教的天國誕辰，懇求主大發慈悲，叫我們也同樣因主的保守而歡喜快樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝啊，我们欢喜快乐地纪念殉道者圣利奴主教的天国诞辰，恳求主大发慈悲，叫我们也同样因主的保守而欢喜快乐。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   },
   "evening": {
     "bible_sentences": [
       {
-        "text": "忍受試煉的人有福了，因為他經過考驗以後必得生命的冠冕，這是主應許給愛他之人的。",
-        "reference": "（雅各書 1:12）"
+        "text": {
+          "zh-hant": "忍受試煉的人有福了，因為他經過考驗以後必得生命的冠冕，這是主應許給愛他之人的。",
+          "zh-hans": "忍受试炼的人有福了，因为他经过考验以后必得生命的冠冕，这是主应许给爱他之人的。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（雅各書 1:12）",
+          "zh-hans": "（雅各书 1:12）",
+          "en": ""
+        }
       }
     ],
     "psalm_antiphons": {
       "antiphons": [
-          "凡在人面前認我的，※我在我天上的父面前也必認他。",
-          "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
-          "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
-          "主說：※若有人服事我，我父必尊重他。",
-          "聖父阿，※我在哪裏，服事我的人也要在哪裏。"
+        {
+          "zh-hant": "凡在人面前認我的，※我在我天上的父面前也必認他。",
+          "zh-hans": "凡在人面前认我的，※我在我天上的父面前也必认他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我就是世界的光。※跟從我的，必不在黑暗裏走，卻要得着生命的光。",
+          "zh-hans": "我就是世界的光。※跟从我的，必不在黑暗里走，却要得着生命的光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "若有人服事我，※就當跟從我；我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "若有人服事我，※就当跟从我；我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主說：※若有人服事我，我父必尊重他。",
+          "zh-hans": "主说：※若有人服事我，我父必尊重他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖父阿，※我在哪裏，服事我的人也要在哪裏。",
+          "zh-hans": "圣父阿，※我在哪里，服事我的人也要在哪里。",
+          "en": ""
+        }
       ]
     },
     "office_hymn": {
-      "title": "主之諸聖共沐主恩",
+      "title": {
+        "zh-hant": "主之諸聖共沐主恩",
+        "zh-hans": "主之诸圣共沐主恩",
+        "en": ""
+      },
       "verses": [
-          "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
-          "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
-          "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
-          "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
-          "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。"
+        {
+          "zh-hant": "一、主之諸聖共沐主恩，\n冠冕永賞凱旋功勳；\n我眾謳歌聖徒得勝，\n求赦罪愆賜予新生。",
+          "zh-hans": "一、主之诸圣共沐主恩，\n冠冕永赏凯旋功勋；\n我众讴歌圣徒得胜，\n求赦罪愆赐予新生。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、棄絕俗世虛華宴樂，\n掙脫罪惡誘惑網羅；\n瞬逝浮華皆作雲煙，\n終抵天鄉聖殿永年。",
+          "zh-hans": "二、弃绝俗世虚华宴乐，\n挣脱罪恶诱惑网罗；\n瞬逝浮华皆作云烟，\n终抵天乡圣殿永年。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、為爾穿越萬般艱險，\n百戰之中勇毅無雙；\n甘為聖名傾流熱血，\n永享歡慶萬世無疆。",
+          "zh-hans": "三、为尔穿越万般艰险，\n百战之中勇毅无双；\n甘为圣名倾流热血，\n永享欢庆万世无疆。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、仁愛救主伏求垂憐，\n自主寶座施恩廣遠；\n在此聖者凱旋之日，\n洗淨我眾一切罪污。",
+          "zh-hans": "四、仁爱救主伏求垂怜，\n自主宝座施恩广远；\n在此圣者凯旋之日，\n洗净我众一切罪污。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一体上帝永世无尽。阿们。",
+          "en": ""
+        }
       ],
       "versicle": {
-        "leader": "主迎接他，赐他厚福，",
-        "people": "将精金的冠冕，戴在他的头上。"
+        "leader": {
+          "zh-hant": "主迎接他，赐他厚福，",
+          "zh-hans": "主迎接他，赐他厚福，",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "将精金的冠冕，戴在他的头上。",
+          "zh-hans": "将精金的冠冕，戴在他的头上。",
+          "en": ""
+        }
       }
     },
     "benedictus_antiphon": {
-        "normals": [
-          "他將世上的一切都視為無物，※以言以行，為自己在天上積蓄財寶。",
-          "此人徹悟公義，洞悉奇偉奧秘；※他祈求至高者，終列諸聖之中。"
-        ]
+      "normals": [
+        {
+          "zh-hant": "他將世上的一切都視為無物，※以言以行，為自己在天上積蓄財寶。",
+          "zh-hans": "他将世上的一切都视为无物，※以言以行，为自己在天上积蓄财宝。",
+          "en": ""
+        },
+        {
+          "zh-hant": "此人徹悟公義，洞悉奇偉奧秘；※他祈求至高者，終列諸聖之中。",
+          "zh-hans": "此人彻悟公义，洞悉奇伟奥秘；※他祈求至高者，终列诸圣之中。",
+          "en": ""
+        }
+      ]
     },
     "collect": {
-      "title": "殉道者聖利奴主教",
-      "text": "上帝啊，我們歡喜快樂地紀念殉道者聖利奴主教的天國誕辰，懇求主大發慈悲，叫我們也同樣因主的保守而歡喜快樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      "title": {
+        "zh-hant": "殉道者聖利奴主教",
+        "zh-hans": "殉道者圣利奴主教",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝啊，我們歡喜快樂地紀念殉道者聖利奴主教的天國誕辰，懇求主大發慈悲，叫我們也同樣因主的保守而歡喜快樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝啊，我们欢喜快乐地纪念殉道者圣利奴主教的天国诞辰，恳求主大发慈悲，叫我们也同样因主的保守而欢喜快乐。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
     }
   }
 }

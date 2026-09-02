@@ -9,6 +9,10 @@ struct ProperPsalmDisplay {
 
 struct MorningPrayerView: View {
     @StateObject private var viewModel: MorningPrayerViewModel
+    @StateObject private var litanyLoader = LitanyDataLoader.shared
+    @StateObject private var creedsLoader = CreedsDataLoader.shared
+    @Environment(\.colorScheme) var colorScheme
+    
     let date: Date
     
     init(date: Date = Date()) {
@@ -19,7 +23,7 @@ struct MorningPrayerView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottomLeading) {  // ✅ 新增 ZStack
+        ZStack(alignment: .bottomLeading) {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 12) {
                     header
@@ -39,6 +43,7 @@ struct MorningPrayerView: View {
                     creedSection
                     prayersSection
                     collectsSection
+                    memorialAntiphonsSection
                     generalPrayerSelectorSection
                     generalPrayersOrLitanySection
                     endingSection
@@ -50,10 +55,12 @@ struct MorningPrayerView: View {
             .onAppear {
                 viewModel.loadReadings()
             }
-            .background(Color(UIColor.systemGroupedBackground))
+            .background(colorScheme == .dark ? Color.black : LiturgyColors.parchment)
             
-            // ✅ 移入 ZStack 內
             dateQuickNavButtons
+        }
+        .overlay(alignment: .bottomTrailing) {
+            languageToggleButton
         }
         .navigationTitle("早禱")
         .navigationBarTitleDisplayMode(.inline)
@@ -63,29 +70,32 @@ struct MorningPrayerView: View {
     private var biographySection: some View {
         Group {
             if viewModel.hasBiography, let bio = viewModel.biography {
+                let lang = viewModel.appLanguage
+                
                 LiturgyCard {
                     VStack(alignment: .leading, spacing: 14) {
+                        
                         // ═════ 1. 紅色大標題 ═════
-                        if let title = bio.title, !title.isEmpty {
-                            SectionTitle(text: title)
+                        if let titleText = bio.title, !titleText.isEmpty {
+                            SectionTitle(text: titleText)
                         } else {
-                            SectionTitle(text: "聖人小傳")
+                            SectionTitle(text: lang == .traditional ? "聖人小傳" : "圣人小传")
                         }
                         
                         // ═════ 2. 禮規（紅色斜體）═════
-                        if let rubric = bio.rubric, !rubric.isEmpty {
-                            RubricBlock(text: rubric)
+                        if let rubricText = bio.rubric, !rubricText.isEmpty {
+                            RubricBlock(text: rubricText)
                         } else {
-                            RubricBlock(text: "¶ 在信經之前，誦讀以下聖人小傳。")
+                            RubricBlock(text: lang == .traditional ? "¶ 在信經之前，誦讀以下聖人小傳。" : "¶ 在信经之前，诵读以下圣人小传。")
                         }
                         
-                        // ═════ 3. 來源說明（紅色「讀經員：」+ 黑色正文，可選）═════
-                        if let source = bio.source, !source.isEmpty {
+                        // ═════ 3. 來源說明（若有填寫，則在第一段前顯示）═════
+                        if let sourceText = bio.source, !sourceText.isEmpty {
                             HStack(alignment: .firstTextBaseline, spacing: 0) {
-                                Text("讀經員：")
+                                Text(lang == .traditional ? "讀經員：" : "读经员：")
                                     .font(.system(size: 17, weight: .medium))
                                     .foregroundColor(.red)
-                                Text(source)
+                                Text(sourceText)
                                     .font(.system(size: 17, weight: .regular))
                                     .foregroundColor(.primary)
                                     .lineSpacing(6)
@@ -93,27 +103,41 @@ struct MorningPrayerView: View {
                             }
                         }
                         
-                        // ═════ 4. 正文段落 ═════
+                        // ═════ 4. 正文與特例段落 ═════
                         ForEach(bio.paragraphs.indices, id: \.self) { index in
                             switch bio.paragraphs[index] {
-                            case .text(let body):
-                                BodyText(body)
+                            case .text(let bodyText):
+                                BodyText(bodyText)
 
-                            case .source(let attribution):
-                                Text(attribution)
+                            case .source(let sourceText):
+                                Text(sourceText)
                                     .font(.system(size: 14, weight: .medium))
                                     .italic()
                                     .foregroundColor(.red)
                                     .multilineTextAlignment(.center)
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.vertical, 2)
+                                    
+                            case .subtitle(let subtitleText):
+                                Text(subtitleText)
+                                    .font(.system(size: 18, weight: .bold))
+                                    .foregroundColor(LiturgyColors.crimson)
+                                    .padding(.top, 6)
+                                    
+                            case .centered(let centeredText):
+                                Text(centeredText)
+                                    .font(.system(size: 17, weight: .regular))
+                                    .foregroundColor(.primary)
+                                    .multilineTextAlignment(.center)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .padding(.bottom, 4)
                             }
                         }
                         
                         // ═════ 5. 結束啟應 ═════
                         ResponsoryRow(response: Responsory(
-                            leader: "啟：求主憐憫。",
-                            people: "應：感謝上帝。"
+                            leader: lang == .traditional ? "求主憐憫。" : "求主怜悯。",
+                            people: lang == .traditional ? "感謝上帝。" : "感谢上帝。"
                         ))
                         .padding(.top, 4)
                     }
@@ -162,6 +186,29 @@ struct MorningPrayerView: View {
         .foregroundColor(.white)
         .padding(.bottom, 20) // 保持底部距離
         .frame(maxWidth: .infinity, alignment: .center) // 🌟 新增：撐滿外層寬度並居中
+    }
+    
+    // MARK: - 繁簡切換按鈕（右下角圓形）
+    private var languageToggleButton: some View {
+        Button(action: toggleLanguage) {
+            Text(viewModel.appLanguage == .traditional ? "繁" : "简")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(.white)
+                .frame(width: 50, height: 50)
+                .background(
+                    Circle()
+                        .fill(LiturgyColors.crimson)
+                        .shadow(color: Color.black.opacity(0.25), radius: 4, x: 0, y: 2)
+                )
+        }
+        .padding(.trailing, 16)
+        .padding(.bottom, 80)   // 往上抬高，避免與底部「昨日/今日/明日」按鈕重疊
+    }
+
+    private func toggleLanguage() {
+        withAnimation(.spring()) {
+            viewModel.appLanguage = (viewModel.appLanguage == .traditional) ? .simplified : .traditional
+        }
     }
     
     private var header: some View {
@@ -229,7 +276,7 @@ struct MorningPrayerView: View {
     private func formattedFullDateWithWeekday(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
@@ -243,12 +290,15 @@ struct MorningPrayerView: View {
     struct AntiphonRow: View {
         let text: String
         
+        // 🌟 透過 AppStorage 即時獲取當前語言
+        @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+        
         var body: some View {
             HStack(alignment: .top, spacing: 0) {
-                Text("對經：")
+                Text(appLanguageCode == AppLanguage.traditional.rawValue ? "對經：" : "对经：")
                     .foregroundColor(.red)
                     .font(.system(size: 16, weight: .medium))
-                    .frame(width: 52, alignment: .leading)   // 固定寬度 = 3個中文字寬
+                    .frame(width: 52, alignment: .leading)
                 Text(text)
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.primary)
@@ -347,15 +397,21 @@ struct MorningPrayerView: View {
     private var seasonalSentencesSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "聖經選句")
+                // 🌟 從 JSON 動態讀取標題（會自動跟隨 appLanguage 讀取繁簡體 JSON）
+                if let title = MorningPrayerData.seasonalSentences.title {
+                    SectionTitle(text: title)
+                }
                 
-                // ⬇️ 固定禮規，無論內容為何都顯示
-                RubricBlock(text: "¶ 主禮開始早禱，要讀一節或數節的「聖經選句」。")
+                // 🌟 從 JSON 動態讀取禮儀說明
+                if let rubric = MorningPrayerData.seasonalSentences.rubric {
+                    RubricBlock(text: rubric)
+                }
                 
                 let sentences = viewModel.bibleSentences
                 
                 if sentences.isEmpty {
-                    PlaceholderBlock(text: "按當日節期誦唸")
+                    // 佔位文字（保留雙語判斷，確保沒選句時顯示正確語言）
+                    PlaceholderBlock(text: viewModel.appLanguage == .traditional ? "按當日節期誦唸" : "按当日节期诵念")
                 } else {
                     VStack(alignment: .leading, spacing: 12) {
                         ForEach(sentences, id: \.self) { sentence in
@@ -398,12 +454,13 @@ struct MorningPrayerView: View {
     private var exhortationSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "勸眾文")
+                // 🌟 修復：支援簡體切換
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "勸眾文" : "劝众文")
                 RubricBlock(text: MorningPrayerData.exhortation.rubric!)
                 
                 BodyText(MorningPrayerData.exhortation.paragraphs[0])
                 
-                Text("或唸：")
+                Text(viewModel.appLanguage == .traditional ? "或唸：" : "或念：")
                     .font(.system(size: 15, weight: .regular))
                     .italic()
                     .foregroundColor(.red)
@@ -418,7 +475,8 @@ struct MorningPrayerView: View {
     private var confessionSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "認罪文")
+                // 🌟 修復：支援簡體切換
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "認罪文" : "认罪文")
                 RubricBlock(text: MorningPrayerData.confession.rubricBefore)
                 
                 VStack(alignment: .leading, spacing: 10) {
@@ -472,10 +530,11 @@ struct MorningPrayerView: View {
     private var responsesSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "啟應")
+                // 🌟 修復：支援簡體切換
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "啟應" : "启应")
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(MorningPrayerData.responses.indices, id: \.self) { i in
-                        ResponsoryRow(response: MorningPrayerData.responses[i])
+                    ForEach(MorningPrayerData.responses, id: \.self) { response in
+                        ResponsoryRow(response: response)
                     }
                 }
             }
@@ -490,9 +549,9 @@ struct MorningPrayerView: View {
     
     private var veniteSection: some View {
         LiturgyCard {
-            VStack(alignment: .leading, spacing: 0) {  // ⬅️ spacing: 14 → 0
+            VStack(alignment: .leading, spacing: 0) {
                 SectionTitle(text: MorningPrayerData.venite.title)
-                    .padding(.bottom, 4)  // 標題與內文保留微量間距
+                    .padding(.bottom, 4)
                 
                 // 皆來頌主體：對經+詩節交替
                 ForEach(MorningPrayerData.venite.stanzas.indices, id: \.self) { i in
@@ -500,13 +559,14 @@ struct MorningPrayerView: View {
                         stanza: MorningPrayerData.venite.stanzas[i],
                         invitatoryText: viewModel.invitatoryText
                     )
-                    .padding(.bottom, 12)  // ⬅️ 新增：每組詩節後增加段後距離
+                    .padding(.bottom, 12)
                     
                     if i == 0 && viewModel.shouldShowInvitatoryMondayNote {
                         RubricBlock(text: MorningPrayerData.invitatoryMondayNote)
                             .padding(.top, 2)
                     }
                 }
+                
                 // 結束式選擇器
                 Picker("結束方式", selection: $viewModel.veniteEnding) {
                     ForEach(VeniteEndingOption.allCases, id: \.self) { option in
@@ -521,9 +581,11 @@ struct MorningPrayerView: View {
                 ? MorningPrayerData.venite.ending1
                 : MorningPrayerData.venite.ending2
                 
+                // 🌟 修改點：拉開禮規說明的上下距離
                 if let note = ending.note {
                     RubricBlock(text: note)
-                        .padding(.top, 2)
+                        .padding(.top, 8)     // 增加與上方 Picker 的距離
+                        .padding(.bottom, 14) // 增加與下方正文的距離
                 }
                 
                 // 結束式：對經+詩節交替
@@ -544,13 +606,14 @@ struct MorningPrayerView: View {
         
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "邀請聖詩")
+                // 🌟 修復：支援簡體切換
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "邀請聖詩" : "邀请圣诗")
                 
-                // 拉丁文標題：紅色、居中
+                // 🌟 修復：拉丁文標題改為靠左對齊（alignment: .leading）
                 Text(hymn.title)
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundColor(.red)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 2)
                 
                 // 使用時期說明（禮規 → 紅色斜體）
@@ -559,7 +622,7 @@ struct MorningPrayerView: View {
                         .font(.system(size: 13, weight: .medium))
                         .italic()
                         .foregroundColor(.red)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .frame(maxWidth: .infinity, alignment: .leading) // 也將禮規說明靠左以統一視覺
                         .padding(.bottom, 4)
                 }
                 
@@ -737,19 +800,14 @@ struct MorningPrayerView: View {
     }
     
     private func displayNameForPsalmLectionaryOption(_ option: String) -> String {
+        let isTrad = viewModel.appLanguage == .traditional
         switch option {
-        case "monthly":
-            return "月度循環"
-        case "1943":
-            return "1943年詩篇"
-        case "1928":
-            return "1928年詩篇"
-        case "1962":
-            return "1962年詩篇"
-        case "special":
-            return "專用詩篇"
-        default:
-            return option
+        case "monthly": return isTrad ? "月度循環" : "月度循环"
+        case "1943":    return isTrad ? "1943年詩篇" : "1943年诗篇"
+        case "1928":    return isTrad ? "1928年詩篇" : "1928年诗篇"
+        case "1962":    return isTrad ? "1962年詩篇" : "1962年诗篇"
+        case "special": return isTrad ? "專用詩篇" : "专用诗篇"
+        default:        return option
         }
     }
     
@@ -757,8 +815,8 @@ struct MorningPrayerView: View {
     private var psalmsSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "詩篇")
-                RubricBlock(text: "¶ 然後按本會的慣例讀詩篇，並相應的對經。")
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "詩篇" : "诗篇")
+                RubricBlock(text: viewModel.appLanguage == .traditional ? "¶ 然後按本會的慣例讀詩篇，並相應的對經。" : "¶ 然后按本会的惯例读诗篇，并相应的对经。")
                 
                 let psalmOptions = ["monthly"] + viewModel.availablePsalmLectionaryOptions
                 
@@ -815,7 +873,7 @@ struct MorningPrayerView: View {
         let antiphonList = viewModel.psalmAntiphons
         
         if psalms.isEmpty {
-            PlaceholderBlock(text: "按當日節期誦唸")
+            PlaceholderBlock(text: viewModel.appLanguage == .traditional ? "按當日節期誦唸" : "按当日节期诵念")
         } else if let list = antiphonList, !list.isEmpty {
             let groups = antiphonGroups(
                 psalms: psalms,
@@ -828,57 +886,73 @@ struct MorningPrayerView: View {
     }
     
     private func psalms1943AntiphonView(
-        psalms: [(title: String, content: PsalmContent)],
-        antiphon: String?
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if let antiphon = antiphon, !antiphon.isEmpty {
-                AntiphonRow(text: antiphon)
-                    .padding(.bottom, 8)
-            }
+            psalms: [(title: String, content: PsalmContent)],
+            antiphon: String?
+        ) -> some View {
+            // 🌟 檢查是否有傳入有效的專用對經
+            let hasProperAntiphon = (antiphon != nil && !antiphon!.isEmpty)
             
-            ForEach(psalms.indices, id: \.self) { i in
-                let psalm = psalms[i]
+            return VStack(alignment: .leading, spacing: 0) {
+                // 1. 群組開頭：如果有專用對經，統一顯示在最前面
+                if hasProperAntiphon {
+                    AntiphonRow(text: antiphon!)
+                        .padding(.bottom, 8)
+                }
                 
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack(alignment: .firstTextBaseline, spacing: 6) {
-                        Text(psalm.title)
-                            .foregroundColor(LiturgyColors.crimson)
+                ForEach(psalms.indices, id: \.self) { i in
+                    let psalm = psalms[i]
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(alignment: .firstTextBaseline, spacing: 6) {
+                            Text(psalm.title)
+                                .foregroundColor(LiturgyColors.crimson)
+                            
+                            if !psalm.content.latinTitle.isEmpty {
+                                Text(psalm.content.latinTitle)
+                                    .italic()
+                                    .foregroundColor(.primary)
+                            }
+                        }
+                        .font(.system(size: 17, weight: .semibold))
+                        .padding(.bottom, 4)
                         
-                        if !psalm.content.latinTitle.isEmpty {
-                            Text(psalm.content.latinTitle)
-                                .italic()
-                                .foregroundColor(.primary)
+                        // 🌟 2. 詩篇開頭：如果沒有專用對經，退回顯示詩篇自帶的對經
+                        if !hasProperAntiphon && !psalm.content.antiphon.isEmpty {
+                            AntiphonRow(text: psalm.content.antiphon)
+                        }
+                        
+                        ForEach(psalm.content.verses, id: \.self) { verse in
+                            verseWithNumber(verse)
+                        }
+                        
+                        // 1943：每一篇詩篇後都加榮耀頌
+                        VStack(alignment: .leading, spacing: 4) {
+                            BodyText(MorningPrayerData.responses[2].leader)
+                            BodyText("※" + MorningPrayerData.responses[2].people)
+                        }
+                        .padding(.top, 8)
+                        
+                        // 🌟 3. 詩篇結尾：如果沒有專用對經，退回顯示詩篇自帶的對經
+                        if !hasProperAntiphon && !psalm.content.antiphon.isEmpty {
+                            AntiphonRow(text: psalm.content.antiphon)
+                                .padding(.top, 4)
                         }
                     }
-                    .font(.system(size: 17, weight: .semibold))
-                    .padding(.bottom, 4)
+                    .padding(.vertical, 6)
                     
-                    ForEach(psalm.content.verses, id: \.self) { verse in
-                        verseWithNumber(verse)
+                    if i < psalms.count - 1 {
+                        Divider()
+                            .padding(.vertical, 4)
                     }
-                    
-                    // 1943：每一篇詩篇後都加榮耀頌
-                    VStack(alignment: .leading, spacing: 4) {
-                        BodyText("但願榮耀歸於聖父、聖子、聖靈；")
-                        BodyText("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
-                    }
-                    .padding(.top, 8)
                 }
-                .padding(.vertical, 6)
                 
-                if i < psalms.count - 1 {
-                    Divider()
-                        .padding(.vertical, 4)
+                // 4. 群組結尾：如果有專用對經，統一顯示在最後面
+                if hasProperAntiphon {
+                    AntiphonRow(text: antiphon!)
+                        .padding(.top, 8)
                 }
-            }
-            
-            if let antiphon = antiphon, !antiphon.isEmpty {
-                AntiphonRow(text: antiphon)
-                    .padding(.top, 8)
             }
         }
-    }
     
     private func properPsalm1943Section(_ proper: ProperPsalmDisplay) -> some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -953,8 +1027,9 @@ struct MorningPrayerView: View {
                         // ═════ 榮耀頌：僅組最後一篇才加 ═════
                         if isLastInGroup {
                             VStack(alignment: .leading, spacing: 4) {
-                                BodyText("但願榮耀歸於聖父、聖子、聖靈；")
-                                BodyText("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
+                                // 🌟 直接從載入的 JSON 中提取對應語言的榮耀頌
+                                BodyText(MorningPrayerData.responses[2].leader)
+                                BodyText("※" + MorningPrayerData.responses[2].people)
                             }
                             .padding(.top, 8)
                         }
@@ -1008,8 +1083,9 @@ struct MorningPrayerView: View {
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        BodyText("但願榮耀歸於聖父、聖子、聖靈；")
-                        BodyText("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
+                        // 🌟 直接從載入的 JSON 中提取對應語言的榮耀頌
+                        BodyText(MorningPrayerData.responses[2].leader)
+                        BodyText("※" + MorningPrayerData.responses[2].people)
                     }
                     .padding(.top, 8)
                     
@@ -1060,86 +1136,138 @@ struct MorningPrayerView: View {
     // MARK: - 經課區塊
     private var lessonsSection: some View {
         let readings = viewModel.dailyReadings
+        // 安全獲取標題，防範 JSON 解析延遲
+        let firstLessonTitle = MorningPrayerData.lessons.count > 0 ? MorningPrayerData.lessons[0].title : (viewModel.appLanguage == .traditional ? "第一經課" : "第一经课")
+        let secondLessonTitle = MorningPrayerData.lessons.count > 1 ? MorningPrayerData.lessons[1].title : (viewModel.appLanguage == .traditional ? "第二經課" : "第二经课")
         
         return VStack(alignment: .leading, spacing: 12) {
             
-            // 🌟 新增：經課版本選擇器（統一放在所有經課上方）
-            if viewModel.availableLectionaryOptions.count > 1 {
-                Picker("經課版本", selection: $viewModel.lectionaryYear) {
-                    ForEach(viewModel.availableLectionaryOptions, id: \.self) { option in
-                        Text(displayNameForLectionaryOption(option)).tag(option)
+            // 🌟 1. 第一經課卡片：將大標題放在選擇器上方
+            LiturgyCard {
+                VStack(alignment: .leading, spacing: 14) {
+                    
+                    // 大標題「第一經課」
+                    SectionTitle(text: firstLessonTitle)
+                    
+                    // 經課版本選擇器
+                    if viewModel.availableLectionaryOptions.count > 1 {
+                        Picker("經課版本", selection: $viewModel.lectionaryYear) {
+                            ForEach(viewModel.availableLectionaryOptions, id: \.self) { option in
+                                Text(displayNameForLectionaryOption(option)).tag(option)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(.vertical, 2)
+                    } else if let onlyOption = viewModel.availableLectionaryOptions.first {
+                        Text(displayNameForLectionaryOption(onlyOption))
+                            .font(.system(size: 15, weight: .medium))
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.vertical, 4)
                     }
+                    
+                    // 1943 特屬經課組選擇器
+                    if viewModel.lectionaryYear == "1943",
+                       viewModel.available1943Sets.count > 1 {
+                        Picker("1943經課組", selection: $viewModel.selected1943SetId) {
+                            ForEach(viewModel.available1943Sets) { set in
+                                Text(set.label ?? set.id).tag(Optional(set.id))
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(.vertical, 2)
+                        .onChange(of: viewModel.selected1943SetId) {
+                            viewModel.loadReadings()
+                        }
+                    }
+                    
+                    // 第一經課內容
+                    if let day = readings?.morningOT {
+                        scriptureContent(day: day, verses: viewModel.morningOTVerses, readingLabel: firstLessonTitle)
+                    } else {
+                        scripturePlaceholder()
+                    }
+                }
+            }
+            
+            // 🌟 2. 聖日第一頌歌選擇器
+            SectionTitle(text: viewModel.appLanguage == .traditional ? "第一頌歌" : "第一颂歌")
+            
+            if LiturgyCoreService.shared.firstCanticleType(for: viewModel.selectedDate) == .teDeum {
+                Picker("第一頌歌選擇", selection: $viewModel.selectedHolyDayCanticle) {
+                    Text(viewModel.appLanguage == .traditional ? "讚美頌" : "赞美颂").tag(CanticleType.teDeum)
+                    Text(viewModel.appLanguage == .traditional ? "摩西頌" : "摩西颂").tag(CanticleType.cantemusDomino)
+                    Text(viewModel.appLanguage == .traditional ? "安波羅修頌" : "安波罗修颂").tag(CanticleType.teLaudamus)
                 }
                 .pickerStyle(.segmented)
                 .padding(.vertical, 2)
-            } else if let onlyOption = viewModel.availableLectionaryOptions.first {
-                Text(displayNameForLectionaryOption(onlyOption))
-                    .font(.system(size: 15, weight: .medium))
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 4)
             }
             
-            if viewModel.lectionaryYear == "1943",
-               viewModel.available1943Sets.count > 1 {
-                Picker("1943經課組", selection: $viewModel.selected1943SetId) {
-                    ForEach(viewModel.available1943Sets) { set in
-                        Text(set.label ?? set.id).tag(Optional(set.id))
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.vertical, 2)
-                .onChange(of: viewModel.selected1943SetId) {
-                    viewModel.loadReadings()
-                }
-            }
+            let isHolyDayCanticle = [CanticleType.teDeum, CanticleType.cantemusDomino, CanticleType.teLaudamus].contains(viewModel.firstCanticleType)
+            canticleBlock(canticle: viewModel.firstCanticle, showTitle: !isHolyDayCanticle)
             
-            // 第一經課
+            // 🌟 3. 第二經課數據
             lessonBlock(
-                title: "第一經課",
-                rubric: "¶ 此後要按著週年讀經表，讀第一經課。",
-                day: readings?.morningOT,
-                verses: viewModel.morningOTVerses,
-                readingLabel: "第一經課"
-            )
-            
-            // ⬇️ 第一頌歌（動態根據節期選擇）
-            canticleBlock(canticle: viewModel.firstCanticle)
-            
-            // 第二經課
-            lessonBlock(
-                title: "第二經課",
-                rubric: "¶ 此後，也應當按著週年讀經表，以同樣的方式誦讀由《聖經·新約》之中所選的第二經課。",
+                title: secondLessonTitle,
+                rubric: "", // 禮規已經由 scriptureContent 動態渲染，這裡留空
                 day: readings?.morningNT,
                 verses: viewModel.morningNTVerses,
-                readingLabel: "第二經課"
+                readingLabel: secondLessonTitle
             )
+            
             officeHymnSection
-            // 第二頌歌（保持原有 seasonalBlock 或同樣改為動態）
+            
+            // 🌟 4. 第二頌歌選擇器
+            SectionTitle(text: viewModel.appLanguage == .traditional ? "第二頌歌" : "第二颂歌")
+            
+            Picker("第二頌歌選擇", selection: $viewModel.selectedSecondCanticle) {
+                ForEach(SecondCanticleSelection.allCases, id: \.self) { option in
+                    Text(viewModel.appLanguage == .traditional ? option.rawValue : (option == .benedictus ? "以色列颂" : "欢呼颂")).tag(option)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.vertical, 2)
+            
             canticleBlock(
-                canticle: viewModel.benedictus,
-                antiphon: viewModel.benedictusAntiphon,
-                antiphonNote: viewModel.benedictusAntiphonNote
+                canticle: viewModel.secondCanticleData,
+                antiphon: viewModel.secondCanticleAntiphon,
+                antiphonNote: viewModel.secondCanticleAntiphonNote,
+                showTitle: false
             )
         }
     }
-    
-    // MARK: - 頌歌顯示區塊（第一頌歌 + 第二頌歌通用）
-    private func canticleBlock(canticle: CanticleData, antiphon: String? = nil, antiphonNote: String? = nil) -> some View {
+
+    // MARK: - 頌歌顯示區塊（支援顯示副標題與禮規）
+    private func canticleBlock(canticle: CanticleData, antiphon: String? = nil, antiphonNote: String? = nil, showTitle: Bool = true) -> some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
                 
-                // ═════ 標題區（靠左）═════
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(canticle.title)
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(LiturgyColors.crimson)
-                    
-                    if let subtitle = canticle.subtitle {
-                        Text(subtitle)
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundColor(.primary)
+                // ═════ 標題區（依 showTitle 決定是否顯示大標題）═════
+                if showTitle {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(canticle.title)
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(LiturgyColors.crimson)
+                        
+                        if let subtitle = canticle.subtitle, !subtitle.isEmpty {
+                            Text(subtitle)
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundColor(.primary)
+                        }
                     }
+                } else {
+                    // 🌟 即使隱藏了大標題，若有副標題（經文出處，如「詩篇 100篇」或「路加福音 1:68-79」），依然獨立顯示
+                    if let subtitle = canticle.subtitle, !subtitle.isEmpty {
+                        Text(subtitle)
+                            .font(.system(size: 15, weight: .medium))
+                            .foregroundColor(.secondary)
+                            .padding(.bottom, 2)
+                    }
+                }
+                
+                // ═════ 禮規說明（如「¶ 在平日，唸歡呼頌。」）═════
+                if let rubric = canticle.rubric, !rubric.isEmpty {
+                    RubricBlock(text: rubric)
                 }
                 
                 // ═════ 對經（第一遍，詩節前）═════
@@ -1148,7 +1276,7 @@ struct MorningPrayerView: View {
                         .padding(.bottom, 4)
                 }
                 
-                // ═════ 對經後註解（新增）═════
+                // ═════ 對經後註解 ═════
                 if let note = antiphonNote {
                     RubricBlock(text: note)
                         .padding(.bottom, 4)
@@ -1190,7 +1318,6 @@ struct MorningPrayerView: View {
                 }
                 
                 // ═════ 對經（第二遍，榮耀頌後）═════
-                // 僅以色列頌（有傳入 antiphon 時）顯示
                 if let antiphon = antiphon {
                     AntiphonRow(text: antiphon)
                         .padding(.top, 8)
@@ -1225,13 +1352,11 @@ struct MorningPrayerView: View {
     private func lessonBlock(title: String, rubric: String, day: LectionaryDay?, verses: [BibleVerse], readingLabel: String) -> some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                // 1. 標題
                 SectionTitle(text: title)
                 
-                // 2. 禮規
-                RubricBlock(text: rubric)
+                // 刪除這一行：RubricBlock(text: rubric)
+                // 禮規改由 scriptureContent 統一分段渲染
                 
-                // 3. 經課版本切換 + 經文內容
                 if let day = day {
                     scriptureContent(day: day, verses: verses, readingLabel: readingLabel)
                 } else {
@@ -1241,31 +1366,49 @@ struct MorningPrayerView: View {
         }
     }
     
-    private func displayNameForLectionaryOption(_ option: String) -> String {
+    func displayNameForLectionaryOption(_ option: String) -> String {
+        // 🌟 同樣直接讀取全域語言狀態
+        let isTrad = MorningPrayerDataLoader.shared.currentLanguage == .traditional
         switch option {
-        case "1943":    return "1943年經課"
-        case "1928":    return "1928年經課"
-        case "1962":    return "1962年經課"
-        case "special": return "專用經課"
+        case "1943":    return isTrad ? "1943年經課" : "1943年经课"
+        case "1928":    return isTrad ? "1928年經課" : "1928年经课"
+        case "1962":    return isTrad ? "1962年經課" : "1962年经课"
+        case "special": return isTrad ? "專用經課" : "专用经课"
         default:        return option
         }
     }
 
     
-    // MARK: - 經文內容（截圖風格）
+    // MARK: - 經文內容（直接從對應的 JSON 檔讀取禮儀說明與啟應）
     private func scriptureContent(day: LectionaryDay, verses: [BibleVerse], readingLabel: String) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
-            // 經課標題：「第一篇經課載在創世記39:1-6,20-23」
-            Text("\(readingLabel)載在\(day.book)\(day.chapter)")
+        // 🌟 判斷當前是第一經課（索引 0）還是第二經課（索引 1）
+        let lessonIndex = readingLabel.contains("第二") || readingLabel.contains("第二经课") ? 1 : 0
+        let jsonLesson = MorningPrayerData.lessons.indices.contains(lessonIndex) ? MorningPrayerData.lessons[lessonIndex] : nil
+        
+        // 取得該經課的原始禮儀說明文字
+        let rubricText = jsonLesson?.rubric ?? ""
+        
+        return VStack(alignment: .leading, spacing: 16) {
+            
+            // 🌟 1. 經課前的禮規說明（若內容含有雙換行，取上半部顯示於經課前）
+            if !rubricText.isEmpty {
+                let components = rubricText.components(separatedBy: "\n\n")
+                RubricBlock(text: components.first ?? rubricText)
+            }
+            
+            // 經課標題
+            let atText = viewModel.appLanguage == .traditional ? "載在" : "载在"
+            Text("\(readingLabel)\(atText)\(day.book)\(day.chapter)")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundColor(.primary)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.vertical, 4)
+            
             // 經文（加載中或內容）
             if verses.isEmpty {
                 HStack {
                     Spacer()
-                    ProgressView("載入經文...")
+                    ProgressView(viewModel.appLanguage == .traditional ? "載入經文..." : "载入经文...")
                         .padding(.vertical, 20)
                     Spacer()
                 }
@@ -1274,17 +1417,28 @@ struct MorningPrayerView: View {
             }
             
             // 讀畢提示
-            Text("\(readingLabel)讀畢。")
+            let readCompletedText = viewModel.appLanguage == .traditional ? "讀畢。" : "读毕。"
+            Text("\(readingLabel)\(readCompletedText)")
                 .font(.system(size: 17, weight: .regular))
                 .foregroundColor(.primary)
                 .padding(.top, 8)
             
-            // 啟應
-            ResponsoryRow(response: Responsory(
-                leader: "啟：求主憐憫。",
-                people: "應：感謝上帝。"
-            ))
-            .padding(.top, 4)
+            // 🌟 2. 經課讀畢後的啟應前禮規（若內容含有雙換行，取下半部）
+            if !rubricText.isEmpty {
+                let components = rubricText.components(separatedBy: "\n\n")
+                if components.count > 1 {
+                    RubricBlock(text: components.last ?? "")
+                }
+            }
+            
+            // 🌟 3. 啟應（完全從 JSON 陣列中讀取，不設任何硬編碼預設）
+            if let responses = jsonLesson?.responses {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(responses, id: \.self) { response in
+                        ResponsoryRow(response: response)
+                    }
+                }
+            }
         }
     }
     
@@ -1347,7 +1501,7 @@ struct MorningPrayerView: View {
     private var creedSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "信經")
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "信經" : "信经")
                 RubricBlock(text: MorningPrayerData.creedRubric)
                 
                 // 三段選擇器
@@ -1359,12 +1513,16 @@ struct MorningPrayerView: View {
                 .pickerStyle(.segmented)
                 .padding(.vertical, 6)
                 
-                // 補充禮規提示
-                Text("¶ 不唸使徒信經，唸尼西亞信經亦可。")
-                    .font(.system(size: 13, weight: .regular))
-                    .italic()
-                    .foregroundColor(.red)
-                    .padding(.bottom, 4)
+                // 🌟 補充禮規提示：當選擇的不是亞他那修信經時才顯示，並支援雙語
+                if viewModel.selectedCreed != .athanasian {
+                    Text(viewModel.appLanguage == .traditional
+                         ? "¶ 不唸使徒信經，唸尼西亞信經亦可。"
+                         : "¶ 不念使徒信经，念尼西亚信经亦可。")
+                        .font(.system(size: 13, weight: .regular))
+                        .italic()
+                        .foregroundColor(.red)
+                        .padding(.bottom, 4)
+                }
                 
                 // 根據選擇顯示對應信經
                 switch viewModel.selectedCreed {
@@ -1382,12 +1540,7 @@ struct MorningPrayerView: View {
     // MARK: - 使徒 / 尼西亞信經通用渲染
     private func creedContent(_ section: PrayerSection) -> some View {
         Group {
-            if let title = section.title {
-                Text(title)
-                    .font(.system(size: 17, weight: .semibold))
-                    .foregroundColor(LiturgyColors.crimson)
-                    .padding(.top, 2)
-            }
+            // 🌟 配合頂部已有的分段選擇器，隱略個別的紅色標題
             ForEach(section.paragraphs, id: \.self) { p in
                 BodyText(p)
             }
@@ -1395,69 +1548,87 @@ struct MorningPrayerView: View {
     }
 
     // MARK: - 亞他拿修信經專用渲染（42 段正文 + 2 段榮耀頌）
+    @ViewBuilder
     private var athanasianCreedContent: some View {
-        Group {
-            Text(PrimePrayerData.athanasianCreed.title!)
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundColor(LiturgyColors.crimson)
-                .padding(.top, 2)
+        if let creedData = creedsLoader.athanasianCreed {
+            let lang = viewModel.appLanguage
             
-            if let rubric = PrimePrayerData.athanasianCreed.rubric {
-                RubricBlock(text: rubric)
-            }
-            
-            // ═════ 正文 42 段：一、至四十二、（懸掛縮進）═════
-            ForEach(0..<42, id: \.self) { index in
-                let body = PrimePrayerData.athanasianCreed.paragraphs[index]
-                let prefix = numberToChinese(index + 1) + "、"
+            Group {
+                // 🌟 配合頂部已有的分段選擇器，隱略個別的紅色標題
+                RubricBlock(text: creedData.rubric.text(for: lang))
                 
-                HStack(alignment: .top, spacing: 0) {
-                    Text(prefix)
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundColor(.red)
-                        .frame(width: 52, alignment: .leading)
-                    Text(body)
+                // 🌟 1. 將正文與榮耀頌包進獨立的 VStack (spacing: 8)，避免受到外層 14pt 影響而太鬆散
+                VStack(alignment: .leading, spacing: 8) {
+                    // ═════ 正文 42 段：一、至四十二、（懸掛縮進）═════
+                    ForEach(0..<42, id: \.self) { index in
+                        // 確保陣列不越界
+                        if index < creedData.paragraphs.count {
+                            let body = creedData.paragraphs[index].text(for: lang)
+                            let prefix = numberToChinese(index + 1) + "、"
+                            
+                            HStack(alignment: .top, spacing: 0) {
+                                Text(prefix)
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundColor(.red)
+                                    .frame(width: 52, alignment: .leading)
+                                Text(body)
+                                    .font(.system(size: 17, weight: .regular))
+                                    .foregroundColor(.primary)
+                                    .lineSpacing(6)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                        }
+                    }
+                    
+                    // ═════ 榮耀頌（第 43–44 段）═════
+                    if creedData.paragraphs.count >= 44 {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(creedData.paragraphs[42].text(for: lang))
+                                .lineSpacing(6)
+                            Text(creedData.paragraphs[43].text(for: lang))
+                                .lineSpacing(6)
+                        }
                         .font(.system(size: 17, weight: .regular))
                         .foregroundColor(.primary)
-                        .fixedSize(horizontal: false, vertical: true)
+                        // 🌟 2. 移除置中對齊，讓榮耀頌直接與上方信經的「序號（如一、二）」切齊
+                        .padding(.top, 8)
+                    }
                 }
-                .padding(.vertical, 2)
             }
-            
-            // ═════ 榮耀頌（第 43–44 段，無序號，居中）═════
-            VStack(alignment: .leading, spacing: 4) {
-                Text(PrimePrayerData.athanasianCreed.paragraphs[42])
-                Text(PrimePrayerData.athanasianCreed.paragraphs[43])
-            }
-            .font(.system(size: 17, weight: .regular))
-            .foregroundColor(.primary)
-            .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(.top, 8)
+        } else {
+            // 資料加載中
+            ProgressView(viewModel.appLanguage == .traditional ? "載入亞他那修信經..." : "载入亚他那修信经...")
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding()
         }
     }
     
     private var prayersSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "祈禱")
-                RubricBlock(text: MorningPrayerData.prayers.rubric!)
+                // 🌟 改為從 JSON 動態讀取標題與禮規
+                if let title = MorningPrayerData.prayers.title {
+                    SectionTitle(text: title)
+                }
+                if let rubric = MorningPrayerData.prayers.rubric {
+                    RubricBlock(text: rubric)
+                }
                 
-                // ⬇️ 啟應格式，不居中
+                // ⬇️ 啟應格式，不居中（加入雙語判斷）
                 ResponsoryRow(response: Responsory(
-                    leader: "啟：願主與你們同在。",
-                    people: "應：願主與你的心靈同在。"
+                    leader: viewModel.appLanguage == .traditional ? "願主與你們同在。" : "愿主与你们同在。",
+                    people: viewModel.appLanguage == .traditional ? "願主與你的心靈同在。" : "愿主与你的心灵同在。"
                 ))
                 
-                // ⬇️ 居中：我們要禱告
-                Text("我們要禱告。")
+                // ⬇️ 居中：我們要禱告（加入雙語判斷）
+                Text(viewModel.appLanguage == .traditional ? "我們要禱告。" : "我们要祷告。")
                     .font(.system(size: 17, weight: .regular))
                     .foregroundColor(.primary)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 4)
                 
-                // ⬇️ 居中：求主憐憫三句
-                Text("求主憐憫；\n求基督憐憫；\n求主憐憫。")
+                // ⬇️ 居中：求主憐憫三句（加入雙語判斷）
+                Text(viewModel.appLanguage == .traditional ? "求主憐憫；\n求基督憐憫；\n求主憐憫。" : "求主怜悯；\n求基督怜悯；\n求主怜悯。")
                     .font(.system(size: 17, weight: .regular))
                     .foregroundColor(.primary)
                     .multilineTextAlignment(.center)
@@ -1465,8 +1636,10 @@ struct MorningPrayerView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.vertical, 4)
                 
-                // ⬇️ 主禱文：正常左對齊
-                BodyText(MorningPrayerData.prayers.paragraphs[2])
+                // ⬇️ 主禱文：正常左對齊 (這個原本就有抓 JSON 的 paragraphs[2]，會自動雙語)
+                if MorningPrayerData.prayers.paragraphs.count > 2 {
+                    BodyText(MorningPrayerData.prayers.paragraphs[2])
+                }
                 
                 // 啟應版本選擇器
                 Picker("啟應版本", selection: $viewModel.selectedPrayerResponse) {
@@ -1477,7 +1650,7 @@ struct MorningPrayerView: View {
                 .pickerStyle(.segmented)
                 .padding(.vertical, 8)
                 
-                // 動態啟應
+                // 動態啟應 (這個是抓 JSON，會自動雙語)
                 let responses = viewModel.selectedPrayerResponse == .bcp1932
                 ? MorningPrayerData.prayersResponsesBCP1932
                 : MorningPrayerData.prayersResponsesNew
@@ -1492,33 +1665,38 @@ struct MorningPrayerView: View {
     }
     
     private var collectsSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        let isTrad = viewModel.appLanguage == .traditional
+        
+        return VStack(alignment: .leading, spacing: 12) {
             
             // 1. 本日祝文與紀念祝文（合併於同一個卡片中）
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    // 整個區塊的唯一大標題
-                    SectionTitle(text: "本日祝文")
-                    RubricBlock(text: "¶ 此後，誦唸本日祝文，然後接著誦唸合時的紀念祝文；最後以下面兩篇祝文作為結束。")
-                    // 🌟 祝文前啟應
+                    // 🌟 整個區塊的唯一大標題與禮規（從 JSON 讀取）
+                    if let title = MorningPrayerData.collects[0].title {
+                        SectionTitle(text: title)
+                    }
+                    if let rubric = MorningPrayerData.collects[0].rubric {
+                        RubricBlock(text: rubric)
+                    }
+                    
+                    // 🌟 祝文前啟應（支援雙語）
                     VStack(alignment: .leading, spacing: 10) {
                         ResponsoryRow(response: Responsory(
-                            leader: "啟：願主與你們同在。",
-                            people: "應：願主與你的心靈同在。"
+                            leader: isTrad ? "願主與你們同在。" : "愿主与你们同在。",
+                            people: isTrad ? "願主與你的心靈同在。" : "愿主与你的心灵同在。"
                         ))
-                        HStack(alignment: .firstTextBaseline, spacing: 10) {
-                            Text("啟")
-                                .font(.system(size: 11, weight: .bold))
-                                .foregroundColor(LiturgyColors.crimson)
-                                .frame(width: 22, height: 22)
-                                .overlay(Circle().stroke(LiturgyColors.crimson, lineWidth: 1.5))
-                            Text("我們要禱告。")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.primary)
-                            Spacer()
-                        }
+                        
+                        // 🌟 居中：我們要禱告
+                        Text(isTrad ? "我們要禱告。" : "我们要祷告。")
+                            .font(.system(size: 17, weight: .regular))
+                            .foregroundColor(.primary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 4)
                     }
                     .padding(.vertical, 6)
+                        
+                    
                     // 🌟 載入主祝文
                     if let mainCollect = viewModel.collectOfTheDay {
                         Text(mainCollect.title)
@@ -1528,7 +1706,7 @@ struct MorningPrayerView: View {
                         
                         BodyText(mainCollect.text)
                     } else {
-                        PlaceholderBlock(text: "按當日節期誦唸")
+                        PlaceholderBlock(text: viewModel.appLanguage == .traditional ? "按當日節期誦唸" : "按当日节期诵念")
                     }
                     
                     // ═════ 1. JSON 文件內建紀念（緊接主祝文之後）═════
@@ -1566,23 +1744,94 @@ struct MorningPrayerView: View {
             }
         }
     }
-    
     private var generalPrayersSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach(MorningPrayerData.generalPrayers.indices, id: \.self) { i in
+            // 🌟 修正：直接迭代 PrayerSection 元素本身，而不是 .indices
+            ForEach(MorningPrayerData.generalPrayers, id: \.self) { prayerSection in
                 LiturgyCard {
-                    PrayerSectionContent(section: MorningPrayerData.generalPrayers[i])
+                    PrayerSectionContent(section: prayerSection)
                 }
             }
         }
     }
     
+    
+    // MARK: - 季節對經與聖母對經區塊
+    private var memorialAntiphonsSection: some View {
+        LiturgyCard {
+            VStack(alignment: .leading, spacing: 14) {
+                let sectionTitleText = viewModel.appLanguage == .traditional ? "紀念對經" : "纪念对经"
+                let introRubricText = viewModel.appLanguage == .traditional ? "¶ 季節對經或聖母對經在規定的祝文之後誦讀。" : "¶ 季节对经或圣母对经在规定的祝文之后诵读。"
+                
+                SectionTitle(text: sectionTitleText)
+                RubricBlock(text: introRubricText)
+                
+                // 🌟 選擇按鈕：季節對經、聖母對經、省略
+                Picker("選擇對經", selection: $viewModel.memorialAntiphonSelection) {
+                    ForEach(MemorialAntiphonSelection.allCases, id: \.self) { option in
+                        let localizedText = viewModel.appLanguage == .traditional ? option.rawValue : option.rawValue.replacingOccurrences(of: "節", with: "节").replacingOccurrences(of: "經", with: "经").replacingOccurrences(of: "聖", with: "圣")
+                        Text(localizedText).tag(option)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.vertical, 6)
+                
+                // 🌟 顯示邏輯
+                if viewModel.memorialAntiphonSelection == .seasonal {
+                    if let content = viewModel.currentSeasonalContent {
+                        RubricBlock(text: content.rubric)
+                        
+                        Text("對經：\(content.antiphon)")
+                            .font(.system(size: 17, weight: .regular))
+                            .foregroundColor(.primary)
+                            .padding(.vertical, 2)
+                        
+                        ResponsoryRow(response: Responsory(leader: content.versicle, people: content.response))
+                        
+                        Text(viewModel.appLanguage == .traditional ? "我們要禱告。" : "我们要祷告。")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundColor(.primary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.vertical, 4)
+                        
+                        BodyText(content.prayer)
+                    } else {
+                        PlaceholderBlock(text: viewModel.appLanguage == .traditional ? "本日無指定的季節對經。" : "本日无指定的季节对经。")
+                    }
+                } else if viewModel.memorialAntiphonSelection == .marian {
+                    if let content = viewModel.currentMarianContent {
+                        if let title = content.title {
+                            Text(title)
+                                .font(.system(size: 17, weight: .semibold))
+                                .foregroundColor(LiturgyColors.crimson)
+                        }
+                        RubricBlock(text: content.rubric)
+                        
+                        BodyText(content.antiphon)
+                        
+                        ResponsoryRow(response: Responsory(leader: content.versicle, people: content.response))
+                        
+                        Text(viewModel.appLanguage == .traditional ? "我們要禱告。" : "我们要祷告。")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundColor(.primary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.vertical, 4)
+                        
+                        BodyText(content.prayer)
+                    } else {
+                        PlaceholderBlock(text: viewModel.appLanguage == .traditional ? "本日無指定的聖母對經。" : "本日无指定的圣母对经。")
+                    }
+                }
+            }
+        }
+    }
+        
     // MARK: - 其他禱文選擇器（求恩祝文後）
     private var generalPrayerSelectorSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "其他禱文")
-                RubricBlock(text: "¶ 此處可選擇誦唸以下禱文，或總禱文，或完全省略。")
+                SectionTitle(text: viewModel.appLanguage == .traditional ? "其他禱文" : "其他祷文")
+                RubricBlock(text: viewModel.appLanguage == .traditional ? "¶ 此處可選擇誦唸以下禱文，或總禱文，或完全省略。" : "¶ 此处可选择诵念以下祷文，或总祷文，或完全省略。")
                 
                 Picker("禱文選擇", selection: $viewModel.generalPrayerOption) {
                     ForEach(GeneralPrayerOption.allCases, id: \.self) { option in
@@ -1595,6 +1844,8 @@ struct MorningPrayerView: View {
         }
     }
     
+    
+        
     // MARK: - 根據選擇顯示原禱文、總禱文或省略
     private var generalPrayersOrLitanySection: some View {
         Group {
@@ -1608,170 +1859,212 @@ struct MorningPrayerView: View {
             }
         }
     }
-    
+        
+        // MARK: - 總禱文（內嵌於早禱，不另開頁面）
     // MARK: - 總禱文（內嵌於早禱，不另開頁面）
-    private var litanySection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // 1. 總禱文主體
-            LiturgyCard {
-                VStack(alignment: .leading, spacing: 14) {
-                    SectionTitle(text: "總禱文")
-                    RubricBlock(text: "此文在早禱或晚禱第三祝文後誦唸，或在施聖餐文前誦唸，或單獨誦唸。")
-                    
-                    VStack(alignment: .leading, spacing: 2) {
-                        ForEach(LitanyData.mainResponses, id: \.self) { response in
-                            litanyResponseRow(leader: response.leader, people: response.people)
+        @ViewBuilder
+        private var litanySection: some View {
+            if let data = litanyLoader.uiData {
+                // 讀取當前的繁簡狀態
+                let lang = viewModel.appLanguage
+                
+                VStack(alignment: .leading, spacing: 12) {
+                    // 1. 總禱文主體
+                    LiturgyCard {
+                        VStack(alignment: .leading, spacing: 14) {
+                            SectionTitle(text: data.title.text(for: lang))
+                            RubricBlock(text: data.mainRubric.text(for: lang))
+                            
+                            VStack(alignment: .leading, spacing: 2) {
+                                ForEach(data.mainResponses) { response in
+                                    litanyResponseRow(response: response, lang: lang)
+                                }
+                            }
                         }
                     }
-                }
-            }
-            
-            // 2. 主禱文
-            LiturgyCard {
-                VStack(alignment: .leading, spacing: 14) {
-                    SectionTitle(text: LitanyData.lordPrayer.title!)
-                    RubricBlock(text: LitanyData.lordPrayer.rubric!)
                     
-                    ForEach(LitanyData.lordPrayer.paragraphs, id: \.self) { p in
-                        BodyText(p)
+                    // 2. 主禱文
+                    LiturgyCard {
+                        VStack(alignment: .leading, spacing: 14) {
+                            if let title = data.lordPrayer.title?.text(for: lang) {
+                                SectionTitle(text: title)
+                            }
+                            if let rubric = data.lordPrayer.rubric?.text(for: lang) {
+                                RubricBlock(text: rubric)
+                            }
+                            ForEach(data.lordPrayer.paragraphs, id: \.self) { p in
+                                BodyText(p.text(for: lang))
+                            }
+                            RubricBlock(text: data.lordPrayerNote.text(for: lang))
+                        }
                     }
                     
-                    RubricBlock(text: LitanyData.lordPrayerNote)
-                }
-            }
-            
-            // 3. 中間啟應
-            LiturgyCard {
-                VStack(alignment: .leading, spacing: 2) {
-                    ForEach(LitanyData.intermediateResponses, id: \.self) { response in
-                        litanyResponseRow(leader: response.leader, people: response.people)
+                    // 3. 中間啟應
+                    LiturgyCard {
+                        VStack(alignment: .leading, spacing: 2) {
+                            ForEach(data.intermediateResponses) { response in
+                                litanyResponseRow(response: response, lang: lang)
+                            }
+                        }
+                    }
+                    
+                    // 4. 中間禱文
+                    LiturgyCard {
+                        VStack(alignment: .leading, spacing: 14) {
+                            ForEach(data.intermediatePrayer.paragraphs, id: \.self) { p in
+                                BodyText(p.text(for: lang))
+                            }
+                        }
+                    }
+                    
+                    // 5. 誦唸段落
+                    ForEach(data.middleRecitations) { recitation in
+                        LiturgyCard {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(recitation.rubric.text(for: lang))
+                                    .font(.system(size: 15, weight: .regular))
+                                    .italic()
+                                    .foregroundColor(.red)
+                                BodyText(recitation.text.text(for: lang))
+                            }
+                        }
+                    }
+                    
+                    // 6. 結尾啟應
+                    LiturgyCard {
+                        VStack(alignment: .leading, spacing: 2) {
+                            ForEach(data.closingResponses) { response in
+                                litanyResponseRow(response: response, lang: lang)
+                            }
+                        }
+                    }
+                    
+                    // 7. 結尾禱文
+                    LiturgyCard {
+                        VStack(alignment: .leading, spacing: 14) {
+                            ForEach(data.closingPrayer.paragraphs, id: \.self) { p in
+                                BodyText(p.text(for: lang))
+                            }
+                        }
+                    }
+                    
+                    // 8. 最後禮規
+                    LiturgyCard {
+                        RubricBlock(text: data.finalRubric.text(for: lang))
                     }
                 }
-            }
-            
-            // 4. 中間禱文
-            LiturgyCard {
-                VStack(alignment: .leading, spacing: 14) {
-                    ForEach(LitanyData.intermediatePrayer.paragraphs, id: \.self) { p in
-                        BodyText(p)
-                    }
-                }
-            }
-            
-            // 5. 誦唸段落
-            ForEach(LitanyData.middleRecitations, id: \.rubric) { recitation in
-                LiturgyCard {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(recitation.rubric)
-                            .font(.system(size: 15, weight: .regular))
-                            .italic()
-                            .foregroundColor(.red)
-                        BodyText(recitation.text)
-                    }
-                }
-            }
-            
-            // 6. 結尾啟應
-            LiturgyCard {
-                VStack(alignment: .leading, spacing: 2) {
-                    ForEach(LitanyData.closingResponses, id: \.self) { response in
-                        litanyResponseRow(leader: response.leader, people: response.people)
-                    }
-                }
-            }
-            
-            // 7. 結尾禱文
-            LiturgyCard {
-                VStack(alignment: .leading, spacing: 14) {
-                    ForEach(LitanyData.closingPrayer.paragraphs, id: \.self) { p in
-                        BodyText(p)
-                    }
-                }
-            }
-            
-            // 8. 最後禮規
-            LiturgyCard {
-                RubricBlock(text: LitanyData.finalRubric)
-            }
-        }
-    }
-    
-    // MARK: - 總禱文啟應行（啟：／應： 紅色前綴）
-    private func litanyResponseRow(leader: String, people: String) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .top, spacing: 4) {
-                Text("啟：")
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.red)
-                    .frame(width: 36, alignment: .leading)
-                Text(leader)
-                    .font(.system(size: 16, weight: .regular))
-                    .foregroundColor(.primary)
-                    .fixedSize(horizontal: false, vertical: true)
-                Spacer()
-            }
-            
-            if !people.isEmpty {
-                HStack(alignment: .top, spacing: 4) {
-                    Text("應：")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.red)
-                        .frame(width: 36, alignment: .leading)
-                    Text(people)
-                        .font(.system(size: 16, weight: .regular))
-                        .foregroundColor(.primary)
-                        .fixedSize(horizontal: false, vertical: true)
+            } else {
+                // 資料尚未準備好時顯示載入中
+                HStack {
+                    Spacer()
+                    ProgressView("載入總禱文...")
+                        .padding(.vertical, 20)
                     Spacer()
                 }
-                .padding(.bottom, 4)
+                .onAppear {
+                    litanyLoader.loadData()
+                }
             }
         }
-    }
-    
-    // MARK: - 紀念祝文統一渲染
-    @ViewBuilder
-    private func commemorationBlock(_ block: MorningPrayerViewModel.CommemorationCollectBlock) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Divider().padding(.vertical, 4)
-            
-            Text("紀念" + block.displayName)
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundColor(LiturgyColors.crimson)
-            
-            if block.antiphon != nil || block.versicle != nil {
-                if let antiphon = block.antiphon {
-                    AntiphonRow(text: antiphon)
-                        .padding(.top, 4)
+        
+    // MARK: - 總禱文啟應行（採用早禱統一設計：圓圈啟應）
+        private func litanyResponseRow(response: UILitanyResponsory, lang: AppLanguage) -> some View {
+            VStack(alignment: .leading, spacing: 8) {
+                
+                // 🌟 獲取文字並清理多餘的空白與前綴（避免正文前帶有空格）
+                let leaderText = response.leader.text(for: lang)
+                    .replacingOccurrences(of: "啟：", with: "")
+                    .replacingOccurrences(of: "启：", with: "")
+                    .trimmingCharacters(in: .whitespaces)
+                
+                if !leaderText.isEmpty {
+                    // 🌟 spacing: 8 讓圓圈與文字保持緊湊，沒有多餘空格
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(lang == .traditional ? "啟" : "启")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundColor(LiturgyColors.crimson)
+                            .frame(width: 22, height: 22)
+                            .overlay(Circle().stroke(LiturgyColors.crimson, lineWidth: 1.5))
+                        
+                        Text(leaderText)
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.primary)
+                            .fixedSize(horizontal: false, vertical: true)
+                        
+                        Spacer()
+                    }
                 }
                 
-                if let versicle = block.versicle {
-                    ResponsoryRow(response: Responsory(
-                        leader: "啟：" + versicle.leader,
-                        people: "應：" + versicle.people
-                    ))
-                    .padding(.bottom, 4)
-                }
+                let peopleText = response.people.text(for: lang)
+                    .replacingOccurrences(of: "應：", with: "")
+                    .replacingOccurrences(of: "应：", with: "")
+                    .trimmingCharacters(in: .whitespaces)
                 
-                Text("我們要禱告。")
-                    .font(.system(size: 17, weight: .regular))
-                    .foregroundColor(.primary)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 4)
+                if !peopleText.isEmpty {
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(lang == .traditional ? "應" : "应")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundColor(LiturgyColors.crimson)
+                            .frame(width: 22, height: 22)
+                            .overlay(Circle().stroke(LiturgyColors.crimson, lineWidth: 1.5))
+                        
+                        Text(peopleText)
+                            .font(.system(size: 16, weight: .regular))
+                            .foregroundColor(.primary)
+                            .fixedSize(horizontal: false, vertical: true)
+                        
+                        Spacer()
+                    }
+                }
             }
-            
-            BodyText(block.collect.text)
+            .padding(.vertical, 2)
         }
-    }
-    
+        
+        // MARK: - 紀念祝文統一渲染
+        @ViewBuilder
+        private func commemorationBlock(_ block: MorningPrayerViewModel.CommemorationCollectBlock) -> some View {
+            VStack(alignment: .leading, spacing: 14) {
+                Divider().padding(.vertical, 4)
+                
+                Text((viewModel.appLanguage == .traditional ? "紀念" : "纪念") + block.displayName)
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundColor(LiturgyColors.crimson)
+                
+                if block.antiphon != nil || block.versicle != nil {
+                    if let antiphon = block.antiphon {
+                        AntiphonRow(text: antiphon)
+                            .padding(.top, 4)
+                    }
+                    
+                    if let versicle = block.versicle {
+                        ResponsoryRow(response: Responsory(
+                            leader: (viewModel.appLanguage == .traditional ? "啟：" : "启：") + versicle.leader,
+                            people: (viewModel.appLanguage == .traditional ? "應：" : "应：") + versicle.people
+                        ))
+                        .padding(.bottom, 4)
+                    }
+                    
+                    Text(viewModel.appLanguage == .traditional ? "我們要禱告。" : "我们要祷告。")
+                        .font(.system(size: 17, weight: .regular))
+                        .foregroundColor(.primary)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.vertical, 4)
+                }
+                
+                BodyText(block.collect.text)
+            }
+        }
+        
     private var endingSection: some View {
         VStack(spacing: 0) {
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    RubricBlock(text: "¶ 以下文結束日課：")
+                    RubricBlock(text: viewModel.appLanguage == .traditional ? "¶ 以下文結束日課：" : "¶ 以下文结束日课：")
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        ForEach(MorningPrayerData.endingResponses.indices, id: \.self) { i in
-                            ResponsoryRow(response: MorningPrayerData.endingResponses[i])
+                        // 🌟 修正：直接迭代 Responsory 元素本身，而不是 .indices
+                        ForEach(MorningPrayerData.endingResponses, id: \.self) { response in
+                            ResponsoryRow(response: response)
                         }
                     }
                     Divider().padding(.vertical, 8)
@@ -1783,7 +2076,7 @@ struct MorningPrayerView: View {
                         BodyText(p)
                     }
                     
-                    SectionTitle(text: "聖帕特里克鎧甲歌")
+                    SectionTitle(text: viewModel.appLanguage == .traditional ? "聖帕特里克鎧甲歌" : "圣帕特里克铠甲歌")
                     Picker("聖帕特里克鎧甲歌", selection: $viewModel.stPatrickOption) {
                         ForEach(StPatrickOption.allCases, id: \.self) { option in
                             Text(option.rawValue).tag(option)
@@ -1808,7 +2101,7 @@ struct MorningPrayerView: View {
                     }
                 }
             }
-            Text("❦ 早禱至此結束。")
+            Text(viewModel.appLanguage == .traditional ? "❦ 早禱至此結束。" : "❦ 早祷至此结束。")
                 .font(.system(size: 15, weight: .medium))
                 .foregroundColor(.red)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -1827,9 +2120,7 @@ struct LiturgyCard<Content: View>: View {
         VStack(alignment: .leading, spacing: 0) {
             content
         }
-        .padding(16)
-        .background(Color(UIColor.secondarySystemGroupedBackground))
-        .cornerRadius(12)
+        .padding(.vertical, 12) // 🌟 只保留上下的呼吸空間，刪除背景與圓角
     }
 }
 
@@ -1848,8 +2139,9 @@ struct PrayerSectionContent: View {
             ForEach(section.paragraphs, id: \.self) { p in
                 BodyText(p)
             }
-            ForEach(section.responses.indices, id: \.self) { i in
-                ResponsoryRow(response: section.responses[i])
+            // 💡 改為直接迭代 responses 元素
+            ForEach(section.responses, id: \.self) { response in
+                ResponsoryRow(response: response)
             }
         }
     }
@@ -1895,42 +2187,61 @@ struct BodyText: View {
         attrStr.font = .system(size: 17, weight: .regular)
         attrStr.foregroundColor = .primary
         
-        // 1. 【美國總統】 -> 顯示為紅色
-        if let range = attrStr.range(of: "【美國總統】") {
-            attrStr[range].foregroundColor = .red
-        }
+        // 1. 單一詞彙上色（同時支援繁簡）
+        let redKeywords = [
+            "【美國總統】", "【美国总统】",
+            "¶ 或唸此文：", "¶ 或念此文："
+        ]
         
-        if let range = attrStr.range(of: "¶ 或唸此文：") {
-            attrStr[range].foregroundColor = .red
-        }
-        
-        // 2. 為普天下人禱文中的代禱句
-        let prayerTarget = "【且特為請我們禱告的某某。若無人請禱，則不讀此句。】"
-        if let fullRange = attrStr.range(of: prayerTarget) {
-            // 先將整句（含括號與提示）變為紅色
-            attrStr[fullRange].foregroundColor = .red
-            
-            // 再把實際要唸出來的正文覆蓋回黑色
-            if let blackRange = attrStr.range(of: "且特為請我們禱告的某某。") {
-                attrStr[blackRange].foregroundColor = .primary
+        for keyword in redKeywords {
+            if let range = attrStr.range(of: keyword) {
+                attrStr[range].foregroundColor = .red
             }
         }
         
-        // 3. 總謝文中的感恩句
-        let thanksTarget = "（且賜與受過主恩，要讚美主感謝主的某某。若無人請謝，則不讀此句。）"
-        if let fullRange = attrStr.range(of: thanksTarget) {
-            // 先將整句（含括號與提示）變為紅色
-            attrStr[fullRange].foregroundColor = .red
-            
-            // 再把實際要唸出來的正文覆蓋回黑色
-            if let blackRange = attrStr.range(of: "且賜與受過主恩，要讚美主感謝主的某某。") {
-                attrStr[blackRange].foregroundColor = .primary
+        // 2. 為普天下人禱文中的代禱句（同時支援繁簡）
+        let prayerTargets = [
+            ("【且特為請我們禱告的某某。若無人請禱，則不讀此句。】", "且特為請我們禱告的某某。"),
+            ("【且特为请我们祷告的某某。若无人请祷，则不读此句。】", "且特为请我们祷告的某某。")
+        ]
+        
+        for (full, black) in prayerTargets {
+            if let fullRange = attrStr.range(of: full) {
+                // 先將整句變為紅色
+                attrStr[fullRange].foregroundColor = .red
+                
+                // 再把實際要唸出來的正文覆蓋回黑色
+                if let blackRange = attrStr.range(of: black) {
+                    attrStr[blackRange].foregroundColor = .primary
+                }
             }
         }
-        if let range = attrStr.range(of: "（哥林多後書13:14）") {
-            attrStr[range].foregroundColor = .red
-            // 縮小字號為 14pt (原為 17pt)
-            attrStr[range].font = .system(size: 14, weight: .regular)
+        
+        // 3. 總謝文中的感恩句（同時支援繁簡）
+        let thanksTargets = [
+            ("【且賜與受過主恩，要讚美主感謝主的某某。若無人請謝，則不讀此句。】", "且賜與受過主恩，要讚美主感謝主的某某。"),
+            ("【且赐与受过主恩，要赞美主感谢主的某某。若无人请谢，则不读此句。】", "且赐与受过主恩，要赞美主感谢主的某某。")
+        ]
+        
+        for (full, black) in thanksTargets {
+            if let fullRange = attrStr.range(of: full) {
+                // 先將整句變為紅色
+                attrStr[fullRange].foregroundColor = .red
+                
+                // 再把實際要唸出來的正文覆蓋回黑色
+                if let blackRange = attrStr.range(of: black) {
+                    attrStr[blackRange].foregroundColor = .primary
+                }
+            }
+        }
+        
+        // 4. 經文出處縮小並上紅（同時支援繁簡）
+        let bibleRefs = ["（哥林多後書13:14）", "（哥林多后书13:14）"]
+        for ref in bibleRefs {
+            if let range = attrStr.range(of: ref) {
+                attrStr[range].foregroundColor = .red
+                attrStr[range].font = .system(size: 14, weight: .regular)
+            }
         }
         
         return attrStr
@@ -2013,6 +2324,11 @@ enum CreedSelection: String, CaseIterable, Hashable {
     case athanasian = "亞他拿修信經"
 }
 
+enum SecondCanticleSelection: String, CaseIterable, Hashable {
+    case benedictus = "以色列頌"
+    case jubilate = "歡呼頌"
+}
+
 enum PrayerResponseVersion: String, CaseIterable, Hashable {
     case bcp1932 = "BCP1932"
     case newTranslation = "新譯"
@@ -2065,6 +2381,30 @@ class MorningPrayerViewModel: ObservableObject {
             loadReadings()   // ← 保留原有這行
         }
     }
+    // 🌟 新增：聖日第一頌歌選擇
+    @Published var selectedHolyDayCanticle: CanticleType = {
+        let saved = UserDefaults.standard.string(forKey: "holyDayCanticle") ?? CanticleType.teDeum.rawValue
+        return CanticleType(rawValue: saved) ?? .teDeum
+    }() {
+        didSet {
+            UserDefaults.standard.set(selectedHolyDayCanticle.rawValue, forKey: "holyDayCanticle")
+        }
+    }
+    @Published var selectedSecondCanticle: SecondCanticleSelection = {
+        let saved = UserDefaults.standard.string(forKey: "selectedSecondCanticle") ?? SecondCanticleSelection.benedictus.rawValue
+        return SecondCanticleSelection(rawValue: saved) ?? .benedictus
+    }() {
+        didSet {
+            UserDefaults.standard.set(selectedSecondCanticle.rawValue, forKey: "selectedSecondCanticle")
+        }
+    }
+    @Published var appLanguage: AppLanguage = MorningPrayerDataLoader.shared.currentLanguage {
+        didSet {
+            // ✅ 統一由 MorningPrayerDataLoader 處理語言切換與級聯快取清理
+            MorningPrayerDataLoader.shared.setLanguage(appLanguage)
+            loadReadings()
+        }
+    }
     @Published var availableLectionaryOptions: [String] = ["1928", "1962"]
     @Published var dailyReadings: DailyReadings?
     @Published var morningOTVerses: [BibleVerse] = []
@@ -2087,6 +2427,11 @@ class MorningPrayerViewModel: ObservableObject {
     @Published var availablePsalmLectionaryOptions: [String] = []
     @Published var selected1943SetId: String?
     @Published var available1943Sets: [DailyOfficeFile.OfficePeriod.LectionarySet] = []
+    
+    // MARK: - 季節與聖母對經狀態
+    @Published var memorialAntiphonSelection: MemorialAntiphonSelection = .omit
+    @Published var currentSeasonalContent: AntiphonContent?
+    @Published var currentMarianContent: AntiphonContent?
     
     init() {
         syncCreedSelection()
@@ -2146,7 +2491,7 @@ class MorningPrayerViewModel: ObservableObject {
     var formattedDate: String {
         let f = DateFormatter()
         f.dateFormat = "M月d日"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: selectedDate)
     }
     
@@ -2182,7 +2527,7 @@ class MorningPrayerViewModel: ObservableObject {
             return BibleSentencesLoader.shared.sentences(for: .easter, title: "主日")
         }
         
-        return BibleSentencesLoader.shared.sentences(for: info.season, title: liturgy.mainTitle)
+        return BibleSentencesLoader.shared.sentences(for: info.season, title: liturgy.mainTitle, language: appLanguage)
     }
     
     
@@ -2208,46 +2553,140 @@ class MorningPrayerViewModel: ObservableObject {
         Calendar.current.component(.weekday, from: selectedDate) == 2
     }
 
+    // 🌟 定義視圖專用的聖詩顯示結構
+    struct OfficeHymnDisplay {
+        let title: String
+        let latinTitle: String
+        let seasonNote: String?
+        let verses: [String]
+        let versicle: DailyOfficeFile.OfficePeriod.VersicleJSON?
+    }
+
     /// 當日應誦邀請聖詩（皆來頌後、詩篇前）
     var invitatoryHymn: InvitatoryHymnData {
+        // 1. 優先讀取專日/節期文件 (DailyOfficeLoader - 已經支援雙語)
         if let special = DailyOfficeLoader.shared.invitatoryHymn(for: selectedDate, liturgy: liturgy) {
             return InvitatoryHymnData(
-                title: special.title ?? "",       // ✅ 安全解包
+                title: special.title ?? "",
                 seasonNote: nil,
-                verses: special.verses ?? []      // ✅ 安全解包
+                verses: special.verses ?? []
             )
         }
-        return LiturgyCoreService.shared.invitatoryHymn(for: selectedDate)
+        
+        // 2. 回退常規邀請聖詩 (MorningPrayerDataLoader 雙語)
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: selectedDate)
+        let type: InvitatoryHymnType
+        
+        if weekday == 1 {
+            let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+            if info.season == .trinity || info.season == .pentecost {
+                type = .sundaySummer
+            } else {
+                type = .sundayWinter
+            }
+        } else {
+            // 平日：Calendar.weekday (1=日, 2=一 ... 7=六)
+            type = .weekday(weekday - 1)
+        }
+        return MorningPrayerDataLoader.shared.invitatoryHymn(for: type, language: appLanguage)
     }
 
     /// 日課聖詩（第二經課後、第二頌歌前）
-    var officeHymn: OfficeHymnData {
+    var officeHymn: OfficeHymnDisplay {
+        // 1. 優先讀取專日/節期文件 (DailyOfficeLoader - 已經支援雙語)
         if let special = DailyOfficeLoader.shared.officeHymn(for: selectedDate, liturgy: liturgy) {
-            return OfficeHymnData(
-                title: "",
-                latinTitle: special.title ?? "",        // ✅ 安全解包
+            return OfficeHymnDisplay(
+                title: "", // 專日文件通常沒有雙標題，主標題留空
+                latinTitle: special.title ?? "", // 借用 latinTitle 欄位渲染成紅色居中標題
                 seasonNote: nil,
-                verses: special.verses ?? [],             // ✅ 安全解包
-                versicle: special.versicle.map {
-                    OfficeHymnData.OfficeVersicle(leader: $0.leader, people: $0.people)
-                }
+                verses: special.verses ?? [],
+                versicle: special.versicle
             )
         }
-        return LiturgyCoreService.shared.morningOfficeHymn(for: selectedDate)
+        
+        // 2. 回退常規日課聖詩 (MorningPrayerDataLoader 雙語)
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: selectedDate)
+        let fallbackType: MorningOfficeHymnType
+        
+        if weekday == 1 { // 主日
+            let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+            if info.season == .trinity || info.season == .pentecost {
+                fallbackType = .sundayTrinity
+            } else {
+                fallbackType = .sundayEpiphany
+            }
+        } else {
+            // 平日：Calendar.weekday (1=日, 2=一 ... 7=六)
+            fallbackType = .weekday(weekday - 1)
+        }
+        
+        if let baseHymn = MorningPrayerDataLoader.shared.officeHymn(for: fallbackType, language: appLanguage) {
+            let v = baseHymn.versicle.map { DailyOfficeFile.OfficePeriod.VersicleJSON(leader: $0.leader, people: $0.people) }
+            return OfficeHymnDisplay(
+                title: baseHymn.title,
+                latinTitle: baseHymn.latinTitle,
+                seasonNote: baseHymn.seasonNote,
+                verses: baseHymn.verses,
+                versicle: v
+            )
+        }
+        
+        // 兜底防護
+        return OfficeHymnDisplay(title: "", latinTitle: "", seasonNote: nil, verses: [], versicle: nil)
     }
     
+    // 👇 這兩個保留不變
     var morningPsalms: [(title: String, content: PsalmContent)] {
         PsalmsLoader.shared.morningPsalms(for: selectedDate)
     }
     
     /// 當日應誦的第一頌歌類型
     var firstCanticleType: CanticleType {
-        LiturgyCoreService.shared.firstCanticleType(for: selectedDate)
+        let baseType = LiturgyCoreService.shared.firstCanticleType(for: selectedDate)
+        // 🌟 若原定為讚美頌 (Te Deum，即聖日)，允許用戶自選摩西頌或安波羅修頌
+        if baseType == .teDeum {
+            return selectedHolyDayCanticle
+        }
+        return baseType
     }
     
     /// 當日第一頌歌數據（供視圖直接使用）
     var firstCanticle: CanticleData {
+        // 🌟 透過 Loader 動態獲取當前選擇與語言版本的頌歌
         CanticleLoader.shared.canticle(for: firstCanticleType)
+    }
+    
+
+    // ═══════════════════════════════════════════════════════
+    // 🌟 2. 將這段動態計算邏輯貼在 ViewModel 內部的這個位置
+    // ═══════════════════════════════════════════════════════
+    
+    /// 當日第二頌歌數據（支援以色列頌與歡呼頌切換）
+    var secondCanticleData: CanticleData {
+        switch selectedSecondCanticle {
+        case .benedictus:
+            return CanticleLoader.shared.canticle(for: CanticleType.benedictus)
+        case .jubilate:
+            return CanticleLoader.shared.canticle(for: CanticleType(rawValue: "jubilateDeo") ?? CanticleType.benedictus)
+        }
+    }
+    
+    /// 第二頌歌對經與註解（僅以色列頌適用，歡呼頌則為 nil）
+    var secondCanticleAntiphon: String? {
+        guard selectedSecondCanticle == .benedictus else { return nil }
+        if let special = DailyOfficeLoader.shared.benedictusAntiphon(for: selectedDate, liturgy: liturgy),
+           !special.isEmpty {
+            return special
+        }
+        let weekday = Calendar.current.component(.weekday, from: selectedDate)
+        return CanticleLoader.shared.benedictusWeekdayAntiphon(for: weekday)
+    }
+    
+    var secondCanticleAntiphonNote: String? {
+        guard selectedSecondCanticle == .benedictus else { return nil }
+        return DailyOfficeLoader.shared.benedictusAntiphonNote(for: selectedDate, liturgy: liturgy)
     }
     
     func loadReadings() {
@@ -2367,25 +2806,42 @@ class MorningPrayerViewModel: ObservableObject {
             year: lectionaryYear
         )
         loadVerses()
+        loadMemorialAntiphons()
     }
-    
     
     private func loadVerses() {
         morningOTVerses = []
         morningNTVerses = []
         guard let readings = dailyReadings else { return }
         
+        scriptureVersion = UserDefaults.standard.string(forKey: "bibleVersion") ?? "CUV"
+        
         DispatchQueue.global(qos: .userInitiated).async {
             var ot: [BibleVerse] = []
             var nt: [BibleVerse] = []
             
-            if let otDay = readings.morningOT,
-               let text = BibleJSONService.shared.fetchScripture(book: otDay.book, chapter: otDay.chapter) {
-                ot = [BibleVerse(verse: 0, content: text)]
+            if let otDay = readings.morningOT {
+                let isApo = LectionaryDatabaseManager.shared.isApocrypha(bookName: otDay.book)
+                let version = isApo ? "APO1933" : self.scriptureVersion
+                
+                let stringVerses = BibleJSONService.shared.fetchVersesList(version: version, book: otDay.book, reference: otDay.chapter)
+                ot = stringVerses.map { text in
+                    let vStr = text.components(separatedBy: " ").first ?? "0"
+                    // 💡 如果你的 BibleVerse 中 verse 是 String 型別，請改為 verse: vStr
+                    return BibleVerse(verse: Int(vStr) ?? 0, content: text)
+                }
             }
-            if let ntDay = readings.morningNT,
-               let text = BibleJSONService.shared.fetchScripture(book: ntDay.book, chapter: ntDay.chapter) {
-                nt = [BibleVerse(verse: 0, content: text)]
+            
+            if let ntDay = readings.morningNT {
+                let isApo = LectionaryDatabaseManager.shared.isApocrypha(bookName: ntDay.book)
+                let version = isApo ? "APO1933" : self.scriptureVersion
+                
+                let stringVerses = BibleJSONService.shared.fetchVersesList(version: version, book: ntDay.book, reference: ntDay.chapter)
+                nt = stringVerses.map { text in
+                    let vStr = text.components(separatedBy: " ").first ?? "0"
+                    // 💡 如果你的 BibleVerse 中 verse 是 String 型別，請改為 verse: vStr
+                    return BibleVerse(verse: Int(vStr) ?? 0, content: text)
+                }
             }
             
             DispatchQueue.main.async {
@@ -2394,7 +2850,7 @@ class MorningPrayerViewModel: ObservableObject {
             }
         }
     }
-    
+
     var selected1943Set: DailyOfficeFile.OfficePeriod.LectionarySet? {
         if let id = selected1943SetId,
            let selected = available1943Sets.first(where: { $0.id == id }) {
@@ -2542,7 +2998,7 @@ class MorningPrayerViewModel: ObservableObject {
     }
     
     /// 獲取並排序當日所有的紀念祝文
-    var commemorationCollects: [CommemorationCollectBlock] {
+        var commemorationCollects: [CommemorationCollectBlock] {
         var blocks: [CommemorationCollectBlock] = []
         
         print("🎯 當日紀念列表：\(liturgy.commemorations)")
@@ -2553,20 +3009,25 @@ class MorningPrayerViewModel: ObservableObject {
             var file = DailyOfficeLoader.shared.loadCommemoration(name: name, date: selectedDate)
             print("   loadCommemoration 返回：\(file?.name ?? "nil")")
             
-            // 🌟 修正：透過 liturgicalFileMap 明確映射的紀念（如八日慶期借用），
-            // 允許 JSON 內部 name 與查詢名不同，不剔除
-            // 🌟 BUG 修復：對 isMappedCommemoration 與名稱比對都做「去掉紀念前綴」歸一化，
-            //    否則「紀念施洗聖約翰誕辰日八日慶期第五日」這類項目會因 isMappedCommemoration
-            //    用原始字串查 liturgicalFileMap 找不到，又因 f.name 不含「紀念」二字，被誤剔除。
+            // 🌟 1. 歸一化：去掉「紀念」前綴
             let normalizedName = name.hasPrefix("紀念")
                 ? String(name.dropFirst(2)).trimmingCharacters(in: .whitespaces)
                 : name
-            if let f = file,
-               !DailyOfficeLoader.shared.isMappedCommemoration(normalizedName),
-               f.name != name,
-               f.name != normalizedName {
-                print("   ⚠️ 名稱不匹配：file.name='\(f.name)' vs name='\(name)' (歸一化:'\(normalizedName)')，已剔除")
-                file = nil
+            
+            if let f = file, !DailyOfficeLoader.shared.isMappedCommemoration(normalizedName) {
+                // 🌟 2. 繁簡轉換：利用 iOS 原生 API 產生繁體與簡體版本，包容語言切換導致的差異
+                let nameHans = name.applyingTransform(StringTransform("Hant-Hans"), reverse: false) ?? name
+                let nameHant = name.applyingTransform(StringTransform("Hans-Hant"), reverse: false) ?? name
+                let normHans = normalizedName.applyingTransform(StringTransform("Hant-Hans"), reverse: false) ?? normalizedName
+                let normHant = normalizedName.applyingTransform(StringTransform("Hans-Hant"), reverse: false) ?? normalizedName
+                
+                // 只要檔案名稱符合其中一種（繁體原名、簡體原名、繁體去前綴、簡體去前綴），就視為匹配
+                let validNames = [name, normalizedName, nameHans, nameHant, normHans, normHant]
+                
+                if !validNames.contains(f.name) {
+                    print("   ⚠️ 名稱不匹配：file.name='\(f.name)' vs 預期名稱集='\(validNames)'，已剔除")
+                    file = nil
+                }
             }
             
             guard let foundFile = file else {
@@ -2574,6 +3035,7 @@ class MorningPrayerViewModel: ObservableObject {
                 continue
             }
             
+            // ... (下方的 morning 節點解析、rank 解析、append 邏輯保持完全不變)
             guard let morning = foundFile.morning else {
                 print("   ❌ 檔案無 morning 節點")
                 continue
@@ -2591,8 +3053,6 @@ class MorningPrayerViewModel: ObservableObject {
             
             // 🌟 對經：與 DailyOfficeLoader 一致，支援 normal / normals 兩種格式
             let antiphon: String? = {
-                // 望日作為紀念時，使用當日平日的以色列頌對經
-                // ⚠️ 直接從 canticles.json 加載平日對經，繞過 sanctorale，避免拿到當日聖日專用對經
                 if isVigilCommemoration {
                     let weekday = Calendar.current.component(.weekday, from: selectedDate)
                     return CanticleLoader.shared.benedictusWeekdayAntiphon(for: weekday)
@@ -2607,9 +3067,9 @@ class MorningPrayerViewModel: ObservableObject {
                 return nil
             }()
             
-            // ✅ 修改：JSON 無 versicle 時，從日課聖詩回退
+            // ✅ 修改：JSON 無 versicle 時，針對望日與平日進行回退
             let versicle: DailyOfficeFile.OfficePeriod.VersicleJSON? = {
-                // 望日作為紀念時，使用當日日課聖詩的啟應
+                // 1. 若望日作為紀念，使用當日日課聖詩的啟應
                 if isVigilCommemoration {
                     let hymn = LiturgyCoreService.shared.morningOfficeHymn(for: selectedDate)
                     if let v = hymn.versicle {
@@ -2617,11 +3077,20 @@ class MorningPrayerViewModel: ObservableObject {
                     }
                     return nil
                 }
+                
+                // 2. 若 JSON 內建有專屬 versicle (如聖日)，優先使用
                 if let v = morning.officeHymn?.versicle { return v }
-                let hymn = LiturgyCoreService.shared.morningOfficeHymn(for: selectedDate)
-                if let v = hymn.versicle {
+                
+                // 3. 缺乏專屬啟應的紀念（如秋季齋期），強制回退使用「當天實際星期幾」的「平日」啟應
+                let calendar = Calendar.current
+                let weekday = calendar.component(.weekday, from: selectedDate)
+                
+                // 讀取當天實際日期的「平日」日課聖詩啟應 (平日索引為 weekday - 1)
+                if let baseHymn = MorningPrayerDataLoader.shared.officeHymn(for: .weekday(weekday - 1), language: appLanguage),
+                   let v = baseHymn.versicle {
                     return DailyOfficeFile.OfficePeriod.VersicleJSON(leader: v.leader, people: v.people)
                 }
+                
                 return nil
             }()
             
@@ -2642,19 +3111,15 @@ class MorningPrayerViewModel: ObservableObject {
     }
     
     private func displayNameForPsalmLectionaryOption(_ option: String) -> String {
+        // 🌟 直接讀取全域語言狀態，避免作用域報錯
+        let isTrad = MorningPrayerDataLoader.shared.currentLanguage == .traditional
         switch option {
-        case "monthly":
-            return "月度循環"
-        case "1943":
-            return "1943年詩篇"
-        case "1928":
-            return "1928年詩篇"
-        case "1962":
-            return "1962年詩篇"
-        case "special":
-            return "專用詩篇"
-        default:
-            return option
+        case "monthly": return isTrad ? "月度循環" : "月度循环"
+        case "1943":    return isTrad ? "1943年詩篇" : "1943年诗篇"
+        case "1928":    return isTrad ? "1928年詩篇" : "1928年诗篇"
+        case "1962":    return isTrad ? "1962年詩篇" : "1962年诗篇"
+        case "special": return isTrad ? "專用詩篇" : "专用诗篇"
+        default:        return option
         }
     }
     
@@ -2713,7 +3178,7 @@ class MorningPrayerViewModel: ObservableObject {
     }
     
     private func syncCreedSelection() {
-        if PrimePrayerData.shouldShowAthanasianCreed(for: selectedDate) {
+        if CreedsDataLoader.shouldShowAthanasianCreed(for: selectedDate) {
             selectedCreed = .athanasian
         } else {
             selectedCreed = .apostles
@@ -2768,6 +3233,76 @@ class MorningPrayerViewModel: ObservableObject {
                 self.morningNTVerses = ntVerses
             }
         }
+    }
+    func loadMemorialAntiphons() {
+        guard let container = MemorialAntiphonsLoader.shared.getContainer() else { return }
+        
+        // 1. 取得當前節期與日期資訊
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
+        let weekday = Calendar.current.component(.weekday, from: selectedDate)
+        let isSunday = (weekday == 1)
+        
+        // 判斷是否為繁體
+        let isTC = (self.appLanguage == .traditional)
+        
+        // 2. 判斷季節對經的 Key
+        var seasonalKey = "pre_lent" // 預設或七旬期
+        var marianKey = "trinity"    // 預設
+        
+        switch info.season {
+        case .advent:
+            seasonalKey = isSunday ? "advent_sunday" : "advent_weekday"
+            marianKey = "advent"
+            
+        case .christmas:
+            seasonalKey = "epiphany" // 根據您的禮規，聖誕期不念季節對經，或併入顯現期邏輯，此處您可依據JSON內的設定調整
+            marianKey = "christmas"
+            
+        case .epiphany:
+            seasonalKey = "epiphany"
+            marianKey = "christmas" // 萬福天上母后是從2月2日開始，視您的具體禮規細分
+            
+        case .lent, .holyWeek:
+            seasonalKey = "lent"
+            marianKey = "lent"
+            
+        case .easter, .ascension, .pentecost:
+            seasonalKey = "easter"
+            marianKey = "easter"
+            
+        case .trinity:
+            seasonalKey = isSunday ? "trinity_sunday" : "trinity_weekday"
+            marianKey = "trinity"
+            
+        default:
+            seasonalKey = "pre_lent"
+            marianKey = "pre_lent"
+        }
+        
+        // 針對2月2日至設立聖餐日的特例 (萬福天上母后) 可以透過日期進行微調
+        // 這裡做一個簡單的月份判斷，您可以依據確切的 LiturgyCoreService 節期進行替換
+        let month = Calendar.current.component(.month, from: selectedDate)
+        if (month >= 2 && info.season != .easter && info.season != .lent) {
+             // 若有需要，可以在此強制將 marianKey 設為 "pre_lent" 對應 ave_regina_caelorum
+        }
+        
+        // 3. 配對季節對經內容
+        if let match = container.seasonalAntiphons.first(where: { $0.seasonKeys.contains(seasonalKey) }) {
+            currentSeasonalContent = isTC ? match.tc : match.sc
+        } else {
+            currentSeasonalContent = nil
+        }
+        
+        // 4. 配對聖母對經內容
+        if let match = container.marianAntiphons.first(where: { $0.seasonKeys.contains(marianKey) }) {
+            currentMarianContent = isTC ? match.tc : match.sc
+        } else {
+            currentMarianContent = nil
+        }
+        
+        // 5. 預設選項設定 (依您的需求，可預設為省略或季節對經)
+        // 此處不強制覆蓋使用者的選擇，除非需要重置
+        // self.memorialAntiphonSelection = .omit
     }
 }
 

@@ -13,10 +13,13 @@ enum PsalmReadingPeriod: String, CaseIterable {
     case evening = "晚禱"
 }
 
-// MARK: - 月度誦讀詩篇主視圖
+// MARK: - 🌟 第三步：月度誦讀詩篇主視圖 (目錄頁)
 struct PsalmCycleView: View {
     @State private var cycleData: PsalmCycleData?
     @State private var selectedPeriod: PsalmReadingPeriod = .morning
+    
+    // 🌟 新增：監聽語言切換，讓目錄列表也能即時變更語言
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
     
     var body: some View {
         List {
@@ -36,7 +39,7 @@ struct PsalmCycleView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("詩篇")
+        .navigationTitle(appLanguageCode == AppLanguage.traditional.rawValue ? "詩篇" : "诗篇")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -66,7 +69,7 @@ struct PsalmCycleView: View {
         
         Section {
             if psalms.isEmpty {
-                Text("本日無分配")
+                Text(appLanguageCode == AppLanguage.traditional.rawValue ? "本日無分配" : "本日无分配")
                     .font(.system(size: 15))
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -80,7 +83,8 @@ struct PsalmCycleView: View {
                                 .foregroundColor(LiturgyColors.crimson)
                                 .frame(width: 24)
                             
-                            Text(psalmKey)
+                            // 🌟 關鍵修改：透過 Loader 獲取當前語言的標題，若無則降級顯示原始 Key
+                            Text(PsalmsLoader.shared.psalmContent(for: psalmKey)?.title ?? psalmKey)
                                 .font(.system(size: 16, weight: .medium))
                                 .foregroundColor(.primary)
                             
@@ -95,7 +99,7 @@ struct PsalmCycleView: View {
                 }
             }
         } header: {
-            Text("第 \(chineseNumber(day)) 日")
+            Text(appLanguageCode == AppLanguage.traditional.rawValue ? "第 \(chineseNumber(day)) 日" : "第 \(chineseNumber(day)) 日")
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundColor(LiturgyColors.crimson)
         }
@@ -122,102 +126,95 @@ struct PsalmCycleView: View {
     }
 }
 
-// MARK: - 單篇詩篇閱讀視圖
+// MARK: - 🌟 第二步：單篇詩篇閱讀視圖 (內文頁)
 struct PsalmReadingView: View {
     let psalmKey: String
     
-    /// 從 psalms.json 解碼完整內容（含對經）
-    private struct FullPsalmEntry: Codable {
-        let antiphon: String?
-        let verses: [String]
-    }
+    // 🌟 改為直接持有一個 PsalmContent 模型，刪除原本手動解碼 psalms.json 的代碼
+    @State private var content: PsalmContent?
     
-    @State private var latinTitle: String = ""
-    @State private var antiphon: String?
-    @State private var verses: [String] = []
+    // 🌟 新增：監聽語言切換，當用戶切換繁/簡時即時刷新內容
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // ═════ 標題列（紅色中文標題 + 拉丁文）═════
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    Text(psalmKey)
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(LiturgyColors.crimson)
-                    
-                    if !latinTitle.isEmpty {
-                        Text(latinTitle)
-                            .font(.system(size: 16, weight: .regular))
-                            .italic()
-                            .foregroundColor(.primary)
-                    }
-                }
-                .padding(.bottom, 4)
-                
-                // ═════ 對經（若有）═════
-                if let antiphon = antiphon, !antiphon.isEmpty {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("對經")
-                            .font(.system(size: 13, weight: .medium))
-                            .foregroundColor(.red)
+                if let content = content {
+                    // ═════ 標題列（雙語標題 + 拉丁文）═════
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(content.title)
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(LiturgyColors.crimson)
                         
-                        Text(antiphon)
-                            .font(.system(size: 16, weight: .regular))
-                            .foregroundColor(.primary)
-                            .lineSpacing(6)
+                        if !content.latinTitle.isEmpty {
+                            Text(content.latinTitle)
+                                .font(.system(size: 16, weight: .regular))
+                                .italic()
+                                .foregroundColor(.primary)
+                        }
                     }
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 12)
-                    .background(Color.red.opacity(0.06))
-                    .cornerRadius(8)
+                    .padding(.bottom, 4)
+                    
+                    // ═════ 對經（若有）═════
+                    if !content.antiphon.isEmpty {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(appLanguageCode == AppLanguage.traditional.rawValue ? "對經" : "对经")
+                                .font(.system(size: 13, weight: .medium))
+                                .foregroundColor(.red)
+                            
+                            Text(content.antiphon)
+                                .font(.system(size: 16, weight: .regular))
+                                .foregroundColor(.primary)
+                                .lineSpacing(6)
+                        }
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 12)
+                        .background(Color.red.opacity(0.06))
+                        .cornerRadius(8)
+                    }
+                    
+                    Divider()
+                        .background(Color.secondary.opacity(0.2))
+                    
+                    // ═════ 詩節（紅色節號 + 正文）═════
+                    ForEach(content.verses.indices, id: \.self) { index in
+                        PsalmVerseRow(verse: content.verses[index])
+                    }
+                    
+                    // ═════ 榮耀頌 ═════
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(appLanguageCode == AppLanguage.traditional.rawValue ? "但願榮耀歸於聖父、聖子、聖靈；" : "但愿荣耀归于圣父、圣子、圣灵；")
+                            .font(.system(size: 17, weight: .regular))
+                            .foregroundColor(.primary)
+                        Text(appLanguageCode == AppLanguage.traditional.rawValue ? "※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。" : "※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。")
+                            .font(.system(size: 17, weight: .regular))
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.top, 12)
+                } else {
+                    // 載入中的佔位符
+                    Text("載入中...")
+                        .foregroundColor(.secondary)
+                        .padding()
                 }
-                
-                Divider()
-                    .background(Color.secondary.opacity(0.2))
-                
-                // ═════ 詩節（紅色節號 + 正文）═════
-                ForEach(verses.indices, id: \.self) { index in
-                    PsalmVerseRow(verse: verses[index])
-                }
-                
-                // ═════ 榮耀頌 ═════
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("但願榮耀歸於聖父、聖子、聖靈；")
-                        .font(.system(size: 17, weight: .regular))
-                        .foregroundColor(.primary)
-                    Text("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
-                        .font(.system(size: 17, weight: .regular))
-                        .foregroundColor(.primary)
-                }
-                .padding(.top, 12)
             }
             .padding()
         }
-        .navigationTitle(psalmKey)
+        // 🌟 導航列標題也支援雙語
+        .navigationTitle(content?.title ?? psalmKey)
         .navigationBarTitleDisplayMode(.inline)
         .background(Color(UIColor.systemGroupedBackground))
         .onAppear(perform: loadPsalm)
+        // 🌟 關鍵：當語言設定改變時，重新讀取對應語言的內容
+        .onChange(of: appLanguageCode) { _ in
+            loadPsalm()
+        }
     }
     
-    // MARK: - 載入詩篇內容
+    // MARK: - 🌟 載入詩篇內容（大幅精簡）
     private func loadPsalm() {
-        // 1. 從 PsalmsLoader 取得基本內容（verses & latinTitle）
-        if let content = PsalmsLoader.shared.psalmContent(for: psalmKey) {
-            self.latinTitle = content.latinTitle
-            self.verses = content.verses
-        }
-        
-        // 2. 從 psalms.json 補充解碼對經（若 PsalmsLoader 未提供 antiphon）
-        if let url = Bundle.main.url(forResource: "psalms", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let dict = try? JSONDecoder().decode([String: FullPsalmEntry].self, from: data),
-           let entry = dict[psalmKey] {
-            self.antiphon = entry.antiphon
-            // 後備：若 PsalmsLoader 未能提供 verses，則使用此處
-            if verses.isEmpty {
-                self.verses = entry.verses
-            }
-        }
+        // 完全交給重構後的 PsalmsLoader 處理多語言轉換
+        self.content = PsalmsLoader.shared.psalmContent(for: psalmKey)
     }
 }
 

@@ -198,7 +198,7 @@ struct MonthlyLiturgyView: View {
     }
     
     private func monthYearString(from date: Date) -> String {
-        let f = DateFormatter(); f.dateFormat = "yyyy年 MMMM"; f.locale = Locale(identifier: "zh_Hant_TW")
+        let f = DateFormatter(); f.dateFormat = "yyyy年 MMMM"; f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
@@ -226,6 +226,10 @@ struct DayRow: View {
     let date: Date
     let liturgy: DailyLiturgy
     private let calendar = Calendar.current
+    
+    // 🌟 監聽全域語言設定
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     private var isSunday: Bool {
         calendar.component(.weekday, from: date) == 1
@@ -275,14 +279,14 @@ struct DayRow: View {
                         Circle()
                             .fill(liturgyColor(liturgy.color))
                             .frame(width: 8, height: 8)
-                        Text(colorLocalName(liturgy.color))
+                        Text(colorLocalName(liturgy.color, isSimplified: isSimp))
                             .font(.caption2)
                             .foregroundColor(.secondary)
                     }
                 }
                 
                 if !liturgy.commemorations.isEmpty {
-                    Text("紀念：" + liturgy.commemorations.joined(separator: "、"))
+                    Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、"))
                         .font(.caption2)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
@@ -293,7 +297,7 @@ struct DayRow: View {
                         Image(systemName: "arrow.right.circle.fill")
                             .font(.caption2)
                             .foregroundColor(.orange)
-                        Text("遷移：\(liturgy.transferred.joined(separator: "、"))")
+                        Text((isSimp ? "迁移：" : "遷移：") + liturgy.transferred.joined(separator: "、"))
                             .font(.caption2)
                             .foregroundColor(.orange)
                     }
@@ -333,6 +337,7 @@ struct DayRow: View {
         }
     }
 }
+
 
 #Preview {
     MonthlyLiturgyView()

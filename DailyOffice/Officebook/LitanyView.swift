@@ -1,29 +1,44 @@
 import SwiftUI
 
 struct LitanyView: View {
-    var body: some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .leading, spacing: 12) {
-                header
-                mainResponsesSection
-                lordPrayerSection
-                intermediateSection
-                closingSection
-                finalRubricSection
-            }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 16)
-            .padding(.bottom, 60)
-        }
-        .background(Color(UIColor.systemGroupedBackground))
-        .navigationTitle("總禱文")
-        .navigationBarTitleDisplayMode(.inline)
+    // 1. 監聽當前語言狀態
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    @StateObject private var loader = LitanyDataLoader.shared
+    
+    private var currentLang: AppLanguage {
+        AppLanguage(rawValue: appLanguageCode) ?? .traditional
     }
     
-    // MARK: - 標題
-    private var header: some View {
+    var body: some View {
+        Group {
+            if let data = loader.uiData {
+                ScrollView(.vertical, showsIndicators: true) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        header(data: data)
+                        mainResponsesSection(data: data)
+                        lordPrayerSection(data: data)
+                        intermediateSection(data: data)
+                        closingSection(data: data)
+                        finalRubricSection(data: data)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 16)
+                    .padding(.bottom, 60)
+                }
+                .background(Color(UIColor.systemGroupedBackground))
+                // 🌟 動態標題
+                .navigationTitle(data.title.text(for: currentLang))
+                .navigationBarTitleDisplayMode(.inline)
+            } else {
+                ProgressView("載入中...")
+            }
+        }
+    }
+    
+    // MARK: - 視圖拆分
+    private func header(data: UILitanyData) -> some View {
         VStack(spacing: 0) {
-            Text(LitanyData.title)
+            Text(data.title.text(for: currentLang))
                 .font(.system(size: 34, weight: .bold))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
@@ -37,130 +52,124 @@ struct LitanyView: View {
         .frame(maxWidth: .infinity, alignment: .center)
     }
     
-    // MARK: - 總禱文啟應
-    private var mainResponsesSection: some View {
+    private func mainResponsesSection(data: UILitanyData) -> some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: LitanyData.title)
-                RubricBlock(text: LitanyData.mainRubric)
+                SectionTitle(text: data.title.text(for: currentLang))
+                RubricBlock(text: data.mainRubric.text(for: currentLang))
                 
                 VStack(alignment: .leading, spacing: 2) {
-                    ForEach(LitanyData.mainResponses, id: \.self) { response in
-                        LitanyResponsoryRow(response: response)
+                    // 🌟 不需要 id: \.self，因為模型已內建 Identifiable
+                    ForEach(data.mainResponses) { response in
+                        LitanyResponsoryRow(response: response, lang: currentLang)
                     }
                 }
             }
         }
     }
     
-    // MARK: - 主禱文
-    private var lordPrayerSection: some View {
+    private func lordPrayerSection(data: UILitanyData) -> some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: LitanyData.lordPrayer.title!)
-                RubricBlock(text: LitanyData.lordPrayer.rubric!)
-                
-                ForEach(LitanyData.lordPrayer.paragraphs, id: \.self) { p in
-                    BodyText(p)
+                if let title = data.lordPrayer.title?.text(for: currentLang) {
+                    SectionTitle(text: title)
                 }
-                
-                RubricBlock(text: LitanyData.lordPrayerNote)
+                if let rubric = data.lordPrayer.rubric?.text(for: currentLang) {
+                    RubricBlock(text: rubric)
+                }
+                ForEach(data.lordPrayer.paragraphs, id: \.self) { p in
+                    BodyText(p.text(for: currentLang))
+                }
+                RubricBlock(text: data.lordPrayerNote.text(for: currentLang))
             }
         }
     }
     
-    // MARK: - 中間段落（啟應＋禱文＋誦唸）
-    private var intermediateSection: some View {
+    private func intermediateSection(data: UILitanyData) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            // 中間啟應
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 2) {
-                    ForEach(LitanyData.intermediateResponses, id: \.self) { response in
-                        LitanyResponsoryRow(response: response)
+                    ForEach(data.intermediateResponses) { response in
+                        LitanyResponsoryRow(response: response, lang: currentLang)
                     }
                 }
             }
-            
-            // 中間禱文
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    ForEach(LitanyData.intermediatePrayer.paragraphs, id: \.self) { p in
-                        BodyText(p)
+                    ForEach(data.intermediatePrayer.paragraphs, id: \.self) { p in
+                        BodyText(p.text(for: currentLang))
                     }
                 }
             }
-            
-            // 誦唸段落（主禮者／會眾）
-            ForEach(LitanyData.middleRecitations, id: \.rubric) { recitation in
+            ForEach(data.middleRecitations) { recitation in
                 LiturgyCard {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(recitation.rubric)
+                        Text(recitation.rubric.text(for: currentLang))
                             .font(.system(size: 15, weight: .regular))
                             .italic()
                             .foregroundColor(.red)
-                        BodyText(recitation.text)
+                        BodyText(recitation.text.text(for: currentLang))
                     }
                 }
             }
         }
     }
     
-    // MARK: - 結尾（啟應＋禱文）
-    private var closingSection: some View {
+    private func closingSection(data: UILitanyData) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            // 結尾啟應
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 2) {
-                    ForEach(LitanyData.closingResponses, id: \.self) { response in
-                        LitanyResponsoryRow(response: response)
+                    ForEach(data.closingResponses) { response in
+                        LitanyResponsoryRow(response: response, lang: currentLang)
                     }
                 }
             }
-            
-            // 結尾禱文
             LiturgyCard {
                 VStack(alignment: .leading, spacing: 14) {
-                    ForEach(LitanyData.closingPrayer.paragraphs, id: \.self) { p in
-                        BodyText(p)
+                    ForEach(data.closingPrayer.paragraphs, id: \.self) { p in
+                        BodyText(p.text(for: currentLang))
                     }
                 }
             }
         }
     }
     
-    // MARK: - 最後禮規
-    private var finalRubricSection: some View {
+    private func finalRubricSection(data: UILitanyData) -> some View {
         LiturgyCard {
-            RubricBlock(text: LitanyData.finalRubric)
+            RubricBlock(text: data.finalRubric.text(for: currentLang))
         }
     }
 }
 
-// MARK: - 總禱文啟應行（啟：／應： 紅色前綴，懸掛對齊）
+// MARK: - 總禱文啟應行（支援雙語動態切換 啟/應 前綴）
 struct LitanyResponsoryRow: View {
-    let response: LitanyResponsory
+    let response: UILitanyResponsory
+    let lang: AppLanguage
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .top, spacing: 4) {
-                Text("啟：")
+                // 🌟 啟/启 動態判斷
+                Text(lang == .traditional ? "啟：" : "启：")
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.red)
                     .frame(width: 36, alignment: .leading)
-                Text(response.leader)
+                Text(response.leader.text(for: lang))
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(.primary)
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer()
             }
             
-            if !response.people.isEmpty {
+            let peopleText = response.people.text(for: lang)
+            if !peopleText.isEmpty {
                 HStack(alignment: .top, spacing: 4) {
-                    Text("應：")
+                    // 🌟 應/应 動態判斷
+                    Text(lang == .traditional ? "應：" : "应：")
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.red)
                         .frame(width: 36, alignment: .leading)
-                    Text(response.people)
+                    Text(peopleText)
                         .font(.system(size: 16, weight: .regular))
                         .foregroundColor(.primary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -168,15 +177,6 @@ struct LitanyResponsoryRow: View {
                 }
                 .padding(.bottom, 4)
             }
-        }
-    }
-}
-
-// MARK: - 預覽
-struct LitanyView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            LitanyView()
         }
     }
 }

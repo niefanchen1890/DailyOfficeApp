@@ -2,36 +2,13 @@ import SwiftUI
 import Foundation
 import Combine
 
-// MARK: - 1. 設定視窗（已移除內購）
-struct SettingsView: View {
-    @AppStorage("bibleVersion") private var bibleVersion = "CUV"
-    @Environment(\.dismiss) var dismiss
-    private let anglicanRed = Color(red: 181/255, green: 8/255, blue: 56/255)
-    
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section(header: Text("經文版本"), footer: Text("切換後重新進入早禱或晚禱即可生效。")) {
-                    Picker("聖經版本", selection: $bibleVersion) {
-                        Text("和合本 (CUV)").tag("CUV")
-                        Text("施約瑟譯本 (SSEB)").tag("SSEB")
-                    }
-                    .pickerStyle(.inline)
-                }
-            }
-            .navigationTitle("偏好設定")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar { Button("完成") { dismiss() } }
-        }
-    }
-}
 
-// MARK: - 2. 日課選擇（禮儀日曆）
+// MARK: - 日課選擇（禮儀日曆）
 struct DailyOfficeView: View {
     @State private var selectedDate = Date()
     @State private var displayedMonth = Date()
-    @State private var showingSettings = false
-    
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     private let coreService = LiturgyCoreService.shared
     private let calendar = Calendar.current
     private let anglicanRed = Color(red: 181/255, green: 8/255, blue: 56/255)
@@ -62,9 +39,6 @@ struct DailyOfficeView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingSettings) {
-                SettingsView()
-            }
         }
     }
     
@@ -76,7 +50,6 @@ struct DailyOfficeView: View {
                 calendarSection
                 dayInfoCard
                 officeButtonsGrid
-                settingsButton
                 Spacer(minLength: 40)
             }
             .padding(.top, 8)
@@ -203,7 +176,7 @@ struct DailyOfficeView: View {
                     Circle()
                         .fill(liturgyColor(liturgy.color))
                         .frame(width: 8, height: 8)
-                    Text(colorLocalName(liturgy.color))
+                    Text(colorLocalName(liturgy.color, isSimplified: isSimp))
                         .font(.system(size: 12, weight: .medium))
                         .foregroundColor(.secondary)
                 }
@@ -253,7 +226,7 @@ struct DailyOfficeView: View {
                     Circle()
                         .fill(liturgyColor(liturgy.color))
                         .frame(width: 8, height: 8)
-                    Text(colorLocalName(liturgy.color))
+                    Text(colorLocalName(liturgy.color, isSimplified: isSimp))
                         .font(.system(size: 12, weight: .medium))
                         .foregroundColor(.secondary)
                 }
@@ -384,38 +357,6 @@ struct DailyOfficeView: View {
         .padding(.vertical, 8)
     }
     
-    // MARK: - 設定按鈕
-    private var settingsButton: some View {
-        Button(action: { showingSettings = true }) {
-            HStack(spacing: 12) {
-                Image(systemName: "gearshape.fill")
-                    .font(.system(size: 18))
-                    .foregroundColor(.secondary)
-                    .frame(width: 32)
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("偏好設定")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.primary)
-                    Text("聖經版本切換")
-                        .font(.system(size: 13))
-                        .foregroundColor(.secondary)
-                }
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.secondary)
-            }
-            .padding()
-            .background(Color(UIColor.secondarySystemGroupedBackground))
-            .cornerRadius(12)
-        }
-        .padding(.horizontal)
-        .buttonStyle(PlainButtonStyle())
-    }
-    
     // MARK: - 數據計算
     private var daysInMonth: [CalendarDay] {
         guard let monthStart = calendar.date(from: calendar.dateComponents([.year, .month], from: displayedMonth)) else { return [] }
@@ -468,21 +409,21 @@ struct DailyOfficeView: View {
     private func formattedFullDate(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
     private func formattedShortDate(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "MM/dd EEEE"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
     private func monthYearString(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年MM月"
-        f.locale = Locale(identifier: "zh_Hant_TW")
+        f.locale = Locale(identifier: "zh_Hant")
         return f.string(from: date)
     }
     
@@ -559,25 +500,30 @@ struct DayCell: View {
     }
 }
 
-// MARK: - 3. 主導航列（保留原樣）
+// MARK: - 3. 主導航列
 struct ContentView: View {
     @State private var selectedTab = 0
+    
+    // 🌟 監聽全域語言
+    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView(selectedTab: $selectedTab)
-                .tabItem { Image(systemName: "house.fill"); Text("首頁") }
+                .tabItem { Image(systemName: "house.fill"); Text(isSimp ? "首页" : "首頁") }
                 .tag(0)
             
             DailyOfficeView()
-                .tabItem { Image(systemName: "book.closed.fill"); Text("日課經") }
+                .tabItem { Image(systemName: "book.closed.fill"); Text(isSimp ? "日课经" : "日課經") }
                 .tag(1)
             
             NavigationStack { BibleView() }
-                .tabItem { Image(systemName: "scroll.fill"); Text("聖經") }
+                .tabItem { Image(systemName: "scroll.fill"); Text(isSimp ? "圣经" : "聖經") }
                 .tag(2)
+            
             NavigationStack { ChurchInfoView() }
-                .tabItem { Image(systemName: "building.columns.fill"); Text("教會") }
+                .tabItem { Image(systemName: "building.columns.fill"); Text(isSimp ? "教会" : "教會") }
                 .tag(4)
         }
         .accentColor(Color(red: 181/255, green: 8/255, blue: 56/255))
