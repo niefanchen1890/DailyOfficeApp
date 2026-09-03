@@ -1,0 +1,15 @@
+{
+    "id": "tr20-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:22-34"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "31:10-end"
+        }
+    }
+}

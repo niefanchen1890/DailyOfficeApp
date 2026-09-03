@@ -1,0 +1,15 @@
+{
+    "id": "sexagesima0-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "15:1-20"
+        },
+        "ot": {
+            "book": "歷代志下",
+            "chapter": "24:1-27"
+        }
+    }
+}

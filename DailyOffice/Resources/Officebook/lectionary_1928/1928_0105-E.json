@@ -1,0 +1,15 @@
+{
+    "id": "0105-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "28:16-20"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "24:15-24"
+        }
+    }
+}

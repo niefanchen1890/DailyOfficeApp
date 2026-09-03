@@ -1,0 +1,15 @@
+{
+    "id": "tr18-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "腓立比書",
+            "chapter": "1:12-end"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "2"
+        }
+    }
+}

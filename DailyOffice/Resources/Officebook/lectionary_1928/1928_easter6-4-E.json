@@ -1,0 +1,15 @@
+{
+    "id": "easter6-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "24:44-53"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "7:9-14"
+        }
+    }
+}

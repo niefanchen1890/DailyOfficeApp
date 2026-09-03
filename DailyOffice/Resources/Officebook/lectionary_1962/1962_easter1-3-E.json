@@ -1,0 +1,15 @@
+{
+    "id": "easter1-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "21:1-14"
+        },
+        "ot": {
+            "book": "雅歌",
+            "chapter": "2:8-17"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "4:27-42"
+        },
+        "ot": {
+            "book": "西番雅書",
+            "chapter": "3:7-20"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr19-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太前書",
+            "chapter": "5:1-25"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "15:1-35"
+        }
+    }
+}

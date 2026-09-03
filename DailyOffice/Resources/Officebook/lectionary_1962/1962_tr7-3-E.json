@@ -1,0 +1,15 @@
+{
+    "id": "tr7-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "9:1-17"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "28:3-end"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0824-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "1:43-end"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "28:10-end"
+        }
+    }
+}

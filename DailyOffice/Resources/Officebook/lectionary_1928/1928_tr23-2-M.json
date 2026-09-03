@@ -1,0 +1,15 @@
+{
+    "id": "tr23-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "8:31-end"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "1:20-end"
+        }
+    }
+}

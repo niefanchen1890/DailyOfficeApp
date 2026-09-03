@@ -1,0 +1,15 @@
+{
+    "id": "tr2-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "11:2-19"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "23:1-33"
+        }
+    }
+}

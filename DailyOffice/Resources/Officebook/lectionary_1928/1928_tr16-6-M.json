@@ -1,0 +1,15 @@
+{
+    "id": "tr16-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "18:31-end"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "16:1-19"
+        }
+    }
+}

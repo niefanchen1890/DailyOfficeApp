@@ -1,0 +1,15 @@
+{
+    "id": "easter3-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "20:24-31"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "1:19-27"
+        }
+    }
+}

@@ -103,7 +103,7 @@ struct PrimePrayerData {
     
     // 🌟 直接讀取全局語系，與早禱同步
     static var isSimplified: Bool {
-        return UserDefaults.standard.string(forKey: "appLanguage") == AppLanguage.simplified.rawValue
+        return AppLanguageStore.shared.isSimplified
     }
     
     static var data: PrimePrayerJSON {
@@ -378,7 +378,7 @@ struct MartyrologyLoader {
         let day = calendar.component(.day, from: date)
         let filename = String(format: "martyrology%02d%02d", month, day)
         
-        let isSimplified = UserDefaults.standard.string(forKey: "appLanguage") == AppLanguage.simplified.rawValue
+        let isSimplified = AppLanguageStore.shared.isSimplified
         
         var result: [String] = []
         if let url = Bundle.main.url(forResource: filename, withExtension: "json"),
@@ -438,7 +438,7 @@ struct MartyrologyLoader {
         }
         
         let formatter = DateFormatter()
-        let isSimplified = UserDefaults.standard.string(forKey: "appLanguage") == AppLanguage.simplified.rawValue
+        let isSimplified = AppLanguageStore.shared.isSimplified
         formatter.locale = Locale(identifier: isSimplified ? "zh_Hans" : "zh_Hant")
         
         var monthDays: [Int: [Int]] = [:]

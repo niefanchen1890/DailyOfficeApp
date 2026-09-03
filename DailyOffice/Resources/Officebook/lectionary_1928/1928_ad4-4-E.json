@@ -1,0 +1,15 @@
+{
+    "id": "ad4-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "1:26-38"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "12:21-28"
+        }
+    }
+}

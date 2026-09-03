@@ -1,0 +1,15 @@
+{
+    "id": "easter8-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "4:32-5:11"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "31:27-37"
+        }
+    }
+}

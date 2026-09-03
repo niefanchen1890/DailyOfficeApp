@@ -1,0 +1,15 @@
+{
+    "id": "easter2-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "1:1-14"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "1:3-18"
+        }
+    }
+}

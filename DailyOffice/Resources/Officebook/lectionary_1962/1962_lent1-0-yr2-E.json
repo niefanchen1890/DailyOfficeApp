@@ -1,0 +1,15 @@
+{
+    "id": "lent1-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "22:1-30"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "8:1-22"
+        }
+    }
+}

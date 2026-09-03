@@ -1,0 +1,15 @@
+{
+    "id": "tr22-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "5:1-14"
+        },
+        "ot": {
+            "book": "傳道書",
+            "chapter": "1:1-18"
+        }
+    }
+}

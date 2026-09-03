@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "5:15-6:9"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "59:12-20"
+        }
+    }
+}

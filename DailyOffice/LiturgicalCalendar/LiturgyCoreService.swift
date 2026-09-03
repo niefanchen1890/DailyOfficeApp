@@ -222,7 +222,7 @@ class LiturgyCoreService {
                 // 🌟 修正：只前移望日主體，分離括號內的普通紀念，讓其留在原來的禮拜日
                 var cleanName = tf.name
                 let bracketPairs = [(" (", ")"), ("（", "）")]
-                for (open, close) in bracketPairs {
+                for (open, _) in bracketPairs {
                     if let openRange = cleanName.range(of: open) {
                         cleanName = String(cleanName[..<openRange.lowerBound]).trimmingCharacters(in: .whitespaces)
                         break

@@ -1,0 +1,15 @@
+{
+    "id": "easter5-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "28:1-15"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "23:1-16"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr1-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "11:1-30"
+        },
+        "ot": {
+            "book": "撒迦利亞書",
+            "chapter": "1:1-6"
+        }
+    }
+}

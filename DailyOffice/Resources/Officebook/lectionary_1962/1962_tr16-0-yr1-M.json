@@ -1,0 +1,15 @@
+{
+    "id": "tr16-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "2:1-17"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "1"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany2-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "14:1-36"
+        },
+        "ot": {
+            "book": "那鴻書",
+            "chapter": "2:1-13"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr5-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "帖撒羅尼迦前書",
+            "chapter": "2:1-20"
+        },
+        "ot": {
+            "book": "尼希米記",
+            "chapter": "9:22-38"
+        }
+    }
+}

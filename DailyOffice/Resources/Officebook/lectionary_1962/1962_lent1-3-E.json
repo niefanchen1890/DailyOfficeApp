@@ -1,0 +1,15 @@
+{
+    "id": "lent1-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "腓立比書",
+            "chapter": "3:1-21"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "46:26-47:12"
+        }
+    }
+}

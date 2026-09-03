@@ -1,0 +1,15 @@
+{
+    "id": "easter1-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "1:4-18"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "12:1-14"
+        }
+    }
+}

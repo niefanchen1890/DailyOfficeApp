@@ -1,0 +1,15 @@
+{
+    "id": "tr15-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "10:2-16"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "3:5-end"
+        }
+    }
+}

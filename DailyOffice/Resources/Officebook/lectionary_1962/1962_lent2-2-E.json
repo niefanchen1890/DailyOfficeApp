@@ -1,0 +1,15 @@
+{
+    "id": "lent2-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "3:12-4:1"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "6:2-23"
+        }
+    }
+}

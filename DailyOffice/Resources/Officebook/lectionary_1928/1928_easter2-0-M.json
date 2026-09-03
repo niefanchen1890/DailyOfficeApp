@@ -1,0 +1,15 @@
+{
+    "id": "easter2-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "24:13-35"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "4:8-37"
+        }
+    }
+}

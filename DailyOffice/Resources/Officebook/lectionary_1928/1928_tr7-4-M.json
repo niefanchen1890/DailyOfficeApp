@@ -1,0 +1,15 @@
+{
+    "id": "tr7-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "23:1-12"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "4:1-17"
+        }
+    }
+}

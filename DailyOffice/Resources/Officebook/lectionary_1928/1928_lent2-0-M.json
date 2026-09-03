@@ -1,0 +1,15 @@
+{
+    "id": "lent2-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "10:17-31"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "21:1-20"
+        }
+    }
+}

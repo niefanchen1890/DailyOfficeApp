@@ -1,0 +1,15 @@
+{
+    "id": "tr9-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "14:25-15:10"
+        },
+        "ot": {
+            "book": "歷代志上",
+            "chapter": "22:2-end"
+        }
+    }
+}

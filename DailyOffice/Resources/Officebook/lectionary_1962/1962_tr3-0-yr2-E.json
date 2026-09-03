@@ -1,0 +1,15 @@
+{
+    "id": "tr3-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "14:1-14"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "19:8-35"
+        }
+    }
+}

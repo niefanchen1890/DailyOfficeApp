@@ -1,0 +1,15 @@
+{
+    "id": "lent6-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "2:13-22"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "19:21-27"
+        }
+    }
+}

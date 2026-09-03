@@ -1,0 +1,15 @@
+{
+    "id": "ad3-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "9:33-50"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "48:1-22"
+        }
+    }
+}

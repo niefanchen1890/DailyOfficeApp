@@ -28,6 +28,8 @@ private let temporalKeywords: [String] = [
 
 struct LiturgyDashboardView: View {
     @StateObject private var viewModel = LiturgyViewModel()
+    @ObservedObject private var languageStore = AppLanguageStore.shared
+    private var isSimp: Bool { languageStore.isSimplified }
     @State private var isCalendarPresented = false
     
     @State private var martyrologyData: MartyrologyDaily?
@@ -92,11 +94,11 @@ struct LiturgyDashboardView: View {
         .sheet(item: $selectedBiography) { bio in
             NavigationStack {
                 BiographyView(title: bio.title, content: bio.content)
-                    .navigationTitle("\(bio.title)")
+                    .navigationTitle(bio.title.adaptChinese(isSimplified: isSimp))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("完成") { selectedBiography = nil }
+                            Button("完成".adaptChinese(isSimplified: isSimp)) { selectedBiography = nil }
                         }
                     }
             }
@@ -107,16 +109,16 @@ struct LiturgyDashboardView: View {
                 MassProperDetailView(proper: proper)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("完成") { selectedMassProper = nil }
+                            Button("完成".adaptChinese(isSimplified: isSimp)) { selectedMassProper = nil }
                         }
                     }
             }
         }
         // 🌟 新增：如果找不到當日經文 JSON 檔案，顯示提示
-        .alert("尚無經文", isPresented: $showNoMassProperAlert) {
-            Button("確定", role: .cancel) { }
+        .alert("尚無經文".adaptChinese(isSimplified: isSimp), isPresented: $showNoMassProperAlert) {
+            Button("確定".adaptChinese(isSimplified: isSimp), role: .cancel) { }
         } message: {
-            Text("目前尚未建立此日期的彌撒經文資料。")
+            Text("目前尚未建立此日期的彌撒經文資料。".adaptChinese(isSimplified: isSimp))
         }
         .onAppear {
             loadMartyrology(for: viewModel.selectedDate)
@@ -148,7 +150,7 @@ struct LiturgyDashboardView: View {
     
     private var topNavigationBar: some View {
         VStack(spacing: 8) {
-            Text("教會年曆")
+            Text("教會年曆".adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 24, weight: .bold))
             
             Button(action: { isCalendarPresented = true }) {
@@ -173,11 +175,11 @@ struct LiturgyDashboardView: View {
         VStack {
             HStack {
                 Spacer()
-                Button("完成") { isCalendarPresented = false }.padding()
+                Button("完成".adaptChinese(isSimplified: isSimp)) { isCalendarPresented = false }.padding()
             }
-            DatePicker("選擇日期", selection: $viewModel.selectedDate, displayedComponents: .date)
+            DatePicker("選擇日期".adaptChinese(isSimplified: isSimp), selection: $viewModel.selectedDate, displayedComponents: .date)
                 .datePickerStyle(.graphical)
-                .environment(\.locale, Locale(identifier: "zh_Hant"))
+                .environment(\.locale, Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant"))
                 .onChange(of: viewModel.selectedDate) { oldDate, newDate in
                     viewModel.updateLiturgy()
                     loadMartyrology(for: newDate)
@@ -243,7 +245,7 @@ struct LiturgyDashboardView: View {
     @ViewBuilder
     private func headerSection(for liturgy: DailyLiturgy) -> some View {
         HStack {
-            Text(liturgy.rankName)  // ← 改為 rankName
+            Text(liturgy.rankName.adaptChinese(isSimplified: isSimp))
                 .font(.caption2).bold()
                 .padding(.horizontal, 8).padding(.vertical, 4)
                 .background(Color.white.opacity(0.3))
@@ -258,7 +260,7 @@ struct LiturgyDashboardView: View {
     private func fastingSection(for liturgy: DailyLiturgy) -> some View {
         HStack {
             Image(systemName: "drop.fill")
-            Text("齋戒：\(calculateFasting(for: viewModel.selectedDate, season: liturgy.season))")
+            Text("齋戒：\(calculateFasting(for: viewModel.selectedDate, season: liturgy.season))".adaptChinese(isSimplified: isSimp))
         }
         .font(.footnote).bold()
         .padding(.horizontal, 10).padding(.vertical, 6)
@@ -275,7 +277,7 @@ struct LiturgyDashboardView: View {
                     selectedBiography = BiographySheetData(title: liturgy.mainTitle, content: bio)
                 }) {
                     HStack {
-                        Label("閱讀介紹", systemImage: "book.fill")
+                        Label("閱讀介紹".adaptChinese(isSimplified: isSimp), systemImage: "book.fill")
                         Spacer()
                         Image(systemName: "chevron.right")
                     }
@@ -292,7 +294,7 @@ struct LiturgyDashboardView: View {
                     selectedBiography = BiographySheetData(title: intro.title, content: intro.content)
                 }) {
                     HStack {
-                        Label("閱讀介紹", systemImage: "book.fill")
+                        Label("閱讀介紹".adaptChinese(isSimplified: isSimp), systemImage: "book.fill")
                         Spacer()
                         Image(systemName: "chevron.right")
                     }
@@ -327,7 +329,7 @@ struct LiturgyDashboardView: View {
                 loadAndPresentMassProper(for: viewModel.selectedDate)
             }) {
                 HStack {
-                    Label("彌撒經文", systemImage: "doc.text.fill")
+                    Label("彌撒經文".adaptChinese(isSimplified: isSimp), systemImage: "doc.text.fill")
                     Spacer()
                     Image(systemName: "chevron.right")
                 }
@@ -344,20 +346,20 @@ struct LiturgyDashboardView: View {
     @ViewBuilder
     private func martyrsSection() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Label("本日紀念聖人", systemImage: "person.2.fill").font(.footnote).bold()
+            Label("本日紀念聖人".adaptChinese(isSimplified: isSimp), systemImage: "person.2.fill").font(.footnote).bold()
             VStack(alignment: .leading, spacing: 10) {
                 if let martyrs = martyrologyData?.martyrs, !martyrs.isEmpty {
                     ForEach(martyrs, id: \.self) { paragraph in
                         HStack(alignment: .top, spacing: 6) {
                             Text("•").font(.subheadline)
-                            Text(paragraph)
+                            Text(paragraph.adaptChinese(isSimplified: isSimp))
                                 .font(.subheadline)
                                 .lineSpacing(6)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                     }
                 } else {
-                    Text("（此處將讀取殉道錄 JSON 數據...）")
+                    Text("（此處將讀取殉道錄 JSON 數據...）".adaptChinese(isSimplified: isSimp))
                         .font(.subheadline)
                         .opacity(0.6)
                 }
@@ -373,7 +375,7 @@ struct LiturgyDashboardView: View {
     private func commemorationsSection(for liturgy: DailyLiturgy) -> some View {
         if !liturgy.commemorations.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
-                Label("紀念事項", systemImage: "quote.opening").font(.footnote).bold()
+                Label("紀念事項".adaptChinese(isSimplified: isSimp), systemImage: "quote.opening").font(.footnote).bold()
                 
                 ForEach(liturgy.commemorations, id: \.self) { commemoration in
                     Button(action: {
@@ -397,7 +399,7 @@ struct LiturgyDashboardView: View {
                     }) {
                         HStack(alignment: .top, spacing: 6) {
                             Text("•").font(.subheadline)
-                            Text(commemoration)
+                            Text(commemoration.adaptChinese(isSimplified: isSimp))
                                 .font(.subheadline)
                                 .underline()
                             Image(systemName: "info.circle")
@@ -415,8 +417,10 @@ struct LiturgyDashboardView: View {
     private func transferredSection(for liturgy: DailyLiturgy) -> some View {
         if !liturgy.transferred.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
-                Label("禮儀遷移", systemImage: "arrow.right.circle").font(.footnote).bold()
-                ForEach(liturgy.transferred, id: \.self) { Text("• \($0)").font(.subheadline).italic() }
+                Label("禮儀遷移".adaptChinese(isSimplified: isSimp), systemImage: "arrow.right.circle").font(.footnote).bold()
+                ForEach(liturgy.transferred, id: \.self) {
+                    Text("• \($0)".adaptChinese(isSimplified: isSimp)).font(.subheadline).italic()
+                }
             }
         }
     }
@@ -523,7 +527,7 @@ struct LiturgyDashboardView: View {
             let decoded = try JSONDecoder().decode(MassProper.self, from: data)
             self.selectedMassProper = decoded // 解析成功，這會自動彈出 Sheet 顯示 MassProperDetailView
         } catch {
-            print("❌ 解析彌撒經文失敗：\(error)")
+            AppLog.error("❌ 解析彌撒經文失敗：\(error)")
             showNoMassProperAlert = true
         }
     }
@@ -533,7 +537,7 @@ struct LiturgyDashboardView: View {
         let fileName = "intro_\(identifier)"
         
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            print("⚠️ 找不到節期介紹檔案：\(fileName).json")
+            AppLog.warning("⚠️ 找不到節期介紹檔案：\(fileName).json")
             self.feastIntroduction = nil
             return
         }
@@ -541,9 +545,9 @@ struct LiturgyDashboardView: View {
         do {
             let data = try Data(contentsOf: url)
             self.feastIntroduction = try JSONDecoder().decode(FeastIntroduction.self, from: data)
-            print("✅ 成功讀取節期介紹：\(fileName).json")
+            AppLog.debug("✅ 成功讀取節期介紹：\(fileName).json")
         } catch {
-            print("❌ 解析節期介紹失敗：\(error)")
+            AppLog.error("❌ 解析節期介紹失敗：\(error)")
             self.feastIntroduction = nil
         }
     }
@@ -677,23 +681,23 @@ struct LiturgyDashboardView: View {
     @ViewBuilder
     func renderMainTitle(liturgy: DailyLiturgy) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 28, weight: .bold))
             
             if liturgy.mainTitle.contains("復活後第五主日") {
-                Text("（俗稱特禱主日）")
+                Text("（俗稱特禱主日）".adaptChinese(isSimplified: isSimp))
                     .font(.subheadline)
                     .opacity(0.8)
             }
             
             // 🌟 新增：基督聖體節八日慶期內主日
             if liturgy.mainTitle.contains("基督聖體節八日慶期內主日") {
-                Text("（三一主日後第一主日）")
+                Text("（三一主日後第一主日）".adaptChinese(isSimplified: isSimp))
                     .font(.subheadline)
                     .opacity(0.8)
             }
             if liturgy.mainTitle.contains("耶穌聖心節八日慶期內主日") {
-                Text("（三一主日後第二主日）")
+                Text("（三一主日後第二主日）".adaptChinese(isSimplified: isSimp))
                     .font(.subheadline)
                     .opacity(0.8)
             }
@@ -701,12 +705,16 @@ struct LiturgyDashboardView: View {
     }
 
     func formatYearMonth(_ date: Date) -> String {
-        let f = DateFormatter(); f.dateFormat = "yyyy年 MMMM"; f.locale = Locale(identifier: "zh_Hant")
+        let f = DateFormatter()
+        f.dateFormat = "yyyy年 MMMM"
+        f.locale = Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     
     func formatFullDate(_ date: Date) -> String {
-        let f = DateFormatter(); f.dateFormat = "yyyy年MM月dd日 EEEE"; f.locale = Locale(identifier: "zh_Hant")
+        let f = DateFormatter()
+        f.dateFormat = "yyyy年MM月dd日 EEEE"
+        f.locale = Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
 
@@ -725,22 +733,24 @@ struct LiturgyDashboardView: View {
 struct BiographyView: View {
     let title: String
     let content: String?
+    @ObservedObject private var languageStore = AppLanguageStore.shared
+    private var isSimp: Bool { languageStore.isSimplified }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text(title)
+                Text(title.adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 26, weight: .bold))
                     .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255)) // 禮儀紅色
                     .padding(.horizontal)
                     .padding(.top, 16)
                 if let content = content, !content.isEmpty {
-                    Text(content)
+                    Text(content.adaptChinese(isSimplified: isSimp))
                         .font(.body)
                         .lineSpacing(8)
                         .padding()
                 } else {
-                    Text("暫無聖人小傳或節期介紹資料。")
+                    Text("暫無聖人小傳或節期介紹資料。".adaptChinese(isSimplified: isSimp))
                         .foregroundColor(.secondary)
                         .padding()
                 }

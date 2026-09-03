@@ -1,0 +1,15 @@
+{
+    "id": "easter3-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "10:1-11"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "34:11-16、30-31"
+        }
+    }
+}

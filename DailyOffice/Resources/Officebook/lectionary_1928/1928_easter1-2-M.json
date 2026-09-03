@@ -1,0 +1,15 @@
+{
+    "id": "easter1-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "20:1-18"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "16:11-35"
+        }
+    }
+}

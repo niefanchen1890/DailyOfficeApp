@@ -1,0 +1,15 @@
+{
+    "id": "tr4-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "4:1-25"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "26:12-28"
+        }
+    }
+}

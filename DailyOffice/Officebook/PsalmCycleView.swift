@@ -129,6 +129,21 @@ struct PsalmCycleView: View {
 // MARK: - 🌟 第二步：單篇詩篇閱讀視圖 (內文頁)
 struct PsalmReadingView: View {
     let psalmKey: String
+    private let psalmNumber: String?
+    private let verseRange: String?
+
+    init(psalmKey: String) {
+        self.psalmKey = psalmKey
+        self.psalmNumber = nil
+        self.verseRange = nil
+    }
+
+    /// 供經課表直接開啟指定詩篇；若有節數範圍，只顯示指定部分。
+    init(psalmNumber: String, verses: String? = nil) {
+        self.psalmKey = "詩篇 第\(psalmNumber)篇"
+        self.psalmNumber = psalmNumber
+        self.verseRange = verses
+    }
     
     // 🌟 改為直接持有一個 PsalmContent 模型，刪除原本手動解碼 psalms.json 的代碼
     @State private var content: PsalmContent?
@@ -206,7 +221,7 @@ struct PsalmReadingView: View {
         .background(Color(UIColor.systemGroupedBackground))
         .onAppear(perform: loadPsalm)
         // 🌟 關鍵：當語言設定改變時，重新讀取對應語言的內容
-        .onChange(of: appLanguageCode) { _ in
+        .onChange(of: appLanguageCode) {
             loadPsalm()
         }
     }
@@ -214,7 +229,14 @@ struct PsalmReadingView: View {
     // MARK: - 🌟 載入詩篇內容（大幅精簡）
     private func loadPsalm() {
         // 完全交給重構後的 PsalmsLoader 處理多語言轉換
-        self.content = PsalmsLoader.shared.psalmContent(for: psalmKey)
+        if let psalmNumber {
+            self.content = PsalmsLoader.shared.psalm(
+                number: psalmNumber,
+                verses: verseRange
+            )?.content
+        } else {
+            self.content = PsalmsLoader.shared.psalmContent(for: psalmKey)
+        }
     }
 }
 

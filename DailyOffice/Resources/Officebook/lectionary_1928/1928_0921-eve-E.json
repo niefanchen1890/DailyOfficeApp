@@ -1,0 +1,15 @@
+{
+    "id": "0921-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "5:27-32"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "7:21-8:1"
+        }
+    }
+}

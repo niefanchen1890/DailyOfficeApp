@@ -1,0 +1,15 @@
+{
+    "id": "tr26-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "21"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "31:10-end"
+        }
+    }
+}

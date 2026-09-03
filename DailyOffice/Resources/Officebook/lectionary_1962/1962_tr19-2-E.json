@@ -1,0 +1,15 @@
+{
+    "id": "tr19-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "11:1-28"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "10"
+        }
+    }
+}

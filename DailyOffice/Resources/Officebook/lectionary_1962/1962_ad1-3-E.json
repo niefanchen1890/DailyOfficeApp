@@ -1,0 +1,15 @@
+{
+    "id": "ad1-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "8:1-13"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "10:5-23"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany4-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "12:14-13:14"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "15:1-21"
+        }
+    }
+}

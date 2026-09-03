@@ -1,0 +1,15 @@
+{
+    "id": "ad3-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "15:1-16:21"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "19:1-21"
+        }
+    }
+}

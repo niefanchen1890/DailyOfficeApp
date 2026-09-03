@@ -1,0 +1,15 @@
+{
+    "id": "tr14-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "2:11-end"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "22"
+        }
+    }
+}

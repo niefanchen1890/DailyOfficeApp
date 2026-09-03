@@ -1,0 +1,15 @@
+{
+    "id": "tr21-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "腓利門書",
+            "chapter": "1:1-25"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "2:1-24"
+        }
+    }
+}

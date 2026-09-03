@@ -1,0 +1,15 @@
+{
+    "id": "0101-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "1:18-25"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "6:2-8"
+        }
+    }
+}

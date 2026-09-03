@@ -69,9 +69,7 @@ struct PrimePrayerView: View {
 
     private func toggleLanguage() {
         withAnimation(.spring()) {
-            let newLang = (viewModel.appLanguageCode == AppLanguage.traditional.rawValue) ? AppLanguage.simplified : AppLanguage.traditional
-            // 呼叫早禱的切換引擎，確保全局狀態與快取皆被正確更新
-            MorningPrayerDataLoader.shared.setLanguage(newLang)
+            AppLanguageStore.shared.toggleLanguage()
         }
     }
     
@@ -248,15 +246,17 @@ struct PrimePrayerView: View {
                 
                 if let antiphon = viewModel.currentAntiphon {
                     RubricBlock(text: "¶ \(antiphon.season)\(isSimp ? "对经" : "對經")：")
-                    MorningPrayerView.AntiphonRow(text: antiphon.text)
-                        .padding(.bottom, 4)
                 }
                 
                 let weekday = Calendar.current.component(.weekday, from: viewModel.selectedDate)
                 
                 if weekday != 1 {
                     if let psalm54 = PsalmsLoader.shared.psalmContent(for: PrimePrayerData.psalm54Key) {
-                        psalmContentView(title: PrimePrayerData.psalm54Key, content: psalm54)
+                        psalmContentView(
+                            title: PrimePrayerData.psalm54Key,
+                            content: psalm54,
+                            openingAntiphon: viewModel.currentAntiphon?.text
+                        )
                     }
                     Divider().padding(.vertical, 8)
                 }
@@ -265,7 +265,13 @@ struct PrimePrayerView: View {
                 ForEach(psalm119Keys.indices, id: \.self) { index in
                     let key = psalm119Keys[index]
                     if let psalm119 = PsalmsLoader.shared.psalmContent(for: key) {
-                        psalmContentView(title: key, content: psalm119)
+                        psalmContentView(
+                            title: key,
+                            content: psalm119,
+                            openingAntiphon: weekday == 1 && index == 0
+                                ? viewModel.currentAntiphon?.text
+                                : nil
+                        )
                         if index < psalm119Keys.count - 1 {
                             Divider().padding(.vertical, 8)
                         }
@@ -279,7 +285,11 @@ struct PrimePrayerView: View {
         }
     }
     
-    private func psalmContentView(title: String, content: PsalmContent) -> some View {
+    private func psalmContentView(
+        title: String,
+        content: PsalmContent,
+        openingAntiphon: String? = nil
+    ) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text(title).foregroundColor(LiturgyColors.crimson)
@@ -289,6 +299,10 @@ struct PrimePrayerView: View {
             }
             .font(.system(size: 17, weight: .semibold))
             .padding(.bottom, 4)
+
+            if let openingAntiphon, !openingAntiphon.isEmpty {
+                MorningPrayerView.AntiphonRow(text: openingAntiphon)
+            }
             
             ForEach(content.verses, id: \.self) { verse in
                 psalmVerseRow(verse)

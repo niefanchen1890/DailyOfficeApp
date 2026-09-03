@@ -311,7 +311,7 @@ struct HomeView: View {
             .navigationBarHidden(true)
             .onAppear { loadUpcomingDays() }
             .task { loadUpcomingDays() }
-            .onChange(of: appLanguageCode) { _ in
+            .onChange(of: appLanguageCode) {
                 loadUpcomingDays()
             }
             .navigationDestination(for: String.self) { destination in
@@ -509,10 +509,10 @@ struct UpcomingHolyDayRow: View {
 // MARK: - 6. 設定與說明視圖
 struct AboutView: View {
     @AppStorage("bibleVersion") private var bibleVersion = "CUV"
-    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     private var isSimp: Bool {
-        appLanguageCode == AppLanguage.simplified.rawValue
+        languageStore.isSimplified
     }
     
     var body: some View {
@@ -547,9 +547,9 @@ struct AboutView: View {
                         Text("介面字體".adaptChinese(isSimplified: isSimp))
                             .font(.system(size: 14, weight: .medium)).foregroundColor(.secondary)
                         
-                        Picker("介面字體", selection: $appLanguageCode) {
-                            Text("繁體中文".adaptChinese(isSimplified: isSimp)).tag(AppLanguage.traditional.rawValue)
-                            Text("簡體中文".adaptChinese(isSimplified: isSimp)).tag(AppLanguage.simplified.rawValue)
+                        Picker("介面字體", selection: languageBinding) {
+                            Text("繁體中文".adaptChinese(isSimplified: isSimp)).tag(AppLanguage.traditional)
+                            Text("簡體中文".adaptChinese(isSimplified: isSimp)).tag(AppLanguage.simplified)
                         }
                         .pickerStyle(.segmented)
                         
@@ -612,6 +612,13 @@ struct AboutView: View {
         }
         .navigationTitle("設定與說明".adaptChinese(isSimplified: isSimp))
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private var languageBinding: Binding<AppLanguage> {
+        Binding(
+            get: { languageStore.language },
+            set: { languageStore.setLanguage($0) }
+        )
     }
 }
 

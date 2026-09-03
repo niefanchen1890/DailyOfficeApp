@@ -1,0 +1,15 @@
+{
+    "id": "tr4-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "26:1-32"
+        },
+        "ot": {
+            "book": "以斯拉記",
+            "chapter": "8:15、21-23、36"
+        }
+    }
+}

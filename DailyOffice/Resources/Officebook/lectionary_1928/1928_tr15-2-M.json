@@ -1,0 +1,15 @@
+{
+    "id": "tr15-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "14:25-end"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "9"
+        }
+    }
+}

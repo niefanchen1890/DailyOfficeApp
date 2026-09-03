@@ -1,0 +1,15 @@
+{
+    "id": "tr18-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "21:5-24"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "19:31-20:2"
+        }
+    }
+}

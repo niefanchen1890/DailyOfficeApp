@@ -1,0 +1,15 @@
+{
+    "id": "tr22-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰二書",
+            "chapter": "1:1-13"
+        },
+        "ot": {
+            "book": "傳道書",
+            "chapter": "9:1-18"
+        }
+    }
+}

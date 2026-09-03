@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "10:3-16"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "2:1-18"
+        }
+    }
+}

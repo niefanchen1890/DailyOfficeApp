@@ -1,0 +1,15 @@
+{
+    "id": "easter3-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "4:2-18"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "10:1-13、29-36"
+        }
+    }
+}

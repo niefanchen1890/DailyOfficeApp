@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "15:35-58"
+        },
+        "ot": {
+            "book": "約拿書",
+            "chapter": "1:1-2:10"
+        }
+    }
+}

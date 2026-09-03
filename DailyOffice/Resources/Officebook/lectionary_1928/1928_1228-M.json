@@ -1,0 +1,15 @@
+{
+    "id": "1228-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "18:1-14"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "31:1-17"
+        }
+    }
+}

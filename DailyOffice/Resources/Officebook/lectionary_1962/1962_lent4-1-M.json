@@ -1,0 +1,15 @@
+{
+    "id": "lent4-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "7:1-14"
+        },
+        "ot": {
+            "book": "出埃及记",
+            "chapter": "24:1-18"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "easter6-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "3:1-19"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "3:12-31"
+        }
+    }
+}

@@ -2,12 +2,12 @@ import SwiftUI
 import Combine
 
 // MARK: - 1. 資料模型 (對應 JSON 結構)
-struct FaithBookData: Codable {
+nonisolated struct FaithBookData: Codable, Sendable {
     let intro: String
     let chapters: [FaithChapterData]
 }
 
-struct FaithChapterData: Codable, Identifiable {
+nonisolated struct FaithChapterData: Codable, Identifiable, Sendable {
     let id: String
     let title: String
     let content: String

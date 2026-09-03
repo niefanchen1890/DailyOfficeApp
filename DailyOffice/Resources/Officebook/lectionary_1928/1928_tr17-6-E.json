@@ -1,0 +1,15 @@
+{
+    "id": "tr17-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "腓利門書",
+            "chapter": "1"
+        },
+        "ot": {
+            "book": "利未記",
+            "chapter": "26:1-12"
+        }
+    }
+}

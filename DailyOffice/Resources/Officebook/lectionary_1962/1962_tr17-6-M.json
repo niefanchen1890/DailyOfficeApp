@@ -1,0 +1,15 @@
+{
+    "id": "tr17-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "帖撒羅尼迦前書",
+            "chapter": "2:17-3:end"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "24:15-end"
+        }
+    }
+}

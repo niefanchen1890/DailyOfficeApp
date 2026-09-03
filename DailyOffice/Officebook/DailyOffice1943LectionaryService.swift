@@ -280,7 +280,7 @@ final class DailyOffice1943LectionaryService {
                 psalms: decoded.psalms
             )
         } catch {
-            print("❌ 解析 \(resourceName).json 失敗: \(error)")
+            AppLog.error("❌ 解析 \(resourceName).json 失敗: \(error)")
             return nil
         }
     }

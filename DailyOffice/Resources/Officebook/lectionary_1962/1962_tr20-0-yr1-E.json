@@ -1,0 +1,15 @@
+{
+    "id": "tr20-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "13:44-end"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "28"
+        }
+    }
+}

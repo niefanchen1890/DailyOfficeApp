@@ -1,0 +1,15 @@
+{
+    "id": "tr2-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "10:16-11:1"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "23:1-16"
+        }
+    }
+}

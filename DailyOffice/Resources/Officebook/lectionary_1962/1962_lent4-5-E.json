@@ -1,0 +1,15 @@
+{
+    "id": "lent4-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太前書",
+            "chapter": "5:1-25"
+        },
+        "ot": {
+            "book": "利未記",
+            "chapter": "6:8-30"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr3-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "24:1-27"
+        },
+        "ot": {
+            "book": "尼希米記",
+            "chapter": "6:1-16"
+        }
+    }
+}

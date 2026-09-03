@@ -1,0 +1,15 @@
+{
+    "id": "lent3-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "15:1-22"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "7:14-25"
+        }
+    }
+}

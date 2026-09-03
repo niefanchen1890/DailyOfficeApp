@@ -1,0 +1,15 @@
+{
+    "id": "easter5-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "2:14-3:19"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "21:1-9"
+        }
+    }
+}

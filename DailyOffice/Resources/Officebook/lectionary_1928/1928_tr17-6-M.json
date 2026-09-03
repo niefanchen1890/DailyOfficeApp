@@ -1,0 +1,15 @@
+{
+    "id": "tr17-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "20:39-21:4"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "19:10-30"
+        }
+    }
+}

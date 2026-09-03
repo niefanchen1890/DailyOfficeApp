@@ -65,7 +65,7 @@ struct PsalmsLoader {
            let cycleDecoded = try? JSONDecoder().decode(PsalmCycle.self, from: cycleData) {
             self.cycle = cycleDecoded
         } else {
-            print("⚠️ 警告：無法載入 psalm_cycle.json")
+            AppLog.warning("⚠️ 警告：無法載入 psalm_cycle.json")
             self.cycle = PsalmCycle(morning: [:], evening: [:])
         }
         
@@ -77,11 +77,11 @@ struct PsalmsLoader {
                 self.db = decoded
             } catch {
                 // 💡 如果未來還有錯，這裡會印出具體是哪個 Key 解析失敗
-                print("❌ [詩篇] psalms_db.json 解析崩潰：\(error)")
+                AppLog.error("❌ [詩篇] psalms_db.json 解析崩潰：\(error)")
                 self.db = [:]
             }
         } else {
-            print("⚠️ 警告：找不到 psalms_db.json 檔案")
+            AppLog.warning("⚠️ 警告：找不到 psalms_db.json 檔案")
             self.db = [:]
         }
     }
@@ -104,7 +104,7 @@ struct PsalmsLoader {
     // MARK: - 核心：依據當前語言解析出單一語言的 PsalmContent
     private func resolveEntry(key: String) -> PsalmContent? {
         guard let entry = db[key] else {
-            print("⚠️ [詩篇] 找不到資料庫 Key: \(key)")
+            AppLog.warning("⚠️ [詩篇] 找不到資料庫 Key: \(key)")
             return nil
         }
         
@@ -158,7 +158,7 @@ struct PsalmsLoader {
         }
         
         guard let fullPsalm = psalmEntry(for: normalizedNumber) else {
-            print("⚠️ [詩篇] 找不到專用詩篇 \(number)")
+            AppLog.warning("⚠️ [詩篇] 找不到專用詩篇 \(number)")
             return nil
         }
         
@@ -173,7 +173,7 @@ struct PsalmsLoader {
         )
         
         guard !selectedVerses.isEmpty else {
-            print("⚠️ [詩篇] 詩篇 \(normalizedNumber):\(verseRange) 無可用節段")
+            AppLog.warning("⚠️ [詩篇] 詩篇 \(normalizedNumber):\(verseRange) 無可用節段")
             return nil
         }
         
@@ -324,7 +324,7 @@ struct PsalmsLoader {
             guard !segmentRange.isDisjoint(with: wantedNumbers) else { continue }
             
             guard let content = resolveEntry(key: segment.key) else {
-                print("⚠️ [詩篇] 找不到 119篇分段: \(segment.key)")
+                AppLog.warning("⚠️ [詩篇] 找不到 119篇分段: \(segment.key)")
                 continue
             }
             
@@ -342,7 +342,7 @@ struct PsalmsLoader {
         }
         
         guard !mergedVerses.isEmpty else {
-            print("⚠️ [詩篇] 詩篇119:\(rangeText) 無可用節段")
+            AppLog.warning("⚠️ [詩篇] 詩篇119:\(rangeText) 無可用節段")
             return nil
         }
         

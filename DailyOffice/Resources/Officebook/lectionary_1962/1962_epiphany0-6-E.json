@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "帖撒羅尼迦後書",
+            "chapter": "3:1-18"
+        },
+        "ot": {
+            "book": "彌迦書",
+            "chapter": "3:1-12"
+        }
+    }
+}

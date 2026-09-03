@@ -1,0 +1,15 @@
+{
+    "id": "tr17-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "2"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "31:30-32:43"
+        }
+    }
+}

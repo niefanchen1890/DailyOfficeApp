@@ -11,6 +11,7 @@ struct MorningPrayerView: View {
     @StateObject private var viewModel: MorningPrayerViewModel
     @StateObject private var litanyLoader = LitanyDataLoader.shared
     @StateObject private var creedsLoader = CreedsDataLoader.shared
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     @Environment(\.colorScheme) var colorScheme
     
     let date: Date
@@ -64,6 +65,11 @@ struct MorningPrayerView: View {
         }
         .navigationTitle("早禱")
         .navigationBarTitleDisplayMode(.inline)
+        .onChange(of: languageStore.language) { _, newLanguage in
+            if viewModel.appLanguage != newLanguage {
+                viewModel.appLanguage = newLanguage
+            }
+        }
     }
     
     // MARK: - 聖人小傳/教父講道（信經前）
@@ -893,12 +899,6 @@ struct MorningPrayerView: View {
             let hasProperAntiphon = (antiphon != nil && !antiphon!.isEmpty)
             
             return VStack(alignment: .leading, spacing: 0) {
-                // 1. 群組開頭：如果有專用對經，統一顯示在最前面
-                if hasProperAntiphon {
-                    AntiphonRow(text: antiphon!)
-                        .padding(.bottom, 8)
-                }
-                
                 ForEach(psalms.indices, id: \.self) { i in
                     let psalm = psalms[i]
                     
@@ -915,8 +915,13 @@ struct MorningPrayerView: View {
                         }
                         .font(.system(size: 17, weight: .semibold))
                         .padding(.bottom, 4)
+
+                        // 專用對經放在第一篇詩篇標題之下、第1節之前
+                        if hasProperAntiphon && i == psalms.startIndex {
+                            AntiphonRow(text: antiphon!)
+                        }
                         
-                        // 🌟 2. 詩篇開頭：如果沒有專用對經，退回顯示詩篇自帶的對經
+                        // 沒有專用對經時，顯示詩篇自帶的對經
                         if !hasProperAntiphon && !psalm.content.antiphon.isEmpty {
                             AntiphonRow(text: psalm.content.antiphon)
                         }
@@ -999,10 +1004,6 @@ struct MorningPrayerView: View {
             ForEach(groups.indices, id: \.self) { gIndex in
                 let group = groups[gIndex]
                 
-                // ═════ 對經（組前）═════
-                AntiphonRow(text: group.antiphon)
-                    .padding(.bottom, 8)
-                
                 // ═════ 組內詩篇 ═════
                 ForEach(group.psalms.indices, id: \.self) { pIndex in
                     let psalm = group.psalms[pIndex]
@@ -1018,6 +1019,11 @@ struct MorningPrayerView: View {
                         }
                         .font(.system(size: 17, weight: .semibold))
                         .padding(.bottom, 4)
+
+                        // 第一遍對經：標題之下、第1節之前
+                        if pIndex == group.psalms.startIndex {
+                            AntiphonRow(text: group.antiphon)
+                        }
                         
                         // 詩節
                         ForEach(psalm.content.verses, id: \.self) { verse in
@@ -1442,7 +1448,7 @@ struct MorningPrayerView: View {
         }
     }
     
-    // MARK: - 經文段落（數據庫已帶節號，直接標紅上標）
+    // MARK: - 經文段落（JSON 經文已帶節號，直接標紅上標）
     private func scriptureVerses(_ verses: [BibleVerse]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             ForEach(verses) { verse in
@@ -2400,8 +2406,7 @@ class MorningPrayerViewModel: ObservableObject {
     }
     @Published var appLanguage: AppLanguage = MorningPrayerDataLoader.shared.currentLanguage {
         didSet {
-            // ✅ 統一由 MorningPrayerDataLoader 處理語言切換與級聯快取清理
-            MorningPrayerDataLoader.shared.setLanguage(appLanguage)
+            AppLanguageStore.shared.setLanguage(appLanguage)
             loadReadings()
         }
     }
@@ -2713,7 +2718,7 @@ class MorningPrayerViewModel: ObservableObject {
         )
         
         // 只要 JSON 未提供經課，或僅提供單一選項，
-        // 一律補上資料庫預設的 1928 與 1962，確保按鈕不會消失。
+        // 一律補上 JSON 經課表的 1928 與 1962，確保按鈕不會消失。
         var options = Set(jsonOptions)
         
         if !available1943Sets.isEmpty {
@@ -2800,7 +2805,7 @@ class MorningPrayerViewModel: ObservableObject {
             return
         }
         
-        // 🌟 統一由 DailyLectionaryService 處理（JSON 優先 → 資料庫回退）
+        // 1928／1962 每日經課統一從各自的 lectionary JSON 資料夾讀取。
         dailyReadings = DailyLectionaryService.shared.readings(
             for: selectedDate,
             year: lectionaryYear
@@ -2821,7 +2826,7 @@ class MorningPrayerViewModel: ObservableObject {
             var nt: [BibleVerse] = []
             
             if let otDay = readings.morningOT {
-                let isApo = LectionaryDatabaseManager.shared.isApocrypha(bookName: otDay.book)
+                let isApo = BibleJSONService.shared.isApocrypha(book: otDay.book)
                 let version = isApo ? "APO1933" : self.scriptureVersion
                 
                 let stringVerses = BibleJSONService.shared.fetchVersesList(version: version, book: otDay.book, reference: otDay.chapter)
@@ -2833,7 +2838,7 @@ class MorningPrayerViewModel: ObservableObject {
             }
             
             if let ntDay = readings.morningNT {
-                let isApo = LectionaryDatabaseManager.shared.isApocrypha(bookName: ntDay.book)
+                let isApo = BibleJSONService.shared.isApocrypha(book: ntDay.book)
                 let version = isApo ? "APO1933" : self.scriptureVersion
                 
                 let stringVerses = BibleJSONService.shared.fetchVersesList(version: version, book: ntDay.book, reference: ntDay.chapter)
@@ -3001,13 +3006,13 @@ class MorningPrayerViewModel: ObservableObject {
         var commemorationCollects: [CommemorationCollectBlock] {
         var blocks: [CommemorationCollectBlock] = []
         
-        print("🎯 當日紀念列表：\(liturgy.commemorations)")
+        AppLog.debug("🎯 當日紀念列表：\(liturgy.commemorations)")
         
         for name in liturgy.commemorations {
-            print("🔍 查找紀念：\(name)")
+            AppLog.debug("🔍 查找紀念：\(name)")
             
             var file = DailyOfficeLoader.shared.loadCommemoration(name: name, date: selectedDate)
-            print("   loadCommemoration 返回：\(file?.name ?? "nil")")
+            AppLog.debug("   loadCommemoration 返回：\(file?.name ?? "nil")")
             
             // 🌟 1. 歸一化：去掉「紀念」前綴
             let normalizedName = name.hasPrefix("紀念")
@@ -3025,28 +3030,28 @@ class MorningPrayerViewModel: ObservableObject {
                 let validNames = [name, normalizedName, nameHans, nameHant, normHans, normHant]
                 
                 if !validNames.contains(f.name) {
-                    print("   ⚠️ 名稱不匹配：file.name='\(f.name)' vs 預期名稱集='\(validNames)'，已剔除")
+                    AppLog.debug("   ⚠️ 名稱不匹配：file.name='\(f.name)' vs 預期名稱集='\(validNames)'，已剔除")
                     file = nil
                 }
             }
             
             guard let foundFile = file else {
-                print("   ❌ 無有效檔案，跳過")
+                AppLog.debug("   ❌ 無有效檔案，跳過")
                 continue
             }
             
             // ... (下方的 morning 節點解析、rank 解析、append 邏輯保持完全不變)
             guard let morning = foundFile.morning else {
-                print("   ❌ 檔案無 morning 節點")
+                AppLog.debug("   ❌ 檔案無 morning 節點")
                 continue
             }
             
             guard let collect = morning.collect else {
-                print("   ❌ morning 節點無 collect")
+                AppLog.debug("   ❌ morning 節點無 collect")
                 continue
             }
             
-            print("   ✅ 找到祝文：\(collect.title)")
+            AppLog.debug("   ✅ 找到祝文：\(collect.title)")
             
             // 🌟 判斷是否為望日紀念
             let isVigilCommemoration = name.contains("望日")
@@ -3094,7 +3099,7 @@ class MorningPrayerViewModel: ObservableObject {
                 return nil
             }()
             
-            print("   📜 antiphon=\(antiphon ?? "nil"), versicle=\(versicle.map { "\($0.leader)/\($0.people)" } ?? "nil")")
+            AppLog.debug("   📜 antiphon=\(antiphon ?? "nil"), versicle=\(versicle.map { "\($0.leader)/\($0.people)" } ?? "nil")")
             let rank = parseJSONRank(foundFile.rank)
             
             blocks.append(CommemorationCollectBlock(
@@ -3205,33 +3210,6 @@ class MorningPrayerViewModel: ObservableObject {
             selectedDate = tomorrow
             syncCreedSelection()
             loadReadings()
-        }
-    }
-    private func loadVersesFromJSON(bookOT: String, chapterOT: String, bookNT: String, chapterNT: String) {
-        morningOTVerses = []
-        morningNTVerses = []
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            let isApoOT = LectionaryDatabaseManager.shared.isApocrypha(bookName: bookOT)
-            let versionOT = isApoOT ? "APO1933" : self.scriptureVersion
-            let otVerses = LectionaryDatabaseManager.shared.fetchVerses(
-                version: versionOT,
-                book: bookOT,
-                reference: chapterOT
-            )
-            
-            let isApoNT = LectionaryDatabaseManager.shared.isApocrypha(bookName: bookNT)
-            let versionNT = isApoNT ? "APO1933" : self.scriptureVersion
-            let ntVerses = LectionaryDatabaseManager.shared.fetchVerses(
-                version: versionNT,
-                book: bookNT,
-                reference: chapterNT
-            )
-            
-            DispatchQueue.main.async {
-                self.morningOTVerses = otVerses
-                self.morningNTVerses = ntVerses
-            }
         }
     }
     func loadMemorialAntiphons() {

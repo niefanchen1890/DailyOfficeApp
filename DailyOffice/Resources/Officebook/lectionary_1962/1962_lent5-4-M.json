@@ -1,0 +1,15 @@
+{
+    "id": "lent5-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "12:1-19"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "13:1-33"
+        }
+    }
+}

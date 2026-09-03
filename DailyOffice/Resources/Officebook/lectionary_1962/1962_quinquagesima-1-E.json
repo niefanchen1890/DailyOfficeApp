@@ -1,0 +1,15 @@
+{
+    "id": "quinquagesima-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "12:1-21"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "31:22-32:2"
+        }
+    }
+}

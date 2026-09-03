@@ -1,0 +1,15 @@
+{
+    "id": "tr2-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "13:1-26"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "8:22-9:3"
+        }
+    }
+}

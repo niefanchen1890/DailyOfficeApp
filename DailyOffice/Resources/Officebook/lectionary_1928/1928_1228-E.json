@@ -1,0 +1,15 @@
+{
+    "id": "1228-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "10:13-27"
+        },
+        "ot": {
+            "book": "歷代志下",
+            "chapter": "22:8-12"
+        }
+    }
+}

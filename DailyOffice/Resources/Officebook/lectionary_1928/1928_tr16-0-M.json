@@ -1,0 +1,15 @@
+{
+    "id": "tr16-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:13-21"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "5:1-9, 13-20"
+        }
+    }
+}

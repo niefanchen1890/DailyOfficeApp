@@ -1,0 +1,15 @@
+{
+    "id": "ad1-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "2:23-3:12"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "10:24-34"
+        }
+    }
+}

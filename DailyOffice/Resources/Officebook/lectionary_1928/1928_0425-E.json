@@ -1,0 +1,15 @@
+{
+    "id": "0425-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "4:1-18"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "1:1-14"
+        }
+    }
+}

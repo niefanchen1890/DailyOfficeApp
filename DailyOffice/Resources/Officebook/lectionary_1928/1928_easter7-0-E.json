@@ -1,0 +1,15 @@
+{
+    "id": "easter7-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "14:15-27"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "34:1-12"
+        }
+    }
+}

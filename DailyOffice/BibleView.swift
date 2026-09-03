@@ -12,6 +12,7 @@ struct BibleView: View {
     @AppStorage("lastReadBibleVersion") private var selectedVersion = "CUV"
     @AppStorage("lastReadBibleBook") private var selectedBook = "GEN"
     @AppStorage("lastReadBibleChapter") private var selectedChapter = 1
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     // 🌟 狀態變數
     @State private var precomputedTexts: [PrecomputedParagraph] = []
@@ -82,7 +83,7 @@ struct BibleView: View {
                 
                 LazyVStack(alignment: .leading, spacing: 18) {
                     if precomputedTexts.isEmpty {
-                        Text("載入中或無資料...")
+                        Text("載入中或無資料...".adaptChinese(isSimplified: languageStore.isSimplified))
                             .foregroundColor(.gray)
                             .padding(.top, 100)
                             .frame(maxWidth: .infinity)
@@ -116,10 +117,11 @@ struct BibleView: View {
                 .opacity(isHeaderHidden ? 0 : 1)
                 .animation(.easeInOut(duration: 0.25), value: isHeaderHidden)
         }
-        .navigationTitle("\(selectedBookName) 第 \(selectedChapter) 章")
+        .navigationTitle("\(selectedBookName.adaptChinese(isSimplified: languageStore.isSimplified)) 第 \(selectedChapter) 章")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: selectedBook) { loadBibleData() }
         .onChange(of: selectedChapter) { loadBibleData() }
+        .onChange(of: languageStore.language) { _, _ in loadBibleData() }
         .onAppear { loadBibleData() }
     }
     
@@ -128,10 +130,10 @@ struct BibleView: View {
         HStack(spacing: 5) {
             // 版本選擇選單：移除了 RCUV 與 APO2014，加入了 SSEB
             Menu {
-                Button("和合本 (CUV)") { handleVersionChange(to: "CUV") }
-                Button("施約瑟譯本 (SSEB)") { handleVersionChange(to: "SSEB") }
+                Button("和合本 (CUV)".adaptChinese(isSimplified: languageStore.isSimplified)) { handleVersionChange(to: "CUV") }
+                Button("施約瑟譯本 (SSEB)".adaptChinese(isSimplified: languageStore.isSimplified)) { handleVersionChange(to: "SSEB") }
                 Divider()
-                Button("次經1933 (APO1933)") { handleVersionChange(to: "APO1933") }
+                Button("次經1933 (APO1933)".adaptChinese(isSimplified: languageStore.isSimplified)) { handleVersionChange(to: "APO1933") }
             } label: {
                 HStack(spacing: 4) {
                     Text(selectedVersion)
@@ -146,7 +148,7 @@ struct BibleView: View {
             // 書卷選擇
             Picker("書卷", selection: $selectedBook) {
                 ForEach(filteredBooks, id: \.1) { name, code, _ in
-                    Text(name).tag(code)
+                    Text(name.adaptChinese(isSimplified: languageStore.isSimplified)).tag(code)
                 }
             }
             .pickerStyle(.menu)
@@ -244,7 +246,7 @@ struct BibleView: View {
         
         precomputedTexts = []
         
-        let rawParagraphs = BibleDatabaseManager.shared.fetchChapter(
+        let rawParagraphs = BibleJSONService.shared.fetchFullChapter(
             version: selectedVersion,
             book: selectedBook,
             chapter: selectedChapter

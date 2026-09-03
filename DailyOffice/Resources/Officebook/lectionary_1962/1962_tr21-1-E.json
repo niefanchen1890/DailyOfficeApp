@@ -1,0 +1,15 @@
+{
+    "id": "tr21-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "1:12-27"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "2:25-49"
+        }
+    }
+}

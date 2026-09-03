@@ -4,6 +4,7 @@ import SwiftUI
 struct HomePrayerPartView: View {
     let part: HomePrayerPart
     let collectOfTheDay: DailyOfficeFile.OfficePeriod.CollectJSON?  // 當日祝文
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -46,7 +47,7 @@ struct HomePrayerPartView: View {
     // MARK: - 頁面標題（僅「家用禱文」與「早禱/晚禱」）
     private var header: some View {
         VStack(spacing: 0) {
-            Text("家用禱文")
+            Text(HomePrayerData.title)
                 .font(.system(size: 34, weight: .bold))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
@@ -95,7 +96,7 @@ struct HomePrayerPartView: View {
             }
             
             // MARK: 插入本日祝文（無對經、無啟應）
-            if section.title == "主祷文",
+            if section.id == "lordPrayer",
                let collect = collectOfTheDay,
                let postRubric = section.postRubric,
                postRubric.contains("本日祝文") {
@@ -150,6 +151,7 @@ struct HomePrayerPartView: View {
 // MARK: - 早禱頁面
 struct HomePrayerMorningView: View {
     @State private var selectedDate: Date = Date()
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     private var liturgy: DailyLiturgy {
         LiturgyCoreService.shared.resolve(for: selectedDate)
@@ -171,6 +173,7 @@ struct HomePrayerMorningView: View {
 // MARK: - 晚禱頁面
 struct HomePrayerEveningView: View {
     @State private var selectedDate: Date = Date()
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     private var liturgy: DailyLiturgy {
         LiturgyCoreService.shared.resolve(for: selectedDate, isEvening: true)

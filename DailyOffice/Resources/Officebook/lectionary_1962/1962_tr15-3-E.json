@@ -1,0 +1,15 @@
+{
+    "id": "tr15-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "10:1-21"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "33:1-13"
+        }
+    }
+}

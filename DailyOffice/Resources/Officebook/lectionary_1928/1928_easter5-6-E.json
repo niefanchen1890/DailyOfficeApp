@@ -1,0 +1,15 @@
+{
+    "id": "easter5-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "21:1-7"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "60:1-22"
+        }
+    }
+}

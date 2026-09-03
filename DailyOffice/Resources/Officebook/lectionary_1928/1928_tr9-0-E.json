@@ -1,0 +1,15 @@
+{
+    "id": "tr9-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "27:14"
+        },
+        "ot": {
+            "book": "約拿書",
+            "chapter": "1:1-2:1, 10"
+        }
+    }
+}

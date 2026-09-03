@@ -1,0 +1,15 @@
+{
+    "id": "0725-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "9:46-end"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "1:1-15"
+        }
+    }
+}

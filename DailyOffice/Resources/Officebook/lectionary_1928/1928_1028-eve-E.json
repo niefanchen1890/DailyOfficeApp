@@ -1,0 +1,15 @@
+{
+    "id": "1028-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "6:1-13"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "44:1-8、21-26"
+        }
+    }
+}

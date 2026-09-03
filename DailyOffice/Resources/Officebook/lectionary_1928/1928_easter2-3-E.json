@@ -1,0 +1,15 @@
+{
+    "id": "easter2-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "11:1-44"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "44:6-23"
+        }
+    }
+}

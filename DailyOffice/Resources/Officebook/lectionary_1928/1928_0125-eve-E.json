@@ -1,0 +1,15 @@
+{
+    "id": "0125-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "1:1-24"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "5:1-16"
+        }
+    }
+}

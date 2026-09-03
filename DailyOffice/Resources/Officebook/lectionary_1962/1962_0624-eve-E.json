@@ -1,0 +1,15 @@
+{
+    "id": "0624-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "3:1-17"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "3:1-6"
+        }
+    }
+}

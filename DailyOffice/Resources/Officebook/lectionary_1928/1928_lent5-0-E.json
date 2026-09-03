@@ -1,0 +1,15 @@
+{
+    "id": "lent5-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "17:1-26"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "8:22-53"
+        }
+    }
+}

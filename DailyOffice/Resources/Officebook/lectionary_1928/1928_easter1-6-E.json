@@ -1,0 +1,15 @@
+{
+    "id": "easter1-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "16:9-20"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "42:17-43:7"
+        }
+    }
+}

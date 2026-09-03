@@ -1,0 +1,15 @@
+{
+    "id": "1231-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "2:13-23"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "10:12-11:1"
+        }
+    }
+}

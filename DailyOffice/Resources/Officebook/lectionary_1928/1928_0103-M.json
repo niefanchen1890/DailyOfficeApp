@@ -1,0 +1,15 @@
+{
+    "id": "0103-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "3:18-4:6"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "29:9-19"
+        }
+    }
+}

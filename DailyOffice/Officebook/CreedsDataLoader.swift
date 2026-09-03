@@ -21,7 +21,7 @@ class CreedsDataLoader: ObservableObject {
     private func loadAthanasianCreed() {
         guard let url = Bundle.main.url(forResource: "athanasian_creed", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
-            print("❌ 無法載入 athanasian_creed.json")
+            AppLog.error("❌ 無法載入 athanasian_creed.json")
             return
         }
         
@@ -31,7 +31,7 @@ class CreedsDataLoader: ObservableObject {
                 self.athanasianCreed = decoded
             }
         } catch {
-            print("❌ 解析 athanasian_creed.json 失敗: \(error)")
+            AppLog.error("❌ 解析 athanasian_creed.json 失敗: \(error)")
         }
     }
     

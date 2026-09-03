@@ -1,0 +1,15 @@
+{
+    "id": "easter8-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "20:19-29"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "33:14-26"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0806-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "1"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "3:16-4:end"
+        }
+    }
+}

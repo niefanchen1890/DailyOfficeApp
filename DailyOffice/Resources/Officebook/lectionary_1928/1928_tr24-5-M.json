@@ -1,0 +1,15 @@
+{
+    "id": "tr24-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "13:1-19"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "8:22-end"
+        }
+    }
+}

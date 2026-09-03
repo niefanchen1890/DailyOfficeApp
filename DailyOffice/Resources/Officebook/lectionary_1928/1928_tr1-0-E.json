@@ -1,0 +1,15 @@
+{
+    "id": "tr1-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "17:16-34"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "40:12-31"
+        }
+    }
+}

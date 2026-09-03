@@ -1,0 +1,15 @@
+{
+    "id": "epiphany2-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "4:1-17"
+        },
+        "ot": {
+            "book": "那鴻書",
+            "chapter": "1:1-15"
+        }
+    }
+}

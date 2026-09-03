@@ -1,0 +1,15 @@
+{
+    "id": "easter4-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "7:11-17"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "22:1-21"
+        }
+    }
+}

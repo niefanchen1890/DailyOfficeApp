@@ -1,0 +1,15 @@
+{
+    "id": "ad3-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "1:29-51"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "1:6-2:7"
+        }
+    }
+}

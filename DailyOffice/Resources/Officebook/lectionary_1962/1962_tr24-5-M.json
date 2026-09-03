@@ -1,0 +1,15 @@
+{
+    "id": "tr24-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "13:13-43"
+        },
+        "ot": {
+            "book": "瑪喀比傳上",
+            "chapter": "2"
+        }
+    }
+}

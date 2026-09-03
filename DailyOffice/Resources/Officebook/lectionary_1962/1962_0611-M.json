@@ -1,0 +1,15 @@
+{
+    "id": "0611-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "9:19-31"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "29:23-24"
+        }
+    }
+}

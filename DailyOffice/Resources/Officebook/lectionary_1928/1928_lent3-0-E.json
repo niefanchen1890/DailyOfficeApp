@@ -1,0 +1,15 @@
+{
+    "id": "lent3-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "20:1-28"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "27:1-38"
+        }
+    }
+}

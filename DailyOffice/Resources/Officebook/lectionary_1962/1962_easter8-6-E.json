@@ -1,0 +1,15 @@
+{
+    "id": "easter8-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "1:3-14"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "61:1-11"
+        }
+    }
+}

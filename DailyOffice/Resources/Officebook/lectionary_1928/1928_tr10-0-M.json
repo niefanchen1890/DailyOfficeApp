@@ -1,0 +1,15 @@
+{
+    "id": "tr10-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "12:9"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "5"
+        }
+    }
+}

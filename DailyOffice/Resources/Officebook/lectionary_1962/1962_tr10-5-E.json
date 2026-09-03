@@ -1,0 +1,15 @@
+{
+    "id": "tr10-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "19:29-end"
+        },
+        "ot": {
+            "book": "歷代志下",
+            "chapter": "12"
+        }
+    }
+}

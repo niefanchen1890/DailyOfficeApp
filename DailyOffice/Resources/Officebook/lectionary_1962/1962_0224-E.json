@@ -1,0 +1,15 @@
+{
+    "id": "0224-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "4:1-8"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "16:1-13"
+        }
+    }
+}

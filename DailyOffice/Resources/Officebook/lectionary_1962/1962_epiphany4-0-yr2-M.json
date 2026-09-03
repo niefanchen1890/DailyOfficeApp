@@ -1,0 +1,15 @@
+{
+    "id": "epiphany4-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "7:53-8:11"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "7:1-17"
+        }
+    }
+}

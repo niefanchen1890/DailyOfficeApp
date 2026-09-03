@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "8:1-13"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "1:1-14"
+        }
+    }
+}

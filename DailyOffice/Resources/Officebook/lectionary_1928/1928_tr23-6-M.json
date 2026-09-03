@@ -1,0 +1,15 @@
+{
+    "id": "tr23-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "11:1-16"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "4:1-13"
+        }
+    }
+}

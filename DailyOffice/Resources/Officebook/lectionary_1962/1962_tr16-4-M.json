@@ -1,0 +1,15 @@
+{
+    "id": "tr16-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "1:21-2:7"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "1:1-14"
+        }
+    }
+}

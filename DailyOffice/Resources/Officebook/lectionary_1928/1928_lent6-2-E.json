@@ -1,0 +1,15 @@
+{
+    "id": "lent6-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "21:1-38"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "2:2-5"
+        }
+    }
+}

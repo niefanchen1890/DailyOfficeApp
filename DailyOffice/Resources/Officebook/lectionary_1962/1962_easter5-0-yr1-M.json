@@ -1,0 +1,15 @@
+{
+    "id": "easter5-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "3:8-22"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "34:1-10"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr11-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "9"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "22:1-40"
+        }
+    }
+}

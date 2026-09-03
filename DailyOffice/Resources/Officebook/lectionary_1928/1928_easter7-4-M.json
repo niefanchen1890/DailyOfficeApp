@@ -1,0 +1,15 @@
+{
+    "id": "easter7-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "10:35-11:22"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "32:1-33"
+        }
+    }
+}

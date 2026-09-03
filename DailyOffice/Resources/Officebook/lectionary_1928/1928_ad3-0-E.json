@@ -1,0 +1,15 @@
+{
+    "id": "ad3-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "9:35-10:7"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "61:1-11"
+        }
+    }
+}

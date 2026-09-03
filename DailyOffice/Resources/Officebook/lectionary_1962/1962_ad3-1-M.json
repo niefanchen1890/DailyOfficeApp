@@ -1,0 +1,15 @@
+{
+    "id": "ad3-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "7:1-23"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "42:1-17"
+        }
+    }
+}

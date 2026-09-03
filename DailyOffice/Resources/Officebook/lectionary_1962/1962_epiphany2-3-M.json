@@ -1,0 +1,15 @@
+{
+    "id": "epiphany2-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "13:24-43"
+        },
+        "ot": {
+            "book": "西番雅書",
+            "chapter": "1:1-18"
+        }
+    }
+}

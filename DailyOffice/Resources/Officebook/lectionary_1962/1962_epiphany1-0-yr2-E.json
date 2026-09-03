@@ -1,0 +1,15 @@
+{
+    "id": "epiphany1-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "12:20-36"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "43:1-13"
+        }
+    }
+}

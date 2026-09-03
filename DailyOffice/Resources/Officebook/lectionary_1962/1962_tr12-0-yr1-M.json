@@ -1,0 +1,15 @@
+{
+    "id": "tr12-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "5:1-11"
+        },
+        "ot": {
+            "book": "何西阿書",
+            "chapter": "11:1-9a"
+        }
+    }
+}

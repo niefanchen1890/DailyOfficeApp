@@ -1,0 +1,15 @@
+{
+    "id": "tr26-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "20:1-18"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "29:2-18"
+        }
+    }
+}

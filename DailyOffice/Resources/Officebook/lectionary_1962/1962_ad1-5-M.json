@@ -1,0 +1,15 @@
+{
+    "id": "ad1-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "3:13-35"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "14:3-27"
+        }
+    }
+}

@@ -67,7 +67,7 @@ class EveningPrayerDataLoader {
         }
         
         let fileName = "evening_prayer_data_\(lang.rawValue)"
-        print("🌙 正在載入晚禱: \(fileName).json")
+        AppLog.debug("🌙 正在載入晚禱: \(fileName).json")
         
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             fatalError("無法找到 \(fileName).json")

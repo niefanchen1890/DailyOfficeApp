@@ -1,0 +1,15 @@
+{
+    "id": "lent5-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "19:1-28"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "9:1-27"
+        }
+    }
+}

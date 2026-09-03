@@ -1,0 +1,15 @@
+{
+    "id": "lent6-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "3:1-21"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "21:1-9"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0722-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "15:40-end"
+        },
+        "ot": {
+            "book": "西番雅書",
+            "chapter": "3:14-end"
+        }
+    }
+}

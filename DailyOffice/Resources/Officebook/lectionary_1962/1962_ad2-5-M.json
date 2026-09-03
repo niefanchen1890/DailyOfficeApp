@@ -1,0 +1,15 @@
+{
+    "id": "ad2-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "6:14-29"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "31:1-9"
+        }
+    }
+}

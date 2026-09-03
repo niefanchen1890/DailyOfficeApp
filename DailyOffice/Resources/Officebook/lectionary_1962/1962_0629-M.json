@@ -1,0 +1,15 @@
+{
+    "id": "0629-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "11:1-18"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "3:4-11"
+        }
+    }
+}

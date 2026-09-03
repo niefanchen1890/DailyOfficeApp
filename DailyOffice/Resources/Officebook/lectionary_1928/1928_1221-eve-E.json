@@ -1,0 +1,15 @@
+{
+    "id": "1221-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "11:1-16"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "6:8-23"
+        }
+    }
+}

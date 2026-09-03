@@ -1,0 +1,15 @@
+{
+    "id": "tr22-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "2:11-3:7"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "36:26-37:24"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1130-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "1:29-42"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "10:29-36"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr5-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "5:1-16"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "12:1-25"
+        }
+    }
+}

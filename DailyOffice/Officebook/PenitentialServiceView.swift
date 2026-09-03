@@ -425,7 +425,7 @@ class PenitentialServiceViewModel: ObservableObject {
             psalm51 = result.content
             psalmTitle = result.title
         } else {
-            print("⚠️ [懺悔文] 無法載入詩篇第51篇")
+            AppLog.warning("⚠️ [懺悔文] 無法載入詩篇第51篇")
         }
     }
 }

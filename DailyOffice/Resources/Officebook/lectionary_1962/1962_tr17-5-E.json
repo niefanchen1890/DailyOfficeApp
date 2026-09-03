@@ -1,0 +1,15 @@
+{
+    "id": "tr17-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "19:31-end"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "22:23-end"
+        }
+    }
+}

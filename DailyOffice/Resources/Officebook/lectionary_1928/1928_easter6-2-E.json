@@ -1,0 +1,15 @@
+{
+    "id": "easter6-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "4:1-17"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "8:22-40"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0624-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "1:5-25"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "13:1-7"
+        }
+    }
+}

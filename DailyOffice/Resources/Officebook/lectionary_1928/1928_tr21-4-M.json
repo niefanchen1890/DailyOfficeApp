@@ -1,0 +1,15 @@
+{
+    "id": "tr21-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "4:43-54"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "5:1-12"
+        }
+    }
+}

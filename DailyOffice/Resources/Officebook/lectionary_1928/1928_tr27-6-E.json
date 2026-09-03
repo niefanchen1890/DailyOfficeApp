@@ -1,0 +1,15 @@
+{
+    "id": "tr27-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得後書",
+            "chapter": "3:1-18"
+        },
+        "ot": {
+            "book": "多比傳",
+            "chapter": "13:1-18"
+        }
+    }
+}

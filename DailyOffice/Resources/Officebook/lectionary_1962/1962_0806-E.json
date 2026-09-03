@@ -1,0 +1,15 @@
+{
+    "id": "0806-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "3:1-8"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "46:1-16"
+        }
+    }
+}

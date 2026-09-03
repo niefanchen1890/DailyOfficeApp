@@ -1,0 +1,15 @@
+{
+    "id": "1028-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "14:15-24"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "5:1-16"
+        }
+    }
+}

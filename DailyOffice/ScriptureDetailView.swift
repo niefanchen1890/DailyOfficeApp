@@ -2,16 +2,18 @@ import SwiftUI
 
 struct ScriptureDetailView: View {
     let day: LectionaryDay
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     @State private var selectedVersionCode: String = ""
     @State private var verses: [BibleVerse] = []
     @State private var isLoading = true
+    @State private var currentTaskID = UUID()
     
     // 預先緩存處理好的屬性字串
     @State private var formattedVerses: [String: AttributedString] = [:]
     
     private var versionOptions: [(name: String, code: String)] {
-        let isApocrypha = LectionaryDatabaseManager.shared.isApocrypha(bookName: day.book)
+        let isApocrypha = BibleJSONService.shared.isApocrypha(book: day.book)
         if isApocrypha {
             // 🌟 已刪除 APO2014，僅保留 APO1933
             return [("1933版", "APO1933")]
@@ -26,7 +28,7 @@ struct ScriptureDetailView: View {
             // ⬛️ 頂部控制區
             VStack(alignment: .leading, spacing: 12) {
                 HStack(alignment: .lastTextBaseline) {
-                    Text(day.book)
+                    Text(day.book.adaptChinese(isSimplified: languageStore.isSimplified))
                         .font(.system(.title, )).bold()
                     Text(day.chapter)
                         .font(.system(.title3, ))
@@ -35,7 +37,7 @@ struct ScriptureDetailView: View {
                 
                 Picker("版本", selection: $selectedVersionCode) {
                     ForEach(versionOptions, id: \.code) { option in
-                        Text(option.name).tag(option.code)
+                        Text(option.name.adaptChinese(isSimplified: languageStore.isSimplified)).tag(option.code)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -49,7 +51,7 @@ struct ScriptureDetailView: View {
             // ⬜️ 經文內容區
             if isLoading {
                 Spacer()
-                ProgressView("正在開啟聖道...").frame(maxWidth: .infinity)
+                ProgressView("正在開啟聖道...".adaptChinese(isSimplified: languageStore.isSimplified)).frame(maxWidth: .infinity)
                 Spacer()
             } else {
                 List {
@@ -78,16 +80,27 @@ struct ScriptureDetailView: View {
         .onChange(of: selectedVersionCode) { _, _ in
             loadScripture()
         }
+        .onChange(of: languageStore.language) { _, _ in
+            loadScripture()
+        }
     }
 
     private func loadScripture() {
+        let taskID = UUID()
+        currentTaskID = taskID
         isLoading = true
         DispatchQueue.global(qos: .userInitiated).async {
-            let fetched = LectionaryDatabaseManager.shared.fetchVerses(
+            let fetchedStrings = BibleJSONService.shared.fetchVersesList(
                 version: selectedVersionCode,
                 book: day.book,
                 reference: day.chapter
             )
+            let fetched = fetchedStrings.enumerated().map { index, content in
+                BibleVerse(
+                    verse: Self.leadingVerseNumber(in: content) ?? index + 1,
+                    content: content
+                )
+            }
             
             var tempCache: [String: AttributedString] = [:]
             for verse in fetched {
@@ -95,11 +108,17 @@ struct ScriptureDetailView: View {
             }
             
             DispatchQueue.main.async {
+                guard taskID == self.currentTaskID else { return }
                 self.verses = fetched
                 self.formattedVerses = tempCache
                 self.isLoading = false
             }
         }
+    }
+
+    private static func leadingVerseNumber(in content: String) -> Int? {
+        let digits = content.prefix { $0.isNumber }
+        return Int(digits)
     }
     
     private func createAttributedString(from rawText: String) -> AttributedString {

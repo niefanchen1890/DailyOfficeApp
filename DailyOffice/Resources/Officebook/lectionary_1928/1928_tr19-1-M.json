@@ -1,0 +1,15 @@
+{
+    "id": "tr19-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "23:1-26"
+        },
+        "ot": {
+            "book": "歷代志上",
+            "chapter": "21:18-22:4"
+        }
+    }
+}

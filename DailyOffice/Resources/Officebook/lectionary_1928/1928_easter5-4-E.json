@@ -1,0 +1,15 @@
+{
+    "id": "easter5-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "8:1-17"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "58:1-14"
+        }
+    }
+}

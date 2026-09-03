@@ -1,0 +1,15 @@
+{
+    "id": "lent6-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "19:38-42"
+        },
+        "ot": {
+            "book": "以赛亚书",
+            "chapter": "50:4-10"
+        }
+    }
+}

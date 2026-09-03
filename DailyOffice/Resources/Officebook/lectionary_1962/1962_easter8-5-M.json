@@ -1,0 +1,15 @@
+{
+    "id": "easter8-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "5:14-6:10"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "11:16-29"
+        }
+    }
+}

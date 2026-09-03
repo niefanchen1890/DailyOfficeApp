@@ -1,0 +1,15 @@
+{
+    "id": "tr7-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "16"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "24"
+        }
+    }
+}

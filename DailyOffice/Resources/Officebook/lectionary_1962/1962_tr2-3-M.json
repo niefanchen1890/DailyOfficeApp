@@ -1,0 +1,15 @@
+{
+    "id": "tr2-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得後書",
+            "chapter": "3:1-18"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "32:1-22"
+        }
+    }
+}

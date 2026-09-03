@@ -1,0 +1,15 @@
+{
+    "id": "tr7-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "25:31"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "43"
+        }
+    }
+}

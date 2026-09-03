@@ -1,0 +1,15 @@
+{
+    "id": "lent6-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "17:1-26"
+        },
+        "ot": {
+            "book": "耶利米哀歌",
+            "chapter": "1:1-14"
+        }
+    }
+}

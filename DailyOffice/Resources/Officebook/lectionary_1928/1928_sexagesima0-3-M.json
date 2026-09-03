@@ -1,0 +1,15 @@
+{
+    "id": "sexagesima0-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "2:1-12"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "42:18-38"
+        }
+    }
+}

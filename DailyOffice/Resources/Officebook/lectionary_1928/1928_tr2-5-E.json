@@ -1,0 +1,15 @@
+{
+    "id": "tr2-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "18:24-19:20"
+        },
+        "ot": {
+            "book": "撒迦利亞書",
+            "chapter": "8:1-23"
+        }
+    }
+}

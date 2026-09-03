@@ -1,0 +1,15 @@
+{
+    "id": "sexagesima0-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "20:1-16"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "16:1-20"
+        }
+    }
+}

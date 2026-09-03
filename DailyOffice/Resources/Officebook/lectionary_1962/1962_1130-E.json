@@ -1,0 +1,15 @@
+{
+    "id": "1130-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "12:20-32"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "47:1-12"
+        }
+    }
+}

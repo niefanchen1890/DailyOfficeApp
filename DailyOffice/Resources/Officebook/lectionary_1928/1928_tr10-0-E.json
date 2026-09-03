@@ -1,0 +1,15 @@
+{
+    "id": "tr10-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "9:46"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "24:14-28"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr1-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "8:1-13"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "11:1-19、23"
+        }
+    }
+}

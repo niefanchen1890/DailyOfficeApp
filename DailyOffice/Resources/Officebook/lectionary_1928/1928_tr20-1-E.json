@@ -1,0 +1,15 @@
+{
+    "id": "tr20-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提多書",
+            "chapter": "1:1-2:10"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "18:1-21"
+        }
+    }
+}

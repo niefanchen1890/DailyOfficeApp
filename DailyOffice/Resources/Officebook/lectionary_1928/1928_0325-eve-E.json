@@ -1,0 +1,15 @@
+{
+    "id": "0325-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "12:1-18"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "3:1-15"
+        }
+    }
+}

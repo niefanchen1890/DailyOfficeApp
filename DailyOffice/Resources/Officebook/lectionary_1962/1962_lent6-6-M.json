@@ -1,0 +1,15 @@
+{
+    "id": "lent6-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "2:11-25"
+        },
+        "ot": {
+            "book": "撒迦利亞書",
+            "chapter": "9:9-12"
+        }
+    }
+}

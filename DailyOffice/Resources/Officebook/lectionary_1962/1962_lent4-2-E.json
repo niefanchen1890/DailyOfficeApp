@@ -1,0 +1,15 @@
+{
+    "id": "lent4-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太前書",
+            "chapter": "1:18-2:15"
+        },
+        "ot": {
+            "book": "出埃及记",
+            "chapter": "29:38-30:16"
+        }
+    }
+}

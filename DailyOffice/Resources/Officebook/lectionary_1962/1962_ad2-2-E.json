@@ -1,0 +1,15 @@
+{
+    "id": "ad2-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "13:1-18"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "24:1-23"
+        }
+    }
+}

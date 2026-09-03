@@ -1,0 +1,15 @@
+{
+    "id": "tr21-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "1:13-25"
+        },
+        "ot": {
+            "book": "以斯帖記",
+            "chapter": "1:1-22"
+        }
+    }
+}

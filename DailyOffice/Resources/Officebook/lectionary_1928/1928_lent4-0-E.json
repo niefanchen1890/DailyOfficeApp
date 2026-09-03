@@ -1,0 +1,15 @@
+{
+    "id": "lent4-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "7:13-29"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "13:1-18"
+        }
+    }
+}

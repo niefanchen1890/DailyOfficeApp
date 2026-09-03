@@ -1,0 +1,15 @@
+{
+    "id": "1230-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "16:13-20"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "3:1-18"
+        }
+    }
+}

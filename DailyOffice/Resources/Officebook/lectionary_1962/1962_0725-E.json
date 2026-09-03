@@ -1,0 +1,15 @@
+{
+    "id": "0725-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "14:32-42"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "45"
+        }
+    }
+}

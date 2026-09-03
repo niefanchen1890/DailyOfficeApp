@@ -1,0 +1,15 @@
+{
+    "id": "tr20-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "4:1-22"
+        },
+        "ot": {
+            "book": "尼希米記",
+            "chapter": "13:1-31"
+        }
+    }
+}

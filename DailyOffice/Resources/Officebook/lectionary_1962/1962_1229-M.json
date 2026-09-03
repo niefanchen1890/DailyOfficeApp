@@ -1,0 +1,15 @@
+{
+    "id": "1229-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "1:14-18"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "1:1-18"
+        }
+    }
+}

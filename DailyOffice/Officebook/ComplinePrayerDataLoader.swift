@@ -72,8 +72,7 @@ class ComplinePrayerDataLoader {
     private var cache: [AppLanguage: ComplinePrayerJSON] = [:]
     
     var currentLanguage: AppLanguage {
-        let code = UserDefaults.standard.string(forKey: "appLanguage") ?? AppLanguage.traditional.rawValue
-        return AppLanguage(rawValue: code) ?? .traditional
+        AppLanguageStore.shared.language
     }
     
     func clearCache() { cache.removeAll() }

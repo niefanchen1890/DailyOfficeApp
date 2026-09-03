@@ -1,0 +1,15 @@
+{
+    "id": "1018-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "1:1-4"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "1:1-14"
+        }
+    }
+}

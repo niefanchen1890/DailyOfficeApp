@@ -1,0 +1,15 @@
+{
+    "id": "easter6-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "6:19-34"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "8:1-20"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "lent2-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "21:33-46"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "19:1-18"
+        }
+    }
+}

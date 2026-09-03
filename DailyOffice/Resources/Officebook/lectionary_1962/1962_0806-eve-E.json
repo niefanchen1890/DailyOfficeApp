@@ -1,0 +1,15 @@
+{
+    "id": "0806-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "9:28-45"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "24:12-end"
+        }
+    }
+}

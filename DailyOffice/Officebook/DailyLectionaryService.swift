@@ -27,22 +27,19 @@ class DailyLectionaryService {
     // MARK: - 公開接口
     // ═══════════════════════════════════════════════════════════════
     
-    /// 主入口：獲取指定日期的完整經課（JSON 優先 → 資料庫回退）
+    /// 主入口：從 lectionary_1928／lectionary_1962 JSON 獲取指定日期的完整經課。
     func readings(for date: Date, year: String = "1928") -> DailyReadings {
         let liturgy = LiturgyCoreService.shared.resolve(for: date)
         let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         
         // 🌟 1962 主日雙年規則：
         // 單數年使用 yr2，雙數年使用 yr1
-        let databaseYear: String
         let lectionarySubYear: String?
         
         if year == "1962" {
-            databaseYear = "1962"
             let calendarYear = calendar.component(.year, from: date)
             lectionarySubYear = calendarYear % 2 == 0 ? "yr1" : "yr2"
         } else {
-            databaseYear = year
             lectionarySubYear = nil
         }
         
@@ -54,40 +51,14 @@ class DailyLectionaryService {
         // ═══════════════════════════════════════════════════════
         let supersession = firstVespersSupersession(for: date)
         
-        // 1. 先查資料庫，作為回退底稿
-        let databaseResult = loadDatabaseReadings(
+        return loadLectionaryJSONReadings(
             for: date,
-            year: databaseYear,
+            year: year,
             liturgy: liturgy,
             info: info,
             lectionarySubYear: lectionarySubYear,
             supersession: supersession
         )
-        
-        // 2. 再查 JSON；JSON 有的覆蓋，JSON 沒有的用資料庫補上
-        if let jsonResult = loadJSONReadings(
-            for: date,
-            liturgy: liturgy,
-            year: year,
-            supersession: supersession
-        ) {
-            print("📖 [經課] 使用 JSON 內嵌經課，缺項回退到資料庫")
-            
-            return DailyReadings(
-                date: date,
-                liturgy: liturgy,
-                seasonInfo: info,
-                isHolyDay: true,
-                morningOT: jsonResult.morningOT ?? databaseResult.morningOT,
-                morningNT: jsonResult.morningNT ?? databaseResult.morningNT,
-                eveningOT: jsonResult.eveningOT ?? databaseResult.eveningOT,
-                eveningNT: jsonResult.eveningNT ?? databaseResult.eveningNT
-            )
-        }
-        
-        // 3. JSON 完全無經課時，使用資料庫
-        print("📖 [經課] JSON 無經課，回退到資料庫查詢")
-        return databaseResult
     }
     
     /// 供 ViewModel Picker 使用：查詢 JSON 中存在的經課版本選項
@@ -139,136 +110,15 @@ class DailyLectionaryService {
         
         guard let tomorrow = calendar.date(byAdding: .day, value: 1, to: date) else { return nil }
         
-        print("🌟 [經課] 前夕遮蔽：\(mmddFor(date)) 晚禱轉為 \(mmddFor(tomorrow))『\(eveningLiturgy.mainTitle)』前夕晚禱，今日聖日降級為紀念")
+        AppLog.debug("🌟 [經課] 前夕遮蔽：\(mmddFor(date)) 晚禱轉為 \(mmddFor(tomorrow))『\(eveningLiturgy.mainTitle)』前夕晚禱，今日聖日降級為紀念")
         return (tomorrow, eveningLiturgy)
     }
     
     // ═══════════════════════════════════════════════════════════════
-    // MARK: - JSON 經課加載（私有）
+    // MARK: - 1928／1962 經課 JSON
     // ═══════════════════════════════════════════════════════════════
     
-    private func loadJSONReadings(
-        for date: Date,
-        liturgy: DailyLiturgy,
-        year: String,
-        supersession: (date: Date, liturgy: DailyLiturgy)? = nil
-    ) -> (morningOT: LectionaryDay?, morningNT: LectionaryDay?, eveningOT: LectionaryDay?, eveningNT: LectionaryDay?)? {
-        
-        print("🔍 [loadJSONReadings] 開始 year=\(year), date=\(date)")
-        
-        var mOT: LectionaryDay?
-        var mNT: LectionaryDay?
-        var eOT: LectionaryDay?
-        var eNT: LectionaryDay?
-        
-        // ── 早禱 ──
-        // 早禱不受前夕遮蔽影響，仍讀今日聖日經課
-        print("🔍 [loadJSONReadings] 查早禱經課...")
-        if let group = DailyOfficeLoader.shared.jsonLessons(
-            for: date,
-            liturgy: liturgy,
-            isEvening: false,
-            year: year
-        ) {
-            print("✅ [loadJSONReadings] 早禱 group 獲取成功")
-            
-            if let ot = group.ot {
-                mOT = LectionaryDay(
-                    season: "json",
-                    weekIndex: 0,
-                    dayKey: "json-\(year)-M-OT",
-                    book: ot.book,
-                    chapter: ot.chapter
-                )
-                print("✅ [loadJSONReadings] 早禱舊約: \(ot.book) \(ot.chapter)")
-            } else {
-                print("⚠️ [loadJSONReadings] 早禱舊約 ot 為 nil")
-            }
-            
-            if let nt = group.nt {
-                mNT = LectionaryDay(
-                    season: "json",
-                    weekIndex: 0,
-                    dayKey: "json-\(year)-M-NT",
-                    book: nt.book,
-                    chapter: nt.chapter
-                )
-                print("✅ [loadJSONReadings] 早禱新約: \(nt.book) \(nt.chapter)")
-            } else {
-                print("⚠️ [loadJSONReadings] 早禱新約 nt 為 nil")
-            }
-        } else {
-            print("❌ [loadJSONReadings] 早禱 group 為 nil")
-        }
-        
-        // ── 晚禱 ──
-        print("🔍 [loadJSONReadings] 查晚禱經課...")
-        
-        let eveningGroup: DailyOfficeFile.OfficePeriod.LessonsGroup?
-        if let sup = supersession {
-            // 🌟 前夕遮蔽：晚禱改讀「被慶祝聖日」（明日）JSON 的
-            //    vigil（前夕）經課；無 vigil 則用 evening。
-            print("🌟 [loadJSONReadings] 前夕遮蔽生效，晚禱改讀 \(mmddFor(sup.date))『\(sup.liturgy.mainTitle)』vigil/evening 經課")
-            eveningGroup = DailyOfficeLoader.shared.vigilLessons(
-                for: sup.date,
-                liturgy: sup.liturgy,
-                year: year
-            )
-        } else {
-            eveningGroup = DailyOfficeLoader.shared.jsonLessons(
-                for: date,
-                liturgy: liturgy,
-                isEvening: true,
-                year: year
-            )
-        }
-        
-        if let group = eveningGroup {
-            print("✅ [loadJSONReadings] 晚禱 group 獲取成功")
-            
-            if let ot = group.ot {
-                eOT = LectionaryDay(
-                    season: "json",
-                    weekIndex: 0,
-                    dayKey: "json-\(year)-E-OT",
-                    book: ot.book,
-                    chapter: ot.chapter
-                )
-                print("✅ [loadJSONReadings] 晚禱舊約: \(ot.book) \(ot.chapter)")
-            } else {
-                print("⚠️ [loadJSONReadings] 晚禱舊約 ot 為 nil")
-            }
-            
-            if let nt = group.nt {
-                eNT = LectionaryDay(
-                    season: "json",
-                    weekIndex: 0,
-                    dayKey: "json-\(year)-E-NT",
-                    book: nt.book,
-                    chapter: nt.chapter
-                )
-                print("✅ [loadJSONReadings] 晚禱新約: \(nt.book) \(nt.chapter)")
-            } else {
-                print("⚠️ [loadJSONReadings] 晚禱新約 nt 為 nil")
-            }
-        } else {
-            print("❌ [loadJSONReadings] 晚禱 group 為 nil")
-        }
-        
-        let hasData = mOT != nil || mNT != nil || eOT != nil || eNT != nil
-        print("🔍 [loadJSONReadings] 結果: mOT=\(mOT != nil), mNT=\(mNT != nil), eOT=\(eOT != nil), eNT=\(eNT != nil), 返回=\(hasData)")
-        
-        if hasData {
-            return (mOT, mNT, eOT, eNT)
-        }
-        return nil
-    }
-    
-    // ═══════════════════════════════════════════════════════════════
-    // MARK: - 資料庫回退
-    // ═══════════════════════════════════════════════════════════════
-    
-    private func loadDatabaseReadings(
+    private func loadLectionaryJSONReadings(
         for date: Date,
         year: String,
         liturgy: DailyLiturgy,
@@ -283,7 +133,7 @@ class DailyLectionaryService {
         // 聖日經課查詢
         let mmdd = mmddFor(date)
         if fixedHolyDays.contains(mmdd) {
-            rawDays = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(
+            rawDays = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(
                 year: year,
                 keyPrefix: mmdd
             )
@@ -296,7 +146,7 @@ class DailyLectionaryService {
             let query = buildQuery(info: info, date: date)
             
             if query.useSpecificKey {
-                rawDays = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(
+                rawDays = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(
                     year: year,
                     keyPrefix: query.key
                 )
@@ -305,7 +155,7 @@ class DailyLectionaryService {
                 // tr-M-NT / tr-yr1-M-NT / tr-yr2-M-NT
                 allowNoDayIndex = true
             } else {
-                rawDays = LectionaryDatabaseManager.shared.fetchLectionary(
+                rawDays = LectionaryJSONService.shared.fetchLectionary(
                     year: year,
                     season: query.season,
                     week: query.week
@@ -323,9 +173,9 @@ class DailyLectionaryService {
             allowNoDayIndex: allowNoDayIndex
         )
         
-        print("📖 [DB經課] year=\(year), subYear=\(lectionarySubYear ?? "nil"), raw=\(rawDays.count), filtered=\(filtered.count)")
+        AppLog.debug("📖 [經課 JSON] year=\(year), subYear=\(lectionarySubYear ?? "nil"), raw=\(rawDays.count), filtered=\(filtered.count)")
         for d in filtered {
-            print("   \(d.dayKey) \(d.book) \(d.chapter)")
+            AppLog.debug("   \(d.dayKey) \(d.book) \(d.chapter)")
         }
         
         let base = parseToDailyReadings(
@@ -345,7 +195,7 @@ class DailyLectionaryService {
         // ═══════════════════════════════════════════════════════
         if let sup = supersession, isHolyDay {
             let tomorrowKey = mmddFor(sup.date)
-            var eveningRaw = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(
+            var eveningRaw = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(
                 year: year,
                 keyPrefix: tomorrowKey
             )
@@ -357,25 +207,25 @@ class DailyLectionaryService {
                 if !eveOnly.isEmpty {
                     eveningRaw = eveOnly
                 }
-                print("📖 [DB經課] 前夕遮蔽：晚禱改用明日聖日 \(tomorrowKey)『\(sup.liturgy.mainTitle)』經課（\(eveningRaw.count) 筆）")
+                AppLog.debug("📖 [經課 JSON] 前夕遮蔽：晚禱改用明日聖日 \(tomorrowKey)『\(sup.liturgy.mainTitle)』經課（\(eveningRaw.count) 筆）")
             } else {
                 // 明日聖日無專用經課 → 平日經課（按今日節期週次查詢）
                 let query = buildQuery(info: info, date: date)
                 if query.useSpecificKey {
-                    eveningRaw = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(
+                    eveningRaw = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(
                         year: year,
                         keyPrefix: query.key
                     )
                     eveningAllowNoDayIndex = true
                 } else {
-                    eveningRaw = LectionaryDatabaseManager.shared.fetchLectionary(
+                    eveningRaw = LectionaryJSONService.shared.fetchLectionary(
                         year: year,
                         season: query.season,
                         week: query.week
                     )
                     eveningAllowNoDayIndex = false
                 }
-                print("📖 [DB經課] 前夕遮蔽：明日聖日 \(tomorrowKey) 無專用經課，晚禱改用平日經課（\(eveningRaw.count) 筆）")
+                AppLog.debug("📖 [經課 JSON] 前夕遮蔽：明日聖日 \(tomorrowKey) 無專用經課，晚禱改用平日經課（\(eveningRaw.count) 筆）")
             }
             
             let eveningFiltered = filterDays(
@@ -392,7 +242,7 @@ class DailyLectionaryService {
                 lectionarySubYear: lectionarySubYear
             )
             
-            print("📖 [DB經課] 前夕遮蔽結果：晚禱 OT=\(eveningReadings.eveningOT.map { "\($0.book) \($0.chapter)" } ?? "nil"), NT=\(eveningReadings.eveningNT.map { "\($0.book) \($0.chapter)" } ?? "nil")")
+            AppLog.debug("📖 [經課 JSON] 前夕遮蔽結果：晚禱 OT=\(eveningReadings.eveningOT.map { "\($0.book) \($0.chapter)" } ?? "nil"), NT=\(eveningReadings.eveningNT.map { "\($0.book) \($0.chapter)" } ?? "nil")")
             
             return DailyReadings(
                 date: date,
@@ -409,7 +259,7 @@ class DailyLectionaryService {
         return base
     }
     
-    // MARK: - 節期 → 數據庫查詢參數
+    // MARK: - 節期 → JSON 檔名查詢參數
     private func buildQuery(info: SeasonInfo, date: Date) -> (useSpecificKey: Bool, key: String, season: String, week: Int) {
         switch info.season {
         case .advent:

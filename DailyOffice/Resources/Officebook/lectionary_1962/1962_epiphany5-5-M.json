@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "19:21-41"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "33:1-13"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1227-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "13:20-35"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "33:7-23"
+        }
+    }
+}

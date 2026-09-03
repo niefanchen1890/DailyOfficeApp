@@ -1,0 +1,15 @@
+{
+    "id": "tr16-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "腓立比書",
+            "chapter": "3"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "40"
+        }
+    }
+}

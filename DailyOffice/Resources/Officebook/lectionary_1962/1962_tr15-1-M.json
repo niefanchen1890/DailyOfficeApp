@@ -1,0 +1,15 @@
+{
+    "id": "tr15-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "6:1-9"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "28"
+        }
+    }
+}

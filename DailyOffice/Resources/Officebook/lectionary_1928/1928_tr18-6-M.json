@@ -1,0 +1,15 @@
+{
+    "id": "tr18-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "22:54-71"
+        },
+        "ot": {
+            "book": "歷代志上",
+            "chapter": "21:1-17"
+        }
+    }
+}

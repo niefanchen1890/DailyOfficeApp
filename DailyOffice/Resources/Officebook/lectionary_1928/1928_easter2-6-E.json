@@ -1,0 +1,15 @@
+{
+    "id": "easter2-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "马可福音",
+            "chapter": "12:18-27"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "46:1-13"
+        }
+    }
+}

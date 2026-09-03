@@ -1,0 +1,15 @@
+{
+    "id": "tr17-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "10:1-24"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "33:1-11"
+        }
+    }
+}

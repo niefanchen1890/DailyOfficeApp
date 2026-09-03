@@ -1,0 +1,15 @@
+{
+    "id": "0611-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "4:32-37"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "29:11-16"
+        }
+    }
+}

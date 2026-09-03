@@ -1,0 +1,15 @@
+{
+    "id": "0125-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "1:11-24"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "1:4-10"
+        }
+    }
+}

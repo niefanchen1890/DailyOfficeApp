@@ -1,0 +1,15 @@
+{
+    "id": "epiphany1-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "10:24-42"
+        },
+        "ot": {
+            "book": "何西阿書",
+            "chapter": "2:14-3:5"
+        }
+    }
+}

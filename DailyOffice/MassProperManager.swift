@@ -11,7 +11,7 @@ class MassProperManager {
         // 尋找 Main Bundle 中的 JSON 檔案
         // 註：如果 Xcode 中加入資料夾時選擇 "Create groups"，檔案會自動扁平化，直接用檔名即可找到。
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
-            print("⚠️ 找不到檔案: \(filename).json")
+            AppLog.warning("⚠️ 找不到檔案: \(filename).json")
             return nil
         }
         
@@ -21,7 +21,7 @@ class MassProperManager {
             let proper = try decoder.decode(MassProper.self, from: data)
             return proper
         } catch {
-            print("❌ 解析 JSON 失敗 (\(filename)): \(error)")
+            AppLog.error("❌ 解析 JSON 失敗 (\(filename)): \(error)")
             return nil
         }
     }

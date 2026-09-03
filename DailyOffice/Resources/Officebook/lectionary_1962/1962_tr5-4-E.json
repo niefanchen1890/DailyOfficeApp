@@ -1,0 +1,15 @@
+{
+    "id": "tr5-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "4:1-30"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "9:1-25"
+        }
+    }
+}

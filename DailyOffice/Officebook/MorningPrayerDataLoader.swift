@@ -1,11 +1,6 @@
 import Foundation
 
 // MARK: - 語言設定
-enum AppLanguage: String, CaseIterable {
-    case traditional = "zh-Hant"
-    case simplified = "zh-Hans"
-}
-
 // MARK: - ✅ 邀請聖詩數據模型（原 InvitatoryHymnLoader 遷入）
 struct InvitatoryHymnData: Hashable {
     let title: String
@@ -218,37 +213,18 @@ class MorningPrayerDataLoader {
     
     /// 從 UserDefaults 讀取目前語言，預設繁體
     var currentLanguage: AppLanguage {
-        let code = UserDefaults.standard.string(forKey: "appLanguage") ?? AppLanguage.traditional.rawValue
-        return AppLanguage(rawValue: code) ?? .traditional
+        AppLanguageStore.shared.language
     }
     
     func clearCache() {
         cache.removeAll()
+        invitatoryHymnsCache.removeAll()
+        officeHymnsCache.removeAll()
     }
     
     /// ✅ 統一語言切換入口：清理自身與所有子加載器的快取
     func setLanguage(_ language: AppLanguage) {
-        // 移除 guard language != currentLanguage else { return }
-        // 因為 @AppStorage 已經提前修改了 UserDefaults，這裡的 currentLanguage 已經是新值
-        
-        UserDefaults.standard.set(language.rawValue, forKey: "appLanguage")
-        
-        // 1. 清理自身所有快取
-        clearCache()
-        invitatoryHymnsCache.removeAll()
-        officeHymnsCache.removeAll() // 🌟 新增：清理日課聖詩快取
-        // 🌟 新增：清理晚禱快取
-        EveningPrayerDataLoader.shared.clearCache()
-        
-        // 2. 級聯清理 DailyOfficeLoader（聖日/節期檔案）
-        DailyOfficeLoader.shared.clearCache()
-        
-        // 3. 級聯清理聖經選句與頌歌
-        BibleSentencesLoader.shared.clearCache()
-        BibleSentencesLoader.eveningShared.clearCache()
-        CanticleLoader.shared.clearCache()
-        
-        print("🌐 語言已切換至 \(language.rawValue)，所有快取已清理")
+        AppLanguageStore.shared.setLanguage(language)
     }
     
     // MARK: - ✅ 邀請聖詩載入（併入 DataLoader，支援三語 JSON）
@@ -344,7 +320,7 @@ class MorningPrayerDataLoader {
         let fileName = "morning_prayer_data_\(lang.rawValue)"
         
         // ✅ 加這行除錯
-        print("📖 正在載入: \(fileName).json | currentLanguage=\(currentLanguage.rawValue)")
+        AppLog.debug("📖 正在載入: \(fileName).json | currentLanguage=\(currentLanguage.rawValue)")
         
         guard let url = Bundle.main.url(
             forResource: fileName,     // e.g. "morning_prayer_data_zh-Hant"
@@ -356,7 +332,7 @@ class MorningPrayerDataLoader {
                 let fileManager = FileManager.default
                 if let files = try? fileManager.contentsOfDirectory(atPath: resourcePath) {
                     let jsonFiles = files.filter { $0.hasSuffix(".json") }
-                    print("📁 Bundle 根目錄 JSON 檔案：\(jsonFiles)")
+                    AppLog.debug("📁 Bundle 根目錄 JSON 檔案：\(jsonFiles)")
                 }
             }
             fatalError("無法找到 \(fileName).json")

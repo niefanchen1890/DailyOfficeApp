@@ -14,7 +14,7 @@ class LitanyDataLoader: ObservableObject {
         // 因為 JSON 已包含雙語，只需載入一次即可
         guard let url = Bundle.main.url(forResource: "litany_data", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
-            print("❌ 無法找到 litany_data.json")
+            AppLog.error("❌ 無法找到 litany_data.json")
             return
         }
         
@@ -40,7 +40,7 @@ class LitanyDataLoader: ObservableObject {
                 self.uiData = model
             }
         } catch {
-            print("❌ 解析 litany_data.json 失敗: \(error)")
+            AppLog.error("❌ 解析 litany_data.json 失敗: \(error)")
         }
     }
 }

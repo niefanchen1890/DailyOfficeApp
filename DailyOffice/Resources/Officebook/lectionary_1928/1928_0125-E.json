@@ -1,0 +1,15 @@
+{
+    "id": "0125-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "26:1-23"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "1:1-10"
+        }
+    }
+}

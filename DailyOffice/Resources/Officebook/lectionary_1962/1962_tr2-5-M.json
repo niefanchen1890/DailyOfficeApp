@@ -1,0 +1,15 @@
+{
+    "id": "tr2-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "1:1-2:6"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "39:1-30"
+        }
+    }
+}

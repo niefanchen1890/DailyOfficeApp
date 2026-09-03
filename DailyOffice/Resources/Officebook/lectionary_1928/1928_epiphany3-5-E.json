@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "11:17-44"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "1:1-2:3"
+        }
+    }
+}

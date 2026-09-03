@@ -1,0 +1,15 @@
+{
+    "id": "lent4-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "23:1-25"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "45:15-28"
+        }
+    }
+}

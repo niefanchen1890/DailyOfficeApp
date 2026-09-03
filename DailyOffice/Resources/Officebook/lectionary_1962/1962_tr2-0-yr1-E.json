@@ -1,0 +1,15 @@
+{
+    "id": "tr2-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "2:1-21"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "16:1-13"
+        }
+    }
+}

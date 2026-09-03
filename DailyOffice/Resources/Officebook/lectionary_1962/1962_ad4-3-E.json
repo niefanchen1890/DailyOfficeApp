@@ -1,0 +1,15 @@
+{
+    "id": "ad4-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得後書",
+            "chapter": "1:1-21"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "57:15-21"
+        }
+    }
+}

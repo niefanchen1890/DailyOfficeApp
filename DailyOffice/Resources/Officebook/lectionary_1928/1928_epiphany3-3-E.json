@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "10:22-42"
+        },
+        "ot": {
+            "book": "約拿書",
+            "chapter": "3:1-4:11"
+        }
+    }
+}

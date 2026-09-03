@@ -1,0 +1,15 @@
+{
+    "id": "0725-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "10:16-end"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "26:1-11"
+        }
+    }
+}

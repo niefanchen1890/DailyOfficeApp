@@ -1,0 +1,15 @@
+{
+    "id": "easter3-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "20:1-15"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "4:25-40"
+        }
+    }
+}

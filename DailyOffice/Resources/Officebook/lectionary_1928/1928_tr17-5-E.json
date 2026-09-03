@@ -1,0 +1,15 @@
+{
+    "id": "tr17-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "4:2-end"
+        },
+        "ot": {
+            "book": "利未記",
+            "chapter": "19:1-18, 32-end"
+        }
+    }
+}

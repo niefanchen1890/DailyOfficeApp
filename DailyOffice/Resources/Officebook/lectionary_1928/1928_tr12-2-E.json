@@ -1,0 +1,15 @@
+{
+    "id": "tr12-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "6:23-9:end"
+        },
+        "ot": {
+            "book": "瑪喀比傳上",
+            "chapter": "4:1-25"
+        }
+    }
+}

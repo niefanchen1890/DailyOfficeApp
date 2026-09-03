@@ -1,0 +1,15 @@
+{
+    "id": "easter1-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "1:1-12"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "25:1-9"
+        }
+    }
+}

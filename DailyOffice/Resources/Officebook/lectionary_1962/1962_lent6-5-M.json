@@ -1,0 +1,15 @@
+{
+    "id": "lent6-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "18:1-32"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "22:1-18"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "7:14-36"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "8:4-14"
+        }
+    }
+}

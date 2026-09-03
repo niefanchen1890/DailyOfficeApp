@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "15:1-34"
+        },
+        "ot": {
+            "book": "約珥書",
+            "chapter": "3:1-21"
+        }
+    }
+}

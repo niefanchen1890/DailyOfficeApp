@@ -1,0 +1,15 @@
+{
+    "id": "easter8-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "28:16-20"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "61:1-11"
+        }
+    }
+}

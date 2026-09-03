@@ -1,0 +1,15 @@
+{
+    "id": "tr11-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "4:1-15"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "18:1-17"
+        }
+    }
+}

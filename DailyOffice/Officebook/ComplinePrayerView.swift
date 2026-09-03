@@ -399,7 +399,6 @@ struct ComplinePrayerView: View {
 
                 if let antiphon = viewModel.currentPsalmAntiphon {
                     RubricBlock(text: "¶ \(antiphon.season)：")
-                    MorningPrayerView.AntiphonRow(text: antiphon.before).padding(.bottom, 4)
                 }
 
                 let keys = ComplinePrayerData.psalmKeys
@@ -408,7 +407,14 @@ struct ComplinePrayerView: View {
                     if let psalm = PsalmsLoader.shared.psalmContent(for: key) {
                         let displayTitle = ComplinePrayerData.psalmDisplayTitle(for: key)
                         let latinSubtitle = ComplinePrayerData.psalmLatinSubtitle(for: key)
-                        complinePsalmView(title: displayTitle, latin: latinSubtitle, content: psalm)
+                        complinePsalmView(
+                            title: displayTitle,
+                            latin: latinSubtitle,
+                            content: psalm,
+                            openingAntiphon: index == 0
+                                ? viewModel.currentPsalmAntiphon?.before
+                                : nil
+                        )
                         if index < keys.count - 1 { Divider().padding(.vertical, 8) }
                     }
                 }
@@ -421,13 +427,22 @@ struct ComplinePrayerView: View {
         }
     }
 
-    private func complinePsalmView(title: String, latin: String, content: PsalmContent) -> some View {
+    private func complinePsalmView(
+        title: String,
+        latin: String,
+        content: PsalmContent,
+        openingAntiphon: String? = nil
+    ) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text(title).foregroundColor(LiturgyColors.crimson)
                 if !latin.isEmpty { Text(latin).italic().foregroundColor(.primary) }
             }
             .font(.system(size: 17, weight: .semibold)).padding(.bottom, 4)
+
+            if let openingAntiphon, !openingAntiphon.isEmpty {
+                MorningPrayerView.AntiphonRow(text: openingAntiphon)
+            }
 
             ForEach(content.verses, id: \.self) { verse in psalmVerseRow(verse) }
 

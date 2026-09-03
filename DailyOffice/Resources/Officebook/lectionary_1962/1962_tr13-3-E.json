@@ -1,0 +1,15 @@
+{
+    "id": "tr13-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "4:1-26"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "17:24-end"
+        }
+    }
+}

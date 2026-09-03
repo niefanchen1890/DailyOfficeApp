@@ -249,7 +249,7 @@ class DailyOfficeLoader {
            let json = try? JSONSerialization.jsonObject(with: data) as? [String: String] {
             map = json
         } else {
-            print("⚠️ 無法加載 commemoration_map.json")
+            AppLog.debug("⚠️ 無法加載 commemoration_map.json")
         }
         self.commemorationMap = map
         
@@ -475,7 +475,7 @@ class DailyOfficeLoader {
         
         if month == 6 && day == 12 && expectedName.contains("聖巴拿巴") {
             let originalDate = calendar.date(from: DateComponents(year: year, month: 6, day: 11))!
-            print("🔄 [遷移回退] 6月12日查找 '\(expectedName)' 失敗，回退到原始日期 6月11日查找")
+            AppLog.debug("🔄 [遷移回退] 6月12日查找 '\(expectedName)' 失敗，回退到原始日期 6月11日查找")
             return loadSanctorale(date: originalDate, expectedName: expectedName)
         }
         
@@ -500,25 +500,25 @@ class DailyOfficeLoader {
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         let mmdd = String(format: "%02d%02d", month, day)
-        print("      [loadSanctorale] 日期=\(mmdd), expectedName=\(expectedName ?? "nil")")
+        AppLog.debug("      [loadSanctorale] 日期=\(mmdd), expectedName=\(expectedName ?? "nil")")
         
         if let file = loadJSON(name: "sanctorale_\(mmdd)") {
             if let expected = expectedName {
-                print("      → 找到 sanctorale_\(mmdd).json, name='\(file.name)'")
+                AppLog.debug("      → 找到 sanctorale_\(mmdd).json, name='\(file.name)'")
                 if file.name == expected {
-                    print("      → ✅ 名稱吻合")
+                    AppLog.debug("      → ✅ 名稱吻合")
                     return file
                 } else {
-                    print("      → ❌ 名稱不匹配: '\(file.name)' vs '\(expected)'")
+                    AppLog.debug("      → ❌ 名稱不匹配: '\(file.name)' vs '\(expected)'")
                 }
             } else {
-                print("      → ✅ 無 expectedName，直接返回")
+                AppLog.debug("      → ✅ 無 expectedName，直接返回")
                 return file
             }
         }
         
         guard let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) else {
-            print("      → ❌ Bundle 中無任何 json")
+            AppLog.debug("      → ❌ Bundle 中無任何 json")
             return nil
         }
         
@@ -526,36 +526,36 @@ class DailyOfficeLoader {
         let candidates = urls.filter {
             $0.deletingPathExtension().lastPathComponent.hasPrefix(prefix)
         }
-        print("      → 掃描到 \(candidates.count) 個候選: \(candidates.map { $0.lastPathComponent })")
+        AppLog.debug("      → 掃描到 \(candidates.count) 個候選: \(candidates.map { $0.lastPathComponent })")
         
         if let expected = expectedName {
             for url in candidates {
-                print("      → 嘗試解析: \(url.lastPathComponent)")
+                AppLog.debug("      → 嘗試解析: \(url.lastPathComponent)")
                 let candidateName = url.deletingPathExtension().lastPathComponent
                 if let file = loadLocalizedJSON(name: candidateName) {
-                    print("      → 解析成功: name='\(file.name)'")
+                    AppLog.debug("      → 解析成功: name='\(file.name)'")
                     if file.name == expected {
-                        print("      → ✅ 名稱吻合，返回")
+                        AppLog.debug("      → ✅ 名稱吻合，返回")
                         return file
                     } else {
-                        print("      → ❌ 名稱不匹配: '\(file.name)' vs '\(expected)'")
+                        AppLog.debug("      → ❌ 名稱不匹配: '\(file.name)' vs '\(expected)'")
                     }
                 } else {
-                    print("      → ❌ 解析失敗")
+                    AppLog.debug("      → ❌ 解析失敗")
                 }
             }
-            print("      → ❌ 所有候選均不匹配 expectedName")
+            AppLog.debug("      → ❌ 所有候選均不匹配 expectedName")
             return nil
         }
         
         let isEasterSeason = (daysToEaster != nil) && (daysToEaster! >= 0) && (daysToEaster! < 49)
-        print("      → 無 expectedName, isEasterSeason=\(isEasterSeason)")
+        AppLog.debug("      → 無 expectedName, isEasterSeason=\(isEasterSeason)")
         
         if isEasterSeason {
             if let easterURL = candidates.first(where: {
                 $0.deletingPathExtension().lastPathComponent.hasSuffix("_easter")
             }) {
-                print("      → 嘗試復活期版本: \(easterURL.lastPathComponent)")
+                AppLog.debug("      → 嘗試復活期版本: \(easterURL.lastPathComponent)")
                 let name = easterURL.deletingPathExtension().lastPathComponent
                 return loadLocalizedJSON(name: name)
             }
@@ -564,18 +564,18 @@ class DailyOfficeLoader {
         if let normalURL = candidates.first(where: {
             !$0.deletingPathExtension().lastPathComponent.hasSuffix("_easter")
         }) {
-            print("      → 嘗試普通版本: \(normalURL.lastPathComponent)")
+            AppLog.debug("      → 嘗試普通版本: \(normalURL.lastPathComponent)")
             let name = normalURL.deletingPathExtension().lastPathComponent
             return loadLocalizedJSON(name: name)
         }
         
         if isEasterSeason, let anyURL = candidates.first {
-            print("      → 復活期兜底: \(anyURL.lastPathComponent)")
+            AppLog.debug("      → 復活期兜底: \(anyURL.lastPathComponent)")
             let name = anyURL.deletingPathExtension().lastPathComponent
             return loadLocalizedJSON(name: name)
         }
         
-        print("      → ❌ loadSanctorale 全部失敗")
+        AppLog.debug("      → ❌ loadSanctorale 全部失敗")
         return nil
     }
     
@@ -589,19 +589,19 @@ class DailyOfficeLoader {
             $0.deletingPathExtension().lastPathComponent.hasPrefix(prefix)
         }
         
-        print("      [loadSanctoraleByName] 掃描 \(candidates.count) 個 sanctorale 檔案，查找 name='\(expectedName)'")
+        AppLog.debug("      [loadSanctoraleByName] 掃描 \(candidates.count) 個 sanctorale 檔案，查找 name='\(expectedName)'")
         
         for url in candidates {
             let name = url.deletingPathExtension().lastPathComponent
             if let file = loadLocalizedJSON(name: name) {
                 if file.name == expectedName {
-                    print("      → ✅ 匹配成功: \(url.lastPathComponent), name='\(file.name)'")
+                    AppLog.debug("      → ✅ 匹配成功: \(url.lastPathComponent), name='\(file.name)'")
                     return file
                 }
             }
         }
         
-        print("      → ❌ 無匹配")
+        AppLog.debug("      → ❌ 無匹配")
         return nil
     }
     
@@ -718,28 +718,28 @@ class DailyOfficeLoader {
     }
     
     func loadCommemoration(name: String, date: Date) -> DailyOfficeFile? {
-        print("🎯 loadCommemoration 被調用: name='\(name)'")
+        AppLog.debug("🎯 loadCommemoration 被調用: name='\(name)'")
         
         let normalizedName = name.hasPrefix("紀念")
             ? String(name.dropFirst(2)).trimmingCharacters(in: .whitespaces)
             : name
-        print("   → 歸一化名稱: '\(normalizedName)'")
+        AppLog.debug("   → 歸一化名稱: '\(normalizedName)'")
         
         if let file = loadSanctoraleViaMap(name: normalizedName) {
-            print("   → ✅ [步驟0] 透過 nameToIdentifier 直接加載成功: '\(file.name)'")
+            AppLog.debug("   → ✅ [步驟0] 透過 nameToIdentifier 直接加載成功: '\(file.name)'")
             return file
         }
         
         if let fileName = liturgicalFileMap[normalizedName] {
-            print("   → 命中 liturgicalFileMap: key='\(normalizedName)' → fileName='\(fileName)'")
+            AppLog.debug("   → 命中 liturgicalFileMap: key='\(normalizedName)' → fileName='\(fileName)'")
             if let file = loadJSON(name: fileName) {
-                print("   → ✅ [步驟1] 透過 liturgicalFileMap 加載成功: '\(file.name)'")
+                AppLog.debug("   → ✅ [步驟1] 透過 liturgicalFileMap 加載成功: '\(file.name)'")
                 return file
             } else {
-                print("   → ❌ [步驟1] liturgicalFileMap 有映射但 loadJSON 失敗")
+                AppLog.debug("   → ❌ [步驟1] liturgicalFileMap 有映射但 loadJSON 失敗")
             }
         } else {
-            print("   → [步驟1] liturgicalFileMap 無此鍵: '\(normalizedName)'")
+            AppLog.debug("   → [步驟1] liturgicalFileMap 無此鍵: '\(normalizedName)'")
         }
         
         let calendar = Calendar.current
@@ -747,66 +747,66 @@ class DailyOfficeLoader {
         let day = calendar.component(.day, from: date)
         let mmdd = String(format: "%02d%02d", month, day)
         let key = "\(mmdd)\(normalizedName)"
-        print("   → [步驟2] 查詢 commemoration_map.json: key='\(key)'")
+        AppLog.debug("   → [步驟2] 查詢 commemoration_map.json: key='\(key)'")
         
         if let baseName = commemorationMap[key] {
-            print("   → 命中 commemoration_map: baseName='\(baseName)'")
+            AppLog.debug("   → 命中 commemoration_map: baseName='\(baseName)'")
             let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
             let season = info.season
             let isEasterSeason = (season == .easter || season == .ascension || season == .pentecost)
             
             if isEasterSeason {
-                print("   → 復活期內，優先嘗試 \(baseName)_easter")
+                AppLog.debug("   → 復活期內，優先嘗試 \(baseName)_easter")
                 if let file = loadJSON(name: "\(baseName)_easter") {
-                    print("   → ✅ [步驟2] 加載 \(baseName)_easter 成功")
+                    AppLog.debug("   → ✅ [步驟2] 加載 \(baseName)_easter 成功")
                     return file
                 }
             }
             if let file = loadJSON(name: baseName) {
-                print("   → ✅ [步驟2] 加載 \(baseName) 成功")
+                AppLog.debug("   → ✅ [步驟2] 加載 \(baseName) 成功")
                 return file
             }
             if isEasterSeason, let file = loadJSON(name: baseName) {
-                print("   → ✅ [步驟2] 復活期回退加載 \(baseName) 成功")
+                AppLog.debug("   → ✅ [步驟2] 復活期回退加載 \(baseName) 成功")
                 return file
             }
-            print("   → ❌ [步驟2] commemoration_map 有映射但 loadJSON 全部失敗")
+            AppLog.debug("   → ❌ [步驟2] commemoration_map 有映射但 loadJSON 全部失敗")
         } else {
-            print("   → [步驟2] commemoration_map 無此鍵")
+            AppLog.debug("   → [步驟2] commemoration_map 無此鍵")
         }
         
-        print("   → [步驟3] 按日期匹配 sanctorale: date=\(month)/\(day), expectedName='\(normalizedName)'")
+        AppLog.debug("   → [步驟3] 按日期匹配 sanctorale: date=\(month)/\(day), expectedName='\(normalizedName)'")
         let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         if let sanctorale = loadSanctorale(date: date, daysToEaster: info.daysFromEaster, expectedName: normalizedName) {
-            print("   → ✅ [步驟3] sanctorale 匹配成功: '\(sanctorale.name)'")
+            AppLog.debug("   → ✅ [步驟3] sanctorale 匹配成功: '\(sanctorale.name)'")
             return sanctorale
         } else {
-            print("   → ❌ [步驟3] sanctorale 無匹配")
+            AppLog.debug("   → ❌ [步驟3] sanctorale 無匹配")
         }
         
         if normalizedName.contains("望日") {
-            print("   → [步驟3.5] 望日全局掃描: name='\(normalizedName)'")
+            AppLog.debug("   → [步驟3.5] 望日全局掃描: name='\(normalizedName)'")
             if let vigilFile = loadSanctoraleByName(expectedName: normalizedName) {
-                print("   → ✅ [步驟3.5] 望日全局掃描成功: '\(vigilFile.name)'（僅用於獲取 collect）")
+                AppLog.debug("   → ✅ [步驟3.5] 望日全局掃描成功: '\(vigilFile.name)'（僅用於獲取 collect）")
                 return vigilFile
             } else {
-                print("   → ❌ [步驟3.5] 望日全局掃描無匹配")
+                AppLog.debug("   → ❌ [步驟3.5] 望日全局掃描無匹配")
             }
         }
         
-        print("   → [步驟4] 回退到 temporal: season=\(info.season), week=\(info.weekNumber), wd=\(info.weekday)")
+        AppLog.debug("   → [步驟4] 回退到 temporal: season=\(info.season), week=\(info.weekNumber), wd=\(info.weekday)")
         if let temporal = loadTemporalWeekly(season: info.season, weekNumber: info.weekNumber, weekday: info.weekday) {
-            print("   → ⚠️ [步驟4] 回退到 temporal: '\(temporal.name)'")
+            AppLog.debug("   → ⚠️ [步驟4] 回退到 temporal: '\(temporal.name)'")
             if temporal.name == normalizedName {
-                print("   → ✅ [步驟4] temporal 名稱吻合，視為有效回退")
+                AppLog.debug("   → ✅ [步驟4] temporal 名稱吻合，視為有效回退")
                 return temporal
             } else {
-                print("   → ❌ [步驟4] temporal 名稱不匹配: file.name='\(temporal.name)' vs expected='\(normalizedName)'，已剔除")
+                AppLog.debug("   → ❌ [步驟4] temporal 名稱不匹配: file.name='\(temporal.name)' vs expected='\(normalizedName)'，已剔除")
                 return nil
             }
         }
         
-        print("   → ❌❌❌ loadCommemoration 全部失敗，返回 nil")
+        AppLog.debug("   → ❌❌❌ loadCommemoration 全部失敗，返回 nil")
         return nil
     }
     
@@ -953,24 +953,24 @@ extension DailyOfficeLoader {
         year: String
     ) -> DailyOfficeFile.OfficePeriod.LessonsGroup? {
         
-        print("🔍 [jsonLessons] 開始 year=\(year), isEvening=\(isEvening), liturgy.mainTitle=\(liturgy.mainTitle)")
+        AppLog.debug("🔍 [jsonLessons] 開始 year=\(year), isEvening=\(isEvening), liturgy.mainTitle=\(liturgy.mainTitle)")
         
         guard let file = loadOfficeFile(for: date, liturgy: liturgy) else {
-            print("❌ [jsonLessons] loadOfficeFile 返回 nil")
+            AppLog.debug("❌ [jsonLessons] loadOfficeFile 返回 nil")
             return nil
         }
-        print("✅ [jsonLessons] 文件加載成功: name='\(file.name)', identifier='\(file.identifier)'")
+        AppLog.debug("✅ [jsonLessons] 文件加載成功: name='\(file.name)', identifier='\(file.identifier)'")
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
             period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
-            print("📖 [jsonLessons] 晚禱選擇: isFirstVespers=\(liturgy.isFirstVespers), period=\(period == nil ? "nil" : "有值")")
+            AppLog.debug("📖 [jsonLessons] 晚禱選擇: isFirstVespers=\(liturgy.isFirstVespers), period=\(period == nil ? "nil" : "有值")")
             if liturgy.isFirstVespers {
-                print("   → 使用 vigil=\(file.vigil == nil ? "nil" : "有值"), evening=\(file.evening == nil ? "nil" : "有值")")
+                AppLog.debug("   → 使用 vigil=\(file.vigil == nil ? "nil" : "有值"), evening=\(file.evening == nil ? "nil" : "有值")")
             }
         } else {
             period = file.morning
-            print("📖 [jsonLessons] 早禱選擇: morning=\(file.morning == nil ? "nil" : "有值")")
+            AppLog.debug("📖 [jsonLessons] 早禱選擇: morning=\(file.morning == nil ? "nil" : "有值")")
         }
         
         if year == "1943", let set = lectionarySet(
@@ -980,15 +980,15 @@ extension DailyOfficeLoader {
             year: "1943",
             setId: nil
         ), let setLessons = set.lessons {
-            print("✅ [jsonLessons] 1943 使用 lectionarySet")
+            AppLog.debug("✅ [jsonLessons] 1943 使用 lectionarySet")
             return setLessons
         }
         
         guard let lessons = period?.lessons else {
-            print("❌ [jsonLessons] period?.lessons 為 nil (period=\(period == nil ? "nil" : "有值"))")
+            AppLog.debug("❌ [jsonLessons] period?.lessons 為 nil (period=\(period == nil ? "nil" : "有值"))")
             return nil
         }
-        print("✅ [jsonLessons] lessons 容器有值")
+        AppLog.debug("✅ [jsonLessons] lessons 容器有值")
         
         let base: DailyOfficeFile.OfficePeriod.LessonsGroup?
         switch year {
@@ -1000,40 +1000,40 @@ extension DailyOfficeLoader {
             base = lessons.special ?? lessons.year1928 ?? lessons.year1962 ?? lessons.year1943
         }
         
-        print("📖 [jsonLessons] year=\(year), base=\(base == nil ? "nil" : "有值")")
+        AppLog.debug("📖 [jsonLessons] year=\(year), base=\(base == nil ? "nil" : "有值")")
         if let b = base {
-            print("   → ot=\(b.ot == nil ? "nil" : "\(b.ot!.book) \(b.ot!.chapter)")")
-            print("   → nt=\(b.nt == nil ? "nil" : "\(b.nt!.book) \(b.nt!.chapter)")")
+            AppLog.debug("   → ot=\(b.ot == nil ? "nil" : "\(b.ot!.book) \(b.ot!.chapter)")")
+            AppLog.debug("   → nt=\(b.nt == nil ? "nil" : "\(b.nt!.book) \(b.nt!.chapter)")")
         } else {
-            print("   → lessons.year1928=\(lessons.year1928 == nil ? "nil" : "有值")")
-            print("   → lessons.year1962=\(lessons.year1962 == nil ? "nil" : "有值")")
-            print("   → lessons.year1943=\(lessons.year1943 == nil ? "nil" : "有值")")
-            print("   → lessons.special=\(lessons.special == nil ? "nil" : "有值")")
+            AppLog.debug("   → lessons.year1928=\(lessons.year1928 == nil ? "nil" : "有值")")
+            AppLog.debug("   → lessons.year1962=\(lessons.year1962 == nil ? "nil" : "有值")")
+            AppLog.debug("   → lessons.year1943=\(lessons.year1943 == nil ? "nil" : "有值")")
+            AppLog.debug("   → lessons.special=\(lessons.special == nil ? "nil" : "有值")")
         }
         
         return base
     }
     // MARK: - 多語言 JSON 解析（核心）
     private func loadLocalizedJSON(name: String) -> DailyOfficeFile? {
-        print("🔍 查找: \(name).json | language=\(currentLanguage.rawValue)")
+        AppLog.debug("🔍 查找: \(name).json | language=\(currentLanguage.rawValue)")
         
         guard let url = Bundle.main.url(forResource: name, withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
-            print("   → ❌ 檔案不存在")
+            AppLog.debug("   → ❌ 檔案不存在")
             return nil
         }
         
         guard let localizedData = LocalizedJSONResolver.resolve(data: data, language: currentLanguage) else {
-            print("   → ❌ 多語言解析失敗")
+            AppLog.debug("   → ❌ 多語言解析失敗")
             return nil
         }
         
         do {
             let decoded = try JSONDecoder().decode(DailyOfficeFile.self, from: localizedData)
-            print("   → ✅ 解析成功: name='\(decoded.name)'")
+            AppLog.debug("   → ✅ 解析成功: name='\(decoded.name)'")
             return decoded
         } catch {
-            print("❌ 解析 \(name).json 失敗: \(error)")
+            AppLog.error("❌ 解析 \(name).json 失敗: \(error)")
             return nil
         }
     }
@@ -1057,13 +1057,13 @@ extension DailyOfficeLoader {
         year: String
     ) -> DailyOfficeFile.OfficePeriod.LessonsGroup? {
         guard let file = loadOfficeFile(for: date, liturgy: liturgy) else {
-            print("❌ [vigilLessons] loadOfficeFile 返回 nil")
+            AppLog.debug("❌ [vigilLessons] loadOfficeFile 返回 nil")
             return nil
         }
         
         let period = file.vigil ?? file.evening
         guard let lessons = period?.lessons else {
-            print("❌ [vigilLessons] '\(file.name)' vigil/evening 無 lessons 容器")
+            AppLog.debug("❌ [vigilLessons] '\(file.name)' vigil/evening 無 lessons 容器")
             return nil
         }
         
@@ -1078,9 +1078,9 @@ extension DailyOfficeLoader {
         }
         
         if let g = group {
-            print("✅ [vigilLessons] '\(file.name)' year=\(year) 命中: ot=\(g.ot.map { "\($0.book) \($0.chapter)" } ?? "nil"), nt=\(g.nt.map { "\($0.book) \($0.chapter)" } ?? "nil")")
+            AppLog.debug("✅ [vigilLessons] '\(file.name)' year=\(year) 命中: ot=\(g.ot.map { "\($0.book) \($0.chapter)" } ?? "nil"), nt=\(g.nt.map { "\($0.book) \($0.chapter)" } ?? "nil")")
         } else {
-            print("❌ [vigilLessons] '\(file.name)' vigil/evening 無 year=\(year) 經課")
+            AppLog.debug("❌ [vigilLessons] '\(file.name)' vigil/evening 無 year=\(year) 經課")
         }
         return group
     }

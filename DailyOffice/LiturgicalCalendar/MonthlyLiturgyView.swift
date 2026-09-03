@@ -3,6 +3,8 @@ import SwiftUI
 struct MonthlyLiturgyView: View {
     
     @Environment(\.dismiss) private var dismiss
+    @ObservedObject private var languageStore = AppLanguageStore.shared
+    private var isSimp: Bool { languageStore.isSimplified }
     
     // 預設為當前月份
     @State private var currentMonth: Date = {
@@ -26,7 +28,7 @@ struct MonthlyLiturgyView: View {
         VStack(spacing: 0) {
             // MARK: - 自定義頂部標題區
             VStack(spacing: 6) {
-                Text("禮儀月表")
+                Text("禮儀月表".adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 32, weight: .bold))
                     .foregroundColor(.primary)
                 
@@ -57,7 +59,7 @@ struct MonthlyLiturgyView: View {
     private var weekdayHeader: some View {
         HStack(spacing: 0) {
             ForEach(["主日", "一", "二", "三", "四", "五", "六"], id: \.self) { day in
-                Text(day)
+                Text(day.adaptChinese(isSimplified: isSimp))
                     .font(.caption)
                     .fontWeight(.medium)
                     .frame(maxWidth: .infinity)
@@ -102,7 +104,7 @@ struct MonthlyLiturgyView: View {
                         HStack(spacing: 4) {
                             Image(systemName: "chevron.left")
                                 .font(.system(size: 16, weight: .semibold))
-                            Text("返回")
+                            Text("返回".adaptChinese(isSimplified: isSimp))
                                 .font(.system(size: 15, weight: .medium))
                         }
                         .foregroundColor(.primary)
@@ -198,7 +200,9 @@ struct MonthlyLiturgyView: View {
     }
     
     private func monthYearString(from date: Date) -> String {
-        let f = DateFormatter(); f.dateFormat = "yyyy年 MMMM"; f.locale = Locale(identifier: "zh_Hant")
+        let f = DateFormatter()
+        f.dateFormat = "yyyy年 MMMM"
+        f.locale = Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     
@@ -227,9 +231,8 @@ struct DayRow: View {
     let liturgy: DailyLiturgy
     private let calendar = Calendar.current
     
-    // 🌟 監聽全域語言設定
-    @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
-    private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
+    @ObservedObject private var languageStore = AppLanguageStore.shared
+    private var isSimp: Bool { languageStore.isSimplified }
     
     private var isSunday: Bool {
         calendar.component(.weekday, from: date) == 1
@@ -258,14 +261,14 @@ struct DayRow: View {
             
             // 內容區
             VStack(alignment: .leading, spacing: 4) {
-                Text(liturgy.mainTitle)
+                Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 16, weight: .semibold))
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
                 
                 HStack(spacing: 6) {
                     if !liturgy.rankName.isEmpty {
-                        Text(liturgy.rankName)
+                        Text(liturgy.rankName.adaptChinese(isSimplified: isSimp))
                             .font(.caption2)
                             .fontWeight(.medium)
                             .padding(.horizontal, 6)
@@ -286,7 +289,7 @@ struct DayRow: View {
                 }
                 
                 if !liturgy.commemorations.isEmpty {
-                    Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、"))
+                    Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、").adaptChinese(isSimplified: isSimp))
                         .font(.caption2)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
@@ -297,7 +300,7 @@ struct DayRow: View {
                         Image(systemName: "arrow.right.circle.fill")
                             .font(.caption2)
                             .foregroundColor(.orange)
-                        Text((isSimp ? "迁移：" : "遷移：") + liturgy.transferred.joined(separator: "、"))
+                        Text((isSimp ? "迁移：" : "遷移：") + liturgy.transferred.joined(separator: "、").adaptChinese(isSimplified: isSimp))
                             .font(.caption2)
                             .foregroundColor(.orange)
                     }

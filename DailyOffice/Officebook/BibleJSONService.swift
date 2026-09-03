@@ -2,6 +2,12 @@ import Foundation
 
 final class BibleJSONService {
     static let shared = BibleJSONService()
+
+    private let apocryphaBookCodes: Set<String> = [
+        "1_Maccabees", "2_Maccabees", "Tobit", "Judith", "Sirach",
+        "Wisdom", "1_Esdras", "2_Esdras", "Baruch", "Letter_Jeremiah",
+        "Pr_Manasseh", "Song_Three", "Susanna", "Bel_Dragon", "Esther_Add"
+    ]
     
     // 🌟 快取加入了語言區分
     private let cache = NSCache<NSString, ChapterJSON>()
@@ -64,22 +70,23 @@ final class BibleJSONService {
     }()
     
     // MARK: - 對外接口
+
+    func isApocrypha(book: String) -> Bool {
+        guard let bookCode = resolveBookCode(book) else { return false }
+        return apocryphaBookCodes.contains(bookCode)
+    }
     
     func fetchFullChapter(version: String, book: String, chapter: Int) -> [(heading: String?, content: String)] {
-        // 先將中文書卷名轉換為代碼 (如 "GEN")
-        guard let bookCode = bookMapping[book] ?? bookMapping.first(where: { $0.value == book })?.value else {
-            print("❌ [BibleJSON] BibleView 未找到書卷映射: '\(book)'")
+        guard let bookCode = resolveBookCode(book) else {
+            AppLog.error("❌ [BibleJSON] BibleView 未找到書卷映射: '\(book)'")
             return []
         }
-        
-        let prefix = version == "SSEB" ? "sseb_" : ""
-        // 🌟 永遠讀取繁體原檔，不加 _zh-Hans
-        let resourceName = "\(prefix)\(bookCode)_\(chapter)"
-        
-        guard let url = Bundle.main.url(forResource: resourceName, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let chapterData = try? JSONDecoder().decode(ChapterJSON.self, from: data) else {
-            print("❌ [BibleJSON] BibleView 找不到檔案: \(resourceName).json")
+
+        guard let chapterData = loadChapterJSON(
+            version: version,
+            bookCode: bookCode,
+            chapter: chapter
+        ) else {
             return []
         }
         
@@ -137,7 +144,7 @@ final class BibleJSONService {
                 .replacingOccurrences(of: "\u{2010}", with: "-")
                 .replacingOccurrences(of: "\u{2212}", with: "-")
             
-            guard let bookCode = bookMapping[book] ?? bookMapping.first(where: { $0.value == book })?.value else {
+            guard let bookCode = resolveBookCode(book) else {
                 return []
             }
             
@@ -161,9 +168,9 @@ final class BibleJSONService {
             return verses.isEmpty ? nil : verses.joined(separator: " ")
         }
 
-        // MARK: - 私有：JSON 加載 (🌟 必須接收 version 參數，以正確載入 APO1933 或 SSEB)
+        // MARK: - 私有：所有聖經畫面共用的繁簡 JSON 載入規則
         private func loadChapterJSON(version: String, bookCode: String, chapter: Int) -> ChapterJSON? {
-            let lang = MorningPrayerDataLoader.shared.currentLanguage
+            let lang = AppLanguageStore.shared.language
             
             let cacheKey = "\(version)_\(bookCode)_\(chapter)_\(lang.rawValue)" as NSString
             if let cached = cache.object(forKey: cacheKey) { return cached }
@@ -176,14 +183,15 @@ final class BibleJSONService {
                 resourceName += "_zh-Hans"
             }
             
-            var url = Bundle.main.url(forResource: resourceName, withExtension: "json")
-            if url == nil {
-                let fallbackName = "\(prefix)\(bookCode)_\(chapter)"
-                url = Bundle.main.url(forResource: fallbackName, withExtension: "json")
+            var resolvedResourceName = resourceName
+            var url = Bundle.main.url(forResource: resolvedResourceName, withExtension: "json")
+            if url == nil, lang == .simplified {
+                resolvedResourceName = "\(prefix)\(bookCode)_\(chapter)"
+                url = Bundle.main.url(forResource: resolvedResourceName, withExtension: "json")
             }
             
             guard let finalURL = url, let data = try? Data(contentsOf: finalURL) else {
-                print("❌ [BibleJSON] 找不到檔案: \(resourceName).json")
+                AppLog.error("❌ [BibleJSON] 找不到檔案: \(resourceName).json")
                 return nil
             }
             
@@ -192,10 +200,30 @@ final class BibleJSONService {
                 cache.setObject(decoded, forKey: cacheKey)
                 return decoded
             } catch {
-                print("❌ [BibleJSON] 解析失敗 \(resourceName).json: \(error)")
+                AppLog.error("❌ [BibleJSON] 解析失敗 \(resolvedResourceName).json: \(error)")
                 return nil
             }
         }
+
+    private func resolveBookCode(_ book: String) -> String? {
+        let normalized = normalizeBookName(book)
+        if apocryphaBookCodes.contains(normalized) || bookMapping.values.contains(normalized) {
+            return normalized
+        }
+        return bookMapping[normalized]
+    }
+
+    private func normalizeBookName(_ book: String) -> String {
+        let trimmed = book.trimmingCharacters(in: .whitespacesAndNewlines)
+        switch trimmed {
+        case "以斯拉續篇上卷", "以斯拉續編上卷": return "以斯拉續篇上"
+        case "以斯拉續篇下卷", "以斯拉續編下卷": return "以斯拉續篇下"
+        case "瑪喀比傳上卷", "玛喀比传上卷": return trimmed.contains("玛") ? "玛喀比传上" : "瑪喀比傳上"
+        case "瑪喀比傳下卷", "玛喀比传下卷": return trimmed.contains("玛") ? "玛喀比传下" : "瑪喀比傳下"
+        case "以斯帖記補編": return "以斯帖補編"
+        default: return trimmed
+        }
+    }
 
     // MARK: - 私有：經文提取（節號加回每節開頭）
     
@@ -276,7 +304,7 @@ final class BibleJSONService {
                     ) {
                         segments.append(ChapterSegment(chapter: ch, verseRange: vr))
                     } else {
-                        print("⚠️ [BibleJSON] 無法解析節範圍: '\(vTrimmed)'")
+                        AppLog.warning("⚠️ [BibleJSON] 無法解析節範圍: '\(vTrimmed)'")
                     }
                 }
             } else if let ch = currentChapter,

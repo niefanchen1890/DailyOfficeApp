@@ -84,7 +84,7 @@ struct AdventSeasonView: View {
     private func loadData(for week: Int) {
         guard weeksData[week] == nil else { return }
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "ad", week: week)
+            let rawData = LectionaryJSONService.shared.fetchLectionary(year: year, season: "ad", week: week)
             let groupedData = groupDataForTable(rawData)
             DispatchQueue.main.async {
                 self.weeksData[week] = groupedData
@@ -158,228 +158,175 @@ struct LectionaryTableView: View {
     @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
     private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
-    let separatorColor = Color(UIColor.separator)
-    let headerBackground = Color(UIColor.secondarySystemBackground)
-    
     var body: some View {
-        VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                if !isHolyDayMode {
-                    Text("日".adaptChinese(isSimplified: isSimp))
-                        .frame(width: 35)
-                    verticalDivider
-                }
-                
-                Text((isHolyDayMode ? "時辰" : "年份/禱").adaptChinese(isSimplified: isSimp))
-                    .frame(width: isHolyDayMode ? 55 : 50)
-                
-                verticalDivider
-                
-                Text("第一經課".adaptChinese(isSimplified: isSimp))
-                    .frame(maxWidth: .infinity)
-                
-                verticalDivider
-                
-                Text("第二經課".adaptChinese(isSimplified: isSimp))
-                    .frame(maxWidth: .infinity)
-            }
-            .font(.caption2.bold())
-            .foregroundColor(.secondary)
-            .frame(height: 32)
-            .background(headerBackground)
-            
+        VStack(alignment: .leading, spacing: 16) {
             ForEach(weeklyData) { dayGroup in
-                Divider()
-                
-                HStack(spacing: 0) {
-                    if !isHolyDayMode {
-                        let name = dayGroup.displayName
-                        let isLongName = name.count >= 4
-                        let displayString = isLongName
-                            ? name.map { String($0) }.joined(separator: "\n")
-                            : name
-                        
-                        Text(displayString.adaptChinese(isSimplified: isSimp))
-                            .font(.system(size: isLongName ? 12 : 14, weight: .bold))
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(dayTitle(for: dayGroup).adaptChinese(isSimplified: isSimp))
+                        .font(.subheadline.bold())
+                        .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+
+                    if let note = dayGroup.specialNote {
+                        Text(note.adaptChinese(isSimplified: isSimp))
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
-                            .lineSpacing(1)
-                            .frame(width: 35)
-                            .foregroundColor(dayGroup.dayIndex == 0 ? .red : .primary)
-                        
-                        verticalDivider
-                    }
-                    
-                    VStack(spacing: 0) {
-                        if isHolyDayMode {
-                            if dayGroup.displayName == "前夕" {
-                                simpleRow(
-                                    time: "前晚".adaptChinese(isSimplified: isSimp),
-                                    l1: dayGroup.evening1,
-                                    l2: dayGroup.evening2,
-                                    labelWidth: 55
-                                )
-                            } else {
-                                simpleRow(
-                                    time: "早禱".adaptChinese(isSimplified: isSimp),
-                                    l1: dayGroup.morning1,
-                                    l2: dayGroup.morning2,
-                                    labelWidth: 55
-                                )
-                                
-                                Divider()
-                                
-                                simpleRow(
-                                    time: "晚禱".adaptChinese(isSimplified: isSimp),
-                                    l1: dayGroup.evening1,
-                                    l2: dayGroup.evening2,
-                                    labelWidth: 55
-                                )
-                            }
-                        } else {
-                            if let note = dayGroup.specialNote {
-                                HStack(spacing: 0) {
-                                    Text(note.adaptChinese(isSimplified: isSimp))
-                                        .font(.system(size: 12, weight: .medium))
-                                        .foregroundColor(.secondary)
-                                        .multilineTextAlignment(.center)
-                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                        .padding(.horizontal, 8)
-                                }
-                                .frame(minHeight: 100)
-                                .background(Color(UIColor.systemBackground))
-                            } else if dayGroup.hasYear2 {
-                                yearSection(
-                                    label: "第一年".adaptChinese(isSimplified: isSimp),
-                                    m: dayGroup.morning1,
-                                    e: dayGroup.evening1,
-                                    m2: dayGroup.morning2,
-                                    e2: dayGroup.evening2
-                                )
-                                
-                                Divider()
-                                
-                                yearSection(
-                                    label: "第二年".adaptChinese(isSimplified: isSimp),
-                                    m: dayGroup.morning1_yr2,
-                                    e: dayGroup.evening1_yr2,
-                                    m2: dayGroup.morning2_yr2,
-                                    e2: dayGroup.evening2_yr2
-                                )
-                            } else {
-                                simpleRow(
-                                    time: "早".adaptChinese(isSimplified: isSimp),
-                                    l1: dayGroup.morning1,
-                                    l2: dayGroup.morning2
-                                )
-                                
-                                Divider()
-                                
-                                simpleRow(
-                                    time: "晚".adaptChinese(isSimplified: isSimp),
-                                    l1: dayGroup.evening1,
-                                    l2: dayGroup.evening2
-                                )
-                            }
-                        }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color(UIColor.secondarySystemBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    } else if isHolyDayMode && dayGroup.displayName == "前夕" {
+                        officeCard(
+                            title: "前晚",
+                            systemImage: "moon.fill",
+                            accentColor: .indigo,
+                            firstLesson: dayGroup.evening1,
+                            secondLesson: dayGroup.evening2
+                        )
+                    } else if dayGroup.hasYear2 {
+                        yearCards(
+                            title: "第一年",
+                            morning1: dayGroup.morning1,
+                            morning2: dayGroup.morning2,
+                            evening1: dayGroup.evening1,
+                            evening2: dayGroup.evening2
+                        )
+                        yearCards(
+                            title: "第二年",
+                            morning1: dayGroup.morning1_yr2,
+                            morning2: dayGroup.morning2_yr2,
+                            evening1: dayGroup.evening1_yr2,
+                            evening2: dayGroup.evening2_yr2
+                        )
+                    } else {
+                        officeCard(
+                            title: "早禱",
+                            systemImage: "sunrise.fill",
+                            accentColor: .orange,
+                            firstLesson: dayGroup.morning1,
+                            secondLesson: dayGroup.morning2
+                        )
+                        officeCard(
+                            title: "晚禱",
+                            systemImage: "moon.fill",
+                            accentColor: .indigo,
+                            firstLesson: dayGroup.evening1,
+                            secondLesson: dayGroup.evening2
+                        )
                     }
                 }
-                .background(Color(UIColor.systemBackground))
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(separatorColor, lineWidth: 0.5)
-        )
-        .padding(.horizontal, 1)
         .navigationDestination(item: $selectedLesson) { day in
             ScriptureDetailView(day: day)
         }
     }
-    
-    private func simpleRow(
-        time: String,
-        l1: LectionaryDay?,
-        l2: LectionaryDay?,
-        labelWidth: CGFloat = 22
-    ) -> some View {
-        HStack(spacing: 0) {
-            Text(time)
-                .font(.caption2)
-                .foregroundColor(.secondary)
-                .frame(width: labelWidth)
-            
-            verticalDivider
-            
-            lessonCell(l1)
-            
-            verticalDivider
-            
-            lessonCell(l2)
-        }
-        .frame(height: 50)
-    }
-    
-    private func yearSection(
-        label: String,
-        m: LectionaryDay?,
-        e: LectionaryDay?,
-        m2: LectionaryDay?,
-        e2: LectionaryDay?
-    ) -> some View {
-        HStack(spacing: 0) {
-            Text(label)
-                .font(.system(size: 9))
-                .foregroundColor(.secondary)
-                .frame(width: 28)
-                .padding(.horizontal, 2)
-            
-            verticalDivider
-            
-            VStack(spacing: 0) {
-                simpleRow(time: "早".adaptChinese(isSimplified: isSimp), l1: m, l2: m2)
-                
-                Divider()
-                
-                simpleRow(time: "晚".adaptChinese(isSimplified: isSimp), l1: e, l2: e2)
-            }
+
+    private func dayTitle(for group: DayLectionaryGroup) -> String {
+        switch group.displayName {
+        case "日": return "主日"
+        case "一", "二", "三", "四", "五", "六": return "禮拜\(group.displayName)"
+        default: return group.displayName
         }
     }
-    
-    private var verticalDivider: some View {
-        Rectangle()
-            .fill(separatorColor)
-            .frame(width: 0.5)
-    }
-    
+
     @ViewBuilder
-    private func lessonCell(_ day: LectionaryDay?) -> some View {
-        if let day = day {
-            Button {
-                selectedLesson = day
-            } label: {
-                VStack(spacing: 2) {
-                    Text(day.book.adaptChinese(isSimplified: isSimp))
-                        .font(.system(size: 13, weight: .semibold))
-                    
-                    Text(day.chapter.adaptChinese(isSimplified: isSimp))
-                        .font(.system(size: 11))
-                        .minimumScaleFactor(0.7)
-                }
-                .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
-                .padding(.horizontal, 4)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.clear)
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-        } else {
-            Text("-")
-                .font(.caption2)
-                .foregroundColor(.gray.opacity(0.3))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+    private func yearCards(
+        title: String,
+        morning1: LectionaryDay?,
+        morning2: LectionaryDay?,
+        evening1: LectionaryDay?,
+        evening2: LectionaryDay?
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title.adaptChinese(isSimplified: isSimp))
+                .font(.caption.bold())
+                .foregroundColor(.secondary)
+
+            officeCard(
+                title: "早禱",
+                systemImage: "sunrise.fill",
+                accentColor: .orange,
+                firstLesson: morning1,
+                secondLesson: morning2
+            )
+            officeCard(
+                title: "晚禱",
+                systemImage: "moon.fill",
+                accentColor: .indigo,
+                firstLesson: evening1,
+                secondLesson: evening2
+            )
         }
+    }
+
+    private func officeCard(
+        title: String,
+        systemImage: String,
+        accentColor: Color,
+        firstLesson: LectionaryDay?,
+        secondLesson: LectionaryDay?
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Label(title.adaptChinese(isSimplified: isSimp), systemImage: systemImage)
+                .font(.caption.bold())
+                .foregroundColor(accentColor)
+
+            Divider()
+
+            HStack(alignment: .top, spacing: 0) {
+                lessonColumn(
+                    title: "第一經課",
+                    lesson: firstLesson
+                )
+
+                Divider()
+                    .frame(height: 54)
+                    .padding(.horizontal, 12)
+
+                lessonColumn(
+                    title: "第二經課",
+                    lesson: secondLesson
+                )
+            }
+        }
+        .padding(10)
+        .background(Color(UIColor.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+
+    @ViewBuilder
+    private func lessonColumn(title: String, lesson: LectionaryDay?) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title.adaptChinese(isSimplified: isSimp))
+                .font(.caption2.bold())
+                .foregroundColor(.secondary)
+
+            if let lesson {
+                Button {
+                    selectedLesson = lesson
+                } label: {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(lesson.book.adaptChinese(isSimplified: isSimp))
+                            .font(.system(size: 13, weight: .semibold))
+                            .lineLimit(1)
+
+                        Text(lesson.chapter.adaptChinese(isSimplified: isSimp))
+                            .font(.system(size: 11))
+                            .lineLimit(2)
+                    }
+                    .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            } else {
+                Text("—")
+                    .font(.system(size: 13))
+                    .foregroundColor(.secondary.opacity(0.5))
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -444,7 +391,7 @@ struct ChristmasSeasonView: View {
             for (index, def) in keys.enumerated() {
                 if year == "1928" && def.key == "1225-eve" { continue }
                 
-                let rawData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(year: year, keyPrefix: def.key)
+                let rawData = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(year: year, keyPrefix: def.key)
                 var group = DayLectionaryGroup(dayIndex: index, dayName: def.label)
                 
                 for day in rawData {
@@ -520,7 +467,7 @@ struct EpiphanySeasonView: View {
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(
+            let rawData = LectionaryJSONService.shared.fetchLectionary(
                 year: year,
                 season: "epiphany",
                 week: week
@@ -538,7 +485,7 @@ struct EpiphanySeasonView: View {
         DispatchQueue.global(qos: .userInitiated).async {
             var tempGroups: [DayLectionaryGroup] = []
             
-            let epiphanyDayData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(year: self.year, keyPrefix: "0106")
+            let epiphanyDayData = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(year: self.year, keyPrefix: "0106")
             var dayGroup = DayLectionaryGroup(dayIndex: 0, dayName: "顯現日")
             
             for day in epiphanyDayData {
@@ -563,7 +510,7 @@ struct EpiphanySeasonView: View {
             }
             tempGroups.append(dayGroup)
             
-            let weekDaysData = LectionaryDatabaseManager.shared.fetchLectionary(
+            let weekDaysData = LectionaryJSONService.shared.fetchLectionary(
                 year: self.year,
                 season: "epiphany",
                 week: 0
@@ -648,7 +595,7 @@ struct PreLentenSeasonView: View {
         guard seasonData[seasonKey] == nil else { return }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(
+            let rawData = LectionaryJSONService.shared.fetchLectionary(
                 year: year,
                 season: seasonKey,
                 week: 0
@@ -742,10 +689,10 @@ struct LentenSeasonView: View {
             var isAshWeek = false
             
             if week == 0 {
-                rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "quinquagesima", week: 0)
+                rawData = LectionaryJSONService.shared.fetchLectionary(year: year, season: "quinquagesima", week: 0)
                 isAshWeek = true
             } else {
-                rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "lent", week: week)
+                rawData = LectionaryJSONService.shared.fetchLectionary(year: year, season: "lent", week: week)
             }
             
             var groupedData = self.groupDataForTable(rawData, isAshWeek: isAshWeek)
@@ -845,7 +792,7 @@ struct EasterSeasonView: View {
         DispatchQueue.global(qos: .userInitiated).async {
             let dbWeek = week + 1
             
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(
+            let rawData = LectionaryJSONService.shared.fetchLectionary(
                 year: year,
                 season: "easter",
                 week: dbWeek
@@ -936,7 +883,7 @@ struct AscensionSeasonView: View {
     
     private func loadAscensionDayData() {
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "easter", week: 5)
+            let rawData = LectionaryJSONService.shared.fetchLectionary(year: year, season: "easter", week: 5)
             let dictionary = self.buildGroupDictionary(from: rawData, prefix: "ascDay")
             
             var groups: [DayLectionaryGroup] = []
@@ -952,7 +899,7 @@ struct AscensionSeasonView: View {
     
     private func loadAscensionSundayData() {
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "easter", week: 6)
+            let rawData = LectionaryJSONService.shared.fetchLectionary(year: year, season: "easter", week: 6)
             let dictionary = self.buildGroupDictionary(from: rawData, prefix: "ascSun")
             
             let groups = (0...6).compactMap { dictionary[$0] }
@@ -1017,7 +964,8 @@ struct PentecostSeasonView: View {
         guard pentecostData.isEmpty else { return }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionary(year: year, season: "pentecost", week: 0)
+            // 兩套 JSON 都以 Easter 第 8 週保存聖靈降臨週經課。
+            let rawData = LectionaryJSONService.shared.fetchLectionary(year: year, season: "easter", week: 8)
             let groupedData = self.groupDataForTable(rawData)
             
             DispatchQueue.main.async {
@@ -1097,7 +1045,7 @@ struct TrinitySeasonView: View {
         DispatchQueue.global(qos: .userInitiated).async {
             let dbPrefix = week == 0 ? "tr" : "tr\(week)"
             
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(
+            let rawData = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(
                 year: year,
                 keyPrefix: dbPrefix
             )
@@ -1187,7 +1135,7 @@ struct HolyDaysView: View {
         guard holyDayData[dateKey] == nil else { return }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let rawData = LectionaryDatabaseManager.shared.fetchLectionaryBySpecificKey(year: year, keyPrefix: dateKey)
+            let rawData = LectionaryJSONService.shared.fetchLectionaryBySpecificKey(year: year, keyPrefix: dateKey)
             
             var eveGroup = DayLectionaryGroup(dayIndex: 0, dayName: "前夕", customName: "前夕")
             var dayGroup = DayLectionaryGroup(dayIndex: 1, dayName: "當日", customName: title)
@@ -1252,9 +1200,11 @@ struct Office1943Psalms: Codable {
     let items: [Office1943PsalmItem]
 }
 
-struct Office1943PsalmItem: Codable {
+struct Office1943PsalmItem: Codable, Hashable, Identifiable {
     let number: String
     let verses: String?
+
+    var id: String { "\(number)-\(verses ?? "all")" }
 }
 
 struct Office1943Lessons: Codable {
@@ -1273,6 +1223,7 @@ struct Lectionary1943View: View {
     private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     @State private var selectedLesson: LectionaryDay?
+    @State private var selectedPsalm: Office1943PsalmItem?
     
     private let seasons: [(key: String, title: String)] = {
         var result: [(String, String)] = []
@@ -1286,25 +1237,42 @@ struct Lectionary1943View: View {
     
     var body: some View {
         List {
-            ForEach(seasons, id: \.key) { season in
-                DisclosureGroup(season.title.adaptChinese(isSimplified: isSimp)) {
-                    Trinity1943WeekView(seasonKey: season.key) { lesson in
-                        // 修正：依照錯誤提示的參數順序重新排列
-                        selectedLesson = LectionaryDay(
-                            season: season.key,
-                            weekIndex: 0,
-                            dayKey: "1943-\(season.key)",
-                            book: lesson.book,
-                            chapter: lesson.chapter
-                        )
+            DisclosureGroup {
+                ForEach(seasons, id: \.key) { season in
+                    DisclosureGroup(season.title.adaptChinese(isSimplified: isSimp)) {
+                        Trinity1943WeekView(
+                            seasonKey: season.key,
+                            onPsalmTapped: { psalm in
+                                selectedPsalm = psalm
+                            }
+                        ) { lesson in
+                            selectedLesson = LectionaryDay(
+                                season: season.key,
+                                weekIndex: 0,
+                                dayKey: "1943-\(season.key)",
+                                book: lesson.book,
+                                chapter: lesson.chapter
+                            )
+                        }
+                        .padding(.vertical, 4)
                     }
-                    .padding(.vertical, 4)
                 }
+            } label: {
+                Text(LiturgicalSeason.trinity.title.adaptChinese(isSimplified: isSimp))
+                    .font(.headline)
+                    .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                    .padding(.vertical, 6)
             }
         }
         .listStyle(.insetGrouped)
         .navigationDestination(item: $selectedLesson) { day in
             ScriptureDetailView(day: day)
+        }
+        .navigationDestination(item: $selectedPsalm) { psalm in
+            PsalmReadingView(
+                psalmNumber: psalm.number,
+                verses: psalm.verses
+            )
         }
     }
 }
@@ -1315,8 +1283,7 @@ struct Lectionary1943View: View {
 // MARK: - 1943 單週視圖
 struct Trinity1943WeekView: View {
     let seasonKey: String
-    
-    // 新增：點擊經課時的回調
+    var onPsalmTapped: (Office1943PsalmItem) -> Void
     var onLessonTapped: (Office1943Lesson) -> Void
     
     @State private var sundayEntries: [(yr: Int, m: Office1943Entry, e: Office1943Entry)] = []
@@ -1338,8 +1305,16 @@ struct Trinity1943WeekView: View {
                         .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                     
                     VStack(spacing: 8) {
-                        Office1943Card(entry: group.m, onLessonTapped: onLessonTapped)
-                        Office1943Card(entry: group.e, onLessonTapped: onLessonTapped)
+                        Office1943Card(
+                            entry: group.m,
+                            onPsalmTapped: onPsalmTapped,
+                            onLessonTapped: onLessonTapped
+                        )
+                        Office1943Card(
+                            entry: group.e,
+                            onPsalmTapped: onPsalmTapped,
+                            onLessonTapped: onLessonTapped
+                        )
                     }
                 }
             }
@@ -1356,8 +1331,16 @@ struct Trinity1943WeekView: View {
                         .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                     
                     VStack(spacing: 8) {
-                        Office1943Card(entry: day.m, onLessonTapped: onLessonTapped)
-                        Office1943Card(entry: day.e, onLessonTapped: onLessonTapped)
+                        Office1943Card(
+                            entry: day.m,
+                            onPsalmTapped: onPsalmTapped,
+                            onLessonTapped: onLessonTapped
+                        )
+                        Office1943Card(
+                            entry: day.e,
+                            onPsalmTapped: onPsalmTapped,
+                            onLessonTapped: onLessonTapped
+                        )
                     }
                 }
             }
@@ -1403,7 +1386,7 @@ struct Trinity1943WeekView: View {
 // MARK: - 1943 單日卡片
 struct Office1943Card: View {
     let entry: Office1943Entry
-    // 新增：接收傳遞下來的閉包
+    let onPsalmTapped: (Office1943PsalmItem) -> Void
     let onLessonTapped: (Office1943Lesson) -> Void
     
     @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
@@ -1448,7 +1431,6 @@ struct Office1943Card: View {
         .cornerRadius(10)
     }
     
-    // psalmColumn 保持不變
     private var psalmColumn: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("詩篇".adaptChinese(isSimplified: isSimp))
@@ -1458,9 +1440,16 @@ struct Office1943Card: View {
             VStack(alignment: .leading, spacing: 2) {
                 ForEach(Array(entry.psalms.items.enumerated()), id: \.offset) { _, item in
                     let chapterText = item.verses.map { "\(item.number)(\($0))" } ?? item.number
-                    Text(chapterText.adaptChinese(isSimplified: isSimp))
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                    Button {
+                        onPsalmTapped(item)
+                    } label: {
+                        Text(chapterText.adaptChinese(isSimplified: isSimp))
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }

@@ -1,0 +1,15 @@
+{
+    "id": "tr7-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "22:15-33"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "2"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "septuagesima0-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "15:29-16:12"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "3:1-24"
+        }
+    }
+}

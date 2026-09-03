@@ -1,0 +1,15 @@
+{
+    "id": "tr10-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "18:31-19:10"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "12:1-24"
+        }
+    }
+}

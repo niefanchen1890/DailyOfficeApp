@@ -1,0 +1,15 @@
+{
+    "id": "easter8-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "5:16-6:8"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "3:15-27"
+        }
+    }
+}

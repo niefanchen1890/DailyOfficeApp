@@ -1,0 +1,15 @@
+{
+    "id": "tr17-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "11:2-19"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "1:20-end"
+        }
+    }
+}

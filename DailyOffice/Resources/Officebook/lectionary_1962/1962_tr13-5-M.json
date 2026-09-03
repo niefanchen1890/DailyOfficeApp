@@ -1,0 +1,15 @@
+{
+    "id": "tr13-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "1:15-end"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "18:13-end"
+        }
+    }
+}

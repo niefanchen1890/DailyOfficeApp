@@ -1,0 +1,15 @@
+{
+    "id": "tr21-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:35-59"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "9:1-18"
+        }
+    }
+}

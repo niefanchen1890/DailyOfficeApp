@@ -1,0 +1,15 @@
+{
+    "id": "lent5-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "17:11-37"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "4:1-37"
+        }
+    }
+}

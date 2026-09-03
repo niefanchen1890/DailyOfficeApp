@@ -1,0 +1,15 @@
+{
+    "id": "tr9-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "4:1-30"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "32:1-24"
+        }
+    }
+}

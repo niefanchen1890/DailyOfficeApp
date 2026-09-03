@@ -1,0 +1,15 @@
+{
+    "id": "0629-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "21:1-22"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "34:1-16"
+        }
+    }
+}

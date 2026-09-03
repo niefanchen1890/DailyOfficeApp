@@ -1,0 +1,15 @@
+{
+    "id": "tr16-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "17:1-10"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "14:1-20"
+        }
+    }
+}

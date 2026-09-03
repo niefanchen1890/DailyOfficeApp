@@ -1,0 +1,11 @@
+{
+    "id": "lent1-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "26:1-30"
+        }
+    }
+}

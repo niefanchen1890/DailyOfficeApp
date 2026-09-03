@@ -1,0 +1,15 @@
+{
+    "id": "tr22-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:1-21"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "8:1-21"
+        }
+    }
+}

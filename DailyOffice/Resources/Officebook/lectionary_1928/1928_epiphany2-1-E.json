@@ -1,0 +1,15 @@
+{
+    "id": "epiphany2-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "7:1-30"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "5:1-27"
+        }
+    }
+}

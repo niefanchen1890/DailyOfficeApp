@@ -1,0 +1,15 @@
+{
+    "id": "easter8-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "3:1-23"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "9:1-18"
+        }
+    }
+}

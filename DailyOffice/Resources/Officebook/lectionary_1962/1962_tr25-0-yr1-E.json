@@ -1,0 +1,15 @@
+{
+    "id": "tr25-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "21:33-end"
+        },
+        "ot": {
+            "book": "巴錄書",
+            "chapter": "3:1-14"
+        }
+    }
+}

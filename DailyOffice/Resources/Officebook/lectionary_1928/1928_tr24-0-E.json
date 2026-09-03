@@ -1,0 +1,15 @@
+{
+    "id": "tr24-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "16:19-end"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "28:7-20"
+        }
+    }
+}

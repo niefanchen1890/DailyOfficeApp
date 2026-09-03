@@ -1,0 +1,15 @@
+{
+    "id": "tr3-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰三書",
+            "chapter": "1-14"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "11:1-25"
+        }
+    }
+}

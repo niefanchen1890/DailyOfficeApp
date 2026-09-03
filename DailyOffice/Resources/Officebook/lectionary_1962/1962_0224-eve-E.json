@@ -1,0 +1,15 @@
+{
+    "id": "0224-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "11:25-30"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "22:15-22"
+        }
+    }
+}

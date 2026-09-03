@@ -1,0 +1,15 @@
+{
+    "id": "tr4-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "15:1-41"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "18:10-24"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr9-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "9"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "2:10-16"
+        }
+    }
+}

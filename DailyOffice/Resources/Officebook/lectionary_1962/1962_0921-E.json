@@ -1,0 +1,15 @@
+{
+    "id": "0921-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "6:19-end"
+        },
+        "ot": {
+            "book": "歷代志上",
+            "chapter": "29:9-18"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "lent3-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "11:1-28"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "34:1-22"
+        }
+    }
+}

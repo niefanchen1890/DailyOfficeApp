@@ -14,7 +14,7 @@ struct OfficeHymnLoader {
     private init() {
         guard let url = Bundle.main.url(forResource: "morning_hymns", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
-            print("❌ 無法載入 morning_hymns.json")
+            AppLog.error("❌ 無法載入 morning_hymns.json")
             return
         }
         do {
@@ -25,7 +25,7 @@ struct OfficeHymnLoader {
                 for (k, v) in wd { hymns["weekday_\(k)"] = v }
             }
         } catch {
-            print("❌ 解析 morning_hymns.json 失敗: \(error)")
+            AppLog.error("❌ 解析 morning_hymns.json 失敗: \(error)")
         }
     }
     

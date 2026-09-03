@@ -1,0 +1,15 @@
+{
+    "id": "ad4-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "猶大書",
+            "chapter": "17-25"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "54:1-17"
+        }
+    }
+}

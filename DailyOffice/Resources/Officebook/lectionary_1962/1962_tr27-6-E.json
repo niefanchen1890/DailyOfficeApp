@@ -1,0 +1,15 @@
+{
+    "id": "tr27-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "5:1-14"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "12:12-21"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "easter3-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "3:12-26"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "47:1-15"
+        }
+    }
+}

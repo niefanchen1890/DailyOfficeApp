@@ -1,0 +1,15 @@
+{
+    "id": "0101-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "2:17-29"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "17:1-13"
+        }
+    }
+}
