@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0923_linus",
+  "identifier": "st_linus",
+  "traits": { "themes": ["martyr", "bishop"] },
   "name": {
     "zh-hant": "殉道者聖利奴主教",
     "zh-hans": "殉道者圣利奴主教",

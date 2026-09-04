@@ -93,10 +93,10 @@ struct DailyOfficeView: View {
                 .foregroundColor(anglicanRed)
             
             VStack(alignment: .leading, spacing: 2) {
-                Text("禮儀日曆")
+                Text("禮儀日曆".adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 22, weight: .bold))
                     .foregroundColor(.primary)
-                Text("我因你公義的典章一天七次讚美你。——詩篇 119:164")
+                Text("我因你公義的典章一天七次讚美你。——詩篇 119:164".adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 13))
                     .foregroundColor(.secondary)
             }
@@ -182,14 +182,14 @@ struct DailyOfficeView: View {
                 }
             }
             
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 22, weight: .bold))
                 .foregroundColor(.primary)
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)
             
             if !liturgy.rankName.isEmpty {
-                Text(liturgy.rankName)
+                Text(liturgy.rankName.adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 13, weight: .medium))
                     .padding(.horizontal, 10)
                     .padding(.vertical, 4)
@@ -199,7 +199,7 @@ struct DailyOfficeView: View {
             }
             
             if !liturgy.commemorations.isEmpty {
-                Text("紀念" + liturgy.commemorations.joined(separator: "、"))
+                Text(("紀念：" + liturgy.commemorations.joined(separator: "、")).adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 13))
                     .foregroundColor(.secondary)
                     .lineLimit(1)
@@ -232,12 +232,12 @@ struct DailyOfficeView: View {
                 }
             }
             
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 26, weight: .bold))
                 .foregroundColor(.primary)
             
             if !liturgy.rankName.isEmpty {
-                Text(liturgy.rankName)
+                Text(liturgy.rankName.adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 14, weight: .medium))
                     .padding(.horizontal, 12)
                     .padding(.vertical, 5)
@@ -247,7 +247,7 @@ struct DailyOfficeView: View {
             }
             
             if !liturgy.commemorations.isEmpty {
-                Text("紀念" + liturgy.commemorations.joined(separator: "、"))
+                Text(("紀念：" + liturgy.commemorations.joined(separator: "、")).adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 14))
                     .foregroundColor(.secondary)
             }
@@ -271,7 +271,7 @@ struct DailyOfficeView: View {
                             .background(office.color.opacity(0.12))
                             .cornerRadius(10)
                         
-                        Text(office.name)
+                        Text(office.name.adaptChinese(isSimplified: isSimp))
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.primary)
                     }
@@ -298,7 +298,7 @@ struct DailyOfficeView: View {
                             .background(office.color.opacity(0.12))
                             .cornerRadius(10)
                         
-                        Text(office.name)
+                        Text(office.name.adaptChinese(isSimplified: isSimp))
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.primary)
                     }
@@ -314,7 +314,7 @@ struct DailyOfficeView: View {
     // MARK: - 近日列表
     private var recentDaysList: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("近日")
+            Text("近日".adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 15, weight: .bold))
                 .foregroundColor(.primary)
                 .padding(.horizontal)
@@ -333,7 +333,7 @@ struct DailyOfficeView: View {
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.secondary)
                             
-                            Text(item.liturgy.mainTitle)
+                            Text(item.liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                                 .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                 .foregroundColor(.primary)
                                 .lineLimit(1)
@@ -409,21 +409,21 @@ struct DailyOfficeView: View {
     private func formattedFullDate(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant")
+        f.locale = Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     
     private func formattedShortDate(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "MM/dd EEEE"
-        f.locale = Locale(identifier: "zh_Hant")
+        f.locale = Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     
     private func monthYearString(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年MM月"
-        f.locale = Locale(identifier: "zh_Hant")
+        f.locale = Locale(identifier: isSimp ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     

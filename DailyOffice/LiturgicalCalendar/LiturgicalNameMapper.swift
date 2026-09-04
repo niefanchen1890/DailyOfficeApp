@@ -110,7 +110,7 @@ struct LiturgicalNameMapper {
         "約克的聖保利努斯主教":       "st_paulinus_york",
         "聖威爾弗里德主教":           "st_wilfrid",
         "真福蘭斯洛特·安德魯斯主教":  "blessed_lancelot_andrewes",
-        "真福約翰·科爾里奇·帕特森主教": "blessed_john_paterson",
+        "真福約翰·科爾里奇·帕特森主教": "blessed_john_patteson",
         "真福耶利米·泰勒主教":        "blessed_jeremy_taylor",
         "真福愛德華·布維萊·普西":    "blessed_edward_pusey",
         

@@ -19,13 +19,6 @@ struct BiographySheetData: Identifiable {
     let content: String
 }
 
-private let temporalKeywords: [String] = [
-    "主日", "平日", "禮拜", "週", "特禱",
-    "大齋首日", "聖週", "復活日", "復活後","升天望日",
-    "救主升天日", "升天日", "升天後主日",
-    "聖靈降臨", "三一", "基督君王"
-]
-
 struct LiturgyDashboardView: View {
     @StateObject private var viewModel = LiturgyViewModel()
     @ObservedObject private var languageStore = AppLanguageStore.shared
@@ -193,8 +186,10 @@ struct LiturgyDashboardView: View {
         .presentationDetents([.medium])
     }
     
-    private func loadIntroductionText(for identifier: String) -> String? {
-        let fileName = "intro_\(identifier)"
+    private func loadIntroductionText(for identifier: LiturgicalID) -> String? {
+        guard let fileName = LiturgicalResourceResolver.shared.introductionFileName(for: identifier) else {
+            return nil
+        }
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let intro = try? JSONDecoder().decode(FeastIntroduction.self, from: data) else {
@@ -270,7 +265,7 @@ struct LiturgyDashboardView: View {
 
     @ViewBuilder
     private func biographyButtonSection(for liturgy: DailyLiturgy) -> some View {
-        if isFixedFeast(liturgy.mainTitle) {
+        if isFixedFeast(liturgy.identifier, on: viewModel.selectedDate) {
             if let bio = martyrologyData?.biography, !bio.isEmpty {
                 // let displayTitle = martyrologyData?.title ?? liturgy.mainTitle
                 Button(action: {
@@ -311,20 +306,14 @@ struct LiturgyDashboardView: View {
     // 🌟 新增：聖日、主日與特禱日的「彌撒經文」按鈕
     @ViewBuilder
     private func massProperButtonSection(for liturgy: DailyLiturgy) -> some View {
-        let title = liturgy.mainTitle
-        
-        // 1. 判定是否為平日 (只要包含「禮拜」加數字，就是平日)
-        let weekdaySymbols = ["一", "二", "三", "四", "五", "六"]
-        let isWeekday = title.contains("禮拜") && weekdaySymbols.contains { title.contains($0) }
-        // 2. 嚴格判定是否為真正的主日 (包含「主日」或「復活日」，且絕對不能是平日)
-        let isSunday = (title.contains("主日") || title.contains("復活日")) && !isWeekday
-        // 🌟 新增 3. 判定是否為特禱日 (Rogation Days)
-        let isRogation = title.contains("特禱禮拜") && (title.contains("一") || title.contains("二") || title.contains("三"))
-        // 🌟 新增 3.1：判定是否為升天望日
-        let isVigilOfAscension = title.contains("升天望日")
-        let Ascension = title.contains("升天日") || title.contains("救主升天日") || title.contains("耶穌升天日")
-        // 4. 條件中加入 isVigilOfAscension，使其顯示按鈕
-        if isFixedFeast(title) || isSunday || isRogation || isVigilOfAscension  || Ascension {
+        let sundayRanks: Set<LiturgicalRank> = [
+            .sundayFirstClassGreat, .sundayFirstClass, .sundaySecondClass, .ordinarySunday
+        ]
+        let isAscension = liturgy.identifier == .ascension || liturgy.identifier == .ascensionVigil
+        if isFixedFeast(liturgy.identifier, on: viewModel.selectedDate)
+            || sundayRanks.contains(liturgy.rank)
+            || liturgy.traits.fast == .rogation
+            || isAscension {
             Button(action: {
                 loadAndPresentMassProper(for: viewModel.selectedDate)
             }) {
@@ -377,29 +366,28 @@ struct LiturgyDashboardView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Label("紀念事項".adaptChinese(isSimplified: isSimp), systemImage: "quote.opening").font(.footnote).bold()
                 
-                ForEach(liturgy.commemorations, id: \.self) { commemoration in
+                ForEach(liturgy.commemorationItems) { commemoration in
                     Button(action: {
                         var content = "暫無此紀念項目的介紹資料。"
                         
-                        if isFixedFeast(commemoration) {
+                        if isFixedFeast(commemoration.identifier, on: viewModel.selectedDate) {
                             // A. 聖人：讀取本日殉道錄
                             if let bio = martyrologyData?.biography, !bio.isEmpty {
                                 content = bio
                             }
                         } else {
                             // B. 節期/平日：獲取 ID 並讀取 intro_*.json
-                            let id = getIdentifier(from: commemoration, season: liturgy.season)
-                            if let loadedContent = loadIntroductionText(for: id) {
+                            if let loadedContent = loadIntroductionText(for: commemoration.identifier) {
                                 content = loadedContent
                             }
                         }
                         
-                        selectedBiography = BiographySheetData(title: commemoration, content: content)
+                        selectedBiography = BiographySheetData(title: commemoration.title, content: content)
                         
                     }) {
                         HStack(alignment: .top, spacing: 6) {
                             Text("•").font(.subheadline)
-                            Text(commemoration.adaptChinese(isSimplified: isSimp))
+                            Text(commemoration.title.adaptChinese(isSimplified: isSimp))
                                 .font(.subheadline)
                                 .underline()
                             Image(systemName: "info.circle")
@@ -425,13 +413,8 @@ struct LiturgyDashboardView: View {
         }
     }
 
-    func isFixedFeast(_ title: String) -> Bool {
-        for keyword in temporalKeywords {
-            if title.contains(keyword) {
-                return false
-            }
-        }
-        return true
+    func isFixedFeast(_ identifier: LiturgicalID, on date: Date) -> Bool {
+        Sanctorale.shared.getFeasts(for: date).contains { $0.identifier == identifier }
     }
     
     func calculateFasting(for date: Date, season: LiturgicalSeason) -> String {
@@ -488,14 +471,12 @@ struct LiturgyDashboardView: View {
         guard let liturgy = viewModel.currentLiturgy else { return }
         
         // 獲取當天的節期標識符 (如 "easter", "easter5", "rogation" 等)
-        let identifier = feastIdentifier(for: liturgy)
-        
         var possibleNames: [String] = []
         
         // 🌟 A. 優先處理節期/主日 (Temporal)
         // 如果是特定的節期主日，根據需求匹配 mass-easter, mass-easter1 等
-        if identifier != "generic" && identifier != "eastertide" {
-            possibleNames.append("mass-\(identifier)")
+        if let key = LiturgicalResourceResolver.shared.massProperKey(for: liturgy.identifier) {
+            possibleNames.append("mass-\(key)")
         }
         
         // 🌟 B. 處理固定日期 (Fixed Feast)
@@ -533,11 +514,11 @@ struct LiturgyDashboardView: View {
     }
     
     func loadFeastIntroduction(for liturgy: DailyLiturgy) {
-        let identifier = feastIdentifier(for: liturgy)
-        let fileName = "intro_\(identifier)"
-        
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            AppLog.warning("⚠️ 找不到節期介紹檔案：\(fileName).json")
+        guard let fileName = LiturgicalResourceResolver.shared.introductionFileName(for: liturgy.identifier),
+              let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+            let missingName = LiturgicalResourceResolver.shared.introductionFileName(for: liturgy.identifier)
+                ?? liturgy.identifier.rawValue
+            AppLog.warning("⚠️ 找不到節期介紹檔案：\(missingName)")
             self.feastIntroduction = nil
             return
         }
@@ -552,151 +533,25 @@ struct LiturgyDashboardView: View {
         }
     }
 
-    // MARK: - 更新後的 feastIdentifier (用於主畫面)
-    func feastIdentifier(for liturgy: DailyLiturgy) -> String {
-        let title = liturgy.mainTitle
-        
-        // 🌟 新增：節期八日慶期統一讀取節期介紹
-        if title.contains("八日慶期") {
-            if title.contains("升天") { return "ascension" }
-            if title.contains("基督聖體") { return "corpuschristi" }
-            if title.contains("耶穌聖心") { return "sacredheart" }
-            if title.contains("聖靈降臨") { return "pentecost" }
-            if title.contains("復活") { return "easter" }
-            if title.contains("聖誕") { return "christmas" }
-        }
-        
-        // 1. 特大節日優先處理 (攔截順序不變)
-        if title.contains("升天望日") { return "vigilofascension" }
-        if title.contains("復活主日") || title.contains("復活節") { return "easter" }
-        if title.contains("聖誕") { return "christmas" }
-        if title.contains("大齋首日") { return "lent" }
-        if title.contains("特禱禮拜") {
-            if title.contains("一") || title.contains("二") || title.contains("三") {
-                return "rogation"
-            }
-        }
-        if title.contains("救主升天日") || title.contains("升天日") { return "ascension" }
-        if title.contains("升天後主日") { return "sundayafterascension" }
-        // 🌟 核心調整：針對「主日」關鍵字進行編號抓取
-        // 復活期平日標題為「復活後第X主日禮拜X」，移除 !isWeekday 限制後，
-        // 平日也會正確對應到 "easter1", "easter2" 等主日介紹檔案。
-        if title.contains("主日") {
-            let prefix: String
-            switch liturgy.season {
-            case .advent:   prefix = "advent"
-            case .lent:     prefix = "lent"
-            case .easter:   prefix = "easter"
-            case .pentecost: prefix = "pentecost"
-            case .trinity:  prefix = "trinity"
-            default:        prefix = ""
-            }
-            
-            if !prefix.isEmpty {
-                for i in 1...7 {
-                    let chineseNum = numberToChinese(i)
-                    if title.contains("第\(chineseNum)") {
-                        return "\(prefix)\(i)"
-                    }
-                }
-            }
-        }
-
-        // 3. 其餘平日則顯示該節期的通用介紹
-        // 降臨期、三一期等的平日標題通常不含「主日」二字，會安全地落入此處回傳通用 ID
-        switch liturgy.season {
-        case .advent:    return "advent"
-        case .christmas: return "christmas"
-        case .epiphany:  return "epiphany"
-        case .lent:      return "lent"
-        case .holyWeek:  return "holy_week"
-        case .easter:    return "eastertide"
-        case .pentecost: return "pentecost"
-        case .trinity:   return "trinity"
-        default:         return "generic"
-        }
-    }
-
-    // MARK: - 更新後的 getIdentifier (用於紀念事項按鈕)
-    private func getIdentifier(from title: String, season: LiturgicalSeason) -> String {
-        // 🌟 新增：節期八日慶期統一讀取節期介紹
-        if title.contains("八日慶期") {
-            if title.contains("升天") { return "ascension" }
-            if title.contains("基督聖體") { return "corpuschristi" }
-            if title.contains("耶穌聖心") { return "sacredheart" }
-            if title.contains("聖靈降臨") { return "pentecost" }
-            if title.contains("復活") { return "easter" }
-            if title.contains("聖誕") { return "christmas" }
-        }
-        
-        // 1. 特大節日處理 (與上方 logic 保持一致)
-        if title.contains("升天望日") { return "vigilofascension" }
-        if title.contains("復活主日") || title.contains("復活節") { return "easter" }
-        if title.contains("聖誕") { return "christmas" }
-        if title.contains("大齋首日") { return "lent" }
-        if title.contains("救主升天日") || title.contains("升天日") { return "ascension" }
-        
-        if title.contains("特禱禮拜") {
-            if title.contains("一") || title.contains("二") || title.contains("三") {
-                return "rogation"
-            }
-        }
-        if title.contains("升天後主日") { return "sundayafterascension" }
-        // 🌟 核心調整：同步移除 !isWeekday 判定，使復活期平日紀念也能讀取主日介紹
-        if title.contains("主日") {
-            let prefix: String
-            switch season {
-            case .advent:   prefix = "advent"
-            case .lent:     prefix = "lent"
-            case .easter:   prefix = "easter"
-            case .pentecost: prefix = "pentecost"
-            case .trinity:  prefix = "trinity"
-            default:        prefix = ""
-            }
-            
-            if !prefix.isEmpty {
-                for i in 1...7 {
-                    let chineseNum = numberToChinese(i)
-                    if title.contains("第\(chineseNum)") {
-                        return "\(prefix)\(i)"
-                    }
-                }
-            }
-        }
-
-        // 3. 預設回傳該節期的通用標識符
-        switch season {
-        case .advent:    return "advent"
-        case .christmas: return "christmas"
-        case .epiphany:  return "epiphany"
-        case .lent:      return "lent"
-        case .holyWeek:  return "holy_week"
-        case .easter:    return "eastertide"
-        case .pentecost: return "pentecost"
-        case .trinity:   return "trinity"
-        default:         return "generic"
-        }
-    }
-    
     @ViewBuilder
     func renderMainTitle(liturgy: DailyLiturgy) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 28, weight: .bold))
             
-            if liturgy.mainTitle.contains("復活後第五主日") {
+            if liturgy.identifier.temporalComponents.map({ $0.season == .easter && $0.week == 5 }) == true {
                 Text("（俗稱特禱主日）".adaptChinese(isSimplified: isSimp))
                     .font(.subheadline)
                     .opacity(0.8)
             }
             
             // 🌟 新增：基督聖體節八日慶期內主日
-            if liturgy.mainTitle.contains("基督聖體節八日慶期內主日") {
+            if liturgy.identifier == .corpusChristiOctaveSunday {
                 Text("（三一主日後第一主日）".adaptChinese(isSimplified: isSimp))
                     .font(.subheadline)
                     .opacity(0.8)
             }
-            if liturgy.mainTitle.contains("耶穌聖心節八日慶期內主日") {
+            if liturgy.identifier == .sacredHeartOctaveSunday {
                 Text("（三一主日後第二主日）".adaptChinese(isSimplified: isSimp))
                     .font(.subheadline)
                     .opacity(0.8)

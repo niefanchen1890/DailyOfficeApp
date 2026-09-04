@@ -135,12 +135,8 @@ struct PrimePrayerData {
     
     struct BVMFeastAntiphon {
         static var text: String { PrimePrayerData.data.bvmFeastAntiphon.text(isSimplified: isSimplified) }
-        static let feastNames: [String] = [
-            "加羅默爾聖母", "聖母聖名日", "七苦聖母", "贖虜聖母",
-            "聖母玫瑰", "沃爾辛厄姆聖母", "建立聖母雪地大殿", "露德聖母"
-        ]
-        static func isBVMFeast(title: String) -> Bool {
-            feastNames.contains { title.contains($0) }
+        static func isBVMFeast(liturgy: DailyLiturgy) -> Bool {
+            liturgy.traits.themes.contains(.blessedVirginMary)
         }
     }
     
@@ -246,16 +242,15 @@ struct PrimePrayerData {
             let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
             let season = info.season
             let weekNumber = info.weekNumber
-            let title = liturgy.mainTitle
-            
-            if title.contains("耶穌聖心節") || title.contains("聖心節") { return "sacred_heart" }
-            if title.contains("基督易容") || title.contains("易容顯光") || title.contains("基督易容顯光日") { return "transfiguration" }
-            if title.contains("基督普世君王") || title.contains("普世君王節") { return "christ_the_king" }
-            if title.contains("童貞") || title.contains("聖母") || title.contains("馬利亞") { return "bvm" }
-            if season == .ascension || title.contains("升天") { return "ascensiontide" }
-            if [.easter, .pentecost].contains(season) || title.contains("復活") || title.contains("聖靈降臨") { return "eastertide" }
+            let themes = liturgy.traits.themes
+            if themes.contains(.sacredHeart) { return "sacred_heart" }
+            if themes.contains(.transfiguration) { return "transfiguration" }
+            if liturgy.identifier == .christTheKing || themes.contains(.christTheKing) { return "christ_the_king" }
+            if themes.contains(.blessedVirginMary) { return "bvm" }
+            if season == .ascension { return "ascensiontide" }
+            if [.easter, .pentecost].contains(season) { return "eastertide" }
             if season == .epiphany && weekNumber == 1 { return "epiphany_octave" }
-            if season == .christmas || title.contains("聖誕") || title.contains("主顯") { return "christmas_to_purification" }
+            if season == .christmas { return "christmas_to_purification" }
             return nil
         }
         

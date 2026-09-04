@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0924_our_lady_of_ransom",
+  "identifier": "our_lady_ransom",
+  "traits": { "themes": ["blessedVirginMary"] },
   "name": {
     "zh-hant": "贖虜聖母",
     "zh-hans": "赎虏圣母",

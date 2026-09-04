@@ -9,7 +9,7 @@ class PatristicReadingLoader {
         let (seasonKey, week) = adjustedSeasonAndWeek(
             season: info.season,
             week: info.weekNumber,
-            title: liturgy.mainTitle,
+            identifier: liturgy.identifier,
             daysFromEaster: info.daysFromEaster
         )
         
@@ -26,43 +26,42 @@ class PatristicReadingLoader {
     private func adjustedSeasonAndWeek(
         season: LiturgicalSeason,
         week: Int,
-        title: String,
+        identifier: LiturgicalID,
         daysFromEaster: Int
     ) -> (seasonKey: String, week: Int) {
         
         switch season {
         case .christmas:
-            if title.contains("聖誕日") { return ("christmas", 0) }
-            if title.contains("聖誕後第一") { return ("christmas", 1) }
-            if title.contains("聖誕後第二") { return ("christmas", 2) }
-            if title.contains("救主受割禮") { return ("christmas", 3) }
+            if identifier == .christmasDay { return ("christmas", 0) }
+            if identifier == .circumcision { return ("christmas", 3) }
+            if let temporal = identifier.temporalComponents { return ("christmas", temporal.week) }
             return ("christmas", 0)
             
         case .epiphany:
-            if title == "顯現日" { return ("epiphany", 0) }
+            if identifier == .epiphany { return ("epiphany", 0) }
             return ("epiphany", week)
             
         case .prelenten:
-            if title.contains("七旬") { return ("prelenten", 1) }
-            if title.contains("六旬") { return ("prelenten", 2) }
-            if title.contains("五旬") { return ("prelenten", 3) }
+            if identifier == .septuagesimaSunday { return ("prelenten", 1) }
+            if identifier == .sexagesimaSunday { return ("prelenten", 2) }
+            if identifier == .quinquagesimaSunday { return ("prelenten", 3) }
             return ("prelenten", week)
             
         case .lent:
-            if title.contains("大齋首日") { return ("lent", 0) }
-            if title.contains("苦難主日") { return ("lent", 5) }
-            if title.contains("棕樹主日") { return ("lent", 6) }
+            if identifier == .ashWednesday { return ("lent", 0) }
+            if identifier == .passionSunday { return ("lent", 5) }
+            if identifier == .palmSunday { return ("lent", 6) }
             return ("lent", week)
             
         case .easter:
-            if title.contains("救主復活") { return ("easter", 0) }
-            if title.contains("升天") && !title.contains("後") { return ("easter", 5) }
-            if title.contains("聖靈降臨") { return ("easter", 7) }
+            if identifier == .easterDay { return ("easter", 0) }
+            if identifier == .ascension { return ("easter", 5) }
+            if identifier == .pentecost { return ("easter", 7) }
             return ("easter", week)
             
         case .trinity:
-            if title == "三一主日" { return ("trinity", 0) }
-            if title.contains("降臨前主日") { return ("trinity", 27) }
+            if identifier == .trinitySunday { return ("trinity", 0) }
+            if identifier == .sundayBeforeAdvent { return ("trinity", 27) }
             return ("trinity", week)
             
         case .advent:

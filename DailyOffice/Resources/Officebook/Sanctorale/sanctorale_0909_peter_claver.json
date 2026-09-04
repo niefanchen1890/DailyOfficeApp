@@ -1,5 +1,10 @@
 {
-  "identifier": "sanctorale_0909_peter_claver",
+  "identifier": "st_peter_claver",
+  "traits": {
+    "themes": [
+      "confessor"
+    ]
+  },
   "name": {
     "zh-hant": "聖彼得·克拉維爾",
     "zh-hans": "圣彼得·克拉维尔",

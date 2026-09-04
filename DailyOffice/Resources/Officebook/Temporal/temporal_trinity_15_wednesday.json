@@ -1,5 +1,7 @@
 {
-  "identifier": "temporal_trinity_15_wednesday",
+  "identifier": "temporal.trinity.week.15.weekday.4",
+  "temporal": { "season": "trinity", "week": 15, "weekday": 4 },
+  "traits": { "themes": [] },
   "name": {
     "zh-hant": "三一主日後第十五主日禮拜三",
     "zh-hans": "三一主日后第十五主日礼拜三"

@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0930_jerome",
+  "identifier": "st_jerome",
+  "traits": { "themes": ["confessor", "churchDoctor"] },
   "name": {
     "zh-hant": "教會聖師、精修者聖耶柔米",
     "zh-hans": "教会圣师、精修者圣耶柔米",

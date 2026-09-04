@@ -1,5 +1,5 @@
 {
-  "identifier": "temporal_trinity_13_sunday",
+  "identifier": "temporal.trinity.week.13.weekday.1",
   "name": {
     "zh-hant": "三一主日後第十三主日",
     "zh-hans": "三一主日后第十三主日"
@@ -10,6 +10,14 @@
     "zh-hans": "（普通主日，半复式）"
   },
   "type": "temporal",
+  "temporal": {
+    "season": "trinity",
+    "week": 13,
+    "weekday": 1
+  },
+  "traits": {
+    "themes": []
+  },
   "vigil": {
     "benedictus_antiphon": {
       "normal": {

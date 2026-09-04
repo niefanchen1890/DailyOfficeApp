@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0916_cyprian",
+  "identifier": "st_cyprian",
+  "traits": { "themes": ["martyr", "bishop"] },
   "name": {
     "zh-hant": "殉道者聖居普良主教",
     "zh-hans": "殉道者圣居普良主教",

@@ -1,5 +1,7 @@
 {
-  "identifier": "temporal_trinity_18_thursday",
+  "identifier": "temporal.trinity.week.18.weekday.5",
+  "temporal": { "season": "trinity", "week": 18, "weekday": 5 },
+  "traits": { "themes": [] },
   "name": {
     "zh-hant": "三一主日後第十八主日禮拜四",
     "zh-hans": "三一主日后第十八主日礼拜四"

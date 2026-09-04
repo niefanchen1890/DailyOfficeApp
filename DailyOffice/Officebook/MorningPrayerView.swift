@@ -63,7 +63,7 @@ struct MorningPrayerView: View {
         .overlay(alignment: .bottomTrailing) {
             languageToggleButton
         }
-        .navigationTitle("早禱")
+        .navigationTitle(viewModel.appLanguage == .simplified ? "早祷" : "早禱")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: languageStore.language) { _, newLanguage in
             if viewModel.appLanguage != newLanguage {
@@ -219,6 +219,7 @@ struct MorningPrayerView: View {
     
     private var header: some View {
         let liturgy = viewModel.liturgy
+        let isSimp = viewModel.appLanguage == .simplified
         
         return VStack(spacing: 0) {
             // 日期：2026年5月24日 禮拜日
@@ -228,7 +229,7 @@ struct MorningPrayerView: View {
                 .padding(.top, 12)
             
             // 大標題：聖靈降臨日
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 34, weight: .bold))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
@@ -245,7 +246,7 @@ struct MorningPrayerView: View {
             
             // 禮儀等級：（一等複式）
             if !liturgy.rankName.isEmpty {
-                Text("（\(liturgy.rankName)）")
+                Text("（\(liturgy.rankName.adaptChinese(isSimplified: isSimp))）")
                     .font(.system(size: 17, weight: .regular))
                     .foregroundColor(LiturgyColors.crimson)
                     .padding(.top, 4)
@@ -258,7 +259,7 @@ struct MorningPrayerView: View {
                 .padding(.vertical, 20)
             
             // 早 禱（大字置中，字間加寬）
-            Text("早  禱")
+            Text(isSimp ? "早  祷" : "早  禱")
                 .font(.system(size: 26, weight: .medium))
                 .foregroundColor(.primary)
                 .tracking(12) // 字間距
@@ -266,7 +267,7 @@ struct MorningPrayerView: View {
             
             // 紀念事項
             if !liturgy.commemorations.isEmpty {
-                Text("紀念：\(liturgy.commemorations.joined(separator: "、"))")
+                Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、").adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -282,7 +283,7 @@ struct MorningPrayerView: View {
     private func formattedFullDateWithWeekday(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant")
+        f.locale = Locale(identifier: viewModel.appLanguage == .simplified ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     
@@ -2509,8 +2510,8 @@ class MorningPrayerViewModel: ObservableObject {
     }
     var bibleSentences: [BibleSentenceJSON] {
         // 🌟 強制：三一主日後第一、第二主日使用平日選句，不受基督聖體節／聖心節專日 JSON 覆蓋
-        let isCorpusChristiSunday = liturgy.mainTitle.contains("三一主日後第一主日")
-        let isSacredHeartSunday   = liturgy.mainTitle.contains("三一主日後第二主日")
+        let isCorpusChristiSunday = liturgy.identifier == .corpusChristiOctaveSunday
+        let isSacredHeartSunday   = liturgy.identifier == .sacredHeartOctaveSunday
         let forceOrdinary = isCorpusChristiSunday || isSacredHeartSunday
         
         // 1. 優先：本日專用 JSON（強制平日時跳過）
@@ -2522,17 +2523,17 @@ class MorningPrayerViewModel: ObservableObject {
         let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
         
         // 🌟 升天後主日：強制使用升天期選句，絕不回退到平日
-        if liturgy.mainTitle == "升天後主日" {
-            let ascension = BibleSentencesLoader.shared.sentences(for: .ascension, title: liturgy.mainTitle)
+        if liturgy.identifier == .sundayAfterAscension {
+            let ascension = BibleSentencesLoader.shared.sentences(for: .ascension, identifier: liturgy.identifier)
             if !ascension.isEmpty { return ascension }
             
-            let easter = BibleSentencesLoader.shared.sentences(for: .easter, title: "復活後第七主日")
+            let easter = BibleSentencesLoader.shared.sentences(for: .easter, identifier: .temporal(season: .easter, week: 7, weekday: 1))
             if !easter.isEmpty { return easter }
             
-            return BibleSentencesLoader.shared.sentences(for: .easter, title: "主日")
+            return BibleSentencesLoader.shared.sentences(for: .easter, identifier: liturgy.identifier)
         }
         
-        return BibleSentencesLoader.shared.sentences(for: info.season, title: liturgy.mainTitle, language: appLanguage)
+        return BibleSentencesLoader.shared.sentences(for: info.season, identifier: liturgy.identifier, language: appLanguage)
     }
     
     
@@ -3008,7 +3009,8 @@ class MorningPrayerViewModel: ObservableObject {
         
         AppLog.debug("🎯 當日紀念列表：\(liturgy.commemorations)")
         
-        for name in liturgy.commemorations {
+        for item in liturgy.commemorationItems {
+            let name = item.title
             AppLog.debug("🔍 查找紀念：\(name)")
             
             var file = DailyOfficeLoader.shared.loadCommemoration(name: name, date: selectedDate)
@@ -3054,7 +3056,7 @@ class MorningPrayerViewModel: ObservableObject {
             AppLog.debug("   ✅ 找到祝文：\(collect.title)")
             
             // 🌟 判斷是否為望日紀念
-            let isVigilCommemoration = name.contains("望日")
+            let isVigilCommemoration = item.traits.isVigil
             
             // 🌟 對經：與 DailyOfficeLoader 一致，支援 normal / normals 兩種格式
             let antiphon: String? = {

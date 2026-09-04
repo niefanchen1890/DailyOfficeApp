@@ -372,16 +372,12 @@ final class DailyOffice1943LectionaryService {
         case .epiphany:
             return "ep"
         case .prelenten:
-            if info.name.contains("七旬") {
-                return "septuagesima"
+            switch info.weekNumber {
+            case 1: return "septuagesima"
+            case 2: return "sexagesima"
+            case 3: return "quinquagesima"
+            default: return "prelent"
             }
-            if info.name.contains("六旬") {
-                return "sexagesima"
-            }
-            if info.name.contains("五旬") {
-                return "quinquagesima"
-            }
-            return "prelent"
         case .lent:
             return "lent"
         case .easter:

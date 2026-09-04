@@ -275,12 +275,14 @@ class DailyLectionaryService {
             if info.weekNumber == 0 { return (true, "0106", "", 0) }
             return (false, "", "epiphany", info.weekNumber)
         case .prelenten:
-            if info.name.contains("七旬") { return (false, "", "septuagesima", 0) }
-            if info.name.contains("六旬") { return (false, "", "sexagesima", 0) }
-            if info.name.contains("五旬") { return (false, "", "quinquagesima", 0) }
-            return (false, "", "prele", 0)
+            switch info.weekNumber {
+            case 1: return (false, "", "septuagesima", 0)
+            case 2: return (false, "", "sexagesima", 0)
+            case 3: return (false, "", "quinquagesima", 0)
+            default: return (false, "", "prele", 0)
+            }
         case .lent:
-            if info.name == "大齋首日" { return (false, "", "quinquagesima", 0) }
+            if info.daysFromEaster == -46 { return (false, "", "quinquagesima", 0) }
             return (false, "", "lent", info.weekNumber)
         case .easter:
             return (false, "", "easter", info.weekNumber + 1)

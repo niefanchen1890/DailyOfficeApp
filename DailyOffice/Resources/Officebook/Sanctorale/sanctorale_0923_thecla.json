@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0923_thecla",
+  "identifier": "st_thecla",
+  "traits": { "themes": ["virgin", "martyr"] },
   "name": {
     "zh-hant": "童貞女聖德克拉",
     "zh-hans": "童贞女圣德克拉",

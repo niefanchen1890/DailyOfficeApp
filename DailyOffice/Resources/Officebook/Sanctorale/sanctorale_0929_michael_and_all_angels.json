@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0929_michael_and_all_angels",
+  "identifier": "st_michael_all_angels",
+  "traits": { "themes": ["angel"] },
   "name": {
     "zh-hant": "聖米迦勒和諸天使日",
     "zh-hans": "圣米迦勒和诸天使日",

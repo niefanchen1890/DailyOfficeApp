@@ -1,5 +1,5 @@
 {
-  "identifier": "sanctorale_0902_stephen_of_hungary",
+  "identifier": "st_stephen_hungary",
   "name": {
     "zh-hant": "匈牙利的聖王聖司提反",
     "zh-hans": "匈牙利的圣王圣司提反",
@@ -12,6 +12,12 @@
     "en": ""
   },
   "type": "sanctorale",
+  "traits": {
+    "themes": [
+      "confessor",
+      "sovereign"
+    ]
+  },
   "vigil": {
     "bible_sentences": [
       {

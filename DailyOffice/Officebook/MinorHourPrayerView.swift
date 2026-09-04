@@ -102,8 +102,7 @@ class MinorHourPrayerViewModel: ObservableObject {
     }
 
     var currentAntiphon: MinorHourPsalmAntiphonJSON? {
-        let title = liturgy.mainTitle
-        if MinorHourPrayerRules.isBVMFeast(title: title) {
+        if MinorHourPrayerRules.isBVMFeast(liturgy: liturgy) {
             let text = data.bvmFeastAntiphon
             return MinorHourPsalmAntiphonJSON(season: isSimplified ? "圣母庆节" : "聖母慶節", text: text, fullText: text)
         }
@@ -247,14 +246,14 @@ struct MinorHourPrayerView: View {
         return VStack(spacing: 0) {
             Text(formattedFullDateWithWeekday(viewModel.selectedDate))
                 .font(.system(size: 15, weight: .medium, design: .default)).foregroundColor(.secondary).padding(.top, 12)
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 34, weight: .bold)).foregroundColor(.primary).multilineTextAlignment(.center).padding(.top, 12)
 
             if let common = viewModel.commonName {
                 Text(common).font(.system(size: 18, weight: .semibold)).foregroundColor(LiturgyColors.crimson).padding(.top, 6)
             }
             if !liturgy.rankName.isEmpty {
-                Text("（\(liturgy.rankName)）").font(.system(size: 17, weight: .regular)).foregroundColor(LiturgyColors.crimson).padding(.top, 4)
+                Text("（\(liturgy.rankName.adaptChinese(isSimplified: isSimp))）").font(.system(size: 17, weight: .regular)).foregroundColor(LiturgyColors.crimson).padding(.top, 4)
             }
 
             Divider().background(Color.secondary.opacity(0.25)).padding(.horizontal, 60).padding(.vertical, 20)
@@ -262,7 +261,7 @@ struct MinorHourPrayerView: View {
                 .font(.system(size: 26, weight: .medium)).foregroundColor(.primary).tracking(12).padding(.bottom, 4)
 
             if !liturgy.commemorations.isEmpty {
-                Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、"))
+                Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、").adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 14, weight: .regular)).foregroundColor(.secondary).multilineTextAlignment(.center).padding(.top, 8).padding(.bottom, 8)
             }
         }

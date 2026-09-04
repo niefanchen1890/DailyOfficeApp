@@ -1,8 +1,10 @@
 {
-  "identifier": "temporal_trinity_18_saturday",
+  "identifier": "temporal.trinity.week.18.weekday.7",
+  "temporal": { "season": "trinity", "week": 18, "weekday": 7 },
+  "traits": { "themes": [] },
   "name": {
-    "zh-hant": "三一主日後第七主日禮拜六",
-    "zh-hans": "三一主日后第七主日礼拜六"
+    "zh-hant": "三一主日後第十八主日禮拜六",
+    "zh-hans": "三一主日后第十八主日礼拜六"
   },
   "rank": "feria",
   "rank_display": {

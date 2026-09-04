@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0919_theodore_of_canterbury",
+  "identifier": "st_theodore_canterbury",
+  "traits": { "themes": ["bishop", "confessor"] },
   "name": {
     "zh-hant": "坎特伯雷的聖西奧多主教",
     "zh-hans": "坎特伯雷的圣西奥多主教",

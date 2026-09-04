@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0925_lancelot_andrewes",
+  "identifier": "blessed_lancelot_andrewes",
+  "traits": { "themes": ["bishop", "confessor"] },
   "name": {
     "zh-hant": "真福蘭斯洛特·安德魯斯主教",
     "zh-hans": "真福兰斯洛特·安德鲁斯主教",

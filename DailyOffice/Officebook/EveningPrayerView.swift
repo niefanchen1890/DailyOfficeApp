@@ -54,7 +54,7 @@ struct EveningPrayerView: View {
         .overlay(alignment: .bottomTrailing) {
             languageToggleButton
         }
-        .navigationTitle("晚禱")
+        .navigationTitle(viewModel.appLanguage == .simplified ? "晚祷" : "晚禱")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: languageStore.language) { _, newLanguage in
             if viewModel.appLanguage != newLanguage {
@@ -131,6 +131,7 @@ struct EveningPrayerView: View {
     // MARK: - 標頭
     private var header: some View {
         let liturgy = viewModel.liturgy
+        let isSimp = viewModel.appLanguage == .simplified
         
         return VStack(spacing: 0) {
             Text(formattedFullDateWithWeekday(viewModel.selectedDate))
@@ -138,7 +139,7 @@ struct EveningPrayerView: View {
                 .foregroundColor(.secondary)
                 .padding(.top, 12)
             
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 34, weight: .bold))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
@@ -153,7 +154,7 @@ struct EveningPrayerView: View {
             }
             
             if !liturgy.rankName.isEmpty {
-                Text("（\(liturgy.rankName)）")
+                Text("（\(liturgy.rankName.adaptChinese(isSimplified: isSimp))）")
                     .font(.system(size: 17, weight: .regular))
                     .foregroundColor(LiturgyColors.crimson)
                     .padding(.top, 4)
@@ -166,14 +167,18 @@ struct EveningPrayerView: View {
             
             // 🌟 改為晚禱
             // 🌟 改為晚禱（簡式慶節的前夕晚禱顯示為「晚禱」）
-            Text(liturgy.isFirstVespers && liturgy.rank != .simple ? "前夕晚禱" : "晚  禱")
+            Text(
+                liturgy.isFirstVespers && liturgy.rank != .simple
+                    ? (isSimp ? "前夕晚祷" : "前夕晚禱")
+                    : (isSimp ? "晚  祷" : "晚  禱")
+            )
                 .font(.system(size: 26, weight: .medium))
                 .foregroundColor(.primary)
                 .tracking(12) // 字間距
                 .padding(.bottom, 4)
             
             if !liturgy.commemorations.isEmpty {
-                Text("紀念：\(liturgy.commemorations.joined(separator: "、"))")
+                Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、").adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -188,7 +193,7 @@ struct EveningPrayerView: View {
     private func formattedFullDateWithWeekday(_ date: Date) -> String {
         let f = DateFormatter()
         f.dateFormat = "yyyy年M月d日 EEEE"
-        f.locale = Locale(identifier: "zh_Hant")
+        f.locale = Locale(identifier: viewModel.appLanguage == .simplified ? "zh_Hans" : "zh_Hant")
         return f.string(from: date)
     }
     
@@ -1683,7 +1688,7 @@ class EveningPrayerViewModel: ObservableObject {
         // 0. 基督聖體節至其八日慶期前夕晚禱：一律使用聖體節西面頌對經。
         // 排除基督聖心節前夕晚禱，因該晚禱已屬基督聖心節。
         let daysFromEaster = LiturgyCoreService.shared.getSeasonInfo(for: effectiveDate).daysFromEaster
-        let isSacredHeartVespers = liturgy.mainTitle.contains("聖心")
+        let isSacredHeartVespers = liturgy.traits.themes.contains(.sacredHeart)
         if (60...67).contains(daysFromEaster) && !isSacredHeartVespers {
             return "哈利路亞，※我所要賜的糧，哈利路亞，就是我的肉，哈利路亞，為世人之生命所賜的。哈利路亞，哈利路亞。"
         }
@@ -1702,7 +1707,7 @@ class EveningPrayerViewModel: ObservableObject {
         let weekNumber = info.weekNumber
         
         // 諸聖日專用（前夕到第八日）
-        if liturgy.mainTitle.contains("諸聖日") {
+        if liturgy.traits.themes.contains(.allSaints) {
             return "聖者、義者，※你們要在主內歡欣；※上帝揀選了你們作為祂自己的人。"
         }
         
@@ -1888,17 +1893,17 @@ class EveningPrayerViewModel: ObservableObject {
         let info = LiturgyCoreService.shared.getSeasonInfo(for: effectiveDate)
         
         // 🌟 升天後主日：強制使用升天期選句，絕不回退到平日
-        if liturgy.mainTitle == "升天後主日" {
-            let ascension = BibleSentencesLoader.eveningShared.sentences(for: .ascension, title: liturgy.mainTitle)
+        if liturgy.identifier == .sundayAfterAscension {
+            let ascension = BibleSentencesLoader.eveningShared.sentences(for: .ascension, identifier: liturgy.identifier)
             if !ascension.isEmpty { return ascension }
             
-            let easter = BibleSentencesLoader.eveningShared.sentences(for: .easter, title: "復活後第七主日")
+            let easter = BibleSentencesLoader.eveningShared.sentences(for: .easter, identifier: .temporal(season: .easter, week: 7, weekday: 1))
             if !easter.isEmpty { return easter }
             
-            return BibleSentencesLoader.eveningShared.sentences(for: .easter, title: "主日")
+            return BibleSentencesLoader.eveningShared.sentences(for: .easter, identifier: liturgy.identifier)
         }
         
-        return BibleSentencesLoader.eveningShared.sentences(for: info.season, title: liturgy.mainTitle)
+        return BibleSentencesLoader.eveningShared.sentences(for: info.season, identifier: liturgy.identifier)
     }
     
     // 🌟 詩篇改為 Evening
@@ -2061,7 +2066,8 @@ class EveningPrayerViewModel: ObservableObject {
             
             AppLog.debug("🌙 當日晚禱紀念列表：\(liturgy.commemorations)")
             
-            for name in liturgy.commemorations {
+            for item in liturgy.commemorationItems {
+                let name = item.title
                 AppLog.debug("🔍 查找紀念：\(name)")
                 
                 // 🌟 1. 歸一化：去掉「紀念」前綴

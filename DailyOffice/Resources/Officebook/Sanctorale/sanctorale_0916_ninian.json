@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0916_ninian",
+  "identifier": "st_ninian",
+  "traits": { "themes": ["bishop", "confessor"] },
   "name": {
     "zh-hant": "聖尼安主教",
     "zh-hans": "圣尼安主教",

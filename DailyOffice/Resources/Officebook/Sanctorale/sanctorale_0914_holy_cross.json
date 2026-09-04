@@ -1,5 +1,10 @@
 {
-  "identifier": "sanctorale_0914_holy_cross",
+  "identifier": "holy_cross",
+  "traits": {
+    "themes": [
+      "holyCross"
+    ]
+  },
   "name": {
     "zh-hant": "聖十字架日",
     "zh-hans": "圣十字架日",
@@ -11,7 +16,7 @@
     "zh-hans": "（大复式）",
     "en": ""
   },
-  "type": "temporal",
+  "type": "sanctorale",
   "vigil": {
     "bible_sentences": [
       {

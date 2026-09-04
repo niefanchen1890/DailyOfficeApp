@@ -1,5 +1,5 @@
 {
-  "identifier": "sanctorale_0907_evurtius",
+  "identifier": "st_evurtius",
   "name": {
     "zh-hant": "聖艾烏爾提烏斯主教",
     "zh-hans": "圣艾乌尔提乌斯主教",
@@ -12,6 +12,12 @@
     "en": ""
   },
   "type": "sanctorale",
+  "traits": {
+    "themes": [
+      "bishop",
+      "confessor"
+    ]
+  },
   "vigil": {
     "bible_sentences": [
       {

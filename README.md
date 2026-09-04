@@ -220,6 +220,215 @@ JSON 是一種讓程式容易閱讀的文字格式。它對標點非常嚴格，
 - 每篇詩篇第一個對經放在詩篇標題之下、第 1 節之前。
 - 詩篇結束後的對經仍保留在榮歸頌之後。
 
+### 2026-09-03：大齋首日懺悔文三層拆分
+
+- 將原本寫在 `PenitentialServiceData.swift` 裡的標題、禮規、經句、啟應、禱文及聖詩移到 `penitential_service.json`。
+- `PenitentialServiceData.swift` 負責定義資料格式、讀取 JSON、繁簡轉換及載入詩篇第 51 篇。
+- `PenitentialServiceView.swift` 只保留畫面排列及顯示方式。
+- 懺悔文現在會跟隨全 App 的繁體／簡體設定即時更新。
+
+### 2026-09-03：禮儀核心穩定識別碼第一階段
+
+- 建立 `LiturgicalID`，作為不隨繁簡名稱改變的禮儀日「身分證號碼」。
+- `DailyLiturgy`、固定聖日 `Feast` 與核心內部節期日開始提供 identifier。
+- 先涵蓋三一主日、顯現日、升天日、五旬節、聖心節、寶血節、聖保羅紀念及核心直接引用的特殊八日慶日。
+- 將第一批特殊規則由中文 title 比較改為 identifier 比較，同時保留舊 title 作相容及畫面顯示。
+- 新增 identifier 對照、括號紀念及實際日期輸出測試。
+
+### 2026-09-03：禮儀核心穩定識別碼第二階段
+
+- `DailyLiturgy`、`TemporalDay`、`Feast` 都在建立時固定保存 identifier，不再於每次使用時重新由中文名稱計算。
+- 保留 `mainTitle`、`title`、`name` 等舊文字欄位，既有畫面及資料建立方式不需要立即重寫。
+- 舊程式若尚未傳入 identifier，會暫時由舊標題自動補上，讓改造可以分階段進行。
+- 清理固定聖日括號紀念文字時會保留原 identifier，避免改過顯示名稱後改變節期身分。
+- 完整測試版本編譯成功。
+
+### 2026-09-03：禮儀核心穩定識別碼第三階段
+
+- 為復活日、大齋首日、降臨第一主日與聖誕日補上穩定 identifier。
+- 新增跨 2024、2025、2026 年的 identifier 測試，覆蓋復活日、升天日、聖靈降臨日及三一主日。
+- 新增「顯示名稱可以改變，但 identifier 不變」測試，分別檢查 `DailyLiturgy`、`TemporalDay` 與 `Feast`。
+- 測試程式及 App 均成功編譯；重新建立可用模擬器後，identifier 測試亦已實際執行通過。
+
+### 2026-09-03：禮儀日期計算器第四階段
+
+- 建立獨立的 `LiturgicalDateCalculator`，只處理日期數學，不載入 JSON、不處理顯示文字，也不判斷節期優先次序。
+- 集中計算復活日、大齋首日、升天日、聖靈降臨日、三一主日與降臨第一主日。
+- `LiturgyCoreService` 改為使用日期計算器，移除核心內重複的復活日、降臨日及日期間隔公式。
+- 原有多年份禮儀日期測試改為直接檢查日期計算器，使日期公式可獨立驗證。
+- App 與測試程式完整編譯成功；`LiturgyDateTests` 共 12 項測試全部通過。
+
+### 2026-09-03：第一晚禱判斷器第五階段
+
+- 建立獨立的 `FirstVespersResolver`，集中判斷第一晚禱資格與望日性質。
+- 第一晚禱資格改用穩定 identifier 和 `LiturgicalRank`，不再搜尋中文名稱中的「望日」「八日慶期」或「第八日」。
+- 核心中的今日望日、明日第一晚禱資格及明日望日判斷，統一交給新判斷器。
+- 保留三一主日八日慶期禮拜一至三及聖保羅紀念等 identifier 特例。
+- 新增顯示名稱無關、特殊 identifier 例外及望日等級測試；`LiturgyDateTests` 共 15 項全部通過。
+
+### 2026-09-03：優先次序與遷移判斷器第六階段
+
+- 建立獨立的 `LiturgicalPrecedenceResolver`，集中處理兩個同等級禮儀日相遇時，應採用今日還是明日禮儀的判斷。
+- 優先次序先比較穩定 identifier、固定節日或移動節日的性質，以及原有數字優先值，不再由中文顯示名稱決定核心結果。
+- 建立獨立的 `LiturgicalTransferResolver`，集中處理普通望日由主日移至禮拜六、以及主日移除已遷移望日的規則。
+- `LiturgyCoreService` 保留資料整合工作，實際規則改交給兩個可獨立測試的判斷器。
+- 新增同等級優先次序與普通望日遷移測試；`LiturgyDateTests` 共 19 項全部通過。
+- 括號內舊紀念資料仍暫時保留「望日」文字辨認作相容處理，待日後把例外資料正式結構化後即可移除。
+
+### 2026-09-03：集中禮儀例外規則第七階段
+
+- 建立 `LiturgicalRuleTable`，作為核心特殊規則的單一登記處。
+- 集中沒有第一晚禱、當日晚禱改用明日、晚禱禁止帶入紀念、同級節期特殊優先關係及特殊固定日期。
+- `FirstVespersResolver`、`LiturgicalPrecedenceResolver` 與 `LiturgyCoreService` 改為共用規則表，不再各自保存重複的例外清單。
+- 規則表使用穩定 identifier；繁簡顯示名稱改變時，不會改變這些核心判斷。
+- 加入規則表完整性測試；`LiturgyDateTests` 共 21 項全部通過。
+- 尚未結構化的括號文字和少數舊節期名稱仍保留相容解析，後續可隨 JSON identifier 補齊逐步移除。
+
+### 2026-09-03：望日、八日慶期與齋期結構化第八階段
+
+- 建立 `LiturgicalTraits`，用明確欄位保存禮儀特徵，不再要求使用者從中文標題猜測規則。
+- 望日分為普通望日、一等特權望日及二等特權望日。
+- 八日慶期保存是否屬於八日慶期及第幾日；可直接判斷是否為第八日。
+- 齋期分為降臨期、大齋期、特禱日、夏季齋期及秋季齋期。
+- `DailyLiturgy`、`TemporalDay`、`Feast` 都加入 traits，舊資料則暫由單一相容轉換器補足。
+- 第一晚禱、望日遷移、八日慶期第八日及秋季齋期的第一批核心判斷已改用 traits。
+- 測試曾成功找出中文「望日」造成的誤判，修正後望日改由 identifier 或 rank 判斷。
+- 實際日期及不依賴中文標題的特徵測試均已加入；`LiturgyDateTests` 共 24 項全部通過。
+
+### 2026-09-03：紀念項目資料模型第九階段
+
+- 建立 `LiturgicalCommemoration`，每個紀念項目正式保存 identifier、顯示文字及禮儀 traits。
+- `DailyLiturgy` 內部改為保存 `commemorationItems` 與 `parentheticalCommemorationItems`，不再只保存純文字。
+- 現有 SwiftUI 畫面暫時保留舊文字介面，因此不需要一次重寫所有早禱、晚禱和月曆畫面。
+- 舊純文字紀念統一在資料模型入口轉換，不再要求各畫面自行猜測 identifier。
+- 核心晚禱的望日及八日慶期紀念過濾開始使用 traits；已知來源的紀念在合併時會保留原 identifier。
+- 新增結構化紀念與舊資料相容測試；`LiturgyDateTests` 共 26 項全部通過。
+
+### 2026-09-03：紀念項目資料模型第十階段
+
+- 為核心仍會辨認的主日、望日、八日慶期及特殊聖日補上穩定 identifier，包括七旬至五旬主日、苦難主日、棕樹主日、升天後主日、基督聖體節、基督君王節及聖巴拿巴日等。
+- `LiturgyCoreService` 用來合併今日、明日及括號紀念的暫存陣列，已統一改為 `[LiturgicalCommemoration]`。
+- 晚禱過濾改用 identifier 與 traits；紀念在合併和刪除期間不再退回純文字判斷，也不會遺失原有 identifier。
+- 舊的 `commemorations: [String]` 僅保留為畫面相容的唯讀輸出，已不再作為核心內部的累積資料。
+- 新增主日與特殊節期 identifier 測試；`LiturgyDateTests` 共 28 項全部通過。
+
+### 2026-09-03：禱文、經課與介紹資源選擇第十一階段
+
+- 建立集中式 `LiturgicalResourceResolver`，用穩定 identifier 對應實際 JSON 檔名。
+- `DailyOfficeLoader` 會先按 identifier 選擇專日檔；該檔中的禱文、詩篇、經課和對經因此不再依賴繁體中文標題。
+- 專日快取鍵也改用 identifier，切換繁簡顯示名稱不會建立兩份不同快取。
+- 聖巴拿巴遷移日的專日選擇改用 `.barnabas`，不再搜尋名稱中的中文字。
+- 月曆主項及紀念項目的介紹檔案，優先使用各自的 identifier；紀念按鈕直接使用 `LiturgicalCommemoration`，不再先把資料降成純文字。
+- 尚未取得正式 identifier 的舊資料仍保留集中式相容回退，避免現有內容突然無法載入。
+- 新增資源選擇測試；`LiturgyDateTests` 共 29 項全部通過。
+
+### 2026-09-03：移除中文標題業務判斷第十二階段
+
+- 一般節期日加入結構化 identifier，直接保存 season、week 與 weekday，不再需要從「第幾主日／禮拜幾」中文字樣反推。
+- 加入 `LiturgicalTheme`，結構化保存聖母、殉道者、使徒、十架、施洗約翰誕辰、聖心、易容顯光、基督君王及諸聖等主題。
+- 晨禱與晚禱選句、教父讀經、小時禱與一時課聖詩結尾、晚禱專用對經及禮儀顏色，改用 identifier、traits、theme、season 或日期差判斷。
+- 月曆的介紹、彌撒經文按鈕與固定聖日辨認不再解析中文標題；舊的重複 `feastIdentifier`／`getIdentifier` 函式已刪除。
+- 刪除一組未被使用、仍靠中文名稱模糊比對的舊固定聖日示例程式。
+- 中文文字解析只保留在舊資料進入結構化模型的相容邊界，不再散落於業務流程。
+- 新增一般週次 identifier 與 theme 測試；`LiturgyDateTests` 共 30 項全部通過。
+
+### 2026-09-03：9月2日聖日 JSON 結構化試轉
+
+- 以 `sanctorale_0902_stephen_of_hungary.json` 作為第一份固定聖日試轉範本。
+- JSON identifier 從檔名式名稱改為穩定的 `st_stephen_hungary`。
+- JSON 新增 traits，明確標記為精修者（confessor）及君王（sovereign）。
+- Swift 的 `LiturgicalID`、`Sanctorale` 聖日表及 `LiturgicalResourceResolver` 使用同一個 identifier。
+- `DailyOfficeFile` 現在可以直接解碼 JSON 中的結構化 traits。
+- 新增實際 Bundle JSON 解碼測試，確認日期、資源檔、identifier 及 themes 能互相對應。
+
+### 2026-09-03：9月7日聖日 JSON 結構化試轉
+
+- 將 `sanctorale_0907_evurtius.json` 的 identifier 改為穩定的 `st_evurtius`。
+- JSON traits 標記為主教（bishop）與精修者（confessor）。
+- `LiturgicalID`、`Sanctorale` 及 `LiturgicalResourceResolver` 使用相同 identifier。
+- 新增實際 Bundle 解碼測試，確認9月7日日期、檔案、identifier 與 themes 一致。
+
+### 2026-09-03：9月8日聖母誕辰日 JSON 結構化
+
+- 將 `sanctorale_0908_nativity_of_mary.json` 的 identifier 改為穩定的 `nativity_of_mary`。
+- JSON traits 明確標記為聖母主題（blessedVirginMary）。
+- `LiturgicalID`、`Sanctorale` 及 `LiturgicalResourceResolver` 使用相同 identifier。
+- 新增實際 Bundle 解碼測試，確認9月8日日期、檔案、identifier 與 themes 一致。
+
+### 2026-09-03：9月9日聖彼得・克拉維爾 JSON 結構化
+
+- 將 `sanctorale_0909_peter_claver.json` 的 identifier 改為穩定的 `st_peter_claver`。
+- JSON traits 明確標記為精修者（confessor）。
+- `LiturgicalID`、`Sanctorale` 及 `LiturgicalResourceResolver` 使用相同 identifier。
+- 新增實際 Bundle 解碼測試，確認9月9日日期、檔案、identifier 與 themes 一致。
+
+### 2026-09-03：9月11日聖普羅托與聖海厄森斯 JSON 結構化
+
+- 將 `sanctorale_0911_protus_and_hyacinth.json` 的 identifier 改為穩定的 `sts_proto_hyacinth`。
+- JSON traits 明確標記為殉道者（martyr）。
+- `LiturgicalID`、`Sanctorale` 及 `LiturgicalResourceResolver` 使用相同 identifier。
+- 新增實際 Bundle 解碼測試，確認9月11日日期、檔案、identifier 與 themes 一致。
+
+### 2026-09-03：完成9月15日至30日聖日 JSON 結構化
+
+- 一次完成9月15日至30日共18份專用聖日 JSON，加入穩定 identifier 與結構化 traits。
+- 完成主聖日及同日紀念的 identifier、`Sanctorale` 日期登記和 `LiturgicalResourceResolver` 檔名對照。
+- 新增童貞女、傳福音者、教會聖師及天使四種結構化主題。
+- 修正9月22日聖莫里斯檔案誤用聖帕科繆 identifier，以及 Patteson 英文代號拼寫錯誤。
+- 新增表格式 Bundle 測試，一次驗證18份檔案的 identifier、themes、日期及資源對照。
+
+### 2026-09-03：三一後第13週禮拜四 JSON 結構化試轉
+
+- 確認節期本位（Temporal）JSON 也需要逐步轉換，才能完全停止從中文標題反推週次與星期。
+- 將 `temporal_trinity_13_thursday.json` 的 identifier 改為 `temporal.trinity.week.13.weekday.5`。
+- 新增 temporal 結構，明確保存 season、week 和 weekday，並加入空的 traits 結構。
+- `LiturgicalResourceResolver` 現在可由一般節期 identifier 自動產生對應 JSON 檔名。
+- `DailyOfficeFile` 新增可選的 temporal metadata，舊 JSON 沒有此欄位時仍可正常解碼。
+- 新增 Bundle 解碼測試，確認 identifier、結構化日期資料和實際檔名一致。
+
+### 2026-09-03：完成三一後第13週 JSON 結構化
+
+- 按同一格式轉換第13週剩餘六份 JSON：主日、禮拜一、二、三、五及六。
+- 七份文件的 identifier 現在統一為 `temporal.trinity.week.13.weekday.N`。
+- 每份文件都明確保存 temporal season、week、weekday 及 traits。
+- 修正禮拜六主標題誤寫成「三一主日後第七主日禮拜六」的舊資料錯誤。
+- 新增整週七份 Bundle JSON 逐一解碼測試，避免漏改、星期編號錯置或 identifier 與檔名不一致。
+
+### 2026-09-03：完成三一後第14週 JSON 結構化
+
+- 將 `temporal_trinity_14` 全週七份 JSON 改用穩定 identifier：`temporal.trinity.week.14.weekday.1...7`。
+- 每份文件都加入 temporal season、week、weekday 及 traits 結構化資料。
+- 修正禮拜六主標題誤寫成「三一主日後第七主日禮拜六」的舊資料錯誤。
+- 新增整週七份 Bundle JSON 逐一解碼測試。
+
+### 2026-09-03：完成三一後第15週 JSON 結構化
+
+- 將 `temporal_trinity_15` 全週七份 JSON 改用穩定 identifier：`temporal.trinity.week.15.weekday.1...7`。
+- 每份文件都加入 temporal season、week、weekday 及 traits 結構化資料。
+- 修正禮拜六主標題誤寫成「三一主日後第七主日禮拜六」的舊資料錯誤。
+- 新增整週七份 Bundle JSON 逐一解碼測試。
+
+### 2026-09-03：完成三一後第16週 JSON 結構化
+
+- 將 `temporal_trinity_16` 全週七份 JSON 改用穩定 identifier：`temporal.trinity.week.16.weekday.1...7`。
+- 每份文件都加入 temporal season、week、weekday 及 traits 結構化資料。
+- 修正禮拜六主標題誤寫成「三一主日後第七主日禮拜六」的舊資料錯誤。
+- 新增整週七份 Bundle JSON 逐一解碼測試。
+
+### 2026-09-03：完成三一後第17週 JSON 結構化
+
+- 將 `temporal_trinity_17` 全週七份 JSON 改用穩定 identifier：`temporal.trinity.week.17.weekday.1...7`。
+- 每份文件都加入 temporal season、week、weekday 及 traits 結構化資料。
+- 修正禮拜六主標題誤寫成「三一主日後第七主日禮拜六」的舊資料錯誤。
+- 新增整週七份 Bundle JSON 逐一解碼測試。
+
+### 2026-09-03：完成三一後第18週 JSON 結構化
+
+- 將 `temporal_trinity_18` 全週七份 JSON 改用穩定 identifier：`temporal.trinity.week.18.weekday.1...7`。
+- 每份文件都加入 temporal season、week、weekday 及 traits 結構化資料。
+- 修正禮拜六主標題誤寫成「三一主日後第七主日禮拜六」的舊資料錯誤。
+- 新增整週七份 Bundle JSON 逐一解碼測試。
+
 ## 已知問題與待辦事項
 
 依目前風險與影響，建議按以下次序處理：

@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0915_our_lady_of_sorrows",
+  "identifier": "our_lady_sorrows",
+  "traits": { "themes": ["blessedVirginMary"] },
   "name": {
     "zh-hant": "七苦聖母",
     "zh-hans": "七苦圣母",

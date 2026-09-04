@@ -2,11 +2,37 @@ import Foundation
 
 // MARK: - 1. 聖日模型
 struct Feast {
+    let identifier: LiturgicalID
+    let traits: LiturgicalTraits
     let month: Int
     let day: Int
     let name: String
     let rank: LiturgicalRank
-    let priority: Int 
+    let priority: Int
+
+    init(
+        identifier: LiturgicalID? = nil,
+        month: Int,
+        day: Int,
+        name: String,
+        rank: LiturgicalRank,
+        priority: Int,
+        traits: LiturgicalTraits? = nil
+    ) {
+        let resolvedIdentifier = identifier ?? LiturgicalID.fromLegacyTitle(name)
+        self.identifier = resolvedIdentifier
+        self.traits = traits ?? LiturgicalTraits.fromLegacyData(
+            identifier: resolvedIdentifier,
+            title: name,
+            rank: rank,
+            season: .trinity
+        )
+        self.month = month
+        self.day = day
+        self.name = name
+        self.rank = rank
+        self.priority = priority
+    }
 }
 
 // MARK: - 2. 固定聖日資料庫 (Sanctorale)
@@ -37,9 +63,23 @@ class Sanctorale {
     
     // MARK: - 載入聖日（改為追加模式）
     private func loadFeasts() {
-        func add(_ month: Int, _ day: Int, _ name: String, _ rank: LiturgicalRank, _ priority: Int = 0) {
+        func add(
+            _ month: Int,
+            _ day: Int,
+            _ name: String,
+            _ rank: LiturgicalRank,
+            _ priority: Int = 0,
+            identifier: LiturgicalID? = nil
+        ) {
             let key = String(format: "%02d-%02d", month, day)
-            let feast = Feast(month: month, day: day, name: name, rank: rank, priority: priority)
+            let feast = Feast(
+                identifier: identifier,
+                month: month,
+                day: day,
+                name: name,
+                rank: rank,
+                priority: priority
+            )
             if feasts[key] == nil {
                 feasts[key] = []
             }
@@ -230,28 +270,28 @@ class Sanctorale {
         
         // ------------------ 9月 ------------------
         add(9, 1, "聖賈爾斯院長", .simple)
-        add(9, 2, "匈牙利的聖王聖司提反", .semiDouble)
-        add(9, 7, "聖艾烏爾提烏斯主教", .simple)
-        add(9, 8, "榮福童貞女馬利亞誕辰日", .doubleSecondClass) // 已修正錯字
-        add(9, 9, "聖彼得·克拉維爾", .double)
-        add(9, 11, "殉道者聖普羅托與聖海厄森斯", .simple)
-        add(9, 12, "聖母聖名日", .greaterDouble)
-        add(9, 14, "聖十字架日", .greaterDouble)
-        add(9, 15, "七苦聖母", .doubleSecondClass)
-        add(9, 16, "殉道者聖居普良主教 (紀念聖尼安主教)", .semiDouble)
-        add(9, 17, "聖法蘭西斯受五傷", .double)
-        add(9, 18, "真福愛德華·布維萊·普西", .simple)
-        add(9, 19, "坎特伯雷的聖西奧多主教", .double)
-        add(9, 20, "傳福音使徒聖馬太望日 (紀念真福約翰·科爾里奇·帕特森主教)", .vigil)
-        add(9, 21, "傳福音使徒聖馬太日", .doubleSecondClass)
-        add(9, 22, "殉道者聖莫里斯及其同伴", .simple)
-        add(9, 23, "殉道者聖利奴主教 (紀念童貞女聖德克拉)", .semiDouble)
-        add(9, 24, "贖虜聖母", .greaterDouble)
-        add(9, 25, "真福蘭斯洛特·安德魯斯主教", .simple)
-        add(9, 27, "殉道者聖科斯馬斯和聖達米盎", .semiDouble)
-        add(9, 28, "殉道者聖瓦茨拉夫", .semiDouble)
-        add(9, 29, "聖米迦勒和諸天使日", .doubleFirstClass)
-        add(9, 30, "教會聖師、精修者聖耶柔米", .double)
+        add(9, 2, "匈牙利的聖王聖司提反", .semiDouble, identifier: .stephenOfHungary)
+        add(9, 7, "聖艾烏爾提烏斯主教", .simple, identifier: .evurtius)
+        add(9, 8, "榮福童貞女馬利亞誕辰日", .doubleSecondClass, identifier: .nativityOfMary) // 已修正錯字
+        add(9, 9, "聖彼得·克拉維爾", .double, identifier: .peterClaver)
+        add(9, 11, "殉道者聖普羅托與聖海厄森斯", .simple, identifier: .protusAndHyacinth)
+        add(9, 12, "聖母聖名日", .greaterDouble, identifier: .holyNameOfMary)
+        add(9, 14, "聖十字架日", .greaterDouble, identifier: .holyCross)
+        add(9, 15, "七苦聖母", .doubleSecondClass, identifier: .ourLadyOfSorrows)
+        add(9, 16, "殉道者聖居普良主教 (紀念聖尼安主教)", .semiDouble, identifier: .cyprian)
+        add(9, 17, "聖法蘭西斯受五傷", .double, identifier: .stigmataOfFrancis)
+        add(9, 18, "真福愛德華·布維萊·普西", .simple, identifier: .edwardBouveriePusey)
+        add(9, 19, "坎特伯雷的聖西奧多主教", .double, identifier: .theodoreOfCanterbury)
+        add(9, 20, "傳福音使徒聖馬太望日 (紀念真福約翰·科爾里奇·帕特森主教)", .vigil, identifier: .matthewVigil)
+        add(9, 21, "傳福音使徒聖馬太日", .doubleSecondClass, identifier: .matthew)
+        add(9, 22, "殉道者聖莫里斯及其同伴", .simple, identifier: .mauriceAndCompanions)
+        add(9, 23, "殉道者聖利奴主教 (紀念童貞女聖德克拉)", .semiDouble, identifier: .linus)
+        add(9, 24, "贖虜聖母", .greaterDouble, identifier: .ourLadyOfRansom)
+        add(9, 25, "真福蘭斯洛特·安德魯斯主教", .simple, identifier: .lancelotAndrewes)
+        add(9, 27, "殉道者聖科斯馬斯和聖達米盎", .semiDouble, identifier: .cosmasAndDamian)
+        add(9, 28, "殉道者聖瓦茨拉夫", .semiDouble, identifier: .wenceslaus)
+        add(9, 29, "聖米迦勒和諸天使日", .doubleFirstClass, identifier: .michaelAndAllAngels)
+        add(9, 30, "教會聖師、精修者聖耶柔米", .double, identifier: .jerome)
 
         // ------------------ 10月 ------------------
         add(10, 1, "聖雷米吉烏斯主教", .simple)

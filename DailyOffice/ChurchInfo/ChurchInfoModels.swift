@@ -72,6 +72,14 @@ struct WPPost: Codable, Identifiable {
     
     var cleanTitle: String { title.rendered.htmlDecoded.strippingHTML }
     var cleanExcerpt: String { excerpt.rendered.htmlDecoded.strippingHTML }
+
+    func localizedTitle(isSimplified: Bool) -> String {
+        cleanTitle.adaptChinese(isSimplified: isSimplified)
+    }
+
+    func localizedExcerpt(isSimplified: Bool) -> String {
+        cleanExcerpt.adaptChinese(isSimplified: isSimplified)
+    }
     
     // ✅ 修復：支持 WordPress 多種日期格式
     var parsedDate: Date? {
@@ -105,13 +113,16 @@ struct WPPost: Codable, Identifiable {
     }
     
     // ✅ 中文格式化日期，如「2026年5月25日」
-    var formattedDate: String {
+    func formattedDate(isSimplified: Bool) -> String {
         guard let d = parsedDate else { return "" }
         let f = DateFormatter()
-        f.locale = Locale(identifier: "zh_Hant")
+        f.locale = Locale(identifier: isSimplified ? "zh_Hans" : "zh_Hant")
         f.dateStyle = .long
         return f.string(from: d)
     }
+
+    /// 舊畫面的相容介面；新畫面應使用帶語言參數的方法。
+    var formattedDate: String { formattedDate(isSimplified: false) }
     
     var featuredImageURL: URL? {
         jetpack_featured_media_url.flatMap { URL(string: $0) }
@@ -169,6 +180,45 @@ extension String {
             }
         }
         
+        return result
+    }
+
+    /// 只轉換 HTML 標籤之外的可閱讀文字，避免改動圖片與超連結網址。
+    func adaptingHTMLChinese(isSimplified: Bool) -> String {
+        guard isSimplified else { return self }
+
+        var result = ""
+        var textBuffer = ""
+        var tagBuffer = ""
+        var isInsideTag = false
+
+        func convertedText(_ text: String) -> String {
+            text.adaptChinese(isSimplified: true)
+        }
+
+        for character in self {
+            if character == "<" && !isInsideTag {
+                result += convertedText(textBuffer)
+                textBuffer.removeAll(keepingCapacity: true)
+                isInsideTag = true
+                tagBuffer.append(character)
+            } else if character == ">" && isInsideTag {
+                tagBuffer.append(character)
+                result += tagBuffer
+                tagBuffer.removeAll(keepingCapacity: true)
+                isInsideTag = false
+            } else if isInsideTag {
+                tagBuffer.append(character)
+            } else {
+                textBuffer.append(character)
+            }
+        }
+
+        if isInsideTag {
+            result += tagBuffer
+        } else {
+            result += convertedText(textBuffer)
+        }
         return result
     }
 }

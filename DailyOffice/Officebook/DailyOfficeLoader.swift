@@ -67,11 +67,19 @@ extension BiographyJSON.Paragraph: Codable {
 // MARK: - 每日專日禮儀文件模型
 struct DailyOfficeFile: Codable {
     let identifier: String
+    let traits: LiturgicalTraits?
+    let temporal: TemporalMetadata?
     let name: String
     let rank: String?
     let morning: OfficePeriod?
     let evening: OfficePeriod?
     let vigil: OfficePeriod?
+
+    struct TemporalMetadata: Codable, Equatable {
+        let season: String
+        let week: Int
+        let weekday: Int
+    }
     
     struct OfficePeriod: Codable {
         let bibleSentences: [BibleSentenceJSON]?
@@ -433,7 +441,7 @@ class DailyOfficeLoader {
     
     // MARK: - 主入口：加載完整專日文件（🌟 已加快取）
     func loadOfficeFile(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile? {
-        let cacheKey = "\(date.timeIntervalSince1970)-\(liturgy.mainTitle)-\(currentLanguage.rawValue)"
+        let cacheKey = "\(date.timeIntervalSince1970)-\(liturgy.identifier.rawValue)-\(currentLanguage.rawValue)"
         
         if let cached = officeFileCache[cacheKey] {
             return cached
@@ -445,6 +453,11 @@ class DailyOfficeLoader {
     }
     
     private func performLoadOfficeFile(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile? {
+        if let resourceName = LiturgicalResourceResolver.shared.officeFileName(for: liturgy.identifier),
+           let file = loadLocalizedJSON(name: resourceName) {
+            return file
+        }
+
         if let file = loadSanctoraleViaMap(name: liturgy.mainTitle) {
             return file
         }
@@ -456,24 +469,36 @@ class DailyOfficeLoader {
             return feastFile
         }
         
-        if let transferredFile = loadTransferredSanctorale(for: date, expectedName: liturgy.mainTitle) {
+        if let transferredFile = loadTransferredSanctorale(
+            for: date,
+            identifier: liturgy.identifier,
+            expectedName: liturgy.mainTitle
+        ) {
             return transferredFile
         }
         
-        if let fixedFile = loadTemporalFixed(daysToEaster: daysToEaster, weekday: info.weekday, title: liturgy.mainTitle) {
+        if let fixedFile = loadTemporalFixed(
+            daysToEaster: daysToEaster,
+            weekday: info.weekday,
+            identifier: liturgy.identifier
+        ) {
             return fixedFile
         }
         
         return loadTemporalWeekly(season: info.season, weekNumber: info.weekNumber, weekday: info.weekday)
     }
     
-    private func loadTransferredSanctorale(for date: Date, expectedName: String) -> DailyOfficeFile? {
+    private func loadTransferredSanctorale(
+        for date: Date,
+        identifier: LiturgicalID,
+        expectedName: String
+    ) -> DailyOfficeFile? {
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         let year = calendar.component(.year, from: date)
         
-        if month == 6 && day == 12 && expectedName.contains("聖巴拿巴") {
+        if month == 6 && day == 12 && identifier == .barnabas {
             let originalDate = calendar.date(from: DateComponents(year: year, month: 6, day: 11))!
             AppLog.debug("🔄 [遷移回退] 6月12日查找 '\(expectedName)' 失敗，回退到原始日期 6月11日查找")
             return loadSanctorale(date: originalDate, expectedName: expectedName)
@@ -605,7 +630,11 @@ class DailyOfficeLoader {
         return nil
     }
     
-    private func loadTemporalFixed(daysToEaster: Int, weekday: Int, title: String) -> DailyOfficeFile? {
+    private func loadTemporalFixed(
+        daysToEaster: Int,
+        weekday: Int,
+        identifier: LiturgicalID
+    ) -> DailyOfficeFile? {
         let key: String?
         
         switch daysToEaster {
@@ -640,7 +669,7 @@ class DailyOfficeLoader {
         case 68:  key = "temporal_sacred_heart"
         case 75:  key = "temporal_sacred_heart_octave_8"
         default:
-            key = liturgicalFileMap[title]
+            key = LiturgicalResourceResolver.shared.officeFileName(for: identifier)
         }
         
         guard let name = key else { return nil }

@@ -3,7 +3,12 @@ import Combine
 
 struct PenitentialServiceView: View {
     @StateObject private var viewModel = PenitentialServiceViewModel()
+    @AppStorage(AppLanguageStore.userDefaultsKey) private var appLanguageCode = AppLanguage.traditional.rawValue
     let isEmbedded: Bool
+
+    private var language: AppLanguage {
+        AppLanguage(rawValue: appLanguageCode) ?? .traditional
+    }
     
     init(isEmbedded: Bool = false) {
         self.isEmbedded = isEmbedded
@@ -44,17 +49,20 @@ struct PenitentialServiceView: View {
             .padding(.bottom, 60)
         }
         .onAppear {
-            viewModel.loadPsalm()
+            viewModel.load(language: language)
+        }
+        .onChange(of: appLanguageCode) {
+            viewModel.load(language: language)
         }
         .background(Color(UIColor.systemGroupedBackground))
-        .navigationTitle(isEmbedded ? "" : "大齋首日懺悔文")
+        .navigationTitle(isEmbedded ? "" : viewModel.service.title)
         .navigationBarTitleDisplayMode(.inline)
     }
     
     // MARK: - 獨立使用標題
     private var standaloneHeader: some View {
         VStack(spacing: 0) {
-            Text(PenitentialServiceData.title)
+            Text(viewModel.service.title)
                 .font(.system(size: 34, weight: .bold))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
@@ -72,10 +80,10 @@ struct PenitentialServiceView: View {
     private var standaloneIntroSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                RubricBlock(text: PenitentialServiceData.standalone.rubric)
+                RubricBlock(text: viewModel.service.standalone.rubric)
                 
-                ForEach(PenitentialServiceData.standalone.sentences.indices, id: \.self) { i in
-                    let sentence = PenitentialServiceData.standalone.sentences[i]
+                ForEach(viewModel.service.standalone.sentences.indices, id: \.self) { i in
+                    let sentence = viewModel.service.standalone.sentences[i]
                     VStack(alignment: .leading, spacing: 4) {
                         Text(sentence.text)
                             .font(.system(size: 17, weight: .regular))
@@ -91,7 +99,7 @@ struct PenitentialServiceView: View {
                     .padding(.vertical, 6)
                 }
                 
-                RubricBlock(text: PenitentialServiceData.beforePsalmRubric)
+                RubricBlock(text: viewModel.service.beforePsalmRubric)
             }
         }
     }
@@ -100,8 +108,8 @@ struct PenitentialServiceView: View {
     private var embeddedIntroSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                RubricBlock(text: PenitentialServiceData.embeddedRubric)
-                RubricBlock(text: PenitentialServiceData.beforePsalmRubric)
+                RubricBlock(text: viewModel.service.embeddedRubric)
+                RubricBlock(text: viewModel.service.beforePsalmRubric)
             }
         }
     }
@@ -133,8 +141,9 @@ struct PenitentialServiceView: View {
                     
                     // 榮耀頌
                     VStack(alignment: .leading, spacing: 4) {
-                        BodyText("但願榮耀歸於聖父、聖子、聖靈；")
-                        BodyText("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。")
+                        ForEach(viewModel.service.psalm.gloriaPatri, id: \.self) { line in
+                            BodyText(line)
+                        }
                     }
                     .padding(.top, 8)
                     
@@ -145,7 +154,7 @@ struct PenitentialServiceView: View {
                 } else {
                     HStack {
                         Spacer()
-                        ProgressView("載入詩篇...")
+                        ProgressView(viewModel.service.psalm.loadingText)
                             .padding(.vertical, 20)
                         Spacer()
                     }
@@ -178,7 +187,7 @@ struct PenitentialServiceView: View {
     // MARK: - 詩篇後禮規
     private var afterPsalmSection: some View {
         LiturgyCard {
-            RubricBlock(text: PenitentialServiceData.afterPsalmRubric)
+            RubricBlock(text: viewModel.service.afterPsalmRubric)
         }
     }
     
@@ -186,8 +195,8 @@ struct PenitentialServiceView: View {
     private var kyrieSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 2) {
-                ForEach(PenitentialServiceData.kyrieResponses, id: \.self) { item in
-                    PenitentialResponsoryRow(leader: item.leader, people: item.people)
+                ForEach(viewModel.service.kyrieResponses, id: \.self) { item in
+                    responsoryRow(item)
                 }
             }
         }
@@ -197,8 +206,8 @@ struct PenitentialServiceView: View {
     private var lordPrayerSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                SectionTitle(text: "主禱文")
-                BodyText(PenitentialServiceData.lordPrayerText)
+                SectionTitle(text: viewModel.service.lordPrayerTitle)
+                BodyText(viewModel.service.lordPrayerText)
             }
         }
     }
@@ -207,8 +216,8 @@ struct PenitentialServiceView: View {
     private var salvationSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 2) {
-                ForEach(PenitentialServiceData.salvationResponses, id: \.self) { item in
-                    PenitentialResponsoryRow(leader: item.leader, people: item.people)
+                ForEach(viewModel.service.salvationResponses, id: \.self) { item in
+                    responsoryRow(item)
                 }
             }
         }
@@ -217,14 +226,14 @@ struct PenitentialServiceView: View {
     // MARK: - 我們要禱告（第一次）
     private var letUsPray1: some View {
         LiturgyCard {
-            PenitentialResponsoryRow(leader: "我們要禱告。", people: nil)
+            responsoryRow(PenitentialResponsoryItem(leader: viewModel.service.letUsPray, people: nil))
         }
     }
     
     // MARK: - 認罪禱文
     private var confessionPrayersSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach(PenitentialServiceData.confessionPrayers, id: \.self) { prayer in
+            ForEach(viewModel.service.confessionPrayers, id: \.self) { prayer in
                 LiturgyCard {
                     ForEach(prayer.paragraphs, id: \.self) { p in
                         BodyText(p)
@@ -238,10 +247,10 @@ struct PenitentialServiceView: View {
     private var congregationRecitationSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                if let rubric = PenitentialServiceData.congregationRecitation.rubric {
+                if let rubric = viewModel.service.congregationRecitation.rubric {
                     RubricBlock(text: rubric)
                 }
-                ForEach(PenitentialServiceData.congregationRecitation.paragraphs, id: \.self) { p in
+                ForEach(viewModel.service.congregationRecitation.paragraphs, id: \.self) { p in
                     BodyText(p)
                 }
             }
@@ -251,7 +260,7 @@ struct PenitentialServiceView: View {
     // MARK: - 可省略禮規
     private var optionalOmitRubricSection: some View {
         LiturgyCard {
-            RubricBlock(text: PenitentialServiceData.optionalOmitRubric)
+            RubricBlock(text: viewModel.service.optionalOmitRubric)
         }
     }
     
@@ -259,10 +268,10 @@ struct PenitentialServiceView: View {
     private var priestPrayerSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                if let rubric = PenitentialServiceData.priestPrayer.rubric {
+                if let rubric = viewModel.service.priestPrayer.rubric {
                     RubricBlock(text: rubric)
                 }
-                ForEach(PenitentialServiceData.priestPrayer.paragraphs, id: \.self) { p in
+                ForEach(viewModel.service.priestPrayer.paragraphs, id: \.self) { p in
                     BodyText(p)
                 }
             }
@@ -273,8 +282,8 @@ struct PenitentialServiceView: View {
     private var ashSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 2) {
-                ForEach(PenitentialServiceData.ashResponses, id: \.self) { item in
-                    PenitentialResponsoryRow(leader: item.leader, people: item.people)
+                ForEach(viewModel.service.ashResponses, id: \.self) { item in
+                    responsoryRow(item)
                 }
             }
         }
@@ -283,14 +292,14 @@ struct PenitentialServiceView: View {
     // MARK: - 我們要禱告（第二次）
     private var letUsPray2: some View {
         LiturgyCard {
-            PenitentialResponsoryRow(leader: "我們要禱告。", people: nil)
+            responsoryRow(PenitentialResponsoryItem(leader: viewModel.service.letUsPray, people: nil))
         }
     }
     
     // MARK: - 最後三篇禱文
     private var finalPrayersSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach(PenitentialServiceData.finalPrayers, id: \.self) { prayer in
+            ForEach(viewModel.service.finalPrayers, id: \.self) { prayer in
                 LiturgyCard {
                     ForEach(prayer.paragraphs, id: \.self) { p in
                         BodyText(p)
@@ -304,20 +313,20 @@ struct PenitentialServiceView: View {
     private var hymnSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                Text(PenitentialServiceData.hymn.title)
+                Text(viewModel.service.hymn.title)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(LiturgyColors.crimson)
                     .padding(.bottom, 2)
                 
                 VStack(alignment: .leading, spacing: 0) {
-                    ForEach(PenitentialServiceData.hymn.verses.indices, id: \.self) { i in
+                    ForEach(viewModel.service.hymn.verses.indices, id: \.self) { i in
                         hymnVerseRow(
                             prefix: numberToChinese(i + 1) + "、",
-                            text: PenitentialServiceData.hymn.verses[i]
+                            text: viewModel.service.hymn.verses[i]
                         )
                         
                         // 節後斷行（最後一節除外）
-                        if i < PenitentialServiceData.hymn.verses.count - 1 {
+                        if i < viewModel.service.hymn.verses.count - 1 {
                             Spacer().frame(height: 14)
                         }
                     }
@@ -359,10 +368,10 @@ struct PenitentialServiceView: View {
     private var finalCollectSection: some View {
         LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
-                if let rubric = PenitentialServiceData.finalCollect.rubric {
+                if let rubric = viewModel.service.finalCollect.rubric {
                     RubricBlock(text: rubric)
                 }
-                ForEach(PenitentialServiceData.finalCollect.paragraphs, id: \.self) { p in
+                ForEach(viewModel.service.finalCollect.paragraphs, id: \.self) { p in
                     BodyText(p)
                 }
             }
@@ -372,20 +381,31 @@ struct PenitentialServiceView: View {
     // MARK: - 祝福文
     private var blessingSection: some View {
         LiturgyCard {
-            BodyText(PenitentialServiceData.blessing)
+            BodyText(viewModel.service.blessing)
         }
+    }
+
+    private func responsoryRow(_ item: PenitentialResponsoryItem) -> some View {
+        PenitentialResponsoryRow(
+            leaderLabel: viewModel.service.leaderLabel,
+            peopleLabel: viewModel.service.peopleLabel,
+            leader: item.leader,
+            people: item.people
+        )
     }
 }
 
 // MARK: - 懺悔文啟應行
 struct PenitentialResponsoryRow: View {
+    let leaderLabel: String
+    let peopleLabel: String
     let leader: String
     let people: String?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .top, spacing: 4) {
-                Text("啟：")
+                Text(leaderLabel)
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.red)
                     .frame(width: 36, alignment: .leading)
@@ -398,7 +418,7 @@ struct PenitentialResponsoryRow: View {
             
             if let people = people, !people.isEmpty {
                 HStack(alignment: .top, spacing: 4) {
-                    Text("應：")
+                    Text(peopleLabel)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.red)
                         .frame(width: 36, alignment: .leading)
@@ -410,22 +430,6 @@ struct PenitentialResponsoryRow: View {
                 }
                 .padding(.bottom, 4)
             }
-        }
-    }
-}
-
-// MARK: - ViewModel（修正版）
-class PenitentialServiceViewModel: ObservableObject {
-    @Published var psalm51: PsalmContent?
-    @Published var psalmTitle: String = "詩篇第51篇"
-    
-    func loadPsalm() {
-        // 🌟 修正：PsalmsLoader.psalm(number:) 接收 String，返回 (title, content)? 元組
-        if let result = PsalmsLoader.shared.psalm(number: "51") {
-            psalm51 = result.content
-            psalmTitle = result.title
-        } else {
-            AppLog.warning("⚠️ [懺悔文] 無法載入詩篇第51篇")
         }
     }
 }

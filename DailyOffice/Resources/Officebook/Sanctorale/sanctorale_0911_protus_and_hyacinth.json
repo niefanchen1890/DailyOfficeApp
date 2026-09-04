@@ -1,5 +1,10 @@
 {
-  "identifier": "sanctorale_0911_protus_and_hyacinth",
+  "identifier": "sts_proto_hyacinth",
+  "traits": {
+    "themes": [
+      "martyr"
+    ]
+  },
   "name": {
     "zh-hant": "殉道者聖普羅托與聖海厄森斯",
     "zh-hans": "殉道者圣普罗托与圣海厄森斯",

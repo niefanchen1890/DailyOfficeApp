@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0920_matthew_vigil",
+  "identifier": "st_matthew_vigil",
+  "traits": { "vigil": "ordinary", "themes": ["apostle", "evangelist"] },
   "name": {
     "zh-hant": "傳福音使徒聖馬太望日",
     "zh-hans": "传福音使徒圣马太望日",

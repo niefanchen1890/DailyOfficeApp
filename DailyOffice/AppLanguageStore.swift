@@ -53,5 +53,6 @@ final class AppLanguageStore: ObservableObject {
         MinorHourPrayerDataLoader.shared.clearCache()
         ComplinePrayerDataLoader.shared.clearCache()
         HomePrayerDataLoader.shared.clearCache()
+        PenitentialServiceDataLoader.shared.clearCache()
     }
 }

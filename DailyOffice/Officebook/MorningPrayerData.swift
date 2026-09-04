@@ -108,22 +108,22 @@ class BibleSentencesLoader {
         return decoded
     }
     
-    /// 根據節期與主日標題取得選句
-    func sentences(for season: LiturgicalSeason, title: String, language: AppLanguage? = nil) -> [BibleSentenceJSON] {
+    /// 根據節期與穩定 identifier 取得選句。
+    func sentences(for season: LiturgicalSeason, identifier: LiturgicalID, language: AppLanguage? = nil) -> [BibleSentenceJSON] {
         let lang = language ?? MorningPrayerDataLoader.shared.currentLanguage
         let container = self.container(for: lang)
         
         // 優先判斷：五旬、六旬、七旬主日，以及三一主日後第一主日至降臨前主日 → 平日
-        if title.contains("三一主日後禮拜一") || title.contains("三一主日後禮拜二") || title.contains("三一主日後禮拜三") {
+        if LiturgicalRuleTable.trinityOctaveWeekdays.contains(identifier) {
             return container.trinity
         }
         
-        if isOrdinarySunday(title: title) {
+        if isOrdinarySunday(identifier: identifier) {
             return container.ordinary
         }
         
         // 苦難主日與棕樹主日兩週，使用聖周選句
-        if title.contains("苦難主日") || title.contains("棕樹主日") {
+        if identifier == .passionSunday || identifier == .palmSunday {
             return container.holy_week
         }
         
@@ -139,7 +139,7 @@ class BibleSentencesLoader {
         case .pentecost: return container.pentecost
         case .trinity:
             // 三一主日本身使用三一專用選句；三一主日後第一主日至降臨前主日（含主日、平日）使用平日選句
-            if title.contains("三一主日") && !title.contains("三一主日後") {
+            if identifier == .trinitySunday {
                 return container.trinity
             }
             return container.ordinary
@@ -148,20 +148,13 @@ class BibleSentencesLoader {
     }
     
     /// 判斷是否為應顯示平日選句的主日
-    private func isOrdinarySunday(title: String) -> Bool {
-        if title.contains("五旬主日") || title.contains("六旬主日") || title.contains("七旬主日") {
-            return true
-        }
-        if title.contains("復活後第五主日") || title.contains("復活後第六主日") || title.contains("復活後第七主日") {
-            return true
-        }
-        if title.contains("三一主日後") && !title.contains("三一主日") {
-            return true
-        }
-        if title.contains("降臨前主日") {
-            return true
-        }
-        return false
+    private func isOrdinarySunday(identifier: LiturgicalID) -> Bool {
+        if [.septuagesimaSunday, .sexagesimaSunday, .quinquagesimaSunday, .sundayBeforeAdvent]
+            .contains(identifier) { return true }
+        guard let temporal = identifier.temporalComponents else { return false }
+        return temporal.weekday == 1
+            && ((temporal.season == .easter && temporal.week >= 5)
+                || temporal.season == .trinity)
     }
 }
 

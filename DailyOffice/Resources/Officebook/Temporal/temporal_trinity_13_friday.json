@@ -1,5 +1,5 @@
 {
-  "identifier": "temporal_trinity_13_friday",
+  "identifier": "temporal.trinity.week.13.weekday.6",
   "name": {
     "zh-hant": "三一主日後第十三主日禮拜五",
     "zh-hans": "三一主日后第十三主日礼拜五"
@@ -10,6 +10,14 @@
     "zh-hans": "（普通平日）"
   },
   "type": "temporal",
+  "temporal": {
+    "season": "trinity",
+    "week": 13,
+    "weekday": 6
+  },
+  "traits": {
+    "themes": []
+  },
   "morning": {
     "collect": {
       "title": {

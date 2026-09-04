@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0514_pachomius_easter",
+  "identifier": "st_maurice",
+  "traits": { "themes": ["martyr"] },
   "name": {
     "zh-hant": "殉道者聖莫里斯及其同伴",
     "zh-hans": "殉道者圣莫里斯及其同伴",

@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0921_matthew",
+  "identifier": "st_matthew",
+  "traits": { "themes": ["apostle", "evangelist"] },
   "name": {
     "zh-hant": "傳福音使徒聖馬太日",
     "zh-hans": "传福音使徒圣马太日",

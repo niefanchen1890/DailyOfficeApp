@@ -1,5 +1,7 @@
 {
-  "identifier": "temporal_trinity_16_sunday",
+  "identifier": "temporal.trinity.week.16.weekday.1",
+  "temporal": { "season": "trinity", "week": 16, "weekday": 1 },
+  "traits": { "themes": [] },
   "name": {
     "zh-hant": "三一主日後第十六主日",
     "zh-hans": "三一主日后第十六主日"

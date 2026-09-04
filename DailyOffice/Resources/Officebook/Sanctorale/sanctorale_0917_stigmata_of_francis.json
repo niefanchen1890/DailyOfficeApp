@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0917_stigmata_of_francis",
+  "identifier": "st_francis_stigmata",
+  "traits": { "themes": ["confessor"] },
   "name": {
     "zh-hant": "聖法蘭西斯受五傷",
     "zh-hans": "圣法兰西斯受五伤",

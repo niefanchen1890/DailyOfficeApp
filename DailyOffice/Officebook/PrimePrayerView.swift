@@ -120,7 +120,7 @@ struct PrimePrayerView: View {
                 .foregroundColor(.secondary)
                 .padding(.top, 12)
             
-            Text(liturgy.mainTitle)
+            Text(liturgy.mainTitle.adaptChinese(isSimplified: isSimp))
                 .font(.system(size: 34, weight: .bold))
                 .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
@@ -135,7 +135,7 @@ struct PrimePrayerView: View {
             }
             
             if !liturgy.rankName.isEmpty {
-                Text("（\(liturgy.rankName)）")
+                Text("（\(liturgy.rankName.adaptChinese(isSimplified: isSimp))）")
                     .font(.system(size: 17, weight: .regular))
                     .foregroundColor(LiturgyColors.crimson)
                     .padding(.top, 4)
@@ -153,7 +153,7 @@ struct PrimePrayerView: View {
                 .padding(.bottom, 4)
             
             if !liturgy.commemorations.isEmpty {
-                Text((isSimp ? "纪念：" : "紀念：") + "\(liturgy.commemorations.joined(separator: "、"))")
+                Text((isSimp ? "纪念：" : "紀念：") + liturgy.commemorations.joined(separator: "、").adaptChinese(isSimplified: isSimp))
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -790,11 +790,9 @@ class PrimePrayerViewModel: ObservableObject {
         if PrimePrayerData.shouldShowAthanasianCreed(for: selectedDate) { return true }
         
         let info = LiturgyCoreService.shared.getSeasonInfo(for: selectedDate)
-        let title = liturgy.mainTitle
-        
         if info.season == .epiphany && info.weekday == 1 && (1...6).contains(info.weekNumber) { return true }
         if info.season == .trinity && info.weekday == 1 && (1...26).contains(info.weekNumber) { return true }
-        if title == "降臨前主日" { return true }
+        if liturgy.identifier == .sundayBeforeAdvent { return true }
         
         return false
     }
@@ -836,8 +834,7 @@ class PrimePrayerViewModel: ObservableObject {
     }
     
     var currentAntiphon: PrimePrayerData.PsalmAntiphonUI? {
-        let title = liturgy.mainTitle
-        if PrimePrayerData.BVMFeastAntiphon.isBVMFeast(title: title) {
+        if PrimePrayerData.BVMFeastAntiphon.isBVMFeast(liturgy: liturgy) {
             return PrimePrayerData.PsalmAntiphonUI(
                 season: isSimplified ? "圣母庆节" : "聖母慶節",
                 text: PrimePrayerData.BVMFeastAntiphon.text

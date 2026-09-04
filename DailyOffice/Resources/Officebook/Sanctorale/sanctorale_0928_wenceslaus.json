@@ -1,5 +1,6 @@
 {
-  "identifier": "sanctorale_0928_wenceslaus",
+  "identifier": "st_wenceslaus",
+  "traits": { "themes": ["martyr", "sovereign"] },
   "name": {
     "zh-hant": "殉道者聖瓦茨拉夫",
     "zh-hans": "殉道者圣瓦茨拉夫",

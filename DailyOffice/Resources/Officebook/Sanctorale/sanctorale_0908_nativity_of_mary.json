@@ -1,5 +1,10 @@
 {
-  "identifier": "sanctorale_0908_nativity_of_mary",
+  "identifier": "nativity_of_mary",
+  "traits": {
+    "themes": [
+      "blessedVirginMary"
+    ]
+  },
   "name": {
     "zh-hant": "榮福童貞女馬利亞誕辰日",
     "zh-hans": "荣福童贞女马利亚诞辰日",
