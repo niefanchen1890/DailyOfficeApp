@@ -9,8 +9,33 @@ struct VigilTransferResolution {
     var transferred: [String]
 }
 
-/// 只負責普通望日遇到主日後的提前規則。
+struct FixedFeastTransferResolution {
+    let observed: [Feast]
+    let deferred: [Feast]
+}
+
+/// 固定聖日遷移與普通望日提前規則。
 struct LiturgicalTransferResolver {
+    /// 聖多馬日遇主日：原日移除，翌日承接同一聖日，保留識別碼與專用資源。
+    func resolveThomasSundayTransfer(
+        for date: Date, calendar: Calendar,
+        todayFeasts: [Feast], previousDayFeasts: [Feast]
+    ) -> FixedFeastTransferResolution {
+        let weekday = calendar.component(.weekday, from: date)
+        let deferred = weekday == 1 ? todayFeasts.filter { $0.identifier == .stThomas } : []
+        var observed = todayFeasts.filter { feast in
+            !deferred.contains { $0.identifier == feast.identifier }
+        }
+        if weekday == 2 {
+            for feast in previousDayFeasts where feast.identifier == .stThomas {
+                if !observed.contains(where: { $0.identifier == feast.identifier }) {
+                    observed.append(feast)
+                }
+            }
+        }
+        return FixedFeastTransferResolution(observed: observed, deferred: deferred)
+    }
+
     func resolveOrdinaryVigilTransfer(
         weekday: Int,
         temporal: TemporalDay,

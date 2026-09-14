@@ -401,14 +401,12 @@ struct PenitentialResponsoryRow: View {
     let peopleLabel: String
     let leader: String
     let people: String?
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .top, spacing: 4) {
-                Text(leaderLabel)
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.red)
-                    .frame(width: 36, alignment: .leading)
+                ResponsoryMarker(role: .leader, isSimplified: languageStore.isSimplified)
                 Text(leader)
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(.primary)
@@ -418,10 +416,7 @@ struct PenitentialResponsoryRow: View {
             
             if let people = people, !people.isEmpty {
                 HStack(alignment: .top, spacing: 4) {
-                    Text(peopleLabel)
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.red)
-                        .frame(width: 36, alignment: .leading)
+                    ResponsoryMarker(role: .people, isSimplified: languageStore.isSimplified)
                     Text(people)
                         .font(.system(size: 16, weight: .regular))
                         .foregroundColor(.primary)

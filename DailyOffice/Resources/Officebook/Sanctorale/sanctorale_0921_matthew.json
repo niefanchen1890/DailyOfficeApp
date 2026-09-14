@@ -1,6 +1,11 @@
 {
   "identifier": "st_matthew",
-  "traits": { "themes": ["apostle", "evangelist"] },
+  "traits": {
+    "themes": [
+      "apostle",
+      "evangelist"
+    ]
+  },
   "name": {
     "zh-hant": "傳福音使徒聖馬太日",
     "zh-hans": "传福音使徒圣马太日",
@@ -19,7 +24,7 @@
         "text": {
           "zh-hant": "在鑒察的時候，他們顯為光明，來往飛騰，如麥稭被焚的星火。他們要審判邦國，治理眾民；他們的主將作王直到永遠。",
           "zh-hans": "在鉴察的时候，他们显为光明，来往飞腾，如麦秸被焚的星火。他们要审判邦国，治理众民；他们的主将作王直到永远。",
-          "en": "AND in the time of their visitation they shall shine, and run to and fro like sparks among the stubble. They shall judge the nations, and have do- minion over the people, and their Lord shall reign for ever. "
+          "en": "AND in the time of their visitation they shall shine, and run to and fro like sparks among the stubble. They shall judge the nations, and have dominion over the people, and their Lord shall reign for ever. "
         },
         "reference": {
           "zh-hant": "（所羅門智訓 3:8）",
@@ -54,6 +59,81 @@
           "zh-hant": "你們憑着堅忍，※就必保全性命。",
           "zh-hans": "你们凭着坚忍，※就必保全性命。",
           "en": "In your patience ye shall possess your souls."
+        }
+      ]
+    },
+    "psalms": {
+      "1928": {
+        "items": [
+          {
+            "number": "1"
+          },
+          {
+            "number": "15"
+          },
+          {
+            "number": "24"
+          }
+        ]
+      },
+      "1962": {
+        "items": [
+          {
+            "number": "15"
+          },
+          {
+            "number": "19"
+          }
+        ]
+      }
+    },
+    "lessons": {
+      "1928": {
+        "ot": {
+          "book": "所羅門智訓",
+          "chapter": "7:21-8:1"
+        },
+        "nt": {
+          "book": "路加福音",
+          "chapter": "5:27-32"
+        }
+      },
+      "1962": {
+        "ot": {
+          "book": "列王紀上",
+          "chapter": "19:15-end"
+        },
+        "nt": {
+          "book": "提摩太前書",
+          "chapter": "6:6-19"
+        }
+      }
+    },
+    "lectionary_sets": {
+      "1943": [
+        {
+          "id": "vigil",
+          "label": "前夕晚禱",
+          "psalms": {
+            "items": [
+              {
+                "number": "65"
+              },
+              {
+                "number": "117"
+              }
+            ]
+          },
+          "lessons": {
+            "ot": {
+              "book": "歷代志上",
+              "chapter": "29:9-17"
+            },
+            "nt": {
+              "book": "羅馬書",
+              "chapter": "10:1-15"
+            }
+          }
         }
       ]
     },
@@ -110,30 +190,6 @@
         "en": ""
       }
     },
-    "biography": {
-      "title": {
-        "zh-hant": "聖人小傳",
-        "zh-hans": "圣人小传",
-        "en": "For the Legend"
-      },
-      "source": {
-        "zh-hant": "",
-        "zh-hans": "",
-        "en": ""
-      },
-      "rubric": {
-        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
-        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
-        "en": ""
-      },
-      "paragraphs": [
-        {
-          "zh-hant": "傳福音餓使徒聖馬太，又名利未，原是一名稅吏，也就是負責徵收稅款的官員。基督親自在稅關的座位上呼召他；他立刻跟隨了主，隨後又為主和祂的門徒設宴。根據愛任紐、亞歷山大的革利免、俄利根、特土良及其他早期作家的見證，早期教會的傳統認為，馬太曾有一段時間在希伯來人中宣講福音；在前往其他宣教工場以前，他已用他們自己的語言，為他們寫成一部福音書。耶柔米聲稱自己擁有並使用這部希伯來文福音書的抄本，以校正他從希臘文譯成拉丁文的譯本。基督教世界許多地方都喜歡尊稱這位使徒為其教會的創建者；不過，通常的傳統說法是，他前往裏海以南的地區——在此處這地區被稱為「埃提阿伯」——在那裡宣講福音，並以許多奇妙的作為證實福音。其中最偉大的一件事蹟，傳說如下：他使國王的女兒伊菲革尼亞復活，因此王室全家歸信基督。國王去世後，其繼任者希爾塔庫斯要求迎娶伊菲革尼亞；但她因馬太的教導，已許願將自己奉獻給上帝，便依照所許的願拒絕了希爾塔庫斯。因此，馬太在舉行聖奧秘時，奉王命被處死；如此，他以殉道完成了自己的使徒職分。薩萊諾當地流傳一項傳統，稱他的遺體已被遷葬至該處；在教宗格里高利七世的時代，安放於一所奉獻於聖使徒馬太的教堂之中。直到今日，仍有大批信徒虔誠地敬禮他的聖髑。",
-          "zh-hans": "传福音的使徒圣马太，又名利未，原是一名税吏，也就是负责征收税款的官员。基督亲自在税关的座位上呼召他；他立刻跟随了主，随后又为主和祂的门徒设宴。根据爱任纽、亚历山大的革利免、俄利根、特土良及其他早期作家的见证，早期教会的传统认为，马太曾有一段时间在希伯来人中宣讲福音；在前往其他宣教工场以前，他已用他们自己的语言，为他们写成一部福音书。耶柔米声称自己拥有并使用这部希伯来文福音书的抄本，以校正他从希腊文译成拉丁文的译本。基督教世界许多地方都喜欢尊称这位使徒为其教会的创建者；不过，通常的传统说法是，他前往里海以南的地区——在此处这地区被称为「埃提阿伯」——在那里宣讲福音，并以许多奇妙的作为证实福音。其中最伟大的一件事迹，传说如下：他使国王的女儿伊菲革尼亚复活，因此王室全家归信基督。国王去世后，其继任者希尔塔库斯要求迎娶伊菲革尼亚；但她因马太的教导，已许愿将自己奉献给上帝，便依照所许的愿拒绝了希尔塔库斯。因此，马太在举行圣奥秘时，奉王命被处死；如此，他以殉道完成了自己的使徒职分。萨莱诺当地流传一项传统，称他的遗体已被迁葬至该处；在教宗格里高利七世的时代，安放于一所奉献于圣使徒马太的教堂之中。直到今日，仍有大批信徒虔诚地敬礼他的圣髑。",
-          "en": "THE Apostle and Evangelist Matthew, also called Levi, was a publican, that is, a public official for collecting taxes, who was called by Christ himself from the very seat of custom. Whom he forthwith followed, and thereupon gave a feast for the Master and his disciples. The early Christian tradition, on the testimony of Irenæus, Clement of Alexandria, Origen, Tertullian, and other early writers, is that Matthew for some time preached the Gospel amongst the Hebrews, and that before he went to other fields of labour, he wrote for them a Gospel in their own language. Jerome claimed to own and use a copy of this Hebrew Gospel, wherewith to correct his translations from the Greek into Latin. Although many parts of Christendom have delighted to claim this Apostle as the founder of their Churches, the usual tradition is that he went into the regions south of the Caspian Sea, which same are in this instance called Ethiopia, where he preached the Gospel and confirmed the same by many wondrous deeds. The greatest of these is told on this wise: that he raised to life the king’s daughter, Iphigenia, whereby the royal family was converted to Christ; that after the king died Hirtacus his successor demanded Iphigenia to wife; and that she, who through Matthew’s teaching had vowed herself to God, rejected Hirtacus in pursuance of her vow; for which reason Matthew was by royal order put to death whilst celebrating the holy Mysteries, whereby he fulfilled his apostleship in martyrdom. There is a tradition at Salerno that his body was translated thither, and that, in the time of Gregory VII, it was laid in a Church dedicated under the invocation of the Apostle Matthew, where it is to this day devoutly honoured by great numbers of the faithful."
-        }
-      ]
-    },
     "collect": {
       "title": {
         "zh-hant": "傳福音使徒聖馬太日",
@@ -142,7 +198,7 @@
       },
       "text": {
         "zh-hant": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。",
-        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。 阿们。",
+        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。 阿们。",
         "en": ""
       }
     }
@@ -233,6 +289,77 @@
         }
       ]
     },
+    "psalms": {
+      "1928": {
+        "items": [
+          {
+            "number": "1"
+          },
+          {
+            "number": "15"
+          },
+          {
+            "number": "24"
+          }
+        ]
+      },
+      "1962": {
+        "items": [
+          {
+            "number": "37",
+            "verses": "1-22"
+          }
+        ]
+      }
+    },
+    "lessons": {
+      "1928": {
+        "ot": {
+          "book": "列王紀上",
+          "chapter": "19"
+        },
+        "nt": {
+          "book": "馬太福音",
+          "chapter": "19:16-end"
+        }
+      },
+      "1962": {
+        "ot": {
+          "book": "箴言",
+          "chapter": "3:1-17"
+        },
+        "nt": {
+          "book": "馬太福音",
+          "chapter": "19:16-end"
+        }
+      }
+    },
+    "lectionary_sets": {
+      "1943": [
+        {
+          "id": "morning",
+          "label": "早禱",
+          "psalms": {
+            "items": [
+              {
+                "number": "119",
+                "verses": "1-16"
+              }
+            ]
+          },
+          "lessons": {
+            "ot": {
+              "book": "列王紀上",
+              "chapter": "19:15-21"
+            },
+            "nt": {
+              "book": "馬太福音",
+              "chapter": "19:16-end"
+            }
+          }
+        }
+      ]
+    },
     "office_hymn": {
       "title": {
         "zh-hant": "Jesu, Corona Virginum",
@@ -243,7 +370,7 @@
         {
           "zh-hant": "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
           "zh-hans": "一、诸天高唱欢欣赞歌，\n大地喜乐同声应和；\n使徒功德崇高圣位，\n佳节良期我众颂扬。",
-          "en": "LET heaven's exultant praises ring,\nAnd earth with joy responsive sing:\nThe Apostle's deeds and high estate\nThis festaltide we celebrate."
+          "en": "LET heaven's exultant praises ring,\nAnd earth with joy responsive sing:\nThe Apostle's deeds and high estate\nThis festal tide we celebrate."
         },
         {
           "zh-hant": "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
@@ -291,6 +418,30 @@
         "en": ""
       }
     },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "For the Legend"
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "傳福音的使徒聖馬太，又名利未，原是一名稅吏，也就是負責徵收稅款的官員。基督親自在稅關的座位上呼召他；他立刻跟隨了主，隨後又為主和祂的門徒設宴。根據愛任紐、亞歷山大的革利免、俄利根、特土良及其他早期作家的見證，早期教會的傳統認為，馬太曾有一段時間在希伯來人中宣講福音；在前往其他宣教工場以前，他已用他們自己的語言，為他們寫成一部福音書。耶柔米聲稱自己擁有並使用這部希伯來文福音書的抄本，以校正他從希臘文譯成拉丁文的譯本。基督教世界許多地方都喜歡尊稱這位使徒為其教會的創建者；不過，通常的傳統說法是，他前往裏海以南的地區——在此處這地區被稱為「埃提阿伯」——在那裡宣講福音，並以許多奇妙的作為證實福音。其中最偉大的一件事蹟，傳說如下：他使國王的女兒伊菲革尼亞復活，因此王室全家歸信基督。國王去世後，其繼任者希爾塔庫斯要求迎娶伊菲革尼亞；但她因馬太的教導，已許願將自己奉獻給上帝，便依照所許的願拒絕了希爾塔庫斯。因此，馬太在舉行聖奧秘時，奉王命被處死；如此，他以殉道完成了自己的使徒職分。薩萊諾當地流傳一項傳統，稱他的遺體已被遷葬至該處；在教宗格里高利七世的時代，安放於一所奉獻於聖使徒馬太的教堂之中。直到今日，仍有大批信徒虔誠地敬禮他的聖髑。",
+          "zh-hans": "传福音的使徒圣马太，又名利未，原是一名税吏，也就是负责征收税款的官员。基督亲自在税关的座位上呼召他；他立刻跟随了主，随后又为主和祂的门徒设宴。根据爱任纽、亚历山大的革利免、俄利根、特土良及其他早期作家的见证，早期教会的传统认为，马太曾有一段时间在希伯来人中宣讲福音；在前往其他宣教工场以前，他已用他们自己的语言，为他们写成一部福音书。耶柔米声称自己拥有并使用这部希伯来文福音书的抄本，以校正他从希腊文译成拉丁文的译本。基督教世界许多地方都喜欢尊称这位使徒为其教会的创建者；不过，通常的传统说法是，他前往里海以南的地区——在此处这地区被称为「埃提阿伯」——在那里宣讲福音，并以许多奇妙的作为证实福音。其中最伟大的一件事迹，传说如下：他使国王的女儿伊菲革尼亚复活，因此王室全家归信基督。国王去世后，其继任者希尔塔库斯要求迎娶伊菲革尼亚；但她因马太的教导，已许愿将自己奉献给上帝，便依照所许的愿拒绝了希尔塔库斯。因此，马太在举行圣奥秘时，奉王命被处死；如此，他以殉道完成了自己的使徒职分。萨莱诺当地流传一项传统，称他的遗体已被迁葬至该处；在教宗格里高利七世的时代，安放于一所奉献于圣使徒马太的教堂之中。直到今日，仍有大批信徒虔诚地敬礼他的圣髑。",
+          "en": "THE Apostle and Evangelist Matthew, also called Levi, was a publican, that is, a public official for collecting taxes, who was called by Christ himself from the very seat of custom. Whom he forthwith followed, and thereupon gave a feast for the Master and his disciples. The early Christian tradition, on the testimony of Irenæus, Clement of Alexandria, Origen, Tertullian, and other early writers, is that Matthew for some time preached the Gospel amongst the Hebrews, and that before he went to other fields of labour, he wrote for them a Gospel in their own language. Jerome claimed to own and use a copy of this Hebrew Gospel, wherewith to correct his translations from the Greek into Latin. Although many parts of Christendom have delighted to claim this Apostle as the founder of their Churches, the usual tradition is that he went into the regions south of the Caspian Sea, which same are in this instance called Ethiopia, where he preached the Gospel and confirmed the same by many wondrous deeds. The greatest of these is told on this wise: that he raised to life the king’s daughter, Iphigenia, whereby the royal family was converted to Christ; that after the king died Hirtacus his successor demanded Iphigenia to wife; and that she, who through Matthew’s teaching had vowed herself to God, rejected Hirtacus in pursuance of her vow; for which reason Matthew was by royal order put to death whilst celebrating the holy Mysteries, whereby he fulfilled his apostleship in martyrdom. There is a tradition at Salerno that his body was translated thither, and that, in the time of Gregory VII, it was laid in a Church dedicated under the invocation of the Apostle Matthew, where it is to this day devoutly honoured by great numbers of the faithful."
+        }
+      ]
+    },
     "collect": {
       "title": {
         "zh-hant": "傳福音使徒聖馬太日",
@@ -299,7 +450,7 @@
       },
       "text": {
         "zh-hant": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。",
-        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。 阿们。",
+        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。 阿们。",
         "en": ""
       }
     }
@@ -358,7 +509,7 @@
         {
           "zh-hant": "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
           "zh-hans": "一、诸天高唱欢欣赞歌，\n大地喜乐同声应和；\n使徒功德崇高圣位，\n佳节良期我众颂扬。",
-          "en": "LET heaven's exultant praises ring,\nAnd earth with joy responsive sing:\nThe Apostle's deeds and high estate\nThis festaltide we celebrate."
+          "en": "LET heaven's exultant praises ring,\nAnd earth with joy responsive sing:\nThe Apostle's deeds and high estate\nThis festal tide we celebrate."
         },
         {
           "zh-hant": "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
@@ -406,6 +557,79 @@
         "en": ""
       }
     },
+    "psalms": {
+      "1928": {
+        "items": [
+          {
+            "number": "1"
+          },
+          {
+            "number": "15"
+          },
+          {
+            "number": "24"
+          }
+        ]
+      },
+      "1962": {
+        "items": [
+          {
+            "number": "37",
+            "verses": "23-41"
+          }
+        ]
+      }
+    },
+    "lessons": {
+      "1928": {
+        "ot": {
+          "book": "以賽亞書",
+          "chapter": "52:1-10"
+        },
+        "nt": {
+          "book": "羅馬書",
+          "chapter": "10:1-15"
+        }
+      },
+      "1962": {
+        "ot": {
+          "book": "歷代志上",
+          "chapter": "29:9-18"
+        },
+        "nt": {
+          "book": "馬太福音",
+          "chapter": "6:19-end"
+        }
+      }
+    },
+    "lectionary_sets": {
+      "1943": [
+        {
+          "id": "evening",
+          "label": "晚禱",
+          "psalms": {
+            "items": [
+              {
+                "number": "19"
+              },
+              {
+                "number": "112"
+              }
+            ]
+          },
+          "lessons": {
+            "ot": {
+              "book": "約伯記",
+              "chapter": "28:12-end"
+            },
+            "nt": {
+              "book": "提摩太前書",
+              "chapter": "6:6-19"
+            }
+          }
+        }
+      ]
+    },
     "collect": {
       "title": {
         "zh-hant": "傳福音使徒聖馬太日",
@@ -414,7 +638,7 @@
       },
       "text": {
         "zh-hant": "全能的上帝，從前以當贊美的聖子，召馬太棄了稅官的職分，來為使徒為傳福音的。現在求主賜恩，叫我們也能夠除掉一切貪財的心，順從聖子耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。 阿們。",
-        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。 阿们。",
+        "zh-hans": "全能的上帝，从前以当赞美的圣子，召马太弃了税官的职分，来为使徒为传福音的。现在求主赐恩，叫我们也能够除掉一切贪财的心，顺从圣子耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。 阿们。",
         "en": ""
       }
     }

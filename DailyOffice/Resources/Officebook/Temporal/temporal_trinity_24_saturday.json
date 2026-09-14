@@ -1,0 +1,39 @@
+{
+  "identifier" : "temporal.trinity.week.24.weekday.7",
+  "morning" : {
+    "collect" : {
+      "text" : {
+        "zh-hans" : "主阿，我们因为懦弱，犯了罪，被罪缠绕。求主大施仁慈，赦免我们一切的过犯，解开我们的缠绕。愿天父看在当赞美的救主耶稣基督的面上，应允我们。阿们。",
+        "zh-hant" : "主阿，我們因為懦弱，犯了罪，被罪纏繞。求主大施仁慈，赦免我們一切的過犯，解開我們的纏繞。願天父看在當贊美的救主耶穌基督的面上，應允我們。阿們。",
+        "en": ""
+      },
+      "title" : {
+        "zh-hans" : "三一主日后第二十四主日礼拜六",
+        "zh-hant" : "三一主日後第二十四主日禮拜六",
+        "en": ""
+      }
+    }
+  },
+  "name" : {
+    "zh-hans" : "三一主日后第二十四主日礼拜六",
+    "zh-hant" : "三一主日後第二十四主日禮拜六",
+    "en": ""
+  },
+  "rank" : "feria",
+  "rank_display" : {
+    "zh-hans" : "（普通平日）",
+    "zh-hant" : "（普通平日）",
+    "en": ""
+  },
+  "temporal" : {
+    "season" : "trinity",
+    "week" : 24,
+    "weekday" : 7
+  },
+  "traits" : {
+    "themes" : [
+
+    ]
+  },
+  "type" : "temporal"
+}

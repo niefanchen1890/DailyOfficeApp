@@ -2,6 +2,7 @@ import SwiftUI
 
 struct OfficeHymnSectionView: View {
     let hymn: OfficeHymnData
+    @ObservedObject private var languageStore = AppLanguageStore.shared
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -39,24 +40,13 @@ struct OfficeHymnSectionView: View {
                 Divider().padding(.vertical, 14)
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("啟應")
+                    Text("啟應".adaptChinese(isSimplified: languageStore.isSimplified))
                         .font(.system(size: 17, weight: .semibold))
-                    
-                    HStack(alignment: .top, spacing: 4) {
-                        Text("司：").font(.system(size: 16, weight: .medium))
-                            .foregroundColor(.secondary).frame(width: 32, alignment: .leading)
-                        Text(versicle.leader)
-                            .font(.system(size: 16))
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    
-                    HStack(alignment: .top, spacing: 4) {
-                        Text("眾：").font(.system(size: 16, weight: .medium))
-                            .foregroundColor(.secondary).frame(width: 32, alignment: .leading)
-                        Text(versicle.people)
-                            .font(.system(size: 16))
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
+
+                    ResponsoryRow(response: Responsory(
+                        leader: versicle.leader,
+                        people: versicle.people
+                    ))
                 }
             }
         }

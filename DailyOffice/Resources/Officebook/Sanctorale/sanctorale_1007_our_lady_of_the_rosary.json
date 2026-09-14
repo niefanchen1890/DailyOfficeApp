@@ -1,0 +1,442 @@
+{
+  "identifier": "our_lady_rosary",
+  "name": {
+    "en": "The Most Holy Rosary of the Blessed Virgin Mary",
+    "zh-hans": "圣母玫瑰",
+    "zh-hant": "聖母玫瑰"
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "en": "Double of the Second Class",
+    "zh-hans": "（二等复式）",
+    "zh-hant": "（二等複式）"
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Beautiful and pleasant ※ is the holy Mother of God in the delights of virginity; and seeing her decked with lilies of the valley and flowers of roses, the daughters of Sion proclaim her most blessed, and queens do also give her praise.",
+        "zh-hans": "何等美丽，何等可悦，于童贞喜悦中的上帝圣母，※锡安的女子见她以谷中的百合与玫瑰花为妆饰，便称她为有福，众王后也都赞美她。",
+        "zh-hant": "何等美麗，何等可悅，於童貞喜悅中的上帝聖母，※錫安的女子見她以谷中的百合與玫瑰花為妝飾，便稱她為有福，眾王后也都讚美她。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ecclus. xxiv.",
+          "zh-hans": "（便西拉智训 24）",
+          "zh-hant": "（便西拉智訓 24）"
+        },
+        "text": {
+          "en": "IN me is all grace of the way and of the truth, in me is all hope of life and of virtue; I have budded forth as the rose planted by the brooks of waters.",
+          "zh-hans": "在我里面有道路与真理的一切恩典，在我里面有生命与德行的一切盼望；我发芽开花，如同栽在溪水旁的玫瑰。",
+          "zh-hant": "在我裏面有道路與真理的一切恩典，在我裏面有生命與德行的一切盼望；我發芽開花，如同栽在溪水旁的玫瑰。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "O GOD, whose only-begotten Son, by his life, death, and resurrection, hath purchased for us the rewards of eternal salvation; grant, we beseech thee, that meditating upon the mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝阿，借着独生圣子的降生、受难和复活，主赐给我们永恒的救恩，我们默想这些奥迹，并纪念荣福童贞马利亚，恳求主叫我们效法圣母的榜样，让敬虔的心像玫瑰一样绽放，至终得享主所赐的一切福乐。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝阿，藉著獨生聖子的降生、受難和復活，主賜給我們永恆的救恩，我們默想這些奧跡，並紀念榮福童貞馬利亞，懇求主叫我們效法聖母的榜樣，讓敬虔的心像玫瑰一樣綻放，至終得享主所賜的一切福樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Most Holy Rosary of the Blessed Virgin Mary",
+        "zh-hans": "圣母玫瑰",
+        "zh-hant": "聖母玫瑰"
+      }
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "en": "With heart and soul ※ let us sing glory to Christ on this sacred festivity of Mary, the renowned Mother of God.",
+        "zh-hans": "在这神圣庆节，※我们全心全灵来歌颂荣耀基督，纪念上帝之母马利亚。",
+        "zh-hant": "在這神聖慶節，※我們全心全靈來歌頌榮耀基督，紀念上帝之母馬利亞。"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "The Mysteries of God are shown",
+        "zh-hans": "The Mysteries of God are shown",
+        "zh-hant": "The Mysteries of God are shown"
+      },
+      "verses": [
+        {
+          "en": "THE Mysteries of God are shown,\nBy heaven's Messenger made known,\nWho hails the Maid of David's race,\nGod's Virgin Mother, full of grace.",
+          "zh-hans": "一、上帝奥秘今已显明，\n借着天上使者传报；\n问候大卫宗族童女，\n满被圣宠上帝之母。",
+          "zh-hant": "一、上帝奧秘今已顯明，\n藉著天上使者傳報；\n問候大衛宗族童女，\n滿被聖寵上帝之母。"
+        },
+        {
+          "en": "The Virgin visits then her kin,\nJohn's mother; and the babe within\nTh'enclosing womb exults to show\nThat Christ is present here below.",
+          "zh-hans": "二、童女起行探望亲族，\n约翰之母腹中婴孩，\n欢跃跳动以此显明，\n基督降临显于尘世。",
+          "zh-hant": "二、童女起行探望親族，\n約翰之母腹中嬰孩，\n歡躍跳動以此顯明，\n基督降臨顯於塵世。"
+        },
+        {
+          "en": "The Word before all worlds begot\nOf God the Father's timeless thought\nIs born a Child, to mortal doom,\nFrom out the Virgin Mother's womb.",
+          "zh-hans": "三、万世之前所生圣道，\n圣父永恒意念所出，\n降生为婴同担凡命，\n出自童贞圣母之胎。",
+          "zh-hant": "三、萬世之前所生聖道，\n聖父永恆意念所出，\n降生為嬰同擔凡命，\n出自童貞聖母之胎。"
+        },
+        {
+          "en": "Presented to the Lord with awe,\nThe Lawgiver obeys the Law:\nHe gives himself; the Ransomer\nIn poverty is ransomed there.",
+          "zh-hans": "四、虔敬奉献于主面前，\n赐律法者遵行律法；\n亲献己身救赎之主，\n贫寒之中反被赎回。",
+          "zh-hant": "四、虔敬奉獻於主面前，\n賜律法者遵行律法；\n親獻己身救贖之主，\n貧寒之中反被贖回。"
+        },
+        {
+          "en": "The Son whose loss she mournèd sore\nThe joyous Mother finds once more\nExpounding mysteries unknown\nTo minds more learnèd than his own.",
+          "zh-hans": "五、圣子失散慈母哀痛，\n欣逢圣殿复得爱子；\n宣讲从未识透奥秘，\n胜过博学文士之心。",
+          "zh-hant": "五、聖子失散慈母哀痛，\n欣逢聖殿復得愛子；\n宣講從未識透奧秘，\n勝過博學文士之心。"
+        },
+        {
+          "en": "All glory, laud, and honour be\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans": "六、一切荣耀颂赞尊贵，\n归于童女所生耶稣；\n荣耀理当归于圣父，\n与保惠师同享尊荣。阿们。",
+          "zh-hant": "六、一切榮耀頌讚尊貴，\n歸於童女所生耶穌；\n榮耀理當歸於聖父，\n與保惠師同享尊榮。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "Queen of the most holy Rosary, pray for us.",
+          "zh-hans": "至圣玫瑰之后，请为我们祈祷。",
+          "zh-hant": "至聖玫瑰之后，請為我們祈禱。"
+        },
+        "people": {
+          "en": "That we may be made worthy of the promises of Christ.",
+          "zh-hans": "使我们堪受基督的恩许。",
+          "zh-hant": "使我們堪受基督的恩許。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "Who is this that is beautiful as a dove? ※ Yea, she is like a rose growing by the rivers of water.",
+          "zh-hans": "这位如鸽子一般美丽者是谁？※她如同栽在溪水旁的玫瑰。",
+          "zh-hant": "這位如鴿子一般美麗者是誰？※她如同栽在溪水旁的玫瑰。"
+        },
+        {
+          "en": "Mighty art thou, O Virgin; ※ like to the tower of David, whereupon there hang a thousand bucklers, all shields of mighty men.",
+          "zh-hans": "童贞女，你大有能力，※犹如大卫为收藏军器而造的高塔，其上悬挂一千个盾牌，都是勇士的盾牌。",
+          "zh-hant": "童貞女，你大有能力，※猶如大衛為收藏軍器而造的高塔，其上懸掛一千個盾牌，都是勇士的盾牌。"
+        },
+        {
+          "en": "Hail Mary, thou art full of grace, the Lord is with thee: ※ blessed art thou among women.",
+          "zh-hans": "万福，马利亚，你充满圣宠，主与你同在，※你在妇女中受赞颂。",
+          "zh-hant": "萬福，馬利亞，你充滿聖寵，主與你同在，※你在婦女中受讚頌。"
+        },
+        {
+          "en": "Blessed be thou, O our God, ※ which hast this day brought to naught the enemies of thy people.",
+          "zh-hans": "我们的上帝啊，你当受称颂，※因为你今日使你民的仇敌化为乌有。",
+          "zh-hant": "我們的上帝啊，你當受稱頌，※因為你今日使你民的仇敵化為烏有。"
+        },
+        {
+          "en": "The daughters of Sion saw her adorned with garlands of roses, ※ and proclaimed her most blessed.",
+          "zh-hans": "锡安的女子※见她配戴玫瑰花环，就都称她为最为有福。",
+          "zh-hant": "錫安的女子※見她配戴玫瑰花環，就都稱她為最為有福。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "This is the Queen of Virgins, ※ who bore the King, the Virgin lovelier than a rose; Mother of God, through whom we have found God and Man: loving Virgin, intercede for us all.",
+        "zh-hans": "这就是众童贞女之后，※ 她孕育了君王，这童贞女比玫瑰更为荣美；上帝之母，借着她我们寻见了真上帝与真人：仁慈的童贞女啊，请为我们众人代求。",
+        "zh-hant": "這就是眾童貞女之后，※ 她孕育了君王，這童貞女比玫瑰更為榮美；上帝之母，藉著她我們尋見了真上帝與真人：仁慈的童貞女啊，請為我們眾人代求。"
+      }
+    }
+  },
+  "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Today let us celebrate ※ devoutly the solemnity of the holy Rosary of Mary, Mother of God: that she may intercede for us unto Jesus Christ the Lord.",
+        "zh-hans": "我们要热心地庆祝这神圣的节日，纪念上帝之母、终身童贞马利亚，好让她能借着她向我主耶稣基督的祈祷帮助我们。",
+        "zh-hant": "我們要熱心地慶祝這神聖的節日，紀念上帝之母、終身童貞馬利亞，好讓她能藉著她向我主耶穌基督的祈禱幫助我們。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ecclus. xxxix. 14.",
+          "zh-hans": "（便西拉智训 39:14）",
+          "zh-hant": "（便西拉智訓 39:14）"
+        },
+        "text": {
+          "en": "GIVE ye a sweet savour as frankincense, and flourish as a lily, send forth a smell, and sing a song of praise: bless the Lord in all his works.",
+          "zh-hans": "你们如乳香散发芬芳之气， 并且茂盛开花如同百合花。 你们要发出香气和唱赞歌， 因主的一切作为而称颂他。",
+          "zh-hant": "你們如乳香散發芬芳之氣， 並且茂盛開花如同百合花。 你們要發出香氣和唱讚歌， 因主的一切作為而稱頌他。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "O GOD, whose only-begotten Son, by his life, death, and resurrection, hath purchased for us the rewards of eternal salvation; grant, we beseech thee, that meditating upon the mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝阿，借着独生圣子的降生、受难和复活，主赐给我们永恒的救恩，我们默想这些奥迹，并纪念荣福童贞马利亚，恳求主叫我们效法圣母的榜样，让敬虔的心像玫瑰一样绽放，至终得享主所赐的一切福乐。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝阿，藉著獨生聖子的降生、受難和復活，主賜給我們永恆的救恩，我們默想這些奧跡，並紀念榮福童貞馬利亞，懇求主叫我們效法聖母的榜樣，讓敬虔的心像玫瑰一樣綻放，至終得享主所賜的一切福樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Most Holy Rosary of the Blessed Virgin Mary",
+        "zh-hans": "圣母玫瑰",
+        "zh-hant": "聖母玫瑰"
+      }
+    },
+    "invitatory": {
+      "text": {
+        "en": "Let us keep solemnity in honour of the Holy Rosary of the Virgin Mary; ※ O come, let us worship her Son, Christ the Lord.",
+        "zh-hans": "我们要敬礼童贞马利亚隆重的玫瑰庆节，※让我们敬拜她的儿子，主基督。",
+        "zh-hant": "我們要敬禮童貞馬利亞隆重的玫瑰慶節，※讓我們敬拜她的兒子，主基督。"
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "en": "In monte olivis consito",
+        "zh-hans": "In monte olivis consito",
+        "zh-hant": "In monte olivis consito"
+      },
+      "verses": [
+        {
+          "en": "ON Olivet, above the plain,\nThe praying Saviour prostrate lies;\nFearful and faint, his sweat of pain\nThe ground with sacred Crimson dyes.",
+          "zh-hans": "一、橄榄山巅高出平川；救主祈祷伏地含悲。\n忧惧交迫身心具疲；血汗滴地殷红如绯。",
+          "zh-hant": "一、橄欖山巔高出平川；救主祈禱伏地含悲。\n憂懼交迫身心俱疲；血汗滴地殷紅如緋。"
+        },
+        {
+          "en": "Betrayed and sold by traitor hands,\nOur God unto his death is borne,\nHis flesh with rough and torturing bands,\nAnd bleeding stripes of scourge is torn.",
+          "zh-hans": "二、叛徒卖主交付凶顽；我主上帝被押刑场。\n粗索紧缠圣躯摧残；鞭笞撕裂遍体鳞伤。",
+          "zh-hant": "二、叛徒賣主交付兇頑；我主上帝被押刑場。\n粗索緊纏聖軀摧殘；鞭笞撕裂遍體鱗傷。"
+        },
+        {
+          "en": "Upon his brow a thorny crown\nThe King of Glory meekly bears;\nHe who from heaven's Throne came down,\nThe soiled and mocking purple wears.",
+          "zh-hans": "三、荆棘编冠加于圣首；荣耀君王默受讥嘲。\n至尊屈己自天降世；身披污秽紫色王袍。",
+          "zh-hant": "三、荊棘編冠加於聖首；榮耀君王默受譏嘲。\n至尊屈己自天降世；身披污穢紫色王袍。"
+        },
+        {
+          "en": "Thrice 'neath the Cross's heavy load,\nHis fainting form to earth he bows;\nAnd thrice upon the mountain road\nThey urge him on with many blows.",
+          "zh-hans": "四、十架沉重压肩难当；救主三跌俯伏尘埃。\n山路崎岖三番遭打；强逼前行直上山崖。",
+          "zh-hant": "四、十架沉重壓肩難當；救主三跌俯伏塵埃。\n山路崎嶇三番遭打；強逼前行直上山崖。"
+        },
+        {
+          "en": "Nailed 'tween two sinners to the Wood,\nHe, sinless, meets his cruèl death;\nPrays and forgives, till spent with blood,\nTo God he yields his final breath.",
+          "zh-hans": "五、无罪救主钉悬木上；身列两犯忍受酷刑。\n为敌祈求宽赦罪咎；宝血流尽向父交灵。",
+          "zh-hant": "五、無罪救主釘懸木上；身列兩犯忍受酷刑。\n為敵祈求寬赦罪咎；寶血流盡向父交靈。"
+        },
+        {
+          "en": "Praise to the Holy Trinity,\nWhose grace, bestowed on them that pray,\nLeads by each sacred mystery\nTo brightness of eternal day. Amen.",
+          "zh-hans": "六、赞美圣父圣子圣灵；赐诸祷者恩泽无疆。\n借诸奥迹蒙主恩领；同登永昼共享荣光。阿们。",
+          "zh-hant": "六、讚美聖父聖子聖靈；賜諸禱者恩澤無疆。\n藉諸奧蹟蒙主恩領；同登永晝共享榮光。阿們。"
+        }
+      ]
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "en": "With heart and soul ※ let us sing glory to Christ on this sacred festivity of Mary, the renowned Mother of God.",
+        "zh-hans": "在这神圣庆节，我们全心全灵来歌颂荣耀基督，纪念上帝之母马利亚。",
+        "zh-hant": "在這神聖慶節，我們全心全靈來歌頌榮耀基督，紀念上帝之母馬利亞。"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Iam morte victor obruta",
+        "zh-hans": "Iam morte victor obruta",
+        "zh-hant": "Iam morte victor obruta"
+      },
+      "verses": [
+        {
+          "en": "NOW Hell is vanquished; every chain\nOf sin is broken; Christ again\nReturning, victor over death,\nThe gates of heaven openeth.",
+          "zh-hans": "一、阴府败亡权势溃散，万般罪缚悉皆折断。\n基督胜死凯旋归来，天国门户为人重开。",
+          "zh-hant": "一、陰府敗亡權勢潰散，萬般罪縛悉皆折斷。\n基督勝死凱旋歸來，天國門戶為人重開。"
+        },
+        {
+          "en": "We mortals saw him, till he passed\nInto the heavens, where at last,\nPartaker of God's glory bright,\nHe sitteth on the Father's right.",
+          "zh-hans": "二、世人亲见救主显现，直至升入至高诸天。\n今坐圣父宝座右旁，同享父荣灿烂光辉。",
+          "zh-hant": "二、世人親見救主顯現，直至升入至高諸天。\n今坐聖父寶座右旁，同享父榮燦爛光輝。"
+        },
+        {
+          "en": "From thence he sheds the promised boon,\nThe Holy Spirit, on his own\nIn fiery tongues of love, o'er-spread\nAbove each sad disciple's head.",
+          "zh-hans": "三、救主信守所许洪恩，自天倾注所赐圣灵。\n仁爱火舌分临众首，忧伤门徒悉蒙充盈。",
+          "zh-hant": "三、救主信守所許洪恩，自天傾注所賜聖靈。\n仁愛火舌分臨眾首，憂傷門徒悉蒙充盈。"
+        },
+        {
+          "en": "The Virgin, from the flesh set free,\nIs borne beyond the stars; where she\nReceives from heaven's joyous throngs\nThe welcome of angelic songs.",
+          "zh-hans": "四、童贞圣母脱却尘累，蒙接高升超越穹苍。\n天庭欢腾欣然迎迓，天使歌咏响彻天堂。",
+          "zh-hant": "四、童貞聖母脫卻塵累，蒙接高升超越穹蒼。\n天庭歡騰欣然迎迓，天使歌詠響徹天堂。"
+        },
+        {
+          "en": "Twice six the stars that crown her brow;\nThe gracious Mother reigneth now\nBeside her Son's eternal throne\nO'er all creation as her own.",
+          "zh-hans": "五、十二星辰环绕额上，慈爱圣母今享荣光。\n位近圣子永恒宝座，统御万有母仪万方。",
+          "zh-hant": "五、十二星辰環繞額上，慈愛聖母今享榮光。\n位近聖子永恆寶座，統御萬有母儀萬方。"
+        },
+        {
+          "en": "All glory, laud, and honour be\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans": "六、但愿荣耀赞美尊贵，归于贞女所生耶稣；\n及父与保惠师圣灵，称颂赞美永世无尽。阿们。",
+          "zh-hant": "六、但願榮耀讚美尊貴，歸於貞女所生耶穌；\n及父與保惠師聖靈，稱頌讚美永世無盡。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "God hath chosen and forechosen her.",
+          "zh-hans": "上主拣选她，并喜悦她。",
+          "zh-hant": "上主揀選她，並喜悅她。"
+        },
+        "people": {
+          "en": "He hath made her to dwell in his tabernacle.",
+          "zh-hans": "使她居住在祂的帐幕中。",
+          "zh-hant": "使她居住在祂的帳幕中。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "Be joyful, O Virgin Mother; ※ Christ hath risen from the tomb.",
+          "zh-hans": "欢欣吧， ※ 童贞圣母，哈利路亚；基督已从坟墓中复活。",
+          "zh-hant": "歡欣吧， ※ 童貞聖母，哈利路亞；基督已從墳墓中復活。"
+        },
+        {
+          "en": "God is gone up with a merry noise, ※ and the Lord with the sound of the trump.",
+          "zh-hans": "上帝上升，有欢呼声音、※主上升，角声大作。",
+          "zh-hant": "上帝上升，有歡呼聲音、※主上升，角聲大作。"
+        },
+        {
+          "en": "The Spirit of the Lord ※ hath filled the whole world.",
+          "zh-hans": "主的灵※充满世界。",
+          "zh-hant": "主的靈※充滿世界。"
+        },
+        {
+          "en": "Mary is taken up into heaven; the company of the Angels is joyful; ※ yea, the Angels rejoice, and glorify the Lord, alleluia.",
+          "zh-hans": "马利亚被接升天，天使欢欣鼓舞，歌颂赞美，将荣耀归于主，哈利路亚。",
+          "zh-hant": "馬利亞被接升天，天使歡欣鼓舞，歌頌讚美，將榮耀歸於主，哈利路亞。"
+        },
+        {
+          "en": "The Virgin Mary is exalted above the choirs of Angels; ※ and upon her head is a crown of twelve stars.",
+          "zh-hans": "上帝之母被高举升天，超越天使的歌团之上。※她的头上戴着十二星的冠冕。",
+          "zh-hant": "上帝之母被高舉升天，超越天使的歌團之上。※她的頭上戴著十二星的冠冕。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "Who is this, ※ fair as a dove, and like a rose tree planted beside the rivers of waters?",
+        "zh-hans": "这位如鸽子一般美丽者是谁？※她如同栽在溪水旁的玫瑰。",
+        "zh-hant": "這位如鴿子一般美麗者是誰？※她如同栽在溪水旁的玫瑰。"
+      }
+    }
+  },
+  "evening": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "O blessed Mother, ※ and spotless Virgin, thou glorious Queen of the world, may all acknowledge the help of thy prayer who celebrate the Solemnity of thy Holy Rosary.",
+        "zh-hans": "荣福的圣母，※ 无玷的童贞女，你是荣耀的世界之后，但愿所有守这圣日的人，都认识你代祷的大能。",
+        "zh-hant": "榮福的聖母，※ 無玷的童貞女，你是榮耀的世界之后，但願所有守這聖日的人，都認識你代禱的大能。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ecclus. xxiv. 13.",
+          "zh-hans": "（便西拉智训 24:13-14）",
+          "zh-hant": "（便西拉智訓 24:13-14）"
+        },
+        "text": {
+          "en": "I WAS exalted like a cedar in Libanus, and as a cypress tree upon the mountains of Hermon; I was exalted like a palm tree in En-gaddi, and as a rose plant in Jericho.",
+          "zh-hans": "我崇高如黎巴嫩的香柏木，又如黑门山的松树。我崇高如隐‧基底的棕树， 又如耶利哥的玫瑰花丛。",
+          "zh-hant": "我崇高如黎巴嫩的香柏木，又如黑門山的松樹。我崇高如隱‧基底的棕樹， 又如耶利哥的玫瑰花叢。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "O GOD, whose only-begotten Son, by his life, death, and resurrection, hath purchased for us the rewards of eternal salvation; grant, we beseech thee, that meditating upon the mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝阿，借着独生圣子的降生、受难和复活，主赐给我们永恒的救恩，我们默想这些奥迹，并纪念荣福童贞马利亚，恳求主叫我们效法圣母的榜样，让敬虔的心像玫瑰一样绽放，至终得享主所赐的一切福乐。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝阿，藉著獨生聖子的降生、受難和復活，主賜給我們永恆的救恩，我們默想這些奧跡，並紀念榮福童貞馬利亞，懇求主叫我們效法聖母的榜樣，讓敬虔的心像玫瑰一樣綻放，至終得享主所賜的一切福樂。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Most Holy Rosary of the Blessed Virgin Mary",
+        "zh-hans": "圣母玫瑰",
+        "zh-hant": "聖母玫瑰"
+      }
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "en": "With heart and soul ※ let us sing glory to Christ on this sacred festivity of Mary, the renowned Mother of God.",
+        "zh-hans": "在这神圣庆节，我们全心全灵来歌颂荣耀基督，纪念上帝之母马利亚。",
+        "zh-hant": "在這神聖慶節，我們全心全靈來歌頌榮耀基督，紀念上帝之母馬利亞。"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Te gestientem gaudiis",
+        "zh-hans": "Te gestientem gaudiis",
+        "zh-hant": "Te gestientem gaudiis"
+      },
+      "verses": [
+        {
+          "en": "THY joys exultant we relate,\nThy wounding sorrows celebrate;\nThy glory, robed in endless light,\nWe sing, O Virgin Mother bright.",
+          "zh-hans": "一、我众歌咏你之欢欣，亦颂你心所受苦辛；\n你披荣光永世无尽，童贞圣母我众同钦。",
+          "zh-hant": "一、我眾歌詠你之歡欣，亦頌你心所受苦辛；\n你披榮光永世無盡，童貞聖母我眾同欽。"
+        },
+        {
+          "en": "Hail, joyous Mother, blest indeed\nWhen thou conceivedst, and in need\nDidst visit; and thy Son for men\nDidst bear, present, and find again.",
+          "zh-hans": "二、万福圣母满怀欢欣，蒙福怀胎往访至亲；\n为世生子奉献于殿，复寻爱子喜得重见。",
+          "zh-hant": "二、萬福聖母滿懷歡欣，蒙福懷胎往訪至親；\n為世生子奉獻於殿，復尋愛子喜得重見。"
+        },
+        {
+          "en": "Hail, first of martyrs; in thy pure\nAnd anguished heart, thou didst endure\nThe agony, the scourge, the thorn,\nThe bitter Cross thy Son hath borne.",
+          "zh-hans": "三、致敬殉道诸圣之首，圣子苦难你心同受；\n山园忧苦鞭伤棘冠，十架惨痛寸心如剜。",
+          "zh-hant": "三、致敬殉道諸聖之首，聖子苦難你心同受；\n山園憂苦鞭傷棘冠，十架慘痛寸心如剜。"
+        },
+        {
+          "en": "Hail, shining Queen, in triumphs won\nForever by thy glorious Son,\nWho sent in flame the Holy Ghost,\nWho throned thee o'er the heavenly host.",
+          "zh-hans": "四、万福天后光耀穹苍，因子凯旋永享荣光；\n主遣圣灵烈火降临，立你为后统御天军。",
+          "zh-hant": "四、萬福天后光耀穹蒼，因子凱旋永享榮光；\n主遣聖靈烈火降臨，立你為后統御天軍。"
+        },
+        {
+          "en": "Come, all ye nations, from this vine\nOf mysteries the roses twine\nIn garlands for your Queen above,\nThe glorious Mother of fair love.",
+          "zh-hans": "五、万邦齐来从诸奥迹，采撷玫瑰编成花冠；\n敬献天上荣耀母后，美爱之母万民同赞。",
+          "zh-hant": "五、萬邦齊來從諸奧蹟，採擷玫瑰編成花冠；\n敬獻天上榮耀母后，美愛之母萬民同讚。"
+        },
+        {
+          "en": "Praise to the Holy Trinity,\nWhose grace, bestowed on them that pray,\nLeads by each sacred Mystery\nTo brightness of eternal day. Amen.",
+          "zh-hans": "六、但愿荣耀归于圣父，及子与保惠师圣灵；\n借诸奥迹赐祷者恩，引登永昼同享光明。阿们。",
+          "zh-hant": "六、但願榮耀歸於聖父，及子與保惠師聖靈；\n藉諸奧蹟賜禱者恩，引登永晝同享光明。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "Queen of the most sacred Rosary, pray for us.",
+          "zh-hans": "至圣玫瑰经之后，请为我们祈祷。",
+          "zh-hant": "至聖玫瑰經之后，請為我們祈禱。"
+        },
+        "people": {
+          "en": "That we may be made worthy of the promises of Christ.",
+          "zh-hans": "使我们堪受基督的应许。",
+          "zh-hant": "使我們堪受基督的應許。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "Who is this that is beautiful as a dove? ※ Yea, she is like a rose growing by the rivers of water.",
+          "zh-hans": "这位如鸽子一般美丽者是谁？※她如同栽在溪水旁的玫瑰。",
+          "zh-hant": "這位如鴿子一般美麗者是誰？※她如同栽在溪水旁的玫瑰。"
+        },
+        {
+          "en": "Mighty art thou, O Virgin; ※ like to the tower of David, whereupon there hang a thousand bucklers, all shields of mighty men.",
+          "zh-hans": "童贞女，你大有能力，※犹如大卫为收藏军器而造的高塔，其上悬挂一千个盾牌，都是勇士的盾牌。",
+          "zh-hant": "童貞女，你大有能力，※猶如大衛為收藏軍器而造的高塔，其上懸掛一千個盾牌，都是勇士的盾牌。"
+        },
+        {
+          "en": "Hail Mary, thou art full of grace, the Lord is with thee: ※ blessed art thou among women.",
+          "zh-hans": "万福，马利亚，你充满圣宠，主与你同在，※你在妇女中受赞颂。",
+          "zh-hant": "萬福，馬利亞，你充滿聖寵，主與你同在，※你在婦女中受讚頌。"
+        },
+        {
+          "en": "Blessed be thou, O our God, ※ which hast this day brought to naught the enemies of thy people.",
+          "zh-hans": "我们的上帝啊，你当受称颂，※因为你今日使你民的仇敌化为乌有。",
+          "zh-hant": "我們的上帝啊，你當受稱頌，※因為你今日使你民的仇敵化為烏有。"
+        },
+        {
+          "en": "The daughters of Sion saw her adorned with garlands of roses, ※ and proclaimed her most blessed.",
+          "zh-hans": "锡安的女子※见她配戴玫瑰花环，就都称她为最为有福。",
+          "zh-hant": "錫安的女子※見她配戴玫瑰花環，就都稱她為最為有福。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "Be joyful, ※ O Virgin Mother, alleluia; Christ hath risen from the tomb, alleluia, alleluia.",
+        "zh-hans": "欢欣吧， ※ 童贞圣母，哈利路亚；基督已从坟墓中复活，哈利路亚，哈利路亚。",
+        "zh-hant": "歡欣吧， ※ 童貞聖母，哈利路亞；基督已從墳墓中復活，哈利路亞，哈利路亞。"
+      }
+    }
+  }
+}

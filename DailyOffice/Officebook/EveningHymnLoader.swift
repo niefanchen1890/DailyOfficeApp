@@ -12,7 +12,22 @@ struct EveningHymnLoader {
         }
     }
 
-    func getHymn(for key: String) -> OfficeHymnData? {
-        return hymns[key]
+    func getHymn(for key: String, language: AppLanguage? = nil) -> OfficeHymnData? {
+        guard let hymn = hymns[key] else { return nil }
+        let resolvedLanguage = language ?? AppLanguageStore.shared.language
+        guard resolvedLanguage == .simplified else { return hymn }
+
+        return OfficeHymnData(
+            title: hymn.title.adaptChinese(isSimplified: true),
+            latinTitle: hymn.latinTitle,
+            seasonNote: hymn.seasonNote?.adaptChinese(isSimplified: true),
+            verses: hymn.verses.map { $0.adaptChinese(isSimplified: true) },
+            versicle: hymn.versicle.map {
+                OfficeHymnData.OfficeVersicle(
+                    leader: $0.leader.adaptChinese(isSimplified: true),
+                    people: $0.people.adaptChinese(isSimplified: true)
+                )
+            }
+        )
     }
 }

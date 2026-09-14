@@ -1263,6 +1263,12 @@ struct Lectionary1943View: View {
                     .foregroundColor(Color(red: 181/255, green: 8/255, blue: 56/255))
                     .padding(.vertical, 6)
             }
+            HolyDays1943View(
+                onPsalmTapped: { selectedPsalm = $0 },
+                onLessonTapped: { lesson in
+                    selectedLesson = LectionaryDay(season: "holyDays", weekIndex: 0, dayKey: "1943-holyDays", book: lesson.book, chapter: lesson.chapter)
+                }
+            )
         }
         .listStyle(.insetGrouped)
         .navigationDestination(item: $selectedLesson) { day in

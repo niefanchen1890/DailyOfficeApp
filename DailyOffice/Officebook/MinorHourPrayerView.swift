@@ -179,6 +179,7 @@ class MinorHourPrayerViewModel: ObservableObject {
 
 // MARK: - 視圖
 struct MinorHourPrayerView: View {
+    @State private var usesFortnightlyB = false
     @StateObject private var viewModel: MinorHourPrayerViewModel
     @Environment(\.colorScheme) var colorScheme
     let hour: MinorHour
@@ -340,6 +341,7 @@ struct MinorHourPrayerView: View {
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
                 SectionTitle(text: isSimp ? "诗篇" : "詩篇")
+                SmallHourPsalmPicker(usesFortnightlyB: $usesFortnightlyB, isSimplified: isSimp)
                 RubricBlock(text: isSimp ? "¶ 然后当按日课诵念诗篇，以及适当的季节或瞻礼对经。" : "¶ 然後當按日課誦唸詩篇，以及適當的季節或瞻禮對經。")
 
                 if let antiphon = viewModel.currentAntiphon {
@@ -347,11 +349,13 @@ struct MinorHourPrayerView: View {
                     RubricBlock(text: "¶ \(seasonStr)\(isSimp ? "对经" : "對經")：")
                 }
 
-                let psalmKeys = MinorHourPrayerRules.psalmKeys(hour: hour, date: viewModel.selectedDate)
+                let psalmKeys = usesFortnightlyB
+                    ? PsalmsLoader.shared.fortnightlyBKeys(for: viewModel.selectedDate, hour: hour.rawValue)
+                    : MinorHourPrayerRules.psalmKeys(hour: hour, date: viewModel.selectedDate)
                 ForEach(psalmKeys.indices, id: \.self) { index in
                     let key = psalmKeys[index]
                     if let psalm = PsalmsLoader.shared.psalmContent(for: key) {
-                        let displayTitle = MinorHourPrayerRules.psalmDisplayTitle(for: key, isSimplified: isSimp)
+                        let displayTitle = usesFortnightlyB ? psalm.title : MinorHourPrayerRules.psalmDisplayTitle(for: key, isSimplified: isSimp)
                         psalmContentView(
                             title: displayTitle,
                             content: psalm,
@@ -536,8 +540,11 @@ struct MinorHourPrayerView: View {
                     Text(isSimp ? "我们要祷告。" : "我們要禱告。").font(.system(size: 17, weight: .medium)).foregroundColor(.primary).frame(maxWidth: .infinity, alignment: .center).padding(.vertical, 4)
 
                     if let mainCollect = viewModel.collectOfTheDay {
-                        Text(mainCollect.title).font(.system(size: 17, weight: .semibold)).foregroundColor(LiturgyColors.crimson).padding(.top, 2)
-                        BodyText(mainCollect.text)
+                        OfficeCollectChoiceView(
+                            collect: mainCollect,
+                            isTraditional: !isSimp,
+                            showsTitle: true
+                        )
                     } else {
                         PlaceholderBlock(text: isSimp ? "按当日节期诵念" : "按當日節期誦唸")
                     }
@@ -588,12 +595,53 @@ struct MinorHourPrayerView: View {
         }
     }
 
+    private func continuationLabel(_ title: String) -> some View {
+        HStack {
+            Text(title.adaptChinese(isSimplified: viewModel.isSimplified))
+            Spacer()
+            Image(systemName: "chevron.right")
+        }
+        .font(.system(size: 16, weight: .medium))
+        .padding(.vertical, 10)
+        .padding(.horizontal, 14)
+        .frame(maxWidth: .infinity)
+    }
+
     // MARK: - 結尾
     private var endingSection: some View {
         VStack(spacing: 0) {
             Text(hour.endingText(isSimplified: viewModel.isSimplified))
                 .font(.system(size: 15, weight: .medium)).foregroundColor(.red).frame(maxWidth: .infinity, alignment: .center).padding(.vertical, 20)
+            if hour == .terce {
+                NavigationLink {
+                    SextPrayerView(date: viewModel.selectedDate)
+                } label: {
+                    continuationLabel("此處可接唸六時禱")
+                }
+                .buttonStyle(.bordered)
+            } else if hour == .sext {
+                NavigationLink {
+                    NonaPrayerView(date: viewModel.selectedDate)
+                } label: {
+                    continuationLabel("此處可接唸九時禱")
+                }
+                .buttonStyle(.bordered)
+            }
             Spacer().frame(height: 32)
         }
+    }
+}
+
+/// 各小時禱獨立選擇，進入時保留原有詩篇為預設。
+struct SmallHourPsalmPicker: View {
+    @Binding var usesFortnightlyB: Bool
+    let isSimplified: Bool
+
+    var body: some View {
+        Picker(isSimplified ? "诗篇选择" : "詩篇選擇", selection: $usesFortnightlyB) {
+            Text(isSimplified ? "默认诗篇" : "默認詩篇").tag(false)
+            Text(isSimplified ? "两周循环B" : "兩週循環B").tag(true)
+        }
+        .pickerStyle(.segmented)
     }
 }

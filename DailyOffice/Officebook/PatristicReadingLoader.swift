@@ -61,7 +61,7 @@ class PatristicReadingLoader {
             
         case .trinity:
             if identifier == .trinitySunday { return ("trinity", 0) }
-            if identifier == .sundayBeforeAdvent { return ("trinity", 27) }
+            if [.sundayBeforeAdvent, .beforeAdventMonday, .beforeAdventTuesday, .beforeAdventWednesday, .beforeAdventThursday, .beforeAdventFriday, .beforeAdventSaturday].contains(identifier) { return ("trinity", 27) }
             return ("trinity", week)
             
         case .advent:

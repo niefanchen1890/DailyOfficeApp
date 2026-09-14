@@ -1,0 +1,35 @@
+{
+  "identifier": "sts_simon_jude_vigil",
+  "traits": {
+    "vigil": "ordinary",
+    "themes": [
+      "apostle"
+    ]
+  },
+  "name": {
+    "zh-hant": "使徒聖西門與聖猶大望日",
+    "zh-hans": "使徒圣西门与圣犹大望日",
+    "en": "Vigil of Saints Simon and Jude, Apostles"
+  },
+  "rank": "vigil",
+  "rank_display": {
+    "zh-hant": "（普通望日）",
+    "zh-hans": "（普通望日）",
+    "en": "Ordinary Vigil"
+  },
+  "type": "sanctorale",
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "使徒聖西門與聖猶大望日",
+        "zh-hans": "使徒圣西门与圣犹大望日",
+        "en": "Vigil of Saints Simon and Jude, Apostles"
+      },
+      "text": {
+        "zh-hant": "無所不能的上帝，我們今天預先慶祝你的使徒西門與猶大光榮的在天誕辰，但願他們也能在你的至尊台前，為我們求得你的恩佑。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "无所不能的上帝，我们今天预先庆祝你的使徒西门与犹大光荣的在天诞辰，但愿他们也能在你的至尊台前，为我们求得你的恩佑。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

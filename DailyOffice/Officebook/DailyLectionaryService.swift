@@ -71,7 +71,7 @@ class DailyLectionaryService {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
         } else {
             period = file.morning
         }

@@ -34,6 +34,7 @@ public enum LiturgicalRank: Double, Comparable {
     case semiDouble = 61                    // 半複式 (含遷移)
     case ordinaryOctavesemiDouble = 60    // 普通八日慶期，半複式
     case greaterFeria = 55                // 非特權大平日 (如降臨期平日)
+    case saturdayOfficeBVM = 51           // 禮拜六特敬聖母：只高於簡式慶日
     case simple = 50                        // 簡式
     case commemoration = 45                 // 紀念
     case vigil = 40                         // 望日
@@ -76,7 +77,8 @@ extension LiturgicalRank {
         case "（半複式）",
              "（半複式，遷移至今日）": return .semiDouble
         case "（非特權大平日）": return .greaterFeria
-        case "（簡式）": return .simple
+        case "（禮拜六特敬聖母）": return .saturdayOfficeBVM
+        case "（簡式）", "（簡式八日慶期，簡式）", "簡式八日慶期，簡式": return .simple
         case "（紀念）": return .commemoration
         case "（望日）": return .vigil
         case "（普通平日）": return .feria
@@ -110,11 +112,21 @@ extension LiturgicalRank {
         case .double:                       return "複式"
         case .semiDouble:                   return "半複式"
         case .greaterFeria:                 return "非特權大平日"
+        case .saturdayOfficeBVM:            return "禮拜六特敬聖母"
         case .simple:                       return "簡式"
         case .commemoration:                return "紀念"
         case .vigil:                        return "望日"
         case .feria:                        return "普通平日"
         case .none:                         return ""
         }
+    }
+}
+
+
+extension LiturgicalRank {
+    /// 簡式八日慶期保持簡式的數值與優先級，只按結構化特徵細分顯示。
+    func displayName(for traits: LiturgicalTraits) -> String {
+        self == .simple && traits.octave?.isDayEight == true
+            ? "簡式八日慶期，簡式" : displayName
     }
 }

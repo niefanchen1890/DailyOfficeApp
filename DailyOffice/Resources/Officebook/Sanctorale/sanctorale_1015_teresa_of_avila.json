@@ -1,0 +1,134 @@
+{
+  "identifier": "st_teresa_avila",
+  "name": {
+    "en": "Saint Teresa of Avila",
+    "zh-hans": "阿维拉的圣德兰",
+    "zh-hant": "阿維拉的聖德蘭"
+  },
+  "rank": "commemoration",
+  "rank_display": {
+    "en": "Commemoration",
+    "zh-hans": "（纪念）",
+    "zh-hant": "（紀念）"
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "This is a wise virgin, whom the Lord hath found watching; who, having trimmed her lamp, took oil with her, and when the Lord came, went in with him to the marriage.",
+        "zh-hans": "这是一位明智的童贞女，※主发现她警醒守候；她整理好灯，带着油，当主来临时，就与祂一同进入婚宴。",
+        "zh-hant": "這是一位明智的童貞女，※主發現她警醒守候；她整理好燈，帶著油，當主來臨時，就與祂一同進入婚宴。"
+      }
+    },
+    "collect": [
+      {
+        "option_label": {
+          "en": "Default collect",
+          "zh-hans": "默认祝文",
+          "zh-hant": "默認祝文"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "上帝，我们的救主阿，求主仁慈垂听我们的祈祷，使我们因主的真福童贞女圣德兰的庆节而欢欣喜乐，使我们也能学习追随她，怀有各种虔诚与敬爱之情。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant": "上帝，我們的救主阿，求主仁慈垂聽我們的祈禱，使我們因主的真福童貞女聖德蘭的慶節而歡欣喜樂，使我們也能學習追隨她，懷有各種虔誠與敬愛之情。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title": {
+          "en": "Saint Teresa of Avila",
+          "zh-hans": "阿维拉的圣德兰",
+          "zh-hant": "阿維拉的聖德蘭"
+        }
+      },
+      {
+        "option_label": {
+          "en": "Alternative collect",
+          "zh-hans": "另一祝文",
+          "zh-hant": "另一祝文"
+        },
+        "text": {
+          "en": "HEAR us, O God our Saviour, that as we do rejoice in the festivity of blessed Teresa thy Virgin, so may we also be nourished with the food of her heavenly doctrine, and be taught in the spirit of her loving devotion. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans": "拯救我们的上帝，求主垂听我们的祷告；叫我们既欢喜守主的童贞女圣德兰的庆日，也得她属天的教训作灵粮，滋养我们，并受教效法她爱主的虔诚。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "zh-hant": "拯救我們的上帝，求主垂聽我們的禱告；叫我們既歡喜守主的童貞女聖德蘭的慶日，也得她屬天的教訓作靈糧，滋養我們，並受教效法她愛主的虔誠。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。"
+        },
+        "title": {
+          "en": "Saint Teresa of Avila",
+          "zh-hans": "阿维拉的圣德兰",
+          "zh-hant": "阿維拉的聖德蘭"
+        }
+      }
+    ],
+    "office_hymn": {
+      "versicle": {
+        "leader": {
+          "en": "Full of grace are thy lips.",
+          "zh-hans": "你的嘴里满有恩惠。",
+          "zh-hant": "你的嘴裏滿有恩惠。"
+        },
+        "people": {
+          "en": "Because God hath blessed thee for ever.",
+          "zh-hans": "因为上帝永远赐福与你。",
+          "zh-hant": "因為上帝永遠賜福與你。"
+        }
+      }
+    }
+  },
+  "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "When the Bridegroom came, the wise virgins being ready, went in with him to the wedding.",
+        "zh-hans": "当新郎来到时，明智的童贞女已经预备好，就与他一同进入婚宴。",
+        "zh-hant": "當新郎來到時，明智的童貞女已經預備好，就與他一同進入婚宴。"
+      }
+    },
+    "collect": [
+      {
+        "option_label": {
+          "en": "Default collect",
+          "zh-hans": "默认祝文",
+          "zh-hant": "默認祝文"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "上帝，我们的救主阿，求主仁慈垂听我们的祈祷，使我们因主的真福童贞女圣德兰的庆节而欢欣喜乐，使我们也能学习追随她，怀有各种虔诚与敬爱之情。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant": "上帝，我們的救主阿，求主仁慈垂聽我們的祈禱，使我們因主的真福童貞女聖德蘭的慶節而歡欣喜樂，使我們也能學習追隨她，懷有各種虔誠與敬愛之情。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title": {
+          "en": "Saint Teresa of Avila",
+          "zh-hans": "阿维拉的圣德兰",
+          "zh-hant": "阿維拉的聖德蘭"
+        }
+      },
+      {
+        "option_label": {
+          "en": "Alternative collect",
+          "zh-hans": "另一祝文",
+          "zh-hant": "另一祝文"
+        },
+        "text": {
+          "en": "HEAR us, O God our Saviour, that as we do rejoice in the festivity of blessed Teresa thy Virgin, so may we also be nourished with the food of her heavenly doctrine, and be taught in the spirit of her loving devotion. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans": "拯救我们的上帝，求主垂听我们的祷告；叫我们既欢喜守主的童贞女圣德兰的庆日，也得她属天的教训作灵粮，滋养我们，并受教效法她爱主的虔诚。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "zh-hant": "拯救我們的上帝，求主垂聽我們的禱告；叫我們既歡喜守主的童貞女聖德蘭的慶日，也得她屬天的教訓作靈糧，滋養我們，並受教效法她愛主的虔誠。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。"
+        },
+        "title": {
+          "en": "Saint Teresa of Avila",
+          "zh-hans": "阿维拉的圣德兰",
+          "zh-hant": "阿維拉的聖德蘭"
+        }
+      }
+    ],
+    "office_hymn": {
+      "versicle": {
+        "leader": {
+          "en": "The virgins that be her fellows shall bear her company.",
+          "zh-hans": "众童贞女必伴随她。",
+          "zh-hant": "眾童貞女必伴隨她。"
+        },
+        "people": {
+          "en": "And shall be brought unto thee.",
+          "zh-hans": "她们必被带到祢面前。",
+          "zh-hant": "她們必被帶到祢面前。"
+        }
+      }
+    }
+  },
+  "evening": null
+}

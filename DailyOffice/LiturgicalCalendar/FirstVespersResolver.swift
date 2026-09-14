@@ -8,6 +8,7 @@ struct FirstVespersResolver {
     }
 
     func hasFirstVespers(_ liturgy: DailyLiturgy) -> Bool {
+        if liturgy.identifier == .epiphanyVigil { return true }
         if liturgy.traits.isWithinOctave && !liturgy.traits.octave!.isDayEight {
             return false
         }
@@ -25,6 +26,8 @@ struct FirstVespersResolver {
              .privilegedVigilSecondClass,
              .privilegedVigilFirstClass:
             return false
+        case .saturdayOfficeBVM:
+            return true
         default:
             return true
         }

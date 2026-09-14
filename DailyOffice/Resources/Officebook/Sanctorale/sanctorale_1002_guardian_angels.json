@@ -1,479 +1,412 @@
 {
-  "identifier": "st_jerome",
-  "traits": { "themes": ["confessor", "churchDoctor"] },
-  "name": {
-    "zh-hant": "教會聖師、精修者聖耶柔米",
-    "zh-hans": "教会圣师、精修者圣耶柔米",
-    "en": ""
+  "identifier": "guardian_angels",
+  "traits": {
+    "themes": [
+      "angel"
+    ]
   },
-  "rank": "double",
+  "name": {
+    "en": "The Holy Guardian Angels",
+    "zh-hans": "守护圣天使",
+    "zh-hant": "守護聖天使"
+  },
+  "rank": "greaterDouble",
   "rank_display": {
-    "zh-hant": "（複式）",
-    "zh-hans": "（复式）",
-    "en": ""
+    "en": "Greater Double",
+    "zh-hans": "（大复式）",
+    "zh-hant": "（大複式）"
   },
   "type": "sanctorale",
   "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "O Lord of heaven, ※ send a good Angel before us; and through the might of thine arm, let those be stricken with terror, that come against thine holy people to blaspheme.",
+        "zh-hans": "天上的权能者啊，※求祢差遣一位好天使来到我们面前；愿祢大能的膀臂，击打那些前来亵渎祢圣民的人。",
+        "zh-hant": "天上的權能者啊，※求祢差遣一位好天使來到我們面前；願祢大能的膀臂，擊打那些前來褻瀆祢聖民的人。"
+      }
+    },
     "bible_sentences": [
       {
-        "text": {
-          "zh-hant": "有福之人清早起來專心致志，歸向那位創造他的主；他在至高者之前祈求，並張開他的嘴巴禱告，為自己的罪過而祈求。",
-          "zh-hans": "有福之人清早起来专心致志，归向那位创造他的主；他在至高者之前祈求，并张开他的嘴巴祷告，为自己的罪过而祈求。",
-          "en": ""
-        },
         "reference": {
-          "zh-hant": "（便西拉智訓 39:5）",
-          "zh-hans": "（便西拉智训 39:5）",
-          "en": ""
+          "en": "Ps. xci. 11.",
+          "zh-hans": "（诗篇 91:11）",
+          "zh-hant": "（詩篇 91:11）"
+        },
+        "text": {
+          "en": "HE shall give his Angels charge over thee, to keep thee in all thy ways.",
+          "zh-hans": "因他要为你命令他的使者，在你所行的一切道路上保护你。",
+          "zh-hant": "因他要為你命令他的使者，在你所行的一切道路上保護你。"
         }
       }
     ],
-    "psalm_antiphons": {
-      "lectionary_1943": [
-        {
-          "zh-hant": "主愛了他，※並裝扮了他，給他穿上華麗的外衣，在樂園的門口給他戴上冠冕。",
-          "zh-hans": "主爱了他，※并装扮了他，给他穿上华丽的外衣，在乐园的门口给他戴上冠冕。",
-          "en": "The Lord loved him and adorned him, ※ he clothed him with a robe of glory, and at the gates of Paradise he crowned him."
-        },
-        {
-          "zh-hant": "一位忠心又精明的管家，※主派他管理他的家。",
-          "zh-hans": "一位忠心又精明的管家，※主派他管理他的家。",
-          "en": "A wise and faithful steward, ※ whom the Lord made ruler over his household."
-        }
-      ],
-      "antiphons": [
-        {
-          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
-          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
-          "en": ""
-        },
-        {
-          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
-          "en": ""
-        },
-        {
-          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
-          "en": ""
-        },
-        {
-          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
-          "en": ""
-        },
-        {
-          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
-          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
-          "en": ""
-        }
-      ]
+    "collect": {
+      "text": {
+        "en": "O GOD, who in thine ineffable providence dost vouchsafe to send thine holy Angels to guard us: grant, of thy bountiful goodness; that we thine humble servants may ever continue in safety under their protection, and hereafter rejoice in their abiding fellowship. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝以不可言喻的眷祐，俯允差遣圣天使来守护我们：求主因丰盛的恩慈，使我们这些卑微的仆人，常在他们的保护下得保安宁，并在来世得享与他们永远的团契。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝以不可言喻的眷祐，俯允差遣聖天使來守護我們：求主因豐盛的恩慈，使我們這些卑微的僕人，常在他們的保護下得保安寧，並在來世得享與他們永遠的團契。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Holy Guardian Angels",
+        "zh-hans": "守护圣天使",
+        "zh-hant": "守護聖天使"
+      }
     },
     "office_hymn": {
       "title": {
-        "zh-hant": "Christe, pastorum Caput atque Princeps",
-        "zh-hans": "Christe, pastorum Caput atque Princeps",
-        "en": ""
+        "en": "Custodes hominum psallimus Angelos",
+        "zh-hans": "Custodes hominum psallimus Angelos",
+        "zh-hant": "Custodes hominum psallimus Angelos"
       },
       "verses": [
         {
-          "zh-hant": "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
-          "zh-hans": "一、昔有宣信士，曾蒙上帝嘉纳，\n四方众士民，虔敬肃然称颂；\n今朝受封赏，荣登天府高衙，\n永享主荣华.",
-          "en": "THIS the Confessor of the Lord, whose triumph\nNow all the faithful celebrate, with gladness\nErst on this feast-day merited to enter\nInto his glory."
+          "en": "THE Guardians of our race, Our Angel guides, we hail,\nOur Father sendeth forth, To aid our nature frail,\nThese heavenly friends, lest we Should suffer overthrow\nThrough cunning of our subtle foe.",
+          "zh-hans": "一、颂赞世人卫士，引路天使圣名；\n天父垂悯软弱，遣赐天上良朋；\n免教我众受挫，遭逢仇敌倾覆，\n免堕幽暗诡诈罗网中。",
+          "zh-hant": "一、頌讚世人衛士，引路天使聖名；\n天父垂憫軟弱，遣賜天上良朋；\n免教我眾受挫，遭逢仇敵傾覆，\n免墮幽暗詭詐羅網中。"
         },
         {
-          "zh-hant": "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
-          "zh-hans": "二、敬畏而警醒，忠贞清正端庄，\n圣洁且谦卑，世人共称其德；\n虽殁其尘躯，灵召永恒之生，\n蒙入主天庭.",
-          "en": "Saintly and prudent, modest in behavior,\nPeaceful and sober, chaste was he, and lowly,\nWhile that life's vigour, coursing through his members,\nQuickened his being."
+          "en": "For he who justly lost The honour once his own,\nThe traitor-angel, rues His lost and vacant throne,\nWith burning envy strives To make those fall away\nWhom God doth call to heavenly day.",
+          "zh-hans": "二、背叛天使堕落，自招公义斥逐；\n痛失往昔荣位，满怀嫉恨怨毒；\n竭力诱惑使坠，残害主民心志，\n阻挠上帝所召登天民。",
+          "zh-hant": "二、背叛天使墮落，自招公義斥逐；\n痛失往昔榮位，滿懷嫉恨怨毒；\n竭力誘惑使墜，殘害主民心志，\n阻撓上帝所召登天民。"
         },
         {
-          "zh-hant": "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
-          "zh-hans": "三、圣泽长流溢，溥济疲惫乏困，\n贤能有慈怀，仁德沛然昭显；\n凡负轭抱疾，无论何等重担，\n悉获主康安.",
-          "en": "Sick ones of old time, to his tomb resorting,\nSorely by ailments manifold afflicted,\nOft-times have welcomed health and strength returning,\nAt his petition."
+          "en": "Then, watchful Guardian, spread Thy wings, and cleave the air;\nHaste to our native home, Committed to thy care;\nDrive hence each noxious ill That might the soul infest,\nNor suffer danger here to rest.",
+          "zh-hans": "三、警醒守护天使，展翼穿空降临；\n速临属祢居所，眷顾托付城邑；\n逐除侵害心灵，种种幽暗罪咎，\n莫容祸患在此扰安宁。",
+          "zh-hant": "三、警醒守護天使，展翼穿空降臨；\n速臨屬祢居所，眷顧託付城邑；\n逐除侵害心靈，種種幽暗罪咎，\n莫容禍患在此擾安寧。"
         },
         {
-          "zh-hant": "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
-          "zh-hans": "四、我众合赞颂，归与上帝尊荣，\n欣然高举歌，敬献圣名钦崇；\n愿今生来世，同作天上良朋，\n共沐主宏恩.",
-          "en": "Whence we in chorus gladly do him honor,\nChanting his praises with devout affection,\nThat in his merits we may have a portion,\nNow and forever."
-        },
-        {
-          "zh-hant": "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。",
-          "zh-hans": "五、尊荣并权能，救恩荣耀齐弘，\n全归至高君，永在至尊天宫；\n恒常且无限，掌管万有无穷，\n三一真上主.阿们.",
-          "en": "His be the glory, power, and salvation:\nWho over all things reigneth in the highest,\nEarth's mighty fabric ruling and directing,\nOnely and Trinal. Amen."
+          "en": "Now to the Holy Three Your praise devoutly pour;\nHis glorious Godhead guides And governs evermore\nThis triple frame: to him Ascribe we all our praise,\nWho reigns through everlasting days. Amen.",
+          "zh-hans": "四、同向三位一体，竭诚献上颂扬，\n至圣威严神能，永远指引统掌， \n三界万有穹象； 荣耀全归于祂，\n权柄尊贵万代永无疆。阿们。",
+          "zh-hant": "四、同向三位一體，竭誠獻上頌揚，\n至聖威嚴神能，永遠指引統掌， \n三界萬有穹象； 榮耀全歸於祂，\n權柄尊貴萬代永無疆。阿們。"
         }
       ],
       "versicle": {
         "leader": {
-          "zh-hant": "主愛了他，並裝扮了他。",
-          "zh-hans": "主爱了他，并装扮了他。",
-          "en": ""
+          "en": "The Lord will send his Angel with thee.",
+          "zh-hans": "主必要差遣他的使者与你同在，",
+          "zh-hant": "主必要差遣他的使者與你同在，"
         },
         "people": {
-          "zh-hant": "給他穿上榮耀的外衣。",
-          "zh-hans": "给他穿上荣耀的外衣。",
-          "en": ""
+          "en": "And prosper thy way.",
+          "zh-hans": "使你的道路亨通。",
+          "zh-hant": "使你的道路亨通。"
         }
       }
     },
-    "benedictus_antiphon": {
-      "normal": {
-        "zh-hant": "我要把他好比一個聰明人，※把房子蓋在磐石上。",
-        "zh-hans": "我要把他好比一个聪明人，※把房子盖在磐石上。",
-        "en": ""
-      }
-    },
-    "collect": {
-      "title": {
-        "zh-hant": "教會聖師、精修者聖耶柔米",
-        "zh-hans": "教会圣师、精修者圣耶柔米",
-        "en": ""
-      },
-      "text": {
-        "zh-hant": "上帝為闡揚主的聖經，曾藉著主的精修者聖耶柔米，給了主的教會奇妙的教導；求主因他有功勞的代求，使我們蒙主的助佑，能實踐他的言傳身教。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
-        "zh-hans": "上帝为阐扬主的圣经，曾藉着主的精修者圣耶柔米，给了主的教会奇妙的教导；求主因他有功劳的代求，使我们蒙主的助佑，能实践他的言传身教。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
-        "en": ""
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "God shall give his Angels charge over thee, ※ to keep thee in all thy ways.",
+          "zh-hans": "因他要为你吩咐他的使者，※在你行的一切道路上保护你。",
+          "zh-hant": "因他要為你吩咐他的使者，※在你行的一切道路上保護你。"
+        },
+        {
+          "en": "Let us praise the Lord whom the Angels do praise, ※ unto whom Cherubim and Seraphim do cry, Holy, Holy, Holy.",
+          "zh-hans": "我们要赞颂众天使所赞美的主，※基路伯和撒拉弗向他高呼：圣哉、圣哉、圣哉。",
+          "zh-hant": "我們要讚頌眾天使所讚美的主，※基路伯和撒拉弗向他高呼：聖哉、聖哉、聖哉。"
+        },
+        {
+          "en": "In heaven their Angels do always behold the face of my Father ※ which is in heaven.",
+          "zh-hans": "他们的使者在天上，※常见我天父的面。",
+          "zh-hant": "他們的使者在天上，※常見我天父的面。"
+        },
+        {
+          "en": "The Angel of the Lord came down into the fiery furnace, ※ to his servants that trusted in him.",
+          "zh-hans": "主的天使下到火窑中，※与信靠主的仆人那里。",
+          "zh-hant": "主的天使下到火窯中，※與信靠主的僕人那裡。"
+        },
+        {
+          "en": "Praise him, all ye Angels of his, ※ praise him, all his host.",
+          "zh-hans": "主的诸天使都当颂扬主，※主的众天军都当颂扬主。",
+          "zh-hant": "主的諸天使都當頌揚主，※主的眾天軍都當頌揚主。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "Take heed that ye despise not ※ one of these little ones: for I say unto you that in heaven their Angels do alway behold the face of my Father which is in heaven.",
+        "zh-hans": "你们要小心，不可轻看这些小子中的一个；※我告诉你们，他们的天使在天上，常见我天父的面。",
+        "zh-hant": "你們要小心，不可輕看這些小子中的一個；※我告訴你們，他們的天使在天上，常見我天父的面。"
       }
     }
   },
   "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "They are all ※ ministering spirits, sent forth to minister unto them who shall be heirs of salvation.",
+        "zh-hans": "众天使都是事奉的灵，奉差遣为那将要承受救恩的人服务。",
+        "zh-hant": "眾天使都是事奉的靈，奉差遣為那將要承受救恩的人服務。"
+      }
+    },
     "bible_sentences": [
       {
-        "text": {
-          "zh-hant": "他們在上帝寶座前，晝夜在他殿中事奉他；那坐在寶座上的要用帳幕覆庇他們。",
-          "zh-hans": "他们在上帝宝座前，昼夜在他殿中事奉他；那坐在宝座上的要用帐幕覆庇他们。",
-          "en": ""
-        },
         "reference": {
-          "zh-hant": "（啟示錄 7:15）",
-          "zh-hans": "（启示录 7:15）",
-          "en": ""
+          "en": "Heb. i. 14.",
+          "zh-hans": "（希伯来书 1:14）",
+          "zh-hant": "（希伯來書 1:14）"
+        },
+        "text": {
+          "en": "ARE not all Angels ministering spirits, sent forth to minister for them who shall be heirs of salvation?",
+          "zh-hans": "众天使不都是事奉的灵，奉差遣为那将要承受救恩的人服务的吗？",
+          "zh-hant": "眾天使不都是事奉的靈，奉差遣為那將要承受救恩的人服務的嗎？"
         }
       }
     ],
+    "collect": {
+      "text": {
+        "en": "O GOD, who in thine ineffable providence dost vouchsafe to send thine holy Angels to guard us: grant, of thy bountiful goodness; that we thine humble servants may ever continue in safety under their protection, and hereafter rejoice in their abiding fellowship. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝以不可言喻的眷祐，俯允差遣圣天使来守护我们：求主因丰盛的恩慈，使我们这些卑微的仆人，常在他们的保护下得保安宁，并在来世得享与他们永远的团契。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝以不可言喻的眷祐，俯允差遣聖天使來守護我們：求主因豐盛的恩慈，使我們這些卑微的僕人，常在他們的保護下得保安寧，並在來世得享與他們永遠的團契。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Holy Guardian Angels",
+        "zh-hans": "守护圣天使",
+        "zh-hant": "守護聖天使"
+      }
+    },
     "invitatory": {
-      "texts": [
-        {
-          "zh-hant": "義人栽種在主的殿前，發旺在我們上帝院裏，※讓我們在他的聖日歡欣慶賀。",
-          "zh-hans": "义人栽种在主的殿前，发旺在我们上帝院里，※让我们在他的圣日欢欣庆贺。",
-          "en": ""
-        },
-        {
-          "zh-hant": "主是精修者的君王，※我們當來俯伏敬拜。",
-          "zh-hans": "主是精修者的君王，※我们当来俯伏敬拜。",
-          "en": ""
-        }
-      ]
+      "text": {
+        "en": "The Lord, the King of Angels; ※ O come, let us worship.",
+        "zh-hans": "主是众天使的君王，※我们当来俯伏敬拜。",
+        "zh-hant": "主是眾天使的君王，※我們當來俯伏敬拜。"
+      }
     },
     "invitatory_hymn": {
       "title": {
-        "zh-hant": "Iste Confessor",
-        "zh-hans": "Iste Confessor",
-        "en": ""
+        "en": "Custodes hominum psallimus Angelos",
+        "zh-hans": "Custodes hominum psallimus Angelos",
+        "zh-hant": "Custodes hominum psallimus Angelos"
       },
       "verses": [
         {
-          "zh-hant": "一、昔有宣信士，曾蒙上帝嘉納，\n四方眾士民，虔敬肅然稱頌；\n今朝受封賞，榮登天府高衙，\n永享主榮華。",
-          "zh-hans": "一、昔有宣信士，曾蒙上帝嘉纳，\n四方众士民，虔敬肃然称颂；\n今朝受封赏，荣登天府高衙，\n永享主荣华.",
-          "en": "THIS the Confessor of the Lord, whose triumph\nNow all the faithful celebrate, with gladness\nErst on this feast-day merited to enter\nInto his glory."
+          "en": "THE Guardians of our race, Our Angel guides, we hail,\nOur Father sendeth forth, To aid our nature frail,\nThese heavenly friends, lest we Should suffer overthrow\nThrough cunning of our subtle foe.",
+          "zh-hans": "一、颂赞世人卫士，引路天使圣名；\n天父垂悯软弱，遣赐天上良朋；\n免教我众受挫，遭逢仇敌倾覆，\n免堕幽暗诡诈罗网中。",
+          "zh-hant": "一、頌讚世人衛士，引路天使聖名；\n天父垂憫軟弱，遣賜天上良朋；\n免教我眾受挫，遭逢仇敵傾覆，\n免墮幽暗詭詐羅網中。"
         },
         {
-          "zh-hant": "二、敬畏而警醒，忠貞清正端莊，\n聖潔且謙卑，世人共稱其德；\n雖歿其塵軀，靈召永恆之生，\n蒙入主天庭。",
-          "zh-hans": "二、敬畏而警醒，忠贞清正端庄，\n圣洁且谦卑，世人共称其德；\n虽殁其尘躯，灵召永恒之生，\n蒙入主天庭.",
-          "en": "Saintly and prudent, modest in behavior,\nPeaceful and sober, chaste was he, and lowly,\nWhile that life's vigour, coursing through his members,\nQuickened his being."
+          "en": "For he who justly lost The honour once his own,\nThe traitor-angel, rues His lost and vacant throne,\nWith burning envy strives To make those fall away\nWhom God doth call to heavenly day.",
+          "zh-hans": "二、背叛天使堕落，自招公义斥逐；\n痛失往昔荣位，满怀嫉恨怨毒；\n竭力诱惑使坠，残害主民心志，\n阻挠上帝所召登天民。",
+          "zh-hant": "二、背叛天使墮落，自招公義斥逐；\n痛失往昔榮位，滿懷嫉恨怨毒；\n竭力誘惑使墜，殘害主民心志，\n阻撓上帝所召登天民。"
         },
         {
-          "zh-hant": "三、聖澤長流溢，溥濟疲憊乏困，\n賢能有慈懷，仁德沛然昭顯；\n凡負軛抱疾，無論何等重擔，\n悉獲主康安。",
-          "zh-hans": "三、圣泽长流溢，溥济疲惫乏困，\n贤能有慈怀，仁德沛然昭显；\n凡负轭抱疾，无论何等重担，\n悉获主康安.",
-          "en": "Sick ones of old time, to his tomb resorting,\nSorely by ailments manifold afflicted,\nOft-times have welcomed health and strength returning,\nAt his petition."
+          "en": "Then, watchful Guardian, spread Thy wings, and cleave the air;\nHaste to our native home, Committed to thy care;\nDrive hence each noxious ill That might the soul infest,\nNor suffer danger here to rest.",
+          "zh-hans": "三、警醒守护天使，展翼穿空降临；\n速临属祢居所，眷顾托付城邑；\n逐除侵害心灵，种种幽暗罪咎，\n莫容祸患在此扰安宁。",
+          "zh-hant": "三、警醒守護天使，展翼穿空降臨；\n速臨屬祢居所，眷顧託付城邑；\n逐除侵害心靈，種種幽暗罪咎，\n莫容禍患在此擾安寧。"
         },
         {
-          "zh-hant": "四、我眾合讚頌，歸與上帝尊榮，\n欣然高舉歌，敬獻聖名欽崇；\n願今生來世，同作天上良朋，\n共沐主宏恩。",
-          "zh-hans": "四、我众合赞颂，归与上帝尊荣，\n欣然高举歌，敬献圣名钦崇；\n愿今生来世，同作天上良朋，\n共沐主宏恩.",
-          "en": "Whence we in chorus gladly do him honor,\nChanting his praises with devout affection,\nThat in his merits we may have a portion,\nNow and forever."
-        },
-        {
-          "zh-hant": "五、尊榮並權能，救恩榮耀齊弘，\n全歸至高君，永在至尊天宮；\n恆常且無限，掌管萬有無窮，\n三一真上主。阿們。",
-          "zh-hans": "五、尊荣并权能，救恩荣耀齐弘，\n全归至高君，永在至尊天宫；\n恒常且无限，掌管万有无穷，\n三一真上主.阿们.",
-          "en": "His be the glory, power, and salvation:\nWho over all things reigneth in the highest,\nEarth's mighty fabric ruling and directing,\nOnely and Trinal. Amen."
-        }
-      ],
-      "versicle": null
-    },
-    "psalm_antiphons": {
-      "lectionary_1943": [
-        {
-          "zh-hant": "這樣的人必蒙主賜福，※救他的上帝也必叫他為義，這是尋求主的族類。",
-          "zh-hans": "这样的人必蒙主赐福，※救他的上帝也必叫他为义，这是寻求主的族类。",
-          "en": "He shall receive the blessing ※ from the Lord, and loving-kindness from the God of his salvation; this is the generation of them that seek the Lord."
-        },
-        {
-          "zh-hant": "主人來了，敲門的時候，看見僕人警醒，※那些僕人就有福了。",
-          "zh-hans": "主人来了，敲门的时候，看见仆人警醒，※那些仆人就有福了。",
-          "en": "Blessed is that servant, ※ whom the Lord when he cometh, and knocketh at the door, shall find watching."
-        }
-      ],
-      "antiphons": [
-        {
-          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
-          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
-          "en": ""
-        },
-        {
-          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
-          "en": ""
-        },
-        {
-          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
-          "en": ""
-        },
-        {
-          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
-          "en": ""
-        },
-        {
-          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
-          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
-          "en": ""
-        }
-      ]
-    },
-    "office_hymn": {
-      "title": {
-        "zh-hant": "Iesu, corona celsior",
-        "zh-hans": "Iesu, corona celsior",
-        "en": ""
-      },
-      "verses": [
-        {
-          "zh-hant": "一、耶穌基督天府冠冕，\n永恆至高真理上主；\n嘉納主之精修聖者，\n偕同諸聖永享榮華。",
-          "zh-hans": "一、耶稣基督天府冠冕，\n永恒至高真理上主；\n嘉纳主之精修圣者，\n偕同诸圣永享荣华。",
-          "en": ""
-        },
-        {
-          "zh-hant": "二、俯聽我眾卑微懇求，\n藉其代禱蒙主庇護；\n滌除我等諸般罪愆，\n悉數斬斷罪惡桎梏。",
-          "zh-hans": "二、俯听我众卑微恳求，\n借其代祷蒙主庇护；\n涤除我等诸般罪愆，\n悉数斩断罪恶桎梏。",
-          "en": ""
-        },
-        {
-          "zh-hant": "三、歲月周環時光流轉，\n榮耀佳節今朝重臨；\n主之忠僕脫離塵軀，\n榮登高天覲見主面。",
-          "zh-hans": "三、岁月周环时光流转，\n荣耀佳节今朝重临；\n主之忠仆脱离尘躯，\n荣登高天觐见主面。",
-          "en": ""
-        },
-        {
-          "zh-hant": "四、視此塵世虛妄歡樂，\n浮華名利皆如塵土；\n鄙棄諸般世俗污穢，\n終獲天府凱旋奇樂。",
-          "zh-hans": "四、视此尘世虚妄欢乐，\n浮华名利皆如尘土；\n鄙弃诸般世俗污秽，\n终获天府凯旋奇乐。",
-          "en": ""
-        },
-        {
-          "zh-hant": "五、恆常宣認主為君王，\n仰賴基督宏恩大德；\n狂傲仇敵踐踏足下，\n奮勇擊退眾魔魑魅。",
-          "zh-hans": "五、恒常宣认主为君王，\n仰赖基督宏恩大德；\n狂傲仇敌践踏足下，\n奋勇击退众魔魑魅。",
-          "en": ""
-        },
-        {
-          "zh-hant": "六、信德昭彰美名遠播，\n堅定恆常宣信其主；\n嚴守齋戒克己修身，\n終獲高天靈糧滋養。",
-          "zh-hans": "六、信德昭彰美名远播，\n坚定恒常宣信其主；\n严守斋戒克己修身，\n终获高天灵粮滋养。",
-          "en": ""
-        },
-        {
-          "zh-hant": "七、洪恩廣被慈悲上主，\n俯首叩拜至尊天顏；\n念此忠僕宣信之功，\n懇求塗抹我眾罪債。",
-          "zh-hans": "七、洪恩广被慈悲上主，\n俯首叩拜至尊天颜；\n念此忠仆宣信之功，\n恳求涂抹我众罪债。",
-          "en": ""
-        },
-        {
-          "zh-hant": "八、榮耀全歸上帝聖父，\n並其獨生至聖聖言；\n偕同至聖唯一聖靈，\n掌管萬有永世無窮。阿們。",
-          "zh-hans": "八、荣耀全归上帝圣父，\n并其独生至圣圣言；\n偕同至圣唯一圣灵，\n掌管万有永世无穷。阿们。",
-          "en": ""
+          "en": "Now to the Holy Three Your praise devoutly pour;\nHis glorious Godhead guides And governs evermore\nThis triple frame: to him Ascribe we all our praise,\nWho reigns through everlasting days. Amen.",
+          "zh-hans": "四、同向三位一体，竭诚献上颂扬，\n至圣威严神能，永远指引统掌， \n三界万有穹象； 荣耀全归于祂，\n权柄尊贵万代永无疆。阿们。",
+          "zh-hant": "四、同向三位一體，竭誠獻上頌揚，\n至聖威嚴神能，永遠指引統掌， \n三界萬有穹象； 榮耀全歸於祂，\n權柄尊貴萬代永無疆。阿們。"
         }
       ],
       "versicle": {
         "leader": {
-          "zh-hant": "主引導義人走入正路，",
-          "zh-hans": "主引导义人走入正路，",
-          "en": ""
+          "en": "The Lord will send his Angel with thee.",
+          "zh-hans": "主必要差遣他的使者与你同在，",
+          "zh-hant": "主必要差遣他的使者與你同在，"
         },
         "people": {
-          "zh-hant": "將上帝的國指示給他。",
-          "zh-hans": "将上帝的国指示给他。",
-          "en": ""
+          "en": "And prosper thy way.",
+          "zh-hans": "使你的道路亨通。",
+          "zh-hant": "使你的道路亨通。"
         }
       }
     },
-    "benedictus_antiphon": {
-      "normal": {
-        "zh-hant": "好，你這又善良又忠心的僕人，※你在少許的事上忠心，我要派你管理許多的事，進來享受你主人的快樂吧！",
-        "zh-hans": "好，你这又善良又忠心的仆人，※你在少许的事上忠心，我要派你管理许多的事，进来享受你主人的快乐吧！",
-        "en": ""
+    "office_hymn": {
+      "title": {
+        "en": "Aeterne Rector siderum",
+        "zh-hans": "Aeterne Rector siderum",
+        "zh-hant": "Aeterne Rector siderum"
+      },
+      "verses": [
+        {
+          "en": "CREATOR of the circling sky,\nWho madest all by power most high,\nThy Providence will never cease\nTo rule thy works in might and peace.",
+          "zh-hans": "一、寰宇苍穹至尊化育， 至高神能造化万局； \n眷祐深恩永无止息， 权能和平统御万极。",
+          "zh-hant": "一、寰宇蒼穹至尊化育， 至高神能造化萬局； \n眷祐深恩永無止息， 權能和平統御萬極。"
+        },
+        {
+          "en": "Be present when we cry to thee,\nA sinful people though we be;\nAnd as the day-dawn grows apace,\nIllume our minds with light of grace.",
+          "zh-hans": "二、罪孽深重我等呼求， 恳求我主临在垂顾；\n晨光破晓渐次展开， 恩典真光启涤心怀。",
+          "zh-hant": "二、罪孽深重我等呼求， 懇求我主臨在垂顧；\n晨光破曉漸次展開， 恩典真光啟滌心懷。"
+        },
+        {
+          "en": "O send thine Angel thither-ward\nAssigned by thee to be our guard,\nThat now his presence may begin\nTo keep us from all stain of sin.",
+          "zh-hans": "三、求差天使自天而降， 奉祢差遣作我守望；\n使他临在从今启行， 保我身心免沾罪垢。",
+          "zh-hant": "三、求差天使自天而降， 奉祢差遣作我守望；\n使他臨在從今啟行， 保我身心免沾罪垢。"
+        },
+        {
+          "en": "Let him destroy that hidden snare\nThe eager serpent doth prepare,\nLest we be taken in the net\nBefore our heedless bosoms set.",
+          "zh-hans": "四、狡黠巨蛇设下隐罗， 求使天使悉数粉碎；\n免我失察心怀松懈， 误堕罗网遭其陷害。",
+          "zh-hant": "四、狡黠巨蛇設下隱羅， 求使天使悉數粉碎；\n免我失察心懷鬆懈， 誤墮羅網遭其陷害。"
+        },
+        {
+          "en": "At his command let every fear\nOf hostile foemen disappear;\nLet civil strife give way to peace,\nAnd pestilence and famine cease.",
+          "zh-hans": "五、借他号令仇敌惊退， 一切恐惧化为无有；\n内哄止息迎来和平， 瘟疫饥荒悉皆平息。",
+          "zh-hant": "五、藉他號令仇敵驚退， 一切恐懼化為無有；\n內鬨止息迎來和平， 瘟疫饑荒悉皆平息。"
+        },
+        {
+          "en": "To God the Father glory be;\nFor those the Savior setteth free,\nAnointed by the Holy Ghost,\nAre guarded by the Angel host. Amen.",
+          "zh-hans": "六、荣耀全归上帝圣父； 蒙受救主救赎众民，\n更有圣灵亲施膏抹， 万千天军常随护佑。阿们。",
+          "zh-hant": "六、榮耀全歸上帝聖父； 蒙受救主救贖眾民，\n更有聖靈親施膏抹， 萬千天軍常隨護佑。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "He shall give his angels charge over thee.",
+          "zh-hans": "因他要为你命令他的使者，",
+          "zh-hant": "因他要為你命令他的使者，"
+        },
+        "people": {
+          "en": "To keep thee in all thy ways.",
+          "zh-hans": "在你所行的一切道路上保护你。",
+          "zh-hant": "在你所行的一切道路上保護你。"
+        }
       }
     },
-    "biography": {
-      "title": {
-        "zh-hant": "聖耶柔米司祭、教會聖師",
-        "zh-hans": "圣耶柔米司祭、教会圣师",
-        "en": "St. Jerome, Priest and Doctor of the Church"
-      },
-      "source": {
-        "zh-hant": "聖人小傳",
-        "zh-hans": "圣人小传",
-        "en": "For the Legend"
-      },
-      "rubric": {
-        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
-        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
-        "en": ""
-      },
-      "paragraphs": [
+    "psalm_antiphons": {
+      "antiphons": [
         {
-          "zh-hant": "耶柔米被列為西方教會四大聖師之一，是歐瑟比烏斯之子，約於主後三四二年出生在撻馬太邊境的小城斯特里多尼烏姆。他在十八歲生日後不久於羅馬領受洗禮，在此之前他一直為慕道者。在羅馬，他師從著名的異教文法學家多那徒，以及其他極有學問的人士。他為增進學識前往高盧，並在那裡結交了多位精通聖經的敬虔人士，又親手抄寫許多聖書。其後，他前往希臘化的小亞細亞，追隨最著名的神學家，因而成為傑出的哲學家和演說家。尤其在君士坦丁堡，他受教於拿先斯的聖格里高利門下；耶柔米自己承認，他的神學正是從這位聖人學得的。隨後，為著敬虔的緣故，他前往瞻仰主基督的故鄉，遍遊整個巴勒斯坦。他見證說，這次朝聖使他獲益良多，因為他在那裡得到最博學的猶太人協助，得以更深入明白聖經。",
-          "zh-hans": "耶柔米被列为西方教会四大圣师之一，是欧瑟比乌斯之子，约于主后三四二年出生在挞马太边境的小城斯特里多尼乌姆。他在十八岁生日后不久于罗马领受洗礼，在此之前他一直为慕道者。在罗马，他师从著名的异教文法学家多那徒，以及其他极有学问的人士。他为增进学识前往高卢，并在那里结交了多位精通圣经的敬虔人士，又亲手抄写许多圣书。其后，他前往希腊化的小亚细亚，追随最著名的神学家，因而成为杰出的哲学家和演说家。尤其在君士坦丁堡，他受教于拿先斯的圣格里高利门下；耶柔米自己承认，他的神学正是从这位圣人学得的。随后，为着敬虔的缘故，他前往瞻仰主基督的故乡，遍游整个巴勒斯坦。他见证说，这次朝圣使他获益良多，因为他在那里得到最博学的犹太人协助，得以更深入明白圣经。",
-          "en": "JEROME, who is reckoned among the four first Doctors of the West, was the son of one Eusebius, and was born at Stridonium, a small town upon the confines of Dalmatia, about the year 342. He was baptized at Rome sometime after his eighteenth birthday, having been a catechumen up to that time. And in Rome he studied under the instruction of the famous pagan grammarian Donatus, and other very learned personages. He travelled in Gaul for the sake of improving his mind, and there sought the friendship of divers godly men learned in the Scriptures, and made with his own hand many copies of holy books. He afterwards betook himself to Grecian Asia Minor, where he attained eminence as a philosopher and orator, in the following of the most famous theologians. At Constantinople, in especial, he sat at the feet of Saint Gregory of Nazianzus, from whom he professeth himself to have learnt his theology. Then, for godliness’ sake, he went to see the home of the Lord Christ, and so throughout all Palestine. He witnesseth that this pilgrimage, wherein he got the help of the most learned of the Jews for the understanding of the Holy Scriptures, did him much good."
+          "en": "God shall give his Angels charge over thee, ※ to keep thee in all thy ways.",
+          "zh-hans": "因他要为你吩咐他的使者，※在你行的一切道路上保护你。",
+          "zh-hant": "因他要為你吩咐他的使者，※在你行的一切道路上保護你。"
         },
         {
-          "zh-hant": "他退居敘利亞的曠野，在那裡用了四年研讀聖經；同時，他絲毫沒有忽略恆常的默想和祈禱，又以克己和苦待肉身來克制自己。他特別以學習希伯來文作為一項苦修。安提阿宗主教保利努斯最終為他施行了司祭聖秩，儘管這違背了耶柔米本人的意願。此後，因一些主教與上述保利努斯發生爭議，他便前往羅馬。在那裡，他與聖厄丕法尼烏斯一同協助教宗聖達馬蘇斯起草有關教會事務的書信。然而，他又被對昔日獨居生活的渴望所驅使，於是回到巴勒斯坦；在伯利恆一所修院中——此修院由羅馬的保拉女士在主基督降生搖籃旁所建——他立志在地上開始過天上的生活，不斷以閱讀和寫作事奉上帝。他不顧身體飽受各種疾病和痛苦的折磨，並為自己的罪嚴厲苦待己身，特別是為克制自己尖刻的言語。因為無論在實行德行或對抗惡事上，他從來都不是一個講求適度的人。",
-          "zh-hans": "他退居叙利亚的旷野，在那里用了四年研读圣经；同时，他丝毫没有忽略恒常的默想和祈祷，又以克己和苦待肉身来克制自己。他特别以学习希伯来文作为一项苦修。安提阿宗主教保利努斯最终为他施行了司祭圣秩，尽管这违背了耶柔米本人的意愿。此后，因一些主教与上述保利努斯发生争议，他便前往罗马。在那里，他与圣厄丕法尼乌斯一同协助教宗圣达马苏斯起草有关教会事务的书信。然而，他又被对昔日独居生活的渴望所驱使，于是回到巴勒斯坦；在伯利恒一所修院中——此修院由罗马的保拉女士在主基督降生摇篮旁所建——他立志在地上开始过天上的生活，不断以阅读和写作事奉上帝。他不顾身体饱受各种疾病和痛苦的折磨，并为自己的罪严厉苦待己身，特别是为克制自己尖刻的言语。因为无论在实行德行或对抗恶事上，他从来都不是一个讲求适度的人。",
-          "en": "HE withdrew himself into the wilderness of Syria, where he passed four years in studying the Bible, meanwhile neglecting in no wise constant meditation and prayer, and the mortification of his body in self-denial and chastisement of the flesh. As a special penance, he learnt Hebrew. By Paulinus, Patriarch of Antioch, he was finally ordained priest against his own inclination. Thereafter he went to Rome on account of the quarrelling of certain bishops with the aforesaid Paulinus. There, with Saint Epiphanius, he helped Pope Saint Damasus in the writing of his letters upon Church affairs. But the longing for his old solitude came upon him. And he went back to Palestine, where, in the monastery at Bethlehem, built beside the cradle of the Lord Christ by the Lady Paula of Rome, he set himself to enter on earth upon the life of heaven, serving God in reading and writing without ceasing, regardless of the sufferings of a body tormented by divers diseases and pains, to which he added a most harsh treatment of himself for his sins, especially for his sharp tongue. For he never was a lover of moderation, either in virtue or against vice."
+          "en": "Let us praise the Lord whom the Angels do praise, ※ unto whom Cherubim and Seraphim do cry, Holy, Holy, Holy.",
+          "zh-hans": "我们要赞颂众天使所赞美的主，※基路伯和撒拉弗向他高呼：圣哉、圣哉、圣哉。",
+          "zh-hant": "我們要讚頌眾天使所讚美的主，※基路伯和撒拉弗向他高呼：聖哉、聖哉、聖哉。"
         },
         {
-          "zh-hant": "各地的人把有關解釋聖經的疑難問題送到他那裡，如同請教神諭一般。由於他有非凡的學識，不但精通拉丁文和希臘文，也通曉希伯來文與迦勒底文，教宗聖達馬蘇斯和聖師奧古斯丁常常就聖經最晦澀的經文請教他。正如奧古斯丁親自作證，耶柔米幾乎讀遍了一切作家的著作。他總是承擔起護衛敬虔人士與大公信仰的責任；正如他自己所言：「我從不寬容異端，並且一向竭盡所能，把教會的仇敵視為我自己的仇敵。」在他的時代，已有一部拉丁文聖經譯本流通，現稱為《舊拉丁譯本》，其舊約部分以希臘文《七十士譯本》為基礎。耶柔米編成了一部新譯本，現今稱為《武加大譯本》：他把舊約由希伯來文譯成拉丁文，並依照希臘文原文修訂了既有的新約譯本。他為聖經的大部分書卷撰寫了註釋。他同樣把許多博學人士的著作譯成拉丁文，他自己也憑藉卓越的才智，為基督徒的生活留下了許多不朽之作。主曆四二〇年九月三十日，正值何諾留皇帝在位期間，他以極高的年齡安息升天，生前因學問與聖德而聞名。他的聖髑最初安葬於伯利恆，其後敬遷至羅馬，現安放於聖母大殿。",
-          "zh-hans": "各地的人把有关解释圣经的疑难问题送到他那里，如同请教神谕一般。由于他有非凡的学识，不但精通拉丁文和希腊文，也通晓希伯来文与迦勒底文，教宗圣达马苏斯和圣师奥古斯丁常常就圣经最晦涩的经文请教他。正如奥古斯丁亲自作证，耶柔米几乎读遍了一切作家的著作。他总是承担起护卫敬虔人士与大公信仰的责任；正如他自己所言：「我从不宽容异端，并且一向竭尽所能，把教会的仇敌视为我自己的仇敌。」在他的时代，已有一部拉丁文圣经译本流通，现称为《旧拉丁译本》，其旧约部分以希腊文《七十士译本》为基础。耶柔米编成了一部新译本，现今称为《武加大译本》：他把旧约由希伯来文译成拉丁文，并依照希腊文原文修订了既有的新约译本。他为圣经的大部分书卷撰写了注释。他同样把许多博学人士的著作译成拉丁文，他自己也凭借卓越的才智，为基督徒的生活留下了许多不朽之作。主历四二〇年九月三十日，正值何诺留皇帝在位期间，他以极高的年龄安息升天，生前因学问与圣德而闻名。他的圣髑最初安葬于伯利恒，其后敬迁至罗马，现安放于圣母大殿。",
-          "en": "HARD questions upon the interpretation of the Holy Scripture were sent to him from all parts of the earth, as to an oracle. He was oftentimes consulted by Pope Saint Damasus, or by the holy Doctor Augustine, upon the meaning of the most obscure passages of the Scripture, because of his extraordinary learning, and his knowledge, not only of the Latin and Greek tongues, but also of Hebrew and Chaldee; for, as the same Augustine testifieth, he had read nearly all writers. He ever undertook the defence of the godly and Catholic, as he himself testifieth: I never spared hereticks and have always done mine utmost to make the enemies of the Church mine own enemies. In his time there was in use a Latin version of the Bible which is now called the Vetus, the Old Testament whereof was based on the Greek Septuagint. Jerome made a new version, now known as the Vulgate; for he translated the Old Testament from Hebrew into Latin, and reformed, according to the original Greek, the existing version of the New. Upon a great part of the Scriptures, he wrote commentaries. He translated likewise into Latin the works of many learned men, and himself contributed to the Christian life many monuments of his own wit. He lived to an extreme old age, and passed away to heaven, famous for learning and holiness, in the reign of the Emperor Honorius, on September 30th, in the year of our Lord 420. His body was buried at Bethlehem, but afterwards was brought to Rome, where it is now at the Church of Saint Mary-at-the-Manger."
+          "en": "In heaven their Angels do always behold the face of my Father ※ which is in heaven.",
+          "zh-hans": "他们的使者在天上，※常见我天父的面。",
+          "zh-hant": "他們的使者在天上，※常見我天父的面。"
+        },
+        {
+          "en": "The Angel of the Lord came down into the fiery furnace, ※ to his servants that trusted in him.",
+          "zh-hans": "主的天使下到火窑中，※与信靠主的仆人那里。",
+          "zh-hant": "主的天使下到火窯中，※與信靠主的僕人那裡。"
+        },
+        {
+          "en": "Praise him, all ye Angels of his, ※ praise him, all his host.",
+          "zh-hans": "主的诸天使都当颂扬主，※主的众天军都当颂扬主。",
+          "zh-hant": "主的諸天使都當頌揚主，※主的眾天軍都當頌揚主。"
         }
-      ]
-    },
-    "collect": {
-      "title": {
-        "zh-hant": "教會聖師、精修者聖耶柔米",
-        "zh-hans": "教会圣师、精修者圣耶柔米",
-        "en": ""
-      },
-      "text": {
-        "zh-hant": "上帝為闡揚主的聖經，曾藉著主的精修者聖耶柔米，給了主的教會奇妙的教導；求主因他有功勞的代求，使我們蒙主的助佑，能實踐他的言傳身教。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
-        "zh-hans": "上帝为阐扬主的圣经，曾藉着主的精修者圣耶柔米，给了主的教会奇妙的教导；求主因他有功劳的代求，使我们蒙主的助佑，能实践他的言传身教。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
-        "en": ""
+      ],
+      "lectionary_1943": {
+        "en": "The Angel of the Lord ※ tarrieth round about them that fear him, and delivereth them.",
+        "zh-hans": "主的使者※在敬畏他的人四围安营，要搭救他们。",
+        "zh-hant": "主的使者※在敬畏他的人四圍安營，要搭救他們。"
       }
     }
   },
   "evening": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Ye holy Angel Guardians, ※ defend us in time of battle: lest we be doomed in the dreadful day of judgement.",
+        "zh-hans": "神圣的天使，我们的守护者，请在争战之中庇护我们，使我们不致在可怕的审判中遭受沉沦。",
+        "zh-hant": "神聖的天使，我們的守護者，請在爭戰之中庇護我們，使我們不致在可怕的審判中遭受沈淪。"
+      }
+    },
     "bible_sentences": [
       {
-        "text": {
-          "zh-hant": "寶座中的羔羊必牧養他們，領他們到生命水的泉源；上帝必擦去他們一切的眼淚。",
-          "zh-hans": "宝座中的羔羊必牧养他们，领他们到生命水的泉源；上帝必擦去他们一切的眼泪。",
-          "en": ""
-        },
         "reference": {
-          "zh-hant": "（啟示錄 7:17）",
-          "zh-hans": "（启示录 7:17）",
-          "en": ""
+          "en": "Ex. xxiii. 20.",
+          "zh-hans": "（出埃及记 23:20）",
+          "zh-hant": "（出埃及記 23:20）"
+        },
+        "text": {
+          "en": "BEHOLD, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared.",
+          "zh-hans": "看哪，我要差遣使者在你前面，在路上保护你，领你到我所预备的地方。",
+          "zh-hant": "看哪，我要差遣使者在你前面，在路上保護你，領你到我所預備的地方。"
         }
       }
     ],
-    "psalm_antiphons": {
-      "lectionary_1943": [
-        {
-          "zh-hant": "主引導義人，※走入正路，將上帝的國指示給他。",
-          "zh-hans": "主引导义人，※走入正路，将上帝的国指示给他。",
-          "en": "The Lord guided the righteous, ※ in right paths, and showed him the Kingdom of God."
-        },
-        {
-          "zh-hant": "你這又善良又忠心的僕人，※進來享受你主人的快樂吧！",
-          "zh-hans": "你这又善良又忠心的仆人，※进来享受你主人的快乐吧！",
-          "en": "Good and faithful servant, ※ enter thou into the joy of thy Lord."
-        }
-      ],
-      "antiphons": [
-        {
-          "zh-hant": "主啊，※你交給我五千。請看，我又賺了五千。",
-          "zh-hans": "主啊，※你交给我五千。请看，我又赚了五千。",
-          "en": ""
-        },
-        {
-          "zh-hant": "好，※你這又善良又忠心的僕人，你在少許的事上忠心，進來享受你主人的快樂吧！",
-          "zh-hans": "好，※你这又善良又忠心的仆人，你在少许的事上忠心，进来享受你主人的快乐吧！",
-          "en": ""
-        },
-        {
-          "zh-hant": "他是※那忠心又精明的僕人，主人派他管理自己的家。",
-          "zh-hans": "他是※那忠心又精明的仆人，主人派他管理自己的家。",
-          "en": ""
-        },
-        {
-          "zh-hant": "主人※來了，他來叩門，看見僕人警醒，那些僕人就有福了。",
-          "zh-hans": "主人※来了，他来叩门，看见仆人警醒，那些仆人就有福了。",
-          "en": ""
-        },
-        {
-          "zh-hant": "你這※又善良又忠心的僕人，進來享受你主人的快樂吧！",
-          "zh-hans": "你这※又善良又忠心的仆人，进来享受你主人的快乐吧！",
-          "en": ""
-        }
-      ]
+    "collect": {
+      "text": {
+        "en": "O GOD, who in thine ineffable providence dost vouchsafe to send thine holy Angels to guard us: grant, of thy bountiful goodness; that we thine humble servants may ever continue in safety under their protection, and hereafter rejoice in their abiding fellowship. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝以不可言喻的眷祐，俯允差遣圣天使来守护我们：求主因丰盛的恩慈，使我们这些卑微的仆人，常在他们的保护下得保安宁，并在来世得享与他们永远的团契。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝以不可言喻的眷祐，俯允差遣聖天使來守護我們：求主因豐盛的恩慈，使我們這些卑微的僕人，常在他們的保護下得保安寧，並在來世得享與他們永遠的團契。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Holy Guardian Angels",
+        "zh-hans": "守护圣天使",
+        "zh-hant": "守護聖天使"
+      }
     },
     "office_hymn": {
       "title": {
-        "zh-hant": "Jesu, sacerdotum decus",
-        "zh-hans": "Jesu, sacerdotum decus",
-        "en": ""
+        "en": "Caelestis aulae principes",
+        "zh-hans": "Caelestis aulae principes",
+        "zh-hant": "Caelestis aulae principes"
       },
       "verses": [
         {
-          "zh-hant": "一、求救世主耶穌垂聽，\n聖人榮冕即將臨近。\n現以溫柔愛心接納，\n我們獻上祈禱讚美。",
-          "zh-hans": "一、求救世主耶稣垂听，\n圣人荣冕即将临近。\n现以温柔爱心接纳，\n我们献上祈祷赞美。",
-          "en": ""
+          "en": "THE mighty host on high, Their joys beyond compare,\nTheir glories in the sky, The deeds they bravely dare:\nFor these the Church today Pours forth her sweetest lay,\nTo Heaven's great champions praise to pay.",
+          "zh-hans": "一、高天万千军旅，喜乐无可比拟；\n穹苍彰显光荣，勇烈壮举堪颂：\n教会今日齐聚，倾吐至美诗章， \n颂赞上天凯旋健将。",
+          "zh-hant": "一、高天萬千軍旅，喜樂無可比擬；\n穹蒼彰顯光榮，勇烈壯舉堪頌：\n教會今日齊聚，傾吐至美詩章， \n頌讚上天凱旋健將。"
         },
         {
-          "zh-hant": "二、這位謙卑精修聖人，\n今日獲得榮耀美名。\n忠信子民每年歡欣，\n莊嚴慶賀聖人節日。",
-          "zh-hans": "二、这位谦卑精修圣人，\n今日获得荣耀美名。\n忠信子民每年欢欣，\n庄严庆贺圣人节日。",
-          "en": ""
+          "en": "These are the legions bright, Warders of God's domain,\nUnwearied in their might The demons to restrain:\nTo quell th'infernal foe, And work their rivals woe,\nThese heavenly warriors haste below.",
+          "zh-hans": "二、此乃辉煌军旅，神圣天国卫士；\n大能永不知倦，束缚阴府群魔：\n平定地狱仇敌，重创邪恶对头，\n天界勇士疾降人间。",
+          "zh-hant": "二、此乃輝煌軍旅，神聖天國衛士；\n大能永不知倦，束縛陰府群魔：\n平定地獄仇敵，重創邪惡對頭，\n天界勇士疾降人間。"
         },
         {
-          "zh-hant": "三、他已拋棄世界虛榮，\n視為虛空轉瞬即逝。\n現已列入天使歌團，\n進入無窮喜樂之中。",
-          "zh-hans": "三、他已抛弃世界虚荣，\n视为虚空转瞬即逝。\n现已列入天使歌团，\n进入无穷喜乐之中。",
-          "en": ""
+          "en": "Captains of mighty race, And watchful guardians, they\nThe evil spirits chase, Undaunted in the fray:\nThey speed, in ranks arrayed, The upright soul to aid,\nAnd crown him victor undismayed.",
+          "zh-hans": "三、大能族类领袖，警醒守望天军；\n战场毫不畏缩，驱逐邪灵败阵：\n整饬队列齐奔， 扶助正直灵魂，\n加冕勇者凯旋得胜。",
+          "zh-hant": "三、大能族類領袖，警醒守望天軍；\n戰場毫不畏縮，驅逐邪靈敗陣：\n整飭隊列齊奔， 扶助正直靈魂，\n加冕勇者凱旋得勝。"
         },
         {
-          "zh-hant": "四、懇求仁慈上帝賜恩，\n求使我們隨他芳蹤。\n藉著聖人祈禱之能，\n脫離一切罪惡污穢。",
-          "zh-hans": "四、恳求仁慈上帝赐恩，\n求使我们随他芳踪。\n藉着圣人祈祷之能，\n脱离一切罪恶污秽。",
-          "en": ""
+          "en": "What tongue can here declare, Fancy or thought descry,\nThe joys thou dost prepare For these thy hosts on high?\nWho, for the warfare decked, Their earthly friends protect,\nAnd in right paths to heaven direct.",
+          "zh-hans": "四、何等唇舌能述，何等心思测度，\n祢为天军所备，至深无尽喜乐？\n披挂戎装临阵，护佑世间良朋，\n引领正路直达天乡。",
+          "zh-hant": "四、何等唇舌能述，何等心思測度，\n祢為天軍所備，至深無盡喜樂？\n披掛戎裝臨陣，護佑世間良朋，\n引領正路直達天鄉。"
         },
         {
-          "zh-hant": "五、仁君基督永享尊荣，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
-          "zh-hans": "五、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一上帝永世无尽。阿们。",
-          "en": ""
+          "en": "To thee, O Lord most high, One in Three Persons still,\nTo pardon us we cry, And to preserve from ill:\nThat, after perils sore, Thy Name we may adore\nWith holy Angels evermore. Amen.",
+          "zh-hans": "五、至高至尊我主，三位一体真神；\n求赦我众过犯，保我免遭诸祸：\n历经诸般艰危，常与诸圣天使，\n永远敬拜赞美圣名。阿们。",
+          "zh-hant": "五、至高至尊我主，三位一體真神；\n求赦我眾過犯，保我免遭諸禍：\n歷經諸般艱危，常與諸聖天使，\n永遠敬拜讚美聖名。阿們。"
         }
       ],
       "versicle": {
         "leader": {
-          "zh-hant": "義人的口談論智慧；",
-          "zh-hans": "义人的口谈论智慧；",
-          "en": ""
+          "en": "In the presence of the Angels will I sing unto thee, my God.",
+          "zh-hans": "我的上帝阿，我要在诸神面前歌颂你。",
+          "zh-hant": "我的上帝阿，我要在諸神面前歌頌你。"
         },
         "people": {
-          "zh-hant": "他的舌頭講說公平。",
-          "zh-hans": "他的舌头讲说公平。",
-          "en": ""
+          "en": "I will worship toward thine holy temple, and praise thy Name.",
+          "zh-hans": "我要向你的圣殿下拜，颂扬你的名。",
+          "zh-hant": "我要向你的聖殿下拜，頌揚你的名。"
         }
       }
     },
-    "benedictus_antiphon": {
-      "normal": {
-        "zh-hant": "這是一位在上帝之前行大事之人，※他的教導充滿全地；願他為眾人的罪過代求。",
-        "zh-hans": "这是一位在上帝之前行大事之人，※他的教导充满全地；愿他为众人的罪过代求。",
-        "en": ""
-      }
-    },
-    "collect": {
-      "title": {
-        "zh-hant": "教會聖師、精修者聖耶柔米",
-        "zh-hans": "教会圣师、精修者圣耶柔米",
-        "en": ""
-      },
-      "text": {
-        "zh-hant": "上帝為闡揚主的聖經，曾藉著主的精修者聖耶柔米，給了主的教會奇妙的教導；求主因他有功勞的代求，使我們蒙主的助佑，能實踐他的言傳身教。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
-        "zh-hans": "上帝为阐扬主的圣经，曾藉着主的精修者圣耶柔米，给了主的教会奇妙的教导；求主因他有功劳的代求，使我们蒙主的助佑，能实践他的言传身教。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
-        "en": ""
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "God shall give his Angels charge over thee, ※ to keep thee in all thy ways.",
+          "zh-hans": "因他要为你吩咐他的使者，※在你行的一切道路上保护你。",
+          "zh-hant": "因他要為你吩咐他的使者，※在你行的一切道路上保護你。"
+        },
+        {
+          "en": "Let us praise the Lord whom the Angels do praise, ※ unto whom Cherubim and Seraphim do cry, Holy, Holy, Holy.",
+          "zh-hans": "我们要赞颂众天使所赞美的主，※基路伯和撒拉弗向他高呼：圣哉、圣哉、圣哉。",
+          "zh-hant": "我們要讚頌眾天使所讚美的主，※基路伯和撒拉弗向他高呼：聖哉、聖哉、聖哉。"
+        },
+        {
+          "en": "In heaven their Angels do always behold the face of my Father ※ which is in heaven.",
+          "zh-hans": "他们的使者在天上，※常见我天父的面。",
+          "zh-hant": "他們的使者在天上，※常見我天父的面。"
+        },
+        {
+          "en": "The Angel of the Lord came down into the fiery furnace, ※ to his servants that trusted in him.",
+          "zh-hans": "主的天使下到火窑中，※与信靠主的仆人那里。",
+          "zh-hant": "主的天使下到火窯中，※與信靠主的僕人那裡。"
+        },
+        {
+          "en": "Praise him, all ye Angels of his, ※ praise him, all his host.",
+          "zh-hans": "主的诸天使都当颂扬主，※主的众天军都当颂扬主。",
+          "zh-hant": "主的諸天使都當頌揚主，※主的眾天軍都當頌揚主。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "I say unto you, ※ there is joy in the presence of the Angels of God over one sinner that repenteth.",
+        "zh-hans": "我告诉你们，一个罪人悔改，上帝的使者也是这样为他欢喜。",
+        "zh-hant": "我告訴你們，一個罪人悔改，上帝的使者也是這樣為他歡喜。"
       }
     }
   }

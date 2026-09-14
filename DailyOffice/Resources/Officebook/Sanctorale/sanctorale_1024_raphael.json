@@ -1,0 +1,453 @@
+{
+  "evening" : {
+    "benedictus_antiphon" : {
+      "normal" : {
+        "en" : "O Prince most glorious, * Raphael the Archangel, keep us in remembrance: here and everywhere, entreat the Son of God for us.",
+        "zh-hans" : "至荣耀的君长，＊天使长拉斐尔，求你记念我们；在此地及各处，向上帝圣子为我们代求。",
+        "zh-hant" : "至榮耀的君長，＊天使長拉斐爾，求你記念我們；在此地及各處，向上帝聖子為我們代求。"
+      }
+    },
+    "bible_sentences" : [
+      {
+        "reference" : {
+          "en" : "John v. 4.",
+          "zh-hans" : "（约翰福音 5:4）",
+          "zh-hant" : "（約翰福音 5:4）"
+        },
+        "text" : {
+          "en" : "AN angel went down at a certain season into the pool, and troubled the water: whosoever then first after the troubling of the water stepped in was made whole of whatsoever disease he had.",
+          "zh-hans" : "因为有天使按时下池子搅动那水，水动之后，先下水的人无论患什么病都能得痊愈。",
+          "zh-hant" : "因為有天使按時下池子攪動那水，水動之後，先下水的人無論患甚麼病都能得痊癒。"
+        }
+      }
+    ],
+    "collect" : [
+      {
+        "option_label" : {
+          "en" : "Default collect",
+          "zh-hans" : "默认祝文",
+          "zh-hant" : "默認祝文"
+        },
+        "text" : {
+          "en" : "",
+          "zh-hans" : "上帝恩赐主的天使长圣拉法勒与主的仆人多比为旅途的同伴，求主施恩典，让我们这些主的众仆人，同样也可以蒙主天使长的守护，借着他的助佑而得到护卫。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant" : "上帝恩賜主的天使長聖拉法勒與主的僕人多比為旅途的同伴，求主施恩典，讓我們這些主的眾僕人，同樣也可以蒙主天使長的守護，藉著他的助佑而得到護衛。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title" : {
+          "en" : "",
+          "zh-hans" : "天使长圣拉法勒",
+          "zh-hant" : "天使長聖拉法勒"
+        }
+      },
+      {
+        "option_label" : {
+          "en" : "Alternative collect",
+          "zh-hans" : "另一祝文",
+          "zh-hant" : "另一祝文"
+        },
+        "text" : {
+          "en" : "O GOD, who didst direct the Archangel Raphael to go before Tobias thy servant hastening on his journey, and didst give him as guardian amidst the changes and chances of life: grant that we, ever defended by his help, may so avoid the dangers of this present life, as to be enabled to attain unto the joys of heaven. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans" : "上帝曾差遣天使长拉法勒，在主的仆人多比司赶路的时候，行在他前面，又赐拉法勒作他的护卫，保守他经过人生的变迁患难；恳求主施恩，叫我们常蒙拉法勒扶助保护，得免今生的危险，至终得享天上的喜乐。这都是靠着主的圣子、我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant" : "上帝曾差遣天使長拉法勒，在主的僕人多比司趕路的時候，行在他前面，又賜拉法勒作他的護衛，保守他經過人生的變遷患難；懇求主施恩，叫我們常蒙拉法勒扶助保護，得免今生的危險，至終得享天上的喜樂。這都是靠著主的聖子、我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title" : {
+          "en" : "",
+          "zh-hans" : "天使长圣拉法勒",
+          "zh-hant" : "天使長聖拉法勒"
+        }
+      }
+    ],
+    "office_hymn" : {
+      "title" : {
+        "en" : "Tibi, Christe, splendor Patris",
+        "zh-hans" : "Tibi, Christe, splendor Patris",
+        "zh-hant" : "Tibi, Christe, splendor Patris"
+      },
+      "verses" : [
+        {
+          "en" : "THEE, O Christ, the Father's Splendour,\nLife and virtue of the heart,\nIn the presence of the Angels\nSing we now with tuneful art:\nMeetly in alternate chorus\nBearing our responsive part.",
+          "zh-hans" : "一、基督你是圣父光辉，心灵生命与能力；\n我众立于天使面前，同声歌咏颂主恩；\n轮流唱和彼此应答，恭呈赞美达天庭。",
+          "zh-hant" : "一、基督你是聖父光輝，心靈生命與能力；\n我眾立於天使面前，同聲歌詠頌主恩；\n輪流唱和彼此應答，恭呈讚美達天庭。"
+        },
+        {
+          "en" : "Thus we praise with veneration\nAll the armies of the sky;\nChiefly him, the faithful healer\nAnd companion heavenly,\nRaphael, by whose princely virtue\nHelpless bound the demons lie.",
+          "zh-hans" : "二、我众虔敬同声赞颂，天上万军众天臣；\n尤颂忠信医治使者，同行相伴护世人；\n天使之长圣拉斐尔，威能缚魔使就擒。",
+          "zh-hant" : "二、我眾虔敬同聲讚頌，天上萬軍眾天臣；\n尤頌忠信醫治使者，同行相伴護世人；\n天使之長聖拉斐爾，威能縛魔使就擒。"
+        },
+        {
+          "en" : "By whose watchful care repelling,\nKing of everlasting grace!\nEvery ghostly adversary,\nAll things evil, all things base;\nGrant us of thine only goodness\nIn thy Paradise a place.",
+          "zh-hans" : "三、赖他守望驱除仇敌，永施恩惠基督王；\n远逐一切灵界恶敌，尽除邪恶与灾殃；\n惟凭你的仁慈恩惠，赐居乐园在主旁。",
+          "zh-hant" : "三、賴他守望驅除仇敵，永施恩惠基督王；\n遠逐一切靈界惡敵，盡除邪惡與災殃；\n惟憑你的仁慈恩惠，賜居樂園在主旁。"
+        },
+        {
+          "en" : "Laud and honour to the Father,\nLaud and honour to the Son:\nLaud and honour to the Spirit,\nEver Three, and Ever One:\nConsubstantial, Co-eternal,\nWhile unending ages run. Amen.",
+          "zh-hans" : "四、赞美尊荣归于圣父，圣子同受此尊荣；\n赞美尊荣归于圣灵，三位一体永同尊；\n同一本体同为永恒，世世无穷颂无终。阿们。",
+          "zh-hant" : "四、讚美尊榮歸於聖父，聖子同受此尊榮；\n讚美尊榮歸於聖靈，三位一體永同尊；\n同一本體同為永恆，世世無窮頌無終。阿們。"
+        }
+      ],
+      "versicle" : {
+        "leader" : {
+          "en" : "An Angel stood at the altar of the temple.",
+          "zh-hans" : "有一位天使站在圣殿的祭坛旁边。",
+          "zh-hant" : "有一位天使站在聖殿的祭壇旁邊。"
+        },
+        "people" : {
+          "en" : "Having in his hand a golden censer.",
+          "zh-hans" : "手中拿着金香炉。",
+          "zh-hant" : "手中拿著金香爐。"
+        }
+      }
+    },
+    "psalm_antiphons" : {
+      "antiphons" : [
+        {
+          "en" : "The Angel Raphael * was sent unto Tobit and Sara to heal them both.",
+          "zh-hans" : "天使拉法勒被差遣到多比雅与撒拉那里，* 去医治他们。",
+          "zh-hant" : "天使拉法勒被差遣到多比雅與撒拉那裏，* 去醫治他們。"
+        },
+        {
+          "en" : "So Tobit called the Angel, and he came in, and they saluted one another.",
+          "zh-hans" : "于是天使进去到多比那里。＊多比先向他请安。",
+          "zh-hant" : "於是天使進去到多比那裏。＊多比先向他請安。"
+        },
+        {
+          "en" : "And the Angel said to Tobias, * I will go with thee, and I know the way well.",
+          "zh-hans" : "我能和他同去，＊那边的路程我全都熟悉。",
+          "zh-hant" : "我能和他同去，＊那邊的路程我全都熟悉。"
+        },
+        {
+          "en" : "Bless and praise God, * and magnify him for the things which he hath done unto you.",
+          "zh-hans" : "你们应当称颂上帝，在众人面前宣认他，＊因为他为你们成就了美事。",
+          "zh-hant" : "你們應當稱頌上帝，在眾人面前宣認他，＊因為他為你們成就了美事。"
+        },
+        {
+          "en" : "Fear not, * for it shall go well with thee; praise God therefore.",
+          "zh-hans" : "不要害怕。愿你们平安。＊你们应当称颂上帝，直到永远。",
+          "zh-hant" : "不要害怕。願你們平安。＊你們應當稱頌上帝，直到永遠。"
+        }
+      ],
+      "lectionary_1943" : {
+        "en" : "Praise the God of heaven, * and confess him before all the living; for he hath dealt with you according to his great mercy.",
+        "zh-hans" : "你们应当称颂上帝，在众人面前宣认他，因为他按其丰盛的怜悯恩待了你们。",
+        "zh-hant" : "你們應當稱頌上帝，在眾人面前宣認他，因為他按其豐盛的憐憫恩待了你們。"
+      }
+    }
+  },
+  "identifier" : "st_raphael",
+  "morning" : {
+    "benedictus_antiphon" : {
+      "normal" : {
+        "en" : "I am Raphael, * one of the seven holy Angels which stand before God, and which present the prayers of the Saints.",
+        "zh-hans" : "我是拉法勒，就是那些侍立和进入荣耀的主面前的七位天使中的一位。",
+        "zh-hant" : "我是拉法勒，就是那些侍立和進入榮耀的主面前的七位天使中的一位。"
+      }
+    },
+    "bible_sentences" : [
+      {
+        "reference" : {
+          "en" : "Luke xxii. 43.",
+          "zh-hans" : "（路加福音 22:43）",
+          "zh-hant" : "（路加福音 22:43）"
+        },
+        "text" : {
+          "en" : "AND there appeared an angel unto him from heaven, strengthening him.",
+          "zh-hans" : "有一位天使从天上显现，加添他的力量。",
+          "zh-hant" : "有一位天使從天上顯現，加添他的力量。"
+        }
+      }
+    ],
+    "collect" : [
+      {
+        "option_label" : {
+          "en" : "Default collect",
+          "zh-hans" : "默认祝文",
+          "zh-hant" : "默認祝文"
+        },
+        "text" : {
+          "en" : "",
+          "zh-hans" : "上帝恩赐主的天使长圣拉法勒与主的仆人多比为旅途的同伴，求主施恩典，让我们这些主的众仆人，同样也可以蒙主天使长的守护，借着他的助佑而得到护卫。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant" : "上帝恩賜主的天使長聖拉法勒與主的僕人多比為旅途的同伴，求主施恩典，讓我們這些主的眾僕人，同樣也可以蒙主天使長的守護，藉著他的助佑而得到護衛。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title" : {
+          "en" : "",
+          "zh-hans" : "天使长圣拉法勒",
+          "zh-hant" : "天使長聖拉法勒"
+        }
+      },
+      {
+        "option_label" : {
+          "en" : "Alternative collect",
+          "zh-hans" : "另一祝文",
+          "zh-hant" : "另一祝文"
+        },
+        "text" : {
+          "en" : "O GOD, who didst direct the Archangel Raphael to go before Tobias thy servant hastening on his journey, and didst give him as guardian amidst the changes and chances of life: grant that we, ever defended by his help, may so avoid the dangers of this present life, as to be enabled to attain unto the joys of heaven. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans" : "上帝曾差遣天使长拉法勒，在主的仆人多比司赶路的时候，行在他前面，又赐拉法勒作他的护卫，保守他经过人生的变迁患难；恳求主施恩，叫我们常蒙拉法勒扶助保护，得免今生的危险，至终得享天上的喜乐。这都是靠着主的圣子、我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant" : "上帝曾差遣天使長拉法勒，在主的僕人多比司趕路的時候，行在他前面，又賜拉法勒作他的護衛，保守他經過人生的變遷患難；懇求主施恩，叫我們常蒙拉法勒扶助保護，得免今生的危險，至終得享天上的喜樂。這都是靠著主的聖子、我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title" : {
+          "en" : "",
+          "zh-hans" : "天使长圣拉法勒",
+          "zh-hant" : "天使長聖拉法勒"
+        }
+      }
+    ],
+    "invitatory" : {
+      "text" : {
+        "en" : "The Lord, the King of Archangels; * O come, let us worship.",
+        "zh-hans" : "主是天使长的君王，我们当来俯伏敬拜。",
+        "zh-hant" : "主是天使長的君王，我們當來俯伏敬拜。"
+      }
+    },
+    "invitatory_hymn" : {
+      "title" : {
+        "en" : "Tibi, Christe, splendor Patris",
+        "zh-hans" : "Tibi, Christe, splendor Patris",
+        "zh-hant" : "Tibi, Christe, splendor Patris"
+      },
+      "verses" : [
+        {
+          "en" : "THEE, O Christ, the Father's Splendour,\nLife and virtue of the heart,\nIn the presence of the Angels\nSing we now with tuneful art:\nMeetly in alternate chorus\nBearing our responsive part.",
+          "zh-hans" : "一、基督你是圣父光辉，心灵生命与能力；\n我众立于天使面前，同声歌咏颂主恩；\n轮流唱和彼此应答，恭呈赞美达天庭。",
+          "zh-hant" : "一、基督你是聖父光輝，心靈生命與能力；\n我眾立於天使面前，同聲歌詠頌主恩；\n輪流唱和彼此應答，恭呈讚美達天庭。"
+        },
+        {
+          "en" : "Thus we praise with veneration\nAll the armies of the sky;\nChiefly him, the faithful healer\nAnd companion heavenly,\nRaphael, by whose princely virtue\nHelpless bound the demons lie.",
+          "zh-hans" : "二、我众虔敬同声赞颂，天上万军众天臣；\n尤颂忠信医治使者，同行相伴护世人；\n天使之长圣拉斐尔，威能缚魔使就擒。",
+          "zh-hant" : "二、我眾虔敬同聲讚頌，天上萬軍眾天臣；\n尤頌忠信醫治使者，同行相伴護世人；\n天使之長聖拉斐爾，威能縛魔使就擒。"
+        },
+        {
+          "en" : "By whose watchful care repelling,\nKing of everlasting grace!\nEvery ghostly adversary,\nAll things evil, all things base;\nGrant us of thine only goodness\nIn thy Paradise a place.",
+          "zh-hans" : "三、赖他守望驱除仇敌，永施恩惠基督王；\n远逐一切灵界恶敌，尽除邪恶与灾殃；\n惟凭你的仁慈恩惠，赐居乐园在主旁。",
+          "zh-hant" : "三、賴他守望驅除仇敵，永施恩惠基督王；\n遠逐一切靈界惡敵，盡除邪惡與災殃；\n惟憑你的仁慈恩惠，賜居樂園在主旁。"
+        },
+        {
+          "en" : "Laud and honour to the Father,\nLaud and honour to the Son:\nLaud and honour to the Spirit,\nEver Three, and Ever One:\nConsubstantial, Co-eternal,\nWhile unending ages run. Amen.",
+          "zh-hans" : "四、赞美尊荣归于圣父，圣子同受此尊荣；\n赞美尊荣归于圣灵，三位一体永同尊；\n同一本体同为永恒，世世无穷颂无终。阿们。",
+          "zh-hant" : "四、讚美尊榮歸於聖父，聖子同受此尊榮；\n讚美尊榮歸於聖靈，三位一體永同尊；\n同一本體同為永恆，世世無窮頌無終。阿們。"
+        }
+      ]
+    },
+    "office_hymn" : {
+      "title" : {
+        "en" : "Christe, sanctorum decus Angelorum",
+        "zh-hans" : "Christe, sanctorum decus Angelorum",
+        "zh-hant" : "Christe, sanctorum decus Angelorum"
+      },
+      "verses" : [
+        {
+          "en" : "CHRIST, the fair beauty of the holy Angels,\nMaker of all things, Governor of all men,\nGrant of Thy bounty, to Thy sons upsoaring,\nMansions eternal.",
+          "zh-hans" : "一、基督你是众圣天使的荣美，\n万有由你创造万民你统领；\n求你广施洪恩使儿女高升，\n永居天上家。",
+          "zh-hant" : "一、基督你是眾聖天使的榮美，\n萬有由你創造萬民你統領；\n求你廣施洪恩使兒女高升，\n永居天上家。"
+        },
+        {
+          "en" : "Raphael, Angel, health to man restoring,\nSpeed to our aidance from the realms of glory,\nHealing the sick ones, every thought and action\nWisely directing.",
+          "zh-hans" : "二、医治世人天使圣拉斐尔啊，\n求你速从荣耀天庭来扶助；\n医治众人疾苦凡所思所行，\n明智加引领。",
+          "zh-hant" : "二、醫治世人天使聖拉斐爾啊，\n求你速從榮耀天庭來扶助；\n醫治眾人疾苦凡所思所行，\n明智加引領。"
+        },
+        {
+          "en" : "Mary, the Mother of our God, be near us;\nSpirits angelic, rank on rank ascending,\nHoly assembly of the Saints perfected:\nPray we your succour.",
+          "zh-hans" : "三、上帝之母马利亚求你亲临，\n天使天军依次成行上天庭；\n并诸成全圣徒聚集的圣会，\n求你们扶助。",
+          "zh-hant" : "三、上帝之母馬利亞求你親臨，\n天使天軍依次成行上天庭；\n並諸成全聖徒聚集的聖會，\n求你們扶助。"
+        },
+        {
+          "en" : "This he vouchsafe us, God for ever blessèd,\nFather eternal, Son, and Holy Spirit,\nWhose is the glory, which through all creation\nEver resoundeth. Amen.",
+          "zh-hans" : "四、愿永受颂赞上帝赐此恩惠，\n就是永恒圣父圣子与圣灵；\n祂的荣耀遍满一切受造物，\n颂声永不息。阿们。",
+          "zh-hant" : "四、願永受頌讚上帝賜此恩惠，\n就是永恆聖父聖子與聖靈；\n祂的榮耀遍滿一切受造物，\n頌聲永不息。阿們。"
+        }
+      ],
+      "versicle" : {
+        "leader" : {
+          "en" : "In the presence of the Angels will I sing unto thee, my God.",
+          "zh-hans" : "我的上帝啊，我要在众神面前奏乐颂扬主。",
+          "zh-hant" : "我的上帝啊，我要在眾神面前奏樂頌揚主。"
+        },
+        "people" : {
+          "en" : "I will worship toward thine holy temple, and praise thy Name.",
+          "zh-hans" : "我要向主的圣殿叩拜，称赞主名。",
+          "zh-hant" : "我要向主的聖殿叩拜，稱讚主名。"
+        }
+      }
+    },
+    "psalm_antiphons" : {
+      "antiphons" : [
+        {
+          "en" : "The Angel Raphael * was sent unto Tobit and Sara to heal them both.",
+          "zh-hans" : "天使拉法勒被差遣到多比雅与撒拉那里，* 去医治他们。",
+          "zh-hant" : "天使拉法勒被差遣到多比雅與撒拉那裏，* 去醫治他們。"
+        },
+        {
+          "en" : "So Tobit called the Angel, and he came in, and they saluted one another.",
+          "zh-hans" : "于是天使进去到多比那里。＊多比先向他请安。",
+          "zh-hant" : "於是天使進去到多比那裏。＊多比先向他請安。"
+        },
+        {
+          "en" : "And the Angel said to Tobias, * I will go with thee, and I know the way well.",
+          "zh-hans" : "我能和他同去，＊那边的路程我全都熟悉。",
+          "zh-hant" : "我能和他同去，＊那邊的路程我全都熟悉。"
+        },
+        {
+          "en" : "Bless and praise God, * and magnify him for the things which he hath done unto you.",
+          "zh-hans" : "你们应当称颂上帝，在众人面前宣认他，＊因为他为你们成就了美事。",
+          "zh-hant" : "你們應當稱頌上帝，在眾人面前宣認他，＊因為他為你們成就了美事。"
+        },
+        {
+          "en" : "Fear not, * for it shall go well with thee; praise God therefore.",
+          "zh-hans" : "不要害怕。愿你们平安。＊你们应当称颂上帝，直到永远。",
+          "zh-hant" : "不要害怕。願你們平安。＊你們應當稱頌上帝，直到永遠。"
+        }
+      ],
+      "lectionary_1943" : {
+        "en" : "The Angel * went in unto Tobias and saluted him, saying: Joy be ever with thee.",
+        "zh-hans" : "天使进去到多比那里，对他说：「愿你多得快乐。」",
+        "zh-hant" : "天使進去到多比那裏，對他說：「願你多得快樂。」"
+      }
+    }
+  },
+  "name" : {
+    "en" : "",
+    "zh-hans" : "天使长圣拉法勒",
+    "zh-hant" : "天使長聖拉法勒"
+  },
+  "rank" : "greaterDouble",
+  "rank_display" : {
+    "en" : "",
+    "zh-hans" : "（大复式）",
+    "zh-hant" : "（大複式）"
+  },
+  "type" : "sanctorale",
+  "vigil" : {
+    "benedictus_antiphon" : {
+      "normal" : {
+        "en" : "I am Raphael * the Angel, that stand before the Holy One: wherefore bless ye God for ever, and confess ye all his great and wonderful doings.",
+        "zh-hans" : "我是拉法勒，＊侍立在圣者面前的天使；所以你们当永远称颂上帝，传扬祂一切伟大奇妙的作为。",
+        "zh-hant" : "我是拉法勒，＊侍立在聖者面前的天使；所以你們當永遠稱頌上帝，傳揚祂一切偉大奇妙的作為。"
+      }
+    },
+    "bible_sentences" : [
+      {
+        "reference" : {
+          "en" : "Ps. ciii. 20.",
+          "zh-hans" : "（诗篇 103:20）",
+          "zh-hant" : "（詩篇 103:20）"
+        },
+        "text" : {
+          "en" : "O PRAISE the Lord, ye angels of his, ye that excel in strength; ye that fulfil his commandment, and hearken unto the voice of his word.",
+          "zh-hans" : "听从他命令、成全他旨意、有大能的天使啊，你们都要称颂耶和华！",
+          "zh-hant" : "聽從他命令、成全他旨意、有大能的天使啊，你們都要稱頌耶和華！"
+        }
+      }
+    ],
+    "collect" : [
+      {
+        "option_label" : {
+          "en" : "Default collect",
+          "zh-hans" : "默认祝文",
+          "zh-hant" : "默認祝文"
+        },
+        "text" : {
+          "en" : "",
+          "zh-hans" : "上帝恩赐主的天使长圣拉法勒与主的仆人多比为旅途的同伴，求主施恩典，让我们这些主的众仆人，同样也可以蒙主天使长的守护，借着他的助佑而得到护卫。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant" : "上帝恩賜主的天使長聖拉法勒與主的僕人多比為旅途的同伴，求主施恩典，讓我們這些主的眾僕人，同樣也可以蒙主天使長的守護，藉著他的助佑而得到護衛。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title" : {
+          "en" : "",
+          "zh-hans" : "天使长圣拉法勒",
+          "zh-hant" : "天使長聖拉法勒"
+        }
+      },
+      {
+        "option_label" : {
+          "en" : "Alternative collect",
+          "zh-hans" : "另一祝文",
+          "zh-hant" : "另一祝文"
+        },
+        "text" : {
+          "en" : "O GOD, who didst direct the Archangel Raphael to go before Tobias thy servant hastening on his journey, and didst give him as guardian amidst the changes and chances of life: grant that we, ever defended by his help, may so avoid the dangers of this present life, as to be enabled to attain unto the joys of heaven. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans" : "上帝曾差遣天使长拉法勒，在主的仆人多比司赶路的时候，行在他前面，又赐拉法勒作他的护卫，保守他经过人生的变迁患难；恳求主施恩，叫我们常蒙拉法勒扶助保护，得免今生的危险，至终得享天上的喜乐。这都是靠着主的圣子、我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant" : "上帝曾差遣天使長拉法勒，在主的僕人多比司趕路的時候，行在他前面，又賜拉法勒作他的護衛，保守他經過人生的變遷患難；懇求主施恩，叫我們常蒙拉法勒扶助保護，得免今生的危險，至終得享天上的喜樂。這都是靠著主的聖子、我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title" : {
+          "en" : "",
+          "zh-hans" : "天使长圣拉法勒",
+          "zh-hant" : "天使長聖拉法勒"
+        }
+      }
+    ],
+    "office_hymn" : {
+      "title" : {
+        "en" : "Tibi, Christe, splendor Patris",
+        "zh-hans" : "Tibi, Christe, splendor Patris",
+        "zh-hant" : "Tibi, Christe, splendor Patris"
+      },
+      "verses" : [
+        {
+          "en" : "THEE, O Christ, the Father's Splendour,\nLife and virtue of the heart,\nIn the presence of the Angels\nSing we now with tuneful art:\nMeetly in alternate chorus\nBearing our responsive part.",
+          "zh-hans" : "一、基督你是圣父光辉，心灵生命与能力；\n我众立于天使面前，同声歌咏颂主恩；\n轮流唱和彼此应答，恭呈赞美达天庭。",
+          "zh-hant" : "一、基督你是聖父光輝，心靈生命與能力；\n我眾立於天使面前，同聲歌詠頌主恩；\n輪流唱和彼此應答，恭呈讚美達天庭。"
+        },
+        {
+          "en" : "Thus we praise with veneration\nAll the armies of the sky;\nChiefly him, the faithful healer\nAnd companion heavenly,\nRaphael, by whose princely virtue\nHelpless bound the demons lie.",
+          "zh-hans" : "二、我众虔敬同声赞颂，天上万军众天臣；\n尤颂忠信医治使者，同行相伴护世人；\n天使之长圣拉斐尔，威能缚魔使就擒。",
+          "zh-hant" : "二、我眾虔敬同聲讚頌，天上萬軍眾天臣；\n尤頌忠信醫治使者，同行相伴護世人；\n天使之長聖拉斐爾，威能縛魔使就擒。"
+        },
+        {
+          "en" : "By whose watchful care repelling,\nKing of everlasting grace!\nEvery ghostly adversary,\nAll things evil, all things base;\nGrant us of thine only goodness\nIn thy Paradise a place.",
+          "zh-hans" : "三、赖他守望驱除仇敌，永施恩惠基督王；\n远逐一切灵界恶敌，尽除邪恶与灾殃；\n惟凭你的仁慈恩惠，赐居乐园在主旁。",
+          "zh-hant" : "三、賴他守望驅除仇敵，永施恩惠基督王；\n遠逐一切靈界惡敵，盡除邪惡與災殃；\n惟憑你的仁慈恩惠，賜居樂園在主旁。"
+        },
+        {
+          "en" : "Laud and honour to the Father,\nLaud and honour to the Son:\nLaud and honour to the Spirit,\nEver Three, and Ever One:\nConsubstantial, Co-eternal,\nWhile unending ages run. Amen.",
+          "zh-hans" : "四、赞美尊荣归于圣父，圣子同受此尊荣；\n赞美尊荣归于圣灵，三位一体永同尊；\n同一本体同为永恒，世世无穷颂无终。阿们。",
+          "zh-hant" : "四、讚美尊榮歸於聖父，聖子同受此尊榮；\n讚美尊榮歸於聖靈，三位一體永同尊；\n同一本體同為永恆，世世無窮頌無終。阿們。"
+        }
+      ],
+      "versicle" : {
+        "leader" : {
+          "en" : "An Angel stood at the altar of the temple.",
+          "zh-hans" : "有一位天使站在圣殿的祭坛旁边。",
+          "zh-hant" : "有一位天使站在聖殿的祭壇旁邊。"
+        },
+        "people" : {
+          "en" : "Having in his hand a golden censer.",
+          "zh-hans" : "手中拿着金香炉。",
+          "zh-hant" : "手中拿著金香爐。"
+        }
+      }
+    },
+    "psalm_antiphons" : {
+      "antiphons" : [
+        {
+          "en" : "The Angel Raphael * was sent unto Tobit and Sara to heal them both.",
+          "zh-hans" : "天使拉法勒被差遣到多比雅与撒拉那里，* 去医治他们。",
+          "zh-hant" : "天使拉法勒被差遣到多比雅與撒拉那裏，* 去醫治他們。"
+        },
+        {
+          "en" : "So Tobit called the Angel, and he came in, and they saluted one another.",
+          "zh-hans" : "于是天使进去到多比那里。＊多比先向他请安。",
+          "zh-hant" : "於是天使進去到多比那裏。＊多比先向他請安。"
+        },
+        {
+          "en" : "And the Angel said to Tobias, * I will go with thee, and I know the way well.",
+          "zh-hans" : "我能和他同去，＊那边的路程我全都熟悉。",
+          "zh-hant" : "我能和他同去，＊那邊的路程我全都熟悉。"
+        },
+        {
+          "en" : "Bless and praise God, * and magnify him for the things which he hath done unto you.",
+          "zh-hans" : "你们应当称颂上帝，在众人面前宣认他，＊因为他为你们成就了美事。",
+          "zh-hant" : "你們應當稱頌上帝，在眾人面前宣認他，＊因為他為你們成就了美事。"
+        },
+        {
+          "en" : "Fear not, * for it shall go well with thee; praise God therefore.",
+          "zh-hans" : "不要害怕。愿你们平安。＊你们应当称颂上帝，直到永远。",
+          "zh-hant" : "不要害怕。願你們平安。＊你們應當稱頌上帝，直到永遠。"
+        }
+      ],
+      "lectionary_1943" : {
+        "en" : "The Angel Raphael * was sent unto Tobias and Sara, to heal them.",
+        "zh-hans" : "天使拉法勒 * 被差遣到多比雅与撒拉那里，去医治他们。",
+        "zh-hant" : "天使拉法勒 * 被差遣到多比雅與撒拉那裏，去醫治他們。"
+      }
+    }
+  }
+}

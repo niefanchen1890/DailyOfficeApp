@@ -440,7 +440,7 @@ struct DailyOfficeView: View {
         case .semiDouble, .ordinarySunday, .privilegedOctaveSecondClass,
              .privilegedOctaveThirdClass, .ordinaryOctavesemiDouble:
             return .green
-        case .simple, .commemoration:
+        case .saturdayOfficeBVM, .simple, .commemoration:
             return .gray
         default:
             return .primary
@@ -509,6 +509,18 @@ struct ContentView: View {
     private var isSimp: Bool { appLanguageCode == AppLanguage.simplified.rawValue }
     
     var body: some View {
+        Group {
+            if #available(iOS 18.0, macOS 15.0, *) {
+                mainTabView
+                    .tabViewStyle(.tabBarOnly)
+            } else {
+                mainTabView
+            }
+        }
+        .accentColor(Color(red: 181/255, green: 8/255, blue: 56/255))
+    }
+
+    private var mainTabView: some View {
         TabView(selection: $selectedTab) {
             HomeView(selectedTab: $selectedTab)
                 .tabItem { Image(systemName: "house.fill"); Text(isSimp ? "首页" : "首頁") }
@@ -526,7 +538,6 @@ struct ContentView: View {
                 .tabItem { Image(systemName: "building.columns.fill"); Text(isSimp ? "教会" : "教會") }
                 .tag(4)
         }
-        .accentColor(Color(red: 181/255, green: 8/255, blue: 56/255))
     }
 }
 

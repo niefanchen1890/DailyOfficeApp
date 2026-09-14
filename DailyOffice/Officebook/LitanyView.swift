@@ -150,10 +150,7 @@ struct LitanyResponsoryRow: View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .top, spacing: 4) {
                 // 🌟 啟/启 動態判斷
-                Text(lang == .traditional ? "啟：" : "启：")
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.red)
-                    .frame(width: 36, alignment: .leading)
+                ResponsoryMarker(role: .leader, isSimplified: lang == .simplified)
                 Text(response.leader.text(for: lang))
                     .font(.system(size: 16, weight: .regular))
                     .foregroundColor(.primary)
@@ -165,10 +162,7 @@ struct LitanyResponsoryRow: View {
             if !peopleText.isEmpty {
                 HStack(alignment: .top, spacing: 4) {
                     // 🌟 應/应 動態判斷
-                    Text(lang == .traditional ? "應：" : "应：")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.red)
-                        .frame(width: 36, alignment: .leading)
+                    ResponsoryMarker(role: .people, isSimplified: lang == .simplified)
                     Text(peopleText)
                         .font(.system(size: 16, weight: .regular))
                         .foregroundColor(.primary)

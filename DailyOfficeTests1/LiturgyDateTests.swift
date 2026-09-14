@@ -2,8 +2,703 @@ import XCTest
 @testable import DailyOffice
 
 final class LiturgyDateTests: XCTestCase {
+    @MainActor
+    func testEpiphanyVigilSundayAndWeekdayEvenings() {
+        for year in 2025...2035 {
+            let morning = service.resolve(for: date(year, 1, 5))
+            let eve = service.resolve(for: date(year, 1, 4), isEvening: true)
+            if Calendar(identifier: .gregorian).component(.weekday, from: date(year, 1, 5)) == 1 {
+                XCTAssertEqual(morning.identifier, .sundayAfterChristmas)
+                XCTAssertEqual(eve.identifier, .sundayAfterChristmas)
+                XCTAssertFalse(morning.commemorationItems.contains { $0.identifier == .epiphanyVigil })
+                XCTAssertFalse(eve.commemorationItems.contains { $0.identifier == .epiphanyVigil })
+            } else {
+                XCTAssertEqual(morning.identifier, .epiphanyVigil)
+                XCTAssertEqual(eve.identifier, .epiphanyVigil)
+                XCTAssertTrue(eve.isFirstVespers)
+            }
+            XCTAssertEqual(service.resolve(for: date(year, 1, 5), isEvening: true).identifier, .epiphany)
+        }
+    }
+
+    @MainActor
+    func testJanuarySimpleOctavesKeepSimplePriority() throws {
+        for day in [2, 3, 4] {
+            let feast = try XCTUnwrap(Sanctorale.shared.getFeast(for: date(2026, 1, day)))
+            XCTAssertEqual(feast.rank, .simple)
+            XCTAssertEqual(feast.rank.rawValue, 50)
+            XCTAssertEqual(feast.rankName, "簡式八日慶期，簡式")
+        }
+        XCTAssertEqual(Sanctorale.shared.getFeast(for: date(2026, 1, 22))?.rank, .semiDouble)
+        XCTAssertEqual(Sanctorale.shared.getFeast(for: date(2026, 1, 28))?.identifier, .anglicanEpiscopate)
+    }
+
+    @MainActor
+    func testThomasTransfersFromSundayToMondayWithFirstVespers() throws {
+        let calendar = Calendar(identifier: .gregorian)
+        for year in 2025...2045 {
+            let originalDate = try XCTUnwrap(calendar.date(from: DateComponents(year: year, month: 12, day: 21, hour: 12)))
+            let nextDate = try XCTUnwrap(calendar.date(byAdding: .day, value: 1, to: originalDate))
+            let original = service.resolve(for: originalDate)
+            if calendar.component(.weekday, from: originalDate) == 1 {
+                XCTAssertNotEqual(original.identifier, .stThomas, "\(year)")
+                XCTAssertFalse(original.commemorationItems.contains { $0.identifier == .stThomas })
+                XCTAssertTrue(original.transferred.contains("使徒聖多馬日"))
+                let transferred = service.resolve(for: nextDate)
+                XCTAssertEqual(transferred.identifier, .stThomas)
+                XCTAssertEqual(transferred.rank, .doubleSecondClass)
+                XCTAssertTrue(transferred.commemorationItems.contains { $0.identifier.temporalComponents?.season == .advent })
+                XCTAssertEqual(LiturgicalResourceResolver.shared.officeFileName(for: transferred.identifier), "sanctorale_1221_thomas")
+                let evening = service.resolve(for: originalDate, isEvening: true)
+                XCTAssertEqual(evening.identifier, .stThomas)
+                XCTAssertTrue(evening.isFirstVespers)
+                let previousDate = try XCTUnwrap(calendar.date(byAdding: .day, value: -1, to: originalDate))
+                XCTAssertNotEqual(service.resolve(for: previousDate, isEvening: true).identifier, .stThomas)
+            } else {
+                XCTAssertEqual(original.identifier, .stThomas, "\(year)")
+                XCTAssertFalse(Sanctorale.shared.getFeasts(for: nextDate).contains { $0.identifier == .stThomas })
+            }
+        }
+    }
+
+    @MainActor
+    func testAdventAntiphonDateBoundariesAndThomasException() throws {
+        let rules = AdventAntiphonResolver(
+            evening: Dictionary(uniqueKeysWithValues: (16...23).map { ("12\($0)", "O-\($0)") }),
+            thomasMorningCommemoration: ["1221": "正日", "1222": "遷移日"]
+        )
+        let calendar = Calendar(identifier: .gregorian)
+        let advent = LiturgicalID.temporal(season: .advent, week: 4, weekday: 2)
+        for day in 15...24 {
+            let date = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 12, day: day, hour: 12)))
+            let expected = (16...23).contains(day) ? "O-\(day)" : nil
+            XCTAssertEqual(rules.override(for: date, isEvening: true, celebration: advent), expected)
+            XCTAssertNil(rules.override(for: date, isEvening: true, celebration: .stThomas))
+            XCTAssertNil(rules.override(for: date, isEvening: false, celebration: advent))
+            XCTAssertEqual(rules.override(for: date, isEvening: true, celebration: .stThomas, commemorated: advent), expected)
+            XCTAssertNil(rules.override(for: date, isEvening: true, celebration: advent, commemorated: .stThomas))
+            XCTAssertEqual(rules.override(for: date, isEvening: false, celebration: .stThomas, commemorated: advent),
+                           day == 21 ? "正日" : (day == 22 ? "遷移日" : nil))
+        }
+        // 前夕仍使用民用當日的 12/20，而不是慶節的 12/21。
+        let eve = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 12, day: 20, hour: 18)))
+        XCTAssertEqual(rules.override(for: eve, isEvening: true, celebration: .stThomas, commemorated: advent), "O-20")
+    }
+
+    @MainActor
+    func testNovemberDecemberFeastRanksAndDistinctSylvesters() throws {
+        let calendar = Calendar(identifier: .gregorian)
+        let cases: [(Int, Int, LiturgicalID, LiturgicalRank, String)] = [
+            (11, 8, .anglicanSaints, .greaterDouble, "sanctorale_1108_saints_of_anglican_communion"),
+            (12, 29, .stThomasBecket, .double, "sanctorale_1229_thomas_becket"),
+            (11, 26, .stSylvesterAbbot, .double, "sanctorale_1126_sylvester_abbot"),
+            (12, 31, .stSylvester, .double, "sanctorale_1231_sylvester")
+        ]
+        for (month, day, identifier, rank, filename) in cases {
+            let date = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: month, day: day, hour: 12)))
+            let feast = try XCTUnwrap(Sanctorale.shared.getFeasts(for: date).first { $0.identifier == identifier })
+            XCTAssertEqual(feast.rank, rank)
+            XCTAssertEqual(LiturgicalResourceResolver.shared.officeFileName(for: identifier), filename)
+        }
+        XCTAssertNotEqual(LiturgicalID.stSylvesterAbbot, .stSylvester)
+    }
+
+    @MainActor
+    func testTrinitySundayProperSupplementAndOmission() throws {
+        let resolver = LiturgicalResourceResolver.shared
+        let calculator = LiturgicalDateCalculator()
+        let calendar = Calendar(identifier: .gregorian)
+        // 包含降臨前主日的主日總數：22、23、24、25、26、27。
+        for (year, total) in [(2038, 22), (2025, 23), (2020, 24), (2026, 25), (2024, 26), (2035, 27)] {
+            let trinity = calculator.trinitySunday(in: year)
+            for week in 1...total {
+                let sunday = try XCTUnwrap(calendar.date(byAdding: .day, value: week * 7, to: trinity))
+                let expected: String?
+                if week == total { expected = "sunday_next_before_advent" }
+                else if total == 26 && week == 25 { expected = "temporal_epiphany_6_sunday" }
+                else if total == 27 && week == 25 { expected = "temporal_epiphany_5_sunday" }
+                else if total == 27 && week == 26 { expected = "temporal_epiphany_6_sunday" }
+                else { expected = nil }
+                XCTAssertEqual(resolver.trinitySundayReplacementFile(for: sunday), expected, "\(year) week \(week)")
+                let monday = try XCTUnwrap(calendar.date(byAdding: .day, value: 1, to: sunday))
+                XCTAssertNil(resolver.trinitySundayReplacementFile(for: monday))
+            }
+            XCTAssertNil(resolver.trinitySundayReplacementFile(for: trinity))
+            XCTAssertNil(resolver.trinitySundayReplacementFile(for: calculator.firstSundayOfAdvent(in: year)))
+            let lastSunday = try XCTUnwrap(calendar.date(byAdding: .day, value: total * 7, to: trinity))
+            let liturgy = LiturgyCoreService.shared.resolve(for: lastSunday)
+            XCTAssertEqual(liturgy.identifier, .sundayBeforeAdvent)
+            XCTAssertEqual(liturgy.season, .trinity)
+            let file = try XCTUnwrap(DailyOfficeLoader.shared.loadOfficeFile(for: lastSunday, liturgy: liturgy))
+            XCTAssertEqual(file.identifier, LiturgicalID.sundayBeforeAdvent.rawValue)
+            XCTAssertNotNil(file.morning?.collect)
+        }
+        // 第一晚禱以翌日的有效日期選取，最後主日的專用內容不可回落到週次檔。
+        let saturday = date(2026, 11, 21)
+        let evening = LiturgyCoreService.shared.resolve(for: saturday, isEvening: true)
+        XCTAssertTrue(evening.isFirstVespers)
+        XCTAssertEqual(evening.identifier, .sundayBeforeAdvent)
+        let sunday = date(2026, 11, 22)
+        let file = try XCTUnwrap(DailyOfficeLoader.shared.loadOfficeFile(for: sunday, liturgy: evening))
+        XCTAssertEqual(file.identifier, LiturgicalID.sundayBeforeAdvent.rawValue)
+        let memorial = try XCTUnwrap(DailyOfficeLoader.shared.loadCommemoration(name: "降臨前主日", date: sunday))
+        XCTAssertEqual(memorial.identifier, LiturgicalID.sundayBeforeAdvent.rawValue)
+    }
+
+    @MainActor
+    func testFortnightlyBAllHoursAndPrimeSegments() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "psalm_cycle_fortnightly_b", withExtension: "json"))
+        let table = try JSONDecoder().decode([String: [String: [String: [String]]]].self, from: Data(contentsOf: url))
+        let hours = ["morning", "prime", "terce", "sext", "nona", "evening", "compline"]
+        XCTAssertEqual(Set(table.keys), Set(hours))
+        XCTAssertEqual(table["prime"]?["week_1"]?["0"], ["119_1_8", "119_9_16"])
+        XCTAssertEqual(table["prime"]?["week_2"]?["6"], ["119_161_168", "119_169_176"])
+        XCTAssertEqual(table["sext"]?["week_2"]?["5"], ["122", "123"])
+        XCTAssertEqual(table["compline"]?["week_1"]?["3"], ["11", "12"])
+        let original = AppLanguageStore.shared.language
+        let prefKey = OfficePrefs.Key.psalmLectionary
+        let saved = UserDefaults.standard.object(forKey: prefKey)
+        defer {
+            AppLanguageStore.shared.setLanguage(original)
+            if let saved { UserDefaults.standard.set(saved, forKey: prefKey) }
+            else { UserDefaults.standard.removeObject(forKey: prefKey) }
+        }
+        let calendar = Calendar(identifier: .gregorian)
+        // 1 月 11 日為第三週主日：week_1；1 月 18 日為第四週：week_2。
+        for language in [AppLanguage.traditional, .simplified] {
+            AppLanguageStore.shared.setLanguage(language)
+            for week in 1...2 {
+                for weekday in 0...6 {
+                    let date = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 1, day: 11 + (week - 1) * 7 + weekday, hour: 12)))
+                    for hour in hours {
+                        let expected = try XCTUnwrap(table[hour]?["week_\(week)"]?[String(weekday)])
+                        XCTAssertFalse(expected.isEmpty)
+                        XCTAssertEqual(PsalmsLoader.shared.fortnightlyBKeys(for: date, hour: hour), expected)
+                        let psalms = PsalmsLoader.shared.fortnightlyBPsalms(for: date, hour: hour)
+                        XCTAssertEqual(psalms.count, expected.count)
+                        XCTAssertEqual(psalms.map { $0.content.verses }, expected.compactMap { PsalmsLoader.shared.psalmContent(for: $0)?.verses })
+                        for psalm in psalms {
+                            XCTAssertFalse(psalm.content.verses.isEmpty)
+                            XCTAssertTrue(psalm.content.verses.allSatisfy { !$0.isEmpty })
+                            if hour == "prime" { XCTAssertEqual(psalm.content.verses.count, 8) }
+                        }
+                    }
+                }
+            }
+        }
+        let morning = MorningPrayerViewModel()
+        let evening = EveningPrayerViewModel()
+        let saturday = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 1, day: 17, hour: 12)))
+        morning.selectedDate = saturday
+        evening.selectedDate = saturday
+        morning.selectedPsalmLectionary = FortnightlyPsalmCycle.optionB
+        evening.selectedPsalmLectionary = FortnightlyPsalmCycle.optionB
+        morning.loadReadings()
+        evening.loadReadings()
+        XCTAssertEqual(morning.selectedPsalmLectionary, FortnightlyPsalmCycle.optionB)
+        XCTAssertEqual(evening.selectedPsalmLectionary, FortnightlyPsalmCycle.optionB)
+        XCTAssertEqual(morning.morningPsalms.map { $0.content.verses }, ["37", "38"].compactMap { PsalmsLoader.shared.psalmContent(for: $0)?.verses })
+        XCTAssertEqual(evening.eveningPsalms.map { $0.content.verses }, ["88", "89"].compactMap { PsalmsLoader.shared.psalmContent(for: $0)?.verses })
+    }
+
+    @MainActor
+    func testFortnightlyPsalmCycleAnnualWeeksAndOfficeSelection() throws {
+        let zone = try XCTUnwrap(TimeZone(secondsFromGMT: 0))
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = zone
+        for (year, month, day, week, weekday) in [
+            (2026, 1, 1, 1, 4), (2026, 1, 3, 1, 6),
+            (2026, 1, 4, 2, 0), (2026, 1, 10, 2, 6),
+            (2026, 1, 11, 1, 0), (2026, 12, 31, 1, 4),
+            (2027, 1, 1, 1, 5), (2027, 1, 3, 2, 0),
+            (2024, 2, 29, 1, 4)
+        ] {
+            let date = try XCTUnwrap(calendar.date(from: DateComponents(year: year, month: month, day: day, hour: 12)))
+            let position = FortnightlyPsalmCycle.position(for: date, timeZone: zone)
+            XCTAssertEqual(position.week, week, "\(year)-\(month)-\(day)")
+            XCTAssertEqual(position.weekday, weekday)
+        }
+
+        let key = OfficePrefs.Key.psalmLectionary
+        let savedOption = UserDefaults.standard.object(forKey: key)
+        defer {
+            if let savedOption { UserDefaults.standard.set(savedOption, forKey: key) }
+            else { UserDefaults.standard.removeObject(forKey: key) }
+        }
+        let morning = MorningPrayerViewModel()
+        let evening = EveningPrayerViewModel()
+        morning.selectedPsalmLectionary = FortnightlyPsalmCycle.option
+        evening.selectedPsalmLectionary = FortnightlyPsalmCycle.option
+        // 使用本地日期，驗證換日載入不會將循環選項重設為月度循環。
+        let localCalendar = Calendar(identifier: .gregorian)
+        for (day, morningKeys, eveningKeys) in [
+            (3, ["30", "32", "31", "33", "34"], ["101", "103", "102", "105"]),
+            (4, ["98", "148", "99", "149", "100", "150"], ["110", "113", "111", "114", "112", "115"]),
+            (11, ["63", "93", "66", "96", "67", "97"], ["84", "104", "85", "119_49_56", "119_57_64", "119_65_72", "119_73_80"])
+        ] {
+            let date = try XCTUnwrap(localCalendar.date(from: DateComponents(year: 2026, month: 1, day: day, hour: 12)))
+            morning.selectedDate = date
+            evening.selectedDate = date
+            morning.loadReadings()
+            evening.loadReadings()
+            XCTAssertEqual(morning.selectedPsalmLectionary, FortnightlyPsalmCycle.option)
+            XCTAssertEqual(evening.selectedPsalmLectionary, FortnightlyPsalmCycle.option)
+            XCTAssertEqual(morning.morningPsalms.map { $0.content.verses }, morningKeys.compactMap { PsalmsLoader.shared.psalmContent(for: $0)?.verses })
+            XCTAssertEqual(evening.eveningPsalms.map { $0.content.verses }, eveningKeys.compactMap { PsalmsLoader.shared.psalmContent(for: $0)?.verses })
+        }
+        XCTAssertEqual(OfficePrefs.restoreString(key, default: "monthly"), FortnightlyPsalmCycle.option)
+    }
+
+    @MainActor
+    func testFortnightlyPsalmCycleOneResourceAndSegments() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "psalm_cycle_fortnightly_1", withExtension: "json"))
+        let cycle = try JSONDecoder().decode(FortnightlyPsalmCycle.self, from: Data(contentsOf: url))
+        XCTAssertEqual(cycle.keys(week: 1, weekday: 0, isMorning: true), ["63", "93", "66", "96", "67", "97"])
+        XCTAssertEqual(cycle.keys(week: 2, weekday: 6, isMorning: false), ["144", "146", "145", "147"])
+        XCTAssertTrue(cycle.keys(week: 3, weekday: 0, isMorning: true).isEmpty)
+        XCTAssertTrue(cycle.keys(week: 1, weekday: 7, isMorning: true).isEmpty)
+        let originalLanguage = AppLanguageStore.shared.language
+        defer { AppLanguageStore.shared.setLanguage(originalLanguage) }
+        for language in [AppLanguage.traditional, .simplified] {
+            AppLanguageStore.shared.setLanguage(language)
+            for week in 1...2 {
+                for weekday in 0...6 {
+                    for isMorning in [true, false] {
+                        let keys = cycle.keys(week: week, weekday: weekday, isMorning: isMorning)
+                        XCTAssertFalse(keys.isEmpty)
+                        let psalms = PsalmsLoader.shared.fortnightlyPsalms(week: week, weekday: weekday, isMorning: isMorning)
+                        XCTAssertEqual(psalms.count, keys.count)
+                        for (key, psalm) in zip(keys, psalms) {
+                            XCTAssertFalse(psalm.content.verses.isEmpty, key)
+                            XCTAssertTrue(psalm.content.verses.allSatisfy { !$0.isEmpty }, key)
+                            let parts = key.split(separator: "_")
+                            if parts.count == 3 {
+                                XCTAssertEqual(psalm.content.verses.count, 8, key)
+                                XCTAssertTrue(psalm.content.verses.first?.hasPrefix("\(parts[1]) ") == true, key)
+                                XCTAssertTrue(psalm.content.verses.last?.hasPrefix("\(parts[2]) ") == true, key)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @MainActor
+    func test1943PsalmAntiphonSelection() throws {
+        let json = #"{"identifier":"test","name":"test","morning":{"psalm_antiphons":{"antiphons":["ordinary"],"lectionary_1943":["even year","odd year"]}},"vigil":{"psalm_antiphons":{"lectionary_1943":"vigil"}},"evening":{"psalm_antiphons":{"lectionary_1943":"evening"}}}"#
+        let office = try JSONDecoder().decode(DailyOfficeFile.self, from: Data(json.utf8))
+        let calendar = Calendar(identifier: .gregorian)
+        for year in [2026, 2027, 2028] {
+            let date = try XCTUnwrap(calendar.date(from: DateComponents(year: year, month: 9, day: 8, hour: 12)))
+            XCTAssertEqual(DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: date), year == 2027 ? "odd year" : "even year")
+            XCTAssertEqual(DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: date, isEvening: true), "evening")
+            XCTAssertEqual(DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: date, isEvening: true, isFirstVespers: true), "vigil")
+            XCTAssertEqual(DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: date, isFirstVespers: true), year == 2027 ? "odd year" : "even year")
+        }
+    }
+
+    @MainActor
+    func test1943PsalmAntiphonMissingAndEmptyNeverUseOrdinaryAntiphons() throws {
+        for extra in ["", #", "lectionary_1943": []"#, #", "lectionary_1943": "  ""#] {
+            let json = """
+            {"identifier":"test","name":"test","morning":{"psalm_antiphons":{"antiphons":["ordinary"],"common":"common"\(extra)}},"evening":{"psalm_antiphons":{"lectionary_1943":"evening"}}}
+            """
+            let office = try JSONDecoder().decode(DailyOfficeFile.self, from: Data(json.utf8))
+            XCTAssertNil(DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: Date()))
+            XCTAssertEqual(DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: Date(), isEvening: true, isFirstVespers: true), "evening")
+        }
+    }
+
+    @MainActor
+    func testCommonOfficeRemigiusAndSeptemberCompatibility() throws {
+        func resource(_ name: String) throws -> Data {
+            try Data(contentsOf: XCTUnwrap(Bundle.main.url(forResource: name, withExtension: "json")))
+        }
+        let index = try JSONDecoder().decode([String: String].self, from: resource("common_office_index"))
+        XCTAssertEqual(index.count, 19)
+        for (id, name) in index {
+            let object = try XCTUnwrap(JSONSerialization.jsonObject(with: resource(name)) as? [String: Any])
+            XCTAssertEqual(object["identifier"] as? String, id)
+        }
+        let raw = try resource("sanctorale_1001_remigius")
+        let merged = try CommonOfficeResolver.resolve(data: raw) { try CommonOfficeResolver.loadCommon(id: $0) }
+        for language in [AppLanguage.traditional, .simplified] {
+            let data = try XCTUnwrap(LocalizedJSONResolver.resolve(data: merged, language: language))
+            let file = try JSONDecoder().decode(DailyOfficeFile.self, from: data)
+            XCTAssertEqual(file.identifier, "sanctorale_1001_remigius")
+            for period in [file.vigil, file.morning, file.evening] {
+                XCTAssertEqual(period?.collect?.options.count, 2)
+                XCTAssertFalse(try XCTUnwrap(period?.psalmAntiphons?.lectionary1943?.values).isEmpty)
+            }
+        }
+        let september = try XCTUnwrap(Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil))
+            .filter { $0.lastPathComponent.hasPrefix("sanctorale_09") }
+        XCTAssertGreaterThan(september.count, 20)
+        for url in september {
+            let original = try Data(contentsOf: url)
+            let result = try CommonOfficeResolver.resolve(data: original) { _ in
+                XCTFail("舊模式不應讀取通用")
+                return Data()
+            }
+            XCTAssertEqual(result, original)
+        }
+        let date = try XCTUnwrap(Calendar(identifier: .gregorian).date(from: DateComponents(year: 2026, month: 10, day: 1, hour: 12)))
+        let loaded = DailyOfficeLoader.shared.loadCommemoration(name: "聖雷米吉烏斯主教", date: date)
+        XCTAssertEqual(loaded?.morning?.collect?.options.count, 2)
+        XCTAssertNotNil(loaded?.morning?.psalmAntiphons)
+    }
+
+    @MainActor
+    func testCommonOfficeMergeAndFailures() throws {
+        let base = Data(#"{"identifier":"c","type":"common_office","common_metadata":{"schema_version":1},"morning":{"psalm_antiphons":{"antiphons":["A","B"],"lectionary_1943":"C"},"office_hymn":{"title":"old","verses":["old"]},"invitatory":{"text":{"zh-hant":"通用","zh-hans":"通用简体"}}},"vigil":{},"evening":{}}"#.utf8)
+        let proper = Data(#"{"identifier":"p","name":"p","common_office":"c","vigil":null,"morning":{"psalm_antiphons":{"antiphons":[],"lectionary_1943":null},"office_hymn":{"verses":["new"]},"invitatory":{"text":{"zh-hant":"專用"}}}}"#.utf8)
+        let merged = try CommonOfficeResolver.resolve(data: proper) { _ in base }
+        let localized = try XCTUnwrap(LocalizedJSONResolver.resolve(data: merged, language: .simplified))
+        let file = try JSONDecoder().decode(DailyOfficeFile.self, from: localized)
+        XCTAssertNil(file.firstVespersPeriod)
+        XCTAssertNotNil(file.evening)
+        XCTAssertEqual(file.morning?.psalmAntiphons?.antiphons, [])
+        XCTAssertNil(file.morning?.psalmAntiphons?.lectionary1943)
+        XCTAssertNil(file.morning?.officeHymn?.title)
+        XCTAssertEqual(file.morning?.invitatory?.text, "專用")
+        XCTAssertThrowsError(try CommonOfficeResolver.resolve(data: proper) { _ in Data("{}".utf8) })
+        XCTAssertThrowsError(try CommonOfficeResolver.loadCommon(id: "missing"))
+        let required = Data(#"{"identifier":"c","type":"common_office","common_metadata":{"schema_version":1,"requires_proper_collect":true},"morning":{}}"#.utf8)
+        XCTAssertThrowsError(try CommonOfficeResolver.resolve(data: proper) { _ in required })
+    }
+
+    @MainActor
+    func testRosaryAndSimeonAnnaMemorial() throws {
+        let calendar = Calendar(identifier: .gregorian)
+        let eve = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 10, day: 6, hour: 12)))
+        let day = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 10, day: 7, hour: 12)))
+        let core = LiturgyCoreService()
+        let first = core.resolve(for: eve, isEvening: true)
+        XCTAssertEqual(first.identifier, .ourLadyOfTheRosary)
+        XCTAssertTrue(first.isFirstVespers)
+        let ids = first.commemorationItems.map(\.identifier)
+        let bruno = try XCTUnwrap(ids.firstIndex(of: .bruno))
+        let simeon = try XCTUnwrap(ids.firstIndex(of: .simeonAndAnna))
+        XCTAssertLessThan(bruno, simeon)
+        XCTAssertEqual(ids.filter { $0 == .simeonAndAnna }.count, 1)
+        let morning = core.resolve(for: day, isEvening: false)
+        XCTAssertEqual(morning.identifier, .ourLadyOfTheRosary)
+        XCTAssertTrue(morning.commemorationItems.contains { $0.identifier == .simeonAndAnna })
+        XCTAssertFalse(core.resolve(for: day, isEvening: true).commemorationItems.contains { $0.identifier == .simeonAndAnna })
+        XCTAssertFalse(core.resolve(for: eve, isEvening: false).commemorationItems.contains { $0.identifier == .simeonAndAnna })
+        for language in [AppLanguage.traditional, .simplified] {
+            for name in ["sanctorale_1007_our_lady_of_the_rosary", "sanctorale_1007_simeon_and_anna"] {
+                let url = try XCTUnwrap(Bundle.main.url(forResource: name, withExtension: "json"))
+                let raw = try Data(contentsOf: url)
+                let data = try XCTUnwrap(LocalizedJSONResolver.resolve(data: raw, language: language))
+                let file = try JSONDecoder().decode(DailyOfficeFile.self, from: data)
+                XCTAssertNotNil(file.vigil?.collect)
+                XCTAssertNotNil(file.morning?.collect)
+                if name.contains("rosary") {
+                    for h in [file.vigil, file.morning, file.evening] {
+                        XCTAssertEqual(h?.officeHymn?.verses?.count, 6)
+                        XCTAssertTrue(h?.officeHymn?.verses?.first?.hasPrefix("一、") == true)
+                        XCTAssertEqual(h?.psalmAntiphons?.antiphons?.count, 5)
+                        XCTAssertNotNil(h?.psalmAntiphons?.lectionary1943)
+                        XCTAssertNotNil(h?.nuncDimittisAntiphon)
+                    }
+                    XCTAssertEqual(file.morning?.invitatoryHymn?.verses?.count, 6)
+                } else {
+                    XCTAssertEqual(file.identifier, "sts_simeon_anna")
+                    XCTAssertNotNil(file.morning?.officeHymn?.versicle)
+                    XCTAssertNil(file.evening)
+                }
+            }
+        }
+        let memorial = DailyOfficeLoader.shared.loadCommemoration(name: "聖西面與聖亞拿", date: day)
+        XCTAssertEqual(memorial?.identifier, "sts_simeon_anna")
+    }
+
+    @MainActor
+    func testEvangelist1943SeasonalAntiphons() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "傳福音者用（復活期外）", withExtension: "json"))
+        let raw = try Data(contentsOf: url)
+        let calendar = Calendar(identifier: .gregorian)
+        let easter = LiturgicalDateCalculator().easterSunday(in: 2026)
+        for language in [AppLanguage.traditional, .simplified] {
+            let data = try XCTUnwrap(LocalizedJSONResolver.resolve(data: raw, language: language))
+            let office = try JSONDecoder().decode(DailyOfficeFile.self, from: data)
+            let redecoded = try JSONDecoder().decode(DailyOfficeFile.self, from: JSONEncoder().encode(office))
+            XCTAssertEqual(redecoded.morning?.psalmAntiphons?.lectionary1943?.septuagesimaToLent,
+                           office.morning?.psalmAntiphons?.lectionary1943?.septuagesimaToLent)
+            for offset in [-64, -63, -47, -46, -7, -1, 0, 1] {
+                let date = try XCTUnwrap(calendar.date(byAdding: .day, value: offset, to: easter))
+                let special = offset >= -63 && offset < 0
+                for evening in [false, true] {
+                    let result = try XCTUnwrap(DailyOfficeLoader.lectionary1943PsalmAntiphon(
+                        in: office, for: date, isEvening: evening, isFirstVespers: evening))
+                    XCTAssertEqual(result.hasPrefix("主如是"), special, "offset=\(offset)")
+                    XCTAssertEqual(result.contains(language == .traditional ? "哈利路亞" : "哈利路亚"), !special)
+                }
+                let evening = DailyOfficeLoader.lectionary1943PsalmAntiphon(in: office, for: date, isEvening: true)
+                XCTAssertEqual(evening, office.evening?.psalmAntiphons?.lectionary1943?.values.first)
+            }
+        }
+    }
+
     private let service = LiturgyCoreService()
     private let dateCalculator = LiturgicalDateCalculator()
+
+    @MainActor
+    func testOfficeForTheDeadLoadsInTraditionalAndSimplifiedChinese() {
+        for language in [AppLanguage.traditional, .simplified] {
+            DeadOfficeDataLoader.shared.clearCache()
+            let data = DeadOfficeDataLoader.shared.load(language: language)
+
+            XCTAssertEqual(data.identifier, "office_for_the_dead")
+            XCTAssertFalse(data.title.isEmpty)
+            XCTAssertEqual(data.morning.allSoulsPsalms?.count, 9)
+            XCTAssertEqual(data.evening.psalms, ["116", "120", "121", "130", "138"])
+            XCTAssertEqual(data.morning.collects.count, 7)
+            XCTAssertEqual(data.evening.collects.count, 6)
+            XCTAssertEqual(data.morning.firstLesson.reference, "14:1-16")
+            XCTAssertEqual(data.evening.firstLesson.version, "APO1933")
+        }
+    }
+
+    @MainActor
+    func testCollectSupportsLegacySingleObjectAndMultipleOptions() throws {
+        let singleData = Data(#"{"title":"祝文","text":"第一篇"}"#.utf8)
+        let single = try JSONDecoder().decode(
+            DailyOfficeFile.OfficePeriod.CollectJSON.self,
+            from: singleData
+        )
+        XCTAssertEqual(single.options.count, 1)
+        XCTAssertEqual(single.options.first?.text, "第一篇")
+
+        let multipleData = Data(#"[{"option_label":"默認祝文","title":"祝文","text":"第一篇"},{"option_label":"另一祝文","title":"另一祝文","text":"第二篇"}]"#.utf8)
+        let multiple = try JSONDecoder().decode(
+            DailyOfficeFile.OfficePeriod.CollectJSON.self,
+            from: multipleData
+        )
+        XCTAssertEqual(multiple.options.count, 2)
+        XCTAssertEqual(multiple.options.map(\.optionLabel), ["默認祝文", "另一祝文"])
+        XCTAssertEqual(multiple.options.map(\.text), ["第一篇", "第二篇"])
+    }
+
+    @MainActor
+    func testAutumnEmberSaturdayProvidesTwoLocalizedCollects() throws {
+        for language in [AppLanguage.traditional, .simplified] {
+            let url = try XCTUnwrap(Bundle.main.url(
+                forResource: "temporal_autumn_ember_saturday",
+                withExtension: "json"
+            ))
+            let rawData = try Data(contentsOf: url)
+            let localizedData = try XCTUnwrap(
+                LocalizedJSONResolver.resolve(data: rawData, language: language)
+            )
+            let file = try JSONDecoder().decode(DailyOfficeFile.self, from: localizedData)
+            let options = try XCTUnwrap(file.morning?.collect?.options)
+
+            XCTAssertEqual(options.count, 2)
+            XCTAssertFalse(options[0].text.isEmpty)
+            XCTAssertFalse(options[1].text.isEmpty)
+        }
+    }
+
+    @MainActor
+    func testHolyCrossProvidesThreeLocalizedCollects() throws {
+        for language in [AppLanguage.traditional, .simplified] {
+            let url = try XCTUnwrap(Bundle.main.url(
+                forResource: "sanctorale_0914_holy_cross",
+                withExtension: "json"
+            ))
+            let rawData = try Data(contentsOf: url)
+            let localizedData = try XCTUnwrap(
+                LocalizedJSONResolver.resolve(data: rawData, language: language)
+            )
+            let file = try JSONDecoder().decode(DailyOfficeFile.self, from: localizedData)
+
+            for options in [
+                file.vigil?.collect?.options,
+                file.morning?.collect?.options,
+                file.evening?.collect?.options
+            ] {
+                let unwrapped = try XCTUnwrap(options)
+                XCTAssertEqual(unwrapped.count, 3)
+                XCTAssertEqual(
+                    unwrapped.map(\.optionLabel),
+                    language == .traditional
+                        ? ["默認祝文", "又祝文", "另一祝文"]
+                        : ["默认祝文", "又祝文", "另一祝文"]
+                )
+                XCTAssertTrue(unwrapped.allSatisfy { !$0.text.isEmpty })
+            }
+        }
+    }
+
+    @MainActor
+    func testNativityOfMaryMorningSpecialLessonsLoadFromSanctoraleJSON() throws {
+        let selectedDate = date(2025, 9, 8)
+        let liturgy = service.resolve(for: selectedDate)
+        let lessons = try XCTUnwrap(
+            DailyOfficeLoader.shared.jsonLessons(
+                for: selectedDate,
+                liturgy: liturgy,
+                isEvening: false,
+                year: "special"
+            )
+        )
+
+        XCTAssertEqual(lessons.ot?.book, "雅歌")
+        XCTAssertEqual(lessons.ot?.chapter, "1:9-17")
+        XCTAssertEqual(lessons.nt?.book, "羅馬書")
+        XCTAssertEqual(lessons.nt?.chapter, "1:1-4")
+    }
+
+    func testMemorialAntiphonButtonsOnlyShowAvailableContentAndOmit() {
+        XCTAssertEqual(
+            MemorialAntiphonSelection.available(hasSeasonal: true, hasMarian: true),
+            [.seasonal, .marian, .omit]
+        )
+        XCTAssertEqual(
+            MemorialAntiphonSelection.available(hasSeasonal: true, hasMarian: false),
+            [.seasonal, .omit]
+        )
+        XCTAssertEqual(
+            MemorialAntiphonSelection.available(hasSeasonal: false, hasMarian: true),
+            [.marian, .omit]
+        )
+        XCTAssertEqual(
+            MemorialAntiphonSelection.available(hasSeasonal: false, hasMarian: false),
+            []
+        )
+    }
+
+    func testMemorialAntiphonResourcesFollowLocalizedOfficeSchema() throws {
+        for language in [AppLanguage.traditional, .simplified] {
+            let morning = try XCTUnwrap(
+                MemorialAntiphonsLoader.shared.getContainer(language: language)
+            )
+            XCTAssertEqual(morning.identifier, "morning_memorial_antiphons")
+            XCTAssertEqual(morning.type, "office_supplement")
+            XCTAssertEqual(morning.seasonalAntiphons.count, 8)
+            XCTAssertEqual(morning.marianAntiphons.count, 5)
+
+            let eveningKeys = [
+                "advent_feria",
+                "advent_saturday",
+                "advent_sunday",
+                "epiphany_default",
+                "epiphany_saturday_before_purification",
+                "septuagesima",
+                "lent",
+                "easter_feria",
+                "easter_saturday",
+                "trinity_feria",
+                "trinity_weekend"
+            ]
+            for key in eveningKeys {
+                let entry = try XCTUnwrap(
+                    MemorialAntiphonsLoader.shared.eveningSeasonalAntiphon(
+                        for: key,
+                        language: language
+                    )
+                )
+                XCTAssertFalse(entry.antiphon.isEmpty, key)
+                XCTAssertFalse(entry.versicle.leader.isEmpty, key)
+                XCTAssertFalse(entry.versicle.people.isEmpty, key)
+                XCTAssertFalse(entry.collect.text.isEmpty, key)
+            }
+        }
+    }
+
+    func testSaturdayOfficeOfOurLadyOnEligibleSaturday() {
+        let result = service.resolve(for: date(2025, 5, 10))
+
+        XCTAssertEqual(result.identifier, .saturdayOfficeOfOurLady)
+        XCTAssertEqual(result.mainTitle, "禮拜六特敬聖母")
+        XCTAssertEqual(result.rank, .saturdayOfficeBVM)
+        XCTAssertEqual(result.color, "white")
+        XCTAssertTrue(result.traits.themes.contains(.blessedVirginMary))
+    }
+
+    func testSaturdayOfficeOfOurLadyCommemoratesSimpleFeast() {
+        let result = service.resolve(for: date(2025, 5, 24))
+
+        XCTAssertEqual(result.identifier, .saturdayOfficeOfOurLady)
+        XCTAssertTrue(result.commemorations.contains("勒蘭的聖文森特"))
+    }
+
+    func testSaturdayOfficeOfOurLadyIsOmittedForHigherFeastAndForbiddenTimes() {
+        let highFeastSaturday = service.resolve(for: date(2025, 1, 25))
+        XCTAssertNotEqual(highFeastSaturday.identifier, .saturdayOfficeOfOurLady)
+        XCTAssertEqual(highFeastSaturday.mainTitle, "使徒聖保羅受感化日")
+        XCTAssertNotEqual(service.resolve(for: date(2025, 1, 11)).identifier, .saturdayOfficeOfOurLady)
+        XCTAssertNotEqual(service.resolve(for: date(2025, 3, 15)).identifier, .saturdayOfficeOfOurLady)
+        XCTAssertNotEqual(service.resolve(for: date(2025, 9, 20)).identifier, .saturdayOfficeOfOurLady)
+    }
+
+    func testSaturdayOfficeOfOurLadyRunsFromFirstVespersThroughNona() {
+        let fridayEvening = service.resolve(for: date(2025, 5, 23), isEvening: true)
+        XCTAssertEqual(fridayEvening.identifier, .saturdayOfficeOfOurLady)
+        XCTAssertTrue(fridayEvening.isFirstVespers)
+
+        let saturdayDaytime = service.resolve(for: date(2025, 5, 24))
+        XCTAssertEqual(saturdayDaytime.identifier, .saturdayOfficeOfOurLady)
+
+        let saturdayEvening = service.resolve(for: date(2025, 5, 24), isEvening: true)
+        XCTAssertNotEqual(saturdayEvening.identifier, .saturdayOfficeOfOurLady)
+        XCTAssertFalse(saturdayEvening.commemorations.contains("禮拜六特敬聖母"))
+    }
+
+    func testSaturdayOfficeOfOurLadyJSONIsFormallyConnectedAndBilingual() throws {
+        let resourceName = try XCTUnwrap(
+            LiturgicalResourceResolver.shared.officeFileName(for: .saturdayOfficeOfOurLady)
+        )
+        XCTAssertEqual(resourceName, "saturday_office_of_our_lady")
+
+        let url = try XCTUnwrap(
+            Bundle.main.url(forResource: resourceName, withExtension: "json")
+        )
+        let source = try Data(contentsOf: url)
+
+        let traditionalData = try XCTUnwrap(
+            LocalizedJSONResolver.resolve(data: source, language: .traditional)
+        )
+        let traditionalFile = try JSONDecoder().decode(DailyOfficeFile.self, from: traditionalData)
+        XCTAssertEqual(traditionalFile.identifier, LiturgicalID.saturdayOfficeOfOurLady.rawValue)
+        XCTAssertEqual(traditionalFile.name, "禮拜六特敬聖母")
+        XCTAssertEqual(traditionalFile.traits?.themes, [.blessedVirginMary])
+
+        let simplifiedData = try XCTUnwrap(
+            LocalizedJSONResolver.resolve(data: source, language: .simplified)
+        )
+        let simplifiedFile = try JSONDecoder().decode(DailyOfficeFile.self, from: simplifiedData)
+        XCTAssertEqual(simplifiedFile.identifier, LiturgicalID.saturdayOfficeOfOurLady.rawValue)
+        XCTAssertEqual(simplifiedFile.name, "礼拜六特敬圣母")
+        XCTAssertEqual(simplifiedFile.traits?.themes, [.blessedVirginMary])
+    }
+
+    func testSaturdayOfficeOfOurLadyUsesBVMHymnEndingAtAllMinorHours() throws {
+        let saturday = date(2025, 5, 10)
+        let liturgy = service.resolve(for: saturday)
+        XCTAssertEqual(liturgy.identifier, .saturdayOfficeOfOurLady)
+        XCTAssertEqual(MinorHourPrayerRules.hymnEndingKey(for: saturday, liturgy: liturgy), "bvm")
+
+        for language in [AppLanguage.traditional, .simplified] {
+            for hour in MinorHour.allCases {
+                let data = MinorHourPrayerDataLoader.shared.load(hour: hour, language: language)
+                let bvmEnding = try XCTUnwrap(data.seasonalHymnEndings["bvm"])
+                let verses = MinorHourPrayerRules.hymnVerses(
+                    data: data,
+                    date: saturday,
+                    liturgy: liturgy
+                )
+
+                XCTAssertTrue(
+                    try XCTUnwrap(verses.last).hasSuffix(bvmEnding),
+                    "\(hour.rawValue) should use the BVM hymn ending for \(language.rawValue)"
+                )
+            }
+        }
+    }
 
     func testFixedFeasts() {
         assertLiturgy(

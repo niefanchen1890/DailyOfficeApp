@@ -44,10 +44,10 @@
     "ascensiontide": { "zh-hant": "我眾今獻所有榮耀，\n歸於超越眾星之主，\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "我众今献所有荣耀，\n归于超越众星之主，\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nAscending o'er the stars to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
     "sacred_heart": { "zh-hant": "我將榮耀全歸與主，\n主從聖心傾流恩典；\n如今與父永遠同在，\n偕同聖靈永世無盡。阿們。", "zh-hans": "我将荣耀全归与主，\n主从圣心倾流恩典；\n如今与父永远同在，\n偕同圣灵永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nWho from thy Heart dost grace convey;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
     "transfiguration": { "zh-hant": "榮耀全歸我主基督，\n今日山上顯現光輝；\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "荣耀全归我主基督，\n今日山上显现光辉；\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nTransfigured on the mount to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
-    "christ_the_king": { "zh-hant": "我獻榮耀歸於耶穌，\n掌管普世國度之主；\n及父與保惠師聖靈，\n稱頌讚美永世無盡。阿們。", "zh-hans": "我献荣耀归于耶稣，\n掌管普世国度之主；\n及父与保惠师圣灵，\n称颂赞美永世无尽。阿们。", "en": "All glory, Lord, to thee we pay,\nThe King of all the earth to-day;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." },
+    "christ_the_king": {"en": "Jesu, to thee we glory pay,\nRuling earth's kingdoms neath thy sway;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.", "zh-hans": "耶稣我众颂主荣光，主掌王权统治万邦；\n圣父以及保惠圣灵，同受荣耀世世无尽。阿们。", "zh-hant": "耶穌我眾頌主榮光，主掌王權統治萬邦；\n聖父以及保惠聖靈，同受榮耀世世無盡。阿們。"},
     "bvm": { "zh-hant": "童女所生救主耶穌，\n常受一切讚美榮光。\n榮耀亦歸聖父聖靈，\n同受尊崇萬世無疆。阿們。", "zh-hans": "童女所生救主耶稣，\n常受一切赞美荣光。\n荣耀亦归圣父圣灵，\n同受尊崇万世无疆。阿们。", "en": "All honour, laud, and glory be,\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen." }
   },
-  "bvmFeastAntiphon": { "zh-hant": "真福童貞女聖馬利亞：※你既獲母親的尊榮，又未損貞女的純潔。", "zh-hans": "真福童贞女圣玛利亚：※你既获母亲的尊荣，又未损贞女的纯洁。", "en": "O Holy Mary, be thou an help to the helpless..." },
+  "bvmFeastAntiphon": { "zh-hant": "真福童貞女聖馬利亞：※你既獲母親的尊榮，又未損貞女的純潔。", "zh-hans": "真福童贞女圣马利亚：※你既获母亲的尊荣，又未损贞女的纯洁。", "en": "O Holy Mary, be thou an help to the helpless..." },
   "psalmAntiphons": [
     {
       "season": { "zh-hant": "全年通用", "zh-hans": "全年通用", "en": "Ordinary Time" },

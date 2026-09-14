@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 
 struct PrimePrayerView: View {
+    @State private var usesFortnightlyB = false
     @StateObject private var viewModel: PrimePrayerViewModel
     @Environment(\.colorScheme) var colorScheme
     let date: Date
@@ -242,6 +243,7 @@ struct PrimePrayerView: View {
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
                 SectionTitle(text: isSimp ? "诗篇" : "詩篇")
+                SmallHourPsalmPicker(usesFortnightlyB: $usesFortnightlyB, isSimplified: isSimp)
                 RubricBlock(text: isSimp ? "¶ 然后当念诗篇，以及适当的季节或瞻礼对经。诗篇119篇，可以周划分，见标题下所标记。" : "¶ 然後當唸詩篇，以及適當的季節或瞻禮對經。詩篇119篇，可以週劃分，見標題下所標記。")
                 
                 if let antiphon = viewModel.currentAntiphon {
@@ -250,7 +252,7 @@ struct PrimePrayerView: View {
                 
                 let weekday = Calendar.current.component(.weekday, from: viewModel.selectedDate)
                 
-                if weekday != 1 {
+                if !usesFortnightlyB && weekday != 1 {
                     if let psalm54 = PsalmsLoader.shared.psalmContent(for: PrimePrayerData.psalm54Key) {
                         psalmContentView(
                             title: PrimePrayerData.psalm54Key,
@@ -261,14 +263,16 @@ struct PrimePrayerView: View {
                     Divider().padding(.vertical, 8)
                 }
                 
-                let psalm119Keys = PrimePrayerData.psalm119Keys(for: viewModel.selectedDate)
+                let psalm119Keys = usesFortnightlyB
+                    ? PsalmsLoader.shared.fortnightlyBKeys(for: viewModel.selectedDate, hour: "prime")
+                    : PrimePrayerData.psalm119Keys(for: viewModel.selectedDate)
                 ForEach(psalm119Keys.indices, id: \.self) { index in
                     let key = psalm119Keys[index]
                     if let psalm119 = PsalmsLoader.shared.psalmContent(for: key) {
                         psalmContentView(
-                            title: key,
+                            title: usesFortnightlyB ? psalm119.title : key,
                             content: psalm119,
-                            openingAntiphon: weekday == 1 && index == 0
+                            openingAntiphon: (usesFortnightlyB || weekday == 1) && index == 0
                                 ? viewModel.currentAntiphon?.text
                                 : nil
                         )

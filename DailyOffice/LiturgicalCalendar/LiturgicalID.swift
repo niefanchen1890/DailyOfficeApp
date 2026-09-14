@@ -10,6 +10,94 @@ struct LiturgicalID: RawRepresentable, Codable, Hashable, Sendable {
         self.rawValue = rawValue
     }
 
+    // MARK: - 十一月至十二月聖日與八日慶期
+
+    static let allSaints = LiturgicalID(rawValue: "all_saints")
+    static let allSaintsOctave3 = LiturgicalID(rawValue: "all_saints_octave_3")
+    static let stCharlesBorromeo = LiturgicalID(rawValue: "st_charles_borromeo")
+    static let stElizabeth = LiturgicalID(rawValue: "st_elizabeth")
+    static let allSaintsOctave6 = LiturgicalID(rawValue: "all_saints_octave_6")
+    static let stWillibrord = LiturgicalID(rawValue: "st_willibrord")
+    static let anglicanSaints = LiturgicalID(rawValue: "anglican_saints")
+    static let stTheodoreMartyr = LiturgicalID(rawValue: "st_theodore_martyr")
+    static let stMartin = LiturgicalID(rawValue: "st_martin")
+    static let stBlaiseTours = LiturgicalID(rawValue: "st_blaise_tours")
+    static let stAlbertGreat = LiturgicalID(rawValue: "st_albert_great")
+    static let stGertrude = LiturgicalID(rawValue: "st_gertrude")
+    static let stHughLincoln = LiturgicalID(rawValue: "st_hugh_lincoln")
+    static let stHildaWhitby = LiturgicalID(rawValue: "st_hilda_whitby")
+    static let stElizabethHungary = LiturgicalID(rawValue: "st_elizabeth_hungary")
+    static let stEdmundKingMartyr = LiturgicalID(rawValue: "st_edmund_king_martyr")
+    static let presentationBvm = LiturgicalID(rawValue: "presentation_bvm")
+    static let stCecilia = LiturgicalID(rawValue: "st_cecilia")
+    static let stClement = LiturgicalID(rawValue: "st_clement")
+    static let stJohnCross = LiturgicalID(rawValue: "st_john_cross")
+    static let stCatherineAlexandria = LiturgicalID(rawValue: "st_catherine_alexandria")
+    static let stSylvesterAbbot = LiturgicalID(rawValue: "st_sylvester_abbot")
+    static let stAndrewVigil = LiturgicalID(rawValue: "st_andrew_vigil")
+    static let stAndrew = LiturgicalID(rawValue: "st_andrew")
+    static let blessedNicholasFerrar = LiturgicalID(rawValue: "blessed_nicholas_ferrar")
+    static let stPeterChrysologus = LiturgicalID(rawValue: "st_peter_chrysologus")
+    static let stFrancisXavier = LiturgicalID(rawValue: "st_francis_xavier")
+    static let stClementAlexandria = LiturgicalID(rawValue: "st_clement_alexandria")
+    static let stSabas = LiturgicalID(rawValue: "st_sabas")
+    static let stNicholas = LiturgicalID(rawValue: "st_nicholas")
+    static let stAmbrose = LiturgicalID(rawValue: "st_ambrose")
+    static let immaculateConception = LiturgicalID(rawValue: "immaculate_conception")
+    static let immaculateConceptionOctave2 = LiturgicalID(rawValue: "immaculate_conception_octave_2")
+    static let immaculateConceptionOctave3 = LiturgicalID(rawValue: "immaculate_conception_octave_3")
+    static let immaculateConceptionOctave4 = LiturgicalID(rawValue: "immaculate_conception_octave_4")
+    static let immaculateConceptionOctave5 = LiturgicalID(rawValue: "immaculate_conception_octave_5")
+    static let stLucy = LiturgicalID(rawValue: "st_lucy")
+    static let immaculateConceptionOctave7 = LiturgicalID(rawValue: "immaculate_conception_octave_7")
+    static let immaculateConceptionOctave8 = LiturgicalID(rawValue: "immaculate_conception_octave_8")
+    static let stThomas = LiturgicalID(rawValue: "st_thomas")
+    static let christmasVigil = LiturgicalID(rawValue: "christmas_vigil")
+    static let stStephen = LiturgicalID(rawValue: "st_stephen")
+    static let stJohnEvangelist = LiturgicalID(rawValue: "st_john_evangelist")
+    static let holyInnocents = LiturgicalID(rawValue: "holy_innocents")
+    static let stThomasBecket = LiturgicalID(rawValue: "st_thomas_becket")
+    static let christmasOctave6 = LiturgicalID(rawValue: "christmas_octave_6")
+    static let stSylvester = LiturgicalID(rawValue: "st_sylvester")
+    static let allSaintsOctave4 = LiturgicalID(rawValue: "all_saints_octave_4")
+    static let allSaintsOctave5 = LiturgicalID(rawValue: "all_saints_octave_5")
+    static let allSaintsOctave7 = LiturgicalID(rawValue: "all_saints_octave_7")
+    static let immaculateConceptionOctave6 = LiturgicalID(rawValue: "immaculate_conception_octave_6")
+    static let christmasOctave2 = LiturgicalID(rawValue: "christmas_octave_2")
+    static let christmasOctave3 = LiturgicalID(rawValue: "christmas_octave_3")
+    static let christmasOctave4 = LiturgicalID(rawValue: "christmas_octave_4")
+    static let christmasOctave5 = LiturgicalID(rawValue: "christmas_octave_5")
+    static let christmasOctave7 = LiturgicalID(rawValue: "christmas_octave_7")
+
+    // MARK: - 一月聖日
+
+    static let stephenOctave8 = LiturgicalID(rawValue: "stephen_octave_8")
+    static let johnOctave8 = LiturgicalID(rawValue: "john_octave_8")
+    static let holyInnocentsOctave8 = LiturgicalID(rawValue: "holy_innocents_octave_8")
+    static let epiphanyOctave2 = LiturgicalID(rawValue: "epiphany_octave_2")
+    static let epiphanyOctave3 = LiturgicalID(rawValue: "epiphany_octave_3")
+    static let epiphanyOctave4 = LiturgicalID(rawValue: "epiphany_octave_4")
+    static let epiphanyOctave5 = LiturgicalID(rawValue: "epiphany_octave_5")
+    static let epiphanyOctave6 = LiturgicalID(rawValue: "epiphany_octave_6")
+    static let epiphanyOctave7 = LiturgicalID(rawValue: "epiphany_octave_7")
+    static let epiphanyOctave8 = LiturgicalID(rawValue: "epiphany_octave_8")
+    static let stHilary = LiturgicalID(rawValue: "st_hilary")
+    static let stPaulHermit = LiturgicalID(rawValue: "st_paul_hermit")
+    static let williamLaud = LiturgicalID(rawValue: "william_laud")
+    static let stAnthonyEgypt = LiturgicalID(rawValue: "st_anthony_egypt")
+    static let stPriscilla = LiturgicalID(rawValue: "st_priscilla")
+    static let stsFabianSebastian = LiturgicalID(rawValue: "sts_fabian_sebastian")
+    static let stAgnes = LiturgicalID(rawValue: "st_agnes")
+    static let stVincent = LiturgicalID(rawValue: "st_vincent")
+    static let stTimothy = LiturgicalID(rawValue: "st_timothy")
+    static let conversionStPaul = LiturgicalID(rawValue: "conversion_st_paul")
+    static let stPolycarp = LiturgicalID(rawValue: "st_polycarp")
+    static let stChrysostom = LiturgicalID(rawValue: "st_chrysostom")
+    static let anglicanEpiscopate = LiturgicalID(rawValue: "anglican_episcopate")
+    static let stFrancisDeSales = LiturgicalID(rawValue: "st_francis_de_sales")
+    static let kingCharlesMartyr = LiturgicalID(rawValue: "king_charles_martyr")
+    static let stJohnBosco = LiturgicalID(rawValue: "st_john_bosco")
+
     // MARK: - 核心直接引用的固定節期
 
     static let circumcision = LiturgicalID(rawValue: "circumcision")
@@ -50,6 +138,12 @@ struct LiturgicalID: RawRepresentable, Codable, Hashable, Sendable {
     static let sacredHeartOctaveSunday = LiturgicalID(rawValue: "sacred_heart_octave_sunday")
     static let sacredHeartOctaveDayEight = LiturgicalID(rawValue: "sacred_heart_octave_day_8")
     static let christTheKing = LiturgicalID(rawValue: "christ_the_king")
+    static let beforeAdventMonday = LiturgicalID(rawValue: "before_advent_monday")
+    static let beforeAdventTuesday = LiturgicalID(rawValue: "before_advent_tuesday")
+    static let beforeAdventWednesday = LiturgicalID(rawValue: "before_advent_wednesday")
+    static let beforeAdventThursday = LiturgicalID(rawValue: "before_advent_thursday")
+    static let beforeAdventFriday = LiturgicalID(rawValue: "before_advent_friday")
+    static let beforeAdventSaturday = LiturgicalID(rawValue: "before_advent_saturday")
     static let sundayBeforeAdvent = LiturgicalID(rawValue: "sunday_before_advent")
     static let barnabas = LiturgicalID(rawValue: "st_barnabas")
     static let stephenOfHungary = LiturgicalID(rawValue: "st_stephen_hungary")
@@ -76,7 +170,35 @@ struct LiturgicalID: RawRepresentable, Codable, Hashable, Sendable {
     static let cosmasAndDamian = LiturgicalID(rawValue: "sts_cosmas_damian")
     static let wenceslaus = LiturgicalID(rawValue: "st_wenceslaus")
     static let michaelAndAllAngels = LiturgicalID(rawValue: "st_michael_all_angels")
+    static let ourLadyOfTheRosary = LiturgicalID(rawValue: "our_lady_rosary")
+    static let simeonAndAnna = LiturgicalID(rawValue: "sts_simeon_anna")
+    static let bridgetOfSweden = LiturgicalID(rawValue: "st_bridget")
+    static let denisAndCompanions = LiturgicalID(rawValue: "sts_denis")
+    static let motherhoodOfMary = LiturgicalID(rawValue: "mother_of_god")
+    static let wilfrid = LiturgicalID(rawValue: "st_wilfrid")
+    static let translationOfEdwardConfessor = LiturgicalID(rawValue: "translation_st_edward_confessor")
+    static let callistus = LiturgicalID(rawValue: "st_callistus")
+    static let ourLadyOfWalsingham = LiturgicalID(rawValue: "our_lady_walsingham")
+    static let teresaOfAvila = LiturgicalID(rawValue: "st_teresa_avila")
+    static let hedwig = LiturgicalID(rawValue: "st_hedwig")
+    static let etheldreda = LiturgicalID(rawValue: "st_etheldreda")
+    static let luke = LiturgicalID(rawValue: "st_luke")
+    static let crispinAndCrispinian = LiturgicalID(rawValue: "sts_crispin_crispinian")
+    static let simonAndJude = LiturgicalID(rawValue: "sts_simon_jude")
+    static let allSaintsVigil = LiturgicalID(rawValue: "all_saints_vigil")
+    static let simonAndJudeVigil = LiturgicalID(rawValue: "sts_simon_jude_vigil")
+    static let hilarion = LiturgicalID(rawValue: "st_hilarion")
+    static let ursulaAndCompanions = LiturgicalID(rawValue: "sts_ursula_and_companions")
+    static let newGuineaMartyrs = LiturgicalID(rawValue: "new_guinea_martyrs")
+    static let raphael = LiturgicalID(rawValue: "st_raphael")
+    static let frideswide = LiturgicalID(rawValue: "st_frideswide")
+    static let bruno = LiturgicalID(rawValue: "st_bruno")
+    static let placidus = LiturgicalID(rawValue: "st_placid")
+    static let francisOfAssisi = LiturgicalID(rawValue: "st_francis_assisi")
+    static let thereseOfLisieux = LiturgicalID(rawValue: "st_therese_of_lisieux")
     static let jerome = LiturgicalID(rawValue: "st_jerome")
+    static let allSouls = LiturgicalID(rawValue: "all_souls")
+    static let saturdayOfficeOfOurLady = LiturgicalID(rawValue: "saturday_office_of_our_lady")
 
     /// 尚未完成正式編碼的舊資料使用此命名空間過渡。
     /// 這只是相容層；業務規則不可新增對 `legacy.*` 的依賴。
@@ -112,7 +234,142 @@ struct LiturgicalID: RawRepresentable, Codable, Hashable, Sendable {
             return title
         }()
 
+        if baseTitle == "禮拜六特敬聖母" {
+            return .saturdayOfficeOfOurLady
+        }
+
         let exact: [String: LiturgicalID] = [
+            "聖司提反日八日慶期第八日": .stephenOctave8,
+            "聖司提反八日慶期第八日": .stephenOctave8,
+            "聖約翰日八日慶期第八日": .johnOctave8,
+            "傳福音使徒聖約翰八日慶期第八日": .johnOctave8,
+            "嬰孩被殺日八日慶期第八日": .holyInnocentsOctave8,
+            "嬰孩被殺八日慶期第八日": .holyInnocentsOctave8,
+            "顯現望日": .epiphanyVigil,
+            "救主顯現日": .epiphany,
+            "顯現日八日慶期第二日": .epiphanyOctave2,
+            "顯現八日慶期第二日": .epiphanyOctave2,
+            "顯現八日慶期第三日": .epiphanyOctave3,
+            "顯現日八日慶期第三日": .epiphanyOctave3,
+            "顯現八日慶期第四日": .epiphanyOctave4,
+            "顯現日八日慶期第四日": .epiphanyOctave4,
+            "顯現八日慶期第五日": .epiphanyOctave5,
+            "顯現日八日慶期第五日": .epiphanyOctave5,
+            "顯現八日慶期第六日": .epiphanyOctave6,
+            "顯現日八日慶期第六日": .epiphanyOctave6,
+            "顯現八日慶期第七日": .epiphanyOctave7,
+            "顯現日八日慶期第七日": .epiphanyOctave7,
+            "顯現日八日慶期第八日": .epiphanyOctave8,
+            "教會聖師、精修者聖希拉里主教": .stHilary,
+            "教會聖師聖希拉里主教": .stHilary,
+            "首位隱修士聖保羅": .stPaulHermit,
+            "殉道者真福威廉·勞德主教": .williamLaud,
+            "真福威廉·勞德主教": .williamLaud,
+            "聖安東尼院長": .stAnthonyEgypt,
+            "殉道童貞女聖百基拉": .stPriscilla,
+            "殉道者聖法比盎和聖塞巴斯蒂安": .stsFabianSebastian,
+            "殉道者聖法比盎和聖巴斯弟盎": .stsFabianSebastian,
+            "殉道童貞女聖雅妮": .stAgnes,
+            "殉道童貞女聖阿格妮絲": .stAgnes,
+            "真福殉道者聖文森與聖阿納斯塔修": .stVincent,
+            "殉道者聖文生": .stVincent,
+            "殉道者聖文森與聖阿納斯塔修": .stVincent,
+            "聖梯摩太主教": .stTimothy,
+            "殉道者聖提摩太主教": .stTimothy,
+            "使徒聖保羅受感化日": .conversionStPaul,
+            "殉道者聖坡旅甲主教": .stPolycarp,
+            "聖波利卡主教": .stPolycarp,
+            "教會聖師聖金口約翰": .stChrysostom,
+            "教會聖師、精修者金口聖約翰主教": .stChrysostom,
+            "授予安立甘公教會主教聖品": .anglicanEpiscopate,
+            "聖方濟各·沙雷氏主教": .stFrancisDeSales,
+            "教會聖師、精修者聖法蘭西斯·沙雷士主教": .stFrancisDeSales,
+            "真福殉道聖王查理·斯圖亞特": .kingCharlesMartyr,
+            "殉道王查理": .kingCharlesMartyr,
+            "聖約翰·鮑思高": .stJohnBosco,
+            "聖若望·鮑思高": .stJohnBosco,
+            "諸聖日": .allSaints,
+            "諸靈日": .allSouls,
+            "諸聖八日慶期第三日": .allSaintsOctave3,
+            "聖卡洛·博羅梅奧主教": .stCharlesBorromeo,
+            "聖伊麗莎白": .stElizabeth,
+            "諸聖八日慶期第六日": .allSaintsOctave6,
+            "聖威利布羅德主教": .stWillibrord,
+            "聖威利布羅德": .stWillibrord,
+            "安立甘諸聖": .anglicanSaints,
+            "聖西奧多": .stTheodoreMartyr,
+            "聖馬丁": .stMartin,
+            "聖馬丁主教": .stMartin,
+            "圖爾的聖布萊斯": .stBlaiseTours,
+            "圖爾的聖布萊斯主教": .stBlaiseTours,
+            "教會聖師大聖阿爾伯特主教": .stAlbertGreat,
+            "童貞女聖格特魯德": .stGertrude,
+            "倫斯特的聖胡格主教": .stHughLincoln,
+            "惠特比的聖希爾達院長": .stHildaWhitby,
+            "匈牙利的聖伊麗莎白": .stElizabethHungary,
+            "匈牙利的聖婦伊麗莎白女王": .stElizabethHungary,
+            "殉道聖王埃德蒙": .stEdmundKingMartyr,
+            "榮福童貞馬利亞奉獻日": .presentationBvm,
+            "殉道童貞女聖塞西莉亞": .stCecilia,
+            "羅馬的聖革利免": .stClement,
+            "羅馬的聖克萊門特主教": .stClement,
+            "十架聖約翰": .stJohnCross,
+            "殉道童貞女亞歷山大的聖凱瑟琳": .stCatherineAlexandria,
+            "亞歷山大的聖凱瑟琳": .stCatherineAlexandria,
+            "聖西爾維斯特院長": .stSylvesterAbbot,
+            "聖西爾維斯特": .stSylvesterAbbot,
+            "使徒聖安得烈望日": .stAndrewVigil,
+            "使徒聖安德烈望日": .stAndrewVigil,
+            "使徒聖安得烈日": .stAndrew,
+            "使徒聖安德烈日": .stAndrew,
+            "真福尼古拉·費拉爾執事": .blessedNicholasFerrar,
+            "真福尼古拉·費拉爾": .blessedNicholasFerrar,
+            "教會聖師、金言聖彼得主教": .stPeterChrysologus,
+            "金言聖彼得主教": .stPeterChrysologus,
+            "聖法蘭西斯·沙勿略": .stFrancisXavier,
+            "亞歷山大的聖革利免": .stClementAlexandria,
+            "聖薩巴斯": .stSabas,
+            "聖薩巴斯院長": .stSabas,
+            "聖尼古拉斯主教": .stNicholas,
+            "精修者聖尼古拉斯主教": .stNicholas,
+            "聖安波羅修": .stAmbrose,
+            "聖安波羅修主教": .stAmbrose,
+            "榮福童貞馬利亞始胎日": .immaculateConception,
+            "榮福童貞馬利亞始胎八日慶期第二日": .immaculateConceptionOctave2,
+            "榮福童貞馬利亞始胎八日慶期第三日": .immaculateConceptionOctave3,
+            "榮福童貞馬利亞始胎八日慶期第四日": .immaculateConceptionOctave4,
+            "榮福童貞馬利亞始胎八日慶期第五日": .immaculateConceptionOctave5,
+            "殉道童貞女聖露西": .stLucy,
+            "榮福童貞馬利亞始胎八日慶期第七日": .immaculateConceptionOctave7,
+            "榮福童貞馬利亞始胎八日慶期第八日": .immaculateConceptionOctave8,
+            "使徒聖多馬日": .stThomas,
+            "聖誕望日": .christmasVigil,
+            "救主聖誕日": .christmasDay,
+            "聖司提反日": .stStephen,
+            "殉道會吏聖司提反日": .stStephen,
+            "傳福音使徒聖約翰日": .stJohnEvangelist,
+            "嬰孩被殺日": .holyInnocents,
+            "坎特伯雷的聖托馬斯大主教": .stThomasBecket,
+            "坎特伯雷的聖托馬斯主教": .stThomasBecket,
+            "聖誕日八日慶期第六日": .christmasOctave6,
+            "聖誕八日慶期第六日": .christmasOctave6,
+            "聖誕日八日慶期第6日": .christmasOctave6,
+            "聖西爾維斯特主教": .stSylvester,
+            "諸聖日八日慶期第四日": .allSaintsOctave4,
+            "諸聖八日慶期第五日": .allSaintsOctave5,
+            "諸聖八日慶期第七日": .allSaintsOctave7,
+            "榮福童貞馬利亞始胎八日慶期第六日": .immaculateConceptionOctave6,
+            "聖誕日八日慶期第二日": .christmasOctave2,
+            "聖誕日八日慶期第2日": .christmasOctave2,
+            "聖誕日八日慶期第三日": .christmasOctave3,
+            "聖誕日八日慶期第3日": .christmasOctave3,
+            "聖誕日八日慶期第四日": .christmasOctave4,
+            "聖誕日八日慶期第4日": .christmasOctave4,
+            "聖誕日八日慶期第五日": .christmasOctave5,
+            "聖誕日八日慶期第5日": .christmasOctave5,
+            "聖誕日八日慶期第七日": .christmasOctave7,
+            "聖誕日八日慶期第7日": .christmasOctave7,
+            "諸聖八日慶期第四日": .allSaintsOctave4,
             "救主受割禮日": .circumcision,
             "顯現日": .epiphany,
             "救主顯現望日": .epiphanyVigil,
@@ -148,6 +405,12 @@ struct LiturgicalID: RawRepresentable, Codable, Hashable, Sendable {
             "三一主日後第二主日": .sacredHeartOctaveSunday,
             "耶穌聖心節八日慶期第八日": .sacredHeartOctaveDayEight,
             "基督君王節": .christTheKing,
+            "降臨前主日禮拜一": .beforeAdventMonday,
+            "降臨前主日禮拜二": .beforeAdventTuesday,
+            "降臨前主日禮拜三": .beforeAdventWednesday,
+            "降臨前主日禮拜四": .beforeAdventThursday,
+            "降臨前主日禮拜五": .beforeAdventFriday,
+            "降臨前主日禮拜六": .beforeAdventSaturday,
             "降臨前主日": .sundayBeforeAdvent,
             "使徒聖巴拿巴日": .barnabas,
             "匈牙利的聖王聖司提反": .stephenOfHungary,
@@ -174,6 +437,35 @@ struct LiturgicalID: RawRepresentable, Codable, Hashable, Sendable {
             "殉道者聖科斯馬斯和聖達米盎": .cosmasAndDamian,
             "殉道者聖瓦茨拉夫": .wenceslaus,
             "聖米迦勒和諸天使日": .michaelAndAllAngels,
+            "聖母玫瑰": .ourLadyOfTheRosary,
+            "聖西面與聖亞拿": .simeonAndAnna,
+            "聖婦彼濟達": .bridgetOfSweden,
+            "聖彼濟達": .bridgetOfSweden,
+            "聖丹尼斯、聖魯斯蒂克斯和聖愛德雷": .denisAndCompanions,
+            "上帝之母榮福童貞馬利亞": .motherhoodOfMary,
+            "聖威爾弗里德主教": .wilfrid,
+            "敬遷聖王愛德華之聖髑": .translationOfEdwardConfessor,
+            "殉道者聖卡利斯托主教": .callistus,
+            "聖卡利斯圖斯一世": .callistus,
+            "沃爾辛厄姆聖母": .ourLadyOfWalsingham,
+            "阿維拉的聖德蘭": .teresaOfAvila,
+            "聖婦海德薇": .hedwig,
+            "童貞女聖埃塞爾麗達": .etheldreda,
+            "傳福音的使徒聖路加": .luke,
+            "聖克里斯賓與聖克里斯毗尼安": .crispinAndCrispinian,
+            "使徒聖西門與聖猶大日": .simonAndJude,
+            "諸聖望日": .allSaintsVigil,
+            "使徒聖西門與聖猶大望日": .simonAndJudeVigil,
+            "聖希拉里昂院長": .hilarion,
+            "聖厄休拉及其同伴": .ursulaAndCompanions,
+            "新幾內亞殉道諸聖": .newGuineaMartyrs,
+            "天使長聖拉法勒": .raphael,
+            "聖佛萊茲維德": .frideswide,
+            "聖布魯諾": .bruno,
+            "殉道者聖普拉西": .placidus,
+            "聖普拉西及同伴": .placidus,
+            "阿西西的聖法蘭西斯": .francisOfAssisi,
+            "童貞女嬰孩耶穌聖德蘭": .thereseOfLisieux,
             "教會聖師、精修者聖耶柔米": .jerome
         ]
 

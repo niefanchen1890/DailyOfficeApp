@@ -1,0 +1,37 @@
+{
+  "identifier": "temporal.trinity.week.19.weekday.7",
+  "temporal": {
+    "season": "trinity",
+    "week": 19,
+    "weekday": 7
+  },
+  "traits": {
+    "themes": []
+  },
+  "name": {
+    "zh-hant": "三一主日後第十九主日禮拜六",
+    "zh-hans": "三一主日后第十九主日礼拜六",
+    "en": ""
+  },
+  "rank": "feria",
+  "rank_display": {
+    "zh-hant": "（普通平日）",
+    "zh-hans": "（普通平日）",
+    "en": ""
+  },
+  "type": "temporal",
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "三一主日後第十九主日禮拜六",
+        "zh-hans": "三一主日后第十九主日礼拜六",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝阿，我們若是與主離開，就不能蒙主的喜悅。求主施憐憫，賜聖靈與我們，凡事引導指教我們的心。這都是靠著我主耶穌基督。阿們。",
+        "zh-hans": "上帝阿，我们若是与主离开，就不能蒙主的喜悦。求主施怜悯，赐圣灵与我们，凡事引导指教我们的心。这都是靠着我主耶稣基督。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

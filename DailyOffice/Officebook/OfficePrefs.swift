@@ -13,6 +13,7 @@ enum OfficePrefs {
         static let absolutionVersion  = "officePref.absolutionVersion"
         static let preparatoryOption  = "officePref.preparatoryOption"
         static let prayerResponse     = "officePref.prayerResponse"
+        static let afterOfficePrayerOption = "officePref.afterOfficePrayerOption"
         static let stPatrickOption    = "officePref.stPatrickOption"
         static let generalPrayerOption = "officePref.generalPrayerOption"
         static let lectionaryYear     = "officePref.lectionaryYear"

@@ -6,6 +6,33 @@ struct PsalmCycle: Codable {
     let evening: [String: [String]]
 }
 
+/// 兩週循環的原始篇目表；星期 0 為主日，6 為禮拜六。
+struct FortnightlyPsalmCycle: Decodable {
+    static let option = "fortnightly_a"
+    static let optionB = "fortnightly_b"
+    let morning: [String: [String: [String]]]
+    let evening: [String: [String: [String]]]
+
+    /// 公曆年內週次：主日起算，包含元旦的部分週為第一週。
+    /// 自行計算以避免十二月底被 Calendar.weekOfYear 算入翌年第一週。
+    static func position(for date: Date, timeZone: TimeZone = .current) -> (week: Int, weekday: Int) {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = timeZone
+        let year = calendar.component(.year, from: date)
+        let firstDay = calendar.date(from: DateComponents(year: year, month: 1, day: 1))!
+        let dayIndex = calendar.ordinality(of: .day, in: .year, for: date)! - 1
+        let firstWeekday = calendar.component(.weekday, from: firstDay) - 1
+        let annualWeek = (dayIndex + firstWeekday) / 7 + 1
+        return (annualWeek.isMultiple(of: 2) ? 2 : 1, calendar.component(.weekday, from: date) - 1)
+    }
+
+    func keys(week: Int, weekday: Int, isMorning: Bool) -> [String] {
+        guard (1...2).contains(week), (0...6).contains(weekday) else { return [] }
+        let office = isMorning ? morning : evening
+        return office["week_\(week)"]?[String(weekday)] ?? []
+    }
+}
+
 // MARK: - 🌟 詩篇多語言資料模型 (增強容錯版)
 struct PsalmDBEntry: Codable {
     // 全面改為可選型別 (Optional)，防止單一欄位缺失導致整個 JSON 解析失敗
@@ -56,9 +83,31 @@ struct PsalmsLoader {
     static let shared = PsalmsLoader()
     
     private let cycle: PsalmCycle
+    private let fortnightlyCycle: FortnightlyPsalmCycle?
+    private let fortnightlyB: [String: [String: [String: [String]]]]
     private let db: [String: PsalmDBEntry]
     
     init() {
+        do {
+            guard let url = Bundle.main.url(forResource: "psalm_cycle_fortnightly_b", withExtension: "json") else {
+                throw CocoaError(.fileNoSuchFile)
+            }
+            fortnightlyB = try JSONDecoder().decode([String: [String: [String: [String]]]].self, from: Data(contentsOf: url))
+        } catch {
+            AppLog.error("❌ [詩篇] 兩週循環B載入失敗：\(error)")
+            fortnightlyB = [:]
+        }
+        if let url = Bundle.main.url(forResource: "psalm_cycle_fortnightly_1", withExtension: "json") {
+            do {
+                fortnightlyCycle = try JSONDecoder().decode(FortnightlyPsalmCycle.self, from: Data(contentsOf: url))
+            } catch {
+                AppLog.error("❌ [詩篇] 兩週循環一載入失敗：\(error)")
+                fortnightlyCycle = nil
+            }
+        } else {
+            AppLog.error("❌ [詩篇] 找不到 psalm_cycle_fortnightly_1.json")
+            fortnightlyCycle = nil
+        }
         // 1. 載入循環索引 (psalm_cycle.json)
         if let cycleURL = Bundle.main.url(forResource: "psalm_cycle", withExtension: "json"),
            let cycleData = try? Data(contentsOf: cycleURL),
@@ -144,6 +193,32 @@ struct PsalmsLoader {
     }
     
     // MARK: - 專用詩篇讀取
+    func fortnightlyBKeys(for date: Date, hour: String) -> [String] {
+        let position = FortnightlyPsalmCycle.position(for: date)
+        return fortnightlyB[hour]?["week_\(position.week)"]?[String(position.weekday)] ?? []
+    }
+
+    func fortnightlyBPsalms(for date: Date, hour: String) -> [(title: String, content: PsalmContent)] {
+        fortnightlyBKeys(for: date, hour: hour).compactMap { key in
+            guard let content = resolveEntry(key: key) else { return nil }
+            return (content.title, content)
+        }
+    }
+
+    func fortnightlyPsalms(for date: Date, isMorning: Bool) -> [(title: String, content: PsalmContent)] {
+        let position = FortnightlyPsalmCycle.position(for: date)
+        return fortnightlyPsalms(week: position.week, weekday: position.weekday, isMorning: isMorning)
+    }
+
+    /// 依明確指定的週次讀取，保留表內順序及詩篇 119 的獨立分段。
+    func fortnightlyPsalms(week: Int, weekday: Int, isMorning: Bool) -> [(title: String, content: PsalmContent)] {
+        let keys = fortnightlyCycle?.keys(week: week, weekday: weekday, isMorning: isMorning) ?? []
+        return keys.compactMap { key in
+            guard let content = resolveEntry(key: key) else { return nil }
+            return (content.title, content)
+        }
+    }
+
     func psalm(
         number: String,
         verses: String? = nil

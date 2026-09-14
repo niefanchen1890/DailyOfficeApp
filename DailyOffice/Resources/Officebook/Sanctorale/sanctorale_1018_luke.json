@@ -1,0 +1,167 @@
+{
+  "identifier": "st_luke",
+  "name": {
+    "zh-hant": "傳福音的使徒聖路加",
+    "zh-hans": "传福音的使徒圣路加",
+    "en": "Saint Luke, Evangelist"
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "zh-hant": "（二等複式）",
+    "zh-hans": "（二等复式）",
+    "en": "Double of the Second Class"
+  },
+  "type": "sanctorale",
+  "common_office": "common_evangelist_outside_easter",
+  "vigil": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "傳福音的使徒聖路加",
+          "zh-hans": "传福音的使徒圣路加",
+          "en": "Saint Luke, Evangelist"
+        },
+        "text": {
+          "zh-hant": "全能的上帝、主曾感動主的僕人醫生聖路加、將主聖子的慈愛和醫病的能力、在福音中彰顯出來。求主在主的教會里、照樣彰顯主的大能大愛、醫治我們的身體和靈魂。這都是靠著主的聖子、我主耶穌基督。阿們。",
+          "zh-hans": "全能的上帝、主曾感动主的仆人医生圣路加、将主圣子的慈爱和医病的能力、在福音中彰显出来。求主在主的教会里、照样彰显主的大能大爱、医治我们的身体和灵魂。这都是靠着主的圣子、我主耶稣基督。阿们。",
+          "en": "ALMIGHTY God, who didst inspire thy servant Saint Luke the Physician, to set forth in the Gospel the love and healing power of thy Son; Manifest in thy Church the like power and love, to the healing of our bodies and our souls; through the same thy Son Jesus Christ our Lord. Amen."
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文（1662）",
+          "zh-hans": "另一祝文（1662）",
+          "en": "Collect of 1662"
+        },
+        "title": {
+          "zh-hant": "傳福音的使徒聖路加",
+          "zh-hans": "传福音的使徒圣路加",
+          "en": "Saint Luke, Evangelist"
+        },
+        "text": {
+          "zh-hant": "全能上帝，曾將因福音得名的醫生路加召來著述福音，並爲治人性靈上疾病的醫生；但願主使我們一切性靈上的疾病，都被他所傳如同良藥的道理醫好。這都是靠著聖子我主耶穌基督的功勞。阿們。",
+          "zh-hans": "全能上帝，曾将因福音得名的医生路加召来著述福音，并为治人性灵上疾病的医生；但愿主使我们一切性灵上的疾病，都被他所传如同良药的道理医好。这都是靠着圣子我主耶稣基督的功劳。阿们。",
+          "en": "ALMIGHTY God, who calledst Luke the Physician, whose praise is in the Gospel, to be an Evangelist, and Physician of the soul: May it please thee, that, by the wholesome medicines of the doctrine delivered by him, all the diseases of our souls may be healed; through the merits of thy Son Jesus Christ our Lord. Amen."
+        }
+      }
+    ],
+    "office_hymn": {
+      "title": "萬世之君我主耶穌",
+      "verses": [
+        {
+          "zh-hant": "一、萬世之君慈悲耶穌，\n因主摯愛聖者功勳；\n我等重罪俯伏主前，\n藉其榮福代求蒙赦。",
+          "zh-hans": "一、万世之君慈悲耶稣，\n因主挚爱圣者功勋；\n我等重罪俯伏主前，\n藉其荣福代求蒙赦.",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、慈悲救主保守善工，\n聖容光輝作為印記。\n莫讓邪靈詭計撕裂，\n主的聖死所贖之人。",
+          "zh-hans": "二、慈悲救主保守善工，\n圣容光辉作为印记.\n莫让邪灵诡计撕裂，\n主的圣死所赎之人.",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、求主憐憫被囚之僕，\n赦免罪人釋放囚徒，\n以主寶血重價贖回，\n在天與主同享喜樂。",
+          "zh-hans": "三、求主悯怜被囚之仆，\n赦免罪人释放囚徒，\n以主宝血重价赎回，\n在天与主同享喜乐.",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、永享榮耀尊貴權柄，\n耶穌基督萬世之主，\n聖父聖靈為一上帝，\n治理萬世永世無盡。阿們。",
+          "zh-hans": "四、永享荣耀尊贵权柄，\n耶稣基督万世之主，\n圣父圣灵为一上帝，\n治理万世永世无尽。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "他們的聲音傳遍天下。",
+          "zh-hans": "他们的声音传遍天下.",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "他們的言語傳到地極。",
+          "zh-hans": "他们的语言传到地极.",
+          "en": ""
+        }
+      }
+    }
+  },
+  "morning": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "傳福音的使徒聖路加",
+          "zh-hans": "传福音的使徒圣路加",
+          "en": "Saint Luke, Evangelist"
+        },
+        "text": {
+          "zh-hant": "全能的上帝、主曾感動主的僕人醫生聖路加、將主聖子的慈愛和醫病的能力、在福音中彰顯出來。求主在主的教會里、照樣彰顯主的大能大愛、醫治我們的身體和靈魂。這都是靠著主的聖子、我主耶穌基督。阿們。",
+          "zh-hans": "全能的上帝、主曾感动主的仆人医生圣路加、将主圣子的慈爱和医病的能力、在福音中彰显出来。求主在主的教会里、照样彰显主的大能大爱、医治我们的身体和灵魂。这都是靠着主的圣子、我主耶稣基督。阿们。",
+          "en": "ALMIGHTY God, who didst inspire thy servant Saint Luke the Physician, to set forth in the Gospel the love and healing power of thy Son; Manifest in thy Church the like power and love, to the healing of our bodies and our souls; through the same thy Son Jesus Christ our Lord. Amen."
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文（1662）",
+          "zh-hans": "另一祝文（1662）",
+          "en": "Collect of 1662"
+        },
+        "title": {
+          "zh-hant": "傳福音的使徒聖路加",
+          "zh-hans": "传福音的使徒圣路加",
+          "en": "Saint Luke, Evangelist"
+        },
+        "text": {
+          "zh-hant": "全能上帝，曾將因福音得名的醫生路加召來著述福音，並爲治人性靈上疾病的醫生；但願主使我們一切性靈上的疾病，都被他所傳如同良藥的道理醫好。這都是靠著聖子我主耶穌基督的功勞。阿們。",
+          "zh-hans": "全能上帝，曾将因福音得名的医生路加召来著述福音，并为治人性灵上疾病的医生；但愿主使我们一切性灵上的疾病，都被他所传如同良药的道理医好。这都是靠着圣子我主耶稣基督的功劳。阿们。",
+          "en": "ALMIGHTY God, who calledst Luke the Physician, whose praise is in the Gospel, to be an Evangelist, and Physician of the soul: May it please thee, that, by the wholesome medicines of the doctrine delivered by him, all the diseases of our souls may be healed; through the merits of thy Son Jesus Christ our Lord. Amen."
+        }
+      }
+    ]
+  },
+  "evening": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "傳福音的使徒聖路加",
+          "zh-hans": "传福音的使徒圣路加",
+          "en": "Saint Luke, Evangelist"
+        },
+        "text": {
+          "zh-hant": "全能的上帝、主曾感動主的僕人醫生聖路加、將主聖子的慈愛和醫病的能力、在福音中彰顯出來。求主在主的教會里、照樣彰顯主的大能大愛、醫治我們的身體和靈魂。這都是靠著主的聖子、我主耶穌基督。阿們。",
+          "zh-hans": "全能的上帝、主曾感动主的仆人医生圣路加、将主圣子的慈爱和医病的能力、在福音中彰显出来。求主在主的教会里、照样彰显主的大能大爱、医治我们的身体和灵魂。这都是靠着主的圣子、我主耶稣基督。阿们。",
+          "en": "ALMIGHTY God, who didst inspire thy servant Saint Luke the Physician, to set forth in the Gospel the love and healing power of thy Son; Manifest in thy Church the like power and love, to the healing of our bodies and our souls; through the same thy Son Jesus Christ our Lord. Amen."
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文（1662）",
+          "zh-hans": "另一祝文（1662）",
+          "en": "Collect of 1662"
+        },
+        "title": {
+          "zh-hant": "傳福音的使徒聖路加",
+          "zh-hans": "传福音的使徒圣路加",
+          "en": "Saint Luke, Evangelist"
+        },
+        "text": {
+          "zh-hant": "全能上帝，曾將因福音得名的醫生路加召來著述福音，並爲治人性靈上疾病的醫生；但願主使我們一切性靈上的疾病，都被他所傳如同良藥的道理醫好。這都是靠著聖子我主耶穌基督的功勞。阿們。",
+          "zh-hans": "全能上帝，曾将因福音得名的医生路加召来著述福音，并为治人性灵上疾病的医生；但愿主使我们一切性灵上的疾病，都被他所传如同良药的道理医好。这都是靠着圣子我主耶稣基督的功劳。阿们。",
+          "en": "ALMIGHTY God, who calledst Luke the Physician, whose praise is in the Gospel, to be an Evangelist, and Physician of the soul: May it please thee, that, by the wholesome medicines of the doctrine delivered by him, all the diseases of our souls may be healed; through the merits of thy Son Jesus Christ our Lord. Amen."
+        }
+      }
+    ]
+  }
+}

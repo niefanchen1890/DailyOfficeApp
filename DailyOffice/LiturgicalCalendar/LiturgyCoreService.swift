@@ -128,6 +128,7 @@ class LiturgyCoreService {
     private let firstVespersResolver = FirstVespersResolver()
     private let precedenceResolver = LiturgicalPrecedenceResolver()
     private let transferResolver = LiturgicalTransferResolver()
+    private let saturdayOfficeResolver = SaturdayOfficeOfOurLadyResolver()
     
     init() {}
 
@@ -326,7 +327,9 @@ class LiturgyCoreService {
         let isTodayVigil = firstVespersResolver.isVigil(today)
         
         // 規則1：望日沒有晚禱，直接進入明天
-        if isTodayVigil {
+        if tomorrow.identifier == .epiphanyVigil {
+            useTomorrow = true
+        } else if isTodayVigil {
             useTomorrow = true
         }
         // 規則2：明天有資格舉行前夕晚禱，且（rank更高 或 同級但明天優先）
@@ -641,7 +644,8 @@ class LiturgyCoreService {
         let targetDate = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: date)!
         
         let temporal = getTemporalDay(for: targetDate)
-        let allFeasts = sanctorale.getFeasts(for: targetDate)   // 🌟 改為數組
+        let feastTransfer = sanctorale.transferResolution(for: targetDate)
+        let allFeasts = feastTransfer.observed
         //  let feast = allFeasts.sorted { $0.rank > $1.rank }.first
         
         let year = calendar.component(.year, from: targetDate)
@@ -657,7 +661,7 @@ class LiturgyCoreService {
         if let implicit = temporal.implicitCommemoration, !implicit.isEmpty {
             commemorations.append(implicit)
         }
-        var transferred: [String] = []
+        var transferred: [String] = feastTransfer.deferred.map(\.name)
         
         // 提取所有聖日名稱中括號內的紀念事項
         // 🌟 統一去掉「紀念」前綴：commemorations 陣列只存乾淨名稱（如「施洗聖約翰誕辰日八日慶期第五日」），
@@ -665,6 +669,11 @@ class LiturgyCoreService {
         var cleanFeasts: [Feast] = []
         var parentheticalCommemorations: [LiturgicalCommemoration] = []
         for var f in allFeasts {
+            for memorial in LiturgicalRuleTable.morningAndFirstVespersMemorials[f.identifier] ?? [] {
+                if !parentheticalCommemorations.contains(where: { $0.identifier == memorial.identifier }) {
+                    parentheticalCommemorations.append(memorial)
+                }
+            }
             let bracketPairs = [(" (", ")"), ("（", "）")]
             for (open, close) in bracketPairs {
                 if let openRange = f.name.range(of: open) {
@@ -708,6 +717,40 @@ class LiturgyCoreService {
         }
         
         let cleanFeast = cleanFeasts.sorted { $0.rank > $1.rank }.first
+
+        // ═══════════════════════════════════════════════════════
+        // MARK: - 禮拜六特敬聖母
+        // 普通合資格禮拜六：特敬聖母勝出；簡式慶日降為紀念。
+        // 半複式以上、望日、齋期、大平日、八日慶期及禁用季節均不舉行。
+        let saturdayOfficeResolution = saturdayOfficeResolver.resolve(
+            weekday: calendar.component(.weekday, from: targetDate),
+            season: currentSeason,
+            temporalRank: temporal.rank,
+            temporalTraits: temporal.traits,
+            feastRanks: cleanFeasts.map(\.rank),
+            hasVigil: cleanFeasts.contains(where: { $0.traits.isVigil })
+        )
+
+        if saturdayOfficeResolution != .notObserved {
+            for feast in cleanFeasts where feast.rank <= .simple {
+                if !commemorations.contains(feast.name) {
+                    commemorations.append(feast: feast)
+                }
+            }
+
+            return DailyLiturgy(
+                identifier: .saturdayOfficeOfOurLady,
+                traits: LiturgicalTraits(themes: [.blessedVirginMary]),
+                mainTitle: "禮拜六特敬聖母",
+                color: "white",
+                rank: .saturdayOfficeBVM,
+                rankName: LiturgicalRank.saturdayOfficeBVM.displayName,
+                season: currentSeason,
+                commemorations: commemorations,
+                transferred: transferred,
+                parentheticalCommemorations: parentheticalCommemorations
+            )
+        }
         
         // ═══════════════════════════════════════════════════════
         // MARK: - 特殊規則攔截：聖誕期（聖誕後主日 + 八日慶期）
@@ -799,7 +842,7 @@ class LiturgyCoreService {
                     mainTitle: feast.name,
                     color: getFeastColor(traits: feast.traits) ?? "white",
                     rank: feast.rank,
-                    rankName: feast.rank.displayName,
+                    rankName: feast.rankName,
                     season: currentSeason,
                     commemorations: comms,
                     transferred: [],
@@ -858,7 +901,7 @@ class LiturgyCoreService {
                 if feast.rank != .simple {
                     currentTitle = feast.name
                     currentRank = feast.rank
-                    currentRankName = feast.rank.displayName
+                    currentRankName = feast.rankName
                     currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                     commemorations.append(temporal: temporal)
                     commemorations.append(rogationTitle)
@@ -930,7 +973,7 @@ class LiturgyCoreService {
                     // 半複式及以上：慶祝慶節
                     currentTitle = feast.name
                     currentRank = feast.rank
-                    currentRankName = feast.rank.displayName
+                    currentRankName = feast.rankName
                     currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                     
                     // 一等、二等複式：省略紀念平日
@@ -961,13 +1004,13 @@ class LiturgyCoreService {
                     // 一等複式(100)、二等複式(90)：慶祝慶節，不紀念三一主日後禮拜X
                     currentTitle = feast.name
                     currentRank = feast.rank
-                    currentRankName = feast.rank.displayName
+                    currentRankName = feast.rankName
                     currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                 } else if feast.rank >= .semiDouble {
                     // 半複式(66)、複式(75)、大複式(81)：慶祝慶節，紀念三一主日後禮拜X
                     currentTitle = feast.name
                     currentRank = feast.rank
-                    currentRankName = feast.rank.displayName
+                    currentRankName = feast.rankName
                     currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                     commemorations.append(temporal: temporal)
                 } else {
@@ -1002,7 +1045,7 @@ class LiturgyCoreService {
                         if f.rank >= .doubleSecondClass {
                             currentTitle = cleanName
                             currentRank = f.rank
-                            currentRankName = f.rank.displayName
+                            currentRankName = f.rankName
                             currentColor = getFeastColor(traits: f.traits) ?? "white"
                         } else if f.rank >= .semiDouble {
                             // 半複式及以上但低於二等複式：慶祝聖巴拿巴日，原temporal降為紀念
@@ -1011,7 +1054,7 @@ class LiturgyCoreService {
                             }
                             currentTitle = cleanName
                             currentRank = f.rank
-                            currentRankName = f.rank.displayName
+                            currentRankName = f.rankName
                             currentColor = getFeastColor(traits: f.traits) ?? "white"
                         } else {
                             // 簡式及以下：慶祝三一主日後禮拜一，紀念聖巴拿巴日
@@ -1047,7 +1090,7 @@ class LiturgyCoreService {
                 // 聖日勝出，慶祝聖日
                 currentTitle = feast.name
                 currentRank = feast.rank
-                currentRankName = feast.rank.displayName
+                currentRankName = feast.rankName
                 currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                 commemorations.append(temporal: temporal)
                 
@@ -1070,7 +1113,7 @@ class LiturgyCoreService {
                 // 聖日勝出，慶祝聖日
                 currentTitle = feast.name
                 currentRank = feast.rank
-                currentRankName = feast.rank.displayName
+                currentRankName = feast.rankName
                 currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                 // 紀念：耶穌聖心節八日慶期內禮拜X
                 commemorations.append(temporal: temporal)
@@ -1096,7 +1139,7 @@ class LiturgyCoreService {
                     // 半複式及以上：慶祝慶節，紀念秋季齋期
                     currentTitle = feast.name
                     currentRank = feast.rank
-                    currentRankName = feast.rank.displayName
+                    currentRankName = feast.rankName
                     currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                     currentTraits = feast.traits.preservingContext(from: temporal.traits)
                     if !commemorations.contains(temporal.title) {
@@ -1167,7 +1210,7 @@ class LiturgyCoreService {
                 if feast.rank >= .doubleSecondClass {
                     currentTitle = feast.name
                     currentRank = feast.rank
-                    currentRankName = feast.rank.displayName
+                    currentRankName = feast.rankName
                     currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                     commemorations.append(temporal: temporal)
                 } else {
@@ -1177,7 +1220,7 @@ class LiturgyCoreService {
             else if feast.rank > temporal.rank {
                 currentTitle = feast.name
                 currentRank = feast.rank
-                currentRankName = feast.rank.displayName
+                currentRankName = feast.rankName
                 currentColor = getFeastColor(traits: feast.traits) ?? temporal.color
                 // 🌟 三一期、聖誕期、顯現期內不紀念平日
                 if currentSeason != .trinity && currentSeason != .christmas && currentSeason != .epiphany {

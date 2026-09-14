@@ -5,6 +5,21 @@ import Foundation
 /// 這裡只保存規則資料；日期查詢、優先次序和畫面顯示仍由各自元件處理。
 /// 新增特殊節期規則時，應先在這裡登記，避免再次散落於核心服務中。
 enum LiturgicalRuleTable {
+    /// 附屬紀念只在主節日前夕晚禱及當天早禱使用，當天晚禱省略。
+    static let morningAndFirstVespersMemorials: [LiturgicalID: [LiturgicalCommemoration]] = [
+        .ourLadyOfWalsingham: [
+            LiturgicalCommemoration(identifier: .teresaOfAvila, title: "阿維拉的聖德蘭")
+        ],
+        .ourLadyOfTheRosary: [
+            LiturgicalCommemoration(identifier: .simeonAndAnna, title: "聖西面與聖亞拿")
+        ]
+    ]
+
+    /// 可以舉行「禮拜六特敬聖母」的禮儀季節。
+    /// 八日慶期、望日、齋期和大平日另由 SaturdayOfficeOfOurLadyResolver 排除。
+    static let saturdayOfficeOfOurLadySeasons: Set<LiturgicalSeason> = [
+        .epiphany, .prelenten, .easter, .ascension, .trinity
+    ]
     struct PrecedencePair: Equatable {
         let winner: LiturgicalID
         let loser: LiturgicalID
@@ -48,7 +63,9 @@ enum LiturgicalRuleTable {
 
     /// 不帶入相鄰晚禱的特殊紀念日。
     static let daysNotCarriedIntoAdjacentEvening: Set<LiturgicalID> = [
-        .paulCommemoration
+        .paulCommemoration,
+        // 特敬聖母在禮拜六九時禱後終止，不帶入主日前夕晚禱。
+        .saturdayOfficeOfOurLady
     ]
 
     /// 三一主日八日慶期中，遇高等級明日禮儀時不帶入晚禱的平日。
@@ -85,4 +102,40 @@ enum LiturgicalRuleTable {
         MonthDay(month: 6, day: 24),
         MonthDay(month: 6, day: 29)
     ]
+}
+
+/// 集中判斷禮拜六是否舉行「特敬聖母」，不依賴中文標題。
+struct SaturdayOfficeOfOurLadyResolver {
+    enum Resolution: Equatable {
+        case notObserved
+        case observed
+        case observedCommemoratingSimpleFeast
+    }
+
+    func resolve(
+        weekday: Int,
+        season: LiturgicalSeason,
+        temporalRank: LiturgicalRank,
+        temporalTraits: LiturgicalTraits,
+        feastRanks: [LiturgicalRank],
+        hasVigil: Bool
+    ) -> Resolution {
+        guard weekday == 7,
+              LiturgicalRuleTable.saturdayOfficeOfOurLadySeasons.contains(season),
+              temporalRank < .greaterFeria,
+              !temporalTraits.isWithinOctave,
+              temporalTraits.fast == nil,
+              !temporalTraits.isVigil,
+              !hasVigil else {
+            return .notObserved
+        }
+
+        guard let highestFeastRank = feastRanks.max() else {
+            return .observed
+        }
+        guard highestFeastRank <= .simple else {
+            return .notObserved
+        }
+        return .observedCommemoratingSimpleFeast
+    }
 }

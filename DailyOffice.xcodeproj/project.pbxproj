@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		43E2CEAA2FA8E38B00DB3F86 /* JSONResourceValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2CEA92FA8E38B00DB3F86 /* JSONResourceValidationTests.swift */; };
 		43F4A0012FC8000100DA1A11 /* LiturgyDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4A0022FC8000100DA1A11 /* LiturgyDateTests.swift */; };
+		A01909090000000000000001 /* AppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01909090000000000000002 /* AppearanceTests.swift */; };
+		A01909100000000000000001 /* HolyDays1943Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01909100000000000000002 /* HolyDays1943Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,8 @@
 		43E2CEA02FA8E38B00DB3F86 /* DailyOfficeTests1.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyOfficeTests1.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E2CEA92FA8E38B00DB3F86 /* JSONResourceValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResourceValidationTests.swift; sourceTree = "<group>"; };
 		43F4A0022FC8000100DA1A11 /* LiturgyDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiturgyDateTests.swift; sourceTree = "<group>"; };
+		A01909090000000000000002 /* AppearanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceTests.swift; sourceTree = "<group>"; };
+		A01909100000000000000002 /* HolyDays1943Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyDays1943Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -90,6 +94,8 @@
 			children = (
 				43E2CEA92FA8E38B00DB3F86 /* JSONResourceValidationTests.swift */,
 				43F4A0022FC8000100DA1A11 /* LiturgyDateTests.swift */,
+				A01909090000000000000002 /* AppearanceTests.swift */,
+				A01909100000000000000002 /* HolyDays1943Tests.swift */,
 			);
 			path = DailyOfficeTests1;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 			files = (
 				43E2CEAA2FA8E38B00DB3F86 /* JSONResourceValidationTests.swift in Sources */,
 				43F4A0012FC8000100DA1A11 /* LiturgyDateTests.swift in Sources */,
+				A01909090000000000000001 /* AppearanceTests.swift in Sources */,
+				A01909100000000000000001 /* HolyDays1943Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 93;
 				DEVELOPMENT_TEAM = 8463FD7LL2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -390,7 +398,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 93;
 				DEVELOPMENT_TEAM = 8463FD7LL2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

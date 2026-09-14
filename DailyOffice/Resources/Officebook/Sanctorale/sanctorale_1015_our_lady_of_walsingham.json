@@ -1,0 +1,504 @@
+{
+  "identifier": "our_lady_walsingham",
+  "name": {
+    "en": "Our Lady of Walsingham",
+    "zh-hans": "沃尔辛厄姆圣母",
+    "zh-hant": "沃爾辛厄姆聖母"
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "en": "Double of the Second Class",
+    "zh-hans": "（二等复式）",
+    "zh-hant": "（二等複式）"
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "O all ye Saints, ※ come unto the Holy Place of Walsingham, and bless ye the Lord.",
+        "zh-hans": "诸圣啊，※请来到沃尔辛厄姆的圣所，赞美上主。",
+        "zh-hant": "諸聖啊，※請來到沃爾辛厄姆的聖所，讚美上主。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Gen. xxviii. 17.",
+          "zh-hans": "（创世记 28:17）",
+          "zh-hant": "（創世記 28:17）"
+        },
+        "text": {
+          "en": "HOW dreadful is this place! this is none other but the house of God, and this is the gate of heaven.",
+          "zh-hans": "这地方何等可畏！这不是别的，是上帝的殿，是天的门。",
+          "zh-hant": "這地方何等可畏！這不是別的，是上帝的殿，是天的門。"
+        }
+      }
+    ],
+    "collect": [
+      {
+        "option_label": {
+          "en": "Default collect",
+          "zh-hans": "默认祝文",
+          "zh-hant": "默認祝文"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "全能的上帝借着道成肉身的奥迹，因主的仁慈圣化了荣福童贞马利亚为主的居所：恳求主使我们远离恶人的帐幕，成为堪当居住于主圣殿的子民。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant": "全能的上帝藉著道成肉身的奧跡，因主的仁慈聖化了榮福童貞馬利亞為主的居所：懇求主使我們遠離惡人的帳幕，成為堪當居住於主聖殿的子民。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title": {
+          "en": "Our Lady of Walsingham",
+          "zh-hans": "沃尔辛厄姆圣母",
+          "zh-hant": "沃爾辛厄姆聖母"
+        }
+      },
+      {
+        "option_label": {
+          "en": "Alternative collect",
+          "zh-hans": "另一祝文",
+          "zh-hant": "另一祝文"
+        },
+        "text": {
+          "en": "O GOD, who through the mystery of the Word made flesh, didst in thy mercy sanctify the house of the Blessed Virgin Mary: do thou grant that we, who honour her Shrine at Walsingham, may keep aloof from the tabernacle of sinners, and become worthy indwellers of thine house. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans": "上帝因怜悯，借着道成肉身的奥秘，使荣福童贞马利亚的居所成圣；恳求主施恩，叫我们尊崇她在沃尔辛厄姆圣所的人，远离罪人的帐幕，得配居住在主的殿中。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "zh-hant": "上帝因憐憫，藉著道成肉身的奧祕，使榮福童貞馬利亞的居所成聖；懇求主施恩，叫我們尊崇她在沃爾辛厄姆聖所的人，遠離罪人的帳幕，得配居住在主的殿中。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。"
+        },
+        "title": {
+          "en": "Our Lady of Walsingham",
+          "zh-hans": "沃尔辛厄姆圣母",
+          "zh-hant": "沃爾辛厄姆聖母"
+        }
+      }
+    ],
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "en": "With heart and soul ※ let us sing glory to Christ on this sacred festivity of Mary, the renowned Mother of God.",
+        "zh-hans": "在这神圣庆节，※我们全心全灵来歌颂荣耀基督，纪念上帝之母马利亚。",
+        "zh-hant": "在這神聖慶節，※我們全心全靈來歌頌榮耀基督，紀念上帝之母馬利亞。"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Hail Mary, ever blessed",
+        "zh-hans": "Hail Mary, ever blessed",
+        "zh-hant": "Hail Mary, ever blessed"
+      },
+      "verses": [
+        {
+          "en": "HAIL Mary, ever blessèd, of Walsingham the Queen.\nThrough vision of Richeldis, thy favours there were seen,\nWhen England was thy dowry, there pilgrims bow'd the knee,\nAt morn and noon and even, they knelt to honour thee.",
+          "zh-hans": "一、万福荣福马利亚，沃尔辛厄姆后。\n瑞克尔迪斯异象，彰显你的恩宠。\n英伦既为你妆奁，香客屈膝致敬；\n清晨正午及黄昏，众皆跪拜尊崇。",
+          "zh-hant": "一、萬福榮福馬利亞，沃爾辛厄姆后。\n瑞克爾迪斯異象，彰顯你的恩寵。\n英倫既為你妝奩，香客屈膝致敬；\n清晨正午及黃昏，眾皆跪拜尊崇。"
+        },
+        {
+          "en": "Hail Mary, ever blessèd, thy children still delight,\nTo tell abroad thy praises, thy miracles, thy might.\nStill pilgrim feet are treading, along the holy way,\nHostess of England's Nazareth, receive us home today.",
+          "zh-hans": "二、万福荣福马利亚，儿女仍然欢欣。\n传扬你的诸奇迹，大能颂赞远播。\n朝圣脚步仍前行，循此朝圣之路；\n英伦拿撒勒主母，今日迎我归家。",
+          "zh-hant": "二、萬福榮福馬利亞，兒女仍然歡欣。\n傳揚你的諸奇蹟，大能頌讚遠播。\n朝聖腳步仍前行，循此朝聖之路；\n英倫拿撒勒主母，今日迎我歸家。"
+        },
+        {
+          "en": "Hail Mary, ever blessèd, the wells of water pure,\nWhich mark thy holy places, are signs that God doth cure.\nFor sick of soul and body, e'en since Richeldis' day,\nThey spring in benediction, beside the Pilgrim's Way.",
+          "zh-hans": "三、万福荣福马利亚，泉水澄澈清纯。\n圣泉标明你圣地，彰显上帝医治。\n自瑞克尔迪斯时，为医身心病苦；\n沿着朝圣道路旁，涌流恩福至今。",
+          "zh-hant": "三、萬福榮福馬利亞，泉水澄澈清純。\n聖泉標明你聖地，彰顯上帝醫治。\n自瑞克爾迪斯時，為醫身心病苦；\n沿著朝聖道路旁，湧流恩福至今。"
+        },
+        {
+          "en": "Hail Mary, ever blessèd, thy Name is great indeed,\nFor Jesus Christ our Saviour, was in thy womb conceived.\nThy Name be ever praisèd increasing in this place,\nAnd loud the Angel's greeting: Hail Mary, full of grace. Amen.",
+          "zh-hans": "四、万福荣福马利亚，你名诚然尊大。\n救主耶稣基督曾，在你胎中成孕。\n愿你在此受赞颂，颂声日增不息；\n齐声同唱天使颂，万福满被恩宠。阿们。",
+          "zh-hant": "四、萬福榮福馬利亞，你名誠然尊大。\n救主耶穌基督曾，在你胎中成孕。\n願你在此受讚頌，頌聲日增不息；\n齊聲同唱天使頌，萬福滿被恩寵。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "O Mary, Queen of Heaven and of England, praise thou the Lord.",
+          "zh-hans": "马利亚，天国与英格兰之后，请你赞美上主。",
+          "zh-hant": "馬利亞，天國與英格蘭之后，請你讚美上主。"
+        },
+        "people": {
+          "en": "And bring us unto the majesty of thy Son.",
+          "zh-hans": "并领我们到你圣子的威荣前。",
+          "zh-hant": "並領我們到你聖子的威榮前。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "en": "Mary, Mother of the King of kings ※ appeared unto Richeldis, and showed unto her the Holy House.",
+        "zh-hans": "万王之王之母马利亚※向瑞克尔迪斯显现，并将圣屋指示给她。",
+        "zh-hant": "萬王之王之母馬利亞※向瑞克爾迪斯顯現，並將聖屋指示給她。"
+      },
+      "antiphons": [
+        {
+          "en": "Holy Mother of God, Ever-Virgin Mary, ※ intercede for us, we beseech thee.",
+          "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+          "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。"
+        },
+        {
+          "en": "How blessed is the lineage whence Christ proceeded: ※ how glorious is the Virgin who bare the King of heaven!",
+          "zh-hans": "基督所出身的世系，何其有福！※怀抱上天君王的童贞女，何其荣耀！",
+          "zh-hant": "基督所出身的世系，何其有福！※懷抱上天君王的童貞女，何其榮耀！"
+        },
+        {
+          "en": "Holy Virgin Mary, graciously keep all the world in thine intercession: ※ for he whom thou barest is the Ruler of the universe.",
+          "zh-hans": "神圣的童贞女马利亚，求你仁慈地以你的代祷，保护全世界，※因为你所怀抱的是统治宇宙者。",
+          "zh-hant": "神聖的童貞女馬利亞，求你仁慈地以你的代禱，保護全世界，※因為你所懷抱的是統治宇宙者。"
+        },
+        {
+          "en": "To thy most sure protection do we flee, O Mary, wherefrom ofttimes the faithful have obtained valour: ※ and therefore do we extol thee, O Ever-Virgin Mother of God.",
+          "zh-hans": "马利亚，我们投奔你最安稳的庇护，信者常借此获得勇力；※终身童贞荣福马利亚，我们尊崇你。",
+          "zh-hant": "馬利亞，我們投奔你最安穩的庇護，信者常藉此獲得勇力；※終身童貞榮福馬利亞，我們尊崇你。"
+        },
+        {
+          "en": "O ever-blessed Mother of God, Mary Ever-Virgin, temple of the Godhead, hallowed shrine of the Holy Spirit, ※ thou only, above all others, wast acceptable to our Lord Jesus Christ.",
+          "zh-hans": "应永受赞颂的上帝之母，终身童贞马利亚，神性的殿宇，圣灵的净配；※唯有你超越众人之上，蒙我主耶稣基督的悦纳。",
+          "zh-hant": "應永受讚頌的上帝之母，終身童貞馬利亞，神性的殿宇，聖靈的淨配；※唯有你超越眾人之上，蒙我主耶穌基督的悅納。"
+        }
+      ]
+    }
+  },
+  "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Wicked men in their lust defied the Church, ※ and razed the Shrine of Our Lady.",
+        "zh-hans": "恶人凭其私欲藐视教会，※并夷平了圣母圣所。",
+        "zh-hant": "惡人憑其私慾藐視教會，※並夷平了聖母聖所。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ps. cxxii.",
+          "zh-hans": "（诗篇 122:1）",
+          "zh-hant": "（詩篇 122:1）"
+        },
+        "text": {
+          "en": "I WAS glad when they said unto me, We will go into the house of the Lord.",
+          "zh-hans": "我喜乐，因人对我说：「我们到主的殿去。」",
+          "zh-hant": "我喜樂，因人對我說：「我們到主的殿去。」"
+        }
+      }
+    ],
+    "collect": [
+      {
+        "option_label": {
+          "en": "Default collect",
+          "zh-hans": "默认祝文",
+          "zh-hant": "默認祝文"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "全能的上帝借着道成肉身的奥迹，因主的仁慈圣化了荣福童贞马利亚为主的居所：恳求主使我们远离恶人的帐幕，成为堪当居住于主圣殿的子民。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant": "全能的上帝藉著道成肉身的奧跡，因主的仁慈聖化了榮福童貞馬利亞為主的居所：懇求主使我們遠離惡人的帳幕，成為堪當居住於主聖殿的子民。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title": {
+          "en": "Our Lady of Walsingham",
+          "zh-hans": "沃尔辛厄姆圣母",
+          "zh-hant": "沃爾辛厄姆聖母"
+        }
+      },
+      {
+        "option_label": {
+          "en": "Alternative collect",
+          "zh-hans": "另一祝文",
+          "zh-hant": "另一祝文"
+        },
+        "text": {
+          "en": "O GOD, who through the mystery of the Word made flesh, didst in thy mercy sanctify the house of the Blessed Virgin Mary: do thou grant that we, who honour her Shrine at Walsingham, may keep aloof from the tabernacle of sinners, and become worthy indwellers of thine house. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans": "上帝因怜悯，借着道成肉身的奥秘，使荣福童贞马利亚的居所成圣；恳求主施恩，叫我们尊崇她在沃尔辛厄姆圣所的人，远离罪人的帐幕，得配居住在主的殿中。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "zh-hant": "上帝因憐憫，藉著道成肉身的奧祕，使榮福童貞馬利亞的居所成聖；懇求主施恩，叫我們尊崇她在沃爾辛厄姆聖所的人，遠離罪人的帳幕，得配居住在主的殿中。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。"
+        },
+        "title": {
+          "en": "Our Lady of Walsingham",
+          "zh-hans": "沃尔辛厄姆圣母",
+          "zh-hant": "沃爾辛厄姆聖母"
+        }
+      }
+    ],
+    "invitatory": {
+      "text": {
+        "en": "Let us keep Holy Day in honour of the Blessed Virgin Mary, Mother of God and Patroness of England; ※ O come, let us worship Christ her Son.",
+        "zh-hans": "我们要庆祝此庆节，尊崇荣福童贞马利亚，上帝之母、英格兰的主保，※敬拜她的圣子基督、我们的主。",
+        "zh-hant": "我們要慶祝此慶節，尊崇榮福童貞馬利亞，上帝之母、英格蘭的主保，※敬拜她的聖子基督、我們的主。"
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "en": "Salve Regina",
+        "zh-hans": "Salve Regina",
+        "zh-hant": "Salve Regina"
+      },
+      "verses": [
+        {
+          "en": "HAIL to the Queen who reigns above,\nMother of clemency and love,\nHail thou, our hope, life, sweetness; we,\nEve's banished children, cry to thee.",
+          "zh-hans": "一、万福母后高居穹苍，慈悲圣母仁爱无疆；\n你是生命甘饴盼望，夏娃后裔向你呼求。",
+          "zh-hant": "一、萬福母后高居穹蒼，慈悲聖母仁愛無疆；\n你是生命甘飴盼望，夏娃後裔向你呼求。"
+        },
+        {
+          "en": "We from this wretched vale of tears\nSend sighs and groans unto thine ears;\nO then, sweet Advocate, bestow\nA pitying look on us below.",
+          "zh-hans": "二、我众身处凄苦泪谷，向你哀鸣叹息悲哭；\n恳求慈爱转求之母，垂怜俯顾世间孤苦。",
+          "zh-hant": "二、我眾身處淒苦淚谷，向你哀鳴歎息悲哭；\n懇求慈愛轉求之母，垂憐俯顧世間孤苦。"
+        },
+        {
+          "en": "After this exile, let us see\nOur Blessed Jesu, born of thee;\nO merciful, O pious Maid,\nO gracious Mary, lend thine aid.",
+          "zh-hans": "三、流亡期满求你垂示，你胎所生圣子耶稣；\n慈悲仁爱童贞圣母，求温柔马利亚扶助。",
+          "zh-hant": "三、流亡期滿求你垂示，你胎所生聖子耶穌；\n慈悲仁愛童貞聖母，求溫柔馬利亞扶助。"
+        },
+        {
+          "en": "All glory, laud, and honour be\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans": "四、荣耀赞美尊贵权能，归于童贞所生耶稣；\n同归圣父保惠圣灵，称颂赞美永远相宜。阿们。",
+          "zh-hant": "四、榮耀讚美尊貴權能，歸於童貞所生耶穌；\n同歸聖父保惠聖靈，稱頌讚美永遠相宜。阿們。"
+        }
+      ]
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "en": "With heart and soul ※ let us sing glory to Christ on this sacred festivity of Mary, the renowned Mother of God.",
+        "zh-hans": "在这神圣庆节，※我们全心全灵来歌颂荣耀基督，纪念上帝之母马利亚。",
+        "zh-hant": "在這神聖慶節，※我們全心全靈來歌頌榮耀基督，紀念上帝之母馬利亞。"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "When Christ was born in Bethlehem",
+        "zh-hans": "When Christ was born in Bethlehem",
+        "zh-hant": "When Christ was born in Bethlehem"
+      },
+      "verses": [
+        {
+          "en": "WHEN Christ was born in Bethlehem,\nThe Angels worshipped and adored;\nAnd kings and shepherds bowed the knee\nTo him their Saviour and their Lord.",
+          "zh-hans": "一、基督昔在伯利恒生，众天使齐俯伏尊崇；  \n君王牧者屈膝敬拜，奉祂为主救恩所从。",
+          "zh-hant": "一、基督昔在伯利恆生，眾天使齊俯伏尊崇；  \n君王牧者屈膝敬拜，奉祂為主救恩所從。"
+        },
+        {
+          "en": "For thirty years in Nazareth,\nHis Mother worshipped at the shrine\nOf him who came in human form\nTo save the world, your Lord and mine.",
+          "zh-hans": "二、三十载在拿撒勒城，圣母敬拜降生之主；  \n祂取人形拯救世界，正是你我同尊救主。",
+          "zh-hant": "二、三十載在拿撒勒城，聖母敬拜降生之主；  \n祂取人形拯救世界，正是你我同尊救主。"
+        },
+        {
+          "en": "For thirty years in Nazareth\nHe lived a hidden life of prayer;\nAnd then went forth to work and die,\nAnd every human burden share.",
+          "zh-hans": "三、三十载在拿撒勒城，隐居祈祷岁月安然；  \n随后出外劳苦舍命，分担人间重负艰难。",
+          "zh-hant": "三、三十載在拿撒勒城，隱居祈禱歲月安然；  \n隨後出外勞苦捨命，分擔人間重負艱難。"
+        },
+        {
+          "en": "A thousand years have passed away;\nAnother Nazareth must rise\nIn England's fair and lovely land,\nBeneath those distant northern skies.",
+          "zh-hans": "四、千年岁月倏忽已过，当兴另一拿撒勒城；  \n英伦佳美秀丽之地，遥远北天覆荫其境。",
+          "zh-hant": "四、千年歲月倏忽已過，當興另一拿撒勒城；  \n英倫佳美秀麗之地，遙遠北天覆蔭其境。"
+        },
+        {
+          "en": "So Mary, God's own Mother blest,\nSeeks out Richeldis, lady fair;\nAnd bids her build at Walsingham\nA second Nazareth of prayer.",
+          "zh-hans": "五、上帝之母亲临指示，瑞克尔迪斯奉命建；  \n沃尔辛厄姆祈祷所，另作拿撒勒在人间。",
+          "zh-hant": "五、上帝之母親臨指示，瑞克爾迪斯奉命建；  \n沃爾辛厄姆祈禱所，另作拿撒勒在人間。"
+        },
+        {
+          "en": "Richeldis hastens to obey;\nAnd soon the builder's work is done:\nThe Shrine of England's Nazareth\nProclaims the Mother and the Son.",
+          "zh-hans": "六、瑞克尔迪斯即遵命，工匠迅速建成圣堂；  \n英伦拿撒勒之圣所，宣扬圣母圣子荣光。",
+          "zh-hant": "六、瑞克爾迪斯即遵命，工匠迅速建成聖堂；  \n英倫拿撒勒之聖所，宣揚聖母聖子榮光。"
+        },
+        {
+          "en": "But times did come when wicked hands\nWere laid upon that holy place;\nAnd men who knew not Mary's love\nDid Mary's holy Shrine deface.",
+          "zh-hans": "七、后来竟有凶恶之徒，伸手侵犯此处圣堂；  \n不识圣母慈爱之人，竟将圣母圣所毁伤。",
+          "zh-hant": "七、後來竟有兇惡之徒，伸手侵犯此處聖堂；  \n不識聖母慈愛之人，竟將聖母聖所毀傷。"
+        },
+        {
+          "en": "Four hundred years again have passed;\nOnce more the Mother of our Lord\nIs shrined and honoured where her Son\nUpon his Altar is adored.",
+          "zh-hans": "八、四百年光转眼又过，我主圣母重受尊崇；  \n圣子坛前万民敬拜，圣母圣像重立其中。",
+          "zh-hant": "八、四百年光轉眼又過，我主聖母重受尊崇；  \n聖子壇前萬民敬拜，聖母聖像重立其中。"
+        },
+        {
+          "en": "So when you come to Walsingham,\nRemember this, and mark it well:\nIt is to Nazareth you come,\nWhere Jesus, Mary, Joseph, dwell.",
+          "zh-hans": "九、当你来到此处圣所，务要牢记深印心间；  \n你所来到乃拿撒勒，耶稣圣母约瑟同居。",
+          "zh-hant": "九、當你來到此處聖所，務要牢記深印心間；  \n你所來到乃拿撒勒，耶穌聖母約瑟同居。"
+        },
+        {
+          "en": "All glory, laud, and honour be\nO Jesu, Virgin-born, to thee;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans": "十、尊荣赞颂归主耶稣，你由童贞圣母所生；  \n荣耀同归圣父圣灵，世世无穷永受尊崇。阿们。",
+          "zh-hant": "十、尊榮讚頌歸主耶穌，你由童貞聖母所生；  \n榮耀同歸聖父聖靈，世世無窮永受尊崇。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "Blessed is the holy Virgin Mary, and most worthy of all praise.",
+          "zh-hans": "荣福童贞马利亚，配受一切赞美。",
+          "zh-hant": "榮福童貞馬利亞，配受一切讚美。"
+        },
+        "people": {
+          "en": "Through her hath arisen the Sun of Justice, Christ our God, by whom we are saved and redeemed.",
+          "zh-hans": "公义的日头、我主上帝基督，由她而生；我们借着祂得救，蒙了救赎。",
+          "zh-hant": "公義的日頭、我主上帝基督，由她而生；我們藉著祂得救，蒙了救贖。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "en": "O seek the Lord at Walsingham, ※ and quench thy thirst.",
+        "zh-hans": "当在沃尔辛厄姆寻求主，※以解干渴。",
+        "zh-hant": "當在沃爾辛厄姆尋求主，※以解乾渴。"
+      },
+      "antiphons": [
+        {
+          "en": "This is the Our Lady of Walsingham, of the seed of Abraham, ※ sprung from the tribe of Judah, of the noble stem of David.",
+          "zh-hans": "今天是沃尔辛厄姆圣母的庆节：她是亚伯拉罕的后裔，※生于犹大支派，出自大卫显赫的王室。",
+          "zh-hant": "今天是沃爾辛厄姆聖母的慶節：她是亞伯拉罕的後裔，※生於猶大支派，出自大衛顯赫的王室。"
+        },
+        {
+          "en": "Today is the Our Lady of Walsingham: ※ whose glorious life illumineth all the churches.",
+          "zh-hans": "今天是沃尔辛厄姆圣母的慶節，※她光辉灿烂的生活照耀了普世的教会。",
+          "zh-hant": "今天是沃爾辛厄姆聖母的慶節，※她光輝燦爛的生活照耀了普世的教會。"
+        },
+        {
+          "en": "From royal lineage descended, is Mary illustrious: ※ and with deepest devotion both of soul and spirit implore we the aid of her prayers.",
+          "zh-hans": "出于王室的马利亚光辉闪烁；※我们诚心诚意恳求她为我们祈祷，帮助我们。",
+          "zh-hant": "出於王室的馬利亞光輝閃爍；※我們誠心誠意懇求她為我們祈禱，幫助我們。"
+        },
+        {
+          "en": "With heart and mind sing we praises to Christ ※ on this holy solemnity of Mary, the exalted Mother of God.",
+          "zh-hans": "在这至高上帝之母马利亚的庆节，※我们全心全意高唱赞美基督。",
+          "zh-hant": "在這至高上帝之母馬利亞的慶節，※我們全心全意高唱贊美基督。"
+        },
+        {
+          "en": "With joy and gladness let us celebrate the Our Lady of Walsingham, ※ that she may plead for us to Jesus Christ our Lord.",
+          "zh-hans": "让我们欢喜快乐庆祝沃尔辛厄姆圣母的庆节，※愿她为我们转求基督。",
+          "zh-hant": "讓我們歡喜快樂慶祝沃爾辛厄姆聖母的慶節，※願她為我們轉求基督。"
+        }
+      ]
+    }
+  },
+  "evening": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "O God, raise thou up again devotion to thy daughter: ※ Our blessed Lady of Walsingham.",
+        "zh-hans": "上帝啊，求主使人重新热心敬奉主的女儿，※就是我们荣福的沃尔辛厄姆圣母。",
+        "zh-hant": "上帝啊，求主使人重新熱心敬奉主的女兒，※就是我們榮福的沃爾辛厄姆聖母。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "2 Chr. vi.",
+          "zh-hans": "（历代志下 6）",
+          "zh-hant": "（歷代志下 6）"
+        },
+        "text": {
+          "en": "I HAVE built an house of habitation for thee, and a place for thy dwelling for ever: and in it have I put the ark, wherein is the covenant of the Lord, that he made with the children of Israel.",
+          "zh-hans": "我为你建了一座雄伟的殿宇，作为你永远居住的地方。我将约柜安置在那里，柜内有耶和华的约，就是他与以色列人所立的约。",
+          "zh-hant": "我為你建了一座雄偉的殿宇，作為你永遠居住的地方。我將約櫃安置在那裏，櫃內有耶和華的約，就是他與以色列人所立的約。"
+        }
+      }
+    ],
+    "collect": [
+      {
+        "option_label": {
+          "en": "Default collect",
+          "zh-hans": "默认祝文",
+          "zh-hant": "默認祝文"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "全能的上帝借着道成肉身的奥迹，因主的仁慈圣化了荣福童贞马利亚为主的居所：恳求主使我们远离恶人的帐幕，成为堪当居住于主圣殿的子民。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "zh-hant": "全能的上帝藉著道成肉身的奧跡，因主的仁慈聖化了榮福童貞馬利亞為主的居所：懇求主使我們遠離惡人的帳幕，成為堪當居住於主聖殿的子民。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+        },
+        "title": {
+          "en": "Our Lady of Walsingham",
+          "zh-hans": "沃尔辛厄姆圣母",
+          "zh-hant": "沃爾辛厄姆聖母"
+        }
+      },
+      {
+        "option_label": {
+          "en": "Alternative collect",
+          "zh-hans": "另一祝文",
+          "zh-hant": "另一祝文"
+        },
+        "text": {
+          "en": "O GOD, who through the mystery of the Word made flesh, didst in thy mercy sanctify the house of the Blessed Virgin Mary: do thou grant that we, who honour her Shrine at Walsingham, may keep aloof from the tabernacle of sinners, and become worthy indwellers of thine house. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+          "zh-hans": "上帝因怜悯，借着道成肉身的奥秘，使荣福童贞马利亚的居所成圣；恳求主施恩，叫我们尊崇她在沃尔辛厄姆圣所的人，远离罪人的帐幕，得配居住在主的殿中。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "zh-hant": "上帝因憐憫，藉著道成肉身的奧祕，使榮福童貞馬利亞的居所成聖；懇求主施恩，叫我們尊崇她在沃爾辛厄姆聖所的人，遠離罪人的帳幕，得配居住在主的殿中。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。"
+        },
+        "title": {
+          "en": "Our Lady of Walsingham",
+          "zh-hans": "沃尔辛厄姆圣母",
+          "zh-hant": "沃爾辛厄姆聖母"
+        }
+      }
+    ],
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "en": "With heart and soul ※ let us sing glory to Christ on this sacred festivity of Mary, the renowned Mother of God.",
+        "zh-hans": "在这神圣庆节，※我们全心全灵来歌颂荣耀基督，纪念上帝之母马利亚。",
+        "zh-hant": "在這神聖慶節，※我們全心全靈來歌頌榮耀基督，紀念上帝之母馬利亞。"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Hail Mary, ever blessed",
+        "zh-hans": "Hail Mary, ever blessed",
+        "zh-hant": "Hail Mary, ever blessed"
+      },
+      "verses": [
+        {
+          "en": "HAIL Mary, ever blessèd, of Walsingham the Queen.\nThrough vision of Richeldis, thy favours there were seen,\nWhen England was thy dowry, there pilgrims bow'd the knee,\nAt morn and noon and even, they knelt to honour thee.",
+          "zh-hans": "一、万福荣福马利亚，沃尔辛厄姆后。\n瑞克尔迪斯异象，彰显你的恩宠。\n英伦既为你妆奁，香客屈膝致敬；\n清晨正午及黄昏，众皆跪拜尊崇。",
+          "zh-hant": "一、萬福榮福馬利亞，沃爾辛厄姆后。\n瑞克爾迪斯異象，彰顯你的恩寵。\n英倫既為你妝奩，香客屈膝致敬；\n清晨正午及黃昏，眾皆跪拜尊崇。"
+        },
+        {
+          "en": "Hail Mary, ever blessèd, thy children still delight,\nTo tell abroad thy praises, thy miracles, thy might.\nStill pilgrim feet are treading, along the holy way,\nHostess of England's Nazareth, receive us home today.",
+          "zh-hans": "二、万福荣福马利亚，儿女仍然欢欣。\n传扬你的诸奇迹，大能颂赞远播。\n朝圣脚步仍前行，循此朝圣之路；\n英伦拿撒勒主母，今日迎我归家。",
+          "zh-hant": "二、萬福榮福馬利亞，兒女仍然歡欣。\n傳揚你的諸奇蹟，大能頌讚遠播。\n朝聖腳步仍前行，循此朝聖之路；\n英倫拿撒勒主母，今日迎我歸家。"
+        },
+        {
+          "en": "Hail Mary, ever blessèd, the wells of water pure,\nWhich mark thy holy places, are signs that God doth cure.\nFor sick of soul and body, e'en since Richeldis' day,\nThey spring in benediction, beside the Pilgrim's Way.",
+          "zh-hans": "三、万福荣福马利亚，泉水澄澈清纯。\n圣泉标明你圣地，彰显上帝医治。\n自瑞克尔迪斯时，为医身心病苦；\n沿着朝圣道路旁，涌流恩福至今。",
+          "zh-hant": "三、萬福榮福馬利亞，泉水澄澈清純。\n聖泉標明你聖地，彰顯上帝醫治。\n自瑞克爾迪斯時，為醫身心病苦；\n沿著朝聖道路旁，湧流恩福至今。"
+        },
+        {
+          "en": "Hail Mary, ever blessèd, thy Name is great indeed,\nFor Jesus Christ our Saviour, was in thy womb conceived.\nThy Name be ever praisèd increasing in this place,\nAnd loud the Angel's greeting: Hail Mary, full of grace. Amen.",
+          "zh-hans": "四、万福荣福马利亚，你名诚然尊大。\n救主耶稣基督曾，在你胎中成孕。\n愿你在此受赞颂，颂声日增不息；\n齐声同唱天使颂，万福满被恩宠。阿们。",
+          "zh-hant": "四、萬福榮福馬利亞，你名誠然尊大。\n救主耶穌基督曾，在你胎中成孕。\n願你在此受讚頌，頌聲日增不息；\n齊聲同唱天使頌，萬福滿被恩寵。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "O Mary, Queen of Heaven and of England, praise thou the Lord.",
+          "zh-hans": "马利亚，天国与英格兰之后，请你赞美上主。",
+          "zh-hant": "馬利亞，天國與英格蘭之后，請你讚美上主。"
+        },
+        "people": {
+          "en": "And bring us unto the majesty of thy Son.",
+          "zh-hans": "并领我们到你圣子的威荣前。",
+          "zh-hant": "並領我們到你聖子的威榮前。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "en": "Rejoice, ye people of England, ※ for your land hath been sanctified by the Blessed Virgin.",
+        "zh-hans": "英格兰的百姓啊，应当欢喜，※因为你们的国土已因荣福童贞女而蒙圣化。",
+        "zh-hant": "英格蘭的百姓啊，應當歡喜，※因為你們的國土已因榮福童貞女而蒙聖化。"
+      },
+      "antiphons": [
+        {
+          "en": "Holy Mother of God, Ever-Virgin Mary, ※ intercede for us, we beseech thee.",
+          "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+          "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。"
+        },
+        {
+          "en": "How blessed is the lineage whence Christ proceeded: ※ how glorious is the Virgin who bare the King of heaven!",
+          "zh-hans": "基督所出身的世系，何其有福！※怀抱上天君王的童贞女，何其荣耀！",
+          "zh-hant": "基督所出身的世系，何其有福！※懷抱上天君王的童貞女，何其榮耀！"
+        },
+        {
+          "en": "Holy Virgin Mary, graciously keep all the world in thine intercession: ※ for he whom thou barest is the Ruler of the universe.",
+          "zh-hans": "神圣的童贞女马利亚，求你仁慈地以你的代祷，保护全世界，※因为你所怀抱的是统治宇宙者。",
+          "zh-hant": "神聖的童貞女馬利亞，求你仁慈地以你的代禱，保護全世界，※因為你所懷抱的是統治宇宙者。"
+        },
+        {
+          "en": "To thy most sure protection do we flee, O Mary, wherefrom ofttimes the faithful have obtained valour: ※ and therefore do we extol thee, O Ever-Virgin Mother of God.",
+          "zh-hans": "马利亚，我们投奔你最安稳的庇护，信者常借此获得勇力；※终身童贞荣福马利亚，我们尊崇你。",
+          "zh-hant": "馬利亞，我們投奔你最安穩的庇護，信者常藉此獲得勇力；※終身童貞榮福馬利亞，我們尊崇你。"
+        },
+        {
+          "en": "O ever-blessed Mother of God, Mary Ever-Virgin, temple of the Godhead, hallowed shrine of the Holy Spirit, ※ thou only, above all others, wast acceptable to our Lord Jesus Christ.",
+          "zh-hans": "应永受赞颂的上帝之母，终身童贞马利亚，神性的殿宇，圣灵的净配；※唯有你超越众人之上，蒙我主耶稣基督的悦纳。",
+          "zh-hant": "應永受讚頌的上帝之母，終身童貞馬利亞，神性的殿宇，聖靈的淨配；※唯有你超越眾人之上，蒙我主耶穌基督的悅納。"
+        }
+      ]
+    }
+  }
+}

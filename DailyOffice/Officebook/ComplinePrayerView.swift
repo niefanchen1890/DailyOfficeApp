@@ -248,6 +248,7 @@ class ComplinePrayerViewModel: ObservableObject {
 
 // MARK: - 視圖
 struct ComplinePrayerView: View {
+    @State private var usesFortnightlyB = false
     @StateObject private var viewModel: ComplinePrayerViewModel
     @Environment(\.colorScheme) var colorScheme
     let date: Date
@@ -395,18 +396,21 @@ struct ComplinePrayerView: View {
         return LiturgyCard {
             VStack(alignment: .leading, spacing: 14) {
                 SectionTitle(text: isSimp ? "诗篇" : "詩篇")
+                SmallHourPsalmPicker(usesFortnightlyB: $usesFortnightlyB, isSimplified: isSimp)
                 RubricBlock(text: isSimp ? "¶ 然后，念以下诗篇，并按着节期念对应的对经。" : "¶ 然後，唸以下詩篇，並按著節期唸對應的對經。")
 
                 if let antiphon = viewModel.currentPsalmAntiphon {
                     RubricBlock(text: "¶ \(antiphon.season)：")
                 }
 
-                let keys = ComplinePrayerData.psalmKeys
+                let keys = usesFortnightlyB
+                    ? PsalmsLoader.shared.fortnightlyBKeys(for: viewModel.selectedDate, hour: "compline")
+                    : ComplinePrayerData.psalmKeys
                 ForEach(keys.indices, id: \.self) { index in
                     let key = keys[index]
                     if let psalm = PsalmsLoader.shared.psalmContent(for: key) {
-                        let displayTitle = ComplinePrayerData.psalmDisplayTitle(for: key)
-                        let latinSubtitle = ComplinePrayerData.psalmLatinSubtitle(for: key)
+                        let displayTitle = usesFortnightlyB ? psalm.title : ComplinePrayerData.psalmDisplayTitle(for: key)
+                        let latinSubtitle = usesFortnightlyB ? psalm.latinTitle : ComplinePrayerData.psalmLatinSubtitle(for: key)
                         complinePsalmView(
                             title: displayTitle,
                             latin: latinSubtitle,

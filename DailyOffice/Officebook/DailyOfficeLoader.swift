@@ -74,6 +74,11 @@ struct DailyOfficeFile: Codable {
     let morning: OfficePeriod?
     let evening: OfficePeriod?
     let vigil: OfficePeriod?
+    let disabledVigil: Bool?
+
+    var firstVespersPeriod: OfficePeriod? {
+        disabledVigil == true ? nil : (vigil ?? evening)
+    }
 
     struct TemporalMetadata: Codable, Equatable {
         let season: String
@@ -82,11 +87,14 @@ struct DailyOfficeFile: Codable {
     }
     
     struct OfficePeriod: Codable {
+        /// 專用第一頌歌的穩定代碼；缺省時沿用核心選擇。
+        let firstCanticle: String?
         let bibleSentences: [BibleSentenceJSON]?
         let invitatory: InvitatoryJSON?
         let invitatoryHymn: HymnJSON?
         let ascensionInvitatoryHymn: HymnJSON?
         let psalmAntiphons: PsalmAntiphonsJSON?
+        let officeHymnKey: String?
         let officeHymn: HymnJSON?
         let easterOfficeHymn: HymnJSON?
         let ascensionOfficeHymn: HymnJSON?
@@ -119,8 +127,66 @@ struct DailyOfficeFile: Codable {
         struct PsalmAntiphonsJSON: Codable {
             let common: String?
             let antiphons: [String]?
+            /// 1943 經課詩篇整組共用的專用對經，只在整組前後各顯示一次。
+            let lectionary1943: PsalmAntiphonSequenceJSON?
+
+            enum CodingKeys: String, CodingKey {
+                case common, antiphons
+                case lectionary1943 = "lectionary_1943"
+            }
         }
-        
+
+        /// 支援固定、按年輪替，以及七旬主日至復活節前的專用版本。
+        struct PsalmAntiphonSequenceJSON: Codable {
+            let values: [String]
+            let septuagesimaToLent: [String]?
+
+            private enum CodingKeys: String, CodingKey {
+                case normal
+                case septuagesimaToLent = "septuagesima_to_lent"
+            }
+
+            init(from decoder: Decoder) throws {
+                let container = try decoder.singleValueContainer()
+                if let multiple = try? container.decode([String].self) {
+                    values = multiple
+                    septuagesimaToLent = nil
+                } else if let single = try? container.decode(String.self) {
+                    values = [single]
+                    septuagesimaToLent = nil
+                } else {
+                    let keyed = try decoder.container(keyedBy: CodingKeys.self)
+                    values = try keyed.decode(Self.self, forKey: .normal).values
+                    septuagesimaToLent = try keyed.decodeIfPresent(Self.self, forKey: .septuagesimaToLent)?.values
+                }
+            }
+
+            func values(for date: Date) -> [String] {
+                let year = Calendar(identifier: .gregorian).component(.year, from: date)
+                let calculator = LiturgicalDateCalculator()
+                let daysFromEaster = calculator.daysBetween(calculator.easterSunday(in: year), and: date)
+                // 七旬主日（復活節前 63 天）起，至聖週六止。
+                if (-63..<0).contains(daysFromEaster), let special = septuagesimaToLent {
+                    return special
+                }
+                return values
+            }
+
+            func encode(to encoder: Encoder) throws {
+                if let special = septuagesimaToLent {
+                    var keyed = encoder.container(keyedBy: CodingKeys.self)
+                    if values.count == 1 { try keyed.encode(values[0], forKey: .normal) }
+                    else { try keyed.encode(values, forKey: .normal) }
+                    if special.count == 1 { try keyed.encode(special[0], forKey: .septuagesimaToLent) }
+                    else { try keyed.encode(special, forKey: .septuagesimaToLent) }
+                } else {
+                    var container = encoder.singleValueContainer()
+                    if values.count == 1 { try container.encode(values[0]) }
+                    else { try container.encode(values) }
+                }
+            }
+        }
+
         struct AntiphonJSON: Codable {
             let normal: String?
             let normals: [String]?
@@ -144,6 +210,72 @@ struct DailyOfficeFile: Codable {
         struct CollectJSON: Codable {
             let title: String
             let text: String
+
+            /// 選擇按鈕顯示的名稱；舊 JSON 可省略。
+            let optionLabel: String?
+
+            /// 當 JSON 的 `collect` 是陣列時，保存完整的祝文選項。
+            /// 單一物件格式會保持空陣列，以兼容現有資源。
+            private let decodedOptions: [CollectJSON]
+
+            var options: [CollectJSON] {
+                decodedOptions.isEmpty ? [self] : decodedOptions
+            }
+
+            enum CodingKeys: String, CodingKey {
+                case title, text
+                case optionLabel = "option_label"
+            }
+
+            init(title: String, text: String, optionLabel: String? = nil) {
+                self.title = title
+                self.text = text
+                self.optionLabel = optionLabel
+                self.decodedOptions = []
+            }
+
+            init(from decoder: Decoder) throws {
+                if var array = try? decoder.unkeyedContainer() {
+                    var options: [CollectJSON] = []
+                    while !array.isAtEnd {
+                        options.append(try array.decode(CollectJSON.self))
+                    }
+
+                    guard let first = options.first else {
+                        throw DecodingError.dataCorruptedError(
+                            in: array,
+                            debugDescription: "collect 陣列至少需要一篇祝文"
+                        )
+                    }
+
+                    self.title = first.title
+                    self.text = first.text
+                    self.optionLabel = first.optionLabel
+                    self.decodedOptions = options
+                    return
+                }
+
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+                self.title = try container.decode(String.self, forKey: .title)
+                self.text = try container.decode(String.self, forKey: .text)
+                self.optionLabel = try container.decodeIfPresent(String.self, forKey: .optionLabel)
+                self.decodedOptions = []
+            }
+
+            func encode(to encoder: Encoder) throws {
+                if !decodedOptions.isEmpty {
+                    var container = encoder.unkeyedContainer()
+                    for option in decodedOptions {
+                        try container.encode(option)
+                    }
+                    return
+                }
+
+                var container = encoder.container(keyedBy: CodingKeys.self)
+                try container.encode(title, forKey: .title)
+                try container.encode(text, forKey: .text)
+                try container.encodeIfPresent(optionLabel, forKey: .optionLabel)
+            }
         }
         
         // MARK: - 內嵌經課模型
@@ -214,11 +346,13 @@ struct DailyOfficeFile: Codable {
         }
         
         enum CodingKeys: String, CodingKey {
+            case firstCanticle = "first_canticle"
             case bibleSentences = "bible_sentences"
             case invitatory
             case invitatoryHymn = "invitatory_hymn"
             case ascensionInvitatoryHymn = "ascension_invitatory_hymn"
             case psalmAntiphons = "psalm_antiphons"
+            case officeHymnKey = "office_hymn_key"
             case officeHymn = "office_hymn"
             case easterOfficeHymn = "easter_office_hymn"
             case ascensionOfficeHymn = "ascension_office_hymn"
@@ -295,7 +429,7 @@ class DailyOfficeLoader {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
             if isEvening {
-                period = liturgy.isFirstVespers ? (office.vigil ?? office.evening) : office.evening
+                period = liturgy.isFirstVespers ? (office.firstVespersPeriod) : office.evening
             } else {
                 period = office.morning
             }
@@ -337,7 +471,7 @@ class DailyOfficeLoader {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
             if isEvening {
-                period = liturgy.isFirstVespers ? (office.vigil ?? office.evening) : office.evening
+                period = liturgy.isFirstVespers ? (office.firstVespersPeriod) : office.evening
             } else {
                 period = office.morning
             }
@@ -354,12 +488,51 @@ class DailyOfficeLoader {
     func psalmAntiphon(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> String? {
         return psalmAntiphons(for: date, liturgy: liturgy, isEvening: isEvening)?.first
     }
+
+    /// 1943 經課詩篇專用對經；不再從一般五組詩篇對經取第一組代用。
+    func lectionary1943PsalmAntiphon(
+        for date: Date,
+        liturgy: DailyLiturgy,
+        isEvening: Bool = false
+    ) -> String? {
+        guard let office = loadOfficeFile(for: date, liturgy: liturgy) else { return nil }
+        return Self.lectionary1943PsalmAntiphon(
+            in: office, for: date, isEvening: isEvening,
+            isFirstVespers: liturgy.isFirstVespers
+        )
+    }
+
+    /// 與資源載入分離，讓時辰選擇及年份輪替可獨立驗證。
+    static func lectionary1943PsalmAntiphon(
+        in office: DailyOfficeFile,
+        for date: Date,
+        isEvening: Bool = false,
+        isFirstVespers: Bool = false
+    ) -> String? {
+        let period: DailyOfficeFile.OfficePeriod?
+        if isEvening {
+            period = isFirstVespers ? (office.firstVespersPeriod) : office.evening
+        } else {
+            period = office.morning
+        }
+        guard let sequence = period?.psalmAntiphons?.lectionary1943 else { return nil }
+        // 呼叫端傳入實際禮儀日期，包含第一晚禱所屬的翌日。
+        let antiphons = sequence.values(for: date)
+        guard !antiphons.isEmpty else { return nil }
+        let year = Calendar(identifier: .gregorian).component(.year, from: date)
+        let antiphon = antiphons[year % antiphons.count]
+        guard
+              !antiphon.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
+        return antiphon
+    }
     
     func officeHymn(for date: Date, liturgy: DailyLiturgy, isEvening: Bool = false) -> DailyOfficeFile.OfficePeriod.HymnJSON? {
         guard let office = loadOfficeFile(for: date, liturgy: liturgy) else { return nil }
         
         let period = isEvening
-            ? (liturgy.isFirstVespers ? (office.vigil ?? office.evening) : office.evening)
+            ? (liturgy.isFirstVespers ? (office.firstVespersPeriod) : office.evening)
             : office.morning
         
         guard let basePeriod = period else { return nil }
@@ -381,7 +554,7 @@ class DailyOfficeLoader {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
             if isEvening {
-                period = liturgy.isFirstVespers ? (office.vigil ?? office.evening) : office.evening
+                period = liturgy.isFirstVespers ? (office.firstVespersPeriod) : office.evening
             } else {
                 period = office.morning
             }
@@ -411,7 +584,7 @@ class DailyOfficeLoader {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
         } else {
             period = file.morning
         }
@@ -423,7 +596,7 @@ class DailyOfficeLoader {
         if let office = loadOfficeFile(for: date, liturgy: liturgy) {
             let period: DailyOfficeFile.OfficePeriod?
             if isEvening {
-                period = liturgy.isFirstVespers ? (office.vigil ?? office.evening) : office.evening
+                period = liturgy.isFirstVespers ? (office.firstVespersPeriod) : office.evening
             } else {
                 period = office.morning
             }
@@ -453,16 +626,24 @@ class DailyOfficeLoader {
     }
     
     private func performLoadOfficeFile(for date: Date, liturgy: DailyLiturgy) -> DailyOfficeFile? {
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
+        if liturgy.mainTitle == info.name,
+           let replacement = LiturgicalResourceResolver.shared.trinitySundayReplacementFile(for: date) {
+            return loadSundayReplacement(name: replacement, date: date, title: liturgy.mainTitle)
+        }
         if let resourceName = LiturgicalResourceResolver.shared.officeFileName(for: liturgy.identifier),
-           let file = loadLocalizedJSON(name: resourceName) {
-            return file
+           Bundle.main.url(forResource: resourceName, withExtension: "json") != nil {
+            return loadLocalizedJSON(name: resourceName)
+        }
+        if let resourceName = nameToIdentifier[liturgy.mainTitle],
+           Bundle.main.url(forResource: resourceName, withExtension: "json") != nil {
+            return loadLocalizedJSON(name: resourceName)
         }
 
         if let file = loadSanctoraleViaMap(name: liturgy.mainTitle) {
             return file
         }
         
-        let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
         let daysToEaster = info.daysFromEaster
         
         if let feastFile = loadSanctorale(date: date, daysToEaster: daysToEaster, expectedName: liturgy.mainTitle) {
@@ -689,7 +870,7 @@ class DailyOfficeLoader {
         "大齋首日 (聖灰禮拜三)": "temporal_ash_wednesday",
         "復活後第一主日（卸白衣主日）": "temporal_easter_1_sunday",
         "基督君王節": "temporal_christ_the_king",
-        "降臨前主日": "temporal_before_advent_sunday",
+        "降臨前主日": "sunday_next_before_advent",
         "特禱禮拜三": "temporal_easter6-3",
         
         // 升天八日慶期內各日
@@ -752,8 +933,17 @@ class DailyOfficeLoader {
         let normalizedName = name.hasPrefix("紀念")
             ? String(name.dropFirst(2)).trimmingCharacters(in: .whitespaces)
             : name
+        let sundayInfo = LiturgyCoreService.shared.getSeasonInfo(for: date)
+        if normalizedName == sundayInfo.name,
+           let replacement = LiturgicalResourceResolver.shared.trinitySundayReplacementFile(for: date) {
+            return loadSundayReplacement(name: replacement, date: date, title: normalizedName)
+        }
         AppLog.debug("   → 歸一化名稱: '\(normalizedName)'")
         
+        if let resourceName = nameToIdentifier[normalizedName],
+           Bundle.main.url(forResource: resourceName, withExtension: "json") != nil {
+            return loadLocalizedJSON(name: resourceName)
+        }
         if let file = loadSanctoraleViaMap(name: normalizedName) {
             AppLog.debug("   → ✅ [步驟0] 透過 nameToIdentifier 直接加載成功: '\(file.name)'")
             return file
@@ -856,7 +1046,7 @@ extension DailyOfficeLoader {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
         } else {
             period = file.morning
         }
@@ -887,7 +1077,7 @@ extension DailyOfficeLoader {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
         } else {
             period = file.morning
         }
@@ -934,7 +1124,7 @@ extension DailyOfficeLoader {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
         } else {
             period = file.morning
         }
@@ -959,7 +1149,7 @@ extension DailyOfficeLoader {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
         } else {
             period = file.morning
         }
@@ -992,7 +1182,7 @@ extension DailyOfficeLoader {
         
         let period: DailyOfficeFile.OfficePeriod?
         if isEvening {
-            period = liturgy.isFirstVespers ? (file.vigil ?? file.evening) : file.evening
+            period = liturgy.isFirstVespers ? (file.firstVespersPeriod) : file.evening
             AppLog.debug("📖 [jsonLessons] 晚禱選擇: isFirstVespers=\(liturgy.isFirstVespers), period=\(period == nil ? "nil" : "有值")")
             if liturgy.isFirstVespers {
                 AppLog.debug("   → 使用 vigil=\(file.vigil == nil ? "nil" : "有值"), evening=\(file.evening == nil ? "nil" : "有值")")
@@ -1043,7 +1233,19 @@ extension DailyOfficeLoader {
         return base
     }
     // MARK: - 多語言 JSON 解析（核心）
-    private func loadLocalizedJSON(name: String) -> DailyOfficeFile? {
+    private func loadSundayReplacement(name: String, date: Date, title: String) -> DailyOfficeFile? {
+        guard Bundle.main.url(forResource: name, withExtension: "json") != nil else {
+            AppLog.error("❌ [主日專用] \(title) 缺少指定資源：\(name).json")
+            return nil
+        }
+        let info = LiturgyCoreService.shared.getSeasonInfo(for: date)
+        let identifier: LiturgicalID = name == "sunday_next_before_advent"
+            ? .sundayBeforeAdvent
+            : .temporal(season: .trinity, week: info.weekNumber, weekday: 1)
+        return loadLocalizedJSON(name: name, sundayIdentity: (identifier.rawValue, title, info.weekNumber))
+    }
+
+    private func loadLocalizedJSON(name: String, sundayIdentity: (id: String, title: String, week: Int)? = nil) -> DailyOfficeFile? {
         AppLog.debug("🔍 查找: \(name).json | language=\(currentLanguage.rawValue)")
         
         guard let url = Bundle.main.url(forResource: name, withExtension: "json"),
@@ -1052,13 +1254,31 @@ extension DailyOfficeLoader {
             return nil
         }
         
-        guard let localizedData = LocalizedJSONResolver.resolve(data: data, language: currentLanguage) else {
+        let resolvedData: Data
+        do {
+            resolvedData = try CommonOfficeResolver.resolve(data: data) {
+                try CommonOfficeResolver.loadCommon(id: $0)
+            }
+        } catch {
+            AppLog.error("❌ 通用載入失敗 \(name): \(error.localizedDescription)")
+            return nil
+        }
+        guard let localizedData = LocalizedJSONResolver.resolve(data: resolvedData, language: currentLanguage) else {
             AppLog.debug("   → ❌ 多語言解析失敗")
             return nil
         }
         
         do {
-            let decoded = try JSONDecoder().decode(DailyOfficeFile.self, from: localizedData)
+            var decodingData = localizedData
+            if let identity = sundayIdentity,
+               var object = try JSONSerialization.jsonObject(with: localizedData) as? [String: Any] {
+                // 借用顯現期正文，但保留實際三一後主日身分，供紀念名稱核對。
+                object["identifier"] = identity.id
+                object["name"] = identity.title.adaptChinese(isSimplified: currentLanguage == .simplified)
+                object["temporal"] = ["season": "trinity", "week": identity.week, "weekday": 1]
+                decodingData = try JSONSerialization.data(withJSONObject: object)
+            }
+            let decoded = try JSONDecoder().decode(DailyOfficeFile.self, from: decodingData)
             AppLog.debug("   → ✅ 解析成功: name='\(decoded.name)'")
             return decoded
         } catch {
@@ -1090,7 +1310,7 @@ extension DailyOfficeLoader {
             return nil
         }
         
-        let period = file.vigil ?? file.evening
+        let period = file.firstVespersPeriod
         guard let lessons = period?.lessons else {
             AppLog.debug("❌ [vigilLessons] '\(file.name)' vigil/evening 無 lessons 容器")
             return nil

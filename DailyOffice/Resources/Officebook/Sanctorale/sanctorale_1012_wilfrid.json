@@ -1,0 +1,130 @@
+{
+  "identifier": "st_wilfrid",
+  "name": {
+    "zh-hant": "聖威爾弗里德主教",
+    "zh-hans": "圣威尔弗里德主教",
+    "en": "Saint Wilfrid, Bishop"
+  },
+  "rank": "semiDouble",
+  "rank_display": {
+    "zh-hant": "（半複式）",
+    "zh-hans": "（半复式）",
+    "en": "Semidouble"
+  },
+  "type": "sanctorale",
+  "common_office": "common_confessor_bishop_outside_easter",
+  "vigil": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "聖威爾弗里德主教",
+          "zh-hans": "圣威尔弗里德主教",
+          "en": "Saint Wilfrid, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝曾藉著主的真福聖威爾弗里德主教的卓越功勳，使許多奇事在他身上彰顯；求主大發慈悲，正如我們從他的教導中，學會熱切地尋求屬天之事，並藉著他的代求，而時常蒙主護佑。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝曾藉着主的真福圣威尔弗里德主教的卓越功勋，使许多奇事在他身上彰显；求主大发慈悲，正如我们从他的教导中，学会热切地寻求属天之事，并藉着他的代求，而时常蒙主护佑。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "聖威爾弗里德主教",
+          "zh-hans": "圣威尔弗里德主教",
+          "en": "Saint Wilfrid, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝是信徒的真光、靈魂的牧者，曾在聖教會中立榮福的威爾弗里德為主教，叫他用教訓牧養主的羊群，用善行作他們的榜樣；懇求主因他的奇妙功德和祈禱，叫我們持守他所傳的信仰，常常嚮慕天上的事。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。",
+          "zh-hans": "上帝是信徒的真光、灵魂的牧者，曾在圣教会中立荣福的威尔弗里德为主教，叫他用教训牧养主的羊群，用善行作他们的榜样；恳求主因他的奇妙功德和祈祷，叫我们持守他所传的信仰，常常向慕天上的事。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "en": "O GOD, the light of the faithful and shepherd of souls, who didst set blessed Wilfrid to be a Bishop in thy Church, that he might feed thy sheep by his word and guide them by his example: Grant us, we beseech thee, through his wondrous merits and prayers; both to keep the faith which he taught, and ever to seek after the things of heaven. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "morning": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "聖威爾弗里德主教",
+          "zh-hans": "圣威尔弗里德主教",
+          "en": "Saint Wilfrid, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝曾藉著主的真福聖威爾弗里德主教的卓越功勳，使許多奇事在他身上彰顯；求主大發慈悲，正如我們從他的教導中，學會熱切地尋求屬天之事，並藉著他的代求，而時常蒙主護佑。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝曾藉着主的真福圣威尔弗里德主教的卓越功勋，使许多奇事在他身上彰显；求主大发慈悲，正如我们从他的教导中，学会热切地寻求属天之事，并藉着他的代求，而时常蒙主护佑。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "聖威爾弗里德主教",
+          "zh-hans": "圣威尔弗里德主教",
+          "en": "Saint Wilfrid, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝是信徒的真光、靈魂的牧者，曾在聖教會中立榮福的威爾弗里德為主教，叫他用教訓牧養主的羊群，用善行作他們的榜樣；懇求主因他的奇妙功德和祈禱，叫我們持守他所傳的信仰，常常嚮慕天上的事。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。",
+          "zh-hans": "上帝是信徒的真光、灵魂的牧者，曾在圣教会中立荣福的威尔弗里德为主教，叫他用教训牧养主的羊群，用善行作他们的榜样；恳求主因他的奇妙功德和祈祷，叫我们持守他所传的信仰，常常向慕天上的事。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "en": "O GOD, the light of the faithful and shepherd of souls, who didst set blessed Wilfrid to be a Bishop in thy Church, that he might feed thy sheep by his word and guide them by his example: Grant us, we beseech thee, through his wondrous merits and prayers; both to keep the faith which he taught, and ever to seek after the things of heaven. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "evening": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "聖威爾弗里德主教",
+          "zh-hans": "圣威尔弗里德主教",
+          "en": "Saint Wilfrid, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝曾藉著主的真福聖威爾弗里德主教的卓越功勳，使許多奇事在他身上彰顯；求主大發慈悲，正如我們從他的教導中，學會熱切地尋求屬天之事，並藉著他的代求，而時常蒙主護佑。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝曾藉着主的真福圣威尔弗里德主教的卓越功勋，使许多奇事在他身上彰显；求主大发慈悲，正如我们从他的教导中，学会热切地寻求属天之事，并藉着他的代求，而时常蒙主护佑。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "聖威爾弗里德主教",
+          "zh-hans": "圣威尔弗里德主教",
+          "en": "Saint Wilfrid, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝是信徒的真光、靈魂的牧者，曾在聖教會中立榮福的威爾弗里德為主教，叫他用教訓牧養主的羊群，用善行作他們的榜樣；懇求主因他的奇妙功德和祈禱，叫我們持守他所傳的信仰，常常嚮慕天上的事。這都是靠著主的聖子、我主耶穌基督；他與主在聖靈的合一中，一同永生，一同掌權，為獨一上帝，永世無盡。阿們。",
+          "zh-hans": "上帝是信徒的真光、灵魂的牧者，曾在圣教会中立荣福的威尔弗里德为主教，叫他用教训牧养主的羊群，用善行作他们的榜样；恳求主因他的奇妙功德和祈祷，叫我们持守他所传的信仰，常常向慕天上的事。这都是靠着主的圣子、我主耶稣基督；他与主在圣灵的合一中，一同永生，一同掌权，为独一上帝，永世无尽。阿们。",
+          "en": "O GOD, the light of the faithful and shepherd of souls, who didst set blessed Wilfrid to be a Bishop in thy Church, that he might feed thy sheep by his word and guide them by his example: Grant us, we beseech thee, through his wondrous merits and prayers; both to keep the faith which he taught, and ever to seek after the things of heaven. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  }
+}

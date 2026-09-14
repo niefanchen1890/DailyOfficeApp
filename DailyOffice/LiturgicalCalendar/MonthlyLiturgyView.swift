@@ -333,7 +333,7 @@ struct DayRow: View {
         case .semiDouble, .ordinarySunday, .privilegedOctaveSecondClass,
              .privilegedOctaveThirdClass, .ordinaryOctavesemiDouble:
             return .green
-        case .simple, .commemoration:
+        case .saturdayOfficeBVM, .simple, .commemoration:
             return .gray
         default:
             return .primary

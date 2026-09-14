@@ -500,7 +500,7 @@ struct UpcomingHolyDayRow: View {
         case .doubleSecondClass, .sundaySecondClass, .privilegedVigilSecondClass: return .purple
         case .greaterDouble, .double, .privilegedOctaveFirstClass, .privilegedOctaveSecondClassGreat, .privilegedOctaveThirdClassGreat, .ordinaryOctavegreaterDouble: return .blue
         case .semiDouble, .ordinarySunday, .privilegedOctaveSecondClass, .privilegedOctaveThirdClass, .ordinaryOctavesemiDouble: return .green
-        case .simple, .commemoration: return .gray
+        case .saturdayOfficeBVM, .simple, .commemoration: return .gray
         default: return .primary
         }
     }
@@ -509,6 +509,7 @@ struct UpcomingHolyDayRow: View {
 // MARK: - 6. 設定與說明視圖
 struct AboutView: View {
     @AppStorage("bibleVersion") private var bibleVersion = "CUV"
+    @AppStorage("appAppearance") private var appearance: AppAppearance = .automatic
     @ObservedObject private var languageStore = AppLanguageStore.shared
     
     private var isSimp: Bool {
@@ -556,6 +557,23 @@ struct AboutView: View {
                         Text("切換介面繁簡體中文顯示。".adaptChinese(isSimplified: isSimp))
                             .font(.system(size: 12)).foregroundColor(.secondary)
                     }
+
+                    Divider().padding(.vertical, 4)
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("顯示模式".adaptChinese(isSimplified: isSimp))
+                            .font(.system(size: 14, weight: .medium)).foregroundColor(.secondary)
+
+                        Picker("顯示模式".adaptChinese(isSimplified: isSimp), selection: $appearance) {
+                            ForEach(AppAppearance.allCases, id: \.self) { mode in
+                                Text(mode.title.adaptChinese(isSimplified: isSimp)).tag(mode)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+
+                        Text("選擇自動時，隨設備設定切換白晝或黑夜模式。".adaptChinese(isSimplified: isSimp))
+                            .font(.system(size: 12)).foregroundColor(.secondary)
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -569,28 +587,61 @@ struct AboutView: View {
                         Text("日課說明".adaptChinese(isSimplified: isSimp)).font(.headline).bold()
                     }
                     .foregroundColor(.secondary)
-                    
-                    Text("本安立甘日課是以1928年美國《公禱書》為基礎，增加了聖日、聖詩、頌歌、啟應經文，以及來自莎霖日課、其他地區《公禱書》與更廣泛的西方教會傳統禱文。除了早晚禱之外，還有一套來自《莎霖日課經》、本篤會禮儀的《小時課》。日課讀經表則是採用1928年美國版《公禱書》與1962年加拿大版《公禱書》經課表。".adaptChinese(isSimplified: isSimp))
-                        .font(.system(size: 15)).lineSpacing(6).foregroundColor(.primary)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding().background(Color(UIColor.secondarySystemBackground)).cornerRadius(12)
-                
-                // --- 3. 中文說明 ---
-                VStack(alignment: .leading, spacing: 12) {
-                    HStack {
-                        Image(systemName: "book.circle")
-                        Text("中文說明".adaptChinese(isSimplified: isSimp)).font(.headline).bold()
+
+                    VStack(alignment: .leading, spacing: 16) {
+                        aboutTextSection(
+                            title: "本日課根據什麼製作？",
+                            paragraphs: [
+                                "本日課是以美國1928年《公禱書》於1932年在上海，由大美國聖公會翻譯為《公禱文》為基礎；以聖安德烈學校的惠特霍恩出版社出版的第二版《安立甘日課經》（Anglican Office）為補充，補充了年曆、對經、聖詩、啓應等；以《安立甘日課經》（Anglican Breviary）的禮規為基準；《公禱文》外的祝文以《安立甘彌撒經》（Anglican Missal）為基準而編輯。並且根據《安立甘日課經》（Anglican Office）提供一套完整的小日課。"
+                            ]
+                        )
+
+                        aboutTextSection(
+                            title: "本日課使用哪一版的經課表與詩篇？",
+                            paragraphs: ["本日課會提供三個日課經課表："],
+                            numberedItems: [
+                                "1928年《公禱書》日課經課表。1928年《公禱書》原本經課表，目前為參考。",
+                                "1943年日課經課表。此經課表為持續安立甘教會通用經課表。",
+                                "1962年加拿大《公禱書》日課讀經表。"
+                            ]
+                        )
+
+                        aboutTextSection(
+                            paragraphs: ["詩篇誦讀方式會有："],
+                            numberedItems: [
+                                "按月度誦讀一遍詩篇。",
+                                "按兩週誦讀一遍詩篇。此誦讀方式需要小時課配合。",
+                                "按1943年經課表誦讀每日節選的詩篇。"
+                            ]
+                        )
+
+                        aboutTextSection(
+                            title: "聖經文本為何？",
+                            paragraphs: [
+                                "本日課使用《聖經·和合本》與1933年《次經全書》的文本。因兩者皆已為公共版權，不需要尋求授權。"
+                            ]
+                        )
+
+                        aboutTextSection(
+                            title: "製作方式",
+                            paragraphs: [
+                                "本日課程序是使用ai編程製作，包括：谷歌的Gemini、月之暗面的Kimi、notion Ai以及Open Ai的ChatGPT。"
+                            ]
+                        )
+
+                        aboutTextSection(
+                            title: "我能幫上什麼忙？",
+                            paragraphs: [
+                                "本日課製作時，人力極其有限，僅有一人。可能會有很多的錯誤，包括禮儀規則和錯別字。若發現錯誤，請通過郵箱聯繫我。",
+                                "如果想支持本站，請通過郵箱聯繫我。"
+                            ]
+                        )
                     }
-                    .foregroundColor(.secondary)
-                    
-                    Text("日課中文主體來自1932年中華聖公會三教區聯合出版之《公禱文》。此為1928年美國《公禱書》之最全中譯本。其餘補充的「聖日、聖詩、頌歌、啟應經文以及小時課」等內容，若有通行，或權威中譯則是直接引用。若無，則為自行翻譯。".adaptChinese(isSimplified: isSimp))
-                        .font(.system(size: 15)).lineSpacing(6).foregroundColor(.primary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding().background(Color(UIColor.secondarySystemBackground)).cornerRadius(12)
                 
-                // --- 4. 版權說明 ---
+                // --- 3. 版權說明 ---
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
                         Image(systemName: "c.circle")
@@ -619,6 +670,35 @@ struct AboutView: View {
             get: { languageStore.language },
             set: { languageStore.setLanguage($0) }
         )
+    }
+
+    @ViewBuilder
+    private func aboutTextSection(
+        title: String? = nil,
+        paragraphs: [String],
+        numberedItems: [String] = []
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if let title {
+                Text(title.adaptChinese(isSimplified: isSimp))
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.primary)
+            }
+
+            ForEach(paragraphs, id: \.self) { paragraph in
+                Text(paragraph.adaptChinese(isSimplified: isSimp))
+            }
+
+            ForEach(Array(numberedItems.enumerated()), id: \.offset) { index, item in
+                HStack(alignment: .top, spacing: 6) {
+                    Text("\(index + 1).")
+                    Text(item.adaptChinese(isSimplified: isSimp))
+                }
+            }
+        }
+        .font(.system(size: 15))
+        .lineSpacing(6)
+        .foregroundColor(.primary)
     }
 }
 

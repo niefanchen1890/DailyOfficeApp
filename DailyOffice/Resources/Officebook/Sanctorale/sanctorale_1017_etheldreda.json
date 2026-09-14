@@ -1,0 +1,130 @@
+{
+  "identifier": "st_etheldreda",
+  "name": {
+    "zh-hant": "童貞女聖埃塞爾麗達",
+    "zh-hans": "童贞女圣埃塞尔丽达",
+    "en": "Saint Etheldreda, Virgin"
+  },
+  "rank": "semiDouble",
+  "rank_display": {
+    "zh-hant": "（半複式）",
+    "zh-hans": "（半复式）",
+    "en": "Semidouble"
+  },
+  "type": "sanctorale",
+  "common_office": "common_virgin_outside_easter",
+  "vigil": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "童貞女聖埃塞爾麗達",
+          "zh-hans": "童贞女圣埃塞尔丽达",
+          "en": "Saint Etheldreda, Virgin"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主使我們歡度主的童貞聖女埃塞爾麗達一年一度的慶節，求主大發慈悲，使我們因她聖潔的模範所光照，感受到她功德的救濟。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主使我们欢度主的童贞圣女埃塞尔丽达一年一度的庆节，求主大发慈悲，使我们因她圣洁的模范所光照，感受到她功德的救济。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "童貞女聖埃塞爾麗達",
+          "zh-hans": "童贞女圣埃塞尔丽达",
+          "en": "Saint Etheldreda, Virgin"
+        },
+        "text": {
+          "zh-hant": "上帝是童貞心靈的淨配、清心之人的慰藉、凡愛主之人的救恩；懇求主憐憫施恩，叫我們虔敬守主的童貞女聖埃塞爾麗達慶日的人，因她的祈禱，蒙主威榮俯賜憐憫。這都是靠著主的聖子、我主耶穌基督；主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，永世無盡。阿們。",
+          "zh-hans": "上帝是童贞心灵的净配、清心之人的慰藉、凡爱主之人的救恩；恳求主怜悯施恩，叫我们虔敬守主的童贞女圣埃塞尔丽达庆日的人，因她的祈祷，蒙主威荣俯赐怜悯。这都是靠着主的圣子、我主耶稣基督；主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，永世无尽。阿们。",
+          "en": "O GOD, who art the Spouse of virgin souls, the refreshment of the pure in heart, and the salvation of all them that love thee: mercifully grant that we, who reverently celebrate the feast of thy blessed Virgin Etheldreda, may through her prayers obtain mercy of thy divine majesty. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "morning": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "童貞女聖埃塞爾麗達",
+          "zh-hans": "童贞女圣埃塞尔丽达",
+          "en": "Saint Etheldreda, Virgin"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主使我們歡度主的童貞聖女埃塞爾麗達一年一度的慶節，求主大發慈悲，使我們因她聖潔的模範所光照，感受到她功德的救濟。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主使我们欢度主的童贞圣女埃塞尔丽达一年一度的庆节，求主大发慈悲，使我们因她圣洁的模范所光照，感受到她功德的救济。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "童貞女聖埃塞爾麗達",
+          "zh-hans": "童贞女圣埃塞尔丽达",
+          "en": "Saint Etheldreda, Virgin"
+        },
+        "text": {
+          "zh-hant": "上帝是童貞心靈的淨配、清心之人的慰藉、凡愛主之人的救恩；懇求主憐憫施恩，叫我們虔敬守主的童貞女聖埃塞爾麗達慶日的人，因她的祈禱，蒙主威榮俯賜憐憫。這都是靠著主的聖子、我主耶穌基督；主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，永世無盡。阿們。",
+          "zh-hans": "上帝是童贞心灵的净配、清心之人的慰藉、凡爱主之人的救恩；恳求主怜悯施恩，叫我们虔敬守主的童贞女圣埃塞尔丽达庆日的人，因她的祈祷，蒙主威荣俯赐怜悯。这都是靠着主的圣子、我主耶稣基督；主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，永世无尽。阿们。",
+          "en": "O GOD, who art the Spouse of virgin souls, the refreshment of the pure in heart, and the salvation of all them that love thee: mercifully grant that we, who reverently celebrate the feast of thy blessed Virgin Etheldreda, may through her prayers obtain mercy of thy divine majesty. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "evening": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "童貞女聖埃塞爾麗達",
+          "zh-hans": "童贞女圣埃塞尔丽达",
+          "en": "Saint Etheldreda, Virgin"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主使我們歡度主的童貞聖女埃塞爾麗達一年一度的慶節，求主大發慈悲，使我們因她聖潔的模範所光照，感受到她功德的救濟。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主使我们欢度主的童贞圣女埃塞尔丽达一年一度的庆节，求主大发慈悲，使我们因她圣洁的模范所光照，感受到她功德的救济。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "童貞女聖埃塞爾麗達",
+          "zh-hans": "童贞女圣埃塞尔丽达",
+          "en": "Saint Etheldreda, Virgin"
+        },
+        "text": {
+          "zh-hant": "上帝是童貞心靈的淨配、清心之人的慰藉、凡愛主之人的救恩；懇求主憐憫施恩，叫我們虔敬守主的童貞女聖埃塞爾麗達慶日的人，因她的祈禱，蒙主威榮俯賜憐憫。這都是靠著主的聖子、我主耶穌基督；主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，永世無盡。阿們。",
+          "zh-hans": "上帝是童贞心灵的净配、清心之人的慰藉、凡爱主之人的救恩；恳求主怜悯施恩，叫我们虔敬守主的童贞女圣埃塞尔丽达庆日的人，因她的祈祷，蒙主威荣俯赐怜悯。这都是靠着主的圣子、我主耶稣基督；主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，永世无尽。阿们。",
+          "en": "O GOD, who art the Spouse of virgin souls, the refreshment of the pure in heart, and the salvation of all them that love thee: mercifully grant that we, who reverently celebrate the feast of thy blessed Virgin Etheldreda, may through her prayers obtain mercy of thy divine majesty. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  }
+}

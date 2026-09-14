@@ -20,15 +20,27 @@ struct AnglicanDailyOfficeView: View {
                 NavigationLink("家用禱文（晚禱）".adaptChinese(isSimplified: isSimp)) {
                     HomePrayerEveningView()
                 }
+                NavigationLink("亡者日課（晚禱）".adaptChinese(isSimplified: isSimp)) {
+                    DeadOfficeView(hour: .evening)
+                }
+                NavigationLink("亡者日課（早禱）".adaptChinese(isSimplified: isSimp)) {
+                    DeadOfficeView(hour: .morning)
+                }
             }
             
             Section("大衛詩篇".adaptChinese(isSimplified: isSimp)) {
                 NavigationLink("詩篇".adaptChinese(isSimplified: isSimp)) {
                     PsalmCycleView()
                 }
+                NavigationLink("詩篇兩週循環模式".adaptChinese(isSimplified: isSimp)) {
+                    FortnightPsalmView()
+                }
             }
             
             Section("時辰祈禱".adaptChinese(isSimplified: isSimp)) {
+                NavigationLink("日課前後的祈禱".adaptChinese(isSimplified: isSimp)) {
+                    BeforeAndAfterOfficePrayerView()
+                }
                 NavigationLink("早禱".adaptChinese(isSimplified: isSimp)) {
                     MorningPrayerView()
                 }

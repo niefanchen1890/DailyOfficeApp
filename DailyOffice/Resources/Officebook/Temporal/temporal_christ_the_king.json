@@ -1,0 +1,456 @@
+{
+  "evening" : {
+    "benedictus_antiphon" : {
+      "normal" : {
+        "en" : "He hath on his vesture * and on his thigh a Name written, KING OF KINGS, AND LORD OF LORDS: to him be glory and dominion for ever and ever.",
+        "zh-hans" : "在他衣服 * 和大腿上写着「万王之王，万主之主」的名号：愿荣耀、权能归给他，直到永永远远。",
+        "zh-hant" : "在他衣服 * 和大腿上寫着「萬王之王，萬主之主」的名號：願榮耀、權能歸給他，直到永永遠遠。"
+      }
+    },
+    "bible_sentences" : [
+      {
+        "reference" : {
+          "en" : "Rev. xi. 15.",
+          "zh-hans" : "（启示录 11:15）",
+          "zh-hant" : "（啟示錄 11:15）"
+        },
+        "text" : {
+          "en" : "THE kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever.",
+          "zh-hans" : "世上的国已成了我们的主和他所立的基督的国了。他要作王直到永永远远！",
+          "zh-hant" : "世上的國已成了我們的主和他所立的基督的國了。他要作王直到永永遠遠！"
+        }
+      }
+    ],
+    "collect" : {
+      "text" : {
+        "en" : "ALMIGHTY and everlasting God, who hast exalted thy beloved Son to be King over all worlds, and hast willed in him to make all things new: mercifully grant, that the kingdoms of the earth, which are now wounded and estranged by sin, may speedily be brought under his gracious sovereignty. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans" : "无所不能、无始无终的上帝，高举爱子为普世的君王，并愿意借着祂更新万事万物，求主大发慈悲，使地上因罪恶而受伤、分散的万民，在祂仁慈的统治下迅速结合在一起。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant" : "無所不能、無始無終的上帝，高舉愛子為普世的君王，並願意借著祂更新萬事萬物，求主大發慈悲，使地上因罪惡而受傷、分散的萬民，在祂仁慈的統治下迅速結合在一起。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title" : {
+        "en" : "Our Lord Jesus Christ the King",
+        "zh-hans" : "我主基督君王日",
+        "zh-hant" : "我主基督君王日"
+      }
+    },
+    "office_hymn" : {
+      "title" : {
+        "en" : "O LORD of ages",
+        "zh-hans" : "万世之主我众歌唱",
+        "zh-hant" : "萬世之主我眾歌唱"
+      },
+      "verses" : [
+        {
+          "en" : "O LORD of ages, thee we sing;\nWe hail thee as the nations' King,\nO Christ; our only Judge thou art,\nThou searcher of the mind and heart.",
+          "zh-hans" : "一、万世之主我众歌唱，欢呼基督万国君王；\n惟你是我审判之主，鉴察心思洞悉肺腑。",
+          "zh-hant" : "一、萬世之主我眾歌唱，歡呼基督萬國君王；\n惟你是我審判之主，鑒察心思洞悉肺腑。"
+        },
+        {
+          "en" : "Though evil shouting mobs maintain:\nWe will not have this Christ to reign:\nNot such is our triumphant cry,\nWho hail thee King of kings most high.",
+          "zh-hans" : "二、恶众虽然喧嚷张狂，不愿基督作王掌权；\n我众却以凯歌颂扬，尊主至高万王之王。",
+          "zh-hant" : "二、惡眾雖然喧嚷張狂，不願基督作王掌權；\n我眾卻以凱歌頌揚，尊主至高萬王之王。"
+        },
+        {
+          "en" : "O Christ, thou Prince of peace, subdue\nAll rebel thoughts; our minds renew;\nAnd gather into thy one fold\nThe wanderers whom thy love doth hold.",
+          "zh-hans" : "三、基督你是和平之君，降服逆念使我更新；\n蒙主慈爱迷途之羊，求你招聚同归一群。",
+          "zh-hant" : "三、基督你是和平之君，降服逆念使我更新；\n蒙主慈愛迷途之羊，求你招聚同歸一群。"
+        },
+        {
+          "en" : "For this thou hangèdst on the Tree\nWith arms outstretched in fervent plea;\nAnd showèdst forth thy burning heart\nTransfixèd by the cruèl dart.",
+          "zh-hans" : "四、为此你曾悬于木上，伸开双臂恳切祈祷；\n显露圣心爱火炽盛，竟被残酷长矛刺透。",
+          "zh-hant" : "四、為此你曾懸於木上，伸開雙臂懇切祈禱；\n顯露聖心愛火熾盛，竟被殘酷長矛刺透。"
+        },
+        {
+          "en" : "For this thy piercèd side doth shed,\nBeneath the forms of wine and bread,\nThy grace upon thy sons; yet thou\nArt hidden at the Altar now.",
+          "zh-hans" : "五、为此你从被刺肋旁，借着圣餐饼酒之形；\n向众子民倾注救恩，隐藏己身于祭坛上。",
+          "zh-hant" : "五、為此你從被刺肋旁，藉著聖餐餅酒之形；\n向眾子民傾注救恩，隱藏己身於祭壇上。"
+        },
+        {
+          "en" : "The rulers of the nations raise\nTo thee their meed of public praise;\nInstructors, judges, thee confess;\nArt, science, law, thy truth express.",
+          "zh-hans" : "六、列国元首当众颂主，师儒判官同认基督；\n文艺科学以及律法，皆当表明主的真道。",
+          "zh-hant" : "六、列國元首當眾頌主，師儒判官同認基督；\n文藝科學以及律法，皆當表明主的真道。"
+        },
+        {
+          "en" : "Let kings be fain to dedicate\nTo thee the emblems of the state;\nAnd let our homes and fatherland\nBe subject to thy kind command.",
+          "zh-hans" : "七、愿诸君王甘心奉献，王权徽号敬陈主前；\n愿我家室以及邦国，悉遵主命服主仁政。",
+          "zh-hant" : "七、願諸君王甘心奉獻，王權徽號敬陳主前；\n願我家室以及邦國，悉遵主命服主仁政。"
+        },
+        {
+          "en" : "Jesu, to thee we glory pay,\nRuling earth's kingdoms neath thy sway;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans" : "八、耶稣我众颂主荣光，主掌王权统治万邦；\n圣父以及保惠圣灵，同受荣耀世世无尽。阿们。",
+          "zh-hant" : "八、耶穌我眾頌主榮光，主掌王權統治萬邦；\n聖父以及保惠聖靈，同受榮耀世世無盡。阿們。"
+        }
+      ],
+      "versicle" : {
+        "leader" : {
+          "en" : "His Name shall be called the Prince of peace.",
+          "zh-hans" : "他名称为和平的君。",
+          "zh-hant" : "他名稱為和平的君。"
+        },
+        "people" : {
+          "en" : "And of the increase of his government, there shall be no end.",
+          "zh-hans" : "他的政权与平安必加增无穷。",
+          "zh-hant" : "他的政權與平安必加增無窮。"
+        }
+      }
+    },
+    "psalm_antiphons" : {
+      "lectionary_1943": {
+        "en": "The nation and kingdom * that will not serve thee shall perish; yea, those nations shall be utterly destroyed.",
+        "zh-hans": "不事奉你的那邦、 * 那国要灭亡，那些国家必全然荒废。",
+        "zh-hant": "不事奉你的那邦、 * 那國要滅亡，那些國家必全然荒廢。"
+      },
+      "antiphons": [
+        {
+          "zh-hant": "這才是真正的所羅門，他的名是普世平安的憑據，※上帝已堅立他國度的寶座，直到永遠。",
+          "zh-hans": "这才是真正的所罗门，他的名是普世平安的凭据，※上帝已坚立他国度的宝座，直到永远。",
+          "en": "This is the truer Solomon, whose Name is the pledge of peace to the whole world, ※and the throne of whose kingdom God hath established for evermore."
+        },
+        {
+          "zh-hant": "因為他的國＊是永遠的國，※所有掌權的都必事奉他，順從他。",
+          "zh-hans": "因为他的国＊是永远的国，※所有掌权的都必事奉他，顺从他。",
+          "en": "For his kingdom is an everlasting kingdom, ※and all dominions shall serve and obey him."
+        },
+        {
+          "zh-hant": "看哪，那如旭日初升的人，他名稱為大衛苗裔；※他必坐在位上掌王權，並向列國宣告和平。",
+          "zh-hans": "看哪，那如旭日初升的人，他名称为大卫苗裔；※他必坐在位上掌王权，并向列国宣告和平。",
+          "en": "Behold the Man who is like to the sunrising, whose Name is The Branch; ※he shall sit and rule upon his throne, and speak peace unto the Gentiles."
+        },
+        {
+          "zh-hant": "因此，那永恆、非受造的主必拯救我們；※因為主是審判我們的，主為我們設立律法；主是我們的君王。",
+          "zh-hans": "因此，那永恒、非受造的主必拯救我们；※因为主是审判我们的，主为我们设立律法；主是我们的君王。",
+          "en": "So he, the Lord Eternal and Uncreate, will save us; ※for the Lord is our Judge, the Lord is our Lawgiver, the Lord is our King."
+        },
+        {
+          "zh-hant": "上帝論到他說：我還要使你作萬邦之光，※使你施行我的救恩，直到地極。",
+          "zh-hans": "上帝论到他说：我还要使你作万邦之光，※使你施行我的救恩，直到地极。",
+          "en": "Of him hath God said, I will give thee for a Light to the Gentiles, ※that thou mayest be my Salvation unto the end of the earth."
+        }
+      ]
+    }
+  },
+  "identifier" : "christ_the_king",
+  "morning" : {
+    "benedictus_antiphon" : {
+      "normal" : {
+        "en" : "Unto God and his Father * hath he made us to be a kingdom, who is the first-begotten of the dead, and the Prince of the kings of the earth, alleluia.",
+        "zh-hans" : "他使我们成为国度， * 归于他父上帝；他是从死人中首生的，世上君王的元首，哈利路亚。",
+        "zh-hant" : "他使我們成為國度， * 歸於他父上帝；他是從死人中首生的，世上君王的元首，哈利路亞。"
+      }
+    },
+    "bible_sentences" : [
+      {
+        "reference" : {
+          "en" : "Col. i. 18.",
+          "zh-hans" : "（歌罗西书 1:18）",
+          "zh-hant" : "（歌羅西書 1:18）"
+        },
+        "text" : {
+          "en" : "HE is the beginning, the First-Born from the dead; that in all things he might have the preëminence.",
+          "zh-hans" : "他是元始，是从死人中复活的首生者，好让他在万有中居首位。",
+          "zh-hant" : "他是元始，是從死人中復活的首生者，好讓他在萬有中居首位。"
+        }
+      }
+    ],
+    "collect" : {
+      "text" : {
+        "en" : "ALMIGHTY and everlasting God, who hast exalted thy beloved Son to be King over all worlds, and hast willed in him to make all things new: mercifully grant, that the kingdoms of the earth, which are now wounded and estranged by sin, may speedily be brought under his gracious sovereignty. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans" : "无所不能、无始无终的上帝，高举爱子为普世的君王，并愿意借着祂更新万事万物，求主大发慈悲，使地上因罪恶而受伤、分散的万民，在祂仁慈的统治下迅速结合在一起。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant" : "無所不能、無始無終的上帝，高舉愛子為普世的君王，並願意借著祂更新萬事萬物，求主大發慈悲，使地上因罪惡而受傷、分散的萬民，在祂仁慈的統治下迅速結合在一起。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title" : {
+        "en" : "Our Lord Jesus Christ the King",
+        "zh-hans" : "我主基督君王日",
+        "zh-hant" : "我主基督君王日"
+      }
+    },
+    "invitatory" : {
+      "text" : {
+        "en" : "Jesus Christ, the King of kings; * O come, let us worship.",
+        "zh-hans" : "耶稣基督是万王之王，我们当来俯伏敬拜。",
+        "zh-hant" : "耶穌基督是萬王之王，我們當來俯伏敬拜。"
+      }
+    },
+    "invitatory_hymn" : {
+      "title" : {
+        "en" : "TO thee, eternal Image bright",
+        "zh-hans" : "至高上帝永恒真像",
+        "zh-hant" : "至高上帝永恆真像"
+      },
+      "verses" : [
+        {
+          "en" : "TO thee, eternal Image bright\nOf God most High, thou Light of Light,\nThou Saviour blest, all glory be,\nAnd might and kingly majesty.",
+          "zh-hans" : "一、至高上帝永恒真像，光中之光荣福救主；\n愿主永享无穷荣耀，大能权柄君王威严。",
+          "zh-hant" : "一、至高上帝永恆真像，光中之光榮福救主；\n願主永享無窮榮耀，大能權柄君王威嚴。"
+        },
+        {
+          "en" : "The Center thou of circling time,\nBefore all ages Hope sublime;\nThe Father rightly doth maintain\nThe nations by thy mighty reign.",
+          "zh-hans" : "二、你是万世运行枢纽，万古之前至高盼望；\n圣父按理立你为王，借你大能保守万邦。",
+          "zh-hant" : "二、你是萬世運行樞紐，萬古之前至高盼望；\n聖父按理立你為王，藉你大能保守萬邦。"
+        },
+        {
+          "en" : "Thou art the Blossom Mary bore;\nOur race's Head for evermore;\nThe Stone of Daniel from on high,\nWhose bulk o'er all the earth doth lie.",
+          "zh-hans" : "三、童贞圣母所生之花，永为我众人类元首；\n但以理书所示之石，自高而降充满四方。",
+          "zh-hant" : "三、童貞聖母所生之花，永為我眾人類元首；\n但以理書所示之石，自高而降充滿四方。"
+        },
+        {
+          "en" : "The guilty stock of mortal men\nThrough thee lays claim to heaven again,\nAnd by thy succour breaks away\nThe chains of that dread tyrant's sway.",
+          "zh-hans" : "四、世人一族负罪沉沦，赖你重得天国福分；\n又蒙你助挣断锁链，脱离暴君凶恶权柄。",
+          "zh-hant" : "四、世人一族負罪沉淪，賴你重得天國福分；\n又蒙你助掙斷鎖鏈，脫離暴君兇惡權柄。"
+        },
+        {
+          "en" : "Lawgiver, Teacher, Priest, thy Name\nIs: Lord of lords; in blood the same\nIs written: King of kings Most High\nUpon thy vesture and thy thigh.",
+          "zh-hans" : "五、立法之主教师祭司，你名称为万主之主；\n衣上股上血书尊号，万王之王至尊至高。",
+          "zh-hant" : "五、立法之主教師祭司，你名稱為萬主之主；\n衣上股上血書尊號，萬王之王至尊至高。"
+        },
+        {
+          "en" : "By right, thou rulest all; and we,\nThy willing subjects, render thee\nOur homage; under thy behest\nThy citizens are ever blest.",
+          "zh-hans" : "六、万有理当由你治理，我众甘心作你臣民；\n俯伏致敬遵你律令，国中子民永享福庆。",
+          "zh-hant" : "六、萬有理當由你治理，我眾甘心作你臣民；\n俯伏致敬遵你律令，國中子民永享福慶。"
+        },
+        {
+          "en" : "Jesu, to thee we glory pay,\nRuling earth's kingdoms neath thy sway;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans" : "七、耶稣我众颂主荣光，主掌王权统治万邦；\n圣父以及保惠圣灵，同受荣耀世世无尽。阿们。",
+          "zh-hant" : "七、耶穌我眾頌主榮光，主掌王權統治萬邦；\n聖父以及保惠聖靈，同受榮耀世世無盡。阿們。"
+        }
+      ]
+    },
+    "office_hymn" : {
+      "title" : {
+        "en" : "NOW Christ unfurls",
+        "zh-hans" : "基督如今凯旋得胜",
+        "zh-hant" : "基督如今凱旋得勝"
+      },
+      "verses" : [
+        {
+          "en" : "NOW Christ unfurls, in triumph high,\nHis glorious banner to the sky:\nYe suppliant nations, kneel and praise\nThe King of kings with joyful lays.",
+          "zh-hans" : "一、基督如今凯旋得胜，荣耀旌旗高展穹苍；\n万邦前来屈膝敬拜，欢歌颂扬万王之王。",
+          "zh-hant" : "一、基督如今凱旋得勝，榮耀旌旗高展穹蒼；\n萬邦前來屈膝敬拜，歡歌頌揚萬王之王。"
+        },
+        {
+          "en" : "He hath not won his kingdom here\nBy devastation, force, or fear;\nBut on the Cross uplifted high\nBy love alone draws all men nigh.",
+          "zh-hans" : "二、主非借着毁坏得国，亦非倚靠强力威吓；\n惟在十架高高举起，单凭慈爱吸引万民。",
+          "zh-hant" : "二、主非藉著毀壞得國，亦非倚靠強力威嚇；\n惟在十架高高舉起，單憑慈愛吸引萬民。"
+        },
+        {
+          "en" : "Now trebly blessèd is the land\nObedient unto Christ's command,\nWhich urges laws that prove the worth\nOf heavenly edicts here on earth!",
+          "zh-hans" : "三、此邦顺服基督命令，何等有福三倍蒙恩；\n推行律法彰明天旨，使其美善昭著于地。",
+          "zh-hant" : "三、此邦順服基督命令，何等有福三倍蒙恩；\n推行律法彰明天旨，使其美善昭著於地。"
+        },
+        {
+          "en" : "No armed rebellion kindles there,\nPeace strengthens union everywhere,\nAnd concord smiles; upon all sides,\nThe civil order safe abides.",
+          "zh-hans" : "四、此邦不见兵戈叛乱，和平使众联合益坚；\n和睦欢欣洋溢四方，邦国纲纪稳固安然。",
+          "zh-hant" : "四、此邦不見兵戈叛亂，和平使眾聯合益堅；\n和睦歡欣洋溢四方，邦國綱紀穩固安然。"
+        },
+        {
+          "en" : "There married faith is kept secure;\nThere ripening youth is ever pure;\nAnd modest households flourish, fair\nWith sweet and homely virtues, there.",
+          "zh-hans" : "五、夫妇忠贞婚盟永固，少年长成清洁自守；\n家室端庄日益兴盛，居家美德温厚可亲。",
+          "zh-hant" : "五、夫婦忠貞婚盟永固，少年長成清潔自守；\n家室端莊日益興盛，居家美德溫厚可親。"
+        },
+        {
+          "en" : "Pour down that longed for light of thine\nUpon us all, dear King divine;\nAnd let the conquered world adore\nIn shining peace forevermore.",
+          "zh-hans" : "六、至爱君王我主上帝，求以所盼真光普照；\n普世既已归服于你，永享清平向你敬拜。",
+          "zh-hant" : "六、至愛君王我主上帝，求以所盼真光普照；\n普世既已歸服於你，永享清平向你敬拜。"
+        },
+        {
+          "en" : "Jesu, to thee we glory pay,\nRuling earth's kingdoms neath thy sway;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans" : "七、耶稣我众颂主荣光，主掌王权统治万邦；\n圣父以及保惠圣灵，同受荣耀世世无尽。阿们。",
+          "zh-hant" : "七、耶穌我眾頌主榮光，主掌王權統治萬邦；\n聖父以及保惠聖靈，同受榮耀世世無盡。阿們。"
+        }
+      ],
+      "versicle" : {
+        "leader" : {
+          "en" : "His Name shall be called the Prince of peace.",
+          "zh-hans" : "他名称为和平的君。",
+          "zh-hant" : "他名稱為和平的君。"
+        },
+        "people" : {
+          "en" : "And of the increase of his government, there shall be no end.",
+          "zh-hans" : "他的政权与平安必加增无穷。",
+          "zh-hant" : "他的政權與平安必加增無窮。"
+        }
+      }
+    },
+    "psalm_antiphons" : {
+      "lectionary_1943": {
+        "en": "The Lord * hath given him Dominion, and Glory, and a Kingdom: that all peoples, nations, and tongues should serve him.",
+        "zh-hans": "主 * 赐给他权柄、荣耀、国度：使各方、各国、各族的人都事奉他。",
+        "zh-hant": "主 * 賜給他權柄、榮耀、國度：使各方、各國、各族的人都事奉他。"
+      },
+      "antiphons": [
+        {
+          "zh-hant": "天上的上帝必另立一個國度，這國度要打碎滅絕所有的國度，※卻要存立到永遠。",
+          "zh-hans": "天上的上帝必另立一个国度，这国度要打碎灭绝所有的国度，※却要存立到永远。",
+          "en": "The God of heaven shall set up a kingdom which shall break in pieces and consume all kingdoms, ※but itself shall stand for ever."
+        },
+        {
+          "zh-hant": "主已賜給他權柄、榮耀、國度，※使各方、各國、各族的人都事奉他。",
+          "zh-hans": "主已赐给他权柄、荣耀、国度，※使各方、各国、各族的人都事奉他。",
+          "en": "The Lord hath given him dominion and glory and a kingdom, ※that all people, nations, and languages should serve him."
+        },
+        {
+          "zh-hant": "必有活水從耶路撒冷出來，※主要作全地的王。",
+          "zh-hans": "必有活水从耶路撒冷出来，※主要作全地的王。",
+          "en": "Living waters shall go out from Jerusalem, ※and the Lord shall be King over all the earth."
+        },
+        {
+          "zh-hant": "現在他必尊大，直到地極；※這位就是和平。",
+          "zh-hans": "现在他必尊大，直到地极；※这位就是和平。",
+          "en": "Now shall he be great, even unto the ends of the earth, ※yea, this Man shall be The Peace."
+        },
+        {
+          "zh-hant": "不事奉你的那邦、那國要滅亡；※那些國家必全然荒廢。",
+          "zh-hans": "不事奉你的那邦、那国要灭亡；※那些国家必全然荒废。",
+          "en": "The nation and kingdom that will not serve thee shall perish; ※yea, those nations shall be utterly wasted."
+        }
+      ]
+    }
+  },
+  "name" : {
+    "en" : "Our Lord Jesus Christ the King",
+    "zh-hans" : "我主基督君王日",
+    "zh-hant" : "我主基督君王日"
+  },
+  "rank" : "doubleFirstClass",
+  "rank_display" : {
+    "en" : "Double of the First Class",
+    "zh-hans" : "（一等复式）",
+    "zh-hant" : "（一等複式）"
+  },
+  "traits" : {
+    "themes" : [
+      "christTheKing"
+    ]
+  },
+  "type" : "temporal",
+  "vigil" : {
+    "benedictus_antiphon" : {
+      "normal" : {
+        "en" : "The Lord God * shall give unto him the throne of his father David; and he shall reign over the house of Jacob for ever; and of his Kingdom there shall be no end, alleluia.",
+        "zh-hans" : "主上帝 * 要把他祖先大卫的王位给他。他要作雅各家的王，直到永远；他的国没有穷尽。",
+        "zh-hant" : "主上帝 * 要把他祖先大衛的王位給他。他要作雅各家的王，直到永遠；他的國沒有窮盡。"
+      }
+    },
+    "bible_sentences" : [
+      {
+        "reference" : {
+          "en" : "Col. i. 12.",
+          "zh-hans" : "（歌罗西书 1:13）",
+          "zh-hant" : "（歌羅西書 1:13）"
+        },
+        "text" : {
+          "en" : "LET us give thanks unto the Father, who hath delivered us from the power of darkness, and hath translated us into the Kingdom of his dear Son.",
+          "zh-hans" : "让我们感谢父，他救了我们脱离黑暗的权势，迁移到他爱子的国度里。",
+          "zh-hant" : "讓我們感謝父，他救了我們脫離黑暗的權勢，遷移到他愛子的國度裏。"
+        }
+      }
+    ],
+    "collect" : {
+      "text" : {
+        "en" : "ALMIGHTY and everlasting God, who hast exalted thy beloved Son to be King over all worlds, and hast willed in him to make all things new: mercifully grant, that the kingdoms of the earth, which are now wounded and estranged by sin, may speedily be brought under his gracious sovereignty. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans" : "无所不能、无始无终的上帝，高举爱子为普世的君王，并愿意借着祂更新万事万物，求主大发慈悲，使地上因罪恶而受伤、分散的万民，在祂仁慈的统治下迅速结合在一起。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant" : "無所不能、無始無終的上帝，高舉愛子為普世的君王，並願意借著祂更新萬事萬物，求主大發慈悲，使地上因罪惡而受傷、分散的萬民，在祂仁慈的統治下迅速結合在一起。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title" : {
+        "en" : "Our Lord Jesus Christ the King",
+        "zh-hans" : "我主基督君王日",
+        "zh-hant" : "我主基督君王日"
+      }
+    },
+    "office_hymn" : {
+      "title" : {
+        "en" : "O LORD of ages",
+        "zh-hans" : "万世之主我众歌唱",
+        "zh-hant" : "萬世之主我眾歌唱"
+      },
+      "verses" : [
+        {
+          "en" : "O LORD of ages, thee we sing;\nWe hail thee as the nations' King,\nO Christ; our only Judge thou art,\nThou searcher of the mind and heart.",
+          "zh-hans" : "一、万世之主我众歌唱，欢呼基督万国君王；\n惟你是我审判之主，鉴察心思洞悉肺腑。",
+          "zh-hant" : "一、萬世之主我眾歌唱，歡呼基督萬國君王；\n惟你是我審判之主，鑒察心思洞悉肺腑。"
+        },
+        {
+          "en" : "Though evil shouting mobs maintain:\nWe will not have this Christ to reign:\nNot such is our triumphant cry,\nWho hail thee King of kings most high.",
+          "zh-hans" : "二、恶众虽然喧嚷张狂，不愿基督作王掌权；\n我众却以凯歌颂扬，尊主至高万王之王。",
+          "zh-hant" : "二、惡眾雖然喧嚷張狂，不願基督作王掌權；\n我眾卻以凱歌頌揚，尊主至高萬王之王。"
+        },
+        {
+          "en" : "O Christ, thou Prince of peace, subdue\nAll rebel thoughts; our minds renew;\nAnd gather into thy one fold\nThe wanderers whom thy love doth hold.",
+          "zh-hans" : "三、基督你是和平之君，降服逆念使我更新；\n蒙主慈爱迷途之羊，求你招聚同归一群。",
+          "zh-hant" : "三、基督你是和平之君，降服逆念使我更新；\n蒙主慈愛迷途之羊，求你招聚同歸一群。"
+        },
+        {
+          "en" : "For this thou hangèdst on the Tree\nWith arms outstretched in fervent plea;\nAnd showèdst forth thy burning heart\nTransfixèd by the cruèl dart.",
+          "zh-hans" : "四、为此你曾悬于木上，伸开双臂恳切祈祷；\n显露圣心爱火炽盛，竟被残酷长矛刺透。",
+          "zh-hant" : "四、為此你曾懸於木上，伸開雙臂懇切祈禱；\n顯露聖心愛火熾盛，竟被殘酷長矛刺透。"
+        },
+        {
+          "en" : "For this thy piercèd side doth shed,\nBeneath the forms of wine and bread,\nThy grace upon thy sons; yet thou\nArt hidden at the Altar now.",
+          "zh-hans" : "五、为此你从被刺肋旁，借着圣餐饼酒之形；\n向众子民倾注救恩，隐藏己身于祭坛上。",
+          "zh-hant" : "五、為此你從被刺肋旁，藉著聖餐餅酒之形；\n向眾子民傾注救恩，隱藏己身於祭壇上。"
+        },
+        {
+          "en" : "The rulers of the nations raise\nTo thee their meed of public praise;\nInstructors, judges, thee confess;\nArt, science, law, thy truth express.",
+          "zh-hans" : "六、列国元首当众颂主，师儒判官同认基督；\n文艺科学以及律法，皆当表明主的真道。",
+          "zh-hant" : "六、列國元首當眾頌主，師儒判官同認基督；\n文藝科學以及律法，皆當表明主的真道。"
+        },
+        {
+          "en" : "Let kings be fain to dedicate\nTo thee the emblems of the state;\nAnd let our homes and fatherland\nBe subject to thy kind command.",
+          "zh-hans" : "七、愿诸君王甘心奉献，王权徽号敬陈主前；\n愿我家室以及邦国，悉遵主命服主仁政。",
+          "zh-hant" : "七、願諸君王甘心奉獻，王權徽號敬陳主前；\n願我家室以及邦國，悉遵主命服主仁政。"
+        },
+        {
+          "en" : "Jesu, to thee we glory pay,\nRuling earth's kingdoms neath thy sway;\nAll glory, as is ever meet,\nTo Father and to Paraclete. Amen.",
+          "zh-hans" : "八、耶稣我众颂主荣光，主掌王权统治万邦；\n圣父以及保惠圣灵，同受荣耀世世无尽。阿们。",
+          "zh-hant" : "八、耶穌我眾頌主榮光，主掌王權統治萬邦；\n聖父以及保惠聖靈，同受榮耀世世無盡。阿們。"
+        }
+      ],
+      "versicle" : {
+        "leader" : {
+          "en" : "All power is given unto me.",
+          "zh-hans" : "天上地下所有的权柄，",
+          "zh-hant" : "天上地下所有的權柄，"
+        },
+        "people" : {
+          "en" : "In heaven and in earth.",
+          "zh-hans" : "都赐给我了。",
+          "zh-hant" : "都賜給我了。"
+        }
+      }
+    },
+    "psalm_antiphons" : {
+      "lectionary_1943": {
+        "en": "Living waters shall go forth * from Jerusalem, and the Lord shall be King over all the earth: his throne shall be established for ever.",
+        "zh-hans": "活水必从耶路撒冷出来， * 主要作全地的王：他的宝座必坚定，直到永远。",
+        "zh-hant": "活水必從耶路撒冷出來， * 主要作全地的王：他的寶座必堅定，直到永遠。"
+      },
+      "antiphons": [
+        {
+          "zh-hant": "這才是真正的所羅門，他的名是普世平安的憑據，※上帝已堅立他國度的寶座，直到永遠。",
+          "zh-hans": "这才是真正的所罗门，他的名是普世平安的凭据，※上帝已坚立他国度的宝座，直到永远。",
+          "en": "This is the truer Solomon, whose Name is the pledge of peace to the whole world, ※and the throne of whose kingdom God hath established for evermore."
+        },
+        {
+          "zh-hant": "因為他的國＊是永遠的國，※所有掌權的都必事奉他，順從他。",
+          "zh-hans": "因为他的国＊是永远的国，※所有掌权的都必事奉他，顺从他。",
+          "en": "For his kingdom is an everlasting kingdom, ※and all dominions shall serve and obey him."
+        },
+        {
+          "zh-hant": "看哪，那如旭日初升的人，他名稱為大衛苗裔；※他必坐在位上掌王權，並向列國宣告和平。",
+          "zh-hans": "看哪，那如旭日初升的人，他名称为大卫苗裔；※他必坐在位上掌王权，并向列国宣告和平。",
+          "en": "Behold the Man who is like to the sunrising, whose Name is The Branch; ※he shall sit and rule upon his throne, and speak peace unto the Gentiles."
+        },
+        {
+          "zh-hant": "因此，那永恆、非受造的主必拯救我們；※因為主是審判我們的，主為我們設立律法；主是我們的君王。",
+          "zh-hans": "因此，那永恒、非受造的主必拯救我们；※因为主是审判我们的，主为我们设立律法；主是我们的君王。",
+          "en": "So he, the Lord Eternal and Uncreate, will save us; ※for the Lord is our Judge, the Lord is our Lawgiver, the Lord is our King."
+        },
+        {
+          "zh-hant": "上帝論到他說：我還要使你作萬邦之光，※使你施行我的救恩，直到地極。",
+          "zh-hans": "上帝论到他说：我还要使你作万邦之光，※使你施行我的救恩，直到地极。",
+          "en": "Of him hath God said, I will give thee for a Light to the Gentiles, ※that thou mayest be my Salvation unto the end of the earth."
+        }
+      ]
+    }
+  }
+}

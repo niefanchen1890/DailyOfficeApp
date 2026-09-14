@@ -1,0 +1,39 @@
+{
+  "identifier" : "temporal.trinity.week.21.weekday.7",
+  "morning" : {
+    "collect" : {
+      "text" : {
+        "zh-hans" : "求慈悲的主，将赦罪与平安的恩典，赐与信主的百姓，叫我们一切的罪恶，都蒙洗净，心里安然事奉主。这都是靠着我主耶稣基督。阿们。",
+        "zh-hant" : "求慈悲的主，將赦罪與平安的恩典，賜與信主的百姓，叫我們一切的罪惡，都蒙洗淨，心裡安然事奉主。這都是靠著我主耶穌基督。阿們。",
+        "en": ""
+      },
+      "title" : {
+        "zh-hans" : "三一主日后第二十一主日礼拜六",
+        "zh-hant" : "三一主日後第二十一主日禮拜六",
+        "en": ""
+      }
+    }
+  },
+  "name" : {
+    "zh-hans" : "三一主日后第二十一主日礼拜六",
+    "zh-hant" : "三一主日後第二十一主日禮拜六",
+    "en": ""
+  },
+  "rank" : "feria",
+  "rank_display" : {
+    "zh-hans" : "（普通平日）",
+    "zh-hant" : "（普通平日）",
+    "en": ""
+  },
+  "temporal" : {
+    "season" : "trinity",
+    "week" : 21,
+    "weekday" : 7
+  },
+  "traits" : {
+    "themes" : [
+
+    ]
+  },
+  "type" : "temporal"
+}

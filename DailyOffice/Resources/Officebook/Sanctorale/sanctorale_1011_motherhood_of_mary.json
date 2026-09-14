@@ -1,0 +1,409 @@
+{
+  "identifier": "mother_of_god",
+  "name": {
+    "en": "The Motherhood of the Blessed Virgin Mary",
+    "zh-hans": "上帝之母荣福童贞马利亚",
+    "zh-hant": "上帝之母榮福童貞馬利亞"
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "en": "Double of the Second Class",
+    "zh-hans": "（二等复式）",
+    "zh-hant": "（二等複式）"
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Rejoice we all ✠ in this worshipful remembrance of the blessed and glorious Virgin Mary, ※ who obtained the dignity of motherhood by the hallowing of her maiden innocence.",
+        "zh-hans": "我们要因敬礼※荣福童贞女马利亚而欢欣，她获得了做母亲的尊荣，却仍保持童贞。",
+        "zh-hant": "我們要因敬禮※榮福童貞女馬利亞而歡欣，她獲得了做母親的尊榮，卻仍保持童貞。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ecclus. xxiv. 9.",
+          "zh-hans": "（便西拉智训 24:9）",
+          "zh-hant": "（便西拉智訓 24:9）"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "他从起初未有世界以先就创造了我，我必不灭没直到永远。",
+          "zh-hant": "他從起初未有世界以先就創造了我，我必不滅沒直到永遠。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "",
+        "zh-hans": "上帝啊，主借着天使宣告，主的圣言在荣福童贞马利亚的胎中成了肉身，我们确信她真是上帝之母，恳求主因她的代求，悦纳我们。这都是靠着你的圣子，我们的主耶稣基督，圣子和圣父、圣灵，一同永生，一同掌权，惟一上帝，永无穷尽。阿们。",
+        "zh-hant": "上帝啊，主藉著天使宣告，主的聖言在榮福童貞馬利亞的胎中成了肉身，我們確信她真是上帝之母，懇求主因她的代求，悅納我們。這都是靠著你的聖子，我們的主耶穌基督，聖子和聖父、聖靈，一同永生，一同掌權，惟一上帝，永無窮盡。阿們。"
+      },
+      "title": {
+        "en": "The Motherhood of the Blessed Virgin Mary",
+        "zh-hans": "上帝之母荣福童贞马利亚",
+        "zh-hant": "上帝之母榮福童貞馬利亞"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Ave, maris stella",
+        "zh-hans": "Ave, maris stella",
+        "zh-hant": "Ave, maris stella"
+      },
+      "verses": [
+        {
+          "en": "Sea-Star! we acclaim thee!\nGod's kind Mother name thee!\nHail, thou Maid immortal,\nHeaven's blissful portal.",
+          "zh-hans": "一、万福世海之星，上帝慈爱之母；\n万福永贞童女，天上福乐门扉。",
+          "zh-hant": "一、萬福世海之星，上帝慈愛之母；\n萬福永貞童女，天上福樂門扉。"
+        },
+        {
+          "en": "Ave was the token\nBy the Angel spoken;\nPeace on earth it telleth,\nEva's name re-spelleth.",
+          "zh-hans": "二、加百列报万福，佳音你已领受；\n反转夏娃之名，保我平安无忧。",
+          "zh-hant": "二、加百列報萬福，佳音你已領受；\n反轉夏娃之名，保我平安無憂。"
+        },
+        {
+          "en": "Ask light for the blinded;\nFree the worldly-minded;\nThus our ills repressing,\nWin us every blessing.",
+          "zh-hans": "三、求为盲者开明，解脱罪人拘囚；\n驱除我众灾患，为我祈求福祐。",
+          "zh-hant": "三、求為盲者開明，解脫罪人拘囚；\n驅除我眾災患，為我祈求福祐。"
+        },
+        {
+          "en": "Be to us a Mother;\nFor thy Son, our Brother,\nWill for our salvation\nHeed thy supplication.",
+          "zh-hans": "四、慈母为我转求，愿主俯允所奏；\n主曾为我降生，甘作你子施救。",
+          "zh-hant": "四、慈母為我轉求，願主俯允所奏；\n主曾為我降生，甘作你子施救。"
+        },
+        {
+          "en": "Maiden meek and lowly,\nSingularly holy,\nHardened sinners render\nMeek and chaste and tender.",
+          "zh-hans": "五、童贞圣女无双，温良超乎众人；\n求解我众罪缚，使我柔顺清纯。",
+          "zh-hant": "五、童貞聖女無雙，溫良超乎眾人；\n求解我眾罪縛，使我柔順清純。"
+        },
+        {
+          "en": "In straight paths direct us,\nOn our way protect us,\nTill on Jesus gazing\nWe shall join thy praising.",
+          "zh-hans": "六、求使我行正路，护我旅途平安；\n直至亲见耶稣，同你永乐颂赞。",
+          "zh-hant": "六、求使我行正路，護我旅途平安；\n直至親見耶穌，同你永樂頌讚。"
+        },
+        {
+          "en": "Father, Son eternal,\nHoly Ghost supernal,\nThee we bless as Trinal,\nOne and First and Final. Amen.",
+          "zh-hans": "七、圣父圣子圣灵，我众同声颂扬；\n三位一体上帝，无始无终君王。阿们。",
+          "zh-hant": "七、聖父聖子聖靈，我眾同聲頌揚；\n三位一體上帝，無始無終君王。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "Today is the Motherhood of the holy Virgin Mary.",
+          "zh-hans": "今天是荣福童贞马利亚的庆节。",
+          "zh-hant": "今天是榮福童貞馬利亞的慶節。"
+        },
+        "people": {
+          "en": "Whose glorious life illumineth all the churches.",
+          "zh-hans": "她荣耀的生命，光照了普世的教会。",
+          "zh-hant": "她榮耀的生命，光照了普世的教會。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "Holy Mother of God, Ever-Virgin Mary, ※ intercede for us, we beseech thee.",
+          "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+          "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。"
+        },
+        {
+          "en": "How blessed is the lineage whence Christ proceeded: ※ how glorious is the Virgin who bare the King of heaven!",
+          "zh-hans": "基督所出身的世系，何其有福！※怀抱上天君王的童贞女，何其荣耀！",
+          "zh-hant": "基督所出身的世系，何其有福！※懷抱上天君王的童貞女，何其榮耀！"
+        },
+        {
+          "en": "Holy Virgin Mary, graciously keep all the world in thine intercession: ※ for he whom thou barest is the Ruler of the universe.",
+          "zh-hans": "神圣的童贞女马利亚，求你仁慈地以你的代祷，保护全世界，※因为你所怀抱的是统治宇宙者。",
+          "zh-hant": "神聖的童貞女馬利亞，求你仁慈地以你的代禱，保護全世界，※因為你所懷抱的是統治宇宙者。"
+        },
+        {
+          "en": "To thy most sure protection do we flee, O Mary, wherefrom ofttimes the faithful have obtained valour: ※ and therefore do we extol thee, O Ever-Virgin Mother of God.",
+          "zh-hans": "马利亚，我们投奔你最安稳的庇护，信者常借此获得勇力；※终身童贞荣福马利亚，我们尊崇你。",
+          "zh-hant": "馬利亞，我們投奔你最安穩的庇護，信者常藉此獲得勇力；※終身童貞榮福馬利亞，我們尊崇你。"
+        },
+        {
+          "en": "O ever-blessed Mother of God, Mary Ever-Virgin, temple of the Godhead, hallowed shrine of the Holy Spirit, ※ thou only, above all others, wast acceptable to our Lord Jesus Christ.",
+          "zh-hans": "应永受赞颂的上帝之母，终身童贞马利亚，神性的殿宇，圣灵的净配；※唯有你超越众人之上，蒙我主耶稣基督的悦纳。",
+          "zh-hant": "應永受讚頌的上帝之母，終身童貞馬利亞，神性的殿宇，聖靈的淨配；※唯有你超越眾人之上，蒙我主耶穌基督的悅納。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "Holy Mother of God, Ever-Virgin Mary, ※ intercede for us, we beseech thee.",
+        "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+        "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。"
+      }
+    }
+  },
+  "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Today let us celebrate with devout affection the Motherhood of God's most holy Mother, the Ever-Virgin Mary: ※ from whom the Son of the Highest proceeded forth to the world. Alleluia.",
+        "zh-hans": "今天，我们要虔诚地庆祝※上帝的至圣母亲、终身童贞马利亚的庆节，至高者的儿子由她所生。哈利路亚。",
+        "zh-hant": "今天，我們要虔誠地慶祝※上帝的至聖母親、終身童貞馬利亞的慶節，至高者的兒子由她所生。哈利路亞。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ecclus. xxiv. 9.",
+          "zh-hans": "（便西拉智训 24:9）",
+          "zh-hant": "（便西拉智訓 24:9）"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "他从起初未有世界以先就创造了我，我必不灭没直到永远。",
+          "zh-hant": "他從起初未有世界以先就創造了我，我必不滅沒直到永遠。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "",
+        "zh-hans": "上帝啊，主借着天使宣告，主的圣言在荣福童贞马利亚的胎中成了肉身，我们确信她真是上帝之母，恳求主因她的代求，悦纳我们。这都是靠着你的圣子，我们的主耶稣基督，圣子和圣父、圣灵，一同永生，一同掌权，惟一上帝，永无穷尽。阿们。",
+        "zh-hant": "上帝啊，主藉著天使宣告，主的聖言在榮福童貞馬利亞的胎中成了肉身，我們確信她真是上帝之母，懇求主因她的代求，悅納我們。這都是靠著你的聖子，我們的主耶穌基督，聖子和聖父、聖靈，一同永生，一同掌權，惟一上帝，永無窮盡。阿們。"
+      },
+      "title": {
+        "en": "The Motherhood of the Blessed Virgin Mary",
+        "zh-hans": "上帝之母荣福童贞马利亚",
+        "zh-hant": "上帝之母榮福童貞馬利亞"
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "en": "Quem terra, pontus, sidera",
+        "zh-hans": "Quem terra, pontus, sidera",
+        "zh-hant": "Quem terra, pontus, sidera"
+      },
+      "verses": [
+        {
+          "en": "The God whom earth, and sea, and sky\nAdore, and laud, and magnify,\nWhose might they own, whose praise they swell,\nIn Mary's womb vouchsafed to dwell.",
+          "zh-hans": "一、天地海所同声敬拜，赞美尊崇永恒主宰，\n统治三界显主权能，童女贞胎甘愿居怀。",
+          "zh-hant": "一、天地海所同聲敬拜，讚美尊崇永恆主宰，\n統治三界顯主權能，童女貞胎甘願居懷。"
+        },
+        {
+          "en": "The Lord whom sun and moon obey,\nWhom all things serve from day to day,\nWas by the Holy Ghost conceived,\nOf her who through his grace believed.",
+          "zh-hans": "二、日月随旨按序运行，万物遵从永不止息，\n圣恩充盈童女之心，怀中哺育大能上帝。",
+          "zh-hant": "二、日月隨旨按序運行，萬物遵從永不止息，\n聖恩充盈童女之心，懷中哺育大能上帝。"
+        },
+        {
+          "en": "How blest that Mother, in whose shrine\nThe great Artificer divine,\nWhose hand contains the earth and sky,\nOnce deigned, as in his ark, to lie:—",
+          "zh-hans": "三、荣福圣母实为圣所，伟大造主安居其中，\n犹如安卧约柜之中，手托天地海宇宽广。",
+          "zh-hant": "三、榮福聖母實為聖所，偉大造主安居其中，\n猶如安臥約櫃之中，手托天地海宇寬廣。"
+        },
+        {
+          "en": "Blest in the message Gabriel brought,\nBlest by the work the Spirit wrought;\nFrom whom the Great Desire of earth\nTook human flesh and human birth.",
+          "zh-hans": "四、加百列传喜讯蒙恩，圣灵妙工她蒙恩福，\n普世渴望救恩之主，取我人性降生为人。",
+          "zh-hant": "四、加百列傳喜訊蒙恩，聖靈妙工她蒙恩福，\n普世渴望救恩之主，取我人性降生為人。"
+        },
+        {
+          "en": "All honour, laud, and glory be,\nO Jesu, Virgin-born, to thee;\nWhom with the Father we adore,\nAnd Holy Ghost, for evermore. Amen.",
+          "zh-hans": "五、但愿荣耀赞美尊贵，归于贞女所生耶稣；\n及父与保惠师圣灵，称颂赞美永世无尽。阿们。",
+          "zh-hant": "五、但願榮耀讚美尊貴，歸於貞女所生耶穌；\n及父與保惠師聖靈，稱頌讚美永世無盡。阿們。"
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "en": "O gloriosa femina",
+        "zh-hans": "O gloriosa femina",
+        "zh-hant": "O gloriosa femina"
+      },
+      "verses": [
+        {
+          "en": "O glorious Maid, exalted far\nIn light more bright than any star,\nFrom him who made thee thou hast won\nGrace to be Mother of his Son.",
+          "zh-hans": "一、荣耀童贞至圣之母，光辉灿烂远胜群星；\n你蒙殊恩怀生圣子，亲以乳汁哺育造主。",
+          "zh-hant": "一、榮耀童貞至聖之母，光輝燦爛遠勝群星；\n你蒙殊恩懷生聖子，親以乳汁哺育造主。"
+        },
+        {
+          "en": "That which was lost in hapless Eve\nThy holy Scion did retrieve;\nThe tear-worn sons of Adam's race,\nThrough thee have glimpsed the heavenly place.",
+          "zh-hans": "二、夏娃昔日失落恩光，你借圣子重赐万邦；\n含泪世人蒙你引路，得窥天庭永福之乡。",
+          "zh-hant": "二、夏娃昔日失落恩光，你藉聖子重賜萬邦；\n含淚世人蒙你引路，得窺天庭永福之鄉。"
+        },
+        {
+          "en": "Thou wast the gate of heaven's Lord,\nThe door through which the Light hath poured;\nThou, Maiden-Mother, Life dost bring:\nYe ransomed nations, shout and sing!",
+          "zh-hans": "三、你是天上君王之门，你是光明照世之扉；\n童贞圣母带来生命，蒙赎万邦欢唱赞美。",
+          "zh-hant": "三、你是天上君王之門，你是光明照世之扉；\n童貞聖母帶來生命，蒙贖萬邦歡唱讚美。"
+        },
+        {
+          "en": "All honour, laud, and glory be,\nO Jesu, Virgin-born, to thee;\nWhom with the Father we adore,\nAnd Holy Ghost, for evermore. Amen.",
+          "zh-hans": "四、荣耀赞美尊贵权能，归于童贞所生耶稣；\n同归圣父保惠圣灵，称颂赞美永远相宜。阿们。",
+          "zh-hant": "四、榮耀讚美尊貴權能，歸於童貞所生耶穌；\n同歸聖父保惠聖靈，稱頌讚美永遠相宜。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "Today is the Motherhood of the holy Virgin Mary.",
+          "zh-hans": "今天是荣福童贞马利亚的庆节。",
+          "zh-hant": "今天是榮福童貞馬利亞的慶節。"
+        },
+        "people": {
+          "en": "Whose glorious life illumineth all the churches.",
+          "zh-hans": "她荣耀的生命，光照了普世的教会。",
+          "zh-hant": "她榮耀的生命，光照了普世的教會。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "This is the Motherhood of the glorious Virgin Mary, of the seed of Abraham, ※ sprung from the tribe of Judah, of the noble stem of David.",
+          "zh-hans": "今天是荣福童贞马利亚的庆节：她是亚伯拉罕的后裔，※生于犹大支派，出自大卫显赫的王室。",
+          "zh-hant": "今天是榮福童貞馬利亞的慶節：她是亞伯拉罕的後裔，※生於猶大支派，出自大衛顯赫的王室。"
+        },
+        {
+          "en": "Today is the Motherhood of the holy Virgin Mary: ※ whose glorious life illumineth all the churches.",
+          "zh-hans": "今天是童贞圣马利亚的慶節，※她光辉灿烂的生活照耀了普世的教会。",
+          "zh-hant": "今天是童貞聖馬利亞的慶節，※她光輝燦爛的生活照耀了普世的教會。"
+        },
+        {
+          "en": "From royal lineage descended, is Mary illustrious: ※ and with deepest devotion both of soul and spirit implore we the aid of her prayers.",
+          "zh-hans": "出于王室的马利亚光辉闪烁；※我们诚心诚意恳求她为我们祈祷，帮助我们。",
+          "zh-hant": "出於王室的馬利亞光輝閃爍；※我們誠心誠意懇求她為我們祈禱，幫助我們。"
+        },
+        {
+          "en": "With heart and mind sing we praises to Christ ※ on this holy solemnity of Mary, the exalted Mother of God.",
+          "zh-hans": "在这至高上帝之母马利亚圣日，※我们全心全意高唱赞美基督。",
+          "zh-hant": "在這至高上帝之母馬利亞聖日，※我們全心全意高唱贊美基督。"
+        },
+        {
+          "en": "With joy and gladness let us celebrate the Motherhood of blessed Mary, ※ that she may plead for us to Jesus Christ our Lord.",
+          "zh-hans": "让我们欢喜快乐庆祝荣福马利亚的庆节，※愿她为我们转求基督。",
+          "zh-hant": "讓我們歡喜快樂慶祝榮福馬利亞的慶節，※願她為我們轉求基督。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "This is the Motherhood of the glorious Virgin Mary, of the seed of Abraham, ※ sprung from the tribe of Judah, of the noble stem of David.",
+        "zh-hans": "今天是荣福童贞马利亚的庆节：她是亚伯拉罕的后裔，※生于犹大支派，出自大卫显赫的王室。",
+        "zh-hant": "今天是榮福童貞馬利亞的慶節：她是亞伯拉罕的後裔，※生於猶大支派，出自大衛顯赫的王室。"
+      }
+    }
+  },
+  "evening": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Thy Motherhood, O Virgin Mother of God, ✠ doth proclaim joyful tidings unto all the world: for out of thee arose the Sun of Righteousness, even Christ our God; ※ which same hath taken away the curse to bestow a blessing, and despoiling death hath given unto us life everlasting.",
+        "zh-hans": "童贞上帝之母，你的庆节※向普世宣布了喜讯：因公义的日头——基督，我们的上帝由你而出，祂除去咒诅，降下福泽，战胜死亡，赐下永生。",
+        "zh-hant": "童貞上帝之母，你的慶節※向普世宣布了喜訊：因公義的日頭——基督，我們的上帝由你而出，祂除去咒詛，降下福澤，戰勝死亡，賜下永生。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ecclus. xxiv. 9.",
+          "zh-hans": "（便西拉智训 24:9）",
+          "zh-hant": "（便西拉智訓 24:9）"
+        },
+        "text": {
+          "en": "",
+          "zh-hans": "他从起初未有世界以先就创造了我，我必不灭没直到永远。",
+          "zh-hant": "他從起初未有世界以先就創造了我，我必不滅沒直到永遠。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "",
+        "zh-hans": "上帝啊，主借着天使宣告，主的圣言在荣福童贞马利亚的胎中成了肉身，我们确信她真是上帝之母，恳求主因她的代求，悦纳我们。这都是靠着你的圣子，我们的主耶稣基督，圣子和圣父、圣灵，一同永生，一同掌权，惟一上帝，永无穷尽。阿们。",
+        "zh-hant": "上帝啊，主藉著天使宣告，主的聖言在榮福童貞馬利亞的胎中成了肉身，我們確信她真是上帝之母，懇求主因她的代求，悅納我們。這都是靠著你的聖子，我們的主耶穌基督，聖子和聖父、聖靈，一同永生，一同掌權，惟一上帝，永無窮盡。阿們。"
+      },
+      "title": {
+        "en": "The Motherhood of the Blessed Virgin Mary",
+        "zh-hans": "上帝之母荣福童贞马利亚",
+        "zh-hant": "上帝之母榮福童貞馬利亞"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Ave, maris stella",
+        "zh-hans": "Ave, maris stella",
+        "zh-hant": "Ave, maris stella"
+      },
+      "verses": [
+        {
+          "en": "Sea-Star! we acclaim thee!\nGod's kind Mother name thee!\nHail, thou Maid immortal,\nHeaven's blissful portal.",
+          "zh-hans": "一、万福世海之星，上帝慈爱之母；\n万福永贞童女，天上福乐门扉。",
+          "zh-hant": "一、萬福世海之星，上帝慈愛之母；\n萬福永貞童女，天上福樂門扉。"
+        },
+        {
+          "en": "Ave was the token\nBy the Angel spoken;\nPeace on earth it telleth,\nEva's name re-spelleth.",
+          "zh-hans": "二、加百列报万福，佳音你已领受；\n反转夏娃之名，保我平安无忧。",
+          "zh-hant": "二、加百列報萬福，佳音你已領受；\n反轉夏娃之名，保我平安無憂。"
+        },
+        {
+          "en": "Ask light for the blinded;\nFree the worldly-minded;\nThus our ills repressing,\nWin us every blessing.",
+          "zh-hans": "三、求为盲者开明，解脱罪人拘囚；\n驱除我众灾患，为我祈求福祐。",
+          "zh-hant": "三、求為盲者開明，解脫罪人拘囚；\n驅除我眾災患，為我祈求福祐。"
+        },
+        {
+          "en": "Be to us a Mother;\nFor thy Son, our Brother,\nWill for our salvation\nHeed thy supplication.",
+          "zh-hans": "四、慈母为我转求，愿主俯允所奏；\n主曾为我降生，甘作你子施救。",
+          "zh-hant": "四、慈母為我轉求，願主俯允所奏；\n主曾為我降生，甘作你子施救。"
+        },
+        {
+          "en": "Maiden meek and lowly,\nSingularly holy,\nHardened sinners render\nMeek and chaste and tender.",
+          "zh-hans": "五、童贞圣女无双，温良超乎众人；\n求解我众罪缚，使我柔顺清纯。",
+          "zh-hant": "五、童貞聖女無雙，溫良超乎眾人；\n求解我眾罪縛，使我柔順清純。"
+        },
+        {
+          "en": "In straight paths direct us,\nOn our way protect us,\nTill on Jesus gazing\nWe shall join thy praising.",
+          "zh-hans": "六、求使我行正路，护我旅途平安；\n直至亲见耶稣，同你永乐颂赞。",
+          "zh-hant": "六、求使我行正路，護我旅途平安；\n直至親見耶穌，同你永樂頌讚。"
+        },
+        {
+          "en": "Father, Son eternal,\nHoly Ghost supernal,\nThee we bless as Trinal,\nOne and First and Final. Amen.",
+          "zh-hans": "七、圣父圣子圣灵，我众同声颂扬；\n三位一体上帝，无始无终君王。阿们。",
+          "zh-hant": "七、聖父聖子聖靈，我眾同聲頌揚；\n三位一體上帝，無始無終君王。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "Today is the Motherhood of the holy Virgin Mary.",
+          "zh-hans": "今天是荣福童贞马利亚的庆节。",
+          "zh-hant": "今天是榮福童貞馬利亞的慶節。"
+        },
+        "people": {
+          "en": "Whose glorious life illumineth all the churches.",
+          "zh-hans": "她荣耀的生命，光照了普世的教会。",
+          "zh-hant": "她榮耀的生命，光照了普世的教會。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "Holy Mother of God, Ever-Virgin Mary, ※ intercede for us, we beseech thee.",
+          "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+          "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。"
+        },
+        {
+          "en": "How blessed is the lineage whence Christ proceeded: ※ how glorious is the Virgin who bare the King of heaven!",
+          "zh-hans": "基督所出身的世系，何其有福！※怀抱上天君王的童贞女，何其荣耀！",
+          "zh-hant": "基督所出身的世系，何其有福！※懷抱上天君王的童貞女，何其榮耀！"
+        },
+        {
+          "en": "Holy Virgin Mary, graciously keep all the world in thine intercession: ※ for he whom thou barest is the Ruler of the universe.",
+          "zh-hans": "神圣的童贞女马利亚，求你仁慈地以你的代祷，保护全世界，※因为你所怀抱的是统治宇宙者。",
+          "zh-hant": "神聖的童貞女馬利亞，求你仁慈地以你的代禱，保護全世界，※因為你所懷抱的是統治宇宙者。"
+        },
+        {
+          "en": "To thy most sure protection do we flee, O Mary, wherefrom ofttimes the faithful have obtained valour: ※ and therefore do we extol thee, O Ever-Virgin Mother of God.",
+          "zh-hans": "马利亚，我们投奔你最安稳的庇护，信者常借此获得勇力；※终身童贞荣福马利亚，我们尊崇你。",
+          "zh-hant": "馬利亞，我們投奔你最安穩的庇護，信者常藉此獲得勇力；※終身童貞榮福馬利亞，我們尊崇你。"
+        },
+        {
+          "en": "O ever-blessed Mother of God, Mary Ever-Virgin, temple of the Godhead, hallowed shrine of the Holy Spirit, ※ thou only, above all others, wast acceptable to our Lord Jesus Christ.",
+          "zh-hans": "应永受赞颂的上帝之母，终身童贞马利亚，神性的殿宇，圣灵的净配；※唯有你超越众人之上，蒙我主耶稣基督的悦纳。",
+          "zh-hant": "應永受讚頌的上帝之母，終身童貞馬利亞，神性的殿宇，聖靈的淨配；※唯有你超越眾人之上，蒙我主耶穌基督的悅納。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "Holy Mother of God, Ever-Virgin Mary, ※ intercede for us, we beseech thee.",
+        "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+        "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。"
+      }
+    }
+  }
+}

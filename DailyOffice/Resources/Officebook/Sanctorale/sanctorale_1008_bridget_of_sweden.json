@@ -1,0 +1,58 @@
+{
+  "identifier": "st_bridget",
+  "name": {
+    "zh-hant": "聖婦彼濟達",
+    "zh-hans": "圣妇彼济达",
+    "en": "Saint Bridget of Sweden"
+  },
+  "rank": "double",
+  "rank_display": {
+    "zh-hant": "（複式）",
+    "zh-hans": "（复式）",
+    "en": "Double"
+  },
+  "type": "sanctorale",
+  "common_office": "common_holy_woman_outside_easter",
+  "vigil": {
+    "collect": {
+      "title": {
+        "zh-hant": "聖婦彼濟達",
+        "zh-hans": "圣妇彼济达",
+        "en": "Saint Bridget of Sweden"
+      },
+      "text": {
+        "zh-hant": "上帝阿，主藉著主的獨生聖子，將天國的奧秘啓示給聖彼濟達；懇求主，因她虔誠的代禱，使我們、主的僕人，因主永恆榮耀的啓示而歡喜快樂。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝阿，主藉着主的独生圣子，将天国的奥秘启示给圣彼济达；恳求主，因她虔诚的代祷，使我们、主的仆人，因主永恒荣耀的启示而欢喜快乐。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O GOD, who by thine only-begotten Son didst reveal heavenly secrets to blessed Bridget: grant through her loving intercession, that we thy servants may rejoice and be glad in the revelation of thine everlasting glory. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  },
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "聖婦彼濟達",
+        "zh-hans": "圣妇彼济达",
+        "en": "Saint Bridget of Sweden"
+      },
+      "text": {
+        "zh-hant": "上帝阿，主藉著主的獨生聖子，將天國的奧秘啓示給聖彼濟達；懇求主，因她虔誠的代禱，使我們、主的僕人，因主永恆榮耀的啓示而歡喜快樂。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝阿，主藉着主的独生圣子，将天国的奥秘启示给圣彼济达；恳求主，因她虔诚的代祷，使我们、主的仆人，因主永恒荣耀的启示而欢喜快乐。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O GOD, who by thine only-begotten Son didst reveal heavenly secrets to blessed Bridget: grant through her loving intercession, that we thy servants may rejoice and be glad in the revelation of thine everlasting glory. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  },
+  "evening": {
+    "collect": {
+      "title": {
+        "zh-hant": "聖婦彼濟達",
+        "zh-hans": "圣妇彼济达",
+        "en": "Saint Bridget of Sweden"
+      },
+      "text": {
+        "zh-hant": "上帝阿，主藉著主的獨生聖子，將天國的奧秘啓示給聖彼濟達；懇求主，因她虔誠的代禱，使我們、主的僕人，因主永恆榮耀的啓示而歡喜快樂。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝阿，主藉着主的独生圣子，将天国的奥秘启示给圣彼济达；恳求主，因她虔诚的代祷，使我们、主的仆人，因主永恒荣耀的启示而欢喜快乐。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O GOD, who by thine only-begotten Son didst reveal heavenly secrets to blessed Bridget: grant through her loving intercession, that we thy servants may rejoice and be glad in the revelation of thine everlasting glory. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  }
+}

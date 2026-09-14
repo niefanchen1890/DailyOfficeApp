@@ -11,6 +11,10 @@ struct PsalmCycleData: Codable {
 enum PsalmReadingPeriod: String, CaseIterable {
     case morning = "早禱"
     case evening = "晚禱"
+
+    func localizedTitle(isSimplified: Bool) -> String {
+        rawValue.adaptChinese(isSimplified: isSimplified)
+    }
 }
 
 // MARK: - 🌟 第三步：月度誦讀詩篇主視圖 (目錄頁)
@@ -20,13 +24,17 @@ struct PsalmCycleView: View {
     
     // 🌟 新增：監聽語言切換，讓目錄列表也能即時變更語言
     @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+
+    private var isSimplified: Bool {
+        appLanguageCode == AppLanguage.simplified.rawValue
+    }
     
     var body: some View {
         List {
             // 頂端說明（含 31 日規則）
             if let note = cycleData?.note, !note.isEmpty {
                 Section {
-                    Text(note)
+                    Text(note.adaptChinese(isSimplified: isSimplified))
                         .font(.system(size: 14))
                         .foregroundColor(.secondary)
                         .lineSpacing(4)
@@ -39,13 +47,13 @@ struct PsalmCycleView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle(appLanguageCode == AppLanguage.traditional.rawValue ? "詩篇" : "诗篇")
+        .navigationTitle("詩篇".adaptChinese(isSimplified: isSimplified))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Picker("誦讀時段", selection: $selectedPeriod) {
+                Picker("誦讀時段".adaptChinese(isSimplified: isSimplified), selection: $selectedPeriod) {
                     ForEach(PsalmReadingPeriod.allCases, id: \.self) { period in
-                        Text(period.rawValue).tag(period)
+                        Text(period.localizedTitle(isSimplified: isSimplified)).tag(period)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -69,7 +77,7 @@ struct PsalmCycleView: View {
         
         Section {
             if psalms.isEmpty {
-                Text(appLanguageCode == AppLanguage.traditional.rawValue ? "本日無分配" : "本日无分配")
+                Text("本日無分配".adaptChinese(isSimplified: isSimplified))
                     .font(.system(size: 15))
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -84,22 +92,19 @@ struct PsalmCycleView: View {
                                 .frame(width: 24)
                             
                             // 🌟 關鍵修改：透過 Loader 獲取當前語言的標題，若無則降級顯示原始 Key
-                            Text(PsalmsLoader.shared.psalmContent(for: psalmKey)?.title ?? psalmKey)
+                            Text(PsalmsLoader.shared.psalmContent(for: psalmKey)?.title
+                                 ?? psalmKey.adaptChinese(isSimplified: isSimplified))
                                 .font(.system(size: 16, weight: .medium))
                                 .foregroundColor(.primary)
-                            
+
                             Spacer()
-                            
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 13, weight: .semibold))
-                                .foregroundColor(.secondary)
                         }
                         .padding(.vertical, 2)
                     }
                 }
             }
         } header: {
-            Text(appLanguageCode == AppLanguage.traditional.rawValue ? "第 \(chineseNumber(day)) 日" : "第 \(chineseNumber(day)) 日")
+            Text("第 \(chineseNumber(day)) 日")
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundColor(LiturgyColors.crimson)
         }
@@ -150,6 +155,10 @@ struct PsalmReadingView: View {
     
     // 🌟 新增：監聽語言切換，當用戶切換繁/簡時即時刷新內容
     @AppStorage("appLanguage") private var appLanguageCode: String = AppLanguage.traditional.rawValue
+
+    private var isSimplified: Bool {
+        appLanguageCode == AppLanguage.simplified.rawValue
+    }
     
     var body: some View {
         ScrollView {
@@ -173,7 +182,7 @@ struct PsalmReadingView: View {
                     // ═════ 對經（若有）═════
                     if !content.antiphon.isEmpty {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(appLanguageCode == AppLanguage.traditional.rawValue ? "對經" : "对经")
+                            Text("對經".adaptChinese(isSimplified: isSimplified))
                                 .font(.system(size: 13, weight: .medium))
                                 .foregroundColor(.red)
                             
@@ -198,17 +207,17 @@ struct PsalmReadingView: View {
                     
                     // ═════ 榮耀頌 ═════
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(appLanguageCode == AppLanguage.traditional.rawValue ? "但願榮耀歸於聖父、聖子、聖靈；" : "但愿荣耀归于圣父、圣子、圣灵；")
+                        Text("但願榮耀歸於聖父、聖子、聖靈；".adaptChinese(isSimplified: isSimplified))
                             .font(.system(size: 17, weight: .regular))
                             .foregroundColor(.primary)
-                        Text(appLanguageCode == AppLanguage.traditional.rawValue ? "※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。" : "※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。")
+                        Text("※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。".adaptChinese(isSimplified: isSimplified))
                             .font(.system(size: 17, weight: .regular))
                             .foregroundColor(.primary)
                     }
                     .padding(.top, 12)
                 } else {
                     // 載入中的佔位符
-                    Text("載入中...")
+                    Text("載入中...".adaptChinese(isSimplified: isSimplified))
                         .foregroundColor(.secondary)
                         .padding()
                 }
@@ -216,7 +225,7 @@ struct PsalmReadingView: View {
             .padding()
         }
         // 🌟 導航列標題也支援雙語
-        .navigationTitle(content?.title ?? psalmKey)
+        .navigationTitle(content?.title ?? psalmKey.adaptChinese(isSimplified: isSimplified))
         .navigationBarTitleDisplayMode(.inline)
         .background(Color(UIColor.systemGroupedBackground))
         .onAppear(perform: loadPsalm)

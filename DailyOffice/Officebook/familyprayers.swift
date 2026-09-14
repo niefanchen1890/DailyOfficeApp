@@ -101,12 +101,12 @@ struct HomePrayerPartView: View {
                let postRubric = section.postRubric,
                postRubric.contains("本日祝文") {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(collect.title)
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundColor(.red)
-                        .padding(.top, 8)
-                    
-                    BodyText(collect.text)
+                    OfficeCollectChoiceView(
+                        collect: collect,
+                        isTraditional: languageStore.language == .traditional,
+                        showsTitle: true
+                    )
+                    .padding(.top, 8)
                 }
             }
         }

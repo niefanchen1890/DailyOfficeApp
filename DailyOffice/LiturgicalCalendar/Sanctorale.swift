@@ -10,6 +10,8 @@ struct Feast {
     let rank: LiturgicalRank
     let priority: Int
 
+    var rankName: String { rank.displayName(for: traits) }
+
     init(
         identifier: LiturgicalID? = nil,
         month: Int,
@@ -49,13 +51,22 @@ class Sanctorale {
     
     // MARK: - 查詢所有聖日（新增）
     func getFeasts(for date: Date) -> [Feast] {
-        let calendar = Calendar.current
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let key = String(format: "%02d-%02d", month, day)
-        return feasts[key] ?? []
+        transferResolution(for: date).observed
     }
-    
+
+    func transferResolution(for date: Date) -> FixedFeastTransferResolution {
+        let calendar = Calendar.current
+        func fixedFeasts(on day: Date) -> [Feast] {
+            let key = String(format: "%02d-%02d", calendar.component(.month, from: day), calendar.component(.day, from: day))
+            return feasts[key] ?? []
+        }
+        let previousDate = calendar.date(byAdding: .day, value: -1, to: date)!
+        return LiturgicalTransferResolver().resolveThomasSundayTransfer(
+            for: date, calendar: calendar,
+            todayFeasts: fixedFeasts(on: date), previousDayFeasts: fixedFeasts(on: previousDate)
+        )
+    }
+
     // MARK: - 向後兼容：返回最高等級的單個聖日
     func getFeast(for date: Date) -> Feast? {
         return getFeasts(for: date).sorted { $0.rank > $1.rank }.first
@@ -106,11 +117,12 @@ class Sanctorale {
         add(1, 18, "殉道童貞女聖百基拉", .simple)
         add(1, 20, "殉道者聖法比盎和聖巴斯弟盎", .double)
         add(1, 21, "殉道童貞女聖雅妮", .double)
-        add(1, 22, "殉道者聖文生", .double)
+        add(1, 22, "殉道者聖文森與聖阿納斯塔修", .semiDouble)
         add(1, 24, "聖梯摩太主教", .double)
         add(1, 25, "使徒聖保羅受感化日", .doubleSecondClass)
         add(1, 26, "聖波利卡主教", .double)
         add(1, 27, "教會聖師聖金口約翰", .double)
+        add(1, 28, "授予安立甘公教會主教聖品", .doubleSecondClass)
         add(1, 29, "聖方濟各·沙雷氏主教", .double)
         add(1, 30, "殉道王查理", .doubleSecondClass)
         add(1, 31, "聖若望·鮑思高", .double)
@@ -306,7 +318,7 @@ class Sanctorale {
         add(10, 10, "約克的聖保利努斯主教", .semiDouble)
         add(10, 11, "上帝之母榮福童貞馬利亞", .doubleSecondClass)
         add(10, 12, "聖威爾弗里德主教", .semiDouble)
-        add(10, 13, "敬遷殉道聖王愛德華之聖髑", .semiDouble)
+        add(10, 13, "敬遷聖王愛德華之聖髑", .semiDouble, identifier: .translationOfEdwardConfessor)
         add(10, 14, "殉道者聖卡利斯托主教", .double)
         add(10, 15, "沃爾辛厄姆聖母", .doubleSecondClass)
         add(10, 16, "聖婦海德薇", .semiDouble)
@@ -345,6 +357,7 @@ class Sanctorale {
         add(11, 23, "羅馬的聖克萊門特主教", .double)
         add(11, 24, "十架聖約翰", .double)
         add(11, 25, "殉道童貞女亞歷山大的聖凱瑟琳", .double)
+        add(11, 26, "聖西爾維斯特院長", .double)
         add(11, 29, "使徒聖安得烈望日", .vigil)
         add(11, 30, "使徒聖安得烈日", .doubleSecondClass)
         
@@ -373,7 +386,7 @@ class Sanctorale {
         add(12, 26, "聖司提反日", .doubleSecondClass)
         add(12, 27, "傳福音使徒聖約翰日", .doubleSecondClass)
         add(12, 28, "嬰孩被殺日", .doubleSecondClass)
-        add(12, 29, "坎特伯雷的聖托馬斯大主教", .semiDouble)
+        add(12, 29, "坎特伯雷的聖托馬斯大主教", .double)
         add(12, 30, "聖誕日八日慶期第六日", .privilegedOctaveThirdClass)
         add(12, 31, "聖西爾維斯特主教 (紀念聖誕日八日慶期第七日)", .double)
     }

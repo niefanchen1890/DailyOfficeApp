@@ -168,7 +168,8 @@ extension MinorHourShortResponsorySetJSON {
 
 enum MinorHourPrayerRules {
     static func isBVMFeast(liturgy: DailyLiturgy) -> Bool {
-        liturgy.traits.themes.contains(.blessedVirginMary)
+        liturgy.identifier == .saturdayOfficeOfOurLady ||
+            liturgy.traits.themes.contains(.blessedVirginMary)
     }
 
     static func psalmKeys(hour: MinorHour, date: Date) -> [String] {
@@ -196,7 +197,7 @@ enum MinorHourPrayerRules {
         if themes.contains(.sacredHeart) { return "sacred_heart" }
         if themes.contains(.transfiguration) { return "transfiguration" }
         if liturgy.identifier == .christTheKing || themes.contains(.christTheKing) { return "christ_the_king" }
-        if themes.contains(.blessedVirginMary) { return "bvm" }
+        if isBVMFeast(liturgy: liturgy) { return "bvm" }
         if info.season == .ascension { return "ascensiontide" }
         if [.easter, .pentecost].contains(info.season) { return "eastertide" }
         if info.season == .epiphany && info.weekNumber == 1 { return "epiphany_octave" }
