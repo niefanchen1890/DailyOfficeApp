@@ -1,0 +1,15 @@
+{
+    "id": "tr10-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "17:20-end"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "8:22-53"
+        }
+    }
+}

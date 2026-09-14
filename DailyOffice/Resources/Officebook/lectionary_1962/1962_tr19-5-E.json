@@ -1,0 +1,15 @@
+{
+    "id": "tr19-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:35-53"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "17:24-18:18"
+        }
+    }
+}

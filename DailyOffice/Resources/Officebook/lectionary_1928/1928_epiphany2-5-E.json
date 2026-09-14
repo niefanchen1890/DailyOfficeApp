@@ -1,0 +1,15 @@
+{
+    "id": "epiphany2-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "8:31-59"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "9:1-7、11-37"
+        }
+    }
+}

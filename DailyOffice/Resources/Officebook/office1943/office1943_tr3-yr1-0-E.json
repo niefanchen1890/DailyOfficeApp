@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr3-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "32" },
+      { "number": "36", "verses": "5-12" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米書",
+      "chapter": "23:1-8"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "19:2-10"
+    }
+  }
+}

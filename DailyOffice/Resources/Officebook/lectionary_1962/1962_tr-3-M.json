@@ -1,0 +1,15 @@
+{
+    "id": "tr-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "2:14-26"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "5:1-27"
+        }
+    }
+}

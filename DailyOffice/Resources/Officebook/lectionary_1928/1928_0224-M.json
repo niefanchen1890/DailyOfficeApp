@@ -1,0 +1,15 @@
+{
+    "id": "0224-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:16-40"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "2:27-36"
+        }
+    }
+}

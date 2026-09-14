@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "116" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以賽亞書",
+      "chapter": "12:1-6"
+    },
+    "nt": {
+      "book": "約翰福音",
+      "chapter": "11:21-44"
+    }
+  }
+}

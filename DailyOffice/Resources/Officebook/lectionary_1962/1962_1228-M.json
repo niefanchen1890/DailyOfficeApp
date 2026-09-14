@@ -1,0 +1,15 @@
+{
+    "id": "1228-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "6:9-11"
+        },
+        "ot": {
+            "book": "巴錄書",
+            "chapter": "4:21-27"
+        }
+    }
+}

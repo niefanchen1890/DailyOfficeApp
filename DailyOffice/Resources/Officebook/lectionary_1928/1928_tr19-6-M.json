@@ -1,0 +1,15 @@
+{
+    "id": "tr19-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "24:36-53"
+        },
+        "ot": {
+            "book": "歷代志上",
+            "chapter": "23:1-6、24-32"
+        }
+    }
+}

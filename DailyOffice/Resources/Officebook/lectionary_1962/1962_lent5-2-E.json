@@ -1,0 +1,15 @@
+{
+    "id": "lent5-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提多書",
+            "chapter": "2:9-3:15"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "12:1-16"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "8:22-9:1"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "18:41-19:21"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr2-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "11" },
+      { "number": "12" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "6:5-8,13-22"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "24:32-42"
+    }
+  }
+}

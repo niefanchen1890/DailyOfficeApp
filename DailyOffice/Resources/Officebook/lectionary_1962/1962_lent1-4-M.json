@@ -1,0 +1,15 @@
+{
+    "id": "lent1-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "27:1-26"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "47:13-31"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "ad3-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "6:12-23"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "3:13-4:6"
+        }
+    }
+}

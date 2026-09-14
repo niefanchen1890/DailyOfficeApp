@@ -1,0 +1,15 @@
+{
+    "id": "0325-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "5:12-21"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "3:1-15"
+        }
+    }
+}

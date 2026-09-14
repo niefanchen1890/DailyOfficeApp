@@ -1,0 +1,475 @@
+{
+  "identifier": "holy_name_mary",
+  "traits": {
+    "themes": [
+      "blessedVirginMary"
+    ]
+  },
+  "name": {
+    "zh-hant": "聖母聖名日",
+    "zh-hans": "圣母圣名日",
+    "en": ""
+  },
+  "rank": "greaterDouble",
+  "rank_display": {
+    "zh-hant": "（大複式）",
+    "zh-hans": "（大复式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "主上帝對蛇說：我要使你和女人彼此為仇，你的後裔和女人的後裔也彼此為仇。他要傷你的頭，你要傷他的腳跟。",
+          "zh-hans": "主上帝对蛇说：我要使你和女人彼此为仇，你的后裔和女人的后裔也彼此为仇。他要伤你的头，你要伤他的脚跟。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（創世記 3:15）",
+          "zh-hans": "（创世记 3:15）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "至明智的童貞聖母，※你往何處去？你如曉明之星，光輝美麗絕倫！錫安的女子，全然可愛，你是至甘饴者：皎洁如月，明耀若未蔽之日。",
+          "zh-hans": "至明智的童贞圣母，※你往何处去？你如晓明之星，光辉美丽绝伦！锡安的女子，全然可爱，你是至甘饴者：皎洁如月，明耀若未蔽之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主所賜福的童貞女，※藉著你，我們得以分享生命之果實。",
+          "zh-hans": "主所赐福的童贞女，※藉着你，我们得以分享生命之果实。",
+          "en": ""
+        },
+        {
+          "zh-hant": "欢欣吧，馬利亞！※唯獨你摧毀一切異端邪說，因你为普世诞下真理。",
+          "zh-hans": "欢欣吧，马利亚！※唯独你摧毁一切异端邪说，因你为普世诞下真理。",
+          "en": ""
+        },
+        {
+          "zh-hant": "榮福的母親，※無玷的童貞女，光榮的普世之後，請為我們祈求主。",
+          "zh-hans": "荣福的母亲，※无玷的童贞女，光荣的普世之后，请为我们祈求主。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "萬福貞女耶西之根",
+        "zh-hans": "万福贞女耶西之根",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、萬福貞女耶西之根，\n至潔至美永貞之女，\n上帝聖子降於你胎，\n你懷聖言道成肉身。",
+          "zh-hans": "一、万福贞女耶西之根，\n至洁至美永贞之女，\n上帝圣子降于你胎，\n你怀圣言道成肉身。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、你是山嶽至聖至潔，\n那塊巍然不動磐石，\n奇蹟般地從你取出，\n成為大山覆蓋全地。",
+          "zh-hans": "二、你是山岳至圣至洁，\n那块巍然不动磐石，\n奇迹般地从你取出，\n成为大山覆盖全地。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、你是基甸求旨羊毛，\n玄妙預像彰顯奧秘。\n你是亞倫發芽之杖，\n你是焚而不毀荊棘。",
+          "zh-hans": "三、你是基甸求旨羊毛，\n玄妙预像彰显奥秘。\n你是亚伦发芽之杖，\n你是焚而不毁荆棘。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、眾女之中真福之人，\n永沐天福分享喜樂，\n向你親子造物之主，\n猶如慈母獻上祈禱。",
+          "zh-hans": "四、众女之中真福之人，\n永沐天福分享喜乐，\n向你亲子造物之主，\n犹如慈母献上祈祷。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、你的聖子無限權能，\n踐踏龍頭摧毀幽冥，\n賜予世人永生之福，\n地獄權柄都成虛無。",
+          "zh-hans": "五、你的圣子无限权能，\n践踏龙头摧毁幽冥，\n赐予世人永生之福，\n地狱权柄都成虚无。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、求賜我等聖潔事主，\n虔誠侍立寶座之前，\n共享主榮永世稱頌，\n永恆敬拜永不止息。",
+          "zh-hans": "六、求赐我等圣洁事主，\n虔诚侍立宝座之前，\n共享主荣永世称颂，\n永恒敬拜永不止息。",
+          "en": ""
+        },
+        {
+          "zh-hant": "七、讚美聖父聖子聖靈，\n三位一體永恆上帝，\n我眾俯伏欽崇認信，\n惟一真神永世無盡。阿們。",
+          "zh-hans": "七、赞美圣父圣子圣灵，\n三位一体永恒上帝，\n我众俯伏钦崇认信，\n唯一真神永世无尽。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "你美麗而又悅人心意！",
+          "zh-hans": "你美丽而又悦人心意！",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "上帝聖母。",
+          "zh-hans": "上帝圣母。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "榮耀的馬利亞乃王室宗脈所出；※我們以靈魂最深切的虔敬，懇求她代禱的護佑。",
+          "zh-hans": "荣耀的马利亚乃王室宗脉所出；※我们以灵魂最深切的虔敬，恳求她代祷的护佑。",
+          "en": ""
+        },
+        {
+          "zh-hant": "榮耀的馬利亞乃王室宗脈所出；※我們以靈魂最深切的虔敬，懇求她代禱的護佑。",
+          "zh-hans": "荣耀的马利亚乃王室宗脉所出；※我们以灵魂最深切的虔敬，恳求她代祷的护佑。",
+          "en": ""
+        }
+      ]
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "zh-hant": "至聖上帝之母，我們讚美你，※因救主由你而生；求你扶助所有尊崇你之人。",
+        "zh-hans": "至圣上帝之母，我们赞美你，※因救主由你而生；求你扶助所有尊崇你之人。",
+        "en": ""
+      }
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "聖母聖名日",
+        "zh-hans": "圣母圣名日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，求主使主忠信的子民，既因至聖童貞馬利亞的聖名與護佑而歡欣，便能藉著她慈愛的代禱，在世得蒙拯救脫離一切邪惡，在天上得享永恆的福樂。這都是靠著主的聖子、我主耶穌基督，主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，求主使主忠信的子民，既因至圣童贞马利亚的圣名与护佑而欢欣，便能藉着她慈爱的代祷，在世得蒙拯救脱离一切邪恶，在天上得享永恒的福乐。这都是靠着主的圣子、我主耶稣基督，主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "看哪，上帝的帳幕在人間！他要和他們同住，他們要作他的子民。上帝要親自與他們同在。",
+          "zh-hans": "看哪，上帝的帐幕在人间！他要和他们同住，他们要作他的子民。上帝要亲自与他们同在。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 21:3）",
+          "zh-hans": "（启示录 21:3）",
+          "en": ""
+        }
+      }
+    ],
+    "invitatory": {
+      "texts": [
+        {
+          "zh-hant": "童貞馬利亞阿，※你是主手中榮耀冠冕；真福聖母阿，你是上帝手中的王冠。",
+          "zh-hans": "童贞马利亚阿，※你是主手中荣耀冠冕；真福圣母阿，你是上帝手中的王冠。",
+          "en": ""
+        },
+        {
+          "zh-hant": "萬福，馬利亞，※你充滿聖寵，主與你同在。",
+          "zh-hans": "万福，马利亚，※你充满圣宠，主与你同在。",
+          "en": ""
+        }
+      ]
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "上帝義子勇毅無雙",
+        "zh-hans": "上帝义子勇毅无双",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、聖母光輝何等輝煌，\n大衛後裔王室之女，\n童貞聖母榮登寶座，\n永居天鄉真福之境。",
+          "zh-hans": "一、圣母光辉何等辉煌，\n大卫后裔王室之女，\n童贞圣母荣登宝座，\n永居天乡真福之境。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、無玷童貞榮耀純全，\n母親之職無損童貞，\n天使主母上主聖殿，\n上帝藉此人性降生。",
+          "zh-hans": "二、无玷童贞荣耀纯全，\n母亲之职无损童贞，\n天使主母上主圣殿，\n上帝借此人性降生。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、宇宙萬有俯首跪拜，\n在此慶辰我眾懇求，\n求賜真光永恆福樂，\n驅逐人間一切黑暗。",
+          "zh-hans": "三、宇宙万有俯首跪拜，\n在此庆辰我众恳求，\n求赐真光永恒福乐，\n驱逐人间一切黑暗。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、榮耀之父懇求施恩，\n藉主聖子以及聖靈，\n三一永恆獨一真神，\n統御萬有光耀乾坤。阿們。",
+          "zh-hans": "四、荣耀之父恳求施恩，\n借主圣子以及圣灵，\n三一永恒独一真神，\n统治万有光耀乾坤。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "至明智的童貞聖母，※你往何處去？你如曉明之星，光輝美麗絕倫！錫安的女子，全然可愛，你是至甘饴者：皎洁如月，明耀若未蔽之日。",
+          "zh-hans": "至明智的童贞圣母，※你往何处去？你如晓明之星，光辉美丽绝伦！锡安的女子，全然可爱，你是至甘饴者：皎洁如月，明耀若未蔽之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主所賜福的童貞女，※藉著你，我們得以分享生命之果實。",
+          "zh-hans": "主所赐福的童贞女，※藉着你，我们得以分享生命之果实。",
+          "en": ""
+        },
+        {
+          "zh-hant": "欢欣吧，馬利亞！※唯獨你摧毀一切異端邪說，因你为普世诞下真理。",
+          "zh-hans": "欢欣吧，马利亚！※唯独你摧毁一切异端邪说，因你为普世诞下真理。",
+          "en": ""
+        },
+        {
+          "zh-hant": "榮福的母親，※無玷的童貞女，光榮的普世之後，請為我們祈求主。",
+          "zh-hans": "荣福的母亲，※无玷的童贞女，光荣的普世之后，请为我们祈求主。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "晨曦破曉清晨之光",
+        "zh-hans": "晨曦破晓清晨之光",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、晨曦破曉清晨之光，\n童貞聖母誕生救主，\n你乃真光預像驅暗，\n上帝公義之日照耀。",
+          "zh-hans": "一、晨曦破晓清晨之光，\n童贞圣母诞生救主，\n你乃真光预像驱暗，\n上帝公义之日照耀。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、今與永恆真光同在，\n榮耀貞女求來光明；\n貧瘠大地獻你於天，\n諸天恩感你之懇求。",
+          "zh-hans": "二、今与永恒真光同在，\n荣耀贞女求来光明；\n贫瘠大地献你于天，\n诸天恩感你之恳求。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、你雖如我卑微世人，\n上帝悅納你披威榮，\n聽你祈禱顯其德能，\n為吾罪愆求主寬恕。",
+          "zh-hans": "三、你虽如我卑微世人，\n上帝悦纳你披威荣，\n听你祈祷显其德能，\n为吾罪愆求主宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、榮耀天父以主仁慈，\n藉主聖子偕同聖靈，\n三位一體永生永王，\n統治萬有光耀穹蒼。阿們。",
+          "zh-hans": "四、荣耀天父以主仁慈，\n借主圣子偕同圣灵，\n三位一体永生永王，\n统治万有光耀穹苍。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "猶太地生出馬利亞，猶如荊棘開出玫瑰。",
+          "zh-hans": "犹太地生出马利亚，犹如荆棘开出玫瑰。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "好使恩典豐盛，替代了罪惡。",
+          "zh-hans": "好使恩典丰盛，替代了罪恶。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "今日我們尊崇亞伯拉罕的後裔、童貞馬利亞：※眾天使長歡欣；眾義人喜樂：願一切受造之物齊聲高唱讚美。",
+          "zh-hans": "今日我们尊崇亚伯拉罕的后裔、童贞马利亚：※众天使长欢欣；众义人喜乐：愿一切受造之物齐声高唱赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "今日我們尊崇亞伯拉罕的後裔、童貞馬利亞：※眾天使長歡欣；眾義人喜樂：願一切受造之物齊聲高唱讚美。",
+          "zh-hans": "今日我们尊崇亚伯拉罕的后裔、童贞马利亚：※众天使长欢欣；众义人喜乐：愿一切受造之物齐声高唱赞美。",
+          "en": ""
+        }
+      ]
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "Legend"
+      },
+      "source": null,
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖母小傳／教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣母小传／教父讲道。",
+        "en": "¶ Before the Creed, the following may be read."
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "在基督教世界各地，人們早已特別敬禮馬利亞可敬的聖名，並在一些地方為此舉行慶日。一六八三年，教宗依諾增爵十一世把這慶日擴展至整個西方教會，作為對聖母所獲得之大恩的永遠感恩。這恩典正是一場拯救西方基督教世界免於毀滅的軍事勝利。當時，殘暴的土耳其蘇丹正壓迫基督徒百姓；但在一六八三年九月十二日，基督徒士兵把自己託付於我等聖母尊貴聖名的護佑之下，便在維也納城牆前徹底擊敗了他。",
+          "zh-hans": "在基督教世界各地，人们早已特别敬礼玛利亚可敬的圣名，并在一些地方为此举行庆日。一六八三年，教宗依诺增爵十一世把这庆日扩展至整个西方教会，作为对圣母所获得之大恩的永远感恩。这恩典正是一场拯救西方基督教世界免于毁灭的军事胜利。当时，残暴的土耳其苏丹正压迫基督徒百姓；但在一六八三年九月十二日，基督徒士兵把自己托付于我等圣母尊贵圣名的护佑之下，便在维也纳城墙前彻底击败了他。",
+          "en": "PARTICULAR honours were already paid to the venerable name of Mary in divers parts of the Christian world, and a feast had in some places been kept in honour thereof. Which same in 1683 was by Innocent XI extended to the whole Western Church as an everlasting thanksgiving for the great favour which she was believed to have obtained. This favour was none other than a military victory which saved western Christendom from destruction. For the brutal Sultan of the Turks, who was trampling upon the necks of the Christian population, was thoroughly beaten before the walls of Vienna, upon the twelfth day of September, in the year 1683; after the Christian soldiers had placed themselves under the protection of the august name of our Lady."
+        },
+        {
+          "type": "subtitle",
+          "text": {
+            "zh-hant": "第二篇講道：論天使報喜",
+            "zh-hans": "第二篇讲道：论天使报喜",
+            "en": "Hom. 2 super Missus est"
+          }
+        },
+        {
+          "type": "centered",
+          "text": {
+            "zh-hant": "摘自聖伯爾納鐸院長的一篇講道",
+            "zh-hans": "摘自圣伯尔纳铎院长的一篇讲道",
+            "en": "From a Sermon by St. Bernard the Abbot"
+          }
+        },
+        {
+          "zh-hant": "經上說：「童貞女的名字叫馬利亞。」讓我們就這名字略說幾句；按其意義，馬利亞就是「海星」。這名稱極適合童貞聖母；因為她正可恰當地比作一顆星，發出光芒卻不損害自己；童貞女也照樣生出她的兒子，卻絲毫沒有損害她的童貞。星的光輝不會使星本身減損；馬利亞生下她的聖子，也沒有使她的童貞減損。她就是那顆要從雅各而出的尊貴之星；她的光明至今仍照耀大地，她的光線在天上最為燦爛，甚至照進陰間；她照亮世間，溫暖的不是身體而是靈魂，滋養良善，驅散邪惡。我說，她就是一顆清澈明亮的星，閃耀著各樣美德，輝映著完美榜樣，必須被安置在這浩瀚大海的表面，供人仰望。",
+          "zh-hans": "经上说：「童贞女的名字叫玛利亚。」让我们就这名字略说几句；按其意义，玛利亚就是「海星」。这名称极适合童贞圣母；因为她正可恰当地比作一颗星，发出光芒却不损害自己；童贞女也照样生出她的儿子，却丝毫没有损害她的童贞。星的光辉不会使星本身减损；玛利亚生下她的圣子，也没有使她的童贞减损。她就是那颗要从雅各而出的尊贵之星；她的光明至今仍照耀大地，她的光线在天上最为灿烂，甚至照进阴间；她照亮世间，温暖的不是身体而是灵魂，滋养良善，驱散邪恶。我说，她就是一颗清澈明亮的星，闪耀着各样美德，辉映着完美榜样，必须被安置在这浩瀚大海的表面，供人仰望。",
+          "en": "IT is said: The Virgin’s name was Mary. Let us speak a few words upon this name, which by way of interpretation is Star-of-the-Sea, and suiteth well the Virgin Mother, who may very meetly be likened unto a star giving forth her rays without any harm to herself, and the Virgin brought forth her Son, without any hurt to her virginity. The light of a star taketh nothing away from the star itself, and the birth of her offspring took nothing away from the virginity of Mary. She is that noble star which was to come out of Jacob, whose brightness still shedeth lustre upon all the earth, whose rays are most brilliant in heaven, and shine even unto hell, lighting up earth midways, and warming souls rather than bodies, fostering good and scaring away evil. I say, is a clear and shining star, twinkling with excellencies, and resplendent with example, needfully set to look upon the surface of this great and wide sea."
+        },
+        {
+          "zh-hant": "無論你是誰，若你知道自己並非穩行於堅實土地上，而是在今生海洋的狂風暴雨中受盡顛簸；若你不願被風暴吞沒，就當把眼目定睛在這顆清澈明亮的星上。試探的颶風若起來攻擊你，或你正航向患難的礁石，就當仰望這顆星，呼求馬利亞。罪惡的波浪若將你拋擲，忿怒或貪婪的巨浪，或肉體的誘惑，若衝擊你靈魂的船隻，就當仰望馬利亞。在危險中、在困難中、在疑惑中，當思想馬利亞，呼求馬利亞。",
+          "zh-hans": "无论你是谁，若你知道自己并非稳行于坚实土地上，而是在今生海洋的狂风暴雨中受尽颠簸；若你不愿被风暴吞没，就当把眼目定睛在这颗清澈明亮的星上。试探的飓风若起来攻击你，或你正航向患难的礁石，就当仰望这颗星，呼求玛利亚。罪恶的波浪若将你抛掷，忿怒或贪婪的巨浪，或肉体的诱惑，若冲击你灵魂的船只，就当仰望玛利亚。在危险中、在困难中、在疑惑中，当思想玛利亚，呼求玛利亚。",
+          "en": "THOU, whosoever thou art, that knowest thyself to be not so much walking upon firm ground, as battered to and fro by the gales and storms of this life’s ocean, if thou wouldest not be overwhelmed by the tempest, keep thine eyes fixed upon this clear shining star. If the hurricanes of temptation rise against thee, or thou art headed for the rocks of trouble, look to the star, call upon Mary. If the waves of sin toss thee, the billows of anger or avarice, or the enticements of the flesh bear against the ship of thy soul, look to Mary. In danger, in difficulty, or in doubt, think on Mary, call upon Mary."
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "聖母聖名日",
+        "zh-hans": "圣母圣名日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，求主使主忠信的子民，既因至聖童貞馬利亞的聖名與護佑而歡欣，便能藉著她慈愛的代禱，在世得蒙拯救脫離一切邪惡，在天上得享永恆的福樂。這都是靠著主的聖子、我主耶穌基督，主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，求主使主忠信的子民，既因至圣童贞马利亚的圣名与护佑而欢欣，便能藉着她慈爱的代祷，在世得蒙拯救脱离一切邪恶，在天上得享永恒的福乐。这都是靠着主的圣子、我主耶稣基督，主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "主上帝對蛇說：我要使你和女人彼此為仇，你的後裔和女人的後裔也彼此為仇。他要傷你的頭，你要傷他的腳跟。",
+          "zh-hans": "主上帝对蛇说：我要使你和女人彼此为仇，你的后裔和女人的后裔也彼此为仇。他要伤你的头，你要伤他的脚跟。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（創世記 3:15）",
+          "zh-hans": "（创世记 3:15）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "至明智的童貞聖母，※你往何處去？你如曉明之星，光輝美麗絕倫！錫安的女子，全然可愛，你是至甘饴者：皎洁如月，明耀若未蔽之日。",
+          "zh-hans": "至明智的童贞圣母，※你往何处去？你如晓明之星，光辉美丽绝伦！锡安的女子，全然可爱，你是至甘饴者：皎洁如月，明耀若未蔽之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主所賜福的童貞女，※藉著你，我們得以分享生命之果實。",
+          "zh-hans": "主所赐福的童贞女，※藉着你，我们得以分享生命之果实。",
+          "en": ""
+        },
+        {
+          "zh-hant": "欢欣吧，馬利亞！※唯獨你摧毀一切異端邪說，因你为普世诞下真理。",
+          "zh-hans": "欢欣吧，马利亚！※唯独你摧毁一切异端邪说，因你为普世诞下真理。",
+          "en": ""
+        },
+        {
+          "zh-hant": "榮福的母親，※無玷的童貞女，光榮的普世之後，請為我們祈求主。",
+          "zh-hans": "荣福的母亲，※无玷的童贞女，光荣的普世之后，请为我们祈求主。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "萬福貞女耶西之根",
+        "zh-hans": "万福贞女耶西之根",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、萬福貞女耶西之根，\n至潔至美永貞之女，\n上帝聖子降於你胎，\n你懷聖言道成肉身。",
+          "zh-hans": "一、万福贞女耶西之根，\n至洁至美永贞之女，\n上帝圣子降于你胎，\n你怀圣言道成肉身。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、你是山嶽至聖至潔，\n那塊巍然不動磐石，\n奇蹟般地從你取出，\n成為大山覆蓋全地。",
+          "zh-hans": "二、你是山岳至圣至洁，\n那块巍然不动磐石，\n奇迹般地从你取出，\n成为大山覆盖全地。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、你是基甸求旨羊毛，\n玄妙預像彰顯奧秘。\n你是亞倫發芽之杖，\n你是焚而不毀荊棘。",
+          "zh-hans": "三、你是基甸求旨羊毛，\n玄妙预像彰显奥秘。\n你是亚伦发芽之杖，\n你是焚而不毁荆棘。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、眾女之中真福之人，\n永沐天福分享喜樂，\n向你親子造物之主，\n猶如慈母獻上祈禱。",
+          "zh-hans": "四、众女之中真福之人，\n永沐天福分享喜乐，\n向你亲子造物之主，\n犹如慈母献上祈祷。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、你的聖子無限權能，\n踐踏龍頭摧毀幽冥，\n賜予世人永生之福，\n地獄權柄都成虛無。",
+          "zh-hans": "五、你的圣子无限权能，\n践踏龙头摧毁幽冥，\n赐予世人永生之福，\n地狱权柄都成虚无。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、求賜我等聖潔事主，\n虔誠侍立寶座之前，\n共享主榮永世稱頌，\n永恆敬拜永不止息。",
+          "zh-hans": "六、求赐我等圣洁事主，\n虔诚侍立宝座之前，\n共享主荣永世称颂，\n永恒敬拜永不止息。",
+          "en": ""
+        },
+        {
+          "zh-hant": "七、讚美聖父聖子聖靈，\n三位一體永恆上帝，\n我眾俯伏欽崇認信，\n惟一真神永世無盡。阿們。",
+          "zh-hans": "七、赞美圣父圣子圣灵，\n三位一体永恒上帝，\n我众俯伏钦崇认信，\n唯一真神永世无尽。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "百姓中的富贵人，要求你的恩典。",
+          "zh-hans": "百姓中的富贵人，要求你的恩典。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "我把你的名，傳揚萬代。",
+          "zh-hans": "我把你的名，传扬万代。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "榮耀的馬利亞乃王室宗脈所出；※我們以靈魂最深切的虔敬，懇求她代禱的護佑。",
+          "zh-hans": "荣耀的马利亚乃王室宗脉所出；※我们以灵魂最深切的虔敬，恳求她代祷的护佑。",
+          "en": ""
+        },
+        {
+          "zh-hant": "榮耀的馬利亞乃王室宗脈所出；※我們以靈魂最深切的虔敬，懇求她代禱的護佑。",
+          "zh-hans": "荣耀的马利亚乃王室宗脉所出；※我们以灵魂最深切的虔敬，恳求她代祷的护佑。",
+          "en": ""
+        }
+      ]
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "zh-hant": "至聖上帝之母，我們讚美你，※因救主由你而生；求你扶助所有尊崇你之人。",
+        "zh-hans": "至圣上帝之母，我们赞美你，※因救主由你而生；求你扶助所有尊崇你之人。",
+        "en": ""
+      }
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "聖母聖名日",
+        "zh-hans": "圣母圣名日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，求主使主忠信的子民，既因至聖童貞馬利亞的聖名與護佑而歡欣，便能藉著她慈愛的代禱，在世得蒙拯救脫離一切邪惡，在天上得享永恆的福樂。這都是靠著主的聖子、我主耶穌基督，主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，求主使主忠信的子民，既因至圣童贞马利亚的圣名与护佑而欢欣，便能藉着她慈爱的代祷，在世得蒙拯救脱离一切邪恶，在天上得享永恒的福乐。这都是靠着主的圣子、我主耶稣基督，主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr14-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "8:1-30"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "27:2-end"
+        }
+    }
+}

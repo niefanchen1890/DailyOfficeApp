@@ -1,0 +1,15 @@
+{
+    "id": "tr20-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "4:1-22"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "23:1-24:1"
+        }
+    }
+}

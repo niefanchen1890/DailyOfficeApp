@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr10-yr3-0-E",
+  "label": "第三組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "47" },
+      { "number": "48" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "1:17-27"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "14:8-28"
+    }
+  }
+}

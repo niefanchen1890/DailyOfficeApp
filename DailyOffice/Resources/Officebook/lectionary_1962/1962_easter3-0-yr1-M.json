@@ -1,0 +1,15 @@
+{
+    "id": "easter3-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "15:1-26"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "16:2-15"
+        }
+    }
+}

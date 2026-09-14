@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "12:27-13:13"
+        },
+        "ot": {
+            "book": "約珥書",
+            "chapter": "1:1-20"
+        }
+    }
+}

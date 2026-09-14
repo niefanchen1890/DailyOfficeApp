@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr5-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "25" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "路得記",
+      "chapter": "4:1-8"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "10:38-11:13"
+    }
+  }
+}

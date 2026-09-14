@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr13-yr1-5-E",
+  "label": "禮拜五",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "22" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "16:17-30"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "4:1-11"
+    }
+  }
+}

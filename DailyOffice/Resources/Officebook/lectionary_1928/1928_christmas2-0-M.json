@@ -1,0 +1,15 @@
+{
+    "id": "christmas2-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "2:13-23"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "2:1-10"
+        }
+    }
+}

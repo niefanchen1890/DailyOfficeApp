@@ -1,0 +1,15 @@
+{
+    "id": "easter5-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "腓立比書",
+            "chapter": "3:7-21"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "55:1-13"
+        }
+    }
+}

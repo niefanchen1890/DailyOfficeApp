@@ -1,0 +1,486 @@
+{
+  "identifier": "our_lady_sorrows",
+  "traits": { "themes": ["blessedVirginMary"] },
+  "name": {
+    "zh-hant": "七苦聖母",
+    "zh-hans": "七苦圣母",
+    "en": ""
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "zh-hant": "（二等複式）",
+    "zh-hans": "（二等复式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "主啊，求祢憐憫我，因為我軟弱。主啊，求祢醫治我，因為我的骨頭戰抖。",
+          "zh-hans": "主啊，求祢怜悯我，因为我软弱。主啊，求祢医治我，因为我的骨头战抖。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（詩篇 6:2）",
+          "zh-hans": "（诗篇 6:2）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "王正坐席的時候，※我的哪噠香膏發出香味。",
+          "zh-hans": "王正坐席的时候，※我的哪哒香膏发出香味。",
+          "en": ""
+        },
+        {
+          "zh-hant": "他的左手在我頭下；※他的右手將我抱住。",
+          "zh-hans": "他的左手在我头下；※他的右手将我抱住。",
+          "en": ""
+        },
+        {
+          "zh-hant": "耶路撒冷的眾女子啊，※我雖然黑，卻是秀美，因此，君王喜愛我，引我進入他的內室。",
+          "zh-hans": "耶路撒冷的众女子啊，※我虽然黑，却是秀美，因此，君王喜爱我，引我进入他的内室。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我的佳偶，我的美人，※起來，與我同去！因為冬天已往，雨水止住過去了。",
+          "zh-hans": "我的佳偶，我的美人，※起来，与我同去！因为冬天已往，雨水止住过去了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "上帝聖母，※你美麗而又悅人心意。",
+          "zh-hans": "上帝圣母，※你美丽而又悦人心意。",
+          "en": ""
+        }
+      ]
+    },
+    "psalms": {
+      "special": {
+        "items": [
+          { "number": "3" },
+          { "number": "11" },
+          { "number": "31" }
+        ]
+      }
+    },
+    "lessons": {
+        "special": {
+            "ot": { "book": "耶利米哀歌", "chapter": "1:2, 20-21" },
+            "nt": { "book": "路加福音", "chapter": "2:33-35" }
+        }
+    },
+
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Iam toto subitus vesper eat polo",
+        "zh-hans": "Iam toto subitus vesper eat polo",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、幽暗速降遮蔽諸天，日頭驚惶無光；\n我眾追憶慘痛苦難，神聖奧妙悲傷。",
+          "zh-hans": "一、幽暗速降遮蔽诸天，日头惊惶无光；\n我众追忆惨痛苦难，神圣奥妙悲伤。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、聖母侍立滿面淚痕，懷抱如鐵堅志；\n親聞吾主呻吟悲泣，親感其身痛楚。",
+          "zh-hans": "二、圣母侍立满面泪痕，怀抱如铁坚志；\n亲闻吾主呻吟悲泣，亲感其身痛楚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、聖子在你面前受釘，遍體鞭傷撕裂；\n血汙創口敞開猙獰，神形俱已耗竭。",
+          "zh-hans": "三、圣子在你面前受钉，遍体鞭伤撕裂；\n血污创口敞开狰狞，神形俱已耗竭。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、你見聖容受盡羞辱，煎熬痛苦乾渴；\n苦膽海綿以及長槍，刺入你心深處。",
+          "zh-hans": "四、你见圣容受尽羞辱，煎熬痛苦干渴；\n苦胆海绵以及长枪，刺入你心深处。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、你卻巍然莊嚴侍立，承受此般景象；\n遠超殉道烈士之功，未殞於斯劇痛。",
+          "zh-hans": "五、你却巍然庄严侍立，承受此般景象；\n远超殉道烈士之功，未殒于斯剧痛。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、讚美歸於三一上帝，懇求賜我力量；\n哀其獨生愛子之時，童女光輝堅強。阿們。",
+          "zh-hans": "六、赞美归于三一上帝，恳求赐我力量；\n哀其独生爱子之时，童女光辉坚强。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "諸殉道者之后，請為我們祈禱。",
+          "zh-hans": "诸殉道者之后，请为我们祈祷。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "她曾侍立耶穌十架之旁。",
+          "zh-hans": "她曾侍立耶稣十架之旁。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "不要因太陽把我曬黑了就瞪着我。※我母親的兒子向我發怒，他們使我看守葡萄園；我自己的葡萄園我卻沒有看守。",
+        "zh-hans": "不要因太阳把我晒黑了就瞪着我。※我母亲的儿子向我发怒，他们使我看守葡萄园；我自己的葡萄园我却没有看守。",
+        "en": ""
+      }
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "zh-hant": "上帝聖母，※我們投奔於你慈憫的蔭庇之下；莫輕忽我們的懇求，榮福童貞女，惟願常救我們脫離諸般凶厄。",
+        "zh-hans": "上帝圣母，※我们投奔于你慈悯的荫庇之下；莫轻忽我们的恳求，荣福童贞女，惟愿常救我们脱离诸般凶厄。",
+        "en": ""
+      }
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "七苦聖母",
+        "zh-hans": "七苦圣母",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝阿，在主受難之時，依照西緬的預言，痛苦的利劍刺透了主的母親、榮福童貞馬利亞溫柔的心靈；求主仁慈地賞賜我們在此紀念她的痛苦的人，也能為主苦難的蒙福果實所充滿。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝阿，在主受难之时，依照西缅的预言，痛苦的利剑刺透了主的母亲、荣福童贞马利亚温柔的心灵；求主仁慈地赏赐我们在此纪念她的痛苦的人，也能为主苦难的蒙福果实所充满。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "我因呻吟而困乏；我每夜流淚，使床鋪漂起，把褥子濕透。",
+          "zh-hans": "我因呻吟而困乏；我每夜流泪，使床铺漂起，把褥子湿透。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（詩篇 6:6）",
+          "zh-hans": "（诗篇 6:6）",
+          "en": ""
+        }
+      }
+    ],
+    "invitatory": {
+      "text": {
+        "zh-hant": "我們要與耶穌的母親馬利亞一起侍立於十字架旁，※一把憂苦的利劍刺透了她的心靈。",
+        "zh-hans": "我们要与耶稣的母亲马利亚一起侍立于十字架旁，※一把忧苦的利剑刺透了她的心灵。",
+        "en": ""
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "O quot undis lacrimarum",
+        "zh-hans": "O quot undis lacrimarum",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、何等淚水憂傷洪流，何等痛苦與煎熬，\n哀慟聖母肝腸寸斷，因她愛子剛被害，\n從染血聖架卸下時，再回聖母之慈懷。",
+          "zh-hans": "一、何等泪水忧伤洪流，何等痛苦与煎熬，\n哀恸圣母肝肠寸断，因她爱子刚被害，\n从染血圣架卸下时，再回圣母之慈怀。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、她以淚水沐浴聖屍，傷累累至聖之體；\n聖心之下長矛創傷，被刺染血的手足，\n至深母愛沈重悲痛，親吻所有的聖傷。",
+          "zh-hans": "二、她以泪水沐浴圣尸，伤累累至圣之体；\n圣心之下长矛创伤，被刺染血的手足，\n至深母爱沉重悲痛，亲吻所有的圣伤。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、一次再次將祂臂膀，緊緊擁入她懷中；\n她蒼白雙唇頻頻地，親吻愛子的傷痛；\n在最後一吻悲慟裡，她完全傾倒己靈。",
+          "zh-hans": "三、一次再次将祂臂膀，紧紧拥入她怀中；\n她苍白双唇频频地，亲吻爱子的伤痛；\n在最后一吻悲恸里，她完全倾倒己灵。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、藉著慈母所流淚河，藉你愛子的死亡，\n藉祂紫青殘酷傷痕，藉你無上的悲痛，\n求激我眾憐憫之心，使我與你同哀傷。",
+          "zh-hans": "四、藉着慈母所流泪河，借你爱子的死亡，\n藉祂紫青残酷伤痕，借你无上的悲痛，\n求激我众怜悯之心，使我与你同哀伤。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、讚美榮耀歸於聖父，讚美榮耀歸聖子，\n榮耀讚美也歸聖靈；永恆的三位一體；\n同性同體同享永恆，萬世萬代永長存。阿們。",
+          "zh-hans": "五、赞美荣耀归于圣父，赞美荣耀归圣子，\n荣耀赞美也归圣灵；永恒的三位一体；\n同性同体同享永恒，万世万代永长存。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "你這女子中極美麗的，※你的良人往何處去了？你的良人轉向何處去了，我們好與你同去尋找他。",
+          "zh-hans": "你这女子中极美丽的，※你的良人往何处去了？你的良人转向何处去了，我们好与你同去寻找他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "你們轉眼不看我，※我要痛哭。不要因我眾民的毀滅，就竭力安慰我。",
+          "zh-hans": "你们转眼不看我，※我要痛哭。不要因我众民的毁灭，就竭力安慰我。",
+          "en": ""
+        },
+        {
+          "zh-hant": "他無佳形美容；※我們看見他的時候，也無美貌使我們羨慕他。",
+          "zh-hans": "他无佳形美容；※我们看见他的时候，也无美貌使我们羡慕他。",
+          "en": ""
+        },
+        {
+          "zh-hant": "從腳掌到頭頂，※沒有一處是完好的，盡是創傷、瘀青，與流血的傷口。",
+          "zh-hans": "从脚掌到头顶，※没有一处是完好的，尽是创伤、瘀青，与流血的伤口。",
+          "en": ""
+        },
+        {
+          "zh-hant": "請你們用祂聖桌上的酒增補我力，※代替我受苦的杯，以生命樹的果子暢快我的心，因我為愛而生病，心裏極其悲傷，幾乎要死。",
+          "zh-hans": "请你们用祂圣桌上的酒增补我力，※代替我受苦的杯，以生命树的果子畅快我的心，因我为爱而生病，心里极其悲伤，几乎要死。",
+          "en": ""
+        }
+      ]
+    },
+    "psalms": {
+      "special": {
+        "items": [
+          { "number": "22" },
+          { "number": "56" },
+          { "number": "42" }
+        ]
+      }
+    },
+    "lessons": {
+        "special": {
+            "ot": { "book": "耶利米哀歌", "chapter": "2:13,15-18" },
+            "nt": { "book": "路加福音", "chapter": "2:41-51" }
+        }
+    },
+
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Crux fidelis",
+        "zh-hans": "Crux fidelis",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、慈悲之源全善上帝，\n求賜我等聖寵默思；\n童貞聖母一生七苦，\n耶穌基督所受創傷。",
+          "zh-hans": "一、慈悲之源全善上帝，\n求赐我等圣宠默思；\n童贞圣母一生七苦，\n耶稣基督所受创伤。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、願因聖母所流淚水，\n為我贏得救主恩典；\n仰賴我主垂顧此淚，\n洗淨普世萬般重罪。",
+          "zh-hans": "二、愿因圣母所流泪水，\n为我赢得救主恩典；\n仰赖我主垂顾此泪，\n洗净普世万般重罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、深切哀慟默想五傷，\n乃是耶穌親身所受；\n偕同聖母深切悲痛，\n恩賜眾人永恆喜樂。",
+          "zh-hans": "三、深切哀恸默想五伤，\n乃是耶稣亲身所受；\n偕同圣母深切悲痛，\n恩赐众人永恒喜乐。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、唯願聖母摯愛子女，\n淚眼追憶慈母哀慟；\n正當基督高懸木上，\n傾流寶血使我得贖。",
+          "zh-hans": "四、唯愿圣母挚爱子女，\n泪眼追忆慈母哀恸；\n正当基督高悬木上，\n倾流宝血使我得赎。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、讚美童女所生耶穌，\n捨身受死賜我生命；\n同歸聖父保惠聖靈，\n我等敬拜永世無窮。阿們。",
+          "zh-hans": "五、赞美童女所生耶稣，\n舍身受死赐我生命；\n同归圣父保惠圣灵，\n我等敬拜永世无穷。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "童貞女啊，藉着你憂苦的大能。",
+          "zh-hans": "童贞女啊，藉着你忧苦的大能。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "使我們歡欣於天國光明。",
+          "zh-hans": "使我们欢欣于天国光明。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "來吧，※我們登主的山，看看有何愁苦能比我的愁苦。",
+        "zh-hans": "来吧，※我们登主的山，看看有何愁苦能比我的愁苦。",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "《論十二星》",
+        "zh-hans": "《论十二星》",
+        "en": "Sermo de 12 stellis"
+      },
+      "source": {
+        "zh-hant": "節選自聖伯納德院長講道集",
+        "zh-hans": "节选自圣伯纳德院长讲道集",
+        "en": "From a Sermon by St. Bernard the Abbot"
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "童貞女的殉道，不僅在主親自受難的歷史中擺在我們眼前，也在西面的預言中向我們充分宣明。這位聖善的老人論到嬰孩耶穌說：「看哪，這孩子被立，是要叫以色列中許多人跌倒，許多人興起；又要成為受人毀謗的記號。」隨後他對馬利亞說：「是的，這也要刺透你自己的心。」誠然如此，蒙福的母親啊，那把劍確實刺透了你的心！因為若不先刺透你自己的心，就沒有甚麼能刺透你聖子的身體。是的，馬利亞啊，當你的耶穌交付了靈魂，那染血的長槍再也不能折磨祂時，當槍刺入祂死去的肋旁，你自己的心也為之劇痛戰慄。祂的靈魂可以離開祂，但你的靈魂卻不能離開你。",
+          "zh-hans": "童贞女的殉道，不仅在主亲自受难的历史中摆在我们眼前，也在西面的预言中向我们充分宣明。这位圣善的老人论到婴孩耶稣说：「看哪，这孩子被立，是要叫以色列中许多人跌倒，许多人兴起；又要成为受人毁谤的记号。」随后他对玛利亚说：「是的，这也要刺透你自己的心。」诚然如此，蒙福的母亲啊，那把剑确实刺透了你的心！因为若不先刺透你自己的心，就没有什么能刺透你圣子的身体。是的，玛利亚啊，当你的耶稣交付了灵魂，那染血的长枪再也不能折磨祂时，当枪刺入祂死去的肋旁，你自己的心也为之剧痛战栗。祂的灵魂可以离开祂，但你的灵魂却不能离开你。",
+          "en": "THE Martyrdom of the Virgin, which is set before us in the history of the Passion of the Lord itself, is likewise fully declared unto us in the prophecy of Simeon. This holy old man spake of the Child Jesus, saying: Behold, this Child is set for the fall and rising again of many in Israel; and for a sign which shall be spoken against. Then unto Mary he said: Yea, a sword shall pierce through thy own soul also. Even so, O blessed Mother, the sword verily did pierce through thy soul! For nought could pierce the body of thy Son, except it did pierce thine own soul also. Yea, and when this Jesus of thine had given up the ghost, O Mary, and the bloody spear could torture him no more, thine own soul was wounded as it pierced his dead side. His soul might leave him, but thine could not."
+        },
+        {
+          "zh-hant": "就這樣，無數憂傷的猛烈痛楚刺透了你的心，馬利亞啊。因此，我們實在可以稱你為一位超越殉道者的人。因為那使你與你的聖子一同受苦的愛，比任何肉身之痛的折磨都更深地絞痛了你的心。再者，難道不曾有過這樣一個時刻，你這位聖子所說的一句話，強而有力地刺穿了你的心嗎？是的，那話比一切兩刃的劍更鋒利，甚至刺入、剖開了魂與靈；那話就是：「婦人，看，你的兒子！」哦，這是何等令人心碎的交換！以約翰代替耶穌！以僕人代替他的主！以門徒代替他的老師！以西庇太的兒子代替上帝的兒子！以純粹的凡人代替真上帝！當這樣的話語響起時，必定是多麼銳利地刺透了你那最虔誠奉獻的心；因為即便是我們這些人，儘管心硬如石、堅梗如鐵，一想到此事，也會為之動容。",
+          "zh-hans": "就这样，无数忧伤的猛烈痛楚刺透了你的心，玛利亚啊。因此，我们实在可以称你为一位超越殉道者的人。因为那使你与你的圣子一同受苦的爱，比任何肉身之痛的折磨都更深地绞痛了你的心。再者，难道不曾有过这样一个时刻，你这位圣子所说的一句话，强而有力地刺穿了你的心吗？是的，那话比一切两刃的剑更锋利，甚至刺入、剖开了魂与灵；那话就是：「妇人，看，你的儿子！」哦，这是何等令人心碎的交换！以约翰代替耶稣！以仆人代替他的主！以门徒代替他的老师！以西庇太的儿子代替上帝的儿子！以纯粹的凡人代替真上帝！当这样的话语响起时，必定是多么锐利地刺透了你那最虔诚奉献的心；因为即便是我们这些人，尽管心硬如石、坚梗如铁，一想到此事，也会为之动容。",
+          "en": "ON this wise then the violence of thy many sorrows pierced through thy soul, O Mary. Therefore we may truly call thee more than Martyr. For the love which made thee suffer, along with thy Son, wrung thy heart more bitterly than any pang of bodily pain could do. Moreover, was there not an occasion when one of the words of this same thy Son did powerfully transfix thy soul? Yea, it was sharper than any two-edged sword, piercing even to the dividing asunder of soul and spirit; to wit: Woman, behold thy son! O what an exchange to offer thee! John the servant for his Lord! The disciple for his Master! Zebedee’s son for God’s Son! Mere man for Very God! How keenly the sound of such words must have pierced through thy most devoted soul, when even the hearts of us men, hard as stone and unbending as iron though they be, are moved at the memory thereof."
+        },
+        {
+          "zh-hant": "我的弟兄們，稱馬利亞為心靈上的殉道者，對我們來說並不足為奇。這事或許只會讓那些忘記了保羅如何論到外邦人那難以言喻之敗壞的人感到奇怪；也就是說，他們是「無親情的」。馬利亞的心靈卻截然不同。願上帝也賜予她僕人們的心靈與之截然不同！但或許有人會說：她難道不知道祂將要死嗎？是的，她確實知道。她難道不盼望祂不久後就會復活嗎？是的，她極其忠信地盼望著。那麼，她依然因為祂被釘十字架而哀痛嗎？是的，哀痛至極。我的弟兄，你是誰？你從哪裏得來這樣的智慧，竟對馬利亞之子所受的苦不怎麼驚奇，反倒對祂母親與祂同受的苦感到驚奇呢？祂能在肉身中受死，難道她不能在心裏與祂同死嗎？祂的作為出於那份愛，也就是「人的愛心沒有比這個更大的了」；而她的愛，除了祂自己以外，從未有任何人曾擁有過。",
+          "zh-hans": "我的弟兄们，称玛利亚为心灵上的殉道者，对我们来说并不足为奇。这事或许只会让那些忘记了保罗如何论到外邦人那难以言喻之败坏的人感到奇怪；也就是说，他们是「无亲情的」。玛利亚的心灵却截然不同。愿上帝也赐予她仆人们的心灵与之截然不同！但或许有人会说：她难道不知道祂将要死吗？是的，她确实知道。她难道不盼望祂不久后就会复活吗？是的，她极其忠信地盼望着。那么，她依然因为祂被钉十字架而哀痛吗？是的，哀痛至极。我的弟兄，你是谁？你从哪里得来这样的智慧，竟对玛利亚之子所受的苦不怎么惊奇，反倒对祂母亲与祂同受的苦感到惊奇呢？祂能在肉身中受死，难道她不能在心里与祂同死吗？祂的作为出于那份爱，也就是「人的爱心没有比这个更大的了」；而她的爱，除了祂自己以外，从未有任何人曾拥有过。",
+          "en": "It is not strange to us, my brethren, that Mary is called a Martyr in spirit. Doubtless it may be strange to such as bear not in mind what Paul saith of the unspeakable corruption of the Gentiles, to wit, that they were without natural affection. Far different was the soul of Mary. God grant that far different may those of her servants be! But some perchance will say: Did she not know that he was to die? Yea, verily she knew it. Did she not hope that he was soon to rise again? Yea, most faithfully she hoped it. And did she still mourn because he was crucified? Yea, bitterly. What art thou, my brother, or whence hast thou such wisdom as this, to marvel less that the Son of Mary did suffer, than that his Mother suffered with him? He could die in the body, and could she not die with him in her heart? His was the deed of that love, greater than which hath no man. But hers was a love, such as no man ever had, save only he himself."
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "七苦聖母",
+        "zh-hans": "七苦圣母",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝阿，在主受難之時，依照西緬的預言，痛苦的利劍刺透了主的母親、榮福童貞馬利亞溫柔的心靈；求主仁慈地賞賜我們在此紀念她的痛苦的人，也能為主苦難的蒙福果實所充滿。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝阿，在主受难之时，依照西缅的预言，痛苦的利剑刺透了主的母亲、荣福童贞马利亚温柔的心灵；求主仁慈地赏赐我们在此纪念她的痛苦的人，也能为主苦难的蒙福果实所充满。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "我的眼睛因憂愁而昏花，因敵人的緣故，我的眼目模糊不清。",
+          "zh-hans": "我的眼睛因忧愁而昏花，因敌人的缘故，我的眼目模糊不清。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（詩篇 6:7）",
+          "zh-hans": "（诗篇 6:7）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "王正坐席的時候，※我的哪噠香膏發出香味。",
+          "zh-hans": "王正坐席的时候，※我的哪哒香膏发出香味。",
+          "en": ""
+        },
+        {
+          "zh-hant": "他的左手在我頭下；※他的右手將我抱住。",
+          "zh-hans": "他的左手在我头下；※他的右手将我抱住。",
+          "en": ""
+        },
+        {
+          "zh-hant": "耶路撒冷的眾女子啊，※我雖然黑，卻是秀美，因此，君王喜愛我，引我進入他的內室。",
+          "zh-hans": "耶路撒冷的众女子啊，※我虽然黑，却是秀美，因此，君王喜爱我，引我进入他的内室。",
+          "en": ""
+        },
+        {
+          "zh-hant": "我的佳偶，我的美人，※起來，與我同去！因為冬天已往，雨水止住過去了。",
+          "zh-hans": "我的佳偶，我的美人，※起来，与我同去！因为冬天已往，雨水止住过去了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "上帝聖母，※你美麗而又悅人心意。",
+          "zh-hans": "上帝圣母，※你美丽而又悦人心意。",
+          "en": ""
+        }
+      ]
+    },
+    "psalms": {
+      "special": {
+        "items": [
+          { "number": "64" },
+          { "number": "6" },
+          { "number": "46" }
+        ]
+      }
+    },
+    "lessons": {
+        "special": {
+            "ot": { "book": "猶滴傳", "chapter": "13:17-20" },
+            "nt": { "book": "啟示錄", "chapter": "11:19-12:5" }
+        }
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Iam toto subitus vesper eat polo",
+        "zh-hans": "Iam toto subitus vesper eat polo",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、幽暗速降遮蔽諸天，日頭驚惶無光；\n我眾追憶慘痛苦難，神聖奧妙悲傷。",
+          "zh-hans": "一、幽暗速降遮蔽诸天，日头惊惶无光；\n我众追忆惨痛苦难，神圣奥妙悲伤。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、聖母侍立滿面淚痕，懷抱如鐵堅志；\n親聞吾主呻吟悲泣，親感其身痛楚。",
+          "zh-hans": "二、圣母侍立满面泪痕，怀抱如铁坚志；\n亲闻吾主呻吟悲泣，亲感其身痛楚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、聖子在你面前受釘，遍體鞭傷撕裂；\n血汙創口敞開猙獰，神形俱已耗竭。",
+          "zh-hans": "三、圣子在你面前受钉，遍体鞭伤撕裂；\n血污创口敞开狰狞，神形俱已耗竭。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、你見聖容受盡羞辱，煎熬痛苦乾渴；\n苦膽海綿以及長槍，刺入你心深處。",
+          "zh-hans": "四、你见圣容受尽羞辱，煎熬痛苦干渴；\n苦胆海绵以及长枪，刺入你心深处。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、你卻巍然莊嚴侍立，承受此般景象；\n遠超殉道烈士之功，未殞於斯劇痛。",
+          "zh-hans": "五、你却巍然庄严侍立，承受此般景象；\n远超殉道烈士之功，未殒于斯剧痛。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、讚美歸於三一上帝，懇求賜我力量；\n哀其獨生愛子之時，童女光輝堅強。阿們。",
+          "zh-hans": "六、赞美归于三一上帝，恳求赐我力量；\n哀其独生爱子之时，童女光辉坚强。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "諸殉道者之后，請為我們祈禱。",
+          "zh-hans": "诸殉道者之后，请为我们祈祷。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "她曾侍立耶穌十架之旁。",
+          "zh-hans": "她曾侍立耶稣十架之旁。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "憂愁壓迫我；※我的臉因哭泣變紅，我的眼皮上有死蔭。",
+        "zh-hans": "忧愁压迫我；※我的脸因哭泣变红，我的眼皮上有死荫。",
+        "en": ""
+      }
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "七苦聖母",
+        "zh-hans": "七苦圣母",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "上帝阿，在主受難之時，依照西緬的預言，痛苦的利劍刺透了主的母親、榮福童貞馬利亞溫柔的心靈；求主仁慈地賞賜我們在此紀念她的痛苦的人，也能為主苦難的蒙福果實所充滿。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "上帝阿，在主受难之时，依照西缅的预言，痛苦的利剑刺透了主的母亲、荣福童贞马利亚温柔的心灵；求主仁慈地赏赐我们在此纪念她的痛苦的人，也能为主苦难的蒙福果实所充满。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

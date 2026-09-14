@@ -1,0 +1,15 @@
+{
+    "id": "easter5-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "27:1-44"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "22:9-34"
+        }
+    }
+}

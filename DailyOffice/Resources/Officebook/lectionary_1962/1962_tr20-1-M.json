@@ -1,0 +1,15 @@
+{
+    "id": "tr20-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "提多書",
+            "chapter": "1:1-2:8"
+        },
+        "ot": {
+            "book": "以斯拉記",
+            "chapter": "9"
+        }
+    }
+}

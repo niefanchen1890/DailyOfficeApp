@@ -1,0 +1,13 @@
+{
+  "identifier": "sanctorale_0623_nativity_of_john_the_baptist_vigil",
+  "name": "施洗聖約翰誕辰望日",
+  "rank": "vigil",
+  "rank_display": "（望日）",
+  "type": "sanctorale",
+  "morning": {
+    "collect": {
+      "title": "施洗聖約翰誕辰望日",
+      "text": "求主使我們行走在得救的道路之上，遵行主的神聖先鋒聖約翰的教導，使我們得以安全抵達他所預言的那一位台前，就是主的聖子，我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+    }
+  }
+}

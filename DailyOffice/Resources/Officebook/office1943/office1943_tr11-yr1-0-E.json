@@ -1,0 +1,23 @@
+{
+  "id": "office1943_tr11-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "23" },
+      { "number": "68" },
+      { "number": "142" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "35:10-19"
+    },
+    "nt": {
+      "book": "馬可福音",
+      "chapter": "12:38-44"
+    }
+  }
+}

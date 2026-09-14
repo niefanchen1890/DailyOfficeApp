@@ -1,0 +1,15 @@
+{
+    "id": "0125-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "3:10-4:8"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "39:1-10"
+        }
+    }
+}

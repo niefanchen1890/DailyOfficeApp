@@ -1,0 +1,15 @@
+{
+    "id": "easter8-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "2:38-47"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "11:14-25"
+        }
+    }
+}

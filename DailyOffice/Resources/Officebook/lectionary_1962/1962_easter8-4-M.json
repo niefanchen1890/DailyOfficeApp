@@ -1,0 +1,15 @@
+{
+    "id": "easter8-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "6:10-20"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "23:1-5"
+        }
+    }
+}

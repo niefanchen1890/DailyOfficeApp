@@ -1,0 +1,15 @@
+{
+    "id": "tr4-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "28:1-15"
+        },
+        "ot": {
+            "book": "尼希米記",
+            "chapter": "8:1-12"
+        }
+    }
+}

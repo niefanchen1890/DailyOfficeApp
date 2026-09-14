@@ -1,0 +1,520 @@
+{
+  "identifier": "st_theodore_canterbury",
+  "traits": { "themes": ["bishop", "confessor"] },
+  "name": {
+    "zh-hant": "坎特伯雷的聖西奧多主教",
+    "zh-hans": "坎特伯雷的圣西奥多主教",
+    "en": ""
+  },
+  "rank": "double",
+  "rank_display": {
+    "zh-hant": "（複式）",
+    "zh-hans": "（复式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "看，大司祭，他在世之時蒙上帝悅納，又被認為是齊全正義之人。當烈怒的時候，他成為得救的人。",
+          "zh-hans": "看，大司祭，他在世之时蒙上帝悦纳，又被认为是齐全正义之人。当烈怒的时候，他成为得救的人。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 44:16）",
+          "zh-hans": "（便西拉智训 44:16）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "lectionary_1943": [
+        {
+          "zh-hant": "主引導義人走入正路，將上帝的國指示給他，賜予他神聖事物的知識，使他在辛勞之中得榮耀，並增加他辛苦勞成果。",
+          "zh-hans": "主引导义人走入正路，将上帝的国指示给他，赐予他神圣事物的知识，使他在辛劳之中得荣耀，并增加他辛苦劳成果。",
+          "en": "The Lord guided the righteous man in right paths, and showed him the Kingdom of God; bestowed on him the knowledge of holy things, made him honourable in his travails, and increased the fruit of his labours."
+        },
+        {
+          "zh-hant": "你這又良善又忠心的僕人，※可以進來享受你主人的快樂。",
+          "zh-hans": "你这又良善又忠心的仆人，※可以进来享受你主人的快乐。",
+          "en": "Good and faithful servant, ※ enter thou into the joy of thy Lord."
+        }
+      ],
+      "antiphons": [
+        {
+          "zh-hant": "看，大祭司，※他在世之時蒙上帝喜悅，又被認為是齊全正義之人。哈利路亞。",
+          "zh-hans": "看，大祭司，※他在世之时蒙上帝喜悦，又被认为是齐全正义之人。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "他遵守至高者的法律，※沒有人比得上他。哈利路亞。",
+          "zh-hans": "他遵守至高者的法律，※没有人比得上他。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "因此，※上帝起誓許使他的苗裔在萬民之中興旺。哈利路亞。",
+          "zh-hans": "因此，※上帝起誓许使他的苗裔在万民之中兴旺。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "上帝的眾祭司阿，※你們要讚頌主；主的僕人阿，請謳歌頌讚我們的上帝。哈利路亞。",
+          "zh-hans": "上帝的众祭司阿，※你们要赞颂主；主的仆人阿，请讴歌颂赞我们的上帝。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "善良忠信的僕人，※進入你主人的福樂吧！哈利路亞。",
+          "zh-hans": "善良忠信的仆人，※进入你主人的福乐吧！哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Christe, pastorum Caput atque Princeps",
+        "zh-hans": "Christe, pastorum Caput atque Princeps",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督彰威嚴，眾牧元首治者；\n主教當稱頌，德澤流芳永世；\n攜誓趨聖殿，虔獻心香主前；\n仁愛永長存！",
+          "zh-hans": "一、基督彰威严，众牧元首治者；\n主教当称颂，德泽流芳永世；\n携誓趋圣殿，虔献心香主前；\n仁爱永长存！",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、秉謙登牧座，不恃名唯承光；\n主賜威權重，戰兢持守聖德；\n克己潔身行，恩雨沛臨群羊；\n憐憫澤萬方！",
+          "zh-hans": "二、秉谦登牧座，不恃名唯承光；\n主赐威权重，战兢持守圣德；\n克己洁身行，恩雨沛临群羊；\n怜悯泽万方！",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、為父與牧者，傾身家惠澤長；\n萬民立聖範，德輝照耀八荒；\n甘作眾人僕，仁風雨潤塵疆；\n信德作津梁！",
+          "zh-hans": "三、为父与牧者，倾身家惠泽长；\n万民立圣范，德辉照耀八荒；\n甘作众人仆，仁风雨润尘疆；\n信德作津梁！",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、伏祈禱聲恆，助忠僕越滄浪；\n賜登天國境，頌聖三於雲闕；\n父子與聖靈，讚上帝永不歇；\n聖三永稱揚！阿們。",
+          "zh-hans": "四、伏祈祷声恒，助忠仆越沧浪；\n赐登天国境，颂圣三于云阙；\n父子与圣灵，赞上帝永不歇；\n圣三永称扬！阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "主愛了他，並裝扮了他。",
+          "zh-hans": "主爱了他，并装扮了他。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "給他穿上榮耀的外衣。",
+          "zh-hans": "给他穿上荣耀的外衣。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "主的精修者聖西奧多，※藉著你神聖的代禱堅固我們眾人，使我們這些被罪惡重擔壓垮之人，因你已得享真福榮耀而昂首挺身，並追隨你的芳蹤，至終贏得永恆的賞賜。",
+        "zh-hans": "主的精修者圣西奥多，※藉着你神圣的代祷坚固我们众人，使我们这些被罪恶重担压垮之人，因你已得享真福荣耀而昂首挺身，并追随你的芳踪，至终赢得永恒的赏赐。",
+        "en": ""
+      }
+    },
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default Collect"
+        },
+      "title": {
+        "zh-hant": "坎特伯雷的聖西奧多主教",
+        "zh-hans": "坎特伯雷的圣西奥多主教",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "無所不能的上帝，我們虔誠地守主的精修者聖西奧多主教的這一慶節，求主賜予我們属灵益处，在一切虔誠的事務上取得進步，獲得永恆的救恩。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "无所不能的上帝，我们虔诚地守主的精修者圣西奥多主教的这一庆节，求主赐予我们属灵益处，在一切虔诚的事务上取得进步，获得永恒的救恩。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative Collect"
+        },
+        "title": {
+          "zh-hant": "坎特伯雷的聖西奧多主教",
+          "zh-hans": "坎特伯雷的圣西奥多主教",
+          "en": ""
+        },
+        "text": {
+          "zh-hant": "無所不能的上帝，主曾感動並賜力給主的僕人，大數的聖西奧多，使他不顧己身，在國家需用之日接受主的召命，來治理並改革這地；伏求主為我們保守，藉著他所賜下之正統信仰與大公紀律的恩福；並賜給他的繼任者有加倍的靈感動他。這都是靠著主的聖子、我主耶穌基督；主耶穌與聖父、聖靈，一同永生，惟一上帝，一同掌權，世世無盡。阿們。",
+          "zh-hans": "无所不能的上帝，主曾感动并赐力给主的仆人，大数的圣西奥多，使他不顾己身，在国家需用之日接受主的召命，来治理并改革这地；伏求主为我们保守，藉着他所赐下之正统信仰与大公纪律的恩福；并赐给他的继任者有加倍的灵感动他。这都是靠着主的圣子、我主耶稣基督；主耶稣与圣父、圣灵，一同永生，惟一上帝，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "我在上帝面前，並在將來審判活人死人的基督耶穌面前，憑着他的顯現和他的國度鄭重地勸戒你：務要傳道；無論得時不得時總要專心，並以百般的忍耐和各樣的教導責備人，警戒人，勸勉人。",
+          "zh-hans": "我在上帝面前，并在将来审判活人死人的基督耶稣面前，凭着他的显现和他的国度郑重地劝戒你：务要传道；无论得时不得时总要专心，并以百般的忍耐和各样的教导责备人，警戒人，劝勉人。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（以斯拉補編下卷 2:45）",
+          "zh-hans": "（以斯拉补编下卷 2:45）",
+          "en": ""
+        }
+      }
+    ],
+    "invitatory": {
+      "text": {
+        "zh-hant": "主是精修者的君王，※我們當來俯伏敬拜。",
+        "zh-hans": "主是精修者的君王，※我们当来俯伏敬拜。",
+        "en": ""
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "Christe, pastorum Caput atque Princeps",
+        "zh-hans": "Christe, pastorum Caput atque Princeps",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督彰威嚴，眾牧元首治者；\n主教當稱頌，德澤流芳永世；\n攜誓趨聖殿，虔獻心香主前；\n仁愛永長存！",
+          "zh-hans": "一、基督彰威严，众牧元首治者；\n主教当称颂，德泽流芳永世；\n携誓趋圣殿，虔献心香主前；\n仁爱永长存！",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、秉謙登牧座，不恃名唯承光；\n主賜威權重，戰兢持守聖德；\n克己潔身行，恩雨沛臨群羊；\n憐憫澤萬方！",
+          "zh-hans": "二、秉谦登牧座，不恃名唯承光；\n主赐威权重，战兢持守圣德；\n克己洁身行，恩雨沛临群羊；\n怜悯泽万方！",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、為父與牧者，傾身家惠澤長；\n萬民立聖範，德輝照耀八荒；\n甘作眾人僕，仁風雨潤塵疆；\n信德作津梁！",
+          "zh-hans": "三、为父与牧者，倾身家惠泽长；\n万民立圣范，德辉照耀八荒；\n甘作众人仆，仁风雨润尘疆；\n信德作津梁！",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、伏祈禱聲恆，助忠僕越滄浪；\n賜登天國境，頌聖三於雲闕；\n父子與聖靈，讚上帝永不歇；\n聖三永稱揚！阿們。",
+          "zh-hans": "四、伏祈祷声恒，助忠仆越沧浪；\n赐登天国境，颂圣三于云阙；\n父子与圣灵，赞上帝永不歇；\n圣三永称扬！阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "lectionary_1943": [
+        {
+          "zh-hant": "願那愛你名的人都靠你歡欣。※因為你必賜福與義人；主啊，你必用恩惠如同盾牌四面護衛他。",
+          "zh-hans": "愿那爱你名的人都靠你欢欣。※因为你必赐福与义人；主啊，你必用恩惠如同盾牌四面护卫他。",
+          "en": "Let all rejoice ※ who hope in thee, O Lord; since thou hast blessed the righteous man, and with the shield of thy good will hast crowned him."
+        },
+        {
+          "zh-hant": "在遵守至高者的法律上，※沒有人可與他對立。",
+          "zh-hans": "在遵守至高者的法律上，※没有人可与他对立。",
+          "en": "There was none found ※ like unto him, who kept the law of the Most High."
+        }
+      ],
+      "antiphons": [
+        {
+          "zh-hant": "看，大祭司，※他在世之時蒙上帝喜悅，又被認為是齊全正義之人。哈利路亞。",
+          "zh-hans": "看，大祭司，※他在世之时蒙上帝喜悦，又被认为是齐全正义之人。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "他遵守至高者的法律，※沒有人比得上他。哈利路亞。",
+          "zh-hans": "他遵守至高者的法律，※没有人比得上他。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "因此，※上帝起誓許使他的苗裔在萬民之中興旺。哈利路亞。",
+          "zh-hans": "因此，※上帝起誓许使他的苗裔在万民之中兴旺。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "上帝的眾祭司阿，※你們要讚頌主；主的僕人阿，請謳歌頌讚我們的上帝。哈利路亞。",
+          "zh-hans": "上帝的众祭司阿，※你们要赞颂主；主的仆人阿，请讴歌颂赞我们的上帝。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "善良忠信的僕人，※進入你主人的福樂吧！哈利路亞。",
+          "zh-hans": "善良忠信的仆人，※进入你主人的福乐吧！哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Jesu, sacerdotum decus",
+        "zh-hans": "Jesu, sacerdotum decus",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、耶穌主僕榮冕喜樂，\n慈目垂顧主的子民，\n今值聖者榮升天鄉，\n光耀冠冕永沐聖恩。",
+          "zh-hans": "一、耶稣主仆荣冕喜乐，\n慈目垂顾主的子民，\n今值圣者荣升天乡，\n光耀冠冕永沐圣恩。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、愛主為證主恩為憑，\n自禰聖殿領受使命；\n守護照顧主贖羊群，\n父托於主彼竭其誠。",
+          "zh-hans": "二、爱主为证主恩为凭，\n自祢圣殿领受使命；\n守护照顾主赎羊群，\n父托于主彼竭其诚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、驅散凶獸斥退豺狼，\n詭計雖狡盡皆洞穿；\n護衛群羊願承危險，\n捨命爭戰忠勇無雙。",
+          "zh-hans": "三、驱散凶兽斥退豺狼，\n诡计虽狡尽皆洞穿；\n护卫群羊愿承危险，\n舍命争战忠勇无双。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、每逢獻上無血聖祭，\n救恩聖筵價值無極；\n羊群置於祭壇之上，\n自己也為活獻祭上。",
+          "zh-hans": "四、每逢献上无血圣祭，\n救恩圣筵价值无极；\n羊群置于祭坛之上，\n自己也为活献祭上。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、唯願榮耀讚頌尊威，\n歸於至高祭司耶穌，\n歸於聖父保惠聖靈，\n三一上帝永受讚頌。阿們。",
+          "zh-hans": "五、唯愿荣耀赞颂尊威，\n归于至高祭司耶稣，\n归于圣父保惠圣灵，\n三一上帝永受赞颂。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "義人必如百合花開放，",
+          "zh-hans": "义人必如百合花开放.",
+          "en": "The righteous shall blossom as the lily. "
+        },
+        "people": {
+          "zh-hant": "永遠繁榮在主面前。",
+          "zh-hans": "永远繁荣在主面前.",
+          "en": "He shall flourish for ever before the Lord."
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "主揀選了他，※祝聖了他，為他施於憐憫，使他在主眼中得蒙恩寵。",
+        "zh-hans": "主拣选了他，※祝圣了他，为他施于怜悯，使他在主眼中得蒙恩宠。",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "Legend"
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "這位西奧多，如同真福使徒保羅一樣，是大數人。他在羅馬作修士，以敬虔和學問聞名。當時，坎特伯雷的第烏斯德迪特去世；他是自真福奧古斯丁以來服事該教會的第六任主教。教宗維達良正商議要派遣一位總主教前往坎特伯雷，便把這尊位授予哈德良院長；哈德良因謙遜而推辭，並推舉西奧多。因此，西奧多受祝聖後被派往英格蘭，哈德良院長作他的同伴；哈德良是一位既有學問又聖潔的人。西奧多一到坎特伯雷，便巡察自己的教區，也巡察全英格蘭，所到之處都帶著哈德良。他受到眾人熱烈接納，因此能在各地建立正確的生活秩序，並施行有關遵守復活節日期的教會法規。他也在適當的地方祝聖主教，並在他們協助下改革一切需要改正之處。由此，坎特伯雷總主教被承認為全英格蘭的首席主教。",
+          "zh-hans": "这位西奥多，如同真福使徒保罗一样，是大数人。他在罗马作修士，以敬虔和学问闻名。当时，坎特伯雷的第乌斯德迪特去世；他是自真福奥古斯丁以来服事该教会的第六任主教。教宗维达良正商议要派遣一位总主教前往坎特伯雷，便把这尊位授予哈德良院长；哈德良因谦逊而推辞，并推举西奥多。因此，西奥多受祝圣后被派往英格兰，哈德良院长作他的同伴；哈德良是一位既有学问又圣洁的人。西奥多一到坎特伯雷，便巡察自己的教区，也巡察全英格兰，所到之处都带着哈德良。他受到众人热烈接纳，因此能在各地建立正确的生活秩序，并施行有关遵守复活节日期的教会法规。他也在适当的地方祝圣主教，并在他们协助下改革一切需要改正之处。由此，坎特伯雷总主教被承认为全英格兰的首席主教。",
+          "en": "THIS Theodore who, like the blessed Apostle Paul, was a native of Tarsus, lived as a monk at Rome, where he was well known for godliness and learning. At that time Pope Vitalian was in treaty to send an Archbishop to Canterbury after the death of Deusdedit, the sixth who had ministered to that church since blessed Augustine. The Pope offered this dignity to the Abbot Hadrian, who excused himself out of lowliness, and put forward Theodore. Theodore therefore was consecrated and sent into England, with the Abbot Hadrian for his companion, who was a man both learned and holy. As soon as he had come to Canterbury, he made a visitation to his own diocese, and also to the whole of England, taking the said Hadrian with him everywhere. He was well received, and therefore he was able to set forth everywhere a right order of living and the canonical rule for the keeping of Easter. He also ordained bishops in meet places, and corrected with their help such things as needed amending. Thus it came about that the Archbishop of Canterbury was recognized as the Primate of all England."
+        },
+        {
+          "zh-hant": "由於西奧多本人與真福哈德良都精通聖俗學問，因此他們到處設立教會學校。故此，可敬者聖比德說，在西奧多治理英格蘭教會期間，是英格蘭前所未有的光明歲月。當時有既強盛又敬虔的君王，眾人都渴望從身邊這些著名教師學習屬天的事。許多人藉著他們的教導而受教育；他們的學問與聖潔照亮了英格蘭，以致那時代似乎可稱為英格蘭教會的黃金時代。西奧多和哈德良不只向聽眾傳授聖學，也傳授世俗學問，將其作為神學的婢女。",
+          "zh-hans": "由于西奥多本人与真福哈德良都精通圣俗学问，因此他们到处设立教会学校。故此，可敬者圣比德说，在西奥多治理英格兰教会期间，是英格兰前所未有的光明岁月。当时有既强盛又敬虔的君王，众人都渴望从身边这些著名教师学习属天的事。许多人借着他们的教导而受教育；他们的学问与圣洁照亮了英格兰，以致那时代似乎可称为英格兰教会的黄金时代。西奥多和哈德良不只向听众传授圣学，也传授世俗学问，将其作为神学的婢女。",
+          "en": "Forasmuch as Theodore himself, and the blessed Hadrian also, were excellently taught in letters both sacred and profane, they opened everywhere Church schools. Hence the Venerable Bede saith that brighter times never shone on England than those wherein Theodore administered her Church. She had kings who were both mighty and godly, and all men were longing to be taught in heavenly things from the famous masters at hand. Many learnt by their instruction, and so lighted England by their teaching and holiness that this would seem to be the golden age of the Church of England. Neither did Theodore and Hadrian give sacred letters only to their hearers, but worldly learning also, as the handmaid of theology."
+        },
+        {
+          "zh-hant": "真福西奧多常常主持教會會議，頒布有益的法令。據說他曾出版《告解規程》，為要改革信徒的生活。他最關切的是按立無可指責的人作主教。他把真福查德遷任為利奇菲爾德主教；又祝聖聖埃爾孔瓦爾德為倫敦主教、聖約翰·貝弗利為赫克瑟姆主教、聖庫斯伯特為林迪斯法恩主教，以及其他教會中同樣聖潔的人作主教。當英格蘭的君王彼此發生爭端時，他運用眾王所敬重的權威，使他們放下兵器，在持久的和平紐帶中彼此結盟。他以聖潔牧養所託付給他的教會二十二年，又幫助將其多樣的組成部分帶入教會的合一；這合一後來成為英格蘭各族人民在公民生活上合一的基礎。他於六九○年九月十九日、八十八歲時安息歸向上帝，並隆重安葬於坎特伯雷的聖彼得與聖保羅修道院教堂中。",
+          "zh-hans": "真福西奥多常常主持教会会议，颁布有益的法令。据说他曾出版《告解规程》，为要改革信徒的生活。他最关切的是按立无可指责的人作主教。他把真福查德迁任为利奇菲尔德主教；又祝圣圣埃尔孔瓦尔德为伦敦主教、圣约翰·贝弗利为赫克瑟姆主教、圣库斯伯特为林迪斯法恩主教，以及其他教会中同样圣洁的人作主教。当英格兰的君王彼此发生争端时，他运用众王所敬重的权威，使他们放下兵器，在持久的和平纽带中彼此结盟。他以圣洁牧养所托付给他的教会二十二年，又帮助将其多样的组成部分带入教会的合一；这合一后来成为英格兰各族人民在公民生活上合一的基础。他于六九○年九月十九日、八十八岁时安息归向上帝，并隆重安葬于坎特伯雷的圣彼得与圣保罗修道院教堂中。",
+          "en": "Blessed Theodore oftentimes held Synods, wherein he passed wholesome decrees. He is reputed to have published a Book of Penitentials for the reformation of the lives of the faithful. His chief care was to ordain as bishops men above all cavil. He it was that translated blessed Chad to be Bishop of Litchfield. He it was who consecrated holy Erconwald as Bishop of London; holy John of Beverley, Bishop of Hexham; holy Cuthbert, Bishop of Lindisfarne; and men not less holy as bishops in other churches. When the kings of England fell into disputes, he so affected them by the authority which he enjoyed among them all, that they cast away their arms, and bound themselves together in the bond of a lasting peace. He ministered in holiness to the Church committed unto him for the space of twenty-two years, and helped to bring its diverse elements into an ecclesiastical unity, which afterwards became the means of civic unity between the English peoples. He went to God at the age of eighty-eight, in the year 690, upon September 19th, and was buried with honour in the Abbey Church of Saint Peter and Saint Paul in Canterbury."
+        }
+      ]
+    },
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default Collect"
+        },
+      "title": {
+        "zh-hant": "坎特伯雷的聖西奧多主教",
+        "zh-hans": "坎特伯雷的圣西奥多主教",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "無所不能的上帝，我們虔誠地守主的精修者聖西奧多主教的這一慶節，求主賜予我們属灵益处，在一切虔誠的事務上取得進步，獲得永恆的救恩。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "无所不能的上帝，我们虔诚地守主的精修者圣西奥多主教的这一庆节，求主赐予我们属灵益处，在一切虔诚的事务上取得进步，获得永恒的救恩。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative Collect"
+        },
+        "title": {
+          "zh-hant": "坎特伯雷的聖西奧多主教",
+          "zh-hans": "坎特伯雷的圣西奥多主教",
+          "en": ""
+        },
+        "text": {
+          "zh-hant": "無所不能的上帝，主曾感動並賜力給主的僕人，大數的聖西奧多，使他不顧己身，在國家需用之日接受主的召命，來治理並改革這地；伏求主為我們保守，藉著他所賜下之正統信仰與大公紀律的恩福；並賜給他的繼任者有加倍的靈感動他。這都是靠著主的聖子、我主耶穌基督；主耶穌與聖父、聖靈，一同永生，惟一上帝，一同掌權，世世無盡。阿們。",
+          "zh-hans": "无所不能的上帝，主曾感动并赐力给主的仆人，大数的圣西奥多，使他不顾己身，在国家需用之日接受主的召命，来治理并改革这地；伏求主为我们保守，藉着他所赐下之正统信仰与大公纪律的恩福；并赐给他的继任者有加倍的灵感动他。这都是靠着主的圣子、我主耶稣基督；主耶稣与圣父、圣灵，一同永生，惟一上帝，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "主與他立永遠的盟約，賜予他大祭司的職分，以榮耀祝聖他，使他盡祭司職分，使他名得榮耀，並向他供獻火祭、燒香和馨香祭。",
+          "zh-hans": "主与他立永远的盟约，赐予他大祭司的职分，以荣耀祝圣他，使他尽祭司职分，使他名得荣耀，并向他供献火祭、烧香和馨香祭。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 45:15）",
+          "zh-hans": "（便西拉智训 45:15）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "lectionary_1943": [
+        {
+          "zh-hant": "看哪！這是大祭司，※他在世之時取悅了上帝，被看為完全，是個義人。",
+          "zh-hans": "看哪！这是大祭司，※他在世之时取悦了上帝，被看为完全，是个义人。",
+          "en": "Behold a great Priest, ※ who in his days pleased God, and was found righteous."
+        },
+        {
+          "zh-hant": "這是那忠心有見識的管家，主人派他管理家裡的人。",
+          "zh-hans": "这是那忠心有见识的管家，主人派他管理家里的人。",
+          "en": "A wise and faithful steward, whom the Lord made ruler over his household."
+        }
+      ],
+      "antiphons": [
+        {
+          "zh-hant": "看，大祭司，※他在世之時蒙上帝喜悅，又被認為是齊全正義之人。哈利路亞。",
+          "zh-hans": "看，大祭司，※他在世之时蒙上帝喜悦，又被认为是齐全正义之人。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "他遵守至高者的法律，※沒有人比得上他。哈利路亞。",
+          "zh-hans": "他遵守至高者的法律，※没有人比得上他。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "因此，※上帝起誓許使他的苗裔在萬民之中興旺。哈利路亞。",
+          "zh-hans": "因此，※上帝起誓许使他的苗裔在万民之中兴旺。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "上帝的眾祭司阿，※你們要讚頌主；主的僕人阿，請謳歌頌讚我們的上帝。哈利路亞。",
+          "zh-hans": "上帝的众祭司阿，※你们要赞颂主；主的仆人阿，请讴歌颂赞我们的上帝。哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "善良忠信的僕人，※進入你主人的福樂吧！哈利路亞。",
+          "zh-hans": "善良忠信的仆人，※进入你主人的福乐吧！哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Jesu, sacerdotum decus",
+        "zh-hans": "Jesu, sacerdotum decus",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、耶穌主僕榮冕喜樂，\n慈目垂顧主的子民，\n今值聖者榮升天鄉，\n光耀冠冕永沐聖恩。",
+          "zh-hans": "一、耶稣主仆荣冕喜乐，\n慈目垂顾主的子民，\n今值圣者荣升天乡，\n光耀冠冕永沐圣恩。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、愛主為證主恩為憑，\n自禰聖殿領受使命；\n守護照顧主贖羊群，\n父托於主彼竭其誠。",
+          "zh-hans": "二、爱主为证主恩为凭，\n自祢圣殿领受使命；\n守护照顾主赎羊群，\n父托于主彼竭其诚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、驅散凶獸斥退豺狼，\n詭計雖狡盡皆洞穿；\n護衛群羊願承危險，\n捨命爭戰忠勇無雙。",
+          "zh-hans": "三、驱散凶兽斥退豺狼，\n诡计虽狡尽皆洞穿；\n护卫群羊愿承危险，\n舍命争战忠勇无双。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、每逢獻上無血聖祭，\n救恩聖筵價值無極；\n羊群置於祭壇之上，\n自己也為活獻祭上。",
+          "zh-hans": "四、每逢献上无血圣祭，\n救恩圣筵价值无极；\n羊群置于祭坛之上，\n自己也为活献祭上。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、唯願榮耀讚頌尊威，\n歸於至高祭司耶穌，\n歸於聖父保惠聖靈，\n三一上帝永受讚頌。阿們。",
+          "zh-hans": "五、唯愿荣耀赞颂尊威，\n归于至高祭司耶稣，\n归于圣父保惠圣灵，\n三一上帝永受赞颂。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "主愛了他，並裝扮了他。",
+          "zh-hans": "主爱了他，并装扮了他。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "給他穿上榮耀的外衣。",
+          "zh-hans": "给他穿上荣耀的外衣。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "這是一位在上帝之前行大事之人，※他的教導充滿全地；願他為眾人的罪過代求。",
+        "zh-hans": "这是一位在上帝之前行大事之人，※他的教导充满全地；愿他为众人的罪过代求。",
+        "en": ""
+      }
+    },
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default Collect"
+        },
+      "title": {
+        "zh-hant": "坎特伯雷的聖西奧多主教",
+        "zh-hans": "坎特伯雷的圣西奥多主教",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "無所不能的上帝，我們虔誠地守主的精修者聖西奧多主教的這一慶節，求主賜予我們属灵益处，在一切虔誠的事務上取得進步，獲得永恆的救恩。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "无所不能的上帝，我们虔诚地守主的精修者圣西奥多主教的这一庆节，求主赐予我们属灵益处，在一切虔诚的事务上取得进步，获得永恒的救恩。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative Collect"
+        },
+        "title": {
+          "zh-hant": "坎特伯雷的聖西奧多主教",
+          "zh-hans": "坎特伯雷的圣西奥多主教",
+          "en": ""
+        },
+        "text": {
+          "zh-hant": "無所不能的上帝，主曾感動並賜力給主的僕人，大數的聖西奧多，使他不顧己身，在國家需用之日接受主的召命，來治理並改革這地；伏求主為我們保守，藉著他所賜下之正統信仰與大公紀律的恩福；並賜給他的繼任者有加倍的靈感動他。這都是靠著主的聖子、我主耶穌基督；主耶穌與聖父、聖靈，一同永生，惟一上帝，一同掌權，世世無盡。阿們。",
+          "zh-hans": "无所不能的上帝，主曾感动并赐力给主的仆人，大数的圣西奥多，使他不顾己身，在国家需用之日接受主的召命，来治理并改革这地；伏求主为我们保守，藉着他所赐下之正统信仰与大公纪律的恩福；并赐给他的继任者有加倍的灵感动他。这都是靠着主的圣子、我主耶稣基督；主耶稣与圣父、圣灵，一同永生，惟一上帝，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      }
+    ]
+  }
+}

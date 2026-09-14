@@ -1,0 +1,15 @@
+{
+    "id": "tr20-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "3:1-18"
+        },
+        "ot": {
+            "book": "彌迦書",
+            "chapter": "4:1-7"
+        }
+    }
+}

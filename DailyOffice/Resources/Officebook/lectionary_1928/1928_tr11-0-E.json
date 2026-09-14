@@ -1,0 +1,15 @@
+{
+    "id": "tr11-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "19:1-9"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "24:1-38, 50-54, 61-end"
+        }
+    }
+}

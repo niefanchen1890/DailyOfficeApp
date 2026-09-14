@@ -1,0 +1,15 @@
+{
+    "id": "ad4-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "12:13-34"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "59:1-21"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0725-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "1:14-22"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "22:6-19"
+        }
+    }
+}

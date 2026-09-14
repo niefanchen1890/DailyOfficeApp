@@ -1,0 +1,15 @@
+{
+    "id": "0929-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "1:13-2:10"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "38"
+        }
+    }
+}

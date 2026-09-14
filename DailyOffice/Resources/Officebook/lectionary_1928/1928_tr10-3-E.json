@@ -1,0 +1,15 @@
+{
+    "id": "tr10-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "14:20"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "7"
+        }
+    }
+}

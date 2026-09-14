@@ -1,0 +1,15 @@
+{
+    "id": "0104-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "帖撒羅尼迦前書",
+            "chapter": "2:17-3:13"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "66:1-9"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr27-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "7:1-14"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "8:21-9:18"
+        }
+    }
+}

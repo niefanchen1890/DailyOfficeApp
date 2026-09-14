@@ -1,0 +1,15 @@
+{
+    "id": "tr22-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "3:19-4:6"
+        },
+        "ot": {
+            "book": "傳道書",
+            "chapter": "6:1-7:14"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr4-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "22", "verses": "23-31" },
+      { "number": "67" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "12:1-9"
+    },
+    "nt": {
+      "book": "加拉太書",
+      "chapter": "3:1-9"
+    }
+  }
+}

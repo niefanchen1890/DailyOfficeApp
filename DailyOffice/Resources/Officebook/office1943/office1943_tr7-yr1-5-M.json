@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr7-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "86" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "10:1-11"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "14:15-24"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany1-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:22-39"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "2:1-22"
+        }
+    }
+}

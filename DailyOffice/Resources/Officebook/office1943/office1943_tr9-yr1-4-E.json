@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr9-yr1-4-E",
+  "label": "禮拜四",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "21", "verses": "1-6" },
+      { "number": "24" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "彌迦書",
+      "chapter": "1:1-7"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "3:1-20"
+    }
+  }
+}

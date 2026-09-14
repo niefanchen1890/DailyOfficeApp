@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr12-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "102", "verses": "15-28" },
+      { "number": "146" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "38:1-14"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "4:31-44"
+    }
+  }
+}

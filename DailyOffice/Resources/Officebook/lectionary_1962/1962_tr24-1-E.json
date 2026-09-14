@@ -1,0 +1,15 @@
+{
+    "id": "tr24-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "9:32-end"
+        },
+        "ot": {
+            "book": "瑪喀比傳上",
+            "chapter": "6:48-end"
+        }
+    }
+}

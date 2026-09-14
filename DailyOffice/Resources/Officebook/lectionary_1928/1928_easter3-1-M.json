@@ -1,0 +1,15 @@
+{
+    "id": "easter3-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "1:1-17"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "34:27-35"
+        }
+    }
+}

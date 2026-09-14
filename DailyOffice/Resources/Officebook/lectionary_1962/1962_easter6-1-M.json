@@ -1,0 +1,15 @@
+{
+    "id": "easter6-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "6:5-18"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "7:6-13"
+        }
+    }
+}

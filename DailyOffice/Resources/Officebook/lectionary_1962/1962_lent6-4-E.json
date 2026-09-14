@@ -1,0 +1,15 @@
+{
+    "id": "lent6-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "13:1-35"
+        },
+        "ot": {
+            "book": "耶利米哀歌",
+            "chapter": "3:1-33"
+        }
+    }
+}

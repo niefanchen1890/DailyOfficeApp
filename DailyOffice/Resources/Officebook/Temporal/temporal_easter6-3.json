@@ -1,0 +1,15 @@
+{
+  "identifier": "easter6-3",
+  "name": "特禱禮拜三",
+  "rank": "feria",
+  "rank_display": "（紀念）",
+  "type": "commemoration",
+  "morning": {
+    "collect": {
+      "title": "特禱禮拜三",
+      "text": "全能的上帝，天地的主宰。我們懇求主將主的福澤施給本國全地。使我們得有豐富的收成，這樣我們常得主的厚恩，就能在聖教會中時常感謝主。這都是靠著我主耶穌基督。阿們。"
+    }
+  },
+  "evening": null,
+  "vigil": null
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr5-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "34" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "箴言",
+      "chapter": "15:1-10,26"
+    },
+    "nt": {
+      "book": "雅各書",
+      "chapter": "3:1-27"
+    }
+  }
+}

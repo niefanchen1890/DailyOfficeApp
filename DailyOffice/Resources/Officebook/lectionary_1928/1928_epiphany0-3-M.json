@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "3:1-29"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "55:1-13"
+        }
+    }
+}

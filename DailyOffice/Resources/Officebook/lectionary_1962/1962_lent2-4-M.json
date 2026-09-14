@@ -1,0 +1,15 @@
+{
+    "id": "lent2-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "3:1-21"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "8:20-9:12"
+        }
+    }
+}

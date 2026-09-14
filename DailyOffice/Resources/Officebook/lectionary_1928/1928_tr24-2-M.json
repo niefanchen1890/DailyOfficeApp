@@ -1,0 +1,15 @@
+{
+    "id": "tr24-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "11:45-end"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "5:1-18"
+        }
+    }
+}

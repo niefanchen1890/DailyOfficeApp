@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr2-yr1-2-M",
+  "label": "禮拜二",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "49" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約書亞記",
+      "chapter": "3:1-6,13-17"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "5:12-26"
+    }
+  }
+}

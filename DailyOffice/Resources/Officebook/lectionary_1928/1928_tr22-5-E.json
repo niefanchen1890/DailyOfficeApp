@@ -1,0 +1,15 @@
+{
+    "id": "tr22-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "4:1-19"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "40:1-24"
+        }
+    }
+}

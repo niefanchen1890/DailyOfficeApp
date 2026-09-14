@@ -1,0 +1,15 @@
+{
+    "id": "tr20-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "9:1-38"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "6:8-17"
+        }
+    }
+}

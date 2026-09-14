@@ -1,0 +1,15 @@
+{
+    "id": "0425-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "5:1-14"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "62:1-12"
+        }
+    }
+}

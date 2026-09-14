@@ -1,0 +1,15 @@
+{
+    "id": "1018-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "1:1-4"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "55"
+        }
+    }
+}

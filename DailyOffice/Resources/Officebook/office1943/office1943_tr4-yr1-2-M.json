@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr4-yr1-2-M",
+  "label": "禮拜二",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "123" },
+      { "number": "124" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "士師記",
+      "chapter": "16:4-14"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "8:26-39"
+    }
+  }
+}

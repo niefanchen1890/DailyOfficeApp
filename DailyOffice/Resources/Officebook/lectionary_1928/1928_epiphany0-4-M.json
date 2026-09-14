@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "4:1-5:1"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "56:1-8"
+        }
+    }
+}

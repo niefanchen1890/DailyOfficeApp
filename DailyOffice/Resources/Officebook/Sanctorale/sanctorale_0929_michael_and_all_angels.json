@@ -1,0 +1,426 @@
+{
+  "identifier": "st_michael_all_angels",
+  "traits": { "themes": ["angel"] },
+  "name": {
+    "zh-hant": "聖米迦勒和諸天使日",
+    "zh-hans": "圣米迦勒和诸天使日",
+    "en": ""
+  },
+  "rank": "doubleFirstClass",
+  "rank_display": {
+    "zh-hant": "（一等複式）",
+    "zh-hans": "（一等复式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "聽從他命令、成全他旨意、有大能的天使啊，你們都要稱頌耶和華！",
+          "zh-hans": "听从他命令、成全他旨意、有大能的天使啊，你们都要称颂耶和华！",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（詩篇 103:20）",
+          "zh-hans": "（诗篇 103:20）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "有一位天使拿著金香爐來※站在聖殿的祭壇旁邊。",
+          "zh-hans": "有一位天使拿着金香炉来※站在圣殿的祭坛旁边。",
+          "en": ""
+        },
+        {
+          "zh-hant": "當天使長米迦勒同那龍交戰時，聽到有大聲音說：※「救恩屬於我們的上帝，哈利路亞。」",
+          "zh-hans": "当天使长米迦勒同那龙交战时，听到有大声音说：※「救恩属于我们的上帝，哈利路亚。」",
+          "en": ""
+        },
+        {
+          "zh-hant": "天使長米迦勒，※我委派你成為所有在歸家途中的靈魂的守護者。",
+          "zh-hans": "天使长米迦勒，※我委派你成为所有在归家途中的灵魂的守护者。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主的眾天使，要讚美主，※稱頌主，尊主為大，永世無盡。",
+          "zh-hans": "主的众天使，要赞美主，※称颂主，尊主为大，永世无尽。",
+          "en": ""
+        },
+        {
+          "zh-hant": "眾天使與天使長，※寶座天使與宰制天使，統領天使與權能天使，天上的诸品天使，你們要讚頌天上之主。哈利路亞。",
+          "zh-hans": "众天使与天使长，※宝座天使与宰制天使，统领天使与权能天使，天上的诸品天使，你们要赞颂天上之主。哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Tibi Christe",
+        "zh-hans": "Tibi Christe",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督聖父榮耀光輝，\n心靈生命與力量；\n侍立高天眾天使前，高聲歡唱美頌歌；\n交替合唱和聲齊鳴，獻上啟應之讚美。",
+          "zh-hans": "一、基督圣父荣耀光辉，\n心灵生命与力量；\n侍立高天众天使前，高声欢唱美颂歌；\n交替合唱和声齐鸣，献上启应之赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、我等虔誠敬拜頌揚，\n高天無數聖軍兵；\n首當敬頌戰士統帥，領軍神聖眾天使；\n米迦勒顯尊貴大能，驅逐亞巴頓墜落。",
+          "zh-hans": "二、我等虔诚敬拜颂扬，\n高天无数圣军兵；\n首当敬颂战士统帅，领军神圣众天使；\n米迦勒显尊贵大能，驱逐亚巴顿坠落。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、藉其警醒護佑看顧，\n永恆恩典至高王；\n擊退一切屬靈仇敵，驅散邪惡卑劣事；\n懇求賜下獨一良善，引我安居於樂園。",
+          "zh-hans": "三、藉其警醒护佑看顾，\n永恒恩典至高王；\n击退一切属灵仇敌，驱散邪恶卑劣事；\n恳求赐下独一良善，引我安居于乐园。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、榮耀歸於上帝聖父，\n響亮甜美聲歡唱；\n榮耀歸於救主基督，榮耀歸保惠聖靈；\n獨一三一至高上帝，萬古之先當頌揚。阿們。",
+          "zh-hans": "四、荣耀归于上帝圣父，\n响亮甜美声欢唱；\n荣耀归于救主基督，荣耀归保惠圣灵；\n独一三一至高上帝，万古之先当颂扬。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "我的上帝，我要在眾天使面前歌頌主。",
+          "zh-hans": "我的上帝，我要在众天使面前歌颂主。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "我要向主的聖殿敬拜，並讚美主的名。",
+          "zh-hans": "我要向主的圣殿敬拜，并赞美主的名。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "當約翰瞻仰※那神聖奧祕時，天使長米迦勒吹響號筒：主，我們的上帝啊，求你赦免我們，你展開書卷，並揭開其上的印，哈利路亞。",
+        "zh-hans": "当约翰瞻仰※那神圣奥秘时，天使长米迦勒吹响号筒：主，我们的上帝啊，求你赦免我们，你展开书卷，并揭开其上的印，哈利路亚。",
+        "en": ""
+      }
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "聖米迦勒和諸天使日",
+        "zh-hans": "圣米迦勒和诸天使日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "無始無終的上帝，以奇妙的次序，分派天使和世上的人各盡本分。主的聖天使，既然在天上常常事奉主，求主施憐憫，也分派天使在地上，護庇我們。這都是靠著我主耶穌基督。阿們。",
+        "zh-hans": "无始无终的上帝，以奇妙的次序，分派天使和世上的人各尽本分。主的圣天使，既然在天上常常事奉主，求主施怜悯，也分派天使在地上，护庇我们。这都是靠着我主耶稣基督。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "天上發生了爭戰。米迦勒同他的使者與龍作戰，龍同牠的使者也起來應戰，牠們都打敗了，天上再也沒有牠們的地方。",
+          "zh-hans": "天上发生了争战。米迦勒同他的使者与龙作战，龙同牠的使者也起来应战，牠们都打败了，天上再也没有牠们的地方。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 12:7-8）",
+          "zh-hans": "（启示录 12:7-8）",
+          "en": ""
+        }
+      }
+    ],
+    "invitatory": {
+      "text": {
+        "zh-hant": "主是天使與天使長的君王，※我們當來俯伏敬拜。",
+        "zh-hans": "主是天使与天使长的君王，※我们当来俯伏敬拜。",
+        "en": ""
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "Tibi Christe",
+        "zh-hans": "Tibi Christe",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督聖父榮耀光輝，\n心靈生命與力量；\n侍立高天眾天使前，高聲歡唱美頌歌；\n交替合唱和聲齊鳴，獻上啟應之讚美。",
+          "zh-hans": "一、基督圣父荣耀光辉，\n心灵生命与力量；\n侍立高天众天使前，高声欢唱美颂歌；\n交替合唱和声齐鸣，献上启应之赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、我等虔誠敬拜頌揚，\n高天無數聖軍兵；\n首當敬頌戰士統帥，領軍神聖眾天使；\n米迦勒顯尊貴大能，驅逐亞巴頓墜落。",
+          "zh-hans": "二、我等虔诚敬拜颂扬，\n高天无数圣军兵；\n首当敬颂战士统帅，领军神圣众天使；\n米迦勒显尊贵大能，驱逐亚巴顿坠落。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、藉其警醒護佑看顧，\n永恆恩典至高王；\n擊退一切屬靈仇敵，驅散邪惡卑劣事；\n懇求賜下獨一良善，引我安居於樂園。",
+          "zh-hans": "三、藉其警醒护佑看顾，\n永恒恩典至高王；\n击退一切属灵仇敌，驱散邪恶卑劣事；\n恳求赐下独一良善，引我安居于乐园。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、榮耀歸於上帝聖父，\n響亮甜美聲歡唱；\n榮耀歸於救主基督，榮耀歸保惠聖靈；\n獨一三一至高上帝，萬古之先當頌揚。阿們。",
+          "zh-hans": "四、荣耀归于上帝圣父，\n响亮甜美声欢唱；\n荣耀归于救主基督，荣耀归保惠圣灵；\n独一三一至高上帝，万古之先当颂扬。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "有一位天使拿著金香爐來※站在聖殿的祭壇旁邊。",
+          "zh-hans": "有一位天使拿着金香炉来※站在圣殿的祭坛旁边。",
+          "en": ""
+        },
+        {
+          "zh-hant": "當天使長米迦勒同那龍交戰時，聽到有大聲音說：※「救恩屬於我們的上帝，哈利路亞。」",
+          "zh-hans": "当天使长米迦勒同那龙交战时，听到有大声音说：※「救恩属于我们的上帝，哈利路亚。」",
+          "en": ""
+        },
+        {
+          "zh-hant": "天使長米迦勒，※我委派你成為所有在歸家途中的靈魂的守護者。",
+          "zh-hans": "天使长米迦勒，※我委派你成为所有在归家途中的灵魂的守护者。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主的眾天使，要讚美主，※稱頌主，尊主為大，永世無盡。",
+          "zh-hans": "主的众天使，要赞美主，※称颂主，尊主为大，永世无尽。",
+          "en": ""
+        },
+        {
+          "zh-hant": "眾天使與天使長，※寶座天使與宰制天使，統領天使與權能天使，天上的诸品天使，你們要讚頌天上之主。哈利路亞。",
+          "zh-hans": "众天使与天使长，※宝座天使与宰制天使，统领天使与权能天使，天上的诸品天使，你们要赞颂天上之主。哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Christe, sanctorum decus Angelorum",
+        "zh-hans": "Christe, sanctorum decus Angelorum",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督眾聖天使之俊美榮光，\n創造萬有並統御世人之主；\n懇求施恩賜予爾高昇子民，\n永恆之宅第。",
+          "zh-hans": "一、基督众圣天使之俊美荣光，\n创造万有并统御世人之主；\n恳求施恩赐予尔高升子民，\n永恒之宅第。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、天使長米迦勒賜和平安寧，\n蒙天差遣之使者懇降此庭；\n願你之臨格傾注豐盛福分，\n萬事皆興旺。",
+          "zh-hans": "二、天使长米迦勒赐和平安宁，\n蒙天差遣之使者恳降此庭；\n愿你之临格倾注丰盛福分，\n万事皆兴旺。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、天使加百列顯出不朽勇力，\n乘著疾速羽翼自高天降臨；\n擊敗古蛇並以大愛作護佑，\n臨格此聖殿。",
+          "zh-hans": "三、天使加百列显出不朽勇力，\n乘着疾速羽翼自高天降临；\n击败古蛇并以大爱作护佑，\n临格此圣殿。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、天使拉法勒恢復世人康健，\n自榮耀國度速來施恩救助；\n醫治諸般病患與心思行為，\n賜明智指引。",
+          "zh-hans": "四、天使拉法勒恢复世人康健，\n自荣耀国度速来施恩救助；\n医治诸般病患与心思行为，\n赐明智指引。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、上帝之母馬利亞懇求臨近，\n眾天使之靈按等次皆高昇；\n得蒙成全諸聖之神聖會眾，\n我等求施援。",
+          "zh-hans": "五、上帝之母马利亚恳求临近，\n众天使之灵按等次皆高升；\n得蒙成全诸圣之神圣会众，\n我等求施援。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、願永受稱頌之上帝賜此恩，\n永恆聖父聖子與保惠聖靈；\n主之榮耀迴盪於受造萬有，\n永世皆迴響。阿們。",
+          "zh-hans": "六、愿永受称颂之上帝赐此恩，\n永恒圣父圣子与保惠圣灵；\n主之荣耀回荡于受造万有，\n永世皆回响。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "主的眾使者都要讚美他。",
+          "zh-hans": "主的众使者都要赞美他。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "主的諸軍都要讚美他。",
+          "zh-hans": "主的诸军都要赞美他。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "天上寂靜無聲，※當那龍出去爭戰時；米迦勒與牠爭戰，並得了勝，哈利路亞。",
+          "zh-hans": "天上寂静无声，※当那龙出去争战时；米迦勒与牠争战，并得了胜，哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "天上寂靜無聲，※當那龍出去爭戰時；米迦勒與牠爭戰，並得了勝，哈利路亞。",
+          "zh-hans": "天上寂静无声，※当那龙出去争战时；米迦勒与牠争战，并得了胜，哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "《福音講道》第三十四篇",
+        "zh-hans": "《福音讲道》第三十四篇",
+        "en": "Homil. 34 in Evang."
+      },
+      "source": {
+        "zh-hant": "節選自聖格里高利教宗的講道",
+        "zh-hans": "节选自圣格里高利教宗的讲道",
+        "en": "From a Homily of Pope St. Gregory"
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "我們慣常說天使有九品，因為聖經在分別提及天使、天使長、有能的、掌權的、執政的、主治的、有位的、基路伯和撒拉弗時，似乎見證了這個數目。聖經中許多篇章都提到天使和天使長。眾先知書正如人所熟知的，常常提及基路伯和撒拉弗。保羅在寫給以弗所人的書信中，列出四品天使，說基督「遠超過一切執政的、掌權的、有能的、主治的」。他在寫給歌羅西人的書信中，又提及有位的，以及主治的、執政的、掌權的。若把「有位的」加在《以弗所書》所列的四品之內，便有五品；再加上天使、天使長、基路伯和撒拉弗，我們便得出最後的結論：天使共有九品。",
+          "zh-hans": "我们惯常说天使有九品，因为圣经在分别提及天使、天使长、有能的、掌权的、执政的、主治的、有位的、基路伯和撒拉弗时，似乎见证了这个数目。圣经中许多篇章都提到天使和天使长。众先知书正如人所熟知的，常常提及基路伯和撒拉弗。保罗在写给以弗所人的书信中，列出四品天使，说基督「远超过一切执政的、掌权的、有能的、主治的」。他在写给歌罗西人的书信中，又提及有位的，以及主治的、执政的、掌权的。若把「有位的」加在《以弗所书》所列的四品之内，便有五品；再加上天使、天使长、基路伯和撒拉弗，我们便得出最后的结论：天使共有九品。",
+          "en": "WE are accustomed to speak of nine choirs of Angels, because holy Writ seemeth to witness to that number when it speaketh severally of Angels, Archangels, Mights, Powers, Principalities, Dominions, Thrones, Cherubim, and Seraphim. Very many pages of holy Writ witness to Angels and Archangels. The books of the Prophets, as is well known, do often make mention of Cherubim and Seraphim. Paul, writing to the Ephesians, counteth up the names of four choirs, where he saith that Christ is set far above all Principality, and Power, and Might, and Dominion. Again, writing to the Colossians, he speaketh of Thrones as well as of Dominions, Principalities, and Powers. If then we add the Thrones to the four choirs mentioned to the Ephesians, we have five choirs. And when we add unto them the Angels and the Archangels, the Cherubim and the Seraphim, we come to the final conclusion that there are nine choirs of Angels."
+        },
+        {
+          "zh-hant": "現在必須明白，「天使」一詞乃是職務的名稱，並非這些存在本性的名稱。天上的聖者常是神靈，卻不總是嚴格地稱為天使；「天使」譯出來就是「使者」，因為他們只在被差遣傳遞信息時才稱為天使。因此，詩篇作者說：「以風為使者，以火焰為僕役；」這彷彿表明：上帝造他們為神靈，並且從這些神靈中，有時揀選一些擔任傳信者的職務。執行較小使命的，稱為天使，也就是使者；執行重大使命的，稱為天使長，也就是首席使者。因此，奉差遣到童貞馬利亞那裡的，不是普通天使，而是天使長加百列。為傳報這最崇高的信息，理當差遣一位最高等的天使。他們各自的名字，也顯明每一位所特別有能力執行的職務。米迦勒的名字意為：「誰能相似上帝？」加百列意為：「上帝的力量。」拉斐爾意為：「上帝的醫治。」",
+          "zh-hans": "现在必须明白，「天使」一词乃是职务的名称，并非这些存在本性的名称。天上的圣者常是神灵，却不总是严格地称为天使；「天使」译出来就是「使者」，因为他们只在被差遣传递信息时才称为天使。因此，诗篇作者说：「以风为使者，以火焰为仆役；」这仿佛表明：上帝造他们为神灵，并且从这些神灵中，有时拣选一些担任传信者的职务。执行较小使命的，称为天使，也就是使者；执行重大使命的，称为天使长，也就是首席使者。因此，奉差遣到童贞马利亚那里的，不是普通天使，而是天使长加百列。为传报这最崇高的信息，理当差遣一位最高等的天使。他们各自的名字，也显明每一位所特别有能力执行的职务。米迦勒的名字意为：「谁能相似上帝？」加百列意为：「上帝的力量。」拉斐尔意为：「上帝的医治。」",
+          "en": "NOW it must be understood that the word Angel is the name of an office rather than the designation of the nature of these beings. For those holy ones of heaven are always spirits, but they are not always accurately called Angels, which is, being interpreted, Messengers, for they are Angels only when they are sent as Messengers. Hence also it is said by the Psalmist: He maketh his Angels spirits, and his Ministers; as if to indicate that he hath made them spirits, and that of these spirits he sometimes maketh some to minister in the office of messenger. They that go on a lesser ambassade are called Angels, that is Messengers. They that go on a great ambassade are called Archangels, that is Chief Messengers. Hence it is that unto the Virgin Mary was sent no common Angel, but the Archangel Gabriel. For the delivery of this, the highest message, it was meet that there should be sent one of the highest Angels. Their individual names also are so given as to signify the kind of ministry wherein each is powerful. Michael is by interpretation: Who is like unto God? Gabriel: The Strength of God. Raphael: The Medicine of God."
+        },
+        {
+          "zh-hant": "每當有極其重大的事要成就時，我們看見米迦勒便被差遣；使我們可藉著那事以及他的名字，記得沒有誰能如上帝一樣行事。因此，那因驕傲而自高、妄想與上帝同等的古老仇敵，先知以賽亞記述他曾說：「我要升到天上；我要高舉我的寶座在上帝的眾星以上……我要使自己與至高者一樣。」但這古老仇敵到了世界終結、將在最後的死亡中滅亡時，除了自己的力量以外再無所恃，便顯明為與天使長米迦勒交戰；正如約翰在《啟示錄》中所說：「在天上就有了爭戰。米迦勒同他的使者與龍爭戰，龍同牠的使者也去爭戰。」加百列被差遣到馬利亞那裡；他的名字意為「上帝的力量」，因為他來宣告那一位的來臨——祂甘願以卑微的形像顯現，好摧毀空中掌權者的勢力。拉斐爾的名字意為「上帝的醫治」；他如同醫師，醫治托比的眼睛，使他的失明得以除去。",
+          "zh-hans": "每当有极其重大的事要成就时，我们看见米迦勒便被差遣；使我们可藉着那事以及他的名字，记得没有谁能如上帝一样行事。因此，那因骄傲而自高、妄想与上帝同等的古老仇敌，先知以赛亚记述他曾说：「我要升到天上；我要高举我的宝座在上帝的众星以上……我要使自己与至高者一样。」但这古老仇敌到了世界终结、将在最后的死亡中灭亡时，除了自己的力量以外再无所恃，便显明为与天使长米迦勒交战；正如约翰在《启示录》中所说：「在天上就有了争战。米迦勒同他的使者与龙争战，龙同牠的使者也去争战。」加百列被差遣到马利亚那里；他的名字意为「上帝的力量」，因为他来宣告那一位的来临——祂甘愿以卑微的形像显现，好摧毁空中掌权者的势力。拉斐尔的名字意为「上帝的医治」；他如同医师，医治托比的眼睛，使他的失明得以除去。",
+          "en": "AS often as anything very mighty is to be done, we see that Michael is sent, that by that very thing, and by his name, we may remember that none is able to do as God doeth. Hence that old enemy, whose pride hath puffed him up, so that he is fain to be like unto God, is reported by the Prophet Isaiah to have said: I will ascend into heaven; I will exalt my throne above the stars of God; I will be like the Most High. But this old enemy, when at the end of the world he is about to perish in the last death, having no strength but his own, is shewn unto us a-fighting with Michael the Archangel, even as saith John in the Apocalypse: There was a war in heaven; Michael and his Angels fought against the dragon; and the dragon fought and his angels. Unto Mary is sent Gabriel, whose name signifieth Strength of God, for he came to herald the coming of him who was content to appear lowly that he might fight down the powers of the air. Raphael, whose name signifieth Medicine of God, is the one who, as a physician, treated the eyes of Tobit, so that his blindness was cleared away."
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "聖米迦勒和諸天使日",
+        "zh-hans": "圣米迦勒和诸天使日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "無始無終的上帝，以奇妙的次序，分派天使和世上的人各盡本分。主的聖天使，既然在天上常常事奉主，求主施憐憫，也分派天使在地上，護庇我們。這都是靠著我主耶穌基督。阿們。",
+        "zh-hans": "无始无终的上帝，以奇妙的次序，分派天使和世上的人各尽本分。主的圣天使，既然在天上常常事奉主，求主施怜悯，也分派天使在地上，护庇我们。这都是靠着我主耶稣基督。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "此後，我看見另一位有大權柄的天使從天降下，地由於他的榮耀而發光。",
+          "zh-hans": "此后，我看见另一位有大权柄的天使从天降下，地由于他的荣耀而发光。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 18:1）",
+          "zh-hans": "（启示录 18:1）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "有一位天使拿著金香爐來※站在聖殿的祭壇旁邊。",
+          "zh-hans": "有一位天使拿着金香炉来※站在圣殿的祭坛旁边。",
+          "en": ""
+        },
+        {
+          "zh-hant": "當天使長米迦勒同那龍交戰時，聽到有大聲音說：※「救恩屬於我們的上帝，哈利路亞。」",
+          "zh-hans": "当天使长米迦勒同那龙交战时，听到有大声音说：※「救恩属于我们的上帝，哈利路亚。」",
+          "en": ""
+        },
+        {
+          "zh-hant": "天使長米迦勒，※我委派你成為所有在歸家途中的靈魂的守護者。",
+          "zh-hans": "天使长米迦勒，※我委派你成为所有在归家途中的灵魂的守护者。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主的眾天使，要讚美主，※稱頌主，尊主為大，永世無盡。",
+          "zh-hans": "主的众天使，要赞美主，※称颂主，尊主为大，永世无尽。",
+          "en": ""
+        },
+        {
+          "zh-hant": "眾天使與天使長，※寶座天使與宰制天使，統領天使與權能天使，天上的诸品天使，你們要讚頌天上之主。哈利路亞。",
+          "zh-hans": "众天使与天使长，※宝座天使与宰制天使，统领天使与权能天使，天上的诸品天使，你们要赞颂天上之主。哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Tibi Christe",
+        "zh-hans": "Tibi Christe",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督聖父榮耀光輝，\n心靈生命與力量；\n侍立高天眾天使前，高聲歡唱美頌歌；\n交替合唱和聲齊鳴，獻上啟應之讚美。",
+          "zh-hans": "一、基督圣父荣耀光辉，\n心灵生命与力量；\n侍立高天众天使前，高声欢唱美颂歌；\n交替合唱和声齐鸣，献上启应之赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、我等虔誠敬拜頌揚，\n高天無數聖軍兵；\n首當敬頌戰士統帥，領軍神聖眾天使；\n米迦勒顯尊貴大能，驅逐亞巴頓墜落。",
+          "zh-hans": "二、我等虔诚敬拜颂扬，\n高天无数圣军兵；\n首当敬颂战士统帅，领军神圣众天使；\n米迦勒显尊贵大能，驱逐亚巴顿坠落。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、藉其警醒護佑看顧，\n永恆恩典至高王；\n擊退一切屬靈仇敵，驅散邪惡卑劣事；\n懇求賜下獨一良善，引我安居於樂園。",
+          "zh-hans": "三、藉其警醒护佑看顾，\n永恒恩典至高王；\n击退一切属灵仇敌，驱散邪恶卑劣事；\n恳求赐下独一良善，引我安居于乐园。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、榮耀歸於上帝聖父，\n響亮甜美聲歡唱；\n榮耀歸於救主基督，榮耀歸保惠聖靈；\n獨一三一至高上帝，萬古之先當頌揚。阿們。",
+          "zh-hans": "四、荣耀归于上帝圣父，\n响亮甜美声欢唱；\n荣耀归于救主基督，荣耀归保惠圣灵；\n独一三一至高上帝，万古之先当颂扬。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "主的眾使者都要讚美他。",
+          "zh-hans": "主的众使者都要赞美他。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "主的諸軍都要讚美他。",
+          "zh-hans": "主的诸军都要赞美他。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "米迦勒、※加百列、拉法勒、基路伯和撒拉弗，不住地高聲呼喊說：主配得榮耀與尊貴，哈利路亞。",
+          "zh-hans": "米迦勒、※加百列、拉法勒、基路伯和撒拉弗，不住地高声呼喊说：主配得荣耀与尊贵，哈利路亚。",
+          "en": ""
+        },
+        {
+          "zh-hant": "米迦勒、※加百列、拉法勒、基路伯和撒拉弗，不住地高聲呼喊說：主配得榮耀與尊貴，哈利路亞。",
+          "zh-hans": "米迦勒、※加百列、拉法勒、基路伯和撒拉弗，不住地高声呼喊说：主配得荣耀与尊贵，哈利路亚。",
+          "en": ""
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "聖米迦勒和諸天使日",
+        "zh-hans": "圣米迦勒和诸天使日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "無始無終的上帝，以奇妙的次序，分派天使和世上的人各盡本分。主的聖天使，既然在天上常常事奉主，求主施憐憫，也分派天使在地上，護庇我們。這都是靠著我主耶穌基督。阿們。",
+        "zh-hans": "无始无终的上帝，以奇妙的次序，分派天使和世上的人各尽本分。主的圣天使，既然在天上常常事奉主，求主施怜悯，也分派天使在地上，护庇我们。这都是靠着我主耶稣基督。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

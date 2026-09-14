@@ -1,0 +1,15 @@
+{
+    "id": "epiphany1-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "12:1-21"
+        },
+        "ot": {
+            "book": "何西阿書",
+            "chapter": "9:1-17"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "sexagesima0-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "21:1-22"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "23:1-20"
+        }
+    }
+}

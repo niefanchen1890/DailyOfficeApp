@@ -1,0 +1,15 @@
+{
+    "id": "easter4-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "5:1-21"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "16:1-40"
+        }
+    }
+}

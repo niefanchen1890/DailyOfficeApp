@@ -1,0 +1,15 @@
+{
+    "id": "tr27-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰弎書",
+            "chapter": "1-15"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "48:1-16"
+        }
+    }
+}

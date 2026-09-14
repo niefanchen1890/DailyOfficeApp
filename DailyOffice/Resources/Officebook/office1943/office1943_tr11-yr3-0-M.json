@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr11-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "62" },
+      { "number": "63" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "37:3-4,12-35"
+    },
+    "nt": {
+      "book": "雅各書",
+      "chapter": "1:1-15"
+    }
+  }
+}

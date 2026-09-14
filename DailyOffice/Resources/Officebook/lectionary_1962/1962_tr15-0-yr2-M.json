@@ -1,0 +1,15 @@
+{
+    "id": "tr15-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "7:36-8:3"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "11:14-20"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "easter6-3-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:27-63"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "14:1-22"
+        }
+    }
+}

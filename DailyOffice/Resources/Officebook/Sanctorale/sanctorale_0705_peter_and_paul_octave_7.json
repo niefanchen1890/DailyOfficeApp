@@ -1,0 +1,34 @@
+{
+  "identifier": "sanctorale_0705_peter_and_paul_octave_7",
+  "name": "使徒聖彼得與聖保羅日八日慶期第七日",
+  "rank": "ordinaryOctavesemiDouble",
+  "rank_display": "（普通八日慶期，半複式）",
+  "type": "sanctorale",
+  "common_office": "common_apostle_outside_easter",
+  "vigil": null,
+  "morning": {
+    "office_hymn": {
+      "title": "Jesu, Corona Virginum",
+      "verses": [
+        "一、諸天高唱歡欣讚歌，\n大地喜樂同聲應和；\n使徒功德崇高聖位，\n佳節良期我眾頌揚。",
+        "二、威嚴榮耀寶座之上，\n將要審判生者死者；\n普世明燈照耀萬方，\n俯聽我等虔誠祈禱。",
+        "三、天國門戶聽憑爾命，\n為眾敞開或作關閉；\n願藉爾等神聖權柄，\n解脫我眾諸般罪愆。",
+        "四、昔日所授神聖權能，\n疾病康健皆聽差遣；\n懇求再次醫治我靈，\n恢復聖潔剛強健壯。",
+        "五、基督威嚴審判之主，\n末日時辰降臨之際；\n因其慈悲恩典眷顧，\n賜我永享天國福樂。",
+        "六、讚美皆歸上帝聖父，\n永恆聖子同受頌揚；\n榮耀尊貴理當歸於，\n至聖聖靈保惠聖師。阿們。"
+      ],
+      "versicle": {
+        "leader": "他們的聲音傳遍天下。",
+        "people": "他們的言語傳到地極。"
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": "基督的兩位榮耀使徒※生時相悅相愛，死時也不分離。"
+    },
+    "collect": {
+      "title": "使徒聖彼得與聖保羅日八日慶期第七日",
+      "text": "上帝藉著主的使徒聖彼得與聖保羅聖化了這一日，求主施恩予主的教會，既然從他們學習了信仰與敬拜的根基，也能在凡事上遵從他們的教導。這都是靠著我主耶穌基督。主耶穌與聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+    }
+  },
+  "evening": null
+}

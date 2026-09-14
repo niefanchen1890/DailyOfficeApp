@@ -1,0 +1,15 @@
+{
+    "id": "easter1-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "26:1-23"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "31:1-14"
+        }
+    }
+}

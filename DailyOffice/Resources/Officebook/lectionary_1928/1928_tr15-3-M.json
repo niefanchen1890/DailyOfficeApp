@@ -1,0 +1,15 @@
+{
+    "id": "tr15-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "15:1-10"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "10"
+        }
+    }
+}

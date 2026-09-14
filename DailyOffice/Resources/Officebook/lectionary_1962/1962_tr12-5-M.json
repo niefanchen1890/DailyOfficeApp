@@ -1,0 +1,15 @@
+{
+    "id": "tr12-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "2"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "11:21-12:end"
+        }
+    }
+}

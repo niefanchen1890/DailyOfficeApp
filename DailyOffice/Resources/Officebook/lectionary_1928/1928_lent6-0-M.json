@@ -1,0 +1,15 @@
+{
+    "id": "lent6-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "11:1-11"
+        },
+        "ot": {
+            "book": "撒迦利亞書",
+            "chapter": "9:9-16"
+        }
+    }
+}

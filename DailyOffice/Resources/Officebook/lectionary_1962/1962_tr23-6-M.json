@@ -1,0 +1,15 @@
+{
+    "id": "tr23-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "8:4-25"
+        },
+        "ot": {
+            "book": "瑪喀比傳上",
+            "chapter": "4:36-end"
+        }
+    }
+}

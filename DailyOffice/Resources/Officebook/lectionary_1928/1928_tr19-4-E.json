@@ -1,0 +1,15 @@
+{
+    "id": "tr19-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太前書",
+            "chapter": "4:1-16"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "12:1-24"
+        }
+    }
+}

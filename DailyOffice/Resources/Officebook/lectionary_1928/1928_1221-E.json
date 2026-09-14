@@ -1,0 +1,15 @@
+{
+    "id": "1221-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "16:9-20"
+        },
+        "ot": {
+            "book": "哈巴谷書",
+            "chapter": "7:1-20"
+        }
+    }
+}

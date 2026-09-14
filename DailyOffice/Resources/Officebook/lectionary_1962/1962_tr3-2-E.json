@@ -1,0 +1,15 @@
+{
+    "id": "tr3-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "12:13-34"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "3:1-26"
+        }
+    }
+}

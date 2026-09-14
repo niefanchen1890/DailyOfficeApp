@@ -1,0 +1,172 @@
+{
+  "identifier": "sts_simon_jude",
+  "name": {
+    "zh-hant": "使徒聖西門與聖猶大日",
+    "zh-hans": "使徒圣西门与圣犹大日",
+    "en": "Saints Simon and Jude, Apostles"
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "zh-hant": "（二等複式）",
+    "zh-hans": "（二等复式）",
+    "en": "Double of the Second Class"
+  },
+  "type": "sanctorale",
+  "common_office": "common_apostle_outside_easter",
+  "vigil": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "使徒聖西門與聖猶大日",
+          "zh-hans": "使徒圣西门与圣犹大日",
+          "en": "Saints Simon and Jude, Apostles"
+        },
+        "text": {
+          "zh-hant": "全能的上帝，建立教會，用使徒和先知做根基，耶穌基督親自做了屋角首石。求主叫我們順從他們的道理，都同心合意、彼此聯絡，這樣就成為主所喜歡的聖殿。這都是靠著我主耶穌基督。阿們。",
+          "zh-hans": "全能的上帝，建立教会，用使徒和先知做根基，耶稣基督亲自做了屋角首石。求主叫我们顺从他们的道理，都同心合意、彼此联络，这样就成为主所喜欢的圣殿。这都是靠着我主耶稣基督。阿们。",
+          "en": "O ALMIGHTY God, who hast built thy Church upon the foundation of the Apostles and Prophets, Jesus Christ himself being the head cornerstone; Grant us so to be joined together in unity of spirit by their doctrine, that we may be made an holy temple acceptable unto thee; through the same Jesus Christ our Lord. Amen."
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "使徒聖西門與聖猶大日",
+          "zh-hans": "使徒圣西门与圣犹大日",
+          "en": "Saints Simon and Jude, Apostles"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主曾藉著榮福使徒西門與猶大的傳道，叫我們認識主的聖名；求主賜恩，使我們慶祝二聖永享的榮耀，按理虔守他們的聖日，在聖潔的生活上恆久長進。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主曾藉着荣福使徒西门与犹大的传道，叫我们认识主的圣名；求主赐恩，使我们庆祝二圣永享的荣耀，按理虔守他们的圣日，在圣洁的生活上恒久长进。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": "O GOD, who through the preaching of thy blessed Apostles Simon and Jude, hast caused us to come to the knowledge of thy Name: grant us so to celebrate their eternal glory, that by a worthy observance of their Festival, we may steadfastly advance in holiness of living. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ],
+    "office_hymn": {
+      "title": "Annue, Christe, sæculorum Domine",
+      "verses": [
+        {
+          "zh-hant": "一、萬古君王我主耶穌，求因聖者功德施恩；\n我眾在主前犯重罪，賴他代求得蒙赦免。",
+          "zh-hans": "一、万古君王我主耶稣，求因圣者功德施恩；\n我众在主前犯重罪，赖他代求得蒙赦免。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、聖西門與榮耀猶大，求顧我眾痛悔悲泣；\n我罪雖當永受苦刑，賴其代求得享天福。",
+          "zh-hans": "二、圣西门与荣耀犹大，求顾我众痛悔悲泣；\n我罪虽当永受苦刑，赖其代求得享天福。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、救主求保所造之人，聖容光輝印在其身；\n莫容邪靈詭計傷害，主曾捨命救贖之民。",
+          "zh-hans": "三、救主求保所造之人，圣容光辉印在其身；\n莫容邪灵诡计伤害，主曾舍命救赎之民。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、慈悲君王憐我囚僕，赦免罪人釋放拘囚；\n寶血所贖主之子民，賜在樂園與主同歡。",
+          "zh-hans": "四、慈悲君王怜我囚仆，赦免罪人释放拘囚；\n宝血所赎主之子民，赐在乐园与主同欢。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、耶穌我主永享榮耀，能力尊貴至高權柄；\n與父聖靈同為上帝，掌權萬古永世無盡。阿們。",
+          "zh-hans": "五、耶稣我主永享荣耀，能力尊贵至高权柄；\n与父圣灵同为上帝，掌权万古永世无尽。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "他們的聲音傳遍天下。",
+          "zh-hans": "他们的声音传遍天下.",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "他們的言語傳到地極。",
+          "zh-hans": "他们的语言传到地极.",
+          "en": ""
+        }
+      }
+    }
+  },
+  "morning": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "使徒聖西門與聖猶大日",
+          "zh-hans": "使徒圣西门与圣犹大日",
+          "en": "Saints Simon and Jude, Apostles"
+        },
+        "text": {
+          "zh-hant": "全能的上帝，建立教會，用使徒和先知做根基，耶穌基督親自做了屋角首石。求主叫我們順從他們的道理，都同心合意、彼此聯絡，這樣就成為主所喜歡的聖殿。這都是靠著我主耶穌基督。阿們。",
+          "zh-hans": "全能的上帝，建立教会，用使徒和先知做根基，耶稣基督亲自做了屋角首石。求主叫我们顺从他们的道理，都同心合意、彼此联络，这样就成为主所喜欢的圣殿。这都是靠着我主耶稣基督。阿们。",
+          "en": "O ALMIGHTY God, who hast built thy Church upon the foundation of the Apostles and Prophets, Jesus Christ himself being the head cornerstone; Grant us so to be joined together in unity of spirit by their doctrine, that we may be made an holy temple acceptable unto thee; through the same Jesus Christ our Lord. Amen."
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "使徒聖西門與聖猶大日",
+          "zh-hans": "使徒圣西门与圣犹大日",
+          "en": "Saints Simon and Jude, Apostles"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主曾藉著榮福使徒西門與猶大的傳道，叫我們認識主的聖名；求主賜恩，使我們慶祝二聖永享的榮耀，按理虔守他們的聖日，在聖潔的生活上恆久長進。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主曾藉着荣福使徒西门与犹大的传道，叫我们认识主的圣名；求主赐恩，使我们庆祝二圣永享的荣耀，按理虔守他们的圣日，在圣洁的生活上恒久长进。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": "O GOD, who through the preaching of thy blessed Apostles Simon and Jude, hast caused us to come to the knowledge of thy Name: grant us so to celebrate their eternal glory, that by a worthy observance of their Festival, we may steadfastly advance in holiness of living. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "evening": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "使徒聖西門與聖猶大日",
+          "zh-hans": "使徒圣西门与圣犹大日",
+          "en": "Saints Simon and Jude, Apostles"
+        },
+        "text": {
+          "zh-hant": "全能的上帝，建立教會，用使徒和先知做根基，耶穌基督親自做了屋角首石。求主叫我們順從他們的道理，都同心合意、彼此聯絡，這樣就成為主所喜歡的聖殿。這都是靠著我主耶穌基督。阿們。",
+          "zh-hans": "全能的上帝，建立教会，用使徒和先知做根基，耶稣基督亲自做了屋角首石。求主叫我们顺从他们的道理，都同心合意、彼此联络，这样就成为主所喜欢的圣殿。这都是靠着我主耶稣基督。阿们。",
+          "en": "O ALMIGHTY God, who hast built thy Church upon the foundation of the Apostles and Prophets, Jesus Christ himself being the head cornerstone; Grant us so to be joined together in unity of spirit by their doctrine, that we may be made an holy temple acceptable unto thee; through the same Jesus Christ our Lord. Amen."
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "使徒聖西門與聖猶大日",
+          "zh-hans": "使徒圣西门与圣犹大日",
+          "en": "Saints Simon and Jude, Apostles"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主曾藉著榮福使徒西門與猶大的傳道，叫我們認識主的聖名；求主賜恩，使我們慶祝二聖永享的榮耀，按理虔守他們的聖日，在聖潔的生活上恆久長進。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主曾藉着荣福使徒西门与犹大的传道，叫我们认识主的圣名；求主赐恩，使我们庆祝二圣永享的荣耀，按理虔守他们的圣日，在圣洁的生活上恒久长进。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": "O GOD, who through the preaching of thy blessed Apostles Simon and Jude, hast caused us to come to the knowledge of thy Name: grant us so to celebrate their eternal glory, that by a worthy observance of their Festival, we may steadfastly advance in holiness of living. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  }
+}

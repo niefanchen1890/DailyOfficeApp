@@ -1,0 +1,15 @@
+{
+    "id": "0501-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "17:1-8"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "23:1-12"
+        }
+    }
+}

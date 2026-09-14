@@ -1,0 +1,15 @@
+{
+    "id": "0425-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "12:24-13:13"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "2:1-18"
+        }
+    }
+}

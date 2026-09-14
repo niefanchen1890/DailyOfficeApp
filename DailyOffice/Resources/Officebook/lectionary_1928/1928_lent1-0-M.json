@@ -1,0 +1,15 @@
+{
+    "id": "lent1-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "18:10-14"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "11:2-4"
+        }
+    }
+}

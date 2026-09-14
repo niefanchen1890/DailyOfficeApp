@@ -1,0 +1,15 @@
+{
+    "id": "tr-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "1:1-12"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "40:12-31"
+        }
+    }
+}

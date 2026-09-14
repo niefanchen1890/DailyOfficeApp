@@ -1,0 +1,15 @@
+{
+    "id": "tr4-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "13:44-58"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "6:1-23"
+        }
+    }
+}

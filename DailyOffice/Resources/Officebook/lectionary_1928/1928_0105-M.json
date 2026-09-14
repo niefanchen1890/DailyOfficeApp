@@ -1,0 +1,15 @@
+{
+    "id": "0105-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "5:1-21"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "35:1-10"
+        }
+    }
+}

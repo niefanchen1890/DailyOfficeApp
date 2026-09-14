@@ -1,0 +1,15 @@
+{
+    "id": "tr19-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "9:30-end"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "16:4-end"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr1-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "7:34-8:10"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "25:1-26:14"
+        }
+    }
+}

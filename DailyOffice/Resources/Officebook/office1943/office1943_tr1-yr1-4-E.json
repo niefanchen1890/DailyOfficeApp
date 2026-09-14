@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr1-yr3-4-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "現在我已選擇這殿，分別為聖，使我的名永在其中；我的眼、我的心也必時常在那裏。",
+    "items": [
+        { "number": "39" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒迦利亞書",
+      "chapter": "7:8-14"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "10:1-23"
+    }
+  }
+}

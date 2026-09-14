@@ -1,0 +1,15 @@
+{
+    "id": "0629-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "4:12-25"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "3:4-14"
+        }
+    }
+}

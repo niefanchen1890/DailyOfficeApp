@@ -1,0 +1,15 @@
+{
+    "id": "tr2-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "3:7-22"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "3:1-24"
+        }
+    }
+}

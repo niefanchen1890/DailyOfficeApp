@@ -1,0 +1,15 @@
+{
+    "id": "easter4-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "6:1-18"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "14:5-31"
+        }
+    }
+}

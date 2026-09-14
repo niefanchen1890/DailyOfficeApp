@@ -1,0 +1,15 @@
+{
+    "id": "0824-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "1:22-2:10"
+        },
+        "ot": {
+            "book": "彌迦書",
+            "chapter": "4:1-7"
+        }
+    }
+}

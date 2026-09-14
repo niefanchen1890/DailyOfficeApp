@@ -1,0 +1,15 @@
+{
+    "id": "tr26-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "27:27-end"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "50:1-24"
+        }
+    }
+}

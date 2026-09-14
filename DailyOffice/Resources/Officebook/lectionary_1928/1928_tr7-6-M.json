@@ -1,0 +1,15 @@
+{
+    "id": "tr7-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "23:27-39"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "1:21-2:21"
+        }
+    }
+}

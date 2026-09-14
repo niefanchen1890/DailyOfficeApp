@@ -1,0 +1,15 @@
+{
+    "id": "tr20-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "1:19-34"
+        },
+        "ot": {
+            "book": "歷代志上",
+            "chapter": "29:1-19"
+        }
+    }
+}

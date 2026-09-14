@@ -1,0 +1,15 @@
+{
+    "id": "tr18-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "2:24-3:2"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "34:27-end"
+        }
+    }
+}

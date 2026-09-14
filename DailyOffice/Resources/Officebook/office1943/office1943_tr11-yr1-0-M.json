@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr11-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "124" },
+      { "number": "125" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以賽亞書",
+      "chapter": "26:12-16,19"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "8:26-39"
+    }
+  }
+}

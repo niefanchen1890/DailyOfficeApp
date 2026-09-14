@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr9-yr1-3-E",
+  "label": "禮拜三",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "19" },
+      { "number": "23" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以斯帖記",
+      "chapter": "7:1-10"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "2:17-29"
+    }
+  }
+}

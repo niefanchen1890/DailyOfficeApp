@@ -1,0 +1,15 @@
+{
+    "id": "lent6-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "26:1-75"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "11:1-10"
+        }
+    }
+}

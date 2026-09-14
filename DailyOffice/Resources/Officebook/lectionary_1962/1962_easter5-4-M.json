@@ -1,0 +1,15 @@
+{
+    "id": "easter5-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "24:24-25:12"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "9:3-27"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "lent1-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "7:1-23"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "36:1-32"
+        }
+    }
+}

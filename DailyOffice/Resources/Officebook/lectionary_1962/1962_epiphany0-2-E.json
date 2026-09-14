@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "帖撒羅尼迦前書",
+            "chapter": "4:13-5:11"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "4:1-13"
+        }
+    }
+}

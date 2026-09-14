@@ -1,0 +1,61 @@
+{
+  "identifier": "temporal_trinity_8_sunday",
+  "name": "三一主日後第八主日",
+  "rank": "ordinarySunday",
+  "rank_display": "（普通主日，半複式）",
+  "type": "temporal",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": "凡被上帝的靈引導※的都是上帝的兒子。"
+    },
+    "collect": {
+      "title": "三一主日後第八主日",
+      "text": "上帝管理上天下地的萬事萬物永不停止。凡陷害我們的，求主除掉，凡與我們有益的，求主賜與我們。這都是靠著我主耶穌基督。阿們。"
+    }
+  },
+  "morning": {
+      "invitatory": {
+        "text": "我們要讚美耶穌基督，※祂是萬代的救贖主。"
+      },
+      "psalms": {
+          "1928": {
+            "items": [
+              { "number": "39" },
+              { "number": "41" }
+            ]
+          },
+          "1962": {
+            "items": [
+                { "number": "39" },
+                { "number": "41" }
+            ]
+          }
+        },
+    "benedictus_antiphon": {
+      "normal": "你們要防備假先知。※他們到你們這裏來，外面披着羊皮，裏面卻是殘暴的狼。憑着他們的果子就可以認出他們來。"
+    },
+    "collect": {
+      "title": "三一主日後第八主日",
+      "text": "上帝管理上天下地的萬事萬物永不停止。凡陷害我們的，求主除掉，凡與我們有益的，求主賜與我們。這都是靠著我主耶穌基督。阿們。"
+    }
+  },
+  "evening": {
+      "psalms": {
+          "1928": {
+            "items": [
+              { "number": "37" }
+            ]
+          },
+          "1962": {
+            "items": [
+                { "number": "40" }
+            ]
+          }
+        },
+      "office_hymn_key": "sunday",
+    "collect": {
+      "title": "三一主日後第八主日",
+      "text": "上帝管理上天下地的萬事萬物永不停止。凡陷害我們的，求主除掉，凡與我們有益的，求主賜與我們。這都是靠著我主耶穌基督。阿們。"
+    }
+  }
+}

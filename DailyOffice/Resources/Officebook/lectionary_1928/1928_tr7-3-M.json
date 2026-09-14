@@ -1,0 +1,15 @@
+{
+    "id": "tr7-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "22:34-46"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "3:1-18"
+        }
+    }
+}

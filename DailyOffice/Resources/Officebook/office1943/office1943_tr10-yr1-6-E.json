@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr10-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "65" },
+      { "number": "67" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "彌迦書",
+      "chapter": "7:14-20"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "8:1-17"
+    }
+  }
+}

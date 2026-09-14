@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr8-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "126" },
+      { "number": "127" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒迦利亞書",
+      "chapter": "4:1-10"
+    },
+    "nt": {
+      "book": "加拉太書",
+      "chapter": "3:24-4:7"
+    }
+  }
+}

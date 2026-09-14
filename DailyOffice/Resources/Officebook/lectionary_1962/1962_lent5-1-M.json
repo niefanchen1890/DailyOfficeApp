@@ -1,0 +1,15 @@
+{
+    "id": "lent5-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "10:22-42"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "6:1-27"
+        }
+    }
+}

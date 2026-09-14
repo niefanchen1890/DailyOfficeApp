@@ -1,0 +1,15 @@
+{
+    "id": "tr3-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "22:30-23:35"
+        },
+        "ot": {
+            "book": "尼希米記",
+            "chapter": "5:1-19"
+        }
+    }
+}

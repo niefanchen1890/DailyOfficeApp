@@ -1,0 +1,15 @@
+{
+    "id": "1018-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "3:10-end"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "61:1-6"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr-yr1-3-E",
+  "label": "平日",
+  "office": "evening",
+  "psalms": {
+    "items": [
+      { "number": "25" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "哈該書",
+      "chapter": "1:1-8、1:12-15"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "7:35-53"
+    }
+  }
+}
+

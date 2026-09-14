@@ -1,0 +1,15 @@
+{
+    "id": "tr15-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "9:33-end"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "20:28-end"
+        }
+    }
+}

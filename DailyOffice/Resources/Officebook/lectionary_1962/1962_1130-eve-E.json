@@ -1,0 +1,15 @@
+{
+    "id": "1130-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "4:9-16"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "14:20-27"
+        }
+    }
+}

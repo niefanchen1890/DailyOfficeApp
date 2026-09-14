@@ -1,0 +1,15 @@
+{
+    "id": "easter6-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "10:38-11:13"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "6:1-25"
+        }
+    }
+}

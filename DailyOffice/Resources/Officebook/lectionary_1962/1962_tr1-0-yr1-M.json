@@ -1,0 +1,15 @@
+{
+    "id": "tr1-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "1:21-34"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "1:1-9"
+        }
+    }
+}

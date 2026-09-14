@@ -1,0 +1,15 @@
+{
+    "id": "tr14-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "9:19-end"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "11:13-end"
+        }
+    }
+}

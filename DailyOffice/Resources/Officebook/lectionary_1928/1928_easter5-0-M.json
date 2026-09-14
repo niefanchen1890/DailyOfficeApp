@@ -1,0 +1,15 @@
+{
+    "id": "easter5-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "11:17-39"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "2:42-47"
+        }
+    }
+}

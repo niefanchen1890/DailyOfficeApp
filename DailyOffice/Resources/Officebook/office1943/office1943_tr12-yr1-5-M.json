@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr12-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "142" },
+      { "number": "143" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "11:1-13"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "24:13-35"
+    }
+  }
+}

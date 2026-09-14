@@ -1,0 +1,15 @@
+{
+    "id": "easter8-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "12:14-29"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "11:1-9"
+        }
+    }
+}

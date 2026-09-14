@@ -1,0 +1,15 @@
+{
+    "id": "tr4-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "8:21-36"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "10:12-15、10:17-11:1"
+        }
+    }
+}

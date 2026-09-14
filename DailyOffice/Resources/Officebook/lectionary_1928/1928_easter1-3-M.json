@@ -1,0 +1,15 @@
+{
+    "id": "easter1-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "8:27-9:1"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "17:1-16"
+        }
+    }
+}

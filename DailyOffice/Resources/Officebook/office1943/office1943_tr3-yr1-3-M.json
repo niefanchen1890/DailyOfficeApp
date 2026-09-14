@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr3-yr1-3-M",
+  "label": "禮拜三",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "92" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "士師記",
+      "chapter": "6:1,11-16,33-35"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "7:11-17"
+    }
+  }
+}

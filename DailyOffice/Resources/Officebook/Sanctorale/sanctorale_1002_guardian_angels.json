@@ -1,0 +1,413 @@
+{
+  "identifier": "guardian_angels",
+  "traits": {
+    "themes": [
+      "angel"
+    ]
+  },
+  "name": {
+    "en": "The Holy Guardian Angels",
+    "zh-hans": "守护圣天使",
+    "zh-hant": "守護聖天使"
+  },
+  "rank": "greaterDouble",
+  "rank_display": {
+    "en": "Greater Double",
+    "zh-hans": "（大复式）",
+    "zh-hant": "（大複式）"
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "O Lord of heaven, ※ send a good Angel before us; and through the might of thine arm, let those be stricken with terror, that come against thine holy people to blaspheme.",
+        "zh-hans": "天上的权能者啊，※求祢差遣一位好天使来到我们面前；愿祢大能的膀臂，击打那些前来亵渎祢圣民的人。",
+        "zh-hant": "天上的權能者啊，※求祢差遣一位好天使來到我們面前；願祢大能的膀臂，擊打那些前來褻瀆祢聖民的人。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ps. xci. 11.",
+          "zh-hans": "（诗篇 91:11）",
+          "zh-hant": "（詩篇 91:11）"
+        },
+        "text": {
+          "en": "HE shall give his Angels charge over thee, to keep thee in all thy ways.",
+          "zh-hans": "因他要为你命令他的使者，在你所行的一切道路上保护你。",
+          "zh-hant": "因他要為你命令他的使者，在你所行的一切道路上保護你。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "O GOD, who in thine ineffable providence dost vouchsafe to send thine holy Angels to guard us: grant, of thy bountiful goodness; that we thine humble servants may ever continue in safety under their protection, and hereafter rejoice in their abiding fellowship. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝以不可言喻的眷祐，俯允差遣圣天使来守护我们：求主因丰盛的恩慈，使我们这些卑微的仆人，常在他们的保护下得保安宁，并在来世得享与他们永远的团契。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝以不可言喻的眷祐，俯允差遣聖天使來守護我們：求主因豐盛的恩慈，使我們這些卑微的僕人，常在他們的保護下得保安寧，並在來世得享與他們永遠的團契。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Holy Guardian Angels",
+        "zh-hans": "守护圣天使",
+        "zh-hant": "守護聖天使"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Custodes hominum psallimus Angelos",
+        "zh-hans": "Custodes hominum psallimus Angelos",
+        "zh-hant": "Custodes hominum psallimus Angelos"
+      },
+      "verses": [
+        {
+          "en": "THE Guardians of our race, Our Angel guides, we hail,\nOur Father sendeth forth, To aid our nature frail,\nThese heavenly friends, lest we Should suffer overthrow\nThrough cunning of our subtle foe.",
+          "zh-hans": "一、颂赞世人卫士，引路天使圣名；\n天父垂悯软弱，遣赐天上良朋；\n免教我众受挫，遭逢仇敌倾覆，\n免堕幽暗诡诈罗网中。",
+          "zh-hant": "一、頌讚世人衛士，引路天使聖名；\n天父垂憫軟弱，遣賜天上良朋；\n免教我眾受挫，遭逢仇敵傾覆，\n免墮幽暗詭詐羅網中。"
+        },
+        {
+          "en": "For he who justly lost The honour once his own,\nThe traitor-angel, rues His lost and vacant throne,\nWith burning envy strives To make those fall away\nWhom God doth call to heavenly day.",
+          "zh-hans": "二、背叛天使堕落，自招公义斥逐；\n痛失往昔荣位，满怀嫉恨怨毒；\n竭力诱惑使坠，残害主民心志，\n阻挠上帝所召登天民。",
+          "zh-hant": "二、背叛天使墮落，自招公義斥逐；\n痛失往昔榮位，滿懷嫉恨怨毒；\n竭力誘惑使墜，殘害主民心志，\n阻撓上帝所召登天民。"
+        },
+        {
+          "en": "Then, watchful Guardian, spread Thy wings, and cleave the air;\nHaste to our native home, Committed to thy care;\nDrive hence each noxious ill That might the soul infest,\nNor suffer danger here to rest.",
+          "zh-hans": "三、警醒守护天使，展翼穿空降临；\n速临属祢居所，眷顾托付城邑；\n逐除侵害心灵，种种幽暗罪咎，\n莫容祸患在此扰安宁。",
+          "zh-hant": "三、警醒守護天使，展翼穿空降臨；\n速臨屬祢居所，眷顧託付城邑；\n逐除侵害心靈，種種幽暗罪咎，\n莫容禍患在此擾安寧。"
+        },
+        {
+          "en": "Now to the Holy Three Your praise devoutly pour;\nHis glorious Godhead guides And governs evermore\nThis triple frame: to him Ascribe we all our praise,\nWho reigns through everlasting days. Amen.",
+          "zh-hans": "四、同向三位一体，竭诚献上颂扬，\n至圣威严神能，永远指引统掌， \n三界万有穹象； 荣耀全归于祂，\n权柄尊贵万代永无疆。阿们。",
+          "zh-hant": "四、同向三位一體，竭誠獻上頌揚，\n至聖威嚴神能，永遠指引統掌， \n三界萬有穹象； 榮耀全歸於祂，\n權柄尊貴萬代永無疆。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "The Lord will send his Angel with thee.",
+          "zh-hans": "主必要差遣他的使者与你同在，",
+          "zh-hant": "主必要差遣他的使者與你同在，"
+        },
+        "people": {
+          "en": "And prosper thy way.",
+          "zh-hans": "使你的道路亨通。",
+          "zh-hant": "使你的道路亨通。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "God shall give his Angels charge over thee, ※ to keep thee in all thy ways.",
+          "zh-hans": "因他要为你吩咐他的使者，※在你行的一切道路上保护你。",
+          "zh-hant": "因他要為你吩咐他的使者，※在你行的一切道路上保護你。"
+        },
+        {
+          "en": "Let us praise the Lord whom the Angels do praise, ※ unto whom Cherubim and Seraphim do cry, Holy, Holy, Holy.",
+          "zh-hans": "我们要赞颂众天使所赞美的主，※基路伯和撒拉弗向他高呼：圣哉、圣哉、圣哉。",
+          "zh-hant": "我們要讚頌眾天使所讚美的主，※基路伯和撒拉弗向他高呼：聖哉、聖哉、聖哉。"
+        },
+        {
+          "en": "In heaven their Angels do always behold the face of my Father ※ which is in heaven.",
+          "zh-hans": "他们的使者在天上，※常见我天父的面。",
+          "zh-hant": "他們的使者在天上，※常見我天父的面。"
+        },
+        {
+          "en": "The Angel of the Lord came down into the fiery furnace, ※ to his servants that trusted in him.",
+          "zh-hans": "主的天使下到火窑中，※与信靠主的仆人那里。",
+          "zh-hant": "主的天使下到火窯中，※與信靠主的僕人那裡。"
+        },
+        {
+          "en": "Praise him, all ye Angels of his, ※ praise him, all his host.",
+          "zh-hans": "主的诸天使都当颂扬主，※主的众天军都当颂扬主。",
+          "zh-hant": "主的諸天使都當頌揚主，※主的眾天軍都當頌揚主。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "Take heed that ye despise not ※ one of these little ones: for I say unto you that in heaven their Angels do alway behold the face of my Father which is in heaven.",
+        "zh-hans": "你们要小心，不可轻看这些小子中的一个；※我告诉你们，他们的天使在天上，常见我天父的面。",
+        "zh-hant": "你們要小心，不可輕看這些小子中的一個；※我告訴你們，他們的天使在天上，常見我天父的面。"
+      }
+    }
+  },
+  "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "They are all ※ ministering spirits, sent forth to minister unto them who shall be heirs of salvation.",
+        "zh-hans": "众天使都是事奉的灵，奉差遣为那将要承受救恩的人服务。",
+        "zh-hant": "眾天使都是事奉的靈，奉差遣為那將要承受救恩的人服務。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Heb. i. 14.",
+          "zh-hans": "（希伯来书 1:14）",
+          "zh-hant": "（希伯來書 1:14）"
+        },
+        "text": {
+          "en": "ARE not all Angels ministering spirits, sent forth to minister for them who shall be heirs of salvation?",
+          "zh-hans": "众天使不都是事奉的灵，奉差遣为那将要承受救恩的人服务的吗？",
+          "zh-hant": "眾天使不都是事奉的靈，奉差遣為那將要承受救恩的人服務的嗎？"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "O GOD, who in thine ineffable providence dost vouchsafe to send thine holy Angels to guard us: grant, of thy bountiful goodness; that we thine humble servants may ever continue in safety under their protection, and hereafter rejoice in their abiding fellowship. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝以不可言喻的眷祐，俯允差遣圣天使来守护我们：求主因丰盛的恩慈，使我们这些卑微的仆人，常在他们的保护下得保安宁，并在来世得享与他们永远的团契。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝以不可言喻的眷祐，俯允差遣聖天使來守護我們：求主因豐盛的恩慈，使我們這些卑微的僕人，常在他們的保護下得保安寧，並在來世得享與他們永遠的團契。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Holy Guardian Angels",
+        "zh-hans": "守护圣天使",
+        "zh-hant": "守護聖天使"
+      }
+    },
+    "invitatory": {
+      "text": {
+        "en": "The Lord, the King of Angels; ※ O come, let us worship.",
+        "zh-hans": "主是众天使的君王，※我们当来俯伏敬拜。",
+        "zh-hant": "主是眾天使的君王，※我們當來俯伏敬拜。"
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "en": "Custodes hominum psallimus Angelos",
+        "zh-hans": "Custodes hominum psallimus Angelos",
+        "zh-hant": "Custodes hominum psallimus Angelos"
+      },
+      "verses": [
+        {
+          "en": "THE Guardians of our race, Our Angel guides, we hail,\nOur Father sendeth forth, To aid our nature frail,\nThese heavenly friends, lest we Should suffer overthrow\nThrough cunning of our subtle foe.",
+          "zh-hans": "一、颂赞世人卫士，引路天使圣名；\n天父垂悯软弱，遣赐天上良朋；\n免教我众受挫，遭逢仇敌倾覆，\n免堕幽暗诡诈罗网中。",
+          "zh-hant": "一、頌讚世人衛士，引路天使聖名；\n天父垂憫軟弱，遣賜天上良朋；\n免教我眾受挫，遭逢仇敵傾覆，\n免墮幽暗詭詐羅網中。"
+        },
+        {
+          "en": "For he who justly lost The honour once his own,\nThe traitor-angel, rues His lost and vacant throne,\nWith burning envy strives To make those fall away\nWhom God doth call to heavenly day.",
+          "zh-hans": "二、背叛天使堕落，自招公义斥逐；\n痛失往昔荣位，满怀嫉恨怨毒；\n竭力诱惑使坠，残害主民心志，\n阻挠上帝所召登天民。",
+          "zh-hant": "二、背叛天使墮落，自招公義斥逐；\n痛失往昔榮位，滿懷嫉恨怨毒；\n竭力誘惑使墜，殘害主民心志，\n阻撓上帝所召登天民。"
+        },
+        {
+          "en": "Then, watchful Guardian, spread Thy wings, and cleave the air;\nHaste to our native home, Committed to thy care;\nDrive hence each noxious ill That might the soul infest,\nNor suffer danger here to rest.",
+          "zh-hans": "三、警醒守护天使，展翼穿空降临；\n速临属祢居所，眷顾托付城邑；\n逐除侵害心灵，种种幽暗罪咎，\n莫容祸患在此扰安宁。",
+          "zh-hant": "三、警醒守護天使，展翼穿空降臨；\n速臨屬祢居所，眷顧託付城邑；\n逐除侵害心靈，種種幽暗罪咎，\n莫容禍患在此擾安寧。"
+        },
+        {
+          "en": "Now to the Holy Three Your praise devoutly pour;\nHis glorious Godhead guides And governs evermore\nThis triple frame: to him Ascribe we all our praise,\nWho reigns through everlasting days. Amen.",
+          "zh-hans": "四、同向三位一体，竭诚献上颂扬，\n至圣威严神能，永远指引统掌， \n三界万有穹象； 荣耀全归于祂，\n权柄尊贵万代永无疆。阿们。",
+          "zh-hant": "四、同向三位一體，竭誠獻上頌揚，\n至聖威嚴神能，永遠指引統掌， \n三界萬有穹象； 榮耀全歸於祂，\n權柄尊貴萬代永無疆。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "The Lord will send his Angel with thee.",
+          "zh-hans": "主必要差遣他的使者与你同在，",
+          "zh-hant": "主必要差遣他的使者與你同在，"
+        },
+        "people": {
+          "en": "And prosper thy way.",
+          "zh-hans": "使你的道路亨通。",
+          "zh-hant": "使你的道路亨通。"
+        }
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Aeterne Rector siderum",
+        "zh-hans": "Aeterne Rector siderum",
+        "zh-hant": "Aeterne Rector siderum"
+      },
+      "verses": [
+        {
+          "en": "CREATOR of the circling sky,\nWho madest all by power most high,\nThy Providence will never cease\nTo rule thy works in might and peace.",
+          "zh-hans": "一、寰宇苍穹至尊化育， 至高神能造化万局； \n眷祐深恩永无止息， 权能和平统御万极。",
+          "zh-hant": "一、寰宇蒼穹至尊化育， 至高神能造化萬局； \n眷祐深恩永無止息， 權能和平統御萬極。"
+        },
+        {
+          "en": "Be present when we cry to thee,\nA sinful people though we be;\nAnd as the day-dawn grows apace,\nIllume our minds with light of grace.",
+          "zh-hans": "二、罪孽深重我等呼求， 恳求我主临在垂顾；\n晨光破晓渐次展开， 恩典真光启涤心怀。",
+          "zh-hant": "二、罪孽深重我等呼求， 懇求我主臨在垂顧；\n晨光破曉漸次展開， 恩典真光啟滌心懷。"
+        },
+        {
+          "en": "O send thine Angel thither-ward\nAssigned by thee to be our guard,\nThat now his presence may begin\nTo keep us from all stain of sin.",
+          "zh-hans": "三、求差天使自天而降， 奉祢差遣作我守望；\n使他临在从今启行， 保我身心免沾罪垢。",
+          "zh-hant": "三、求差天使自天而降， 奉祢差遣作我守望；\n使他臨在從今啟行， 保我身心免沾罪垢。"
+        },
+        {
+          "en": "Let him destroy that hidden snare\nThe eager serpent doth prepare,\nLest we be taken in the net\nBefore our heedless bosoms set.",
+          "zh-hans": "四、狡黠巨蛇设下隐罗， 求使天使悉数粉碎；\n免我失察心怀松懈， 误堕罗网遭其陷害。",
+          "zh-hant": "四、狡黠巨蛇設下隱羅， 求使天使悉數粉碎；\n免我失察心懷鬆懈， 誤墮羅網遭其陷害。"
+        },
+        {
+          "en": "At his command let every fear\nOf hostile foemen disappear;\nLet civil strife give way to peace,\nAnd pestilence and famine cease.",
+          "zh-hans": "五、借他号令仇敌惊退， 一切恐惧化为无有；\n内哄止息迎来和平， 瘟疫饥荒悉皆平息。",
+          "zh-hant": "五、藉他號令仇敵驚退， 一切恐懼化為無有；\n內鬨止息迎來和平， 瘟疫饑荒悉皆平息。"
+        },
+        {
+          "en": "To God the Father glory be;\nFor those the Savior setteth free,\nAnointed by the Holy Ghost,\nAre guarded by the Angel host. Amen.",
+          "zh-hans": "六、荣耀全归上帝圣父； 蒙受救主救赎众民，\n更有圣灵亲施膏抹， 万千天军常随护佑。阿们。",
+          "zh-hant": "六、榮耀全歸上帝聖父； 蒙受救主救贖眾民，\n更有聖靈親施膏抹， 萬千天軍常隨護佑。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "He shall give his angels charge over thee.",
+          "zh-hans": "因他要为你命令他的使者，",
+          "zh-hant": "因他要為你命令他的使者，"
+        },
+        "people": {
+          "en": "To keep thee in all thy ways.",
+          "zh-hans": "在你所行的一切道路上保护你。",
+          "zh-hant": "在你所行的一切道路上保護你。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "God shall give his Angels charge over thee, ※ to keep thee in all thy ways.",
+          "zh-hans": "因他要为你吩咐他的使者，※在你行的一切道路上保护你。",
+          "zh-hant": "因他要為你吩咐他的使者，※在你行的一切道路上保護你。"
+        },
+        {
+          "en": "Let us praise the Lord whom the Angels do praise, ※ unto whom Cherubim and Seraphim do cry, Holy, Holy, Holy.",
+          "zh-hans": "我们要赞颂众天使所赞美的主，※基路伯和撒拉弗向他高呼：圣哉、圣哉、圣哉。",
+          "zh-hant": "我們要讚頌眾天使所讚美的主，※基路伯和撒拉弗向他高呼：聖哉、聖哉、聖哉。"
+        },
+        {
+          "en": "In heaven their Angels do always behold the face of my Father ※ which is in heaven.",
+          "zh-hans": "他们的使者在天上，※常见我天父的面。",
+          "zh-hant": "他們的使者在天上，※常見我天父的面。"
+        },
+        {
+          "en": "The Angel of the Lord came down into the fiery furnace, ※ to his servants that trusted in him.",
+          "zh-hans": "主的天使下到火窑中，※与信靠主的仆人那里。",
+          "zh-hant": "主的天使下到火窯中，※與信靠主的僕人那裡。"
+        },
+        {
+          "en": "Praise him, all ye Angels of his, ※ praise him, all his host.",
+          "zh-hans": "主的诸天使都当颂扬主，※主的众天军都当颂扬主。",
+          "zh-hant": "主的諸天使都當頌揚主，※主的眾天軍都當頌揚主。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "The Angel of the Lord ※ tarrieth round about them that fear him, and delivereth them.",
+        "zh-hans": "主的使者※在敬畏他的人四围安营，要搭救他们。",
+        "zh-hant": "主的使者※在敬畏他的人四圍安營，要搭救他們。"
+      }
+    }
+  },
+  "evening": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Ye holy Angel Guardians, ※ defend us in time of battle: lest we be doomed in the dreadful day of judgement.",
+        "zh-hans": "神圣的天使，我们的守护者，请在争战之中庇护我们，使我们不致在可怕的审判中遭受沉沦。",
+        "zh-hant": "神聖的天使，我們的守護者，請在爭戰之中庇護我們，使我們不致在可怕的審判中遭受沈淪。"
+      }
+    },
+    "bible_sentences": [
+      {
+        "reference": {
+          "en": "Ex. xxiii. 20.",
+          "zh-hans": "（出埃及记 23:20）",
+          "zh-hant": "（出埃及記 23:20）"
+        },
+        "text": {
+          "en": "BEHOLD, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared.",
+          "zh-hans": "看哪，我要差遣使者在你前面，在路上保护你，领你到我所预备的地方。",
+          "zh-hant": "看哪，我要差遣使者在你前面，在路上保護你，領你到我所預備的地方。"
+        }
+      }
+    ],
+    "collect": {
+      "text": {
+        "en": "O GOD, who in thine ineffable providence dost vouchsafe to send thine holy Angels to guard us: grant, of thy bountiful goodness; that we thine humble servants may ever continue in safety under their protection, and hereafter rejoice in their abiding fellowship. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝以不可言喻的眷祐，俯允差遣圣天使来守护我们：求主因丰盛的恩慈，使我们这些卑微的仆人，常在他们的保护下得保安宁，并在来世得享与他们永远的团契。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝以不可言喻的眷祐，俯允差遣聖天使來守護我們：求主因豐盛的恩慈，使我們這些卑微的僕人，常在他們的保護下得保安寧，並在來世得享與他們永遠的團契。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "The Holy Guardian Angels",
+        "zh-hans": "守护圣天使",
+        "zh-hant": "守護聖天使"
+      }
+    },
+    "office_hymn": {
+      "title": {
+        "en": "Caelestis aulae principes",
+        "zh-hans": "Caelestis aulae principes",
+        "zh-hant": "Caelestis aulae principes"
+      },
+      "verses": [
+        {
+          "en": "THE mighty host on high, Their joys beyond compare,\nTheir glories in the sky, The deeds they bravely dare:\nFor these the Church today Pours forth her sweetest lay,\nTo Heaven's great champions praise to pay.",
+          "zh-hans": "一、高天万千军旅，喜乐无可比拟；\n穹苍彰显光荣，勇烈壮举堪颂：\n教会今日齐聚，倾吐至美诗章， \n颂赞上天凯旋健将。",
+          "zh-hant": "一、高天萬千軍旅，喜樂無可比擬；\n穹蒼彰顯光榮，勇烈壯舉堪頌：\n教會今日齊聚，傾吐至美詩章， \n頌讚上天凱旋健將。"
+        },
+        {
+          "en": "These are the legions bright, Warders of God's domain,\nUnwearied in their might The demons to restrain:\nTo quell th'infernal foe, And work their rivals woe,\nThese heavenly warriors haste below.",
+          "zh-hans": "二、此乃辉煌军旅，神圣天国卫士；\n大能永不知倦，束缚阴府群魔：\n平定地狱仇敌，重创邪恶对头，\n天界勇士疾降人间。",
+          "zh-hant": "二、此乃輝煌軍旅，神聖天國衛士；\n大能永不知倦，束縛陰府群魔：\n平定地獄仇敵，重創邪惡對頭，\n天界勇士疾降人間。"
+        },
+        {
+          "en": "Captains of mighty race, And watchful guardians, they\nThe evil spirits chase, Undaunted in the fray:\nThey speed, in ranks arrayed, The upright soul to aid,\nAnd crown him victor undismayed.",
+          "zh-hans": "三、大能族类领袖，警醒守望天军；\n战场毫不畏缩，驱逐邪灵败阵：\n整饬队列齐奔， 扶助正直灵魂，\n加冕勇者凯旋得胜。",
+          "zh-hant": "三、大能族類領袖，警醒守望天軍；\n戰場毫不畏縮，驅逐邪靈敗陣：\n整飭隊列齊奔， 扶助正直靈魂，\n加冕勇者凱旋得勝。"
+        },
+        {
+          "en": "What tongue can here declare, Fancy or thought descry,\nThe joys thou dost prepare For these thy hosts on high?\nWho, for the warfare decked, Their earthly friends protect,\nAnd in right paths to heaven direct.",
+          "zh-hans": "四、何等唇舌能述，何等心思测度，\n祢为天军所备，至深无尽喜乐？\n披挂戎装临阵，护佑世间良朋，\n引领正路直达天乡。",
+          "zh-hant": "四、何等唇舌能述，何等心思測度，\n祢為天軍所備，至深無盡喜樂？\n披掛戎裝臨陣，護佑世間良朋，\n引領正路直達天鄉。"
+        },
+        {
+          "en": "To thee, O Lord most high, One in Three Persons still,\nTo pardon us we cry, And to preserve from ill:\nThat, after perils sore, Thy Name we may adore\nWith holy Angels evermore. Amen.",
+          "zh-hans": "五、至高至尊我主，三位一体真神；\n求赦我众过犯，保我免遭诸祸：\n历经诸般艰危，常与诸圣天使，\n永远敬拜赞美圣名。阿们。",
+          "zh-hant": "五、至高至尊我主，三位一體真神；\n求赦我眾過犯，保我免遭諸禍：\n歷經諸般艱危，常與諸聖天使，\n永遠敬拜讚美聖名。阿們。"
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "en": "In the presence of the Angels will I sing unto thee, my God.",
+          "zh-hans": "我的上帝阿，我要在诸神面前歌颂你。",
+          "zh-hant": "我的上帝阿，我要在諸神面前歌頌你。"
+        },
+        "people": {
+          "en": "I will worship toward thine holy temple, and praise thy Name.",
+          "zh-hans": "我要向你的圣殿下拜，颂扬你的名。",
+          "zh-hant": "我要向你的聖殿下拜，頌揚你的名。"
+        }
+      }
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "en": "God shall give his Angels charge over thee, ※ to keep thee in all thy ways.",
+          "zh-hans": "因他要为你吩咐他的使者，※在你行的一切道路上保护你。",
+          "zh-hant": "因他要為你吩咐他的使者，※在你行的一切道路上保護你。"
+        },
+        {
+          "en": "Let us praise the Lord whom the Angels do praise, ※ unto whom Cherubim and Seraphim do cry, Holy, Holy, Holy.",
+          "zh-hans": "我们要赞颂众天使所赞美的主，※基路伯和撒拉弗向他高呼：圣哉、圣哉、圣哉。",
+          "zh-hant": "我們要讚頌眾天使所讚美的主，※基路伯和撒拉弗向他高呼：聖哉、聖哉、聖哉。"
+        },
+        {
+          "en": "In heaven their Angels do always behold the face of my Father ※ which is in heaven.",
+          "zh-hans": "他们的使者在天上，※常见我天父的面。",
+          "zh-hant": "他們的使者在天上，※常見我天父的面。"
+        },
+        {
+          "en": "The Angel of the Lord came down into the fiery furnace, ※ to his servants that trusted in him.",
+          "zh-hans": "主的天使下到火窑中，※与信靠主的仆人那里。",
+          "zh-hant": "主的天使下到火窯中，※與信靠主的僕人那裡。"
+        },
+        {
+          "en": "Praise him, all ye Angels of his, ※ praise him, all his host.",
+          "zh-hans": "主的诸天使都当颂扬主，※主的众天军都当颂扬主。",
+          "zh-hant": "主的諸天使都當頌揚主，※主的眾天軍都當頌揚主。"
+        }
+      ],
+      "lectionary_1943": {
+        "en": "I say unto you, ※ there is joy in the presence of the Angels of God over one sinner that repenteth.",
+        "zh-hans": "我告诉你们，一个罪人悔改，上帝的使者也是这样为他欢喜。",
+        "zh-hant": "我告訴你們，一個罪人悔改，上帝的使者也是這樣為他歡喜。"
+      }
+    }
+  }
+}

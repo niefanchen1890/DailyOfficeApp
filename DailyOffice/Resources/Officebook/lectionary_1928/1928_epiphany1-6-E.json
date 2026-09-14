@@ -1,0 +1,15 @@
+{
+    "id": "epiphany1-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:52-71"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "4:8-37"
+        }
+    }
+}

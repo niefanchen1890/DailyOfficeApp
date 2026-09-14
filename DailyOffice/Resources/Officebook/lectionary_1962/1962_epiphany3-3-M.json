@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "11:2-34"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "3:13-4:6"
+        }
+    }
+}

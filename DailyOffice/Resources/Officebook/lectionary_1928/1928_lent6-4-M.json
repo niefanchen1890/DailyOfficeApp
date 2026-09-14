@@ -1,0 +1,15 @@
+{
+    "id": "lent6-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "13:1-17、33-35"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "31:31-34"
+        }
+    }
+}

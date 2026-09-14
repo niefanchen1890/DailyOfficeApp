@@ -1,0 +1,15 @@
+{
+    "id": "tr21-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "5:1-20"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "10:1-21"
+        }
+    }
+}

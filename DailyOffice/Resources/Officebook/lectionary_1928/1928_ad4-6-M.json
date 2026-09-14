@@ -1,0 +1,15 @@
+{
+    "id": "ad4-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "1:18-25"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "5:18-30"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr18-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "腓立比書",
+            "chapter": "4:1-23"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "6:1-30"
+        }
+    }
+}

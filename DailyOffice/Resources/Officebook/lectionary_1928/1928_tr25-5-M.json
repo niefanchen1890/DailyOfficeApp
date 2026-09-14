@@ -1,0 +1,15 @@
+{
+    "id": "tr25-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "16:12-33"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "24:23-34"
+        }
+    }
+}

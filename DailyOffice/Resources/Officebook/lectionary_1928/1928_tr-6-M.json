@@ -1,0 +1,15 @@
+{
+    "id": "tr-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "5:33-48"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "6:12-27"
+        }
+    }
+}

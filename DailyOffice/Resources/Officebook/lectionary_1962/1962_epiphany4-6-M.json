@@ -1,0 +1,15 @@
+{
+    "id": "epiphany4-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "12:1-13"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "9:1-24"
+        }
+    }
+}

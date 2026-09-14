@@ -1,0 +1,15 @@
+{
+    "id": "tr3-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "13:14-37"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "8:1-36"
+        }
+    }
+}

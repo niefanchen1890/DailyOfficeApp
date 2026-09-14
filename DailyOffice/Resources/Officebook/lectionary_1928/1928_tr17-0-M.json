@@ -1,0 +1,15 @@
+{
+    "id": "tr17-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "8:14-18, 31-end"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "6:1-23"
+        }
+    }
+}

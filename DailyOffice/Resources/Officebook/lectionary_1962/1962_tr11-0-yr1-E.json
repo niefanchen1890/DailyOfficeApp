@@ -1,0 +1,15 @@
+{
+    "id": "tr11-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "4:23-5:20"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "5:1-19"
+        }
+    }
+}

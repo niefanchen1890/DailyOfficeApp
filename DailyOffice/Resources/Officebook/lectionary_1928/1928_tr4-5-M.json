@@ -1,0 +1,15 @@
+{
+    "id": "tr4-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "15:21-39"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "8:22-35"
+        }
+    }
+}

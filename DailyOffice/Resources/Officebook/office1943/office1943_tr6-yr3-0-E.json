@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr6-yr3-0-E",
+  "label": "第三組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "104" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "16:1-13"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "11:1-18"
+    }
+  }
+}

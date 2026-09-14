@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "19:8-20"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "31:23-40"
+        }
+    }
+}

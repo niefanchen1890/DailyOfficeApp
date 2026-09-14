@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr5-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "62" },
+      { "number": "63" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "傳道書",
+      "chapter": "2:1-11,18-23"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "19:16-30"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "identifier": "st_hedwig",
+  "name": {
+    "zh-hant": "聖婦海德薇",
+    "zh-hans": "圣妇海德薇",
+    "en": "Saint Hedwig"
+  },
+  "rank": "semiDouble",
+  "rank_display": {
+    "zh-hant": "（半複式）",
+    "zh-hans": "（半复式）",
+    "en": "Semidouble"
+  },
+  "type": "sanctorale",
+  "common_office": "common_holy_woman_outside_easter",
+  "vigil": {
+    "collect": {
+      "title": {
+        "zh-hant": "聖婦海德薇",
+        "zh-hans": "圣妇海德薇",
+        "en": "Saint Hedwig"
+      },
+      "text": {
+        "zh-hant": "上帝曾教導聖海德薇，棄絕今世的浮華和虛榮，謙卑地、堅定地背負十字架跟隨主，求主大發慈悲，藉著她的功勞和榜樣，叫我們輕看屬世的享樂，堅定地倚靠主的十字架，克服一切攔阻我們得救的事。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，永世無盡。阿們。",
+        "zh-hans": "上帝曾教导圣海德薇，弃绝今世的浮华和虚荣，谦卑地、坚定地背负十字架跟随主，求主大发慈悲，藉着她的功劳和榜样，叫我们轻看属世的享乐，坚定地倚靠主的十字架，克服一切拦阻我们得救的事。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，永世无尽。阿们。",
+        "en": "O GOD, who didst teach thy blessed Saint Hedwig, forsaking the pomps and vanities of this life, to follow thee steadfastly in the lowly bearing of thy Cross: mercifully grant that, by her merits and example, we may learn to trample underfoot the contemptible pleasures of this world; and cleaving steadfastly to thy Cross, to overcome all things that are contrary to our salvation. Who livest and reignest with God the Father, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  },
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "聖婦海德薇",
+        "zh-hans": "圣妇海德薇",
+        "en": "Saint Hedwig"
+      },
+      "text": {
+        "zh-hant": "上帝曾教導聖海德薇，棄絕今世的浮華和虛榮，謙卑地、堅定地背負十字架跟隨主，求主大發慈悲，藉著她的功勞和榜樣，叫我們輕看屬世的享樂，堅定地倚靠主的十字架，克服一切攔阻我們得救的事。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，永世無盡。阿們。",
+        "zh-hans": "上帝曾教导圣海德薇，弃绝今世的浮华和虚荣，谦卑地、坚定地背负十字架跟随主，求主大发慈悲，藉着她的功劳和榜样，叫我们轻看属世的享乐，坚定地倚靠主的十字架，克服一切拦阻我们得救的事。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，永世无尽。阿们。",
+        "en": "O GOD, who didst teach thy blessed Saint Hedwig, forsaking the pomps and vanities of this life, to follow thee steadfastly in the lowly bearing of thy Cross: mercifully grant that, by her merits and example, we may learn to trample underfoot the contemptible pleasures of this world; and cleaving steadfastly to thy Cross, to overcome all things that are contrary to our salvation. Who livest and reignest with God the Father, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  },
+  "evening": {
+    "collect": {
+      "title": {
+        "zh-hant": "聖婦海德薇",
+        "zh-hans": "圣妇海德薇",
+        "en": "Saint Hedwig"
+      },
+      "text": {
+        "zh-hant": "上帝曾教導聖海德薇，棄絕今世的浮華和虛榮，謙卑地、堅定地背負十字架跟隨主，求主大發慈悲，藉著她的功勞和榜樣，叫我們輕看屬世的享樂，堅定地倚靠主的十字架，克服一切攔阻我們得救的事。主耶穌和聖父、聖靈，唯一上帝，一同永生，一同掌權，永世無盡。阿們。",
+        "zh-hans": "上帝曾教导圣海德薇，弃绝今世的浮华和虚荣，谦卑地、坚定地背负十字架跟随主，求主大发慈悲，藉着她的功劳和榜样，叫我们轻看属世的享乐，坚定地倚靠主的十字架，克服一切拦阻我们得救的事。主耶稣和圣父、圣灵，唯一上帝，一同永生，一同掌权，永世无尽。阿们。",
+        "en": "O GOD, who didst teach thy blessed Saint Hedwig, forsaking the pomps and vanities of this life, to follow thee steadfastly in the lowly bearing of thy Cross: mercifully grant that, by her merits and example, we may learn to trample underfoot the contemptible pleasures of this world; and cleaving steadfastly to thy Cross, to overcome all things that are contrary to our salvation. Who livest and reignest with God the Father, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  }
+}

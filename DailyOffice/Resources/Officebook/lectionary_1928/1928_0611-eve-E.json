@@ -1,0 +1,15 @@
+{
+    "id": "0611-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "4:23-37"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "31:1-11"
+        }
+    }
+}

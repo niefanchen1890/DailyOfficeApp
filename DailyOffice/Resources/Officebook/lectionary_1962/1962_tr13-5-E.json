@@ -1,0 +1,15 @@
+{
+    "id": "tr13-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "5:1-23"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "19"
+        }
+    }
+}

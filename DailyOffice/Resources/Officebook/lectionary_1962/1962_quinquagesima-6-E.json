@@ -1,0 +1,15 @@
+{
+    "id": "quinquagesima-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "16:1-27"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "41:41-57"
+        }
+    }
+}

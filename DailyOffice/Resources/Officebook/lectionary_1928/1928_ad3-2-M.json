@@ -1,0 +1,15 @@
+{
+    "id": "ad3-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "8:22-9:1"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "42:15-43:10"
+        }
+    }
+}

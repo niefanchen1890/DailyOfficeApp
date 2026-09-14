@@ -1,0 +1,63 @@
+{
+  "identifier": "temporal_trinity_5_sunday",
+  "name": "三一主日後第五主日",
+  "rank": "ordinarySunday",
+  "rank_display": "（普通主日，半複式）",
+  "type": "temporal",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": "你們都要同心，※彼此體恤，相愛如弟兄，存憐憫和謙卑的心。"
+    },
+    "collect": {
+      "title": "三一主日後第五主日",
+      "text": "求主叫世間因為蒙主管理，就得太平，使教會享平安，樂意事奉主。這都是靠著我主耶穌基督。阿們。"
+    }
+  },
+  "morning": {
+      "invitatory": {
+        "text": "我們要讚美耶穌基督，※祂是萬代的救贖主。"
+      },
+      "psalms": {
+          "1928": {
+            "items": [
+              { "number": "21" },
+              { "number": "23" }
+            ]
+          },
+          "1962": {
+            "items": [
+              { "number": "28" },
+              { "number": "29" }
+            ]
+          }
+        },
+    "benedictus_antiphon": {
+      "normal": "耶穌上了一隻船，※就坐下，在船上教導眾人，哈利路亞。"
+    },
+    "collect": {
+      "title": "三一主日後第五主日",
+      "text": "求主叫世間因為蒙主管理，就得太平，使教會享平安，樂意事奉主。這都是靠著我主耶穌基督。阿們。"
+    }
+  },
+  "evening": {
+      "psalms": {
+          "1928": {
+            "items": [
+              { "number": "26" },
+              { "number": "27" }
+            ]
+          },
+          "1962": {
+            "items": [
+              { "number": "30" },
+              { "number": "32" }
+            ]
+          }
+        },
+      "office_hymn_key": "sunday",
+    "collect": {
+      "title": "三一主日後第五主日",
+      "text": "求主叫世間因為蒙主管理，就得太平，使教會享平安，樂意事奉主。這都是靠著我主耶穌基督。阿們。"
+    }
+  }
+}

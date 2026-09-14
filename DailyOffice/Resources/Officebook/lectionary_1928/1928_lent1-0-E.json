@@ -1,0 +1,15 @@
+{
+    "id": "lent1-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "1:9-28"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "26:5-25"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "lent3-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "10:25-42"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "28:1-17"
+        }
+    }
+}

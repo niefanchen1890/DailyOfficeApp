@@ -1,0 +1,15 @@
+{
+    "id": "tr1-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "5:21-43"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "16:1-17:2"
+        }
+    }
+}

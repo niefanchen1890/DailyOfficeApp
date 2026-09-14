@@ -1,0 +1,15 @@
+{
+    "id": "easter4-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "15:35-58"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "32:1-14"
+        }
+    }
+}

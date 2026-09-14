@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Coat_of_Arms_of_the_Anglican_Catholic_Church.svg.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

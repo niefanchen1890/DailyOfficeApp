@@ -1,0 +1,15 @@
+{
+    "id": "tr-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "4:1-34"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "12:1-25"
+        }
+    }
+}

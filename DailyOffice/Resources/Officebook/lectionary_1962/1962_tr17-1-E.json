@@ -1,0 +1,15 @@
+{
+    "id": "tr17-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "17"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "11:1-13"
+        }
+    }
+}

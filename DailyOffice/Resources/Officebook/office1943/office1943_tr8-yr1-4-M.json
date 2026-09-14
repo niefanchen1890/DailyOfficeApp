@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr8-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "128" },
+      { "number": "129" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "15:1-9"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "16:19-31"
+    }
+  }
+}

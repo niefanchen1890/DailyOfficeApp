@@ -1,0 +1,15 @@
+{
+    "id": "lent1-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "9:1-17"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "13:1-18"
+        }
+    }
+}

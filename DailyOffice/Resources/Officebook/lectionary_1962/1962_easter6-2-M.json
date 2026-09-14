@@ -1,0 +1,15 @@
+{
+    "id": "easter6-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "5:1-11"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "11:8-21"
+        }
+    }
+}

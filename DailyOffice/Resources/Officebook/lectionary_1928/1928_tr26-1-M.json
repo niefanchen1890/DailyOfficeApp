@@ -1,0 +1,15 @@
+{
+    "id": "tr26-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "18:1-27"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "26:1-16"
+        }
+    }
+}

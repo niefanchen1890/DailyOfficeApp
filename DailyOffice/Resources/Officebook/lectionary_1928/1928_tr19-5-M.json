@@ -1,0 +1,15 @@
+{
+    "id": "tr19-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "24:13-35"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "1:38-53"
+        }
+    }
+}

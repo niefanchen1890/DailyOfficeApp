@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr15-yr1-6-E",
+  "label": "禮拜六",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "46" },
+      { "number": "96" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "43:1-12"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "9:9-17"
+    }
+  }
+}

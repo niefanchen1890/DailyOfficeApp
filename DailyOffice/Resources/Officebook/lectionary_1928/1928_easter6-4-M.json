@@ -1,0 +1,15 @@
+{
+    "id": "easter6-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "4:14-5:10"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "2:1-15"
+        }
+    }
+}

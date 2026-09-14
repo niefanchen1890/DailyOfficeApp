@@ -1,0 +1,15 @@
+{
+    "id": "tr15-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "15:61-end"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "11:14-end"
+        }
+    }
+}

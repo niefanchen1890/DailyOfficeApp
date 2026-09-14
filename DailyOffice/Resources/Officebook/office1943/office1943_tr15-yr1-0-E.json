@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr15-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "26" },
+      { "number": "128" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "傳道書",
+      "chapter": "5:8-20"
+    },
+    "nt": {
+      "book": "提摩太前書",
+      "chapter": "6:1-10"
+    }
+  }
+}

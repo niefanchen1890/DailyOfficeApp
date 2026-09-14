@@ -1,0 +1,15 @@
+{
+    "id": "tr6-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "帖撒羅尼迦後書",
+            "chapter": "1:1-12"
+        },
+        "ot": {
+            "book": "以斯帖記",
+            "chapter": "1:1-22"
+        }
+    }
+}

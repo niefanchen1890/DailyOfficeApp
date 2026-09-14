@@ -1,0 +1,15 @@
+{
+    "id": "tr16-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "7:15-end"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "6:1-23"
+        }
+    }
+}

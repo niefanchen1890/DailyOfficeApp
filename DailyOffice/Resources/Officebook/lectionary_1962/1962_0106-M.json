@@ -1,0 +1,15 @@
+{
+    "id": "0106-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "3:15-22"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "49:1-13"
+        }
+    }
+}

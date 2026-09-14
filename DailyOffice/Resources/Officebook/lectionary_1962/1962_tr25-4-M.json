@@ -1,0 +1,15 @@
+{
+    "id": "tr25-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "18:24-19:7"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "20:1-20"
+        }
+    }
+}

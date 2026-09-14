@@ -1,0 +1,15 @@
+{
+    "id": "lent2-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "3:22-36"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "10:1-20"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr1-5-E",
+  "label": "禮拜五",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "103" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "馬可福音",
+      "chapter": "2:9-14,19-20"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "11:1-21"
+    }
+  }
+}

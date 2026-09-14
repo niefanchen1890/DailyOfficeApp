@@ -1,0 +1,15 @@
+{
+    "id": "easter1-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "28:1-10"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "26:1-19"
+        }
+    }
+}

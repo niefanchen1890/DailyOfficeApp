@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "85" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "45:1-15,25-28"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "12:9-21"
+    }
+  }
+}

@@ -1,0 +1,553 @@
+{
+  "teDeum": {
+    "title": { "zh-hant": "讚美頌", "zh-hans": "赞美颂", "en": "Te Deum laudamus" },
+    "style": "prose",
+    "paragraphs": [
+      { "zh-hant": "我們讚美上帝，認為萬有的主。", "zh-hans": "我们赞美上帝，认为万有的主。", "en": "WE praise thee, O God; we acknowledge thee to be the Lord." },
+      { "zh-hant": "主是無始無終的父，普天下的人都應該崇拜。", "zh-hans": "主是无始无终的父，普天下的人都应该崇拜。", "en": "All the earth doth worship thee, the Father everlasting." },
+      { "zh-hant": "天和天使，並天上一切掌權的，都高聲讚美主。", "zh-hans": "天和天使，并天上一切掌权的，都高声赞美主。", "en": "To thee all Angels cry aloud; the Heavens, and all the Powers therein;" },
+      { "zh-hant": "基路伯和撒拉弗，時常大聲稱頌主。", "zh-hans": "基路伯和撒拉弗，时常大声称颂主。", "en": "To thee Cherubim and Seraphim continually do cry," },
+      { "zh-hant": "說：聖哉，聖哉，聖哉，天地萬軍的主。", "zh-hans": "说：圣哉，圣哉，圣哉，天地万军的主。", "en": "Holy, Holy, Holy, Lord God of Sabaoth;" },
+      { "zh-hant": "主的榮耀威嚴，充滿天地。", "zh-hans": "主的荣耀威严，充满天地。", "en": "Heaven and earth are full of the Majesty of thy glory." },
+      { "zh-hant": "有榮耀的衆使徒，都讚美主。", "zh-hans": "有荣耀的众使徒，都赞美主。", "en": "The glorious company of the Apostles praise thee." },
+      { "zh-hant": "衆聖先知，都讚美主。", "zh-hans": "众圣先知，都赞美主。", "en": "The goodly fellowship of the Prophets praise thee." },
+      { "zh-hant": "捨性命為聖道做見證的，都讚美主。", "zh-hans": "舍性命为圣道做见证的，都赞美主。", "en": "The noble army of Martyrs praise thee." },
+      { "zh-hant": "普天下的聖公會，都承認主。", "zh-hans": "普天下的圣公会，都承认主。", "en": "The holy Church throughout all the world doth acknowledge thee;" },
+      { "zh-hant": "威嚴無量的聖父。", "zh-hans": "威严无量的圣父。", "en": "The Father of an infinite Majesty;" },
+      { "zh-hant": "至尊至真獨一的聖子。", "zh-hans": "至尊至真独一的圣子。", "en": "Thine adorable, true and only Son;" },
+      { "zh-hant": "安慰人心的聖靈。", "zh-hans": "安慰人心的圣灵。", "en": "Also the Holy Ghost the Comforter." },
+      { "zh-hant": "基督是有榮耀的君王。", "zh-hans": "基督是有荣耀的君王。", "en": "THOU art the King of Glory, O Christ." },
+      { "zh-hant": "是聖父無始無終的聖子。", "zh-hans": "是圣父无始无终的圣子。", "en": "Thou art the everlasting Son of the Father." },
+      { "zh-hant": "主要救世上的人，甘心卑賤，為童貞女所生。", "zh-hans": "主要救世上的人，甘心卑贱，为童贞女所生。", "en": "When thou tookest upon thee to deliver man, thou didst humble thyself to be born of a Virgin." },
+      { "zh-hant": "主既勝了死的苦楚，就是為一切信道的人，開了天國的門。", "zh-hans": "主既胜了死的苦楚，就是为一切信道的人，开了天国的门。", "en": "When thou hadst overcome the sharpness of death, thou didst open the Kingdom of Heaven to all believers." },
+      { "zh-hant": "主坐在上帝的右邊，與聖父一同受榮耀。", "zh-hans": "主坐在上帝的右边，与圣父一同受荣耀。", "en": "Thou sittest at the right hand of God, in the glory of the Father." },
+      { "zh-hant": "我們信主必再降臨，審判我們。", "zh-hans": "我们信主必再降临，审判我们。", "en": "We believe that thou shalt come to be our Judge." },
+      { "zh-hant": "所以求主救護主的仆婢，就是主用寶貝的血所救贖的。", "zh-hans": "所以求主救护主的仆婢，就是主用宝贝的血所救赎的。", "en": "We therefore pray thee, help thy servants, whom thou hast redeemed with thy precious blood." },
+      { "zh-hant": "叫他們列在聖徒的中間，同享無盡的榮耀。", "zh-hans": "叫他们列在圣徒的中间，同享无尽的荣耀。", "en": "Make them to be numbered with thy Saints, in glory everlasting." },
+      { "zh-hant": "求主救主的百姓，賜福與主的選民。", "zh-hans": "求主救主的百姓，赐福与主的选民。", "en": "O LORD, save thy people, and bless thine heritage." },
+      { "zh-hant": "撫養他們，扶持他們，直到永遠。", "zh-hans": "抚养他们，扶持他们，直到永远。", "en": "Govern them and lift them up for ever." },
+      { "zh-hant": "我們天天頌揚主。", "zh-hans": "我们天天颂扬主。", "en": "Day by day we magnify thee;" },
+      { "zh-hant": "我們尊重主的聖名，永世無盡。", "zh-hans": "我们尊重主的圣名，永世无尽。", "en": "And we worship thy Name ever, world without end." },
+      { "zh-hant": "求主保佑我們，今天不犯罪。", "zh-hans": "求主保佑我们，今天不犯罪。", "en": "Vouchsafe, O Lord, to keep us this day without sin." },
+      { "zh-hant": "求主憐憫我們，憐憫我們。", "zh-hans": "求主怜悯我们，怜悯我们。", "en": "O Lord, have mercy upon us, have mercy upon us." },
+      { "zh-hant": "我們倚靠主，所以求主憐憫我們。", "zh-hans": "我们倚靠主，所以求主怜悯我们。", "en": "O Lord, let thy mercy be upon us, as our trust is in thee." },
+      { "zh-hant": "我只倚靠主，求主使我永無羞愧。", "zh-hans": "我只倚靠主，求主使我永无羞愧。", "en": "O Lord, in thee have I trusted; let me never be confounded." }
+    ]
+  },
+  "benedicite": {
+    "title": { "zh-hant": "萬物頌", "zh-hans": "万物颂", "en": "" },
+    "subtitle": { "zh-hant": "次經三童歌 35-65", "zh-hans": "次经三童歌 35-65", "en": "" },
+    "style": "responsive",
+    "sections": [
+      [
+        {
+          "call": { "zh-hant": "主所造的萬物，應當讚美主，", "zh-hans": "主所造的万物，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "主的衆天使，應當讚美主，", "zh-hans": "主的众天使，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        }
+      ],
+      [
+        {
+          "call": { "zh-hant": "諸天應當讚美主，", "zh-hans": "诸天应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "天上的雲漢，應當讚美主，", "zh-hans": "天上的云汉，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "主的各樣權柄，應當讚美主，", "zh-hans": "主的各样权柄，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "日和月，應當讚美主，", "zh-hans": "日和月，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "天上的衆星宿，應當讚美主，", "zh-hans": "天上的众星宿，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "雨和露，應當讚美主，", "zh-hans": "雨和露，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "上帝所造的風，應當讚美主，", "zh-hans": "上帝所造的风，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "火和熱，應當讚美主，", "zh-hans": "火和热，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "冬和夏，應當讚美主，", "zh-hans": "冬和夏，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "露和霜，應當讚美主，", "zh-hans": "露和霜，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "凍和冷，應當讚美主，", "zh-hans": "冻和冷，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "冰和雪，應當讚美主，", "zh-hans": "冰和雪，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "夜和晝，應當讚美主，", "zh-hans": "夜和昼，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "光和暗，應當讚美主，", "zh-hans": "光和暗，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "電和雲，應當讚美主，", "zh-hans": "电和云，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        }
+      ],
+      [
+        {
+          "call": { "zh-hant": "惟願大地，讚美主，", "zh-hans": "惟愿大地，赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "山和岡，應當讚美主，", "zh-hans": "山和冈，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "地上的草木，應當讚美主，", "zh-hans": "地上的草木，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "衆泉源，應當讚美主，", "zh-hans": "众泉源，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "河海和山澤，應當讚美主，", "zh-hans": "河海和山泽，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "鯨魚和海裏的一切水族，應當讚美主，", "zh-hans": "鲸鱼和海里的一切水族，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "空中一切飛鳥，都當讚美主，", "zh-hans": "空中一切飞鸟，都当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "野獸和六畜，應當讚美主，", "zh-hans": "野兽和六畜，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "你們世上的人，應當讚美主，", "zh-hans": "你们世上的人，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        }
+      ],
+      [
+        {
+          "call": { "zh-hant": "惟願以色列人，應當讚美主，", "zh-hans": "惟愿以色列人，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "主的衆祭司，應當讚美主，", "zh-hans": "主的众祭司，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "主的衆仆人，應當讚美主，", "zh-hans": "主的众仆人，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "義人的靈魂，應當讚美主，", "zh-hans": "义人的灵魂，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        },
+        {
+          "call": { "zh-hant": "心謙聖善的人，應當讚美主，", "zh-hans": "心谦圣善的人，应当赞美主，", "en": "" },
+          "response": { "zh-hant": "※頌揚主，尊主為大，永世無盡。", "zh-hans": "※颂扬主，尊主为大，永世无尽。", "en": "" }
+        }
+      ]
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": ""
+    }
+  },
+"benedictusEs": {
+    "title": { "zh-hant": "我祖頌", "zh-hans": "我祖颂", "en": "Benedictus es, Domine" },
+    "subtitle": { "zh-hant": "次經三童歌 29-34", "zh-hans": "次经三童歌 29-34", "en": "Song of the Three Holy Children 29-34" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "主我祖的上帝，是當讚美的，", "zh-hans": "主我祖的上帝，是当赞美的，", "en": "BLESSED art thou, O Lord God of our fathers;" },
+        "response": { "zh-hant": "※稱頌主，尊主在萬有之上，永世無盡。", "zh-hans": "※称颂主，尊主在万有之上，永世无尽。", "en": "※ praised and exalted above all for ever." }
+      },
+      {
+        "call": { "zh-hant": "主威嚴的聖名，是當讚美的，", "zh-hans": "主威严的圣名，是当赞美的，", "en": "Blessed art thou for the Name of thy Majesty;" },
+        "response": { "zh-hant": "※稱頌主，尊主在萬有之上，永世無盡。", "zh-hans": "※称颂主，尊主在万有之上，永世无尽。", "en": "※ praised and exalted above all for ever." }
+      },
+      {
+        "call": { "zh-hant": "在主的聖殿中，主是當讚美的，", "zh-hans": "在主的圣殿中，主是当赞美的，", "en": "Blessed art thou in the temple of thy holiness;" },
+        "response": { "zh-hant": "※稱頌主，尊主在萬有之上，永世無盡。", "zh-hans": "※称颂主，尊主在万有之上，永世无尽。", "en": "※ Praised and exalted above all for ever." }
+      },
+      {
+        "call": { "zh-hant": "鑒察深淵，居在基路伯間的主是當讚美的，", "zh-hans": "鉴察深渊，居在基路伯间的主是当赞美的，", "en": "Blessed art thou that beholdest the depths, and dwellest between the Cherubim:" },
+        "response": { "zh-hant": "※稱頌主，尊主在萬有之上，永世無盡。", "zh-hans": "※称颂主，尊主在万有之上，永世无尽。", "en": "※ praised and exalted above all for ever." }
+      },
+      {
+        "call": { "zh-hant": "坐在主國榮耀寶座上的主，是當讚美的，", "zh-hans": "坐在主国荣耀宝座上的主，是当赞美的，", "en": "Blessed art thou on the glorious throne of thy Kingdom:" },
+        "response": { "zh-hant": "※稱頌主，尊主在萬有之上，永世無盡。", "zh-hans": "※称颂主，尊主在万有之上，永世无尽。", "en": "※ praised and exalted above all for ever." }
+      },
+      {
+        "call": { "zh-hant": "主在穹蒼之上，是當讚美的，", "zh-hans": "主在穹苍之上，是当赞美的，", "en": "Blessed art thou in the firmament of heaven:" },
+        "response": { "zh-hant": "※稱頌主，尊主在萬有之上，永世無盡。", "zh-hans": "※称颂主，尊主在万有之上，永世无尽。", "en": "※ praised and exalted above all for ever." }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": "Glory be to the Father, and to the Son, and to the Holy Ghost;\n※ As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    }
+  },
+  "benedictus": {
+    "title": { "zh-hant": "以色列頌", "zh-hans": "以色列颂", "en": "" },
+    "subtitle": { "zh-hant": "路加福音 1:68-79", "zh-hans": "路加福音 1:68-79", "en": "" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "以色列的主上帝，是應當讚美的，", "zh-hans": "以色列的主上帝，是应当赞美的，", "en": "" },
+        "response": { "zh-hant": "※因為主眷顧他的百姓，救贖他們。", "zh-hans": "※因为主眷顾他的百姓，救赎他们。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "在主的仆人大衛家中，", "zh-hans": "在主的仆人大卫家中，", "en": "" },
+        "response": { "zh-hant": "※為我們特生有大能的救主。", "zh-hans": "※为我们特生有大能的救主。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "正如主托古時的聖先知所說的話。", "zh-hans": "正如主托古时的圣先知所说的话。", "en": "" },
+        "response": { "zh-hant": "※說：要救我們脫離仇敵，和一切恨我們的人的手。", "zh-hans": "※说：要救我们脱离仇敌，和一切恨我们的人的手。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "憐憫我們，就是應驗所許列祖的話，", "zh-hans": "怜悯我们，就是应验所许列祖的话，", "en": "" },
+        "response": { "zh-hant": "※記念主的聖約。", "zh-hans": "※记念主的圣约。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "就是向我們祖亞伯拉罕所發的誓。", "zh-hans": "就是向我们祖亚伯拉罕所发的誓。", "en": "" },
+        "response": { "zh-hant": "※說：要從仇敵手中，救我們出來，", "zh-hans": "※说：要从仇敌手中，救我们出来，", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "叫我們服事主，毫無懼怕。", "zh-hans": "叫我们服事主，毫无惧怕。", "en": "" },
+        "response": { "zh-hant": "※叫我們終身在主面前，聖潔公義。", "zh-hans": "※叫我们终身在主面前，圣洁公义。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "你這嬰孩，將稱為上主的先知，", "zh-hans": "你这婴孩，将称为上主的先知，", "en": "" },
+        "response": { "zh-hant": "※因為你要在主的前面走，預備主的路。", "zh-hans": "※因为你要在主的前面走，预备主的路。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "叫主的百姓，罪蒙赦免，", "zh-hans": "叫主的百姓，罪蒙赦免，", "en": "" },
+        "response": { "zh-hant": "※就曉得主拯救的恩。", "zh-hans": "※就晓得主拯救的恩。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "我上帝向我們發憐憫的心，", "zh-hans": "我上帝向我们发怜悯的心，", "en": "" },
+        "response": { "zh-hant": "※叫清晨的日光，從天上照臨我們。", "zh-hans": "※叫清晨的日光，从天上照临我们。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "用光照著住在幽暗死蔭的人，", "zh-hans": "用光照着住在幽暗死荫的人，", "en": "" },
+        "response": { "zh-hant": "※又引我們走平安的路。", "zh-hans": "※又引我们走平安的路。", "en": "" }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": ""
+    },
+    "weekdayAntiphons": {
+      "1": { "zh-hant": "主以色列的上帝※是應當稱頌的。", "zh-hans": "主以色列的上帝※是应当称颂的。", "en": "" },
+      "2": { "zh-hant": "在主僕人大衛家中※為我們興起了拯救的角。", "zh-hans": "在主仆人大卫家中※为我们兴起了拯救的角。", "en": "" },
+      "3": { "zh-hant": "主啊，求祢拯救我們※脫離仇敵和一切恨我們的人的手。", "zh-hans": "主啊，求祢拯救我们※脱离仇敌和一切恨我们的人的手。", "en": "" },
+      "4": { "zh-hant": "主叫我們從仇敵手中被救出來，※用聖潔事奉主。", "zh-hans": "主叫我们从仇敌手中被救出来，※用圣洁事奉主。", "en": "" },
+      "5": { "zh-hant": "因我們上帝憐憫的心腸，※叫清晨的日光從高天臨到我們。", "zh-hans": "因我们上帝怜悯的心肠，※叫清晨的日光从高天临到我们。", "en": "" },
+      "6": { "zh-hant": "主把我們的腳※引到平安的路上。", "zh-hans": "主把我们的脚※引到平安的路上。", "en": "" }
+    }
+  },
+  "magnificat": {
+    "title": { "zh-hant": "尊主頌", "zh-hans": "尊主颂", "en": "" },
+    "subtitle": { "zh-hant": "路加福音 1:46-55", "zh-hans": "路加福音 1:46-55", "en": "" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "我的心尊主為大，我的靈魂喜歡救我的上帝。", "zh-hans": "我的心尊主为大，我的灵魂喜欢救我的上帝。", "en": "" },
+        "response": { "zh-hant": "※因為主顧念使女卑微。", "zh-hans": "※因为主顾念使女卑微。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "從今以後，萬代要稱我是有福的。", "zh-hans": "从今以后，万代要称我是有福的。", "en": "" },
+        "response": { "zh-hant": "※因為全能的主，為我成就大事，主的名是至聖的，", "zh-hans": "※因为全能的主，为我成就大事，主的名是至圣的，", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "敬畏主的，主必憐憫，", "zh-hans": "敬畏主的，主必怜悯，", "en": "" },
+        "response": { "zh-hant": "※直到世世代代。", "zh-hans": "※直到世世代代。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "主用聖臂，顯出大力，", "zh-hans": "主用圣臂，显出大力，", "en": "" },
+        "response": { "zh-hant": "※趕散心驕氣傲的人。", "zh-hans": "※赶散心骄气傲的人。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "有權柄的人，主使他失位，", "zh-hans": "有权柄的人，主使他失位，", "en": "" },
+        "response": { "zh-hant": "※卑微的人，主使他升高，", "zh-hans": "※卑微的人，主使他升高，", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "饑餓的人，主使他美食得飽，", "zh-hans": "饥饿的人，主使他美食得饱，", "en": "" },
+        "response": { "zh-hant": "※富足的人，主使他空手回去。", "zh-hans": "※富足的人，主使他空手回去。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "主扶持他的僕人以色列，", "zh-hans": "主扶持他的仆人以色列，", "en": "" },
+        "response": { "zh-hant": "※永遠紀念憐憫亞伯拉罕，和他的子孫，正如從前對我們列祖所說的話。", "zh-hans": "※永远纪念怜悯亚伯拉罕，和他的子孙，正如从前对我们列祖所说的话。", "en": "" }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": ""
+    },
+    "weekdayAntiphons": {
+      "1": { "zh-hant": "我心※尊主為大。", "zh-hans": "我心※尊主为大。", "en": "" },
+      "2": { "zh-hant": "我靈※以上帝我的救主為樂。", "zh-hans": "我灵※以上帝我的救主为乐。", "en": "" },
+      "3": { "zh-hant": "主我的上帝※顧念使女的卑微。", "zh-hans": "主我的上帝※顾念使女的卑微。", "en": "" },
+      "4": { "zh-hant": "祂叫逼迫聖徒的權貴降卑，※叫宣信基督之謙卑人升高。", "zh-hans": "祂叫逼迫圣徒的权贵降卑，※叫宣信基督之谦卑人升高。", "en": "" },
+      "5": { "zh-hant": "上帝扶助了祂的僕人以色列，※正如從前對亞伯拉罕和他的後裔所應許的，祂永遠高舉謙卑的人。", "zh-hans": "上帝扶助了祂的仆人以色列，※正如从前对亚伯拉罕和他的后裔所应许的，祂永远高举谦卑的人。", "en": "" }
+    }
+  },
+  "nuncDimittis": {
+    "title": { "zh-hant": "西面頌", "zh-hans": "西面颂", "en": "" },
+    "subtitle": { "zh-hant": "路加福音 2:29-32", "zh-hans": "路加福音 2:29-32", "en": "" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "我主如今照著主的話，", "zh-hans": "我主如今照着主的话，", "en": "" },
+        "response": { "zh-hant": "※叫主的僕人，安然去世。", "zh-hans": "※叫主的仆人，安然去世。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "因為我的眼睛已經看見主所立的救主。", "zh-hans": "因为我的眼睛已经看见主所立的救主。", "en": "" },
+        "response": { "zh-hant": "※就是主所立在萬民面前的。", "zh-hans": "※就是主所立在万民面前的。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "是照臨外邦人的光，", "zh-hans": "是照临外邦人的光，", "en": "" },
+        "response": { "zh-hant": "※也是主的百姓以色列的榮耀。", "zh-hans": "※也是主的百姓以色列的荣耀。", "en": "" }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": ""
+    }
+  },
+  "deusMisereatur": {
+    "title": { "zh-hant": "憐憫頌", "zh-hans": "怜悯颂", "en": "" },
+    "subtitle": { "zh-hant": "詩篇 67篇", "zh-hans": "诗篇 67篇", "en": "" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "願上帝憐憫我們，賜福與我們，", "zh-hans": "愿上帝怜悯我们，赐福与我们，", "en": "" },
+        "response": { "zh-hant": "※用面上的光輝，照臨我們。", "zh-hans": "※用面上的光辉，照临我们。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "願世人都曉得祢的道路，", "zh-hans": "愿世人都晓得祢的道路，", "en": "" },
+        "response": { "zh-hant": "※願列國都曉得祢的救恩。", "zh-hans": "※愿列国都晓得祢的救恩。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "上帝阿，眾百姓應該讚美祢，", "zh-hans": "上帝阿，众百姓应该赞美祢，", "en": "" },
+        "response": { "zh-hant": "※萬民都應該頌揚祢。", "zh-hans": "※万民都应该颂扬祢。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "各國都應該歡喜歌頌，", "zh-hans": "各国都应该欢喜歌颂，", "en": "" },
+        "response": { "zh-hant": "※因為祢要按公義審判百姓，治理世上的萬民。", "zh-hans": "※因为祢要按公义审判百姓，治理世上的万民。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "上帝阿，眾民應該讚美祢，", "zh-hans": "上帝阿，众民应该赞美祢，", "en": "" },
+        "response": { "zh-hant": "※萬民都應該讚美祢。", "zh-hans": "※万民都应该赞美祢。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "地上的出產豐盛，", "zh-hans": "地上的出产丰盛，", "en": "" },
+        "response": { "zh-hant": "※上帝，我們的上帝，賜福與我們。", "zh-hans": "※上帝，我们的上帝，赐福与我们。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "上帝賜福與我們，", "zh-hans": "上帝赐福与我们，", "en": "" },
+        "response": { "zh-hant": "※地的四極，都敬畏祂。", "zh-hans": "※地的四极，都敬畏祂。", "en": "" }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": ""
+    }
+  },
+  "benedicAnimaMea": {
+    "title": { "zh-hant": "心靈頌", "zh-hans": "心灵颂", "en": "" },
+    "subtitle": { "zh-hant": "詩篇 103篇", "zh-hans": "诗篇 103篇", "en": "" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "我的心靈，當讚美主，", "zh-hans": "我的心灵，当赞美主，", "en": "" },
+        "response": { "zh-hant": "※我的臟腑，當讚美祂的聖名。", "zh-hans": "※我的脏腑，当赞美祂的圣名。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "我的心靈，當頌美主，", "zh-hans": "我的心灵，当颂美主，", "en": "" },
+        "response": { "zh-hant": "※莫忘祂的一切恩惠。", "zh-hans": "※莫忘祂的一切恩惠。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "祂赦免你一切罪愆，", "zh-hans": "祂赦免你一切罪愆，", "en": "" },
+        "response": { "zh-hant": "※醫治你一切疾病。", "zh-hans": "※医治你一切疾病。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "救贖你的性命，免掉在坑裏，", "zh-hans": "救赎你的性命，免掉在坑里，", "en": "" },
+        "response": { "zh-hant": "※用恩寵慈悲像冠冕，戴在你的頭上。", "zh-hans": "※用恩宠慈悲像冠冕，戴在你的头上。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "有大力，遵祂命令，聽祂吩咐的天使，", "zh-hans": "有大力，遵祂命令，听祂吩咐的天使，", "en": "" },
+        "response": { "zh-hant": "※都當讚美主。", "zh-hans": "※都当赞美主。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "事奉祂，遵行祂旨意的諸天軍，", "zh-hans": "事奉祂，遵行祂旨意的诸天军，", "en": "" },
+        "response": { "zh-hant": "※都當讚美主。", "zh-hans": "※都当赞美主。", "en": "" }
+      },
+      {
+        "call": { "zh-hant": "祂造的萬物，在祂所管理的各處，都當讚美主，", "zh-hans": "祂造的万物，在祂所管理的各处，都当赞美主，", "en": "" },
+        "response": { "zh-hant": "※我的心靈，當讚美主。", "zh-hans": "※我的心灵，当赞美主。", "en": "" }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": ""
+    }
+  },
+"cantemusDomino": {
+    "title": { "zh-hant": "摩西頌", "zh-hans": "摩西颂", "en": "Cantemus Domino" },
+    "subtitle": { "zh-hant": "出埃及記 15:1-6, 11-13, 17-18", "zh-hans": "出埃及记 15:1-6, 11-13, 17-18", "en": "Exodus 15:1-6, 11-13, 17-18" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "我要向主歌唱，因祂大大戰勝；", "zh-hans": "我要向主歌唱，因祂大大战胜；", "en": "I WILL sing unto the Lord, for he hath triumphed gloriously;" },
+        "response": { "zh-hant": "※將馬和騎馬的投在海中。", "zh-hans": "※将马和骑马的投在海中。", "en": "※ the horse and his rider hath he thrown into the sea." }
+      },
+      {
+        "call": { "zh-hant": "主是我的力量，我的避護所；", "zh-hans": "主是我的力量，我的避护所；", "en": "The Lord is my strength and song," },
+        "response": { "zh-hant": "※也成了我的拯救。", "zh-hans": "※也成了我的拯救。", "en": "※ and he is become my salvation:" }
+      },
+      {
+        "call": { "zh-hant": "這是我的上帝，我要讚美祂，", "zh-hans": "这是我的上帝，我要赞美祂，", "en": "He is my God, and I will prepare him an habitation;" },
+        "response": { "zh-hant": "※是我父親的上帝，我要尊崇祂。", "zh-hans": "※是我父亲的上帝，我要尊崇祂。", "en": "※ my father's God, and I will exalt him." }
+      },
+      {
+        "call": { "zh-hant": "主是大力的戰士；", "zh-hans": "主是大力的战士；", "en": "The Lord is a man of war:" },
+        "response": { "zh-hant": "※祂的名是耶和華。", "zh-hans": "※祂的名是耶和华。", "en": "※ the Lord is his name." }
+      },
+      {
+        "call": { "zh-hant": "法老的車輛、軍兵，主已拋在海中；", "zh-hans": "法老的车辆、军兵，主已抛在海中；", "en": "Pharaoh's chariots and his host hath he cast into the sea:" },
+        "response": { "zh-hant": "※他特選的軍長，都沉於紅海。", "zh-hans": "※他特选的军长，都沉于红海。", "en": "※ his chosen captains also are drowned in the Red sea." }
+      },
+      {
+        "call": { "zh-hant": "深水淹沒他們；", "zh-hans": "深水淹没他们；", "en": "The depths have covered them:" },
+        "response": { "zh-hant": "※他們如同石頭墜到深處。", "zh-hans": "※他们如同石头坠到深处。", "en": "※ they sank into the bottom as a stone." }
+      },
+      {
+        "call": { "zh-hant": "主阿，祢的右手施展能力，顯出榮耀；", "zh-hans": "主阿，祢的右手施展能力，显出荣耀；", "en": "Thy right hand, O Lord, is become glorious in power:" },
+        "response": { "zh-hant": "※主阿，祢的右手摔碎仇敵。", "zh-hans": "※主阿，祢的右手摔碎仇敌。", "en": "※ thy right hand, O Lord, hath dashed in pieces the enemy." }
+      },
+      {
+        "call": { "zh-hant": "主阿，眾神之中誰能像祢？", "zh-hans": "主阿，众神之中谁能像祢？", "en": "Who is like unto thee, O Lord, among the gods?" },
+        "response": { "zh-hant": "※誰能像祢，至聖至榮，可頌可畏，施行奇事？", "zh-hans": "※谁能像祢，至圣至荣，可颂可畏，施行奇事？", "en": "※ who is like thee, glorious in holiness, fearful in praises, doing wonders?" }
+      },
+      {
+        "call": { "zh-hant": "祢伸出右手；", "zh-hans": "祢伸出右手；", "en": "Thou stretchedst out thy right hand," },
+        "response": { "zh-hant": "※地便吞滅他們。", "zh-hans": "※地便吞灭他们。", "en": "※ the earth swallowed them." }
+      },
+      {
+        "call": { "zh-hant": "祢憑慈愛，領了祢所贖的百姓；", "zh-hans": "祢凭慈爱，领了祢所赎的百姓；", "en": "Thou in thy mercy hast led forth the people which thou hast redeemed:" },
+        "response": { "zh-hant": "※祢憑能力，引他們到了祢的聖所。", "zh-hans": "※祢凭能力，引他们到了祢的圣所。", "en": "※ thou hast guided them in thy strength unto thy holy habitation." }
+      },
+      {
+        "call": { "zh-hant": "祢要將他們領進去，", "zh-hans": "祢要将他们领进去，", "en": "Thou shalt bring them in, and plant them" },
+        "response": { "zh-hant": "※栽於祢產業的山上，", "zh-hans": "※栽于祢产业的山上，", "en": "※ in the mountain of thine inheritance," }
+      },
+      {
+        "call": { "zh-hant": "主阿，就是祢為自己所造的住處，", "zh-hans": "主阿，就是祢为自己所造的住处，", "en": "In the place, O Lord, which thou hast made for thee to dwell in;" },
+        "response": { "zh-hant": "※主阿，就是祢手所建立的聖所。", "zh-hans": "※主阿，就是祢手所建立的圣所。", "en": "※ in the Sanctuary, O Lord, which thy hands have established." }
+      },
+      {
+        "call": { "zh-hant": "主必作王，", "zh-hans": "主必作王，", "en": "The Lord shall reign" },
+        "response": { "zh-hant": "※直到永永遠遠！", "zh-hans": "※直到永永远远！", "en": "※ for ever and ever." }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": "Glory be to the Father, and to the Son, and to the Holy Ghost;\n※ As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    }
+  },
+    "jubilateDeo": {
+    "title": { "zh-hant": "歡呼頌", "zh-hans": "欢呼颂", "en": "Jubilate Deo" },
+    "subtitle": { "zh-hant": "詩篇 100篇", "zh-hans": "诗篇 100篇", "en": "Psalm 100" },
+    "rubric": { "zh-hant": "¶ 在平日，也可改唸歡呼頌。", "zh-hans": "¶ 在平日，也可改念欢呼颂。", "en": "¶ Or this Psalm." },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "普天下人，都當向主歡呼，", "zh-hans": "普天下人，都当向主欢呼，", "en": "O BE joyful in the Lord, all ye lands:" },
+        "response": { "zh-hant": "※欣然事奉主，到主面前，歡樂唱詩。", "zh-hans": "※欣然事奉主，到主面前，欢乐唱诗。", "en": "※ serve the Lord with gladness, and come before his presence with a song." }
+      },
+      {
+        "call": { "zh-hant": "應當知道惟獨主是上帝，", "zh-hans": "应当知道惟独主是上帝，", "en": "Be ye sure that the Lord he is God;" },
+        "response": { "zh-hant": "※創造我們的就是祂，我們並不是自造的，是祂的子民，是祂所牧的羊。", "zh-hans": "※创造我们的就是祂，我们并不是自造的，是祂的子民，是祂所牧的羊。", "en": "※ it is he that hath made us, and not we ourselves; we are his people, and the sheep of his pasture." }
+      },
+      {
+        "call": { "zh-hant": "應當進祂的門稱謝，進祂的院讚美，", "zh-hans": "应当进祂的门称谢，进祂的院赞美，", "en": "O go your way into his gates with thanksgiving, and into his courts with praise;" },
+        "response": { "zh-hant": "※稱謝祂，頌美祂的聖名。", "zh-hans": "※称谢祂，颂美祂的圣名。", "en": "※ be thankful unto him, and speak good of his Name." }
+      },
+      {
+        "call": { "zh-hant": "主為至善，祂的恩典，永遠長存，", "zh-hans": "主为至善，祂的恩典，永远长存，", "en": "For the Lord is gracious, his mercy is everlasting;" },
+        "response": { "zh-hant": "※祂的信實，萬代常有。", "zh-hans": "※祂的信实，万代常有。", "en": "※ and his truth endureth from generation to generation." }
+      }
+    ],
+    "doxology": {
+      "zh-hant": "但願榮耀歸於聖父、聖子、聖靈；\n※起初怎樣，現在以及永遠，也是怎樣，世世無盡。阿們。",
+      "zh-hans": "但愿荣耀归于圣父、圣子、圣灵；\n※起初怎样，现在以及永远，也是怎样，世世无尽。阿们。",
+      "en": "Glory be to the Father, and to the Son, and to the Holy Ghost;\n※ As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    }
+  },
+  "teLaudamus": {
+    "title": { "zh-hant": "安波羅修頌", "zh-hans": "安波罗修颂", "en": "Te Laudamus" },
+    "subtitle": { "zh-hant": "", "zh-hans": "", "en": "" },
+    "style": "responsive",
+    "verses": [
+      {
+        "call": { "zh-hant": "我們讚美全能的主，", "zh-hans": "我们赞美全能的主，", "en": "WE give praise to thee, O Lord Almighty," },
+        "response": { "zh-hant": "※居住在基路伯與撒拉弗之上；", "zh-hans": "※居住在基路伯与撒拉弗之上；", "en": "※who dwellest above Cherubim and Seraphim;" }
+      },
+      {
+        "call": { "zh-hant": "諸使徒眾先知讚美主，", "zh-hans": "诸使徒众先知赞美主，", "en": "The Apostles and Prophets praise thee," },
+        "response": { "zh-hant": "※天使與總領天使頌美主；", "zh-hans": "※天使与总领天使颂美主；", "en": "※whom the Angels and Archangels bless." }
+      },
+      {
+        "call": { "zh-hant": "主阿，我們在祈禱中讚美主，", "zh-hans": "主阿，我们在祈祷中赞美主，", "en": "We praise thee, O Lord, in our prayer," },
+        "response": { "zh-hant": "※主降世為要從罪惡中釋放我們；", "zh-hans": "※主降世为要从罪恶中释放我们；", "en": "※thou who didst come to loose us from sin;" }
+      },
+      {
+        "call": { "zh-hant": "聖父所差遣的偉大的救贖主，", "zh-hans": "圣父所差遣的伟大的救赎主，", "en": "O great Redeemer, whom the Father hath sent:" },
+        "response": { "zh-hant": "※是群羊的牧者，求主拯救我們。", "zh-hans": "※是群羊的牧者，求主拯救我们。", "en": "※free us, we beseech thee, Shepherd of thy flock." }
+      },
+      {
+        "call": { "zh-hant": "主是基督，我們的救贖主，", "zh-hans": "主是基督，我们的救赎主，", "en": "Thou art the Christ, our Lord and Saviour," },
+        "response": { "zh-hant": "※由童貞女馬利亞所生；", "zh-hans": "※由童贞女马利亚所生；", "en": "※who wast born of Mary the Virgin;" }
+      },
+      {
+        "call": { "zh-hant": "耶穌，天上萬軍尊崇的主，", "zh-hans": "耶稣，天上万军尊崇的主，", "en": "O Jesu, whom the hosts of heaven magnify," },
+        "response": { "zh-hant": "※聖父的聖子，審判萬民的，我們讚美主。", "zh-hans": "※圣父的圣子，审判万民的，我们赞美主。", "en": "※Son of the Father, Judge of all men, we praise thee." }
+      }
+    ],
+    "doxology": null
+  }
+}

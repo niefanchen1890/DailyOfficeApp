@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "7:1-29"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "7:1-17"
+        }
+    }
+}

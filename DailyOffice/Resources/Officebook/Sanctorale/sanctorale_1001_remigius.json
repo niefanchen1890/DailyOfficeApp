@@ -1,0 +1,130 @@
+{
+  "identifier": "sanctorale_1001_remigius",
+  "name": {
+    "zh-hant": "聖雷米吉烏斯主教",
+    "zh-hans": "圣雷米吉乌斯主教",
+    "en": "Saint Remigius, Bishop"
+  },
+  "type": "sanctorale",
+  "rank": "simple",
+  "rank_display": {
+    "zh-hant": "（簡式）",
+    "zh-hans": "（简式）",
+    "en": "Simple"
+  },
+  "common_office": "common_confessor_bishop_outside_easter",
+  "vigil": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "聖雷米吉烏斯主教",
+          "zh-hans": "圣雷米吉乌斯主教",
+          "en": "Saint Remigius, Bishop"
+        },
+        "text": {
+          "zh-hant": "無所不能的上帝，我們虔誠地守主的精修者聖雷米吉烏斯主教的這一慶節，求主賜予我們屬靈益處，在一切虔誠的事務上取得進步，獲得永恆的救恩。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "无所不能的上帝，我们虔诚地守主的精修者圣雷米吉乌斯主教的这一庆节，求主赐予我们属灵益处，在一切虔诚的事务上取得进步，获得永恒的救恩。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "聖雷米吉烏斯主教",
+          "zh-hans": "圣雷米吉乌斯主教",
+          "en": "Saint Remigius, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主揀選僕人聖雷米吉烏斯及其同伴，作救恩的先驅，向法蘭克王及其全族傳揚福音：求主迅速施展全能的眷祐，使未蒙真道之地的君王與首領，將其榮耀與尊貴帶入其中，在主完備教會的聖城內，承受為他們預定的席位；這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主拣选仆人圣雷米吉乌斯及其同伴，作救恩的先驱，向法兰克王及其全族传扬福音：求主迅速施展全能的眷祐，使未蒙真道之地的君王与首领，将其荣耀与尊贵带入其中，在主完备教会的圣城内，承受为他们预定的席位；这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": "O GOD, who chosest thy servant Remigius with his Companions to be the harbingers of salvation to the King and whole nation of the Franks: hasten, we pray thee, the almighty working of thy providence, whereby the kings and chiefs of untaught lands bring in their glory and honour, to take their destined place within the Holy City of thy perfected Church. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "morning": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "聖雷米吉烏斯主教",
+          "zh-hans": "圣雷米吉乌斯主教",
+          "en": "Saint Remigius, Bishop"
+        },
+        "text": {
+          "zh-hant": "無所不能的上帝，我們虔誠地守主的精修者聖雷米吉烏斯主教的這一慶節，求主賜予我們屬靈益處，在一切虔誠的事務上取得進步，獲得永恆的救恩。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "无所不能的上帝，我们虔诚地守主的精修者圣雷米吉乌斯主教的这一庆节，求主赐予我们属灵益处，在一切虔诚的事务上取得进步，获得永恒的救恩。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "聖雷米吉烏斯主教",
+          "zh-hans": "圣雷米吉乌斯主教",
+          "en": "Saint Remigius, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主揀選僕人聖雷米吉烏斯及其同伴，作救恩的先驅，向法蘭克王及其全族傳揚福音：求主迅速施展全能的眷祐，使未蒙真道之地的君王與首領，將其榮耀與尊貴帶入其中，在主完備教會的聖城內，承受為他們預定的席位；這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主拣选仆人圣雷米吉乌斯及其同伴，作救恩的先驱，向法兰克王及其全族传扬福音：求主迅速施展全能的眷祐，使未蒙真道之地的君王与首领，将其荣耀与尊贵带入其中，在主完备教会的圣城内，承受为他们预定的席位；这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": "O GOD, who chosest thy servant Remigius with his Companions to be the harbingers of salvation to the King and whole nation of the Franks: hasten, we pray thee, the almighty working of thy providence, whereby the kings and chiefs of untaught lands bring in their glory and honour, to take their destined place within the Holy City of thy perfected Church. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  },
+  "evening": {
+    "collect": [
+      {
+        "option_label": {
+          "zh-hant": "默認祝文",
+          "zh-hans": "默认祝文",
+          "en": "Default collect"
+        },
+        "title": {
+          "zh-hant": "聖雷米吉烏斯主教",
+          "zh-hans": "圣雷米吉乌斯主教",
+          "en": "Saint Remigius, Bishop"
+        },
+        "text": {
+          "zh-hant": "無所不能的上帝，我們虔誠地守主的精修者聖雷米吉烏斯主教的這一慶節，求主賜予我們屬靈益處，在一切虔誠的事務上取得進步，獲得永恆的救恩。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "无所不能的上帝，我们虔诚地守主的精修者圣雷米吉乌斯主教的这一庆节，求主赐予我们属灵益处，在一切虔诚的事务上取得进步，获得永恒的救恩。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative collect"
+        },
+        "title": {
+          "zh-hant": "聖雷米吉烏斯主教",
+          "zh-hans": "圣雷米吉乌斯主教",
+          "en": "Saint Remigius, Bishop"
+        },
+        "text": {
+          "zh-hant": "上帝啊，主揀選僕人聖雷米吉烏斯及其同伴，作救恩的先驅，向法蘭克王及其全族傳揚福音：求主迅速施展全能的眷祐，使未蒙真道之地的君王與首領，將其榮耀與尊貴帶入其中，在主完備教會的聖城內，承受為他們預定的席位；這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "上帝啊，主拣选仆人圣雷米吉乌斯及其同伴，作救恩的先驱，向法兰克王及其全族传扬福音：求主迅速施展全能的眷祐，使未蒙真道之地的君王与首领，将其荣耀与尊贵带入其中，在主完备教会的圣城内，承受为他们预定的席位；这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": "O GOD, who chosest thy servant Remigius with his Companions to be the harbingers of salvation to the King and whole nation of the Franks: hasten, we pray thee, the almighty working of thy providence, whereby the kings and chiefs of untaught lands bring in their glory and honour, to take their destined place within the Holy City of thy perfected Church. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+        }
+      }
+    ]
+  }
+}

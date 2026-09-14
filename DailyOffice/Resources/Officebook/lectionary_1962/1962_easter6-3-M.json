@@ -1,0 +1,15 @@
+{
+    "id": "easter6-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:22-40"
+        },
+        "ot": {
+            "book": "約珥書",
+            "chapter": "2:21-27"
+        }
+    }
+}

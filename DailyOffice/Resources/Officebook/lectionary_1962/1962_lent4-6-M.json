@@ -1,0 +1,15 @@
+{
+    "id": "lent4-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "10:1-21"
+        },
+        "ot": {
+            "book": "利未记",
+            "chapter": "19:1-37"
+        }
+    }
+}

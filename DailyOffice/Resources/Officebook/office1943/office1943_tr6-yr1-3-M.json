@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr6-yr1-3-M",
+  "label": "禮拜三",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "56" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "2:18-26"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "12:13-21"
+    }
+  }
+}

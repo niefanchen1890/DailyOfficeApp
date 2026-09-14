@@ -1,0 +1,15 @@
+{
+    "id": "lent5-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "13:1-14"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "10:15-11:4"
+        }
+    }
+}

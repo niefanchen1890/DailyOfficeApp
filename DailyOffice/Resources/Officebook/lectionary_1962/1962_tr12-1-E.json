@@ -1,0 +1,15 @@
+{
+    "id": "tr12-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "23:26-49"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "5"
+        }
+    }
+}

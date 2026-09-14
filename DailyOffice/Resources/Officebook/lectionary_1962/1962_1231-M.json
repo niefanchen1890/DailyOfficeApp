@@ -1,0 +1,15 @@
+{
+    "id": "1231-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:41-58"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "4:1-17"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "easter4-0-yr1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "21:15-25"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "33:7-23"
+        }
+    }
+}

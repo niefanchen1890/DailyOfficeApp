@@ -1,0 +1,15 @@
+{
+    "id": "ad3-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "25:1-30"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "25:1-9"
+        }
+    }
+}

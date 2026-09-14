@@ -1,0 +1,15 @@
+{
+    "id": "lent6-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "22:1-6"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "37:3-28"
+        }
+    }
+}

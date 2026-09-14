@@ -1,0 +1,86 @@
+{
+  "identifier": "sts_simeon_anna",
+  "name": {
+    "en": "Saints Simeon and Anna",
+    "zh-hans": "圣西面与圣亚拿",
+    "zh-hant": "聖西面與聖亞拿"
+  },
+  "rank": "commemoration",
+  "rank_display": {
+    "en": "Commemoration",
+    "zh-hans": "（纪念）",
+    "zh-hant": "（紀念）"
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Simeon was just and devout, waiting for the consolation of Israel; and the Holy Ghost was upon him.",
+        "zh-hans": "西面又公义又虔诚，素常盼望以色列的安慰者来到，又有圣灵在他身上。",
+        "zh-hant": "西面又公義又虔誠，素常盼望以色列的安慰者來到，又有聖靈在他身上。"
+      }
+    },
+    "collect": {
+      "text": {
+        "en": "O GOD, who by the light of thy Spirit didst reveal to just Simeon the Light of the world, and to holy Anna him that should redeem Israel: grant, we beseech thee, that we likewise devoutly serving thee with fastings and prayers, may also obtain in joy and gladness the rewards of the righteous. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the same Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝借着圣灵的光，将世界之光启示给公义的西面，并将那要救赎以色列的主启示给圣亚拿：我们恳求主，使我们同样以禁食与祈祷虔诚地事奉主，并在欢喜快乐中获得义人的赏赐。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝藉著聖靈的光，將世界之光啟示給公義的西面，並將那要救贖以色列的主啟示給聖亞拿：我們懇求主，使我們同樣以禁食與祈禱虔誠地事奉主，並在歡喜快樂中獲得義人的賞賜。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "Saints Simeon and Anna",
+        "zh-hans": "圣西面与圣亚拿",
+        "zh-hant": "聖西面與聖亞拿"
+      }
+    },
+    "office_hymn": {
+      "versicle": {
+        "leader": {
+          "en": "The righteous shall live for ever and ever.",
+          "zh-hans": "义人要活到永远。",
+          "zh-hant": "義人要活到永遠。"
+        },
+        "people": {
+          "en": "Their reward also is with the Lord.",
+          "zh-hans": "他们的赏赐在主那里。",
+          "zh-hant": "他們的賞賜在主那裏。"
+        }
+      }
+    }
+  },
+  "morning": {
+    "benedictus_antiphon": {
+      "normal": {
+        "en": "Simeon was just and devout, waiting for the consolation of Israel; and the Holy Ghost was upon him.",
+        "zh-hans": "西面又公义又虔诚，素常盼望以色列的安慰者来到，又有圣灵在他身上。",
+        "zh-hant": "西面又公義又虔誠，素常盼望以色列的安慰者來到，又有聖靈在他身上。"
+      }
+    },
+    "collect": {
+      "text": {
+        "en": "O GOD, who by the light of thy Spirit didst reveal to just Simeon the Light of the world, and to holy Anna him that should redeem Israel: grant, we beseech thee, that we likewise devoutly serving thee with fastings and prayers, may also obtain in joy and gladness the rewards of the righteous. Through the same Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the same Holy Ghost, ever one God, world without end. Amen.",
+        "zh-hans": "上帝借着圣灵的光，将世界之光启示给公义的西面，并将那要救赎以色列的主启示给圣亚拿：我们恳求主，使我们同样以禁食与祈祷虔诚地事奉主，并在欢喜快乐中获得义人的赏赐。这都是靠着主的圣子，我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "zh-hant": "上帝藉著聖靈的光，將世界之光啟示給公義的西面，並將那要救贖以色列的主啟示給聖亞拿：我們懇求主，使我們同樣以禁食與祈禱虔誠地事奉主，並在歡喜快樂中獲得義人的賞賜。這都是靠著主的聖子，我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。"
+      },
+      "title": {
+        "en": "Saints Simeon and Anna",
+        "zh-hans": "圣西面与圣亚拿",
+        "zh-hant": "聖西面與聖亞拿"
+      }
+    },
+    "office_hymn": {
+      "versicle": {
+        "leader": {
+          "en": "The righteous shall live for ever and ever.",
+          "zh-hans": "义人要活到永远。",
+          "zh-hant": "義人要活到永遠。"
+        },
+        "people": {
+          "en": "Their reward also is with the Lord.",
+          "zh-hans": "他们的赏赐在主那里。",
+          "zh-hant": "他們的賞賜在主那裏。"
+        }
+      }
+    }
+  },
+  "evening": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "office1943_tr1-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "items": [
+      { "number": "89", "verses": "1-19" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以賽亞書",
+      "chapter": "5:8-12、5:18-24"
+    },
+    "nt": {
+      "book": "雅各書",
+      "chapter": "5:1-20"
+    }
+  }
+}

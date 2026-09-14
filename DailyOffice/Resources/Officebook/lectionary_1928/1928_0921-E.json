@@ -1,0 +1,15 @@
+{
+    "id": "0921-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "10:1-15"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "52:1-10"
+        }
+    }
+}

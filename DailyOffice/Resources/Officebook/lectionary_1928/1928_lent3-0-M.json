@@ -1,0 +1,15 @@
+{
+    "id": "lent3-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "18:21-35"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "50:7-21"
+        }
+    }
+}

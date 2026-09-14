@@ -1,0 +1,15 @@
+{
+    "id": "0501-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "1:43-51"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "43:1-12"
+        }
+    }
+}

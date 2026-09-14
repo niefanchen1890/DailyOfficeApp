@@ -1,0 +1,15 @@
+{
+    "id": "epiphany4-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "3:1-21"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "48:12-22"
+        }
+    }
+}

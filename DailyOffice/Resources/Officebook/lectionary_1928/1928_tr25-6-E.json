@@ -1,0 +1,15 @@
+{
+    "id": "tr25-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "13:1-"
+        },
+        "ot": {
+            "book": "傳道書",
+            "chapter": "3:1-22"
+        }
+    }
+}

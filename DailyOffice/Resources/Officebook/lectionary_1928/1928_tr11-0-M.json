@@ -1,0 +1,15 @@
+{
+    "id": "tr11-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "4:35-5:20"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "16"
+        }
+    }
+}

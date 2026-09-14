@@ -1,0 +1,15 @@
+{
+    "id": "lent3-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "3:1-21"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "13:1-16"
+        }
+    }
+}

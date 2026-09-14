@@ -1,0 +1,15 @@
+{
+    "id": "tr19-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太前書",
+            "chapter": "1:1-20"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "8:1-22"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1221-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "14:1-7"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "42:1-6"
+        }
+    }
+}

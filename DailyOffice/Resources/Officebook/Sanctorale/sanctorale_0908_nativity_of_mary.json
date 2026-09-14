@@ -1,0 +1,586 @@
+{
+  "identifier": "nativity_of_mary",
+  "traits": {
+    "themes": [
+      "blessedVirginMary"
+    ]
+  },
+  "name": {
+    "zh-hant": "榮福童貞女馬利亞誕辰日",
+    "zh-hans": "荣福童贞女马利亚诞辰日",
+    "en": ""
+  },
+  "rank": "doubleSecondClass",
+  "rank_display": {
+    "zh-hant": "（二等複式）",
+    "zh-hans": "（二等复式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "你使耶路撒冷高升，使以色列大得尊榮，使我們民族大受稱讚。願無所不能的主降福與你，直到永遠！",
+          "zh-hans": "你使耶路撒冷高升，使以色列大得尊荣，使我们民族大受称赞。愿无所不能的主降福与你，直到永远！",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（猶滴傳 15:9）",
+          "zh-hans": "（犹滴传 15:9）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "zh-hant": "今天是榮福童貞女馬利亞的誕辰：她是亞伯拉罕的後裔，※生於猶大支派，出自大衛顯赫的王室。",
+        "zh-hans": "今天是荣福童贞女马利亚的诞辰：她是亚伯拉罕的后裔，※生于犹大支派，出自大卫显赫的王室。",
+        "en": "The Nativity of the glorious Virgin Mary, ※ of the seed of Abraham, sprung from the tribe of Judah, of the noble stem of David."
+      },
+      "antiphons": [
+        {
+          "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。",
+          "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+          "en": ""
+        },
+        {
+          "zh-hant": "基督所出身的世系，何其有福！※懷抱上天君王的童貞女，何其榮耀！",
+          "zh-hans": "基督所出身的世系，何其有福！※怀抱上天君王的童贞女，何其荣耀！",
+          "en": ""
+        },
+        {
+          "zh-hant": "神聖的童貞女馬利亞，求你仁慈地以你的代禱，保護全世界，※因為你所懷抱的是統治宇宙者。",
+          "zh-hans": "神圣的童贞女马利亚，求你仁慈地以你的代祷，保护全世界，※因为你所怀抱的是统治宇宙者。",
+          "en": ""
+        },
+        {
+          "zh-hant": "馬利亞，我們投奔你最安穩的庇護，信者常藉此獲得勇力；※終身童貞榮福馬利亞，我們尊崇你。",
+          "zh-hans": "马利亚，我们投奔你最安稳的庇护，信者常藉此获得勇力；※终身童贞荣福马利亚，我们尊崇你。",
+          "en": ""
+        },
+        {
+          "zh-hant": "應永受贊頌的上帝之母，終身童貞馬利亞，神性的殿宇，聖靈的淨配；※唯有你超越眾人之上，蒙喔主耶穌基督的悅納。",
+          "zh-hans": "应永受赞颂的上帝之母，终身童贞马利亚，神性的殿宇，圣灵的净配；※唯有你超越众人之上，蒙喔主耶稣基督的悦纳。",
+          "en": ""
+        }
+      ]
+    },
+    "psalms": {
+      "special": {
+        "items": [
+          { "number": "113" },
+          { "number": "122" },
+          { "number": "126" }
+        ]
+      }
+    },
+    "lessons": {
+        "special": {
+            "ot": { "book": "雅歌", "chapter": "1:1-8" },
+            "nt": { "book": "路加福音", "chapter": "1:26-38" }
+        }
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Hail, thou Root of Jesse",
+        "zh-hans": "Hail, thou Root of Jesse",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、萬福耶西之本，童貞至潔美；\n上帝聖子降生，孕育主聖言。",
+          "zh-hans": "一、万福耶西之本，童贞至洁美；\n上帝圣子降生，孕育主圣言。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、你為神聖山嶽，巍然不動石，\n奇妙自你而出，覆蓋普世界。",
+          "zh-hans": "二、你为神圣山岳，巍然不动石，\n奇妙自你而出，覆盖普世界。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、基甸求證羊毛，亞倫發芽杖，\n焚而不燬荊棘，奧妙皆預表。",
+          "zh-hans": "三、基甸求证羊毛，亚伦发芽杖，\n焚而不毁荆棘，奥妙皆预表。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、婦女中最蒙福，同享天上福，\n懇向所生聖子，造物主代求。",
+          "zh-hans": "四、妇女中最蒙福，同享天上福，\n恳向所生圣子，造物主代求。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、你的神聖後裔，踐踏眾仇敵，\n摧毀死亡地獄，賜永恆生命。",
+          "zh-hans": "五、你的神圣后裔，践踏众仇敌，\n摧毁死亡地狱，赐永恒生命。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、求主賜我純潔，侍立於主前，\n同享主之榮耀，敬拜至永遠。",
+          "zh-hans": "六、求主赐我纯洁，侍立于主前，\n同享主之荣耀，敬拜至永远。",
+          "en": ""
+        },
+        {
+          "zh-hant": "七、聖父聖子聖靈，敬拜與頌揚，\n謙卑承認宣信，唯一真上帝。阿們。",
+          "zh-hans": "七、圣父圣子圣灵，敬拜与颂扬，\n谦卑承认宣信，唯一真上帝。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "上帝聖母，終身童貞馬利亞。",
+          "zh-hans": "上帝圣母，终身童贞马利亚。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "為我們祈求主，我們的上帝。",
+          "zh-hans": "为我们祈求主，我们的上帝。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "身為上帝之母的童貞女，※你的誕辰給普世帶來了喜訊，因為由你生出了公義的日頭——我們的上帝、基督；祂為我們除去了咒詛，帶來了祝福，戰勝了死亡，賜下了永生。",
+        "zh-hans": "身为上帝之母的童贞女，※你的诞辰给普世带来了喜讯，因为由你生出了公义的日头——我们的上帝、基督；祂为我们除去了咒诅，带来了祝福，战胜了死亡，赐下了永生。",
+        "en": ""
+      }
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "zh-hant": "在此上帝聖母馬利亞的慶節，※我們當全心全靈，讚頌基督的榮耀。",
+        "zh-hans": "在此上帝圣母马利亚的庆节，※我们当全心全灵，赞颂基督的荣耀。",
+        "en": ""
+      }
+    },
+    "collect": [
+      {
+      "option_label": {
+        "zh-hant": "默認祝文",
+        "zh-hans": "默认祝文",
+        "en": "Default Collect"
+      },
+      "title": {
+        "zh-hant": "榮福童貞女馬利亞誕辰日",
+        "zh-hans": "荣福童贞女马利亚诞辰日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "我們懇求主，在我們的心裡傾注豐盛的天上恩典；就如同榮福童貞馬利亞是我們、主的僕人得救恩的開始，我們虔誠地守她誕辰的慶節，但願這能增加我們的平安。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "我们恳求主，在我们的心里倾注丰盛的天上恩典；就如同荣福童贞马利亚是我们、主的仆人得救恩的开始，我们虔诚地守她诞辰的庆节，但愿这能增加我们的平安。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative Collect"
+        },
+        "title": {
+          "zh-hant": "榮福童貞女馬利亞誕辰日",
+          "zh-hans": "荣福童贞女马利亚诞辰日",
+          "en": ""
+        },
+        "text": {
+          "zh-hant": "慈悲的上帝啊，求主垂聽僕人們的祈求；使我們今日聚集慶祝上帝之母、童貞女的誕辰，能藉著她的代禱，蒙主拯救，脫離一切臨到我們的危險與患難。這都是靠著主的聖子、我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "慈悲的上帝啊，求主垂听仆人们的祈求；使我们今日聚集庆祝上帝之母、童贞女的诞辰，能藉着她的代祷，蒙主拯救，脱离一切临到我们的危险与患难。这都是靠着主的圣子、我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "我於聖幕中，在他之前事奉；我也如此堅立於錫安山。同樣，他使我在所愛的城安歇，使我在耶路撒冷有權勢。 我在尊貴的民中，就是在主的產業中扎根。",
+          "zh-hans": "我于圣幕中，在他之前事奉；我也如此坚立于锡安山。同样，他使我在所爱的城安歇，使我在耶路撒冷有权势。 我在尊贵的民中，就是在主的产业中扎根。",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（便西拉智訓 24:10-12）",
+          "zh-hans": "（便西拉智训 24:10-12）",
+          "en": ""
+        }
+      }
+    ],
+    "invitatory": {
+      "text": {
+        "zh-hant": "我們當心口合一，欽崇我主基督；※因童貞聖母的聖誕，普世歡騰，滿溢喜樂。",
+        "zh-hans": "我们当心口合一，钦崇我主基督；※因童贞圣母的圣诞，普世欢腾，满溢喜乐。",
+        "en": ""
+      }
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "Quem terra, pontus, aethera",
+        "zh-hans": "Quem terra, pontus, aethera",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、天地汪洋浩瀚穹蒼，\n同聲敬拜讚美尊崇；\n統御三界大能主宰，\n童貞無玷聖胎所懷。",
+          "zh-hans": "一、天地汪洋浩瀚穹苍，\n同声敬拜赞美尊崇；\n统御三界大能主宰，\n童贞无玷圣胎所怀。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、日月星辰遵旨運行，\n萬有順服按序不息；\n上帝安臥童女懷抱，\n聖女滿渥高天神恩。",
+          "zh-hans": "二、日月星辰遵旨运行，\n万有顺服按序不息；\n上帝安卧童女怀抱，\n圣女满渥高天神恩。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、榮福聖母神聖殿宇，\n偉大造主安居其中；\n雙手托立天地穹蒼，\n甘願降卑安臥約櫃。",
+          "zh-hans": "三、荣福圣母神圣殿宇，\n伟大造主安居其中；\n双手托立天地穹苍，\n甘愿降卑安卧约柜。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、加百列傳喜訊蒙恩，\n聖靈妙工成就奇福；\n普世渴望救恩之主，\n降生為人取我血肉。",
+          "zh-hans": "四、加百列传喜讯蒙恩，\n圣灵妙工成就奇福；\n普世渴望救恩之主，\n降生为人取我血肉。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、榮耀讚美尊貴權能，\n歸於童貞所生耶穌；\n同歸聖父保惠聖靈，\n稱頌讚美永遠相宜。阿們。",
+          "zh-hans": "五、荣耀赞美尊贵权能，\n归于童贞所生耶稣；\n同归圣父保惠圣灵，\n称颂赞美永远相宜。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "zh-hant": "這位如鴿子一般美麗者是誰？＊她如同栽在溪水旁的玫瑰。",
+        "zh-hans": "这位如鸽子一般美丽者是谁？＊她如同栽在溪水旁的玫瑰。",
+        "en": "Who is this, ※ fair as a dove, and like a rose tree planted beside the rivers of waters?"
+      },
+      "antiphons": [
+        {
+          "zh-hant": "今天是榮福童貞馬利亞的誕辰：她是亞伯拉罕的後裔，※生於猶大支派，出自大衛顯赫的王室。",
+          "zh-hans": "今天是荣福童贞马利亚的诞辰：她是亚伯拉罕的后裔，※生于犹大支派，出自大卫显赫的王室。",
+          "en": ""
+        },
+        {
+          "zh-hant": "今天是童貞聖馬利亞的誕辰，※她光輝燦爛的生活照耀了普世的教會。",
+          "zh-hans": "今天是童贞圣马利亚的诞辰，※她光辉灿烂的生活照耀了普世的教会。",
+          "en": ""
+        },
+        {
+          "zh-hant": "出於王室的馬利亞光輝閃爍；※我們誠心誠意懇求她為我們祈禱，幫助我們。",
+          "zh-hans": "出于王室的马利亚光辉闪烁；※我们诚心诚意恳求她为我们祈祷，帮助我们。",
+          "en": ""
+        },
+        {
+          "zh-hant": "在這至高上帝之母馬利亞聖日，※我們全心全意高唱贊美基督。",
+          "zh-hans": "在这至高上帝之母马利亚圣日，※我们全心全意高唱赞美基督。",
+          "en": ""
+        },
+        {
+          "zh-hant": "讓我們歡喜快樂慶祝榮福馬利亞誕辰，※願她為我們轉求基督。",
+          "zh-hans": "让我们欢喜快乐庆祝荣福马利亚诞辰，※愿她为我们转求基督。",
+          "en": ""
+        }
+      ]
+    },
+    "psalms": {
+      "special": {
+        "items": [
+          { "number": "45" },
+          { "number": "46" },
+          { "number": "87" }
+        ]
+      }
+    },
+    "lessons": {
+        "special": {
+            "ot": { "book": "雅歌", "chapter": "1:9-17" },
+            "nt": { "book": "羅馬書", "chapter": "1:1-4" }
+        }
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "O gloriosa domina",
+        "zh-hans": "O gloriosa domina",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀童貞至聖之母，光輝燦爛遠勝群星；\n你蒙殊恩懷生聖子，親以乳汁哺育造主。",
+          "zh-hans": "一、荣耀童贞至圣之母，光辉灿烂远胜群星；\n你蒙殊恩怀生圣子，亲以乳汁哺育造主。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、夏娃昔日失落恩光，你藉聖子重賜萬邦；\n含淚世人蒙你引路，得窺天庭永福之鄉。",
+          "zh-hans": "二、夏娃昔日失落恩光，你藉圣子重赐万邦；\n含泪世人蒙你引路，得窥天庭永福之乡。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、你是天上君王之門，你是光明照世之扉；\n童貞聖母帶來生命，蒙贖萬邦歡唱讚美。",
+          "zh-hans": "三、你是天上君王之门，你是光明照世之扉；\n童贞圣母带来生命，蒙赎万邦欢唱赞美。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、榮耀讚美尊貴權能，歸於童貞所生耶穌；\n同歸聖父保惠聖靈，稱頌讚美永遠相宜。阿們。",
+          "zh-hans": "四、荣耀赞美尊贵权能，归于童贞所生耶稣；\n同归圣父保惠圣灵，称颂赞美永远相宜。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "上帝之母，請為我們祈求。",
+          "zh-hans": "上帝之母，请为我们祈求。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "使我們堪受基督的恩許。",
+          "zh-hans": "使我们堪受基督的恩许。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "今天，我們要虔誠地慶祝※上帝的至聖母親、終身童貞馬利亞的誕辰，至高者的兒子由她所生。哈利路亞。",
+        "zh-hans": "今天，我们要虔诚地庆祝※上帝的至圣母亲、终身童贞马利亚的诞辰，至高者的儿子由她所生。哈利路亚。",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "附錄「第一九四篇講道」。",
+        "zh-hans": "附录「第一九四篇讲道」。",
+        "en": "Sermon 194 in Append."
+      },
+      "source": {
+        "zh-hant": "節選自聖奧古斯丁主教的講道。",
+        "zh-hans": "节选自圣奥古斯丁主教的讲道。",
+        "en": "From a Sermon by St. Augustine the Bishop."
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "親愛的弟兄姊妹，我們所盼望的日子已經來到，就是這位可稱頌、永貞榮福聖母馬利亞的慶日。願我們的土地在這位偉大童貞女誕生的光輝中歡笑歌唱、滿懷喜樂。她是田野的花；無價的谷中百合，從她而開放。她的生產改變了我們從始祖所承受的本性，並洗淨了他們的罪愆。那宣告在夏娃身上的悲慘判詞，也在她身上終止了。對她，從未說過：「你必在愁苦中生兒育女。」她卻生了一位孩童，就是主；她生祂時並非在憂愁中，乃是在喜樂中。",
+          "zh-hans": "亲爱的弟兄姊妹，我们所盼望的日子已经来到，就是这位可称颂、永贞荣福圣母马利亚的庆日。愿我们的土地在这位伟大童贞女诞生的光辉中欢笑歌唱、满怀喜乐。她是田野的花；无价的谷中百合，从她而开放。她的生产改变了我们从始祖所承受的本性，并洗净了他们的罪愆。那宣告在夏娃身上的悲惨判词，也在她身上终止了。对她，从未说过：「你必在愁苦中生儿育女。」她却生了一位孩童，就是主；她生祂时并非在忧愁中，乃是在喜乐中。",
+          "en": "DEARLY beloved, the day for which we have longed is come, even this holy-day of praiseworthy and Blessed Ever-Virgin Mary. Let our land laugh and sing with merriment, bathed in the light of this great Virgin’s rising. She is the flower of the field, from her the priceless Lily of the valley hath blossomed. This is she whose delivery changed the nature that we drew from our first parents, and cleansed away their offence. With her that dolorous sentence which was pronounced over Eve ended its course. To her it was never said: In sorrow thou shalt bring forth children. She brought forth a Child, even the Lord, but she brought him forth, not in sorrow, but in joy."
+        },
+        {
+          "zh-hant": "夏娃哭泣，馬利亞卻歡笑。夏娃的腹中懷著眼淚，馬利亞的腹中卻懷著喜樂。夏娃生出了一位罪人，馬利亞卻生出了一位無罪者。我們全人類的母親將刑罰帶到世上；我們主的母親卻將救恩帶給全世界。夏娃是罪惡的始作俑者，馬利亞卻是公義的開端。夏娃迎接死亡，馬利亞卻成了我們得生命的幫助。夏娃使人受傷，馬利亞卻帶來醫治。夏娃悖逆，馬利亞卻獻上順服；夏娃不信，馬利亞卻獻上信德。",
+          "zh-hans": "夏娃哭泣，马利亚却欢笑。夏娃的腹中怀着眼泪，马利亚的腹中却怀着喜乐。夏娃生出了一位罪人，马利亚却生出了一位无罪者。我们全人类的母亲将刑罚带到世上；我们主的母亲却将救恩带给全世界。夏娃是罪恶的始作俑者，马利亚却是公义的开端。夏娃迎接死亡，马利亚却成了我们得生命的帮助。夏娃使人受伤，马利亚却带来医治。夏娃悖逆，马利亚却献上顺服；夏娃不信，马利亚却献上信德。",
+          "en": "EVE wept, but Mary laughed. Eve’s womb was big with tears, but Mary’s womb was big with gladness. Eve gave birth to a Sinner, but Mary gave birth to a Sinless One. The mother of our race brought punishment into the earth, but the Mother of our Lord brought salvation into all the world. Eve was the foundress of sin, but Mary of righteousness. Eve gave a welcome unto death, but Mary was our help unto life. Eve wounded, but Mary healed. For Eve’s disobedience, Mary offered obedience. For Eve’s unbelief, Mary offered faith."
+        },
+        {
+          "zh-hant": "馬利亞歌唱，彷彿彈奏十弦的樂器；在那急促的音符之間，又響起慶賀這新奇母職者的鈴鼓之聲。因此，願歡欣的詩班與她同唱，對唱詠讚她優美的詩歌。請聽她宣告時所奏出的旋律：「我心尊主為大；我靈以上帝我的救主為樂；因為他顧念他使女的卑微；從今以後，萬代要稱我有福。那有權能的，為我成就了大事。」馬利亞生產的這新奇神蹟，已除去了那軟弱背道者所受的咒詛；馬利亞的歌聲，也終止了夏娃的哀哭。",
+          "zh-hans": "马利亚歌唱，仿佛弹奏十弦的乐器；在那急促的音符之间，又响起庆贺这新奇母职者的铃鼓之声。因此，愿欢欣的诗班与她同唱，对唱咏赞她优美的诗歌。请听她宣告时所奏出的旋律：「我心尊主为大；我灵以上帝我的救主为乐；因为他顾念他使女的卑微；从今以后，万代要称我有福。那有权能的，为我成就了大事。」马利亚生产的这新奇神迹，已除去了那软弱背道者所受的咒诅；马利亚的歌声，也终止了夏娃的哀哭。",
+          "en": "MARY singeth, as it were, to an instrument of ten strings, and between its quick notes soundeth the timbrels of those who celebrate this new kind of motherhood. Therefore let the gladsome choirs join with her, to sing antiphonally her lovely hymn. O hearken to the melody which she maketh as she proclaimeth: My soul doth magnify the Lord, and my spirit hath rejoiced in God my Saviour; for he hath regarded the lowliness of his handmaiden; for behold from henceforth all generations shall call me blessed; for he that is mighty hath magnified me. This new miracle of Mary’s delivery hath effaced the curse of the frail backslider, and the song of Mary hath brought to an end the lamentations of Eve."
+        }
+      ]
+    },
+    "collect": [
+      {
+      "option_label": {
+        "zh-hant": "默認祝文",
+        "zh-hans": "默认祝文",
+        "en": "Default Collect"
+      },
+      "title": {
+        "zh-hant": "榮福童貞女馬利亞誕辰日",
+        "zh-hans": "荣福童贞女马利亚诞辰日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "我們懇求主，在我們的心裡傾注豐盛的天上恩典；就如同榮福童貞馬利亞是我們、主的僕人得救恩的開始，我們虔誠地守她誕辰的慶節，但願這能增加我們的平安。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "我们恳求主，在我们的心里倾注丰盛的天上恩典；就如同荣福童贞马利亚是我们、主的仆人得救恩的开始，我们虔诚地守她诞辰的庆节，但愿这能增加我们的平安。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative Collect"
+        },
+        "title": {
+          "zh-hant": "榮福童貞女馬利亞誕辰日",
+          "zh-hans": "荣福童贞女马利亚诞辰日",
+          "en": ""
+        },
+        "text": {
+          "zh-hant": "慈悲的上帝啊，求主垂聽僕人們的祈求；使我們今日聚集慶祝上帝之母、童貞女的誕辰，能藉著她的代禱，蒙主拯救，脫離一切臨到我們的危險與患難。這都是靠著主的聖子、我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "慈悲的上帝啊，求主垂听仆人们的祈求；使我们今日聚集庆祝上帝之母、童贞女的诞辰，能藉着她的代祷，蒙主拯救，脱离一切临到我们的危险与患难。这都是靠着主的圣子、我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "天使來到馬利亞那裏，對她說：「萬福，馬利亞，你充滿聖寵，主與你同在，你在婦女中受讚頌。」",
+          "zh-hans": "天使来到马利亚那里，对她说：「万福，马利亚，你充满圣宠，主与你同在，你在妇女中受赞颂。」",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（路加福音 1:28）",
+          "zh-hans": "（路加福音 1:28）",
+          "en": ""
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "zh-hant": "有一童女，※蒙預定孕育那公義的日頭、萬王之王：就是馬利亞，世海之星，於今日誕生；如今得見神聖真光：眾信徒啊，當歡欣喜樂。",
+        "zh-hans": "有一童女，※蒙预定孕育那公义的日头、万王之王：就是马利亚，世海之星，于今日诞生；如今得见神圣真光：众信徒啊，当欢欣喜乐。",
+        "en": "A Maiden, ※ foreordained to bear the Sun of Righteousness, the King of all kings: Mary, Star of the Sea, as on this day was born; now the light divine beholding: be glad, O ye faithful."
+      },
+      "antiphons": [
+        {
+          "zh-hant": "上帝聖母，終身童貞馬利亞，※我們懇求你，為我們祈禱。",
+          "zh-hans": "上帝圣母，终身童贞马利亚，※我们恳求你，为我们祈祷。",
+          "en": ""
+        },
+        {
+          "zh-hant": "基督所出身的世系，何其有福！※懷抱上天君王的童貞女，何其榮耀！",
+          "zh-hans": "基督所出身的世系，何其有福！※怀抱上天君王的童贞女，何其荣耀！",
+          "en": ""
+        },
+        {
+          "zh-hant": "神聖的童貞女馬利亞，求你仁慈地以你的代禱，保護全世界，※因為你所懷抱的是統治宇宙者。",
+          "zh-hans": "神圣的童贞女马利亚，求你仁慈地以你的代祷，保护全世界，※因为你所怀抱的是统治宇宙者。",
+          "en": ""
+        },
+        {
+          "zh-hant": "馬利亞，我們投奔你最安穩的庇護，信者常藉此獲得勇力；※終身童貞榮福馬利亞，我們尊崇你。",
+          "zh-hans": "马利亚，我们投奔你最安稳的庇护，信者常藉此获得勇力；※终身童贞荣福马利亚，我们尊崇你。",
+          "en": ""
+        },
+        {
+          "zh-hant": "應永受贊頌的上帝之母，終身童貞馬利亞，神性的殿宇，聖靈的淨配；※唯有你超越眾人之上，蒙我主耶穌基督的悅納。",
+          "zh-hans": "应永受赞颂的上帝之母，终身童贞马利亚，神性的殿宇，圣灵的净配；※唯有你超越众人之上，蒙我主耶稣基督的悦纳。",
+          "en": ""
+        }
+      ]
+    },
+    "psalms": {
+      "special": {
+        "items": [
+          { "number": "146" },
+          { "number": "147" }
+        ]
+      }
+    },
+    "lessons": {
+        "special": {
+            "ot": { "book": "箴言", "chapter": "9:1-6" },
+            "nt": { "book": "路加福音", "chapter": "11:27-28" }
+        }
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "We keep the Feast in gladness",
+        "zh-hans": "We keep the Feast in gladness",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、我眾歡欣慶佳節，塵世瑰麗奇寶；\n耶穌基督之慈母，尊貴童女降生。",
+          "zh-hans": "一、我众欢欣庆佳节，尘世瑰丽奇宝；\n耶稣基督之慈母，尊贵童女降生。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、遠古預言之枝條，出於耶西本根；\n此枝綻放神聖花，淨化我等心靈。",
+          "zh-hans": "二、远古预言之枝条，出于耶西本根；\n此枝绽放神圣花，净化我等心灵。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、高天神聖之諭旨，先知確切明言；\n預告奇妙之聖母，永保無玷童貞。",
+          "zh-hans": "三、高天神圣之谕旨，先知确切明言；\n预告奇妙之圣母，永保无玷童贞。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、婦女之中最蒙福，世人至高尊榮；\n上帝保惠師聖靈，奧妙蔭庇其身。",
+          "zh-hans": "四、妇女之中最蒙福，世人至高尊荣；\n上帝保惠师圣灵，奥妙荫庇其身。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、無玷童女初降生，出於大衛王室；\n孕育永恆至高主，誕下神聖君王。",
+          "zh-hans": "五、无玷童女初降生，出于大卫王室；\n孕育永恒至高主，诞下神圣君王。",
+          "en": ""
+        },
+        {
+          "zh-hant": "六、世人天使之君王，完美和平之君；\n權能無始亦無終，永世長存不息。",
+          "zh-hans": "六、世人天使之君王，完美和平之君；\n权能无始亦无终，永世长存不息。",
+          "en": ""
+        },
+        {
+          "zh-hant": "七、馬利亞之子基督，配得榮耀讚頌；\n偕同聖父與聖靈，永恆惟一上帝。阿們。",
+          "zh-hans": "七、马利亚之子基督，配得荣耀赞颂；\n偕同圣父与圣灵，永恒惟一上帝。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "上主揀選她，並喜悅她。",
+          "zh-hans": "上主拣选她，并喜悦她。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "使她居住在祂的帳幕中。",
+          "zh-hans": "使她居住在祂的帐幕中。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "讓我們來慶祝榮福童貞馬利亞的誕辰：※主顧念了她的卑微，因她順從天使的話，所懷的是世界的救主。哈利路亞。",
+        "zh-hans": "让我们来庆祝荣福童贞马利亚的诞辰：※主顾念了她的卑微，因她顺从天使的话，所怀的是世界的救主。哈利路亚。",
+        "en": ""
+      }
+    },
+    "nunc_dimittis_antiphon": {
+      "normal": {
+        "zh-hant": "在此上帝聖母馬利亞的慶節，※我們當全心全靈，讚頌基督的榮耀。",
+        "zh-hans": "在此上帝圣母马利亚的庆节，※我们当全心全灵，赞颂基督的荣耀。",
+        "en": ""
+      }
+    },
+    "collect": [
+      {
+      "option_label": {
+        "zh-hant": "默認祝文",
+        "zh-hans": "默认祝文",
+        "en": "Default Collect"
+      },
+      "title": {
+        "zh-hant": "榮福童貞女馬利亞誕辰日",
+        "zh-hans": "荣福童贞女马利亚诞辰日",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "我們懇求主，在我們的心裡傾注豐盛的天上恩典；就如同榮福童貞馬利亞是我們、主的僕人得救恩的開始，我們虔誠地守她誕辰的慶節，但願這能增加我們的平安。這都是靠我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "我们恳求主，在我们的心里倾注丰盛的天上恩典；就如同荣福童贞马利亚是我们、主的仆人得救恩的开始，我们虔诚地守她诞辰的庆节，但愿这能增加我们的平安。这都是靠我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+      },
+      {
+        "option_label": {
+          "zh-hant": "另一祝文",
+          "zh-hans": "另一祝文",
+          "en": "Alternative Collect"
+        },
+        "title": {
+          "zh-hant": "榮福童貞女馬利亞誕辰日",
+          "zh-hans": "荣福童贞女马利亚诞辰日",
+          "en": ""
+        },
+        "text": {
+          "zh-hant": "慈悲的上帝啊，求主垂聽僕人們的祈求；使我們今日聚集慶祝上帝之母、童貞女的誕辰，能藉著她的代禱，蒙主拯救，脫離一切臨到我們的危險與患難。這都是靠著主的聖子、我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+          "zh-hans": "慈悲的上帝啊，求主垂听仆人们的祈求；使我们今日聚集庆祝上帝之母、童贞女的诞辰，能藉着她的代祷，蒙主拯救，脱离一切临到我们的危险与患难。这都是靠着主的圣子、我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+          "en": ""
+        }
+      }
+    ]
+  }
+}

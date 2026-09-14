@@ -1,0 +1,15 @@
+{
+    "id": "tr2-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "9:2-29"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "31:13-40"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr1-4-E",
+  "label": "禮拜四",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "90" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "哈巴谷書",
+      "chapter": "1:2-4,12-2:4"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "10:1-21"
+    }
+  }
+}

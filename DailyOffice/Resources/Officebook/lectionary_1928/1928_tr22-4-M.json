@@ -1,0 +1,15 @@
+{
+    "id": "tr22-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "7:1-30"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "9:1-9"
+        }
+    }
+}

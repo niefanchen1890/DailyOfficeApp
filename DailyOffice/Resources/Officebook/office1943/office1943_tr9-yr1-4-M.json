@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr9-yr1-4-M",
+  "label": "禮拜四",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "10" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "17:17-27"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "18:31-43"
+    }
+  }
+}

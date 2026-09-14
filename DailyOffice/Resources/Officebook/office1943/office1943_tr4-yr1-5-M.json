@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr4-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "142" },
+      { "number": "143" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "路得記",
+      "chapter": "1:1-14"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "9:18-27"
+    }
+  }
+}

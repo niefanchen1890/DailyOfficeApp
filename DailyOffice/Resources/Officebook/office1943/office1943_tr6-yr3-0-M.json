@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr6-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "71" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "18:1-16"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "4:13-25"
+    }
+  }
+}

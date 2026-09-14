@@ -1,0 +1,15 @@
+{
+    "id": "tr18-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "4:18-5:end"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "7"
+        }
+    }
+}

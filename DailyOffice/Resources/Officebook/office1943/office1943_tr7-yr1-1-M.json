@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr7-yr1-1-M",
+  "label": "禮拜一",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "75" },
+      { "number": "76" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "8:4-22"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "13:1-9"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany3-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "9:1-41"
+        },
+        "ot": {
+            "book": "彌迦書",
+            "chapter": "4:1-7"
+        }
+    }
+}

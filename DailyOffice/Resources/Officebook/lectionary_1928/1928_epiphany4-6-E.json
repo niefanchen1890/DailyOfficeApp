@@ -1,0 +1,15 @@
+{
+    "id": "epiphany4-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "13:20-38"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "9:1-15"
+        }
+    }
+}

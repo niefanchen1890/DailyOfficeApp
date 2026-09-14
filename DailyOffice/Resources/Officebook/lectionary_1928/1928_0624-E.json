@@ -1,0 +1,15 @@
+{
+    "id": "0624-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "6:14-29"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "21:17-29"
+        }
+    }
+}

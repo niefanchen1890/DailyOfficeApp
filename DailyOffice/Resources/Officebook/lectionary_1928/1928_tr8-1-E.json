@@ -1,0 +1,15 @@
+{
+    "id": "tr8-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "1:1-31"
+        },
+        "ot": {
+            "book": "撒迦利亞書",
+            "chapter": "9:9-16"
+        }
+    }
+}

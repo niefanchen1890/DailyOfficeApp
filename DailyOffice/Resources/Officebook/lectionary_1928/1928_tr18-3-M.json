@@ -1,0 +1,15 @@
+{
+    "id": "tr18-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "22:1-13"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "21:1-14"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0101-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "19:11-16"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "32:22-30"
+        }
+    }
+}

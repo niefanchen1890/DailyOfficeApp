@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr6-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "85" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "19:16-23"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "5:38-48"
+    }
+  }
+}

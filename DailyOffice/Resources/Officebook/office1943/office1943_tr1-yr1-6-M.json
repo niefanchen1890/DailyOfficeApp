@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr1-yr1-6-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "你們必從救恩的泉源歡然取水。在那日，你們要說：當稱謝主。",
+    "items": [
+        { "number": "44" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "民數記",
+      "chapter": "23:27-24:13、24:25"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "4:14-30"
+    }
+  }
+}

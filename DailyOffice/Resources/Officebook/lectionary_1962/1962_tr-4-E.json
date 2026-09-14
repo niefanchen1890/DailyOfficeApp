@@ -1,0 +1,15 @@
+{
+    "id": "tr-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "2:23-3:12"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "8:1-22"
+        }
+    }
+}

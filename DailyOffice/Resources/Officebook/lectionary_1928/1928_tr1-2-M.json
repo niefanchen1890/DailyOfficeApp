@@ -1,0 +1,15 @@
+{
+    "id": "tr1-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "6:19-34"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "8:1-22、28、30-35"
+        }
+    }
+}

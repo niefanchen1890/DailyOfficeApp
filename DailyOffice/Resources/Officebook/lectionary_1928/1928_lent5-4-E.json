@@ -1,0 +1,15 @@
+{
+    "id": "lent5-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "18:1-17"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "5:1-31"
+        }
+    }
+}

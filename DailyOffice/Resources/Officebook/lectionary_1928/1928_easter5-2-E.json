@@ -1,0 +1,15 @@
+{
+    "id": "easter5-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "1:1-10"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "56:1-57:2"
+        }
+    }
+}

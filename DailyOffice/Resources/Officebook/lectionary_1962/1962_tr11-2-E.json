@@ -1,0 +1,15 @@
+{
+    "id": "tr11-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "21:5-end"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "17"
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+  "ui": {
+    "title": { "zh-hant": "邀請聖詩", "zh-hans": "邀请圣诗", "en": "The Invitatory Hymn" },
+    "rubric": {
+      "zh-hant": "¶ 皆來頌之後，根據每日的日期，誦唸對應聖詩，在季節與慶節中，可從對應的專用或通用部分中找到聖詩。",
+      "zh-hans": "¶ 皆来颂之后，根据每日的日期，诵念对应圣诗，在季节与庆节中，可从对应的专用或通用部分中找到圣诗。",
+      "en": "¶ After the Venite follows the Invitatory Hymn according to the day of the week. In certain Seasons and Feasts, the Hymn will be taken from the appropriate Proper or Common, as indicated."
+    }
+  },
+  "sundayWinter": {
+    "title": { "zh-hant": "Primo Dierum Omnium", "zh-hans": "Primo Dierum Omnium", "en": "Primo Dierum Omnium" },
+    "seasonNote": { "zh-hant": "¶ 此聖詩從1月13日直到大齋期，以及9月28日直到降臨期使用", "zh-hans": "¶ 此圣诗从1月13日直到大斋期，以及9月28日直到降临期使用", "en": "" },
+    "verses": [
+      { "zh-hant": "一、首日初開天地始成，\n黑暗之中萬物新生；\n主於此日復活凱旋，\n戰勝死亡斷開鎖鏈。", "zh-hans": "一、首日初开天地始成，\n黑暗之中万物新生；\n主于此日复活凯旋，\n战胜死亡断开锁链。", "en": "" },
+      { "zh-hant": "二、驅散慵懶怠惰之意，\n屈膝舉心虔誠歸依；\n聽從詩篇先知呼喚，\n及早尋求萬有之主。", "zh-hans": "二、驱散慵懒怠惰之意，\n屈膝举心虔诚归依；\n听从诗篇先知呼唤，\n及早寻求万有之主。", "en": "" },
+      { "zh-hant": "三、懇求恩主垂聽祈求，\n伸出聖手施行拯救；\n洗淨罪污潔除瑕疵，\n領我歸回天家安居。", "zh-hans": "三、恳求恩主垂听祈求，\n伸出圣手施行拯救；\n洗净罪污洁除瑕疵，\n领我归回天家安居。", "en": "" },
+      { "zh-hant": "四、今逢聖日齊聚主前，\n此時獻上聖潔詩篇；\n願主悅納我等所獻，\n厚賜恩賞福樂無邊。", "zh-hans": "四、今逢圣日齐聚主前，\n此时献上圣洁诗篇；\n愿主悦纳我等所献，\n厚赐恩赏福乐无边。", "en": "" },
+      { "zh-hant": "五、懇求無雲光明天父，\n我等跪拜在祢座前；\n求脫一切污穢不潔，\n遠離罪惡所行所為。", "zh-hans": "五、恳求无云光明天父，\n我等跪拜在祢座前；\n求脱一切污秽不洁，\n远离罪恶所行所为。", "en": "" },
+      { "zh-hant": "六、祈願此身必朽軀殼，\n不知罪孽不畏羞恥；\n免致地獄烈火升起，\n遭受更深痛苦刑罰。", "zh-hans": "六、祈愿此身必朽躯壳，\n不知罪孽不畏羞耻；\n免致地狱烈火升起，\n遭受更深痛苦刑罚。", "en": "" },
+      { "zh-hant": "七、救主我等向祢哭訴，\n求洗我眾罪孽過犯；\n並賜無邊浩大恩典，\n得享天上永恆福樂。", "zh-hans": "七、救主我等向祢哭诉，\n求洗我众罪孽过犯；\n并赐无边浩大恩典，\n得享天上永恒福乐。", "en": "" },
+      { "zh-hant": "八、昔因罪惡流亡在外，\n今得歡迎重返家園；\n正當此際有福時刻，\n榮耀詩中我眾俯伏。", "zh-hans": "八、昔因罪恶流亡在外，\n今得欢迎重返家园；\n正当此际有福时刻，\n荣耀诗中我众俯伏。", "en": "" },
+      { "zh-hant": "九、慈悲天父成全所求，\n藉獨生子耶穌基督；\n偕同聖靈三位一體，\n永生掌權萬世無盡。阿們。", "zh-hans": "九、慈悲天父成全所求，\n藉独生子耶稣基督；\n偕同圣灵三位一体，\n永生掌权万世无尽。阿们。", "en": "" }
+    ]
+  },
+  "sundaySummer": {
+    "title": { "zh-hant": "Nocte surgentes", "zh-hans": "Nocte surgentes", "en": "Nocte surgentes" },
+    "seasonNote": { "zh-hant": "¶ 三一主日後至9月27日", "zh-hans": "¶ 三一主日后至9月27日", "en": "" },
+    "verses": [
+      { "zh-hant": "一、讚美我聖父，\n夜盡重見光天，\n活潑又警醒，\n我們立在主前；\n唱歌稱頌主，\n奉獻祈求默念，\n覲見主慈顏。", "zh-hans": "一、赞美我圣父，\n夜尽重见光天，\n活泼又警醒，\n我们立在主前；\n唱歌称颂主，\n奉献祈求默念，\n觐见主慈颜。", "en": "" },
+      { "zh-hant": "二、萬有的至尊，\n懇求造就我們，\n可憐我軟弱，\n使我健康完整；\n帶我上天庭，\n追隨主的眾聖，\n歡樂無窮盡。", "zh-hans": "二、万有的至尊，\n恳求造就我们，\n可怜我软弱，\n使我健康完整；\n带我上天庭，\n追随主的众圣，\n欢乐无穷尽。", "en": "" },
+      { "zh-hant": "三、父子與聖靈，\n同樣完全神聖，\n三位一體主，\n懇求賜我救恩；\n願主的榮光，\n照透造化群生，\n引起歌頌聲。阿們。", "zh-hans": "三、父子与圣灵，\n同样完全神圣，\n三位一体主，\n恳求赐我救恩；\n愿主的荣光，\n照透造化群生，\n引起歌颂声。阿们。", "en": "" }
+    ]
+  },
+  "weekday": {
+    "1": {
+      "title": { "zh-hant": "Somno Refectis", "zh-hans": "Somno Refectis", "en": "Somno Refectis" },
+      "verses": [
+        { "zh-hant": "一、睡眠消除疲憊身軀，\n起身離床向主祈禱，\n當我頌讚主恩浩蕩，\n懇求天父與我同在。", "zh-hans": "一、睡眠消除疲惫身躯，\n起身离床向主祈祷，\n当我颂赞主恩浩荡，\n恳求天父与我同在。", "en": "" },
+        { "zh-hant": "二、清晨第一歌聲獻上，\n心靈力量全歸於主，\n求主引導指引前路，\n保守我心言行合一。", "zh-hans": "二、清晨第一歌声献上，\n心灵力量全归于主，\n求主引导指引前路，\n保守我心言行合一。", "en": "" },
+        { "zh-hant": "三、如同晨光驅散陰影，\n黑暗消逝晨星閃耀，\n願主光明普照世間，\n洗淨夜間諸般罪過。", "zh-hans": "三、如同晨光驱散阴影，\n黑暗消逝晨星闪耀，\n愿主光明普照世间，\n洗净夜间诸般罪过。", "en": "" },
+        { "zh-hant": "四、懇求天父除淨罪愆，\n驅散一切邪念私慾，\n使我口舌常頌主恩，\n永遠讚美永不止息。", "zh-hans": "四、恳求天父除净罪愆，\n驱散一切邪念私欲，\n使我口舌常颂主恩，\n永远赞美永不止息。", "en": "" },
+        { "zh-hant": "五、懇求天父俯允所求，\n因主耶穌獨生聖子，\n偕同聖靈三位一體，\n永生永王統治萬世。阿們。", "zh-hans": "五、恳求天父俯允所求，\n因主耶稣独生圣子，\n偕同圣灵三位一体，\n永生永王统治万世。阿们。", "en": "" }
+      ]
+    },
+    "2": {
+      "title": { "zh-hant": "Consors Paterni Luminis", "zh-hans": "Consors Paterni Luminis", "en": "Consors Paterni Luminis" },
+      "verses": [
+        { "zh-hant": "一、光明之光晨曦燦爛，\n與父同享永恆榮光，\n當我歌聲祈禱上升，\n求主垂顧守夜頌揚。", "zh-hans": "一、光明之光晨曦灿烂，\n与父同享永恒荣光，\n当我歌声祈祷上升，\n求主垂顾守夜颂扬。", "en": "OLIGHT of light, thou Day-Spring fair,\nWho dost the Father's brightness share.\nHelp us whene'er with prayer and song,\nWe pray our vigil-office long." },
+        { "zh-hant": "二、驅散心中一切黑暗，\n魔鬼軍隊退避逃散，\n不讓睡意籠罩眼簾，\n以免懶惰使我沈淪。", "zh-hans": "二、驱散心中一切黑暗，\n魔鬼军队退避逃散，\n不让睡意笼罩眼帘，\n以免懒惰使我沈沦。", "en": "All darkness from our minds dispel,\nAnd turn to flight the hosts of hell;\nBid o'ermuch sleep our eyelids fly,\nLest overwhelmed in sloth we lie." },
+        { "zh-hant": "三、基督恩典普施眾人，\n信靠主名蒙恩得赦，\n應允祈禱垂聽所求，\n如同先知預言頌讚。", "zh-hans": "三、基督恩典普施众人，\n信靠主名蒙恩得赦，\n应允祈祷垂听所求，\n如同先知预言颂赞。", "en": "O Christ, bestow thy pardon free\nUpon us all who trust in thee,\nAnd grant our prayer, in all the ways\nForetold in this prophetic praise." },
+        { "zh-hant": "四、至聖上帝三位一體，\n聖父聖靈與子合一。\n上帝至上永遠為君，\n我等所禱懇求應允。阿們。", "zh-hans": "四、至圣上帝三位一体，\n圣父圣灵与子合一。\n上帝至上永远为君，\n我等所祷恳求应允。阿们。", "en": "O Father, that we ask be done\nThrough Jesus Christ thine only Son,\nWho, with the Holy Ghost and thee,\nShall live and reign eternally. Amen." }
+      ]
+    },
+    "3": {
+      "title": { "zh-hant": "Rerum Creator optime", "zh-hans": "Rerum Creator optime", "en": "Rerum Creator optime" },
+      "verses": [
+        { "zh-hant": "一、蒙福造主慈愛引導，\n倚靠主恩求主垂顧，\n救我脫離罪惡安息，\n不蒙祝福睡眠遠離。", "zh-hans": "一、蒙福造主慈爱引导，\n倚靠主恩求主垂顾，\n救我脱离罪恶安息，\n不蒙祝福睡眠远离。", "en": "CREATOR blest, thy servants' Guide,\nHear us, who in thine help confide,\nTo set us free from sinful rest,\nAnd slumber which thou hast not blest." },
+        { "zh-hant": "二、至聖基督懇切祈求，\n求主寬恕眾罪過犯，\n謙卑認罪來到主前，\n守夜祈禱俯伏寶座。", "zh-hans": "二、至圣基督恳切祈求，\n求主宽恕众罪过犯，\n谦卑认罪来到主前，\n守夜祈祷俯伏宝座。", "en": "To thee, All-Holy Christ, we pray\nThat thou wouldst turn thine eyes away\nFrom all the sins we meekly own\nBy these our vigils at thy throne." },
+        { "zh-hant": "三、舉手揚心同心敬拜，\n如此詩人智慧訓誨，\n聖言教導眾人遵行，\n保羅身教感召我眾。", "zh-hans": "三、举手扬心同心敬拜，\n如此诗人智慧训诲，\n圣言教导众人遵行，\n保罗身教感召我众。", "en": "We lift our hearts, we lift our hands;\nSuch are the Psalmist's sage commands:\nBy word they taught; but blessed Paul\nBy very deed exhorts us all." },
+        { "zh-hant": "四、昔日罪愆主前陳明，\n隱密之事主眼鑒察，\n懇切流淚祈禱上主，\n求主寬恕憐憫施恩。", "zh-hans": "四、昔日罪愆主前陈明，\n隐密之事主眼鉴察，\n恳切流泪祈祷上主，\n求主宽恕怜悯施恩。", "en": "Our former sins before thee lie,\nOur secrets are beneath thine eye;\nWe pour our earnest, tearful prayer,\nThat thou wouldst yet forgive, and spare." },
+        { "zh-hant": "五、至聖上帝三位一體，\n聖父聖靈與子合一。\n上帝至上永遠為君，\n我等所禱懇求應允。阿們。", "zh-hans": "五、至圣上帝三位一体，\n圣父圣灵与子合一。\n上帝至上永远为君，\n我等所祷恳求应允。阿们。", "en": "O Father, that we ask be done\nThrough Jesus Christ thine only Son,\nWho, with the Holy Ghost and thee,\nShall live and reign eternally. Amen." }
+      ]
+    },
+    "4": {
+      "title": { "zh-hant": "Nox atra rerum", "zh-hans": "Nox atra rerum", "en": "Nox atra rerum" },
+      "verses": [
+        { "zh-hant": "一、夜幕低垂遮蔽大地，\n萬物色彩隱入黑暗，\n公義主宰人心審判，\n認罪悔改俯伏主前。", "zh-hans": "一、夜幕低垂遮蔽大地，\n万物色彩隐入黑暗，\n公义主宰人心审判，\n认罪悔改俯伏主前。", "en": "WHEN night hath drawn her veil, and laid\nThe varied hues of earth in shade,\nWe needs must then, just Judge of all,\nBefore thee in confession fall." },
+        { "zh-hant": "二、求主除去重擔罪愆，\n潔淨我心污穢遠離，\n基督恩典滿溢澆灌，\n護守我心遠避罪愆。", "zh-hans": "二、求主除去重担罪愆，\n洁净我心污秽远离，\n基督恩典满溢浇灌，\n护守我心远避罪愆。", "en": "Take far away our load of sin,\nOur soilèd minds make clean within;\nThy sovereign grace, O Christ, impart\nFrom all offense to guard our heart." },
+        { "zh-hant": "三、我心遲鈍冷漠無情，\n罪惡毒害纏繞不清，\n願能遠離黑暗權勢，\n尋求救主光明引領。", "zh-hans": "三、我心迟钝冷漠无情，\n罪恶毒害缠绕不清，\n愿能远离黑暗权势，\n寻求救主光明引领。", "en": "For lo! our mind is dull and cold,\nEnvenomed by sin's baneful hold;\nFain would we now all darkness flee,\nAnd seek, Redeemer, unto thee." },
+        { "zh-hant": "四、驅散夜晚重重黑影，\n照亮內心幽暗深處，\n直到蒙福天光普照，\n歡欣安息主愛懷中。", "zh-hans": "四、驱散夜晚重重黑影，\n照亮内心幽暗深处，\n直到蒙福天光普照，\n欢欣安息主爱怀中。", "en": "Far from us drive the shades of night,\nOur inmost darkness put to flight,\nTill, in the daylight of the Blest,\nWe joy to find ourselves at rest." },
+        { "zh-hant": "五、至聖上帝三位一體，\n聖父聖靈與子合一。\n上帝至上永遠為君，\n我等所禱懇求應允。阿們。", "zh-hans": "五、至圣上帝三位一体，\n圣父圣灵与子合一。\n上帝至上永远为君，\n我等所祷恳求应允。阿们。", "en": "O Father, that we ask be done\nThrough Jesus Christ thine only Son,\nWho, with the Holy Ghost and thee,\nShall live and reign eternally. Amen." }
+      ]
+    },
+    "5": {
+      "title": { "zh-hant": "Tu Trinitatis Unitas", "zh-hans": "Tu Trinitatis Unitas", "en": "Tu Trinitatis Unitas" },
+      "verses": [
+        { "zh-hant": "一、三一上帝權能至上，\n大能統治萬有萬邦，\n俯聽眾僕頌讚詩歌，\n守夜敬拜獻上歌聲。", "zh-hans": "一、三一上帝权能至上，\n大能统治万有万邦，\n俯听众仆颂赞诗歌，\n守夜敬拜献上歌声。", "en": "THOU Trinity in Unity,\nWho rulest all things mightily,\nBow down to hear the songs of praise\nWhich we, thy watchful servants raise." },
+        { "zh-hant": "二、夜深寂靜平安籠罩，\n我眾起身輕聲祈禱，\n懇切祈求主恩醫治，\n罪傷得愈重獲安康。", "zh-hans": "二、夜深寂静平安笼罩，\n我众起身轻声祈祷，\n恳切祈求主恩医治，\n罪伤得愈重获安康。", "en": "While lingers yet the peace of night,\nWe rouse us from our slumbers light,\nThat might of instant prayer may win\nThy healing balm for wounds of sin." },
+        { "zh-hant": "三、若被撒旦詭計所困，\n黑暗中犯罪失主恩，\n求主恩典如光普照，\n從天而降洗淨污穢。", "zh-hans": "三、若被撒旦诡计所困，\n黑暗中犯罪失主恩，\n求主恩典如光普照，\n从天而降洗净污秽。", "en": "If, by the wiles of Satan caught,\nWe should in darkness sin in aught,\nDo thou by grace, like light of day\nFrom heaven come, purge it away." },
+        { "zh-hant": "四、願我身心遠離污穢，\n靈魂不陷懶惰昏睡，\n心靈不染罪惡玷污，\n內在熱忱永不冷卻。", "zh-hans": "四、愿我身心远离污秽，\n灵魂不陷懒惰昏睡，\n心灵不染罪恶玷污，\n内在热忱永不冷却。", "en": "Let naught impure our bodies stain,\nNo laggard sloth our souls detain,\nNo taint of sin our spirits know,\nTo chill or quench their inward glow." },
+        { "zh-hant": "五、懇求救主施恩眷顧，\n使我充滿主光照耀，\n日日前行不偏不倚，\n惡行不使我們跌倒。", "zh-hans": "五、恳求救主施恩眷顾，\n使我充满主光照耀，\n日日前行不偏不倚，\n恶行不使我们跌倒。", "en": "Wherefore, Redeemer, grant that we\nFulfilled with thine own light may be;\nThat in our course, from day to day,\nBy no misdeed we fall away." },
+        { "zh-hant": "六、至聖上帝三位一體，\n聖父聖靈與子合一，\n上帝至上永遠為君，\n我等所禱懇求應允。阿們。", "zh-hans": "六、至圣上帝三位一体，\n圣父圣灵与子合一，\n上帝至上永远为君，\n我等所祷恳求应允。阿们。", "en": "O Father, that we ask be done\nThrough Jesus Christ thine only Son,\nWho, with the Holy Ghost and thee,\nShall live and reign eternally. Amen." }
+      ]
+    },
+    "6": {
+      "title": { "zh-hant": "Summæ Deus clementiæ", "zh-hans": "Summæ Deus clementiæ", "en": "Summæ Deus clementiæ" },
+      "verses": [
+        { "zh-hant": "一、慈悲上主超越思想，\n創造世界巧奪天工，\n大能本質同歸一體，\n三位一體福佑無窮。", "zh-hans": "一、慈悲上主超越思想，\n创造世界巧夺天工，\n大能本质同归一体，\n三位一体福佑无穷。", "en": "" },
+        { "zh-hant": "二、主愛接納我眾頌讚，\n悔改讚美同獻主前，\n願主釋放謬誤枷鎖，\n使我歡欣常沐主恩。", "zh-hans": "二、主爱接纳我众颂赞，\n悔改赞美同献主前，\n愿主释放谬误枷锁，\n使我欢欣常沐主恩。", "en": "" },
+        { "zh-hant": "三、懇求憐憫醫治身心，\n煉淨火焰熾熱焚燒，\n約束腰間制服私慾，\n驅除一切有害情慾。", "zh-hans": "三、恳求怜悯医治身心，\n炼净火焰炽热燃烧，\n约束腰间制服私欲，\n驱除一切有害情欲。", "en": "" },
+        { "zh-hant": "四、守夜時刻祈禱讚美，\n光陰飛逝轉眼即逝，\n豐盛恩手施恩眷顧，\n賜福天鄉恩典無盡。", "zh-hans": "四、守夜时刻祈祷赞美，\n光阴飞逝转眼即逝，\n丰盛恩手施恩眷顾，\n赐福天乡恩典无尽。", "en": "" },
+        { "zh-hant": "五、至聖上帝三位一體，\n聖父聖靈與子合一，\n上帝至上永遠為君，\n我等所禱懇求應允。阿們。", "zh-hans": "五、至圣上帝三位一体，\n圣父圣灵与子合一，\n上帝至上永远为君，\n我等所祷恳求应允。阿们。", "en": "" }
+      ]
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

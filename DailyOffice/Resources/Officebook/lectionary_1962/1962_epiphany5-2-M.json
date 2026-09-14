@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "16:6-40"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "18:1-17"
+        }
+    }
+}

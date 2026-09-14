@@ -1,0 +1,15 @@
+{
+    "id": "tr12-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "8:22-39"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "24"
+        }
+    }
+}

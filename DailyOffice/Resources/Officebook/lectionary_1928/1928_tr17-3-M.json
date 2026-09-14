@@ -1,0 +1,15 @@
+{
+    "id": "tr17-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "19:29-end"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "18:1-17"
+        }
+    }
+}

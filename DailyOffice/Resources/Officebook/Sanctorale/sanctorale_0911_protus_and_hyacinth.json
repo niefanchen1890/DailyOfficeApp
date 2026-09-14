@@ -1,0 +1,522 @@
+{
+  "identifier": "sts_proto_hyacinth",
+  "traits": {
+    "themes": [
+      "martyr"
+    ]
+  },
+  "name": {
+    "zh-hant": "殉道者聖普羅托與聖海厄森斯",
+    "zh-hans": "殉道者圣普罗托与圣海厄森斯",
+    "en": ""
+  },
+  "rank": "simple",
+  "rank_display": {
+    "zh-hant": "（簡式）",
+    "zh-hans": "（简式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "common_office": "common_martyrs_outside_easter",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "這些人是脫了那必死的衣裳，穿上那不死的。他們宣認了上帝的名，現在他們戴上冠冕，又得棕樹枝。",
+          "zh-hans": "这些人是脱了那必死的衣裳，穿上那不死的。他们宣认了上帝的名，现在他们戴上冠冕，又得棕树枝。",
+          "en": "THESE be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of God: now are they crowned, and receive palms."
+        },
+        "reference": {
+          "zh-hant": "（以斯拉補編下卷 2:45）",
+          "zh-hans": "（以斯拉补编下卷 2:45）",
+          "en": "(2 Esdras.ii.45.)"
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "zh-hant": "諸聖藉著信，制伏了敵國，行了公義，得了應許。",
+        "zh-hans": "诸圣藉着信，制伏了敌国，行了公义，得了应许。",
+        "en": "The Saints through faith subdued kingdoms, they wrought righteousness, they obtained the promises."
+      },
+      "antiphons": [
+        {
+          "zh-hant": "主的聖徒必如百合花开放，※哈利路亞；他們必如香膏的馨香立於主面前，哈利路亞。",
+          "zh-hans": "主的圣徒必如百合花开放，※哈利路亚；他们必如香膏的馨香立于主面前，哈利路亚。",
+          "en": "Thy Saints, O Lord, shall flourish like the lily, alleluia; ※and shall be even as the odour of balsam before thee, alleluia."
+        },
+        {
+          "zh-hant": "天國是諸聖的居所，※哈利路亞，他們要永遠安息，哈利路亞。",
+          "zh-hans": "天国是诸圣的居所，※哈利路亚，他们要永远安息，哈利路亚。",
+          "en": "In the heavenly kingdom † the Blessed have their dwelling-place, alleluia; ※and their rest for ever and ever, alleluia."
+        },
+        {
+          "zh-hant": "主的諸聖在帷幕內高呼：※哈利路亞，哈利路亞，哈利路亞。",
+          "zh-hans": "主的诸圣在帷幕内高呼：※哈利路亚，哈利路亚，哈利路亚。",
+          "en": "Within the veil + thy blessed Saints, O Lord, ※continually do cry, alleluia, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人的靈魂，※請歌唱讚美我們的上帝，哈利路亞，哈利路亞。",
+          "zh-hans": "义人的灵魂，※请歌唱赞美我们的上帝，哈利路亚，哈利路亚。",
+          "en": "O ye spirits + and souls of the righteous, ※sing ye praise to the Lord our God, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人要在上帝台前發出光來，※像太陽一樣。哈利路亞。",
+          "zh-hans": "义人要在上帝台前发出光来，※像太阳一样。哈利路亚.",
+          "en": "Then shall the righteous † shine forth as the sun ※in the presence of God, alleluia."
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Sanctorum meritis inclyta gaudia",
+        "zh-hans": "Sanctorum meritis inclyta gaudia",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、諸聖功勳可頌，永蒙福樂無窮；\n愛心永不衰歇，勇忍艱勞不辭。\n教會今朝為此，歡然歌詠頌揚；\n得勝聖徒榮冠高戴。",
+          "zh-hans": "一、诸圣功勋可颂，永蒙福乐无穷；\n爱心永不衰歇，勇忍艰劳不辞。\n教会今朝为此，欢然歌咏颂扬；\n得胜圣徒荣冠高戴。",
+          "en": "THE merits of the Saints, Blessèd for evermore, \nTheir love that never faints, The toils they bravely bore: \nFor these the Church today Pours forth her joyous lay, \nThese victors win the noblest bay."
+        },
+        {
+          "zh-hant": "二、邪世尚據人間，曾憎惡諸聖徒；\n凋零花朵仍開，齊心輕蔑棄絕。\n深知萬有短暫，遂應主慈聲召；\n君王耶穌召入天庭。",
+          "zh-hans": "二、邪世尚据人间，曾憎恶诸圣徒；\n凋零花朵仍开，齐心轻蔑弃绝。\n深知万有短暂，遂应主慈声召；\n君王耶稣召入天庭。",
+          "en": "They whom this world of ill, While it yet held, abhorred; \nIts withering flow'rs that still They spurned withione faccord:\nThey knew them short-lived all, And followed at thy call, \nKing Jesu, to thine heav'nly hall. "
+        },
+        {
+          "zh-hant": "三、為主忍受諸苦，狂怒死亡仇恨；\n酷鞭撕裂其身，鐵鉤割傷其肉。\n仇敵徒勞無功，諸般酷刑既盡；\n英魂堅立終不屈撓。",
+          "zh-hans": "三、为主忍受诸苦，狂怒死亡仇恨；\n酷鞭撕裂其身，铁钩割伤其肉。\n仇敌徒劳无功，诸般酷刑既尽；\n英魂坚立终不屈挠。",
+          "en": "For thee all pangs they bare, Fury and mortal hate;\nThe cruèl scourge to tear, The hook to lacerate:\nBut vain their foes' intent For, every torment spent,\nTheir valiant spirits stood unbent."
+        },
+        {
+          "zh-hant": "四、如羊傾流鮮血，無呻吟亦無淚；\n俯首在劍刃前，皆為至愛君王。\n靈魂安然蒙福，忍耐持守其靈；\n盼望安息欣然仰望。",
+          "zh-hans": "四、如羊倾流鲜血，无呻吟亦无泪；\n俯首在剑刃前，皆为至爱君王。\n灵魂安然蒙福，忍耐持守其灵；\n盼望安息欣然仰望。",
+          "en": "Like sheep their blood they poured, And without groan or tear;\nThey bent before the sword, For that their King most dear;\nTheir souls, serenely blest, In patience they possessed,\nAnd looked in hope towards their rest."
+        },
+        {
+          "zh-hant": "五、何舌能宣說盡，何思能夠窺知？\n主為諸聖預備，高天喜樂何深！\n浸染凱旋鮮血，披上紫紅榮光；\n從上帝手贏得桂冠。",
+          "zh-hans": "五、何舌能宣说尽，何思能够窥知？\n主为诸圣预备，高天喜乐何深！\n浸染凯旋鲜血，披上紫红荣光；\n从上帝手赢得桂冠。",
+          "en": "What tongue may here declare, Fancy or thought descry,\nThe joys thou dost prepare For these thy Saints on high?\nEmpurpled in the flood Of their victorious blood,\nThey won the laurel from their God."
+        },
+        {
+          "zh-hant": "六、至高上主三一，求赦我眾罪愆，\n又保守免諸惡；今賜僕人平安，\n來世歡然解脫，永享無盡喜樂，\n永享無窮不息福樂。阿們。",
+          "zh-hans": "六、至高上主三一，求赦我众罪愆，\n又保守免诸恶；今赐仆人平安，\n来世欢然解脱，永享无尽喜乐，\n永享无穷不息福乐。阿们。",
+          "en": "To thee, O Lord most high, One in Three Persons still, \nTo pardon us we cry, And to preserve from ill:\nHere give thy servants peace, Hereafter glad release,\nAnd pleasures that shall never cease. Amen."
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "你們憂愁，哈利路亞。",
+          "zh-hans": "你们忧愁，哈利路亚。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "將變為喜樂，哈利路亞。",
+          "zh-hans": "将变为喜乐，哈利路亚。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "來吧，※耶路撒冷的女兒，請看，殉道者，以及主在這隆重喜悅的日子上，給他們戴上的冠冕，哈利路亞。",
+        "zh-hans": "来吧，※耶路撒冷的女儿，请看，殉道者，以及主在这隆重喜悦的日子上，给他们戴上的冠冕，哈利路亚。",
+        "en": ""
+      },
+      "normals": null
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "殉道者聖普羅托與聖海厄森斯",
+        "zh-hans": "殉道者圣普罗托与圣海厄森斯",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "求主使我們因主的殉道者聖普羅托與聖海厄森斯的功勞而得安慰，藉著他們慈愛代禱，而常蒙護佑。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "求主使我们因主的殉道者圣普罗托与圣海厄森斯的功劳而得安慰，藉着他们慈爱代祷，而常蒙护佑。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "這些人是從大患難中出來的，他們曾用羔羊的血把衣裳洗得潔白。",
+          "zh-hans": "这些人是从大患难中出来的，他们曾用羔羊的血把衣裳洗得洁白。",
+          "en": "THESE are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb."
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 7:14）",
+          "zh-hans": "（启示录 7:14）",
+          "en": "(Rev.vii.14.)"
+        }
+      }
+    ],
+    "invitatory": {
+      "text": {
+        "zh-hant": "願眾聖徒在主裏歡欣，※哈利路亞。",
+        "zh-hans": "愿众圣徒在主里欢欣，※哈利路亚。",
+        "en": ""
+      },
+      "texts": null
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "Aeterna Christi munera",
+        "zh-hans": "Aeterna Christi munera",
+        "en": "Aeterna Christi munera"
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督君王永恆恩賜，\n獻上歌聲不斷讚頌，\n殉道聖者光榮事蹟，\n感恩之心驅散憂傷。",
+          "zh-hans": "一、基督君王永恒恩赐，\n献上歌声不断赞颂，\n殉道圣者光荣事迹，\n感恩之心驱散忧伤。",
+          "en": "THE eternal gifts of Christ the King, \nThe Martyrs' victories we sing:\nAnd while due hymns of praise we pay, \nOur thankful hearts cast grief away."
+        },
+        {
+          "zh-hant": "二、勇敢面對時代恐懼，\n苦難不移崇高信仰，\n聖潔死亡帶來安息，\n真福同享永恆榮光。",
+          "zh-hans": "二、勇敢面对时代恐惧，\n苦难不移崇高信仰，\n圣洁死亡带来安息，\n真福同享永恒荣光。",
+          "en": "They braved the terrors of the time, \nNo torment shook their faith sublime;\nSoon, holy death brought peace and rest, \nAnd light eternal with the blest."
+        },
+        {
+          "zh-hant": "三、猛獸張齒裂骨噬肌，\n烈焰焚軀聖徒不移，\n刑鈎貫體鐵刃凌欺，\n諸般酷虐聖者無遺。",
+          "zh-hans": "三、猛兽张齿裂骨噬肌，\n烈焰焚躯圣徒不移，\n刑鈎贯体铁刃凌欺，\n诸般酷虐圣者无遗。",
+          "en": "To flames the Martyr Saints are haled: \nBy teeth of savage beasts assailed;\nAgainst them, armed with ruthless brand \nAnd hooks of steel, their torturers stand. "
+        },
+        {
+          "zh-hant": "四、聖血滂沱體骸殘損，\n痛楚雖極心志愈韌，\n靠主恩典立場堅定，\n苦難中間毫不動搖。",
+          "zh-hans": "四、圣血滂沱体骸残损，\n痛楚虽极心志愈韧，\n靠主恩典立场坚定，\n苦难中间毫不动摇。",
+          "en": "The mangled frame is tortured sore; \nThe holy life-drops freshly pour:\nThey stand unmoved amidst the strife, \nBy grace of everlasting life."
+        },
+        {
+          "zh-hant": "五、慈悲救主懇求垂聽，\n願偕諸聖永列天廷，\n願主僕人享此榮光，\n上主恩典永遠掌權。阿們。",
+          "zh-hans": "五、慈悲救主恳求垂听，\n愿偕诸圣永列天廷，\n愿主仆人享此荣光，\n上主恩典永远掌权。阿们。",
+          "en": "Redeemer, hear us of thy love, \nThat with the Martyr host above,\nThy servants too may find a place,\nAnd reign for ever through thy grace. Amen."
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "主的聖徒必如百合花开放，※哈利路亞；他們必如香膏的馨香立於主面前，哈利路亞。",
+          "zh-hans": "主的圣徒必如百合花开放，※哈利路亚；他们必如香膏的馨香立于主面前，哈利路亚。",
+          "en": "Thy Saints, O Lord, shall flourish like the lily, alleluia; ※and shall be even as the odour of balsam before thee, alleluia."
+        },
+        {
+          "zh-hant": "天國是諸聖的居所，※哈利路亞，他們要永遠安息，哈利路亞。",
+          "zh-hans": "天国是诸圣的居所，※哈利路亚，他们要永远安息，哈利路亚。",
+          "en": "In the heavenly kingdom † the Blessed have their dwelling-place, alleluia; ※and their rest for ever and ever, alleluia."
+        },
+        {
+          "zh-hant": "主的諸聖在帷幕內高呼：※哈利路亞，哈利路亞，哈利路亞。",
+          "zh-hans": "主的诸圣在帷幕内高呼：※哈利路亚，哈利路亚，哈利路亚。",
+          "en": "Within the veil + thy blessed Saints, O Lord, ※continually do cry, alleluia, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人的靈魂，※請歌唱讚美我們的上帝，哈利路亞，哈利路亞。",
+          "zh-hans": "义人的灵魂，※请歌唱赞美我们的上帝，哈利路亚，哈利路亚。",
+          "en": "O ye spirits + and souls of the righteous, ※sing ye praise to the Lord our God, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人要在上帝台前發出光來，※像太陽一樣。哈利路亞。",
+          "zh-hans": "义人要在上帝台前发出光来，※像太阳一样。哈利路亚.",
+          "en": "Then shall the righteous † shine forth as the sun ※in the presence of God, alleluia."
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "榮耀殉道圣者之君",
+        "zh-hans": "荣耀殉道圣者之君",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀殉道圣者之君，\n精修圣人以主為冠；\n引領捨棄世俗歡樂，\n邁向天國光輝之日。",
+          "zh-hans": "一、荣耀殉道圣者之君，\n精修圣人以主为冠；\n引领舍弃世俗欢乐，\n迈向天国光辉之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、救主垂憐傾聽我們，\n我眾祈禱上達於天；\n數算他們得勝之時，\n赦免我們所犯之罪。",
+          "zh-hans": "二、救主垂怜倾听我们，\n我众祈祷上达于天；\n数算他们得胜之时，\n赦免我们所犯之罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、殉道者因你而得勝，\n精修者從你得恩典；\n助我克服罪恶慾望，\n好使我們获得寬恕。",
+          "zh-hans": "三、殉道者因你而得胜，\n精修者从你得恩典；\n助我克服罪恶欲望，\n好使我们获得宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、懇求榮耀加冕之君，\n復活喜悅護佑群羊，\n因你揀選重價贖回，\n免受死亡擾亂侵害。",
+          "zh-hans": "四、恳求荣耀加冕之君，\n复活喜悦护佑群羊，\n因你挑选重价赎回，\n免受死亡扰乱侵害。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、但願死而復活之主，\n接受子民所獻榮耀，\n也願歸於聖父聖靈，\n從今直到永永遠遠。阿們。",
+          "zh-hans": "五、但愿死而复活之主，\n接受子民所献荣耀，\n也愿归于圣父圣灵，\n从今直到永永远远。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "你們善人應該因主歡樂，哈利路亞。",
+          "zh-hans": "你们善人应该因主欢乐，哈利路亚。",
+          "en": "Rejoice in the Lord, ye righteous, alleluia."
+        },
+        "people": {
+          "zh-hant": "正直人讚美祂是理所應該的。哈利路亞。",
+          "zh-hans": "正直人赞美祂是理所应该是的。哈利路亚。",
+          "en": "For it becometh well the just to be thankful, alleluia."
+        }
+      }
+    },
+    "ascension_office_hymn": {
+      "title": {
+        "zh-hant": "榮耀殉道圣者之君",
+        "zh-hans": "荣耀殉道圣者之君",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀殉道圣者之君，\n精修圣人以主為冠；\n引領捨棄世俗歡樂，\n邁向天國光輝之日。",
+          "zh-hans": "一、荣耀殉道圣者之君，\n精修圣人以主为冠；\n引领舍弃世俗欢乐，\n迈向天国光辉之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、救主垂憐傾聽我們，\n我眾祈禱上達於天；\n數算他們得勝之時，\n赦免我們所犯之罪。",
+          "zh-hans": "二、救主垂怜倾听我们，\n我众祈祷上达于天；\n数算他们得胜之时，\n赦免我们所犯之罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、殉道者因你而得勝，\n精修者從你得恩典；\n助我克服罪恶慾望，\n好使我們获得寬恕。",
+          "zh-hans": "三、殉道者因你而得胜，\n精修者从你得恩典；\n助我克服罪恶欲望，\n好使我们获得宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、願主作我喜樂護衛，\n主是我們至大賞賜；\n願主永遠作我榮耀，\n為我永恆不朽誇耀。",
+          "zh-hans": "四、愿主作我喜乐护卫，\n主是我们至大赏赐；\n愿主永远作我荣耀，\n为我永恒不朽夸耀。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、今日升上群星之主，\n我們獻上一切榮耀；\n永恆榮耀歸於聖父，\n聖靈與你同享尊崇。阿們。",
+          "zh-hans": "五、今日升上群星之主，\n我们献上一切荣耀；\n永恒荣耀归于圣父，\n圣灵与你同享尊崇。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "你們善人應該因主歡樂，哈利路亞。",
+          "zh-hans": "你们善人应该因主欢乐，哈利路亚。",
+          "en": "Rejoice in the Lord, ye righteous, alleluia."
+        },
+        "people": {
+          "zh-hant": "正直人讚美祂是理所應該的。哈利路亞。",
+          "zh-hans": "正直人赞美祂是理所应该是的。哈利路亚。",
+          "en": "For it becometh well the just to be thankful, alleluia."
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "主阿，※永恆之光必照耀主的眾聖徒，哈利路亞；直到永永遠遠，哈利路亞，哈利路亞，哈利路亞。",
+        "zh-hans": "主阿，※永恒之光必照耀主的众圣徒，哈利路亚；直到永永远远，哈利路亚，哈利路亚，哈利路亚。",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": ""
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "自早期以來，教會就在這一天紀念殉道者聖普羅托與聖海厄森斯；人們相信他們是兄弟。一八四五年，海厄森斯的葬處在羅馬舊薩拉里亞大道的聖巴西拉墓園中被發現，且未受擾動。在那裡，一塊古老碑文的下方——碑文寫著：「殉道者海厄森斯，安葬於九月十一日」——發現了骨灰和被焚燒過的人骨，裹在昂貴織物的殘片中。附近還有一座空墓，上刻著：「殉道者普羅托之墓。」後世所流傳關於這兩位殉道者的故事如下：他們原是埃及童貞女聖尤金妮亞的宦官奴僕，並與她一同受洗；此後，他們勤奮研讀上帝的聖言，曾在一所修道院中居住一段時間。後來，他們跟隨尤金妮亞前往羅馬，在那裡引導聖巴西拉歸信基督；約於二五七年，他們又為基督的緣故，與她一同慘遭殺害。",
+          "zh-hans": "自早期以来，教会就在这一天纪念殉道者圣普罗托与圣海厄森斯；人们相信他们是兄弟。一八四五年，海厄森斯的葬处在罗马旧萨拉里亚大道的圣巴西拉墓园中被发现，且未受扰动。在那里，一块古老碑文的下方——碑文写着：「殉道者海厄森斯，安葬于九月十一日」——发现了骨灰和被焚烧过的人骨，裹在昂贵织物的残片中。附近还有一座空墓，上刻着：「殉道者普罗托之墓。」后世所流传关于这两位殉道者的故事如下：他们原是埃及童贞女圣尤金妮亚的宦官奴仆，并与她一同受洗；此后，他们勤奋研读上帝的圣言，曾在一所修道院中居住一段时间。后来，他们跟随尤金妮亚前往罗马，在那里引导圣巴西拉归信基督；约于二五七年，他们又为基督的缘故，与她一同惨遭杀害。",
+          "en": "ON this day since early times, have been commemorated the Martyrs Protus and Hyacinth, who are believed to have been brothers. In 1845 the burial-place of Hyacinth was found undisturbed in the Cemetery of Saint Basilla, on the Old Salarian Way at Rome. There, under an ancient inscription which was found to read: Hyacinth the Martyr, buried September IIth: were discovered ashes and charred human bones, wrapped in the remains of a costly fabric. Nearby was an empty tomb, bearing the inscription: The tomb of Protus the Martyr. The story which in later days came to be told of these Martyrs is this: They were slave-eunuchs in Egypt of Saint Eugenia the Virgin, and were baptized with her; whereafter they studied God's Word diligently, and dwelt for a while in a monastery; and then they followed Eugenia to Rome, where they brought Saint Basilla to the Faith; and were for Christ's sake cruelly put to death with her, about the year 257."
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "殉道者聖普羅托與聖海厄森斯",
+        "zh-hans": "殉道者圣普罗托与圣海厄森斯",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "求主使我們因主的殉道者聖普羅托與聖海厄森斯的功勞而得安慰，藉著他們慈愛代禱，而常蒙護佑。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "求主使我们因主的殉道者圣普罗托与圣海厄森斯的功劳而得安慰，藉着他们慈爱代祷，而常蒙护佑。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "你們要為我的名被眾人憎恨。但堅忍到底的終必得救。",
+          "zh-hans": "你们要为我的名被众人憎恨。但坚忍到底的终必得救.",
+          "en": "AND ye shall be hated of all men for my name's sake: but he that endureth to the end shall be saved."
+        },
+        "reference": {
+          "zh-hant": "（馬太福音 10:22）",
+          "zh-hans": "（马太福音 10:22）",
+          "en": "(Matt.x.22.)"
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "主的聖徒必如百合花开放，※哈利路亞；他們必如香膏的馨香立於主面前，哈利路亞。",
+          "zh-hans": "主的圣徒必如百合花开放，※哈利路亚；他们必如香膏的馨香立于主面前，哈利路亚。",
+          "en": "Thy Saints, O Lord, shall flourish like the lily, alleluia; ※and shall be even as the odour of balsam before thee, alleluia."
+        },
+        {
+          "zh-hant": "天國是諸聖的居所，※哈利路亞，他們要永遠安息，哈利路亞。",
+          "zh-hans": "天国是诸圣的居所，※哈利路亚，他们要永远安息，哈利路亚。",
+          "en": "In the heavenly kingdom † the Blessed have their dwelling-place, alleluia; ※and their rest for ever and ever, alleluia."
+        },
+        {
+          "zh-hant": "主的諸聖在帷幕內高呼：※哈利路亞，哈利路亞，哈利路亞。",
+          "zh-hans": "主的诸圣在帷幕内高呼：※哈利路亚，哈利路亚，哈利路亚。",
+          "en": "Within the veil + thy blessed Saints, O Lord, ※continually do cry, alleluia, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人的靈魂，※請歌唱讚美我們的上帝，哈利路亞，哈利路亞。",
+          "zh-hans": "义人的灵魂，※请歌唱赞美我们的上帝，哈利路亚，哈利路亚。",
+          "en": "O ye spirits + and souls of the righteous, ※sing ye praise to the Lord our God, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人要在上帝台前發出光來，※像太陽一樣。哈利路亞。",
+          "zh-hans": "义人要在上帝台前发出光来，※像太阳一样。哈利路亚.",
+          "en": "Then shall the righteous † shine forth as the sun ※in the presence of God, alleluia."
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "榮耀殉道圣者之君",
+        "zh-hans": "荣耀殉道圣者之君",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀殉道圣者之君，\n精修圣人以主為冠；\n引領捨棄世俗歡樂，\n邁向天國光輝之日。",
+          "zh-hans": "一、荣耀殉道圣者之君，\n精修圣人以主为冠；\n引领舍弃世俗欢乐，\n迈向天国光辉之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、救主垂憐傾聽我們，\n我眾祈禱上達於天；\n數算他們得勝之時，\n赦免我們所犯之罪。",
+          "zh-hans": "二、救主垂怜倾听我们，\n我众祈祷上达于天；\n数算他们得胜之时，\n赦免我们所犯之罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、殉道者因你而得勝，\n精修者從你得恩典；\n助我克服罪恶慾望，\n好使我們获得寬恕。",
+          "zh-hans": "三、殉道者因你而得胜，\n精修者从你得恩典；\n助我克服罪恶欲望，\n好使我们获得宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、懇求榮耀加冕之君，\n復活喜悅護佑群羊，\n因你揀選重價贖回，\n免受死亡擾亂侵害。",
+          "zh-hans": "四、恳求荣耀加冕之君，\n复活喜悦护佑群羊，\n因你挑选重价赎回，\n免受死亡扰乱侵害。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、但願死而復活之主，\n接受子民所獻榮耀，\n也願歸於聖父聖靈，\n從今直到永永遠遠。阿們。",
+          "zh-hans": "五、但愿死而复活之主，\n接受子民所献荣耀，\n也愿归于圣父圣灵，\n从今直到永永远远。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "你們善人應該因主歡樂，哈利路亞。",
+          "zh-hans": "你们善人应该因主欢乐，哈利路亚。",
+          "en": "Rejoice in the Lord, ye righteous, alleluia."
+        },
+        "people": {
+          "zh-hant": "正直人讚美祂是理所應該的。哈利路亞。",
+          "zh-hans": "正直人赞美祂是理所应该是的。哈利路亚。",
+          "en": "For it becometh well the just to be thankful, alleluia."
+        }
+      }
+    },
+    "ascension_office_hymn": {
+      "title": {
+        "zh-hant": "榮耀殉道圣者之君",
+        "zh-hans": "荣耀殉道圣者之君",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀殉道圣者之君，\n精修圣人以主為冠；\n引領捨棄世俗歡樂，\n邁向天國光輝之日。",
+          "zh-hans": "一、荣耀殉道圣者之君，\n精修圣人以主为冠；\n引领舍弃世俗欢乐，\n迈向天国光辉之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、救主垂憐傾聽我們，\n我眾祈禱上達於天；\n數算他們得勝之時，\n赦免我們所犯之罪。",
+          "zh-hans": "二、救主垂怜倾听我们，\n我众祈祷上达于天；\n数算他们得胜之时，\n赦免我们所犯之罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、殉道者因你而得勝，\n精修者從你得恩典；\n助我克服罪恶慾望，\n好使我們获得寬恕。",
+          "zh-hans": "三、殉道者因你而得胜，\n精修者从你得恩典；\n助我克服罪恶欲望，\n好使我们获得宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、願主作我喜樂護衛，\n主是我們至大賞賜；\n願主永遠作我榮耀，\n為我永恆不朽誇耀。",
+          "zh-hans": "四、愿主作我喜乐护卫，\n主是我们至大赏赐；\n愿主永远作我荣耀，\n为我永恒不朽夸耀。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、今日升上群星之主，\n我們獻上一切榮耀；\n永恆榮耀歸於聖父，\n聖靈與你同享尊崇。阿們。",
+          "zh-hans": "五、今日升上群星之主，\n我们献上一切荣耀；\n永恒荣耀归于圣父，\n圣灵与你同享尊崇。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "永恆的喜樂必在他們頭上。哈利路亞。",
+          "zh-hans": "永恒的喜乐必在他们头上。哈利路亚。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "他們必得著歡喜快樂，哈利路亞。",
+          "zh-hans": "他们必得着欢喜快乐，哈利路亚。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "主阿，※永恆之光必照耀主的眾聖徒，哈利路亞；直到永永遠遠，哈利路亞，哈利路亞，哈利路亞。",
+        "zh-hans": "主阿，※永恒之光必照耀主的众圣徒，哈利路亚；直到永永远远，哈利路亚，哈利路亚，哈利路亚。",
+        "en": ""
+      },
+      "normals": null
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "殉道者聖普羅托與聖海厄森斯",
+        "zh-hans": "殉道者圣普罗托与圣海厄森斯",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "求主使我們因主的殉道者聖普羅托與聖海厄森斯的功勞而得安慰，藉著他們慈愛代禱，而常蒙護佑。這都是靠著我主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "求主使我们因主的殉道者圣普罗托与圣海厄森斯的功劳而得安慰，藉着他们慈爱代祷，而常蒙护佑。这都是靠着我主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

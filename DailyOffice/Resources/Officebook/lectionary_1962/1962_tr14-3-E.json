@@ -1,0 +1,15 @@
+{
+    "id": "tr14-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "6:41-end"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "25:8-end"
+        }
+    }
+}

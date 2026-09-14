@@ -1,0 +1,15 @@
+{
+    "id": "0611-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "14:8-28"
+        },
+        "ot": {
+            "book": "多比傳",
+            "chapter": "4:5-11"
+        }
+    }
+}

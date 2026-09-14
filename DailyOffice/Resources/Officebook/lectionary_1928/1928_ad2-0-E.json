@@ -1,0 +1,15 @@
+{
+    "id": "ad2-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "6:27-42"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "16:21-31"
+        }
+    }
+}

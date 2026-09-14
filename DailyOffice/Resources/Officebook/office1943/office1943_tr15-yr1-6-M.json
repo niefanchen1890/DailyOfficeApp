@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr15-yr1-6-M",
+  "label": "禮拜六",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "92" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "3:16-28"
+    },
+    "nt": {
+      "book": "哥林多後書",
+      "chapter": "13:1-14"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr16-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "142" },
+      { "number": "146" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "17:8-9,17-24"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "7:11-17"
+    }
+  }
+}

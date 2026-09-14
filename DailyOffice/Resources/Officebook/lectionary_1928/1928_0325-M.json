@@ -1,0 +1,15 @@
+{
+    "id": "0325-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "18:1-18"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "18:1-14"
+        }
+    }
+}

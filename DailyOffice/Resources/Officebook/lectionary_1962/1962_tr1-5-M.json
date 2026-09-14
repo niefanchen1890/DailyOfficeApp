@@ -1,0 +1,15 @@
+{
+    "id": "tr1-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "4:7-19"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "22:1-30"
+        }
+    }
+}

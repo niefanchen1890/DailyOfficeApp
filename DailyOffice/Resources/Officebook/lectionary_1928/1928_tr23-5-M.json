@@ -1,0 +1,15 @@
+{
+    "id": "tr23-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "10:22-end"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "3:15-26"
+        }
+    }
+}

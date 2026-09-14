@@ -1,0 +1,15 @@
+{
+    "id": "ad1-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "10:1-11"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "17:1-14"
+        }
+    }
+}

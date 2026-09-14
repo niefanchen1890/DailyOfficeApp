@@ -1,0 +1,15 @@
+{
+    "id": "1227-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "4:1-11"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "6:1-8"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr2-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "9:18-34"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "21:43-22:9"
+        }
+    }
+}

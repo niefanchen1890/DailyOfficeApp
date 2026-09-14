@@ -1,0 +1,15 @@
+{
+    "id": "tr1-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "5:1-14"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "24:1-25"
+        }
+    }
+}

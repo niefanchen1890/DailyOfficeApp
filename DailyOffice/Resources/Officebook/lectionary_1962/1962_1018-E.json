@@ -1,0 +1,15 @@
+{
+    "id": "1018-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "4:7-end"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "38:1-14"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr6-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "49" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "但以理書",
+      "chapter": "2:25-35"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "21:1-14"
+    }
+  }
+}

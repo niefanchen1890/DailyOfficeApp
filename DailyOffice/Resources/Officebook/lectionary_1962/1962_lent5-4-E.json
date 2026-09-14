@@ -1,0 +1,15 @@
+{
+    "id": "lent5-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "提摩太後書",
+            "chapter": "2:1-26"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "16:36-17:13"
+        }
+    }
+}

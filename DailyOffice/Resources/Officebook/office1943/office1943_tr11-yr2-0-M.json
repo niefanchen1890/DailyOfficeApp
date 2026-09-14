@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "33" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約伯記",
+      "chapter": "5:8-18"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "23:13-31"
+    }
+  }
+}

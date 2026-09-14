@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr12-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "27" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "多比傳",
+      "chapter": "13:1-5,7-11"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "15:14-21"
+    }
+  }
+}

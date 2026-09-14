@@ -1,0 +1,15 @@
+{
+    "id": "1229-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "2:21-40"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "34:1-16"
+        }
+    }
+}

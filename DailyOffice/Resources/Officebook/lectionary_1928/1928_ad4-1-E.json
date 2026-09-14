@@ -1,0 +1,15 @@
+{
+    "id": "ad4-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "21:1-27"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "18:9-22"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr21-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "1:16-27"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "28:1-28"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1028-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "6:12-19"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "3:12-18"
+        }
+    }
+}

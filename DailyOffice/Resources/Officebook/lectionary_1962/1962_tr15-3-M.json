@@ -1,0 +1,15 @@
+{
+    "id": "tr15-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "腓立比書",
+            "chapter": "1:1-11"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "32:36-end"
+        }
+    }
+}

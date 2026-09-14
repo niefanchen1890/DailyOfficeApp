@@ -1,0 +1,58 @@
+{
+  "identifier": "st_therese_of_lisieux",
+  "name": {
+    "zh-hant": "童貞女嬰孩耶穌聖德蘭",
+    "zh-hans": "童贞女婴孩耶稣圣德兰",
+    "en": "Saint Thérèse of the Child Jesus, Virgin"
+  },
+  "rank": "double",
+  "rank_display": {
+    "zh-hant": "（複式）",
+    "zh-hans": "（复式）",
+    "en": "Double"
+  },
+  "type": "sanctorale",
+  "common_office": "common_virgin_outside_easter",
+  "vigil": {
+    "collect": {
+      "title": {
+        "zh-hant": "童貞女嬰孩耶穌聖德蘭",
+        "zh-hans": "童贞女婴孩耶稣圣德兰",
+        "en": "Saint Thérèse of the Child Jesus, Virgin"
+      },
+      "text": {
+        "zh-hant": "主耶穌基督啊，祢曾說：「你們若不變成像小孩子一樣，絕不能進天國」：我們懇求祢，使我們存溫良純樸的心，追隨真福童貞女德蘭的腳蹤，最終得以進入祢永恆的國度。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "主耶稣基督啊，祢曾说：「你们若不变成像小孩子一样，绝不能进天国」：我们恳求祢，使我们存温良纯朴的心，追随真福童贞女德兰的脚踪，最终得以进入祢永恒的国度。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O LORD Jesus Christ, who hast said, Except ye become as little children ye shall not enter into the kingdom of heaven: grant us, we beseech thee, in meekness and simplicity of heart so to follow the footsteps of blessed Thérèse thy Virgin, that we may at last come unto thine everlasting kingdom. Who livest and reignest with God the Father, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  },
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "童貞女嬰孩耶穌聖德蘭",
+        "zh-hans": "童贞女婴孩耶稣圣德兰",
+        "en": "Saint Thérèse of the Child Jesus, Virgin"
+      },
+      "text": {
+        "zh-hant": "主耶穌基督啊，祢曾說：「你們若不變成像小孩子一樣，絕不能進天國」：我們懇求祢，使我們存溫良純樸的心，追隨真福童貞女德蘭的腳蹤，最終得以進入祢永恆的國度。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "主耶稣基督啊，祢曾说：「你们若不变成像小孩子一样，绝不能进天国」：我们恳求祢，使我们存温良纯朴的心，追随真福童贞女德兰的脚踪，最终得以进入祢永恒的国度。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O LORD Jesus Christ, who hast said, Except ye become as little children ye shall not enter into the kingdom of heaven: grant us, we beseech thee, in meekness and simplicity of heart so to follow the footsteps of blessed Thérèse thy Virgin, that we may at last come unto thine everlasting kingdom. Who livest and reignest with God the Father, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  },
+  "evening": {
+    "collect": {
+      "title": {
+        "zh-hant": "童貞女嬰孩耶穌聖德蘭",
+        "zh-hans": "童贞女婴孩耶稣圣德兰",
+        "en": "Saint Thérèse of the Child Jesus, Virgin"
+      },
+      "text": {
+        "zh-hant": "主耶穌基督啊，祢曾說：「你們若不變成像小孩子一樣，絕不能進天國」：我們懇求祢，使我們存溫良純樸的心，追隨真福童貞女德蘭的腳蹤，最終得以進入祢永恆的國度。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "主耶稣基督啊，祢曾说：「你们若不变成像小孩子一样，绝不能进天国」：我们恳求祢，使我们存温良纯朴的心，追随真福童贞女德兰的脚踪，最终得以进入祢永恒的国度。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O LORD Jesus Christ, who hast said, Except ye become as little children ye shall not enter into the kingdom of heaven: grant us, we beseech thee, in meekness and simplicity of heart so to follow the footsteps of blessed Thérèse thy Virgin, that we may at last come unto thine everlasting kingdom. Who livest and reignest with God the Father, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  }
+}

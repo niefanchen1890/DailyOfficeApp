@@ -1,0 +1,15 @@
+{
+    "id": "tr4-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "15:42-16:8"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "7:1-17"
+        }
+    }
+}

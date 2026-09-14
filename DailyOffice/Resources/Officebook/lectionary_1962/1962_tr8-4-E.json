@@ -1,0 +1,15 @@
+{
+    "id": "tr8-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:1-34"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "16"
+        }
+    }
+}

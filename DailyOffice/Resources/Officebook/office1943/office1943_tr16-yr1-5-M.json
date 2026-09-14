@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "102" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "列王紀上",
+      "chapter": "9:1-9"
+    },
+    "nt": {
+      "book": "帖撒羅尼迦前書",
+      "chapter": "4:13-18"
+    }
+  }
+}

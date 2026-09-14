@@ -1,0 +1,15 @@
+{
+    "id": "tr23-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "2:22-end"
+        },
+        "ot": {
+            "book": "瑪喀比傳上",
+            "chapter": "1:41-end"
+        }
+    }
+}

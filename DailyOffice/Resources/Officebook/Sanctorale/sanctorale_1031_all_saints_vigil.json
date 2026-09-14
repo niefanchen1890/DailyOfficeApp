@@ -1,0 +1,35 @@
+{
+  "identifier": "all_saints_vigil",
+  "traits": {
+    "vigil": "ordinary",
+    "themes": [
+      "allSaints"
+    ]
+  },
+  "name": {
+    "zh-hant": "諸聖望日",
+    "zh-hans": "诸圣望日",
+    "en": "Vigil of All Saints"
+  },
+  "rank": "vigil",
+  "rank_display": {
+    "zh-hant": "（普通望日）",
+    "zh-hans": "（普通望日）",
+    "en": "Ordinary Vigil"
+  },
+  "type": "sanctorale",
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "諸聖望日",
+        "zh-hans": "诸圣望日",
+        "en": "Vigil of All Saints"
+      },
+      "text": {
+        "zh-hant": "主，我們的上帝啊，求你向我們加添豐盛的恩賜，使我們預先慶祝你眾聖徒榮耀的聖日，得蒙你賜力量，歡喜效法他們一切的德行，度敬虔的生活。這都是靠著你的聖子，我們的主耶穌基督。主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "主，我们的上帝啊，求你向我们加添丰盛的恩赐，使我们预先庆祝你众圣徒荣耀的圣日，得蒙你赐力量，欢喜效法他们一切的德行，度敬虔的生活。这都是靠着你的圣子，我们的主耶稣基督。主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": "O LORD our God, increase, we pray thee, and multiply upon us the gifts of thy grace: that we, who do prevent the glorious Festival of all thy Saints, may of thee be enabled joyfully to follow them in all virtuous and godly living. Through Jesus Christ thy Son our Lord, who liveth and reigneth with thee, in the unity of the Holy Ghost, ever one God, world without end. Amen."
+      }
+    }
+  }
+}

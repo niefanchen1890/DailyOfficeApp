@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr6-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "57" },
+      { "number": "130" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "出埃及記",
+      "chapter": "24:1-11,16-18"
+    },
+    "nt": {
+      "book": "希伯來書",
+      "chapter": "9:18-28"
+    }
+  }
+}

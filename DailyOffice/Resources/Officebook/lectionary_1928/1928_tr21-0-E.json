@@ -1,0 +1,15 @@
+{
+    "id": "tr21-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "11:16-30"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "19:1-18"
+        }
+    }
+}

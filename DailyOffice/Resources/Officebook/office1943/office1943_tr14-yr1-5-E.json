@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr14-yr1-5-E",
+  "label": "禮拜五",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "51" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "31:12-18,25-32:2"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "6:1-18"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0725-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "1:14-20"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "26:1-15"
+        }
+    }
+}

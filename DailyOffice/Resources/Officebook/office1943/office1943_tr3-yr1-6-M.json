@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr3-yr1-6-M",
+  "label": "禮拜六",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "107", "verses": "1-16" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "士師記",
+      "chapter": "10:17,11:29-40"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "8:1-15"
+    }
+  }
+}

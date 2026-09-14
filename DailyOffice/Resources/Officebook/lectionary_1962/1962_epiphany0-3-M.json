@@ -1,0 +1,15 @@
+{
+    "id": "epiphany0-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "6:19-34"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "5:1-27"
+        }
+    }
+}

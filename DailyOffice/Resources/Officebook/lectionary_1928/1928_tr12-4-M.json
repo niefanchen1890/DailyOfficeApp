@@ -1,0 +1,15 @@
+{
+    "id": "tr12-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "9:18-36"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "26"
+        }
+    }
+}

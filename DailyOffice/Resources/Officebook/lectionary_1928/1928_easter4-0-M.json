@@ -1,0 +1,15 @@
+{
+    "id": "easter4-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "21:1-14"
+        },
+        "ot": {
+            "book": "撒母耳記下",
+            "chapter": "12:15-23"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr7-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "加拉太書",
+            "chapter": "5:2-15"
+        },
+        "ot": {
+            "book": "以斯帖記",
+            "chapter": "8:1-17"
+        }
+    }
+}

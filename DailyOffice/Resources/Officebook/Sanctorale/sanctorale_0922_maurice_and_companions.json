@@ -1,0 +1,438 @@
+{
+  "identifier": "st_maurice",
+  "traits": {
+    "themes": [
+      "martyr"
+    ]
+  },
+  "name": {
+    "zh-hant": "殉道者聖莫里斯及其同伴",
+    "zh-hans": "殉道者圣莫里斯及其同伴",
+    "en": ""
+  },
+  "rank": "simple",
+  "rank_display": {
+    "zh-hant": "（簡式）",
+    "zh-hans": "（简式）",
+    "en": ""
+  },
+  "type": "sanctorale",
+  "common_office": "common_martyrs_outside_easter",
+  "vigil": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "這些人是從大患難中出來的，他們曾用羔羊的血把衣裳洗得潔白。",
+          "zh-hans": "这些人是从大患难中出来的，他们曾用羔羊的血把衣裳洗得洁白。",
+          "en": "THESE are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb."
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 7:14）",
+          "zh-hans": "（启示录 7:14）",
+          "en": "(Rev.vii.14.)"
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "lectionary_1943": {
+        "zh-hant": "諸聖藉著信，制伏了敵國，行了公義，得了應許。",
+        "zh-hans": "诸圣藉着信，制伏了敌国，行了公义，得了应许。",
+        "en": "The Saints through faith subdued kingdoms, they wrought righteousness, they obtained the promises."
+      },
+      "antiphons": [
+        {
+          "zh-hant": "這些聖人歷盡艱苦，※使他們在平安之中得到了殉道的棕櫚枝。",
+          "zh-hans": "这些圣人历尽艰苦，※使他们在平安之中得到了殉道的棕榈枝。",
+          "en": ""
+        },
+        {
+          "zh-hant": "這些聖者手持棕樹枝※來到了天國，他們堪當由上帝手中接受榮耀的冠冕。",
+          "zh-hans": "这些圣者手持棕树枝※来到了天国，他们堪当由上帝手中接受荣耀的冠冕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖者們的身體※雖被安葬於平安之中，他們的名永存不朽。",
+          "zh-hans": "圣者们的身体※虽被安葬于平安之中，他们的名永存不朽。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主的殉道者阿，※請讚頌上主直到永遠。",
+          "zh-hans": "主的殉道者阿，※请赞颂上主直到永远。",
+          "en": ""
+        },
+        {
+          "zh-hant": "殉道者的歌詠團，※請在至高的天上讚美主。",
+          "zh-hans": "殉道者的歌咏团，※请在至高的天上赞美主。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "Sanctorum meritis inclyta gaudia",
+        "zh-hans": "Sanctorum meritis inclyta gaudia",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、諸聖功勳可頌，永蒙福樂無窮；\n愛心永不衰歇，勇忍艱勞不辭。\n教會今朝為此，歡然歌詠頌揚；\n得勝聖徒榮冠高戴。",
+          "zh-hans": "一、诸圣功勋可颂，永蒙福乐无穷；\n爱心永不衰歇，勇忍艰劳不辞。\n教会今朝为此，欢然歌咏颂扬；\n得胜圣徒荣冠高戴。",
+          "en": "THE merits of the Saints, Blessèd for evermore, \nTheir love that never faints, The toils they bravely bore: \nFor these the Church today Pours forth her joyous lay, \nThese victors win the noblest bay."
+        },
+        {
+          "zh-hant": "二、邪世尚據人間，曾憎惡諸聖徒；\n凋零花朵仍開，齊心輕蔑棄絕。\n深知萬有短暫，遂應主慈聲召；\n君王耶穌召入天庭。",
+          "zh-hans": "二、邪世尚据人间，曾憎恶诸圣徒；\n凋零花朵仍开，齐心轻蔑弃绝。\n深知万有短暂，遂应主慈声召；\n君王耶稣召入天庭。",
+          "en": "They whom this world of ill, While it yet held, abhorred; \nIts withering flow'rs that still They spurned withione faccord:\nThey knew them short-lived all, And followed at thy call, \nKing Jesu, to thine heav'nly hall. "
+        },
+        {
+          "zh-hant": "三、為主忍受諸苦，狂怒死亡仇恨；\n酷鞭撕裂其身，鐵鉤割傷其肉。\n仇敵徒勞無功，諸般酷刑既盡；\n英魂堅立終不屈撓。",
+          "zh-hans": "三、为主忍受诸苦，狂怒死亡仇恨；\n酷鞭撕裂其身，铁钩割伤其肉。\n仇敌徒劳无功，诸般酷刑既尽；\n英魂坚立终不屈挠。",
+          "en": "For thee all pangs they bare, Fury and mortal hate;\nThe cruèl scourge to tear, The hook to lacerate:\nBut vain their foes' intent For, every torment spent,\nTheir valiant spirits stood unbent."
+        },
+        {
+          "zh-hant": "四、如羊傾流鮮血，無呻吟亦無淚；\n俯首在劍刃前，皆為至愛君王。\n靈魂安然蒙福，忍耐持守其靈；\n盼望安息欣然仰望。",
+          "zh-hans": "四、如羊倾流鲜血，无呻吟亦无泪；\n俯首在剑刃前，皆为至爱君王。\n灵魂安然蒙福，忍耐持守其灵；\n盼望安息欣然仰望。",
+          "en": "Like sheep their blood they poured, And without groan or tear;\nThey bent before the sword, For that their King most dear;\nTheir souls, serenely blest, In patience they possessed,\nAnd looked in hope towards their rest."
+        },
+        {
+          "zh-hant": "五、何舌能宣說盡，何思能夠窺知？\n主為諸聖預備，高天喜樂何深！\n浸染凱旋鮮血，披上紫紅榮光；\n從上帝手贏得桂冠。",
+          "zh-hans": "五、何舌能宣说尽，何思能够窥知？\n主为诸圣预备，高天喜乐何深！\n浸染凯旋鲜血，披上紫红荣光；\n从上帝手赢得桂冠。",
+          "en": "What tongue may here declare, Fancy or thought descry,\nThe joys thou dost prepare For these thy Saints on high?\nEmpurpled in the flood Of their victorious blood,\nThey won the laurel from their God."
+        },
+        {
+          "zh-hant": "六、至高上主三一，求赦我眾罪愆，\n又保守免諸惡；今賜僕人平安，\n來世歡然解脫，永享無盡喜樂，\n永享無窮不息福樂。阿們。",
+          "zh-hans": "六、至高上主三一，求赦我众罪愆，\n又保守免诸恶；今赐仆人平安，\n来世欢然解脱，永享无尽喜乐，\n永享无穷不息福乐。阿们。",
+          "en": "To thee, O Lord most high, One in Three Persons still, \nTo pardon us we cry, And to preserve from ill:\nHere give thy servants peace, Hereafter glad release,\nAnd pleasures that shall never cease. Amen."
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "你們善人應該因主歡樂，",
+          "zh-hans": "你们善人应该因主欢乐，",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "正直人讚美祂是理所應該的。",
+          "zh-hans": "正直人赞美祂是理所应当的。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "追隨基督的眾聖徒在天國歡慶，※他們追隨基督的腳蹤，為愛祂而傾流了鮮血，因此永遠與基督為王。",
+          "zh-hans": "追随基督的众圣徒在天国欢庆，※他们追随基督的脚踪，为爱祂而倾流了鲜血，因此永远与基督为王。",
+          "en": ""
+        },
+        {
+          "zh-hant": "這些聖者，※因愛上帝而輕視了世人的威脅；神聖的殉道者們，與天使在永恆的國中歡欣喜樂；聖民之死何等寶貴，他們永遠侍立在主面前，與主永不分離。",
+          "zh-hans": "这些圣者，※因爱上帝而轻视了世人的威胁；神圣的殉道者们，与天使在永恒的国中欢欣喜乐；圣民之死何等宝贵，他们永远侍立在主面前，与主永不分离。",
+          "en": ""
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "殉道者聖莫里斯及其同伴",
+        "zh-hans": "殉道者圣莫里斯及其同伴",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，求主恩準：使主的殉道者聖茂里斯及其同伴的慶典，給我們帶來喜樂，叫我們全心倚賴他們的祈求，能以他們的在天誕辰而感到光榮。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，求主恩准：使主的殉道者圣茂里斯及其同伴的庆典，给我们带来喜乐，叫我们全心倚赖他们的祈求，能以他们的在天诞辰而感到光荣。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "morning": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "我看見在祭壇底下有曾為上帝的道，並為作見證而被殺的人的靈魂，大聲喊着說：神聖真實的主宰啊，你不審判住在地上的人，為我們所流的血伸冤，要到幾時呢？",
+          "zh-hans": "我看见在祭坛底下有曾为上帝的道，并为作见证而被杀的人的灵魂，大声喊着说：神圣真实的主宰啊，你不审判住在地上的人，为我们所流的血伸冤，要到几时呢？",
+          "en": ""
+        },
+        "reference": {
+          "zh-hant": "（啟示錄 6:9-10）",
+          "zh-hans": "（启示录 6:9-10）",
+          "en": ""
+        }
+      }
+    ],
+    "invitatory": {
+      "texts": [
+        {
+          "zh-hant": "上帝在祂的聖徒中顯為奇妙可畏，※我們當來俯伏敬拜。",
+          "zh-hans": "上帝在祂的圣徒中显为奇妙可畏，※我们当来俯伏敬拜。",
+          "en": ""
+        },
+        {
+          "zh-hant": "主是殉道者的君王，※我們當來俯伏敬拜。",
+          "zh-hans": "主是殉道者的君王，※我们当来俯伏敬拜。",
+          "en": ""
+        }
+      ]
+    },
+    "invitatory_hymn": {
+      "title": {
+        "zh-hant": "基督君王永恆恩賜",
+        "zh-hans": "基督君王永恒恩赐",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、基督君王永恆恩賜，\n獻上歌聲不斷讚頌，\n殉道聖者光榮事蹟，\n感恩之心驅散憂傷。",
+          "zh-hans": "一、基督君王永恒恩赐，\n献上歌声不断赞颂，\n殉道圣者光荣事迹，\n感恩之心驱散忧伤。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、勇敢面對時代恐懼，\n苦難不移崇高信仰，\n聖潔死亡帶來安息，\n真福同享永恆榮光。",
+          "zh-hans": "二、勇敢面对时代恐惧，\n苦难不移崇高信仰，\n圣洁死亡带来安息，\n真福同享永恒荣光。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、猛獸張齒裂骨噬肌，\n烈焰焚軀聖徒不移，\n刑鈎貫體鐵刃凌欺，\n諸般酷虐聖者無遺。",
+          "zh-hans": "三、猛兽张齿裂骨噬肌，\n烈焰焚躯圣徒不移，\n刑钩贯体铁刃凌欺，\n诸般酷虐圣者无遗。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、聖血滂沱體骸殘損，\n痛楚雖極心志愈韌，\n靠主恩典立場堅定，\n苦難中間毫不動搖。",
+          "zh-hans": "四、圣血滂沱体骸残损，\n痛楚虽极心志愈韧，\n靠主恩典立场坚定，\n苦难中间毫不动摇。",
+          "en": ""
+        },
+        {
+          "zh-hant": "五、慈悲救主懇求垂聽，\n願偕諸聖永列天廷，\n願主僕人享此榮光，\n上主恩典永遠掌權。阿們。",
+          "zh-hans": "五、慈悲救主恳求垂听，\n愿偕诸圣永列天廷，\n愿主仆人享此荣光，\n上主恩典永远掌权。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": null
+    },
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "主的聖徒必如百合花开放，※哈利路亞；他們必如香膏的馨香立於主面前，哈利路亞。",
+          "zh-hans": "主的圣徒必如百合花开放，※哈利路亚；他们必如香膏的馨香立于主面前，哈利路亚。",
+          "en": "Thy Saints, O Lord, shall flourish like the lily, alleluia; ※and shall be even as the odour of balsam before thee, alleluia."
+        },
+        {
+          "zh-hant": "天國是諸聖的居所，※哈利路亞，他們要永遠安息，哈利路亞。",
+          "zh-hans": "天国是诸圣的居所，※哈利路亚，他们要永远安息，哈利路亚。",
+          "en": "In the heavenly kingdom † the Blessed have their dwelling-place, alleluia; ※and their rest for ever and ever, alleluia."
+        },
+        {
+          "zh-hant": "主的諸聖在帷幕內高呼：※哈利路亞，哈利路亞，哈利路亞。",
+          "zh-hans": "主的诸圣在帷幕内高呼：※哈利路亚，哈利路亚，哈利路亚。",
+          "en": "Within the veil + thy blessed Saints, O Lord, ※continually do cry, alleluia, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人的靈魂，※請歌唱讚美我們的上帝，哈利路亞，哈利路亞。",
+          "zh-hans": "义人的灵魂，※请歌唱赞美我们的上帝，哈利路亚，哈利路亚。",
+          "en": "O ye spirits + and souls of the righteous, ※sing ye praise to the Lord our God, alleluia, alleluia."
+        },
+        {
+          "zh-hant": "義人要在上帝台前發出光來，※像太陽一樣。哈利路亞。",
+          "zh-hans": "义人要在上帝台前发出光来，※像太阳一样。哈利路亚.",
+          "en": "Then shall the righteous † shine forth as the sun ※in the presence of God, alleluia."
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "榮耀殉道圣者之君",
+        "zh-hans": "荣耀殉道圣者之君",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀殉道圣者之君，\n精修圣人以主為冠；\n引領捨棄世俗歡樂，\n邁向天國光輝之日。",
+          "zh-hans": "一、荣耀殉道圣者之君，\n精修圣人以主为冠；\n引领舍弃世俗欢乐，\n迈向天国光辉之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、救主垂憐傾聽我們，\n我眾祈禱上達於天；\n數算他們得勝之時，\n赦免我們所犯之罪。",
+          "zh-hans": "二、救主垂怜倾听我们，\n我众祈祷上达于天；\n数算他们得胜之时，\n赦免我们所犯之罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、殉道者因你而得勝，\n精修者從你得恩典；\n助我克服罪恶慾望，\n好使我們获得寬恕。",
+          "zh-hans": "三、殉道者因你而得胜，\n精修者从你得恩典；\n助我克服罪恶欲望，\n好使我们获得宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "四、仁君基督永享尊荣，\n偕同天父同享荣耀；\n也归于保惠师圣灵，\n三一上帝永世无尽。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "上帝在祂的聖徒中顯為奇妙可畏。",
+          "zh-hans": "上帝在祂的圣徒中显为奇妙可畏。",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "祂的威嚴滿有榮耀。",
+          "zh-hans": "祂的威严满有荣耀。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normal": {
+        "zh-hant": "這些人輕視了世俗的生活，※獲得了天國的賞報，並在羔羊的血中洗淨了他們的衣服；天國是他們的。",
+        "zh-hans": "这些人轻视了世俗的生活，※获得了天国的赏报，并在羔羊的血中洗净了他们的衣服；天国是他们的。",
+        "en": ""
+      }
+    },
+    "biography": {
+      "title": {
+        "zh-hant": "聖人小傳",
+        "zh-hans": "圣人小传",
+        "en": "For the Legend"
+      },
+      "source": {
+        "zh-hant": "",
+        "zh-hans": "",
+        "en": ""
+      },
+      "rubric": {
+        "zh-hant": "¶ 在信經之前，可選讀以下聖人小傳/教父講道。",
+        "zh-hans": "¶ 在信经之前，可选读以下圣人小传/教父讲道。",
+        "en": ""
+      },
+      "paragraphs": [
+        {
+          "zh-hant": "聖莫里斯於二八七年在高盧的阿高努姆附近殉道。有些權威文獻認為，這些聖人即是底比斯軍團；這是一支從上埃及招募而來的基督徒士兵部隊。軍隊行至高盧邊境時停下，要向眾神獻祭；底比斯軍團為免參與這不聖潔的祭典而受玷污，便退出隊伍。因此，皇帝派遣士兵到他們那裡，命令他們若珍惜自己的性命，就要回去參與祭祀。他們回答說，基督信仰不容許他們如此行。於是，皇帝派出部分軍隊攻擊底比斯人，下令每十人中先殺一人。出於自願，並在莫里斯的懇切勸勉下，他們寧願選擇忍受殉道之苦，也不願遵從不義皇帝的命令。最後，皇帝在九月二十二日下令全軍攻擊他們，將他們全部殺害。而他們勇敢地宣認基督，直到最後。",
+          "zh-hans": "圣莫里斯于二八七年在高卢的阿高努姆附近殉道。有些权威文献认为，这些圣人即是底比斯军团；这是一支从上埃及招募而来的基督徒士兵部队。军队行至高卢边境时停下，要向众神献祭；底比斯军团为免参与这不圣洁的祭典而受玷污，便退出队伍。因此，皇帝派遣士兵到他们那里，命令他们若珍惜自己的性命，就要回去参与祭祀。他们回答说，基督信仰不容许他们如此行。于是，皇帝派出部分军队攻击底比斯人，下令每十人中先杀一人。出于自愿，并在莫里斯的恳切劝勉下，他们宁愿选择忍受殉道之苦，也不愿遵从不义皇帝的命令。最后，皇帝在九月二十二日下令全军攻击他们，将他们全部杀害。而他们勇敢地宣认基督，直到最后。",
+          "en": "St. Maurice died in 287, near Agaunum, in Gaul. These holy men are by some authorities identified with the Theban Legion, that is, a band of Christian soldiers recruited from Upper Egypt. At the frontiers of Gaul, the army paused to sacrifice to the gods; and the Theban Legion, that they might not be defiled by any share in the unhallowed rites, withdrew themselves. Therefore the Emperor sent soldiers unto them to bid them, if they valued their lives, to come back to the sacrifice. They answered that the Christian religion did not allow them so to do. He therefore despatched a part of his army to the Thebans, with orders to begin by killing one man in every ten of them. By their own will, and at the urgent exhortation of Maurice, they chose rather to endure this martyrdom than to obey the commandment of the unrighteous Emperor. At the last, the Emperor, upon the 22nd day of September, bade his whole army fall upon them and slay them all. And they confessed Christ bravely even to the end."
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "殉道者聖莫里斯及其同伴",
+        "zh-hans": "殉道者圣莫里斯及其同伴",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，求主恩準：使主的殉道者聖茂里斯及其同伴的慶典，給我們帶來喜樂，叫我們全心倚賴他們的祈求，能以他們的在天誕辰而感到光榮。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，求主恩准：使主的殉道者圣茂里斯及其同伴的庆典，给我们带来喜乐，叫我们全心倚赖他们的祈求，能以他们的在天诞辰而感到光荣。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  },
+  "evening": {
+    "bible_sentences": [
+      {
+        "text": {
+          "zh-hant": "這些人是脫了那必死的衣裳，穿上那不死的。他們宣認了上帝的名，現在他們戴上冠冕，又得棕樹枝。",
+          "zh-hans": "这些人是脱了那必死的衣裳，穿上那不死的。他们宣认了上帝的名，现在他们戴上冠冕，又得棕树枝。",
+          "en": "THESE be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of God: now are they crowned, and receive palms."
+        },
+        "reference": {
+          "zh-hant": "（以斯拉補編下卷 2:45）",
+          "zh-hans": "（以斯拉补编下卷 2:45）",
+          "en": "(2 Esdras.ii.45.)"
+        }
+      }
+    ],
+    "psalm_antiphons": {
+      "antiphons": [
+        {
+          "zh-hant": "這些聖徒為上帝捨身，※並用羔羊的血把衣裳洗得潔白。",
+          "zh-hans": "这些圣徒为上帝舍身，※并用羔羊的血把衣裳洗得洁白。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖徒藉著信，※制伏了列國，行了公義，得了應許。",
+          "zh-hans": "圣徒藉着信，※制伏了列国，行了公义，得了应许。",
+          "en": ""
+        },
+        {
+          "zh-hant": "聖徒如鷹返老返童，※他們如百合花盛開在主的城裏。",
+          "zh-hans": "圣徒如鹰返老返童，※他们如百合花盛开在主的城里。",
+          "en": ""
+        },
+        {
+          "zh-hant": "上帝要擦去聖徒一切的眼淚；※不再有死亡，也不再有悲哀、哭號、痛苦，因為先前的事都過去了。",
+          "zh-hans": "上帝要擦去圣徒一切的眼泪；※不再有死亡，也不再有悲哀、哭号、痛苦，因为先前的事都过去了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "天國是諸聖的居所，※他們要永遠安息。",
+          "zh-hans": "天国是诸圣的居所，※他们要永远安息。",
+          "en": ""
+        }
+      ]
+    },
+    "office_hymn": {
+      "title": {
+        "zh-hant": "榮耀殉道圣者之君",
+        "zh-hans": "荣耀殉道圣者之君",
+        "en": ""
+      },
+      "verses": [
+        {
+          "zh-hant": "一、榮耀殉道圣者之君，\n精修圣人以主為冠；\n引領捨棄世俗歡樂，\n邁向天國光輝之日。",
+          "zh-hans": "一、荣耀殉道圣者之君，\n精修圣人以主为冠；\n引领舍弃世俗欢乐，\n迈向天国光辉之日。",
+          "en": ""
+        },
+        {
+          "zh-hant": "二、救主垂憐傾聽我們，\n我眾祈禱上達於天；\n數算他們得勝之時，\n赦免我們所犯之罪。",
+          "zh-hans": "二、救主垂怜倾听我们，\n我众祈祷上达于天；\n数算他们得胜之时，\n赦免我们所犯之罪。",
+          "en": ""
+        },
+        {
+          "zh-hant": "三、殉道者因你而得勝，\n精修者從你得恩典；\n助我克服罪恶慾望，\n好使我們获得寬恕。",
+          "zh-hans": "三、殉道者因你而得胜，\n精修者从你得恩典；\n助我克服罪恶欲望，\n好使我们获得宽恕。",
+          "en": ""
+        },
+        {
+          "zh-hant": "四、仁君基督永享尊榮，\n偕同天父同享榮耀；\n也歸於保惠師聖靈，\n三一上帝永世無盡。阿們。",
+          "zh-hans": "四、仁君基督永享尊荣，\n偕同天父同享荣耀；\n+也归于保惠师圣灵，\n三一上帝永世无尽。阿们。",
+          "en": ""
+        }
+      ],
+      "versicle": {
+        "leader": {
+          "zh-hant": "只有善人必要快樂，",
+          "zh-hans": "只有善人必要快乐，",
+          "en": ""
+        },
+        "people": {
+          "zh-hant": "在上帝面前勇躍歡喜。",
+          "zh-hans": "在上帝面前踊跃欢喜。",
+          "en": ""
+        }
+      }
+    },
+    "benedictus_antiphon": {
+      "normals": [
+        {
+          "zh-hant": "上帝要擦去聖徒一切的眼淚；※不再有死亡，也不再有悲哀、哭號、痛苦，因為先前的事都過去了。",
+          "zh-hans": "上帝要擦去圣徒一切的眼泪；※不再有死亡，也不再有悲哀、哭号、痛苦，因为先前的事都过去了。",
+          "en": ""
+        },
+        {
+          "zh-hant": "諸聖手執棕枝直抵天國，※他們從主手中領受了華冠。",
+          "zh-hans": "诸圣手执棕枝直抵天国，※他们从主手中领受了华冠。",
+          "en": ""
+        }
+      ]
+    },
+    "collect": {
+      "title": {
+        "zh-hant": "殉道者聖莫里斯及其同伴",
+        "zh-hans": "殉道者圣莫里斯及其同伴",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "全能的上帝，求主恩準：使主的殉道者聖茂里斯及其同伴的慶典，給我們帶來喜樂，叫我們全心倚賴他們的祈求，能以他們的在天誕辰而感到光榮。這都是靠著我主耶穌基督；主耶穌和聖父、聖靈，惟一上帝，一同永生，一同掌權，世世無盡。阿們。",
+        "zh-hans": "全能的上帝，求主恩准：使主的殉道者圣茂里斯及其同伴的庆典，给我们带来喜乐，叫我们全心倚赖他们的祈求，能以他们的在天诞辰而感到光荣。这都是靠着我主耶稣基督；主耶稣和圣父、圣灵，惟一上帝，一同永生，一同掌权，世世无尽。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

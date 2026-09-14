@@ -1,0 +1,15 @@
+{
+    "id": "tr5-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "19:1-15"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "12:1-15"
+        }
+    }
+}

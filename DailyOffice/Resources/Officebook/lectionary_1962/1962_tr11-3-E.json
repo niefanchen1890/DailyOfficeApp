@@ -1,0 +1,15 @@
+{
+    "id": "tr11-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "22:1-38"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "18:17-end"
+        }
+    }
+}

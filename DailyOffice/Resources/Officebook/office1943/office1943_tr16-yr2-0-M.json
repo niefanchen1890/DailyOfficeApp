@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr16-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "91" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米書",
+      "chapter": "32:36-42"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "11:25-36"
+    }
+  }
+}

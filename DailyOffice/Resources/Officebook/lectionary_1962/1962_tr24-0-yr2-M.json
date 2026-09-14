@@ -1,0 +1,15 @@
+{
+    "id": "tr24-0-yr2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "15:1-10"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "27:30-28:9"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "17:1-15"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "20:1-18"
+        }
+    }
+}

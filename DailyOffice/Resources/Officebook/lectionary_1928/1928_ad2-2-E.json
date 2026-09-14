@@ -1,0 +1,15 @@
+{
+    "id": "ad2-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "啟示錄",
+            "chapter": "10:1-11"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "15:25-34"
+        }
+    }
+}

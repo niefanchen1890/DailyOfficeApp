@@ -1,0 +1,15 @@
+{
+    "id": "tr-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "雅各書",
+            "chapter": "3:1-18"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "7:1-21"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "epiphany4-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "12:20-36"
+        },
+        "ot": {
+            "book": "阿摩司書",
+            "chapter": "5:1-27"
+        }
+    }
+}

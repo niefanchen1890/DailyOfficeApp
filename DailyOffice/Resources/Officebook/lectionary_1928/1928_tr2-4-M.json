@@ -1,0 +1,15 @@
+{
+    "id": "tr2-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "9:35-10:15"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "22:10-34"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "office1943_tr1-yr2-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "items": [
+        { "number": "49" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約伯記",
+      "chapter": "21:17-33"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "16:19-31"
+    }
+  }
+}

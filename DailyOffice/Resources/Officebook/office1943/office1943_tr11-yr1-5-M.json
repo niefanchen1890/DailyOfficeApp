@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr11-yr1-5-M",
+  "label": "禮拜五",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "94" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記下",
+      "chapter": "5:1-10"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "22:47-62"
+    }
+  }
+}

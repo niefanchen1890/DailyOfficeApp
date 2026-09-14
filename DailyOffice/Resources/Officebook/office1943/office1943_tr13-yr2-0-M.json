@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr13-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "73" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "哈巴谷書",
+      "chapter": "1:12-2:4,14"
+    },
+    "nt": {
+      "book": "希伯來書",
+      "chapter": "10:35-39"
+    }
+  }
+}

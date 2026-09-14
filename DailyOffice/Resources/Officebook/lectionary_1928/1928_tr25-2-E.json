@@ -1,0 +1,15 @@
+{
+    "id": "tr25-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "11:16-31"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "29:1-13"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr15-0-yr2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "3"
+        },
+        "ot": {
+            "book": "尼希米記",
+            "chapter": "1"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "easter7-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "希伯來書",
+            "chapter": "12:1-13"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "32:48-52，34:1-12"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "1:32-45"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "4:1-21"
+        }
+    }
+}

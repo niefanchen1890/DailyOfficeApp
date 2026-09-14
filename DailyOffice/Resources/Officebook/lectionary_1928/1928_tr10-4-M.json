@@ -1,0 +1,15 @@
+{
+    "id": "tr10-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "4:33"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "17:31-53"
+        }
+    }
+}

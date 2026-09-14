@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr5-yr1-4-E",
+  "label": "禮拜四",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "30" },
+      { "number": "31", "verses": "1-6" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "瑪喀比傳上",
+      "chapter": "4:52-60"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "19:8-20"
+    }
+  }
+}

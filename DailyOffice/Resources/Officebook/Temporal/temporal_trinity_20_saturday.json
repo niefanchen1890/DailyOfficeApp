@@ -1,0 +1,37 @@
+{
+  "identifier": "temporal.trinity.week.20.weekday.7",
+  "temporal": {
+    "season": "trinity",
+    "week": 20,
+    "weekday": 7
+  },
+  "traits": {
+    "themes": []
+  },
+  "name": {
+    "zh-hant": "三一主日後第二十主日禮拜六",
+    "zh-hans": "三一主日后第二十主日礼拜六",
+    "en": ""
+  },
+  "rank": "feria",
+  "rank_display": {
+    "zh-hant": "（普通平日）",
+    "zh-hans": "（普通平日）",
+    "en": ""
+  },
+  "type": "temporal",
+  "morning": {
+    "collect": {
+      "title": {
+        "zh-hant": "三一主日後第二十主日禮拜六",
+        "zh-hans": "三一主日后第二十主日礼拜六",
+        "en": ""
+      },
+      "text": {
+        "zh-hant": "求全能最慈悲的上帝，大施恩典，保佑我們不遇見一切的損害，身心齊備，歡然成就主所吩咐的事。這都是靠著我主耶穌基督。阿們。",
+        "zh-hans": "求全能最慈悲的上帝，大施恩典，保佑我们不遇见一切的损害，身心齐备，欢然成就主所吩咐的事。这都是靠着我主耶稣基督。阿们。",
+        "en": ""
+      }
+    }
+  }
+}

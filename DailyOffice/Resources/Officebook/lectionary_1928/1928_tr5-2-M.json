@@ -1,0 +1,15 @@
+{
+    "id": "tr5-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "17:1-13"
+        },
+        "ot": {
+            "book": "士師記",
+            "chapter": "9:41-57"
+        }
+    }
+}

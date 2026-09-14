@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr2-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "15" },
+      { "number": "19" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約伯記",
+      "chapter": "31:13-28"
+    },
+    "nt": {
+      "book": "哥林多前書",
+      "chapter": "13:1-13"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "lent3-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "6:10-24"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "23:18-33"
+        }
+    }
+}

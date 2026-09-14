@@ -1,0 +1,15 @@
+{
+    "id": "easter3-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "腓利門書",
+            "chapter": "1-25"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "11:1-17"
+        }
+    }
+}

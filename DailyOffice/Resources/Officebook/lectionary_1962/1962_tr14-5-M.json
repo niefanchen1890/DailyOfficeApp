@@ -1,0 +1,15 @@
+{
+    "id": "tr14-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "4:31-5:21"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "22:20-23:8"
+        }
+    }
+}

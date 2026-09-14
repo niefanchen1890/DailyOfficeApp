@@ -1,0 +1,15 @@
+{
+    "id": "epiphany5-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "20:17-38"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "35:1-11"
+        }
+    }
+}

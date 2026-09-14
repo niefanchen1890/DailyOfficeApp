@@ -1,0 +1,15 @@
+{
+    "id": "septuagesima0-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "7:1-27"
+        },
+        "ot": {
+            "book": "歷代志下",
+            "chapter": "22:1-12"
+        }
+    }
+}

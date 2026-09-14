@@ -1,0 +1,20 @@
+{
+  "id": "office1943_tr-yr1-2-M",
+  "label": "平日",
+  "office": "morning",
+  "psalms": {
+    "items": [
+      { "number": "5" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "民數記",
+      "chapter": "16:15-35"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "1:26-38"
+    }
+  }
+}

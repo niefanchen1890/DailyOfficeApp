@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr4-yr1-0-E",
+  "label": "第一組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "51" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以賽亞書",
+      "chapter": "29:9-15"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "15:1-20"
+    }
+  }
+}

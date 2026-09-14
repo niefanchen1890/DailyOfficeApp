@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr-yr1-5-E",
+  "label": "平日",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "得勝的，我必將那隱藏的嗎哪和一個新的名字賜給他。哈利路亞。",
+    "items": [
+      { "number": "27" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒迦利亞書",
+      "chapter": "1:7-17"
+    },
+    "nt": {
+      "book": "使徒行傳",
+      "chapter": "8:5-25"
+    }
+  }
+}
+

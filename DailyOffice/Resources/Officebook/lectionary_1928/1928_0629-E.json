@@ -1,0 +1,15 @@
+{
+    "id": "0629-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "4:12-5:11"
+        },
+        "ot": {
+            "book": "撒迦利亞書",
+            "chapter": "3:1-10"
+        }
+    }
+}

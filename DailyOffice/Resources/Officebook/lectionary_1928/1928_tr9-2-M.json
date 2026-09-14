@@ -1,0 +1,15 @@
+{
+    "id": "tr9-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "26:57"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "9:1-10:1"
+        }
+    }
+}

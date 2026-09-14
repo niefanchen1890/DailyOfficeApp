@@ -1,0 +1,15 @@
+{
+    "id": "lent2-3-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "8:40-56"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "29:1-14"
+        }
+    }
+}

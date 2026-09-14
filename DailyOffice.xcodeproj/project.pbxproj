@@ -6,13 +6,48 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		43E2CEAA2FA8E38B00DB3F86 /* JSONResourceValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2CEA92FA8E38B00DB3F86 /* JSONResourceValidationTests.swift */; };
+		43F4A0012FC8000100DA1A11 /* LiturgyDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F4A0022FC8000100DA1A11 /* LiturgyDateTests.swift */; };
+		A01909090000000000000001 /* AppearanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01909090000000000000002 /* AppearanceTests.swift */; };
+		A01909100000000000000001 /* HolyDays1943Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01909100000000000000002 /* HolyDays1943Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43E2CEA42FA8E38B00DB3F86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43AE616C2F9F5078004D6CA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43AE61732F9F5078004D6CA9;
+			remoteInfo = DailyOffice;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		43AE61742F9F5078004D6CA9 /* DailyOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E2CEA02FA8E38B00DB3F86 /* DailyOfficeTests1.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyOfficeTests1.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E2CEA92FA8E38B00DB3F86 /* JSONResourceValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResourceValidationTests.swift; sourceTree = "<group>"; };
+		43F4A0022FC8000100DA1A11 /* LiturgyDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiturgyDateTests.swift; sourceTree = "<group>"; };
+		A01909090000000000000002 /* AppearanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceTests.swift; sourceTree = "<group>"; };
+		A01909100000000000000002 /* HolyDays1943Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyDays1943Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		43B31C922FC73B1B00BC9408 /* Exceptions for "DailyOffice" folder in "DailyOffice" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 43AE61732F9F5078004D6CA9 /* DailyOffice */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		43AE61762F9F5078004D6CA9 /* DailyOffice */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				43B31C922FC73B1B00BC9408 /* Exceptions for "DailyOffice" folder in "DailyOffice" target */,
+			);
 			path = DailyOffice;
 			sourceTree = "<group>";
 		};
@@ -26,14 +61,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43E2CE9D2FA8E38B00DB3F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		43AE616B2F9F5078004D6CA9 = {
 			isa = PBXGroup;
 			children = (
-				43AE61762F9F5078004D6CA9 /* DailyOffice */,
 				43AE61752F9F5078004D6CA9 /* Products */,
+				43AE61762F9F5078004D6CA9 /* DailyOffice */,
+				43E2CEAB2FA8E38B00DB3F86 /* DailyOfficeTests1 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,8 +84,20 @@
 			isa = PBXGroup;
 			children = (
 				43AE61742F9F5078004D6CA9 /* DailyOffice.app */,
+				43E2CEA02FA8E38B00DB3F86 /* DailyOfficeTests1.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		43E2CEAB2FA8E38B00DB3F86 /* DailyOfficeTests1 */ = {
+			isa = PBXGroup;
+			children = (
+				43E2CEA92FA8E38B00DB3F86 /* JSONResourceValidationTests.swift */,
+				43F4A0022FC8000100DA1A11 /* LiturgyDateTests.swift */,
+				A01909090000000000000002 /* AppearanceTests.swift */,
+				A01909100000000000000002 /* HolyDays1943Tests.swift */,
+			);
+			path = DailyOfficeTests1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +125,26 @@
 			productReference = 43AE61742F9F5078004D6CA9 /* DailyOffice.app */;
 			productType = "com.apple.product-type.application";
 		};
+		43E2CE9F2FA8E38B00DB3F86 /* DailyOfficeTests1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43E2CEA62FA8E38B00DB3F86 /* Build configuration list for PBXNativeTarget "DailyOfficeTests1" */;
+			buildPhases = (
+				43E2CE9C2FA8E38B00DB3F86 /* Sources */,
+				43E2CE9D2FA8E38B00DB3F86 /* Frameworks */,
+				43E2CE9E2FA8E38B00DB3F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43E2CEA52FA8E38B00DB3F86 /* PBXTargetDependency */,
+			);
+			name = DailyOfficeTests1;
+			packageProductDependencies = (
+			);
+			productName = DailyOfficeTests1;
+			productReference = 43E2CEA02FA8E38B00DB3F86 /* DailyOfficeTests1.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -78,10 +153,15 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2640;
-				LastUpgradeCheck = 2640;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					43AE61732F9F5078004D6CA9 = {
 						CreatedOnToolsVersion = 26.4.1;
+					};
+					43E2CE9F2FA8E38B00DB3F86 = {
+						CreatedOnToolsVersion = 26.4.1;
+						LastSwiftMigration = 2640;
+						TestTargetID = 43AE61732F9F5078004D6CA9;
 					};
 				};
 			};
@@ -100,12 +180,20 @@
 			projectRoot = "";
 			targets = (
 				43AE61732F9F5078004D6CA9 /* DailyOffice */,
+				43E2CE9F2FA8E38B00DB3F86 /* DailyOfficeTests1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		43AE61722F9F5078004D6CA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43E2CE9E2FA8E38B00DB3F86 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +210,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43E2CE9C2FA8E38B00DB3F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E2CEAA2FA8E38B00DB3F86 /* JSONResourceValidationTests.swift in Sources */,
+				43F4A0012FC8000100DA1A11 /* LiturgyDateTests.swift in Sources */,
+				A01909090000000000000001 /* AppearanceTests.swift in Sources */,
+				A01909100000000000000001 /* HolyDays1943Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43E2CEA52FA8E38B00DB3F86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43AE61732F9F5078004D6CA9 /* DailyOffice */;
+			targetProxy = 43E2CEA42FA8E38B00DB3F86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		43AE617D2F9F507A004D6CA9 /* Debug */ = {
@@ -251,16 +358,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BXXKJV98JW;
+				CURRENT_PROJECT_VERSION = 93;
+				DEVELOPMENT_TEAM = 8463FD7LL2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyOffice/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "安立甘日課";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -268,6 +380,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.thedailyoffice.DailyOffice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -283,16 +396,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BXXKJV98JW;
+				CURRENT_PROJECT_VERSION = 93;
+				DEVELOPMENT_TEAM = 8463FD7LL2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyOffice/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "安立甘日課";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,6 +418,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.thedailyoffice.DailyOffice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -307,6 +426,53 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		43E2CEA72FA8E38B00DB3F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8463FD7LL2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.thedailyoffice.DailyOfficeTests1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "DailyOfficeTests1/DailyOfficeTests1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyOffice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyOffice";
+			};
+			name = Debug;
+		};
+		43E2CEA82FA8E38B00DB3F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8463FD7LL2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.thedailyoffice.DailyOfficeTests1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "DailyOfficeTests1/DailyOfficeTests1-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyOffice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyOffice";
 			};
 			name = Release;
 		};
@@ -327,6 +493,15 @@
 			buildConfigurations = (
 				43AE61802F9F507A004D6CA9 /* Debug */,
 				43AE61812F9F507A004D6CA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43E2CEA62FA8E38B00DB3F86 /* Build configuration list for PBXNativeTarget "DailyOfficeTests1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E2CEA72FA8E38B00DB3F86 /* Debug */,
+				43E2CEA82FA8E38B00DB3F86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

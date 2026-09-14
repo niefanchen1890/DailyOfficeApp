@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr8-yr1-1-M",
+  "label": "禮拜一",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "104" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "撒母耳記上",
+      "chapter": "11:1-13"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "15:1-10"
+    }
+  }
+}

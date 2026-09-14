@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr10-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "147" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "耶利米書",
+      "chapter": "26:1-7,10-15"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "23:34-39"
+    }
+  }
+}

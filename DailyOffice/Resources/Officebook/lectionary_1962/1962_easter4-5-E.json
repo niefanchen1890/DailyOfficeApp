@@ -1,0 +1,15 @@
+{
+    "id": "easter4-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "19:21-41"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "32:15-47"
+        }
+    }
+}

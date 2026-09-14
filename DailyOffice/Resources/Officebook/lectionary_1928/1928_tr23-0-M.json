@@ -1,0 +1,15 @@
+{
+    "id": "tr23-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "11:18-30"
+        },
+        "ot": {
+            "book": "約伯記",
+            "chapter": "1:1-21"
+        }
+    }
+}

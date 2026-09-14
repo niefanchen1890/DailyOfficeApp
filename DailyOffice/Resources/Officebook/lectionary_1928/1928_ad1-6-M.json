@@ -1,0 +1,15 @@
+{
+    "id": "ad1-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "4:1-34"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "4:16-26"
+        }
+    }
+}

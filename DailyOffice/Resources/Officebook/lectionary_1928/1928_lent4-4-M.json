@@ -1,0 +1,15 @@
+{
+    "id": "lent4-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多後書",
+            "chapter": "4:7-5:10"
+        },
+        "ot": {
+            "book": "出埃及記",
+            "chapter": "11:1-10"
+        }
+    }
+}

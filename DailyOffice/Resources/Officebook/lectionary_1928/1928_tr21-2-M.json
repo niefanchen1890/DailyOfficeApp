@@ -1,0 +1,15 @@
+{
+    "id": "tr21-2-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "4:1-26"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "3:16-28"
+        }
+    }
+}

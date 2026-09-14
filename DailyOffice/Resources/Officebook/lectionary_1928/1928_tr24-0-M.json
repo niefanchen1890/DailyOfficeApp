@@ -1,0 +1,15 @@
+{
+    "id": "tr24-0-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "8:4-15"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "51:1-7"
+        }
+    }
+}

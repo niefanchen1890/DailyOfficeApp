@@ -1,0 +1,15 @@
+{
+    "id": "tr8-4-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "25:30-46"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "5:1-12"
+        }
+    }
+}

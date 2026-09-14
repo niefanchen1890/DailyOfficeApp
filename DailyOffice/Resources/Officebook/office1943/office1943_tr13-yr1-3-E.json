@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr13-yr1-3-E",
+  "label": "禮拜三",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "18", "verses": "1-20" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "4:20-5:7"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "2:13-23"
+    }
+  }
+}

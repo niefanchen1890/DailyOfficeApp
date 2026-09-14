@@ -1,0 +1,15 @@
+{
+    "id": "ad4-0-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "3:1-12"
+        },
+        "ot": {
+            "book": "列王紀上",
+            "chapter": "17:1-16"
+        }
+    }
+}

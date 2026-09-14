@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr2-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "76" },
+      { "number": "125" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "申命記",
+      "chapter": "20:1-9"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "9:57-62"
+    }
+  }
+}

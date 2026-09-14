@@ -1,0 +1,15 @@
+{
+    "id": "tr3-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰二書",
+            "chapter": "1-13"
+        },
+        "ot": {
+            "book": "箴言",
+            "chapter": "9:1-18"
+        }
+    }
+}

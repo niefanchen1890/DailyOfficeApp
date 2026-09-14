@@ -1,0 +1,15 @@
+{
+    "id": "tr-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "9:23-43"
+        },
+        "ot": {
+            "book": "哈該書",
+            "chapter": "2:1-9"
+        }
+    }
+}

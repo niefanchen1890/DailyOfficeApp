@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr13-yr1-2-E",
+  "label": "禮拜二",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "13" },
+      { "number": "14" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "4:1-18"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "2:1-12"
+    }
+  }
+}

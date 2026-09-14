@@ -1,0 +1,15 @@
+{
+    "id": "1226-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "使徒行傳",
+            "chapter": "7:59-8:8"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "4:7-15"
+        }
+    }
+}

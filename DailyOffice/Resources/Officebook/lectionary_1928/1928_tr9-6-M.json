@@ -1,0 +1,15 @@
+{
+    "id": "tr9-6-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "28"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "14:1-23, 40-48"
+        }
+    }
+}

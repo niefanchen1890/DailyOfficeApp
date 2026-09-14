@@ -1,0 +1,15 @@
+{
+    "id": "lent6-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "15:17-27"
+        },
+        "ot": {
+            "book": "所羅門智訓",
+            "chapter": "2:1-24"
+        }
+    }
+}

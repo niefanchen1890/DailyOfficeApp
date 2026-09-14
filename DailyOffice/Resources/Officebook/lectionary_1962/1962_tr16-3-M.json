@@ -1,0 +1,15 @@
+{
+    "id": "tr16-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "歌羅西書",
+            "chapter": "1:1-20"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "44:1-14"
+        }
+    }
+}

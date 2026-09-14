@@ -1,0 +1,15 @@
+{
+    "id": "tr15-0-yr1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "1:13-end"
+        },
+        "ot": {
+            "book": "約珥書",
+            "chapter": "2:15-27"
+        }
+    }
+}

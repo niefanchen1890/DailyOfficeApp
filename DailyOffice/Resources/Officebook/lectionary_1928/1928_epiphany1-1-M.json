@@ -1,0 +1,15 @@
+{
+    "id": "epiphany1-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "1:1-13"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "11:17-12:9"
+        }
+    }
+}

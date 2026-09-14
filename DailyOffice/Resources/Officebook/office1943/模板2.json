@@ -1,0 +1,208 @@
+{
+  "entries": {
+    "trinity:1:sunday:morning": [
+      {
+        "id": "set1",
+        "label": "第一組",
+        "psalms": {
+          "antiphon": "願萬有同聲讚頌、※光榮父、他所生的子、和聖靈，直到永遠。",
+          "items": [
+            { "number": "29" },
+            { "number": "99" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "以賽亞書",
+            "chapter": "6:1-8"
+          },
+          "nt": {
+            "book": "彼得前書",
+            "chapter": "1:1-12"
+          }
+        }
+      },
+      {
+        "id": "set2",
+        "label": "第二組",
+        "psalms": {
+          "antiphon": "願萬有同聲讚頌、※光榮父、他所生的子、和聖靈，直到永遠。",
+          "items": [
+            { "number": "33" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "創世記",
+            "chapter": "1:1-2:3"
+          },
+          "nt": {
+            "book": "約翰福音",
+            "chapter": "1:1-18"
+          }
+        }
+      },
+      {
+        "id": "set3",
+        "label": "第三組",
+        "psalms": {
+          "antiphon": "願萬有同聲讚頌、※光榮父、他所生的子、和聖靈，直到永遠。",
+          "items": [
+            { "number": "8" },
+            { "number": "93" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "出埃及記",
+            "chapter": "3:1-15"
+          },
+          "nt": {
+            "book": "約翰福音",
+            "chapter": "14:1-17"
+          }
+        }
+      }
+    ],
+
+    "trinity:1:sunday:evening": [
+      {
+        "id": "set1",
+        "label": "第一組",
+        "psalms": {
+          "antiphon": "萬物的創造者和統治者，至聖而不可分的三位一體應受頌讚，從現在直到萬世萬代，永不間斷。",
+          "items": [
+            { "number": "98" },
+            { "number": "100" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "便西拉智訓",
+            "chapter": "43:1-12、27-33"
+          },
+          "nt": {
+            "book": "以弗所書",
+            "chapter": "4:1-16"
+          }
+        }
+      },
+      {
+        "id": "set2",
+        "label": "第二組",
+        "psalms": {
+          "antiphon": "萬物的創造者和統治者，至聖而不可分的三位一體應受頌讚，從現在直到萬世萬代，永不間斷。",
+          "items": [
+            { "number": "148" },
+            { "number": "150" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "約伯記",
+            "chapter": "38:1-11、16-18，42:1-6"
+          },
+          "nt": {
+            "book": "約翰福音",
+            "chapter": "1:29-34"
+          }
+        }
+      }
+    ],
+
+    "trinity:1:monday:morning": [
+      {
+        "id": "weekday",
+        "label": "平日",
+        "psalms": {
+          "antiphon": "主啊，求祢指示我們祢的道路。",
+          "items": [
+            { "number": "25", "verses": "1-10" },
+            { "number": "26" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "約書亞記",
+            "chapter": "1:1-9"
+          },
+          "nt": {
+            "book": "路加福音",
+            "chapter": "1:1-25"
+          }
+        }
+      }
+    ],
+
+    "trinity:1:monday:evening": [
+      {
+        "id": "weekday",
+        "label": "平日",
+        "psalms": {
+          "antiphon": "主啊，求祢保守我們如同眼中的瞳人。",
+          "items": [
+            { "number": "27" },
+            { "number": "28", "verses": "1-9" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "士師記",
+            "chapter": "2:6-23"
+          },
+          "nt": {
+            "book": "路加福音",
+            "chapter": "1:26-56"
+          }
+        }
+      }
+    ],
+
+    "trinity:1:tuesday:morning": [
+      {
+        "id": "weekday",
+        "label": "平日",
+        "psalms": {
+          "antiphon": "主是我的亮光，是我的拯救。",
+          "items": [
+            { "number": "31", "verses": "1-8" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "士師記",
+            "chapter": "4:1-24"
+          },
+          "nt": {
+            "book": "路加福音",
+            "chapter": "1:57-80"
+          }
+        }
+      }
+    ],
+
+    "trinity:1:tuesday:evening": [
+      {
+        "id": "weekday",
+        "label": "平日",
+        "psalms": {
+          "antiphon": "我要稱頌主，祂聽了我懇求的聲音。",
+          "items": [
+            { "number": "32" },
+            { "number": "33", "verses": "1-12" }
+          ]
+        },
+        "lessons": {
+          "ot": {
+            "book": "路得記",
+            "chapter": "1:1-18"
+          },
+          "nt": {
+            "book": "路加福音",
+            "chapter": "2:1-20"
+          }
+        }
+      }
+    ]
+  }
+}

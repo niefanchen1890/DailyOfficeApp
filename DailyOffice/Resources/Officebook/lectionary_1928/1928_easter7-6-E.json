@@ -1,0 +1,15 @@
+{
+    "id": "easter7-6-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰福音",
+            "chapter": "17:1-26"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "66:1-2、13-23"
+        }
+    }
+}

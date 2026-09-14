@@ -1,0 +1,15 @@
+{
+    "id": "easter1-4-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "5:21-43"
+        },
+        "ot": {
+            "book": "但以理書",
+            "chapter": "12:1-13"
+        }
+    }
+}

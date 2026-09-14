@@ -1,0 +1,15 @@
+{
+    "id": "1229-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "11:2-6"
+        },
+        "ot": {
+            "book": "路得記",
+            "chapter": "1:19-2:13"
+        }
+    }
+}

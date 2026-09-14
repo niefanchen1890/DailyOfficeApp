@@ -1,0 +1,15 @@
+{
+    "id": "tr26-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "4"
+        },
+        "ot": {
+            "book": "傳道書",
+            "chapter": "11"
+        }
+    }
+}

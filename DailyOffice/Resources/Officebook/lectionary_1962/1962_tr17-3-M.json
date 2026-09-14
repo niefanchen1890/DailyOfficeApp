@@ -1,0 +1,15 @@
+{
+    "id": "tr17-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "腓利門書",
+            "chapter": "1"
+        },
+        "ot": {
+            "book": "以西結書",
+            "chapter": "13:1-16"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1221-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "彼得前書",
+            "chapter": "1:3-9"
+        },
+        "ot": {
+            "book": "便西拉智訓",
+            "chapter": "2:1-18"
+        }
+    }
+}

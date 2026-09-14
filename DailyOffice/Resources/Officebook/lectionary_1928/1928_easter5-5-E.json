@@ -1,0 +1,15 @@
+{
+    "id": "easter5-5-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "15:35-58"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "59:1-21"
+        }
+    }
+}

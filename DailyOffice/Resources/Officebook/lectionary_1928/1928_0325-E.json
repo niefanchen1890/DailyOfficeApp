@@ -1,0 +1,15 @@
+{
+    "id": "0325-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "1:39-56"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "1:21-2:10"
+        }
+    }
+}

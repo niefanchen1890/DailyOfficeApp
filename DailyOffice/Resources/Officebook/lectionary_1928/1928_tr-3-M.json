@@ -1,0 +1,15 @@
+{
+    "id": "tr-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "4:12-25"
+        },
+        "ot": {
+            "book": "約書亞記",
+            "chapter": "3:1-17"
+        }
+    }
+}

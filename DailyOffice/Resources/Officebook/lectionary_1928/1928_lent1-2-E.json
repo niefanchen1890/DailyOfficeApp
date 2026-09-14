@@ -1,0 +1,15 @@
+{
+    "id": "lent1-2-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "5:17-39"
+        },
+        "ot": {
+            "book": "耶利米書",
+            "chapter": "13:1-25"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0624-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "11:2-19"
+        },
+        "ot": {
+            "book": "瑪拉基書",
+            "chapter": "4:1-6"
+        }
+    }
+}

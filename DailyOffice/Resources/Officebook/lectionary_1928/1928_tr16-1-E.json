@@ -1,0 +1,15 @@
+{
+    "id": "tr16-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "以弗所書",
+            "chapter": "1"
+        },
+        "ot": {
+            "book": "申命記",
+            "chapter": "18:9-end"
+        }
+    }
+}

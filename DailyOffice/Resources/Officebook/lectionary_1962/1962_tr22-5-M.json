@@ -1,0 +1,15 @@
+{
+    "id": "tr22-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "約翰一書",
+            "chapter": "4:7-21"
+        },
+        "ot": {
+            "book": "傳道書",
+            "chapter": "7:15-29"
+        }
+    }
+}

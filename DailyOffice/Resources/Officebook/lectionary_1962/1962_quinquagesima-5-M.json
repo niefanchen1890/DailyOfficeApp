@@ -1,0 +1,15 @@
+{
+    "id": "quinquagesima-5-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬太福音",
+            "chapter": "25:1-30"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "39:1-23"
+        }
+    }
+}

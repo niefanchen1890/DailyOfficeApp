@@ -1,0 +1,15 @@
+{
+    "id": "ad2-3-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "馬可福音",
+            "chapter": "5:21-43"
+        },
+        "ot": {
+            "book": "以賽亞書",
+            "chapter": "28:1-8"
+        }
+    }
+}

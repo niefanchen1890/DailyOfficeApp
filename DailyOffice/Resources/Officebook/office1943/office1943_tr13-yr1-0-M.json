@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr13-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "104" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "便西拉智訓",
+      "chapter": "17:1-15"
+    },
+    "nt": {
+      "book": "馬可福音",
+      "chapter": "3:20-21,31-35"
+    }
+  }
+}

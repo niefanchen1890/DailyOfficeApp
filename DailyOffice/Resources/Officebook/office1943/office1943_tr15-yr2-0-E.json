@@ -1,0 +1,21 @@
+{
+  "id": "office1943_tr15-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "34" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約珥書",
+      "chapter": "2:21-27"
+    },
+    "nt": {
+      "book": "馬太福音",
+      "chapter": "6:24-34"
+    }
+  }
+}

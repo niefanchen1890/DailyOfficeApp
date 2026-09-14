@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr4-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "75" },
+      { "number": "82" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "申命記",
+      "chapter": "32:1-4,34-39"
+    },
+    "nt": {
+      "book": "羅馬書",
+      "chapter": "2:1-16"
+    }
+  }
+}

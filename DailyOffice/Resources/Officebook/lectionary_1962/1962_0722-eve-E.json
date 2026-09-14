@@ -1,0 +1,15 @@
+{
+    "id": "0722-eve-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "8:1-3"
+        },
+        "ot": {
+            "book": "撒母耳記上",
+            "chapter": "16:14-end"
+        }
+    }
+}

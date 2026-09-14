@@ -1,0 +1,145 @@
+{
+  "id": "tr1-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "這裡填寫1943年本組詩篇專用對經。",
+    "items": [
+      { "number": "25", "verses": "1-10" },
+      { "number": "26" },
+      { "number": "119", "verses": "33-40" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以賽亞書",
+      "chapter": "6:1-8"
+    },
+    "nt": {
+      "book": "彼得前書",
+      "chapter": "1:1-12"
+    }
+  }
+}
+
+
+六、節期代碼建議
+可以沿用你目前資料庫的代碼習慣。
+節期
+代碼
+降臨期
+ad
+聖誕期
+ch
+顯現期
+ep 或 epiphany
+七旬期
+septuagesima
+六旬期
+sexagesima
+五旬期
+quinquagesima
+大齋期
+lent
+復活期
+easter
+升天期
+ascension
+聖靈降臨期
+pentecost
+三一主日後
+tr
+
+{
+  "id": "tr1-yr1-0-M",
+  "label": "第一組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "這裡填寫1943年本組詩篇專用對經。",
+    "items": [
+      { "number": "29" },
+      { "number": "99" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "以賽亞書",
+      "chapter": "6:1-8"
+    },
+    "nt": {
+      "book": "彼得前書",
+      "chapter": "1:1-12"
+    }
+  }
+}
+
+{
+  "id": "tr1-yr2-0-M",
+  "label": "第二組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "這裡填寫1943年本組詩篇專用對經。",
+    "items": [
+      { "number": "33" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "創世記",
+      "chapter": "1:1-2:3"
+    },
+    "nt": {
+      "book": "約翰福音",
+      "chapter": "1:1-18"
+    }
+  }
+}
+
+
+{
+  "id": "tr1-yr3-0-M",
+  "label": "第三組",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "這裡填寫1943年本組詩篇專用對經。",
+    "items": [
+      { "number": "8" },
+      { "number": "93" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "出埃及記",
+      "chapter": "3:1-15"
+    },
+    "nt": {
+      "book": "約翰福音",
+      "chapter": "14:1-17"
+    }
+  }
+}
+
+
+
+{
+  "id": "tr1-yr1-1-M",
+  "label": "平日",
+  "office": "morning",
+  "psalms": {
+    "antiphon": "這裡填寫1943年平日詩篇專用對經。",
+    "items": [
+      { "number": "25", "verses": "1-10" },
+      { "number": "26" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "約書亞記",
+      "chapter": "1:1-9"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "1:1-25"
+    }
+  }
+}

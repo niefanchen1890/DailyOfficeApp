@@ -1,0 +1,15 @@
+{
+    "id": "lent6-1-M",
+    "label": "",
+    "office": "morning",
+    "lessons": {
+        "nt": {
+            "book": "哥林多前書",
+            "chapter": "10:1-13"
+        },
+        "ot": {
+            "book": "民數記",
+            "chapter": "20:1-13"
+        }
+    }
+}

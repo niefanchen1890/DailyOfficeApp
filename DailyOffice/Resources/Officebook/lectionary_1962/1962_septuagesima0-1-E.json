@@ -1,0 +1,15 @@
+{
+    "id": "septuagesima0-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "羅馬書",
+            "chapter": "1:1-32"
+        },
+        "ot": {
+            "book": "創世記",
+            "chapter": "4:1-16"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "tr11-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "20:27-21:4"
+        },
+        "ot": {
+            "book": "歷代志下",
+            "chapter": "16"
+        }
+    }
+}

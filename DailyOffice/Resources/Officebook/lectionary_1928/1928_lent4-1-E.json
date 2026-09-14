@@ -1,0 +1,15 @@
+{
+    "id": "lent4-1-E",
+    "label": "",
+    "office": "evening",
+    "lessons": {
+        "nt": {
+            "book": "路加福音",
+            "chapter": "12:35-59"
+        },
+        "ot": {
+            "book": "列王紀下",
+            "chapter": "24:18-25:11、20-22"
+        }
+    }
+}

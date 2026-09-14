@@ -1,0 +1,22 @@
+{
+  "id": "office1943_tr13-yr2-0-E",
+  "label": "第二組",
+  "office": "evening",
+  "psalms": {
+    "antiphon": "",
+    "items": [
+      { "number": "112" },
+      { "number": "113" }
+    ]
+  },
+  "lessons": {
+    "ot": {
+      "book": "申命記",
+      "chapter": "24:10-22"
+    },
+    "nt": {
+      "book": "路加福音",
+      "chapter": "10:23-37"
+    }
+  }
+}
